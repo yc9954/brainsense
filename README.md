@@ -23,21 +23,21 @@ glasses/phone ─clip(≤6s)─▶ Modal: TRIBE v2 ─▶ ROI time series (9 gro
 | Glasses capture (SwiftUI skeleton, `app/ios/`) | DAT SDK ring buffer + TTS; superseded as the UI by the OpenMuse app, kept for the glasses capture path |
 | Demo video + write-up | script in `docs/demo_script.md` |
 
-## Ablation results (real TRIBE features, 2026-10-30)
-Linear heads, AUROC on a fixed 25% test split, mean over 10 seeds. `raw_pca54` is the raw V-JEPA2 embedding compressed to the same width as the brain features (the fair control).
+## Ablation results (real TRIBE features; AADB updated to 2,500 images on 2026-11-02)
+Linear heads, AUROC on a fixed 25% test split, mean over seeds. `raw_pca54` compresses the raw V-JEPA2 embedding to the same width as the brain features (the fair control).
 
 | dataset (label) | n_train | TRIBE ROI (54-d) | raw V-JEPA2 (1408-d) | raw PCA-54 |
 |---|---|---|---|---|
-| AADB (human aesthetic rating, median split) | 25 | 0.59 | 0.60 | 0.59 |
-| | 100 | 0.62 | 0.62 | 0.59 |
-| | 200 | 0.68 | 0.67 | 0.68 |
-| | 375 | **0.72** | 0.69 | **0.71** |
+| AADB (human aesthetic rating, median split) | 100 | 0.61 | 0.65 | 0.62 |
+| | 400 | 0.67 | 0.69 | 0.70 |
+| | 1,875 | 0.69 | 0.69 | **0.73** |
+| AADB, one split, more controls | 1,875 | 0.69 | — | PCA-54 0.73 · **hybrid (TRIBE + PCA-54) 0.75** · PCA-108 0.76 |
 | Unsplash (log downloads/views) | 225 | 0.51 | 0.50 | 0.51 |
 | SnapUGC (ECR watch retention) | 110 | 0.49 | 0.56 | 0.45 |
 
-Reading: aesthetics is learnable from both (0.72 AUROC with 375 images); the brain bottleneck beats the *full* raw embedding at n≥200 only because 54 dims overfit less than 1408, and the same-width PCA control matches it. **No accuracy advantage from the brain prior; the claim that survives is interpretability** (ROI-level explanations the agent can voice). Popularity and watch-retention labels are not learnable from either feature set at this data size, so the `appeal` and `attention` heads are calibrated to low confidence (temperature 20 and 10) and the agent will say "잘 모르겠다" on them.
+Reading: aesthetics is learnable (0.69–0.76). With enough data the brain bottleneck **saturates below** a width-matched PCA of the raw embedding (0.69 vs 0.73), i.e. pooling predicted cortex into 9 regions discards information the embedding keeps; adding the brain features on top of PCA still helps a little (0.75 vs 0.73). So the honest claim is: **the brain prior buys interpretability, not accuracy**; the shipped `aesthetic` head is the TRIBE 54-d one because every chip it shows ("▲ 보상·가치 후반") is a real coefficient on a named region. A hybrid head is the obvious next step if accuracy matters more than explanation. Popularity and watch-retention labels are not learnable from either feature set at 150–300 items; those heads are calibrated to low confidence and the agent says "잘 모르겠다".
 
-Trained heads (`heads/`): aesthetic AUROC 0.70 / ECE 0.12; attention 0.54; appeal 0.53.
+Trained heads (`heads/`): aesthetic AUROC 0.67 / ECE 0.03 (n_train 1,492); attention 0.54; appeal 0.53 (both pending the round-2 features).
 
 The numbers in `results/ablation_synthetic/` are from synthetic data and only prove the CLI works.
 
