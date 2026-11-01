@@ -1,18 +1,22 @@
 [
   {
-    "n_train": 25,
-    "tribe_minus_raw": -0.0512
-  },
-  {
     "n_train": 50,
-    "tribe_minus_raw": 0.0029
+    "tribe_minus_raw": -0.0659
   },
   {
-    "n_train": 75,
-    "tribe_minus_raw": -0.0661
+    "n_train": 100,
+    "tribe_minus_raw": -0.056
   },
   {
-    "n_train": 110,
-    "tribe_minus_raw": -0.0713
+    "n_train": 200,
+    "tribe_minus_raw": -0.0404
+  },
+  {
+    "n_train": 300,
+    "tribe_minus_raw": -0.0273
+  },
+  {
+    "n_train": 440,
+    "tribe_minus_raw": -0.0383
   }
 ]

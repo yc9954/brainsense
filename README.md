@@ -32,12 +32,12 @@ Linear heads, AUROC on a fixed 25% test split, mean over seeds. `raw_pca54` comp
 | | 400 | 0.67 | 0.69 | 0.70 |
 | | 1,875 | 0.69 | 0.69 | **0.73** |
 | AADB, one split, more controls | 1,875 | 0.69 | — | PCA-54 0.73 · **hybrid (TRIBE + PCA-54) 0.75** · PCA-108 0.76 |
-| Unsplash (log downloads/views) | 225 | 0.51 | 0.50 | 0.51 |
-| SnapUGC (ECR watch retention) | 110 | 0.49 | 0.56 | 0.45 |
+| Unsplash (log downloads/views), 1,500 items | 1,125 | 0.57 | 0.55 | 0.58 |
+| SnapUGC (ECR watch retention), 587 videos | 440 | **0.62** | 0.66 | 0.60 |
 
-Reading: aesthetics is learnable (0.69–0.76). With enough data the brain bottleneck **saturates below** a width-matched PCA of the raw embedding (0.69 vs 0.73), i.e. pooling predicted cortex into 9 regions discards information the embedding keeps; adding the brain features on top of PCA still helps a little (0.75 vs 0.73). So the honest claim is: **the brain prior buys interpretability, not accuracy**; the shipped `aesthetic` head is the TRIBE 54-d one because every chip it shows ("▲ 보상·가치 후반") is a real coefficient on a named region. A hybrid head is the obvious next step if accuracy matters more than explanation. Popularity and watch-retention labels are not learnable from either feature set at 150–300 items; those heads are calibrated to low confidence and the agent says "잘 모르겠다".
+Reading: aesthetics is learnable (0.69–0.76). With enough data the brain bottleneck **saturates below** a width-matched PCA of the raw embedding (0.69 vs 0.73), i.e. pooling predicted cortex into 9 regions discards information the embedding keeps; adding the brain features on top of PCA still helps a little (0.75 vs 0.73). So the honest claim is: **the brain prior buys interpretability, not accuracy**; the shipped `aesthetic` head is the TRIBE 54-d one because every chip it shows ("▲ 보상·가치 후반") is a real coefficient on a named region. A hybrid head is the obvious next step if accuracy matters more than explanation. With 4× more data, watch retention became learnable (0.62 brain / 0.66 raw) and here the 9-region brain features beat the width-matched PCA (0.62 vs 0.60), consistent with attention-related cortex carrying temporal information a static embedding pools away. Downloads-per-view stays weak (0.57–0.58). Heads are calibrated, so the agent's confidence tracks these numbers.
 
-Trained heads (`heads/`): aesthetic AUROC 0.67 / ECE 0.03 (n_train 1,492); attention 0.54; appeal 0.53 (both pending the round-2 features).
+Trained heads (`heads/`, 2026-11-02): aesthetic AUROC 0.67 / ECE 0.03 (n=1,492); attention 0.65 / ECE 0.06 (n=365); appeal 0.58 / ECE 0.04 (n=910). Feature stores: 4,587 items across the three datasets.
 
 The numbers in `results/ablation_synthetic/` are from synthetic data and only prove the CLI works.
 
