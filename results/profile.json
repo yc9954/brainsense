@@ -1,0 +1,50 @@
+{
+  "gpu": "L40S",
+  "runs": [
+    {
+      "variant": "no_transcribe",
+      "wall_s": 59.8,
+      "events_s": 0.89,
+      "predict_s": 34.69,
+      "roi_s": 0.0,
+      "raw_embed_s": 2.44,
+      "total_s": 38.02,
+      "T": 6,
+      "roi_feats_head": [
+        -0.105,
+        -0.066,
+        -0.078
+      ]
+    },
+    {
+      "variant": "no_tr_bf16",
+      "wall_s": 14.7,
+      "events_s": 0.34,
+      "predict_s": 12.93,
+      "roi_s": 0.0,
+      "raw_embed_s": 0.85,
+      "total_s": 14.12,
+      "T": 6,
+      "roi_feats_head": [
+        -0.104,
+        -0.062,
+        -0.077
+      ]
+    },
+    {
+      "variant": "4s_no_tr_bf16",
+      "wall_s": 14.7,
+      "events_s": 0.39,
+      "predict_s": 10.28,
+      "roi_s": 0.0,
+      "raw_embed_s": 1.13,
+      "total_s": 11.81,
+      "T": 4,
+      "roi_feats_head": [
+        -0.134,
+        -0.1,
+        -0.12
+      ]
+    }
+  ]
+}

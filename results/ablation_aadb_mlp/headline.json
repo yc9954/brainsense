@@ -1,0 +1,14 @@
+[
+  {
+    "n_train": 100,
+    "tribe_minus_raw": -0.1288
+  },
+  {
+    "n_train": 200,
+    "tribe_minus_raw": -0.0959
+  },
+  {
+    "n_train": 375,
+    "tribe_minus_raw": -0.1149
+  }
+]

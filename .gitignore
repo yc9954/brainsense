@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+data/
+features/cache/
+results/latency.json
+heads/
+*.npy
+.env
+state/
+results/server*.log
+results/modal_*.log
+results/extract_*.log

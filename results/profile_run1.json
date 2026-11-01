@@ -1,0 +1,43 @@
+{
+  "gpu": "L40S",
+  "runs": [
+    {
+      "variant": "full",
+      "wall_s": 138.0,
+      "events_s": 73.5,
+      "predict_s": 41.03,
+      "roi_s": 0.0,
+      "raw_embed_s": 3.46,
+      "total_s": 117.99,
+      "T": 6,
+      "roi_feats_head": [
+        -0.109,
+        -0.075,
+        -0.084
+      ]
+    },
+    {
+      "variant": "no_transcribe",
+      "wall_s": 35.0,
+      "events_s": 0.24,
+      "predict_s": 32.87,
+      "roi_s": 0.0,
+      "raw_embed_s": 0.89,
+      "total_s": 33.99,
+      "T": 6,
+      "roi_feats_head": [
+        -0.099,
+        -0.064,
+        -0.075
+      ]
+    },
+    {
+      "variant": "no_tr_bf16",
+      "error": "TypeError: Got unsupported ScalarType BFloat16"
+    },
+    {
+      "variant": "4s_no_tr_bf16",
+      "error": "TypeError: Got unsupported ScalarType BFloat16"
+    }
+  ]
+}
