@@ -33,11 +33,12 @@ Linear heads, AUROC on a fixed 25% test split, mean over seeds. `raw_pca54` comp
 | | 1,875 | 0.69 | 0.69 | **0.73** |
 | AADB, one split, more controls | 1,875 | 0.69 | — | PCA-54 0.73 · **hybrid (TRIBE + PCA-54) 0.75** · PCA-108 0.76 |
 | Unsplash (log downloads/views), 1,500 items | 1,125 | 0.57 | 0.55 | 0.58 |
+| Unsplash (log views, median split) → `popularity` head | 1,125 | **0.60** | 0.55 | 0.59 |
 | SnapUGC (ECR watch retention), 587 videos | 440 | **0.62** | 0.66 | 0.60 |
 
 Reading: aesthetics is learnable (0.69–0.76). With enough data the brain bottleneck **saturates below** a width-matched PCA of the raw embedding (0.69 vs 0.73), i.e. pooling predicted cortex into 9 regions discards information the embedding keeps; adding the brain features on top of PCA still helps a little (0.75 vs 0.73). So the honest claim is: **the brain prior buys interpretability, not accuracy**; the shipped `aesthetic` head is the TRIBE 54-d one because every chip it shows ("▲ 보상·가치 후반") is a real coefficient on a named region. A hybrid head is the obvious next step if accuracy matters more than explanation. With 4× more data, watch retention became learnable (0.62 brain / 0.66 raw) and here the 9-region brain features beat the width-matched PCA (0.62 vs 0.60), consistent with attention-related cortex carrying temporal information a static embedding pools away. Downloads-per-view stays weak (0.57–0.58). Heads are calibrated, so the agent's confidence tracks these numbers.
 
-Trained heads (`heads/`, 2026-11-02): aesthetic AUROC 0.67 / ECE 0.03 (n=1,492); attention 0.65 / ECE 0.06 (n=365); appeal 0.58 / ECE 0.04 (n=910). Feature stores: 4,587 items across the three datasets.
+Trained heads (`heads/`, 2026-11-02): aesthetic AUROC 0.67 / ECE 0.03 (n=1,492); attention 0.65 / ECE 0.06 (n=365); appeal 0.58 / ECE 0.04 (n=910); popularity 0.59 / ECE 0.05 (n=910). (Unsplash Lite's `featured` flag was tried as an editorial-quality label and dropped: 98% positive.) Feature stores: 4,587 items across the three datasets.
 
 The numbers in `results/ablation_synthetic/` are from synthetic data and only prove the CLI works.
 
@@ -99,6 +100,17 @@ pnpm --dir ../openmuse/apps/mobile web          # http://localhost:8081  (EXPO_P
 # optional: full OpenMuse workspace (chat/mail/etc.) needs CPK_INTELLIGENCE_API_KEY in ../openmuse/.env
 ```
 Live-demo caveat: the deployed TRIBE endpoint shares the workspace's 10-GPU cap with batch extraction; pause batch jobs before a demo. Modal web endpoints 303-redirect after 150 s; the server follows them.
+
+## Evaluation-driven UI loop (the harness)
+The heads double as an **evaluation metric for generated UI**. `brainsense/loop/` runs: Muse Spark writes a single-file page → headless Chrome renders 1280×800 → the screenshot goes through TRIBE + heads → `ui_score = 0.6·aesthetic + 0.4·attention` (percentiles, shrunk toward 0.5 by each head's confidence) → the per-region critique ("시각 주의 낮음 → focal element/contrast") is fed back to the next round.
+```bash
+uv run python -m brainsense.loop.optimize --brief "팝업 랜딩 페이지 ..." --rounds 3 --variants 3   # results/loop/<run>/LEADERBOARD.md + BEST.html
+uv run python -m brainsense.loop.ab page_a.html page_b.html https://example.com                 # A/B/N by brain heads
+```
+Each score costs one TRIBE call (~14 s warm). The metric is honest about its limits: aesthetic AUROC 0.67, attention 0.65 on real labels, so treat `ui_score` as a tie-breaker with explanations, not ground truth. Human 👍👎 on screenshots flows into the personal head through the same server, which is how the metric gets better for *your* taste.
+
+## Full OpenMuse workspace on the Meta Model API
+`../openmuse/.env` is prepared for `AGENT_BACKEND=model` with `MODEL=muse-spark-1.3` and `OPENAI_BASE_URL=https://api.meta.ai/v1`, so OpenMuse's own chat, activity, ideas, goals and apps run on Muse Spark. Two values are yours: `OPENAI_API_KEY` (copy `BRAINSENSE_LLM_API_KEY`) and `CPK_INTELLIGENCE_API_KEY` (`npx copilotkit@latest login && npx copilotkit@latest project select`). Then `pnpm --dir ../openmuse dev` and the app shows the Look tab next to the OpenMuse sections. Without those keys the app runs the Look tab standalone.
 
 ## Latency (measured on L40S, never-seen 6 s clip, `results/profile.json`)
 | variant | events | TRIBE predict | total |

@@ -32,7 +32,12 @@ TRIBE_URL = os.environ.get("BRAINSENSE_TRIBE_URL", "")
 app = FastAPI(title="BrainSense agent")
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])  # web demo (Expo on :8081)
 cache = FeatureCache()
-roi_ts: dict[str, dict[str, list[float]]] = {}   # item_id -> {group: [T]} for the UI sparklines
+roi_ts: dict[str, dict[str, list[float]]] = {}   # item_id -> {group: [T]} for the UI sparklines (mirrored to disk)
+_ROI_DIR = cache.store_dir / "roi_ts"
+if _ROI_DIR.exists():
+    import json as _json
+    for _f in _ROI_DIR.glob("*.json"):
+        roi_ts[_f.stem] = _json.loads(_f.read_text())
 registry = build_registry(HEADS_DIR, cache, PERSONAL_STORE)
 agents: dict[str, Agent] = {}          # one conversation per session id
 
@@ -93,6 +98,9 @@ def analyze(inp: AnalyzeIn) -> dict[str, Any]:
                        "transcribe": inp.transcribe, "bf16": True})
     cache.put(inp.item_id, np.asarray(res["roi_feats"], dtype=np.float32))
     roi_ts[inp.item_id] = res.get("roi_ts") or {}
+    _ROI_DIR.mkdir(parents=True, exist_ok=True)
+    import json as _json
+    (_ROI_DIR / f"{inp.item_id}.json").write_text(_json.dumps(roi_ts[inp.item_id]))
     return {"item_id": inp.item_id, "timing": res.get("timing"), "roi_ts": roi_ts[inp.item_id]}
 
 

@@ -10,3 +10,6 @@ state/
 results/server*.log
 results/modal_*.log
 results/extract_*.log
+results/loop/*/
+!results/loop/smoke2/LEADERBOARD.md
+state/

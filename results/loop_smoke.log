@@ -1,0 +1,48 @@
+r1v1 ui_score=0.549  aesthetic: 상위 44% (확신 0.02; ▲ 움직임·형태 변화, ▲ 
+보상·가치 초반) · attention: 상위 36% (확신 0.15; ▲ 움직임·형태 평균, ▲ 기본 
+시각 평균)  (45.1s)
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /Users/yuchanlee/brainsense-hackathon/brainsense/brainsense/loop/optimize.py │
+│ :37 in run                                                                   │
+│                                                                              │
+│   34 │   │   │   html = generate_page(brief, history, v)                     │
+│   35 │   │   │   (run_dir / f"{tag}.html").write_text(html,                  │
+│      encoding="utf-8")                                                       │
+│   36 │   │   │   png = render_html(html, run_dir / f"{tag}.png")             │
+│ ❱ 37 │   │   │   sc = score_image(png, f"loop_{run_dir.name}_{tag}")         │
+│   38 │   │   │   rec = {"round": r, "variant": v, "tag": tag, "ui_score":    │
+│      sc.ui_score, "heads": sc.heads,                                         │
+│   39 │   │   │   │      "explanation": sc.explanation, "html_excerpt":       │
+│      html[:800], "seconds": round(time.time() - t0, 1)}                      │
+│   40 │   │   │   history.append(rec)                                         │
+│                                                                              │
+│ /Users/yuchanlee/brainsense-hackathon/brainsense/brainsense/loop/score.py:47 │
+│ in score_image                                                               │
+│                                                                              │
+│   44 │   │   r = c.post(f"{SERVER}/analyze", json={"video_b64": data,        │
+│      "filename": Path(png).name, "item_id": item_id})                        │
+│   45 │   │   r.raise_for_status()                                            │
+│   46 │   │   ev = c.get(f"{SERVER}/eval/{item_id}")                          │
+│ ❱ 47 │   │   ev.raise_for_status()                                           │
+│   48 │   heads = ev.json()["heads"]                                          │
+│   49 │   parts, total, wsum = [], 0.0, 0.0                                   │
+│   50 │   out_heads = {}                                                      │
+│                                                                              │
+│ /Users/yuchanlee/brainsense-hackathon/brainsense/.venv/lib/python3.12/site-p │
+│ ackages/httpx/_models.py:829 in raise_for_status                             │
+│                                                                              │
+│    826 │   │   }                                                             │
+│    827 │   │   error_type = error_types.get(status_class, "Invalid status    │
+│        code")                                                                │
+│    828 │   │   message = message.format(self, error_type=error_type)         │
+│ ❱  829 │   │   raise HTTPStatusError(message, request=request,               │
+│        response=self)                                                        │
+│    830 │                                                                     │
+│    831 │   def json(self, **kwargs: typing.Any) -> typing.Any:               │
+│    832 │   │   return jsonlib.loads(self.content, **kwargs)                  │
+╰──────────────────────────────────────────────────────────────────────────────╯
+HTTPStatusError: Client error '404 Not Found' for url 
+'http://localhost:8000/eval/loop_smoke_r1v2'
+For more information check: 
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+EXIT 1

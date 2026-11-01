@@ -10,21 +10,33 @@ from ..heads.head import Head
 from ..heads.personal import PersonalHead
 from .tools import ToolRegistry
 
-CROWD_HEADS = ("aesthetic", "attention", "appeal")
+CROWD_HEADS = ("aesthetic", "attention", "appeal", "popularity")
 
 
 class FeatureCache:
-    """item_id -> feature vector. In production this is filled by the TRIBE service."""
+    """item_id -> feature vector, filled by the TRIBE service. Mirrored to disk (`state/features/`)
+    so a server restart never loses an analyzed item mid-conversation."""
 
-    def __init__(self) -> None:
+    def __init__(self, store_dir: Path | None = None) -> None:
         self._d: dict[str, np.ndarray] = {}
+        self.store_dir = Path(store_dir) if store_dir is not None else Path(
+            __import__("os").environ.get("BRAINSENSE_FEATURE_STORE", "state/features"))
+        if self.store_dir.exists():
+            for f in self.store_dir.glob("*.npy"):
+                self._d[f.stem] = np.load(f)
 
     def put(self, item_id: str, x: np.ndarray) -> None:
         self._d[item_id] = np.asarray(x, dtype=np.float32)
+        self.store_dir.mkdir(parents=True, exist_ok=True)
+        np.save(self.store_dir / f"{item_id}.npy", self._d[item_id])
 
     def get(self, item_id: str) -> np.ndarray:
         if item_id not in self._d:
-            raise KeyError(f"no features cached for {item_id}; run the TRIBE service first")
+            f = self.store_dir / f"{item_id}.npy"
+            if f.exists():
+                self._d[item_id] = np.load(f)
+            else:
+                raise KeyError(f"no features cached for {item_id}; run the TRIBE service first")
         return self._d[item_id]
 
     def ids(self) -> list[str]:

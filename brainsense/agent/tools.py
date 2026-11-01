@@ -15,7 +15,7 @@ TOOLS: list[dict[str, Any]] = [
             "name": "brain_eval",
             "description": (
                 "Run the item the user is looking at through the brain-response model and the "
-                "calibrated heads. Returns, per head (aesthetic / attention / appeal), a score, "
+                "calibrated heads. Returns, per head (aesthetic / attention / appeal / popularity), a score, "
                 "a percentile vs. comparable items, a confidence (0-1), and the top contributing "
                 "brain regions. Also returns the user's personal-taste head if enough feedback exists."
             ),
@@ -25,7 +25,7 @@ TOOLS: list[dict[str, Any]] = [
                     "item_id": {"type": "string", "description": "id of the captured clip/image"},
                     "heads": {
                         "type": "array",
-                        "items": {"type": "string", "enum": ["aesthetic", "attention", "appeal", "personal"]},
+                        "items": {"type": "string", "enum": ["aesthetic", "attention", "appeal", "popularity", "personal"]},
                         "description": "which heads to run; default all",
                     },
                 },
