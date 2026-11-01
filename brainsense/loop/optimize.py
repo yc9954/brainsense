@@ -13,7 +13,7 @@ import typer
 from rich import print
 from rich.table import Table
 
-from .generate import generate_page
+from .generate import GenerationError, generate_page
 from .render import render_html
 from .score import score_image
 
@@ -31,7 +31,11 @@ def run(brief: str = typer.Option(..., help="what to build"),
         for v in range(1, variants + 1):
             tag = f"r{r}v{v}"
             t0 = time.time()
-            html = generate_page(brief, history, v)
+            try:
+                html = generate_page(brief, history, v)
+            except GenerationError as e:
+                print(f"[red]{tag} skipped: {e}[/]")
+                continue
             (run_dir / f"{tag}.html").write_text(html, encoding="utf-8")
             png = render_html(html, run_dir / f"{tag}.png")
             sc = score_image(png, f"loop_{run_dir.name}_{tag}")

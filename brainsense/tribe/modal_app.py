@@ -106,6 +106,7 @@ class Tribe:
         """transcribe=False skips WhisperX + spaCy + Llama (use for clips with no speech: product
         shots, stills). bf16=True wraps the whole predict pass in torch.autocast(bfloat16)."""
         import contextlib
+        import hashlib
 
         import numpy as np
         import pandas as pd
@@ -115,7 +116,10 @@ class Tribe:
 
         timing: dict[str, float] = {}
         work = Path("/tmp/work"); work.mkdir(exist_ok=True)
-        path = work / filename
+        # neuralset caches extracted features by file path: two different uploads named "clip.mp4"
+        # would silently share features. Key the on-disk name by content hash instead.
+        digest = hashlib.sha1(video_bytes).hexdigest()[:16]
+        path = work / f"{digest}_{Path(filename).name}"
         path.write_bytes(video_bytes)
 
         t = time.time()

@@ -31,8 +31,21 @@ def _extract_html(text: str) -> str:
     return text[i:].strip() if i >= 0 else text.strip()
 
 
-def generate_page(brief: str, history: list[dict], variant: int, temperature: float = 0.9) -> str:
-    """history: [{"round": r, "variant": v, "ui_score": s, "explanation": str, "html_excerpt": str}, ...]"""
+def _body_text(html: str) -> str:
+    body = html[html.lower().find("<body"):] if "<body" in html.lower() else html
+    body = re.sub(r"<(script|style)[^>]*>.*?</\1>", " ", body, flags=re.S | re.I)
+    return re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", body)).strip()
+
+
+class GenerationError(RuntimeError):
+    pass
+
+
+def generate_page(brief: str, history: list[dict], variant: int, temperature: float = 0.9,
+                  max_tokens: int = 16000, retries: int = 2) -> str:
+    """history: [{"round": r, "variant": v, "ui_score": s, "explanation": str, "html_excerpt": str}, ...]
+    Retries when the model truncates (Muse counts reasoning tokens against max_tokens) or returns a
+    page with no real body content; a blank page must never reach the scorer."""
     critique = ""
     if history:
         best = max(history, key=lambda h: h["ui_score"])
@@ -47,10 +60,26 @@ def generate_page(brief: str, history: list[dict], variant: int, temperature: fl
             "is low, strengthen the focal element and contrast; if '얼굴·사람' is low and the brief is "
             "about people, add a human element; if '보상·가치' is low, make the offer/benefit visible)."
         )
-    user = (f"Brief: {brief}\n\nThis is variant #{variant}: explore a distinctly different layout and palette "
-            f"from other variants.{critique}")
-    r = _client().chat.completions.create(
-        model=os.environ.get("BRAINSENSE_LLM_MODEL", "muse-spark-1.3"),
-        messages=[{"role": "system", "content": SYSTEM}, {"role": "user", "content": user}],
-        temperature=temperature, max_tokens=6000)
-    return _extract_html(r.choices[0].message.content or "")
+    compact = ""
+    last_err = "unknown"
+    for attempt in range(retries + 1):
+        user = (f"Brief: {brief}\n\nThis is variant #{variant}: explore a distinctly different layout and "
+                f"palette from other variants.{critique}{compact}")
+        r = _client().chat.completions.create(
+            model=os.environ.get("BRAINSENSE_LLM_MODEL", "muse-spark-1.3"),
+            messages=[{"role": "system", "content": SYSTEM}, {"role": "user", "content": user}],
+            temperature=temperature, max_tokens=max_tokens)
+        choice = r.choices[0]
+        html = _extract_html(choice.message.content or "")
+        text = _body_text(html)
+        if choice.finish_reason == "length" or "</html>" not in html.lower():
+            last_err = f"truncated (finish_reason={choice.finish_reason}, {len(html)} chars)"
+            compact = ("\n\nIMPORTANT: your previous answer was cut off. Keep the whole document under "
+                       "250 lines: compact CSS, no decorative animations, no long comments.")
+            continue
+        if len(text) < 120:
+            last_err = f"empty body ({len(text)} chars of text)"
+            compact = "\n\nIMPORTANT: the previous answer had no visible content. Put real headline, copy and a CTA in <body>."
+            continue
+        return html
+    raise GenerationError(f"variant {variant}: {last_err} after {retries + 1} attempts")
