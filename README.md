@@ -74,7 +74,8 @@ uv run uvicorn brainsense.agent.server:app --port 8000               # POST /ana
 2. Claim the $150 Model API credit via the participant-guide form (needs a card on file) and set a spend limit.
 3. Try creating a Wearables Developer Center org from Korea (work.meta.com → Managed Meta Account). If blocked, go Mock Device Kit (spec has the fallback).
 4. Create a Tianchi account for CreativeRanking and submit the Visuelle 2.0 form (hedges for the appeal head).
-5. Decide the track. CC-BY-NC on TRIBE v2 argues for **Indie**; the "Best Agentic" bonus fits either.
+5. Track decided: **Indie** (submitted on the Modal credit form). Repo: https://github.com/yc9954/brainsense (private; run `gh repo edit yc9954/brainsense --visibility public --accept-visibility-change-consequences` right before submitting, the rules require a public repo).
+6. Record the 3-minute demo video (`docs/demo_script.md`), build the iOS app in Xcode (`app/ios/README.md`), submit on the Cerebral Valley portal by **Nov 4 9:00 PM ET / Nov 5 11:00 KST** with `docs/submission.md` as the write-up.
 
 ## Live transcript (real Muse Spark, real TRIBE features, 2026-11-01)
 ```
