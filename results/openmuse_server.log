@@ -1,0 +1,14 @@
+$ tsx watch apps/server/src/index.ts
+/Users/yuchanlee/brainsense-hackathon/openmuse/apps/server/src/config.ts:76
+  if (!value?.trim()) throw new Error(message);
+                            ^
+
+Error: OpenMuse requires CPK_INTELLIGENCE_API_KEY. Run `npx copilotkit@latest login` and `npx copilotkit@latest project select`, then set the generated server-only key. See https://docs.copilotkit.ai/intelligence/connect-your-runtime
+    at required (/Users/yuchanlee/brainsense-hackathon/openmuse/apps/server/src/config.ts:76:29)
+    at readConfig (/Users/yuchanlee/brainsense-hackathon/openmuse/apps/server/src/config.ts:152:25)
+    at <anonymous> (/Users/yuchanlee/brainsense-hackathon/openmuse/apps/server/src/index.ts:6:16)
+    at ModuleJob.run (node:internal/modules/esm/module_job:437:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:639:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)
+
+Node.js v25.9.0

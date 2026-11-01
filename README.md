@@ -19,7 +19,8 @@ glasses/phone ─clip(≤6s)─▶ Modal: TRIBE v2 ─▶ ROI time series (9 gro
 | Agent: tools, system prompt, OpenAI-compatible loop, FastAPI server (`brainsense/agent/`) | **live on Muse Spark 1.3** (2026-11-01): glasses clip → Modal TRIBE → heads → tool-calling agent → Korean reply citing head scores; feedback updates the personal head |
 | Dataset prep (`brainsense/data/prepare.py`) | **run**: AADB 500 imgs (+6 s stills), Unsplash 300 imgs (+stills), SnapUGC 150 live videos; manifests under `data/*/manifest.csv` |
 | Feature extraction (`scripts/extract_features.py`) | **done**: 947/950 items → `features/{aadb,unsplash,snapugc}.npz` |
-| Glasses app | SwiftUI skeleton in `app/ios/` (DAT SDK, 6 s ring buffer, HTTP client, TTS); not compiled here (no Xcode); SDK signup from Korea unverified |
+| **App UI (OpenMuse / CopilotKit React Native)** | **done, verified in the browser** (2026-11-02): `../openmuse/apps/mobile` — "Look" tab with photo/clip picker, bundled samples, BrainCard (3 head gauges, confidence, top regions in Korean, crowd-vs-you), 1 Hz ROI sparkline, chat with quick chips and 👍👎. Runs standalone against the FastAPI server; iOS/Android via Expo (needs Xcode / Android Studio to build natively). |
+| Glasses capture (SwiftUI skeleton, `app/ios/`) | DAT SDK ring buffer + TTS; superseded as the UI by the OpenMuse app, kept for the glasses capture path |
 | Demo video + write-up | script in `docs/demo_script.md` |
 
 ## Ablation results (real TRIBE features, 2026-10-30)
@@ -87,6 +88,17 @@ Q: 음 난 별로야
 A: 오케이 별로로 저장했어 다음부터 네 취향 반영해서 더 잘 맞춰줄게
 ```
 Grounding works as designed: the number it quotes (0.53 / 상위 65% / 신뢰도 0.05) is the `appeal` head output, and it declines to opine when confidence is low. Note: Muse counts reasoning tokens against `max_tokens`; the loop uses 1024 and never stores an empty assistant turn.
+
+## App UI (OpenMuse)
+The UI is built on [CopilotKit/OpenMuse](https://github.com/CopilotKit/openmuse) (React Native + Expo, MIT), cloned to `../openmuse`. Our additions: `apps/mobile/src/brainsense.tsx` (Look screen, BrainCard, RoiStrip), `apps/mobile/src/brainsense-api.ts` (FastAPI client + Korean ROI labels), a `look` section in `App.tsx` with a standalone shell (no CopilotKit key required), sample assets, and branding in `app.json`.
+```bash
+# 1. agent server (this repo)
+uv run uvicorn brainsense.agent.server:app --port 8000
+# 2. web UI
+pnpm --dir ../openmuse/apps/mobile web          # http://localhost:8081  (EXPO_PUBLIC_BRAINSENSE_URL to point elsewhere)
+# optional: full OpenMuse workspace (chat/mail/etc.) needs CPK_INTELLIGENCE_API_KEY in ../openmuse/.env
+```
+Live-demo caveat: the deployed TRIBE endpoint shares the workspace's 10-GPU cap with batch extraction; pause batch jobs before a demo. Modal web endpoints 303-redirect after 150 s; the server follows them.
 
 ## Latency (measured on L40S, never-seen 6 s clip, `results/profile.json`)
 | variant | events | TRIBE predict | total |

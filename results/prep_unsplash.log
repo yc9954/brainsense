@@ -1,0 +1,4 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+wrote 1500 rows -> data/unsplash/manifest.csv
+data/unsplash/manifest.csv: 1500 stills -> data/unsplash/stills
+EXIT 0
