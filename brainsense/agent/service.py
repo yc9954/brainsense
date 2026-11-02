@@ -19,16 +19,32 @@ class FeatureCache:
 
     def __init__(self, store_dir: Path | None = None) -> None:
         self._d: dict[str, np.ndarray] = {}
+        self._area: dict[str, np.ndarray] = {}
         self.store_dir = Path(store_dir) if store_dir is not None else Path(
             __import__("os").environ.get("BRAINSENSE_FEATURE_STORE", "state/features"))
         if self.store_dir.exists():
             for f in self.store_dir.glob("*.npy"):
-                self._d[f.stem] = np.load(f)
+                if f.name.endswith(".area.npy"):
+                    self._area[f.name[: -len(".area.npy")]] = np.load(f)
+                else:
+                    self._d[f.stem] = np.load(f)
 
-    def put(self, item_id: str, x: np.ndarray) -> None:
+    def put(self, item_id: str, x: np.ndarray, area: np.ndarray | None = None) -> None:
         self._d[item_id] = np.asarray(x, dtype=np.float32)
         self.store_dir.mkdir(parents=True, exist_ok=True)
         np.save(self.store_dir / f"{item_id}.npy", self._d[item_id])
+        if area is not None and len(area):
+            self._area[item_id] = np.asarray(area, dtype=np.float32)
+            np.save(self.store_dir / f"{item_id}.area.npy", self._area[item_id])
+
+    def get_area(self, item_id: str) -> np.ndarray:
+        """720-d per-area features (360 means + 360 slopes); KeyError if the item predates them."""
+        if item_id not in self._area:
+            f = self.store_dir / f"{item_id}.area.npy"
+            if not f.exists():
+                raise KeyError(f"no per-area features for {item_id}")
+            self._area[item_id] = np.load(f)
+        return self._area[item_id]
 
     def get(self, item_id: str) -> np.ndarray:
         if item_id not in self._d:
@@ -48,16 +64,24 @@ def build_registry(heads_dir: Path, cache: FeatureCache, personal_store: Path) -
     personal = PersonalHead(heads["appeal"], personal_store) if "appeal" in heads else None
     reg = ToolRegistry()
 
+    def features_for(head: Head, item_id: str) -> np.ndarray:
+        """Each head declares its input: 54-d group features or 360 per-area means."""
+        if head.cfg.feature_key == "roi_area_mean":
+            return cache.get_area(item_id)[:360]
+        return cache.get(item_id)
+
     @reg.register("brain_eval")
     def brain_eval(item_id: str, heads_: list[str] | None = None, **kw: Any) -> dict:
         wanted = kw.get("heads") or heads_ or [*CROWD_HEADS, "personal"]
-        x = cache.get(item_id)
         out: dict[str, Any] = {"item_id": item_id, "heads": {}}
         for n in wanted:
-            if n == "personal":
-                out["heads"]["personal"] = personal(x) if personal else None
-            elif n in heads:
-                out["heads"][n] = heads[n](x).to_dict()
+            try:
+                if n == "personal":
+                    out["heads"]["personal"] = personal(features_for(personal.crowd, item_id)) if personal else None
+                elif n in heads:
+                    out["heads"][n] = heads[n](features_for(heads[n], item_id)).to_dict()
+            except KeyError as e:   # e.g. an item analyzed before per-area features existed
+                out["heads"][n] = {"error": str(e)}
         return out
 
     @reg.register("compare")
@@ -65,9 +89,12 @@ def build_registry(heads_dir: Path, cache: FeatureCache, personal_store: Path) -
         others = against or [i for i in cache.ids() if i != item_id]
         rows = {}
         for n, h in heads.items():
-            cur = h(cache.get(item_id)).score
-            rows[n] = {"current": round(cur, 3),
-                       "others": {o: round(h(cache.get(o)).score, 3) for o in others}}
+            try:
+                cur = h(features_for(h, item_id)).score
+                rows[n] = {"current": round(cur, 3),
+                           "others": {o: round(h(features_for(h, o)).score, 3) for o in others}}
+            except KeyError as e:
+                rows[n] = {"error": str(e)}
         return {"item_id": item_id, "by_head": rows}
 
     @reg.register("web_lookup")
@@ -80,7 +107,7 @@ def build_registry(heads_dir: Path, cache: FeatureCache, personal_store: Path) -
     def record_feedback(item_id: str, liked: bool) -> dict:
         if personal is None:
             return {"error": "personal head unavailable (appeal head missing)"}
-        personal.add_feedback(item_id, cache.get(item_id), liked)
+        personal.add_feedback(item_id, features_for(personal.crowd, item_id), liked)
         return {"stored": True, "n_feedback": len(personal.y)}
 
     return reg

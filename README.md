@@ -36,7 +36,19 @@ Linear heads, AUROC on a fixed 25% test split, mean over seeds. `raw_pca54` comp
 | Unsplash (log views, median split) → `popularity` head | 1,125 | **0.60** | 0.55 | 0.59 |
 | SnapUGC (ECR watch retention), 587 videos | 440 | **0.62** | 0.66 | 0.60 |
 
-Reading: aesthetics is learnable (0.69–0.76). With enough data the brain bottleneck **saturates below** a width-matched PCA of the raw embedding (0.69 vs 0.73), i.e. pooling predicted cortex into 9 regions discards information the embedding keeps; adding the brain features on top of PCA still helps a little (0.75 vs 0.73). So the honest claim is: **the brain prior buys interpretability, not accuracy**; the shipped `aesthetic` head is the TRIBE 54-d one because every chip it shows ("▲ 보상·가치 후반") is a real coefficient on a named region. A hybrid head is the obvious next step if accuracy matters more than explanation. **Richer brain features:** the service now also returns per-area means and slopes for all 360 HCP-MMP1 areas (720-d, `roi_area_feats`), to test whether the information loss is the 9-group pooling rather than the brain prior itself (experiment on 600 AADB images in `features/aadb_area.npz`, results below once run). With 4× more data, watch retention became learnable (0.62 brain / 0.66 raw) and here the 9-region brain features beat the width-matched PCA (0.62 vs 0.60), consistent with attention-related cortex carrying temporal information a static embedding pools away. Downloads-per-view stays weak (0.57–0.58). Heads are calibrated, so the agent's confidence tracks these numbers.
+Reading: aesthetics is learnable (0.69–0.76). With enough data the brain bottleneck **saturates below** a width-matched PCA of the raw embedding (0.69 vs 0.73), i.e. pooling predicted cortex into 9 regions discards information the embedding keeps; adding the brain features on top of PCA still helps a little (0.75 vs 0.73). So the honest claim is: **the brain prior buys interpretability, not accuracy**; the shipped `aesthetic` head is the TRIBE 54-d one because every chip it shows ("▲ 보상·가치 후반") is a real coefficient on a named region. A hybrid head is the obvious next step if accuracy matters more than explanation. **Richer brain features:** the service now also returns per-area means and slopes for all 360 HCP-MMP1 areas (720-d, `roi_area_feats`), to test whether the information loss is the 9-group pooling rather than the brain prior itself Result on 600 AADB images, 5-fold CV, linear heads:
+
+| features | AUROC |
+|---|---|
+| TRIBE 9 groups × 6 stats (54-d, shipped so far) | 0.669 |
+| TRIBE 360 area means (360-d) | 0.708 |
+| TRIBE 360 areas mean+slope (720-d) | 0.711 |
+| **TRIBE area means → PCA-54** | **0.753** |
+| raw V-JEPA2 (1408-d) | 0.728 |
+| raw → PCA-54 | 0.722 |
+| raw → PCA-108 | 0.717 |
+
+So the loss was the pooling: per-area brain features compressed to 54 dims **beat the raw embedding** at the same width and even the full embedding. The brain prior earns accuracy *and* interpretability once we stop averaging 180 areas into 9 buckets. Being confirmed on all 2,500 images; the heads are being switched to area-PCA features with contributions back-projected to named areas. With 4× more data, watch retention became learnable (0.62 brain / 0.66 raw) and here the 9-region brain features beat the width-matched PCA (0.62 vs 0.60), consistent with attention-related cortex carrying temporal information a static embedding pools away. Downloads-per-view stays weak (0.57–0.58). Heads are calibrated, so the agent's confidence tracks these numbers.
 
 Trained heads (`heads/`, 2026-11-02): aesthetic AUROC 0.67 / ECE 0.03 (n=1,492); attention 0.65 / ECE 0.06 (n=365); appeal 0.58 / ECE 0.04 (n=910); popularity 0.59 / ECE 0.05 (n=910). (Unsplash Lite's `featured` flag was tried as an editorial-quality label and dropped: 98% positive.) Feature stores: 4,587 items across the three datasets.
 

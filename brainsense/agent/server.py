@@ -96,7 +96,8 @@ def analyze(inp: AnalyzeIn) -> dict[str, Any]:
     res = _tribe_call({"video_b64": inp.video_b64, "filename": inp.filename,
                        "item_id": inp.item_id, "with_raw_embed": False,
                        "transcribe": inp.transcribe, "bf16": True})
-    cache.put(inp.item_id, np.asarray(res["roi_feats"], dtype=np.float32))
+    cache.put(inp.item_id, np.asarray(res["roi_feats"], dtype=np.float32),
+              area=np.asarray(res.get("roi_area_feats") or [], dtype=np.float32))
     roi_ts[inp.item_id] = res.get("roi_ts") or {}
     _ROI_DIR.mkdir(parents=True, exist_ok=True)
     import json as _json

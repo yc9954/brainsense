@@ -1,0 +1,135 @@
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /Users/yuchanlee/brainsense-hackathon/brainsense/brainsense/loop/optimize.py │
+│ :50 in run                                                                   │
+│                                                                              │
+│   47 │   for r in range(1, rounds + 1):                                      │
+│   48 │   │   # variants of a round are independent → generate/render/score   │
+│      them in parallel                                                        │
+│   49 │   │   with ThreadPoolExecutor(max_workers=max(1, min(variants,        │
+│      parallel))) as ex:                                                      │
+│ ❱ 50 │   │   │   recs = [rec for rec in ex.map(lambda v: one(r, v), range(1, │
+│      variants + 1)) if rec]                                                  │
+│   51 │   │   for rec in sorted(recs, key=lambda x: x["variant"]):            │
+│   52 │   │   │   history.append(rec)                                         │
+│   53 │   │   │   print(f"[bold]{rec['tag']}[/]                               │
+│      ui_score={rec['ui_score']:.3f}  {rec['explanation']}                    │
+│      ({rec['seconds']}s)")                                                   │
+│                                                                              │
+│ /Users/yuchanlee/.local/share/uv/python/cpython-3.12.13-macos-aarch64-none/l │
+│ ib/python3.12/concurrent/futures/_base.py:619 in result_iterator             │
+│                                                                              │
+│   616 │   │   │   │   while fs:                                              │
+│   617 │   │   │   │   │   # Careful not to keep a reference to the popped    │
+│       future                                                                 │
+│   618 │   │   │   │   │   if timeout is None:                                │
+│ ❱ 619 │   │   │   │   │   │   yield _result_or_cancel(fs.pop())              │
+│   620 │   │   │   │   │   else:                                              │
+│   621 │   │   │   │   │   │   yield _result_or_cancel(fs.pop(), end_time -   │
+│       time.monotonic())                                                      │
+│   622 │   │   │   finally:                                                   │
+│                                                                              │
+│ /Users/yuchanlee/.local/share/uv/python/cpython-3.12.13-macos-aarch64-none/l │
+│ ib/python3.12/concurrent/futures/_base.py:317 in _result_or_cancel           │
+│                                                                              │
+│   314 def _result_or_cancel(fut, timeout=None):                              │
+│   315 │   try:                                                               │
+│   316 │   │   try:                                                           │
+│ ❱ 317 │   │   │   return fut.result(timeout)                                 │
+│   318 │   │   finally:                                                       │
+│   319 │   │   │   fut.cancel()                                               │
+│   320 │   finally:                                                           │
+│                                                                              │
+│ /Users/yuchanlee/.local/share/uv/python/cpython-3.12.13-macos-aarch64-none/l │
+│ ib/python3.12/concurrent/futures/_base.py:456 in result                      │
+│                                                                              │
+│   453 │   │   │   │   if self._state in [CANCELLED, CANCELLED_AND_NOTIFIED]: │
+│   454 │   │   │   │   │   raise CancelledError()                             │
+│   455 │   │   │   │   elif self._state == FINISHED:                          │
+│ ❱ 456 │   │   │   │   │   return self.__get_result()                         │
+│   457 │   │   │   │   else:                                                  │
+│   458 │   │   │   │   │   raise TimeoutError()                               │
+│   459 │   │   finally:                                                       │
+│                                                                              │
+│ /Users/yuchanlee/.local/share/uv/python/cpython-3.12.13-macos-aarch64-none/l │
+│ ib/python3.12/concurrent/futures/_base.py:401 in __get_result                │
+│                                                                              │
+│   398 │   def __get_result(self):                                            │
+│   399 │   │   if self._exception:                                            │
+│   400 │   │   │   try:                                                       │
+│ ❱ 401 │   │   │   │   raise self._exception                                  │
+│   402 │   │   │   finally:                                                   │
+│   403 │   │   │   │   # Break a reference cycle with the exception in        │
+│       self._exception                                                        │
+│   404 │   │   │   │   self = None                                            │
+│                                                                              │
+│ /Users/yuchanlee/.local/share/uv/python/cpython-3.12.13-macos-aarch64-none/l │
+│ ib/python3.12/concurrent/futures/thread.py:59 in run                         │
+│                                                                              │
+│    56 │   │   │   return                                                     │
+│    57 │   │                                                                  │
+│    58 │   │   try:                                                           │
+│ ❱  59 │   │   │   result = self.fn(*self.args, **self.kwargs)                │
+│    60 │   │   except BaseException as exc:                                   │
+│    61 │   │   │   self.future.set_exception(exc)                             │
+│    62 │   │   │   # Break a reference cycle with the exception 'exc'         │
+│                                                                              │
+│ /Users/yuchanlee/brainsense-hackathon/brainsense/brainsense/loop/optimize.py │
+│ :50 in <lambda>                                                              │
+│                                                                              │
+│   47 │   for r in range(1, rounds + 1):                                      │
+│   48 │   │   # variants of a round are independent → generate/render/score   │
+│      them in parallel                                                        │
+│   49 │   │   with ThreadPoolExecutor(max_workers=max(1, min(variants,        │
+│      parallel))) as ex:                                                      │
+│ ❱ 50 │   │   │   recs = [rec for rec in ex.map(lambda v: one(r, v), range(1, │
+│      variants + 1)) if rec]                                                  │
+│   51 │   │   for rec in sorted(recs, key=lambda x: x["variant"]):            │
+│   52 │   │   │   history.append(rec)                                         │
+│   53 │   │   │   print(f"[bold]{rec['tag']}[/]                               │
+│      ui_score={rec['ui_score']:.3f}  {rec['explanation']}                    │
+│      ({rec['seconds']}s)")                                                   │
+│                                                                              │
+│ /Users/yuchanlee/brainsense-hackathon/brainsense/brainsense/loop/optimize.py │
+│ :43 in one                                                                   │
+│                                                                              │
+│   40 │   │   │   return None                                                 │
+│   41 │   │   (run_dir / f"{tag}.html").write_text(html, encoding="utf-8")    │
+│   42 │   │   png = render_html(html, run_dir / f"{tag}.png")                 │
+│ ❱ 43 │   │   sc = score_image(png, f"loop_{run_dir.name}_{tag}", brief=brief │
+│      if judge else None, judge_weight=judge_weight)                          │
+│   44 │   │   return {"round": r, "variant": v, "tag": tag, "ui_score":       │
+│      sc.ui_score, "heads": sc.heads,                                         │
+│   45 │   │   │   │   "explanation": sc.explanation, "html_excerpt":          │
+│      html[:800], "seconds": round(time.time() - t0, 1)}                      │
+│   46                                                                         │
+│                                                                              │
+│ /Users/yuchanlee/brainsense-hackathon/brainsense/brainsense/loop/score.py:47 │
+│ in score_image                                                               │
+│                                                                              │
+│   44 │   data = base64.b64encode(Path(png).read_bytes()).decode()            │
+│   45 │   with httpx.Client(timeout=timeout_s) as c:                          │
+│   46 │   │   r = c.post(f"{SERVER}/analyze", json={"video_b64": data,        │
+│      "filename": Path(png).name, "item_id": item_id})                        │
+│ ❱ 47 │   │   r.raise_for_status()                                            │
+│   48 │   │   ev = c.get(f"{SERVER}/eval/{item_id}")                          │
+│   49 │   │   ev.raise_for_status()                                           │
+│   50 │   heads = ev.json()["heads"]                                          │
+│                                                                              │
+│ /Users/yuchanlee/brainsense-hackathon/brainsense/.venv/lib/python3.12/site-p │
+│ ackages/httpx/_models.py:829 in raise_for_status                             │
+│                                                                              │
+│    826 │   │   }                                                             │
+│    827 │   │   error_type = error_types.get(status_class, "Invalid status    │
+│        code")                                                                │
+│    828 │   │   message = message.format(self, error_type=error_type)         │
+│ ❱  829 │   │   raise HTTPStatusError(message, request=request,               │
+│        response=self)                                                        │
+│    830 │                                                                     │
+│    831 │   def json(self, **kwargs: typing.Any) -> typing.Any:               │
+│    832 │   │   return jsonlib.loads(self.content, **kwargs)                  │
+╰──────────────────────────────────────────────────────────────────────────────╯
+HTTPStatusError: Server error '500 Internal Server Error' for url 
+'http://localhost:8000/analyze'
+For more information check: 
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500
+EXIT 1

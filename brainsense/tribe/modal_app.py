@@ -58,8 +58,13 @@ def _hf_secret() -> modal.Secret:
         return modal.Secret.from_dict({})
 
 
+# BRAINSENSE_WARM=1 keeps one GPU container resident (no 70 s cold start, ~$2/h on L40S): set it
+# before `modal deploy` for a demo window, unset and redeploy afterwards.
+WARM = int(os.environ.get("BRAINSENSE_WARM", "0"))
+
+
 @app.cls(gpu=GPU, volumes={CACHE: vol}, secrets=[_hf_secret()],
-         timeout=900, scaledown_window=300, max_containers=8)
+         timeout=900, scaledown_window=300, max_containers=8, min_containers=WARM)
 class Tribe:
     @modal.enter()
     def load(self) -> None:

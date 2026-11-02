@@ -11,6 +11,7 @@ from pathlib import Path
 
 import typer
 from rich import print
+from rich.markup import escape
 from rich.table import Table
 
 from .render import chrome_path, render_html
@@ -39,7 +40,7 @@ def compare(sources: list[str] = typer.Argument(...), out: Path = typer.Option(P
         png = _render_any(src, out / f"{stamp}_{i}.png")
         sc = score_image(png, f"ab_{stamp}_{i}")
         rows.append((src, sc))
-        print(f"[bold]{src}[/] → ui_score {sc.ui_score:.3f} · {sc.explanation}")
+        print(f"[bold]{escape(src)}[/] → ui_score {sc.ui_score:.3f} · {escape(sc.explanation)}")
     tbl = Table(title="A/B by brain heads")
     for c in ("source", "ui_score", "aesthetic", "attention"):
         tbl.add_column(c)

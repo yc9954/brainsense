@@ -12,6 +12,7 @@ from pathlib import Path
 
 import typer
 from rich import print
+from rich.markup import escape
 from rich.table import Table
 
 from .generate import GenerationError, generate_page
@@ -36,7 +37,7 @@ def run(brief: str = typer.Option(..., help="what to build"),
         try:
             html = generate_page(brief, history, v)
         except GenerationError as e:
-            print(f"[red]{tag} skipped: {e}[/]")
+            print(f"[red]{tag} skipped: {escape(str(e))}[/]")
             return None
         (run_dir / f"{tag}.html").write_text(html, encoding="utf-8")
         png = render_html(html, run_dir / f"{tag}.png")
@@ -50,7 +51,7 @@ def run(brief: str = typer.Option(..., help="what to build"),
             recs = [rec for rec in ex.map(lambda v: one(r, v), range(1, variants + 1)) if rec]
         for rec in sorted(recs, key=lambda x: x["variant"]):
             history.append(rec)
-            print(f"[bold]{rec['tag']}[/] ui_score={rec['ui_score']:.3f}  {rec['explanation']}  ({rec['seconds']}s)")
+            print(f"[bold]{rec['tag']}[/] ui_score={rec['ui_score']:.3f}  {escape(rec['explanation'])}  ({rec['seconds']}s)")
         (run_dir / "history.json").write_text(json.dumps(history, ensure_ascii=False, indent=1))
     board = sorted(history, key=lambda h: -h["ui_score"])
     tbl = Table(title=f"leaderboard · {run_dir}")

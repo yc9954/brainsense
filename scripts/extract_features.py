@@ -41,6 +41,7 @@ def extract(manifest: str, out: str, with_raw: bool = True, transcribe: bool = T
             print(f"{i}/{len(todo)} last timing={res['timing']}")
 
     ids, y, roi, raw, split, area = [], [], [], [], [], []
+    area_names: list[str] = []
     for r in df.itertuples():
         p = cache / f"{r.item_id}.json"
         if not p.exists():
@@ -50,8 +51,10 @@ def extract(manifest: str, out: str, with_raw: bool = True, transcribe: bool = T
             continue
         ids.append(r.item_id); y.append(r.label); roi.append(d["roi_feats"]); raw.append(d["raw_embed"]); split.append(r.split)
         area.append(d.get("roi_area_feats") or [])
+        area_names = area_names or d.get("roi_area_names") or []
     Path(out).parent.mkdir(parents=True, exist_ok=True)
     np.savez(out, ids=np.array(ids), y=np.array(y, dtype=np.float32), tribe_roi=np.array(roi, dtype=np.float32),
              raw_embed=np.array(raw, dtype=np.float32), split=np.array(split),
-             roi_area=np.array(area, dtype=np.float32) if area and all(len(a) == len(area[0]) and len(a) for a in area) else np.zeros((len(ids), 0), np.float32))
+             roi_area=np.array(area, dtype=np.float32) if area and all(len(a) == len(area[0]) and len(a) for a in area) else np.zeros((len(ids), 0), np.float32),
+             roi_area_names=np.array(area_names))
     print(f"wrote {out}: N={len(ids)}")
