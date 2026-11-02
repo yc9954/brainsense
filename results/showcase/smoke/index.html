@@ -1,0 +1,15 @@
+<!doctype html><html lang=ko><head><meta charset=utf-8><title>BrainSense showcase · smoke</title>
+<style>body{font-family:-apple-system,Pretendard,sans-serif;background:#0b0b0f;color:#eee;margin:0;padding:32px}
+h1{font-weight:600;font-size:22px} h2{font-size:16px;font-weight:600;margin:40px 0 6px} .brief{color:#aaa;font-size:13px;max-width:900px}
+.row{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:14px} .card{background:#15151b;border-radius:14px;overflow:hidden;border:1px solid #23232b}
+.card.win{border-color:#ff6a2b;box-shadow:0 0 0 1px #ff6a2b} .card img{width:100%;display:block;aspect-ratio:1.6;object-fit:cover;object-position:top}
+.meta{padding:12px 14px;font-size:12.5px;line-height:1.5} .arm{font-weight:600;font-size:13px} .k{color:#8b8b96} .diag{color:#c9c9d2;margin-top:6px}
+.verdict{margin-top:10px;font-size:13px;color:#ffb38a} .tiny{font-size:11px;color:#777}</style></head><body>
+<h1>BrainSense showcase — 같은 브리프, 같은 생성 예산, 피드백만 다르게</h1>
+<p class=brief>rounds 1 × variants 2. oneshot = Muse Spark 한 번. muse_loop = Muse가 자기 스크린샷을 스스로 평가해 고치는 루프. brain_loop = TRIBE v2 예측 피질 반응 → 전문가 비평(skills) → Muse가 고치는 루프. 최종 비교는 순서를 바꿔 두 번 묻는 블라인드 판정.</p>
+<h2>popup</h2><div class=brief>서울 성수동 3일 한정 팝업스토어 &#x27;스윗스팟 x 로컬 로스터리&#x27; 랜딩 첫 화면. 날짜·장소·사전예약 CTA. 20대 후반 여성 타깃, 감각적이지만 정보가 바로 읽혀야 함.</div><div class=row>
+<div class='card'><a href='popup/oneshot_r1v1.png' target=_blank><img src='popup/oneshot_r1v1.png'></a><div class=meta><div class=arm>Muse 한 번 (베이스라인)</div><div class=k>brain ui_score 0.574 · aesthetic top 37% · attention top 36%</div><div class=diag>물체 형태(LO)·움직임(MT) 반응이 낮음: 뚜렷한 사물 실루엣이 없는 텍스트 위주 화면</div><div class=verdict>블라인드 판정 P(brain_loop 승) = 0.48</div><div class=tiny>B는 3일 한정·날짜·시간·장소를 카드로 즉시 전달하고 굿즈 증정 CTA로 단일 초점을 만들어 A보다 전환에 유리하다. | swapped: B는 날짜·시간·장소를 한눈에 전달하고 단일 딸기라떼 비주얼과 구체적 한정 메뉴로 3초 명확성과 구매 욕구가 더 높다</div></div></div>
+<div class='card'><a href='popup/muse_loop_r1v1.png' target=_blank><img src='popup/muse_loop_r1v1.png'></a><div class=meta><div class=arm>Muse 자기평가 루프</div><div class=k>brain ui_score 0.503 · aesthetic top 54% · attention top 43%</div><div class=diag>물체 형태(LO)·움직임(MT) 반응이 낮음: 뚜렷한 사물 실루엣이 없는 텍스트 위주 화면<br>장소 영역(PPA)이 우세: 배경 풍경이 화면을 지배해 내용이 묻힘<br>주의 네트워크(IPS/FEF)가 바쁨: 시선을 끄는 후보가 여러 개 → 경쟁</div><div class=verdict>블라인드 판정 P(brain_loop 승) = 0.12</div><div class=tiny>B wins because its 40%-off signature price, welcome-kit CTA, and ONLY 3-day urgency create a single desirable focal point while date, place and reservation action stay instantly readable for the target. | swapped: A deli</div></div></div>
+<div class='card'><a href='popup/brain_loop_r1v1.png' target=_blank><img src='popup/brain_loop_r1v1.png'></a><div class=meta><div class=arm>BrainSense 루프 (우리)</div><div class=k>brain ui_score 0.549 · aesthetic top 44% · attention top 37%</div><div class=diag>물체 형태(LO)·움직임(MT) 반응이 낮음: 뚜렷한 사물 실루엣이 없는 텍스트 위주 화면<br>장소 영역(PPA)이 우세: 배경 풍경이 화면을 지배해 내용이 묻힘<br>보상 회로(OFC/vmPFC)는 켜졌는데 끌림 헤드는 평범: 가치 신호가 있지만 무엇이 좋은지 읽히지 않음</div></div></div>
+</div>
+</body></html>

@@ -1,0 +1,553 @@
+{
+ "rounds": 1,
+ "variants": 2,
+ "briefs": {
+  "popup": {
+   "brief": "서울 성수동 3일 한정 팝업스토어 '스윗스팟 x 로컬 로스터리' 랜딩 첫 화면. 날짜·장소·사전예약 CTA. 20대 후반 여성 타깃, 감각적이지만 정보가 바로 읽혀야 함.",
+   "kind": "landing",
+   "arms": {
+    "oneshot": {
+     "arm": "oneshot",
+     "best": "oneshot_r1v1",
+     "best_png": "results/showcase/smoke/popup/oneshot_r1v1.png",
+     "history": [
+      {
+       "arm": "oneshot",
+       "round": 1,
+       "variant": 1,
+       "tag": "oneshot_r1v1",
+       "png": "results/showcase/smoke/popup/oneshot_r1v1.png",
+       "critique_in": "",
+       "seconds_gen": 46.6,
+       "select_score": 0.7777777777777778,
+       "judge": {
+        "aesthetic": 0.7777777777777778,
+        "clarity": 0.8888888888888888,
+        "attention": 0.5555555555555556,
+        "brief_fit": 0.8888888888888888,
+        "judge_score": 0.7777777777777778,
+        "reason": "Date, place, and pre-booking CTA are instantly readable in a cute feminine system, but the large cup illustration plus many badges and cards split focus from the headline."
+       },
+       "seconds": 50.8
+      }
+     ]
+    },
+    "muse_loop": {
+     "arm": "muse_loop",
+     "best": "muse_loop_r1v1",
+     "best_png": "results/showcase/smoke/popup/muse_loop_r1v1.png",
+     "history": [
+      {
+       "arm": "muse_loop",
+       "round": 1,
+       "variant": 1,
+       "tag": "muse_loop_r1v1",
+       "png": "results/showcase/smoke/popup/muse_loop_r1v1.png",
+       "critique_in": "",
+       "seconds_gen": 52.4,
+       "select_score": 0.75,
+       "judge": {
+        "aesthetic": 0.7777777777777778,
+        "clarity": 0.7777777777777778,
+        "attention": 0.5555555555555556,
+        "brief_fit": 0.8888888888888888,
+        "judge_score": 0.75,
+        "reason": "Sensory pink-cream system fits 20s female target with instantly readable date, place and reservation CTA, but competing stickers and cards weaken single focal pull."
+       },
+       "seconds": 56.6
+      },
+      {
+       "arm": "muse_loop",
+       "round": 1,
+       "variant": 2,
+       "tag": "muse_loop_r1v2",
+       "png": "results/showcase/smoke/popup/muse_loop_r1v2.png",
+       "critique_in": "",
+       "seconds_gen": 58.3,
+       "select_score": 0.75,
+       "judge": {
+        "aesthetic": 0.7777777777777778,
+        "clarity": 0.7777777777777778,
+        "attention": 0.5555555555555556,
+        "brief_fit": 0.8888888888888888,
+        "judge_score": 0.75,
+        "reason": "감각적인 레트로 무드와 날짜·장소·CTA 정보는 훌륭하지만 스티커와 배지가 많아 시선이 분산된다."
+       },
+       "seconds": 62.1
+      }
+     ]
+    },
+    "brain_loop": {
+     "arm": "brain_loop",
+     "best": "brain_loop_r1v1",
+     "best_png": "results/showcase/smoke/popup/brain_loop_r1v1.png",
+     "history": [
+      {
+       "arm": "brain_loop",
+       "round": 1,
+       "variant": 1,
+       "tag": "brain_loop_r1v1",
+       "png": "results/showcase/smoke/popup/brain_loop_r1v1.png",
+       "critique_in": "",
+       "seconds_gen": 39.9,
+       "select_score": 0.6492913697424267,
+       "heads": {
+        "aesthetic": {
+         "score": 0.5113435983657837,
+         "percentile": 56.166219839142094,
+         "confidence": 0.022687196731567383,
+         "top": "▼ L_a24, ▼ R_23d"
+        },
+        "attention": {
+         "score": 0.5698686838150024,
+         "percentile": 63.013698630136986,
+         "confidence": 0.13973736763000488,
+         "top": "▲ 움직임·형태 평균, ▲ 기본 시각 평균"
+        },
+        "judge": {
+         "aesthetic": 0.778,
+         "clarity": 0.778,
+         "attention": 0.556,
+         "brief_fit": 0.889,
+         "judge_score": 0.75,
+         "reason": "Playful sticker-style visuals nail the late-20s feminine vibe and surface date, place, and CTA instantly, though competing floating cards weaken the single focal hierarchy."
+        }
+       },
+       "explanation": "aesthetic: 상위 44% (확신 0.02; ▼ L_a24, ▼ R_23d) · attention: 상위 37% (확신 0.14; ▲ 움직임·형태 평균, ▲ 기본 시각 평균) · judge 0.75 (미학 0.78, 명확성 0.78, 주목 0.56, 브리프 0.89): Playful sticker-style visuals nail the late-20s feminine vibe and surface date, place, and CTA instantly, though competing floating cards weaken the single focal hierarchy.",
+       "critique": {
+        "kind": "landing",
+        "ranking": [
+         [
+          "scene_place",
+          1.1505144427156766
+         ],
+         [
+          "value_vmpfc",
+          0.7098797775174798
+         ],
+         [
+          "attention_dorsal",
+          0.6429875641314485
+         ],
+         [
+          "control_dlpfc",
+          0.3993291187763734
+         ],
+         [
+          "face_body",
+          0.10244155042900945
+         ],
+         [
+          "language",
+          -0.3350619898872879
+         ],
+         [
+          "visual_early",
+          -0.5112589264232595
+         ],
+         [
+          "default_mode",
+          -0.5582257996517496
+         ],
+         [
+          "visual_motion",
+          -1.6006057376076905
+         ]
+        ],
+        "hook": {
+         "attention_early": 0.7437528557852999,
+         "attention_late": 0.5926049183045229,
+         "visual_early": 0.2595670899570487,
+         "visual_late": -0.8966719346134138
+        },
+        "diagnosis": [
+         "물체 형태(LO)·움직임(MT) 반응이 낮음: 뚜렷한 사물 실루엣이 없는 텍스트 위주 화면",
+         "장소 영역(PPA)이 우세: 배경 풍경이 화면을 지배해 내용이 묻힘",
+         "보상 회로(OFC/vmPFC)는 켜졌는데 끌림 헤드는 평범: 가치 신호가 있지만 무엇이 좋은지 읽히지 않음",
+         "주의 반응이 첫 2초 이후 꺼짐 (+0.74 → +0.59): 첫인상 뒤에 볼 게 없음"
+        ],
+        "directives": [
+         "Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion.",
+         "Simplify the environment: crop or blur the scene, put copy on a solid panel, let one subject own the frame.",
+         "Name the value explicitly next to what the eye lands on: one benefit line + price/offer under the hero, nothing else competing.",
+         "Add a second discovery after the hero (a detail reveal, micro-illustration, or a strong secondary block) so interest holds past 2 s."
+        ],
+        "cited_areas": [
+         "▼ 좌 전대상 24 (a24) [aesthetic]",
+         "▼ 우 후대상 기본모드 (23d) [aesthetic]",
+         "▲ 움직임·형태(MT/LO) 평균 [attention]",
+         "▲ 1차 시각(V1–V4) 평균 [attention]"
+        ],
+        "prompt_block": "BRAIN CRITIQUE (TRIBE v2 predicted human cortex while looking at the last render; values are relative within this image):\n- most driven regions: 장소·배경(PPA/RSC) +1.15, 보상·가치(OFC/vmPFC) +0.71, 시각 주의(IPS/FEF) +0.64; least: 기본모드(딴생각) -0.56, 움직임·형태(MT/LO) -1.60\n- first-2s hook vs later: attention +0.74 → +0.59, visual drive +0.26 → -0.90\n- areas the aesthetic head cites: ▼ 좌 전대상 24 (a24) [aesthetic]; ▼ 우 후대상 기본모드 (23d) [aesthetic]; ▲ 움직임·형태(MT/LO) 평균 [attention]; ▲ 1차 시각(V1–V4) 평균 [attention]\n- diagnosis: 물체 형태(LO)·움직임(MT) 반응이 낮음: 뚜렷한 사물 실루엣이 없는 텍스트 위주 화면 / 장소 영역(PPA)이 우세: 배경 풍경이 화면을 지배해 내용이 묻힘 / 보상 회로(OFC/vmPFC)는 켜졌는데 끌림 헤드는 평범: 가치 신호가 있지만 무엇이 좋은지 읽히지 않음 / 주의 반응이 첫 2초 이후 꺼짐 (+0.74 → +0.59): 첫인상 뒤에 볼 게 없음\n- DO NEXT (highest priority first): (1) Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion. (2) Simplify the environment: crop or blur the scene, put copy on a solid panel, let one subject own the frame. (3) Name the value explicitly next to what the eye lands on: one benefit line + price/offer under the hero, nothing else competing. (4) Add a second discovery after the hero (a detail reveal, micro-illustration, or a strong secondary block) so interest holds past 2 s."
+       },
+       "seconds": 65.3
+      },
+      {
+       "arm": "brain_loop",
+       "round": 1,
+       "variant": 2,
+       "tag": "brain_loop_r1v2",
+       "png": "results/showcase/smoke/popup/brain_loop_r1v2.png",
+       "critique_in": "",
+       "seconds_gen": 52.6,
+       "select_score": 0.6086729328872664,
+       "heads": {
+        "aesthetic": {
+         "score": 0.3888651728630066,
+         "percentile": 36.46112600536193,
+         "confidence": 0.22226965427398682,
+         "top": "▼ L_a24, ▼ R_23d"
+        },
+        "attention": {
+         "score": 0.5439886450767517,
+         "percentile": 57.80821917808219,
+         "confidence": 0.08797729015350342,
+         "top": "▲ 움직임·형태 평균, ▲ 움직임·형태 최대"
+        },
+        "judge": {
+         "aesthetic": 0.778,
+         "clarity": 0.778,
+         "attention": 0.556,
+         "brief_fit": 0.889,
+         "judge_score": 0.75,
+         "reason": "감각적인 레트로 무드와 날짜·장소·CTA 정보는 명확하지만 스티커·뱃지 남발로 시선이 분산되어 단일 포컬이 약하다."
+        }
+       },
+       "explanation": "aesthetic: 상위 64% (확신 0.22; ▼ L_a24, ▼ R_23d) · attention: 상위 42% (확신 0.09; ▲ 움직임·형태 평균, ▲ 움직임·형태 최대) · judge 0.75 (미학 0.78, 명확성 0.78, 주목 0.56, 브리프 0.89): 감각적인 레트로 무드와 날짜·장소·CTA 정보는 명확하지만 스티커·뱃지 남발로 시선이 분산되어 단일 포컬이 약하다.",
+       "critique": {
+        "kind": "landing",
+        "ranking": [
+         [
+          "scene_place",
+          1.2988717619384775
+         ],
+         [
+          "value_vmpfc",
+          0.7335925360750224
+         ],
+         [
+          "attention_dorsal",
+          0.5223157434619164
+         ],
+         [
+          "control_dlpfc",
+          0.3265700712183421
+         ],
+         [
+          "visual_early",
+          0.15278218984203587
+         ],
+         [
+          "face_body",
+          -0.18890245828765093
+         ],
+         [
+          "language",
+          -0.48747485849501837
+         ],
+         [
+          "default_mode",
+          -0.6449282856895763
+         ],
+         [
+          "visual_motion",
+          -1.7128267000635502
+         ]
+        ],
+        "hook": {
+         "attention_early": 0.5972935659355155,
+         "attention_late": 0.484826832225117,
+         "visual_early": 0.8760503987748605,
+         "visual_late": -0.2088519146243763
+        },
+        "diagnosis": [
+         "물체 형태(LO)·움직임(MT) 반응이 낮음: 뚜렷한 사물 실루엣이 없는 텍스트 위주 화면",
+         "장소 영역(PPA)이 우세: 배경 풍경이 화면을 지배해 내용이 묻힘",
+         "주의 네트워크(IPS/FEF)가 바쁨: 시선을 끄는 후보가 여러 개 → 경쟁",
+         "보상 회로(OFC/vmPFC)는 켜졌는데 끌림 헤드는 평범: 가치 신호가 있지만 무엇이 좋은지 읽히지 않음"
+        ],
+        "directives": [
+         "Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion.",
+         "Simplify the environment: crop or blur the scene, put copy on a solid panel, let one subject own the frame.",
+         "Make a single focal point: one hero element 2–3× larger than anything else; demote secondary cards and badges.",
+         "Name the value explicitly next to what the eye lands on: one benefit line + price/offer under the hero, nothing else competing."
+        ],
+        "cited_areas": [
+         "▼ 좌 전대상 24 (a24) [aesthetic]",
+         "▼ 우 후대상 기본모드 (23d) [aesthetic]",
+         "▲ 움직임·형태(MT/LO) 평균 [attention]",
+         "▲ 움직임·형태(MT/LO) 최대 [attention]"
+        ],
+        "prompt_block": "BRAIN CRITIQUE (TRIBE v2 predicted human cortex while looking at the last render; values are relative within this image):\n- most driven regions: 장소·배경(PPA/RSC) +1.30, 보상·가치(OFC/vmPFC) +0.73, 시각 주의(IPS/FEF) +0.52; least: 기본모드(딴생각) -0.64, 움직임·형태(MT/LO) -1.71\n- first-2s hook vs later: attention +0.60 → +0.48, visual drive +0.88 → -0.21\n- areas the aesthetic head cites: ▼ 좌 전대상 24 (a24) [aesthetic]; ▼ 우 후대상 기본모드 (23d) [aesthetic]; ▲ 움직임·형태(MT/LO) 평균 [attention]; ▲ 움직임·형태(MT/LO) 최대 [attention]\n- diagnosis: 물체 형태(LO)·움직임(MT) 반응이 낮음: 뚜렷한 사물 실루엣이 없는 텍스트 위주 화면 / 장소 영역(PPA)이 우세: 배경 풍경이 화면을 지배해 내용이 묻힘 / 주의 네트워크(IPS/FEF)가 바쁨: 시선을 끄는 후보가 여러 개 → 경쟁 / 보상 회로(OFC/vmPFC)는 켜졌는데 끌림 헤드는 평범: 가치 신호가 있지만 무엇이 좋은지 읽히지 않음\n- DO NEXT (highest priority first): (1) Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion. (2) Simplify the environment: crop or blur the scene, put copy on a solid panel, let one subject own the frame. (3) Make a single focal point: one hero element 2–3× larger than anything else; demote secondary cards and badges. (4) Name the value explicitly next to what the eye lands on: one benefit line + price/offer under the hero, nothing else competing."
+       },
+       "seconds": 83.6
+      }
+     ]
+    }
+   },
+   "final": {
+    "oneshot": {
+     "tag": "oneshot_r1v1",
+     "png": "results/showcase/smoke/popup/oneshot_r1v1.png",
+     "brain_ui_score": 0.5744757474853988,
+     "heads": {
+      "aesthetic": {
+       "score": 0.5571501851081848,
+       "percentile": 62.73458445040214,
+       "confidence": 0.11430037021636963,
+       "top": "▼ L_a24, ▲ L_31a"
+      },
+      "attention": {
+       "score": 0.576506495475769,
+       "percentile": 63.83561643835617,
+       "confidence": 0.15301299095153809,
+       "top": "▲ 기본 시각 평균, ▲ 움직임·형태 평균"
+      }
+     },
+     "critique": {
+      "kind": "landing",
+      "ranking": [
+       [
+        "scene_place",
+        1.225057197747054
+       ],
+       [
+        "value_vmpfc",
+        0.7160723249558151
+       ],
+       [
+        "attention_dorsal",
+        0.6450845984852133
+       ],
+       [
+        "control_dlpfc",
+        0.4476410029981544
+       ],
+       [
+        "face_body",
+        0.09442676885900562
+       ],
+       [
+        "language",
+        -0.282929040274194
+       ],
+       [
+        "default_mode",
+        -0.45738065957644247
+       ],
+       [
+        "visual_early",
+        -0.745355161291192
+       ],
+       [
+        "visual_motion",
+        -1.6426170319034152
+       ]
+      ],
+      "hook": {
+       "attention_early": 0.7019897395426188,
+       "attention_late": 0.6166320279565104,
+       "visual_early": -0.06967846116007816,
+       "visual_late": -1.083193511356749
+      },
+      "diagnosis": [
+       "물체 형태(LO)·움직임(MT) 반응이 낮음: 뚜렷한 사물 실루엣이 없는 텍스트 위주 화면"
+      ],
+      "directives": [
+       "Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion."
+      ],
+      "cited_areas": [
+       "▼ 좌 전대상 24 (a24) [aesthetic]",
+       "▲ 좌 31a [aesthetic]",
+       "▲ 1차 시각(V1–V4) 평균 [attention]",
+       "▲ 움직임·형태(MT/LO) 평균 [attention]"
+      ]
+     }
+    },
+    "muse_loop": {
+     "tag": "muse_loop_r1v1",
+     "png": "results/showcase/smoke/popup/muse_loop_r1v1.png",
+     "brain_ui_score": 0.5034085471166287,
+     "heads": {
+      "aesthetic": {
+       "score": 0.452970027923584,
+       "percentile": 46.24664879356568,
+       "confidence": 0.09405994415283203,
+       "top": "▼ L_a24, ▼ R_23d"
+      },
+      "attention": {
+       "score": 0.5415677428245544,
+       "percentile": 57.26027397260274,
+       "confidence": 0.08313548564910889,
+       "top": "▲ 움직임·형태 평균, ▲ 기본 시각 평균"
+      }
+     },
+     "critique": {
+      "kind": "landing",
+      "ranking": [
+       [
+        "scene_place",
+        1.217768114607052
+       ],
+       [
+        "value_vmpfc",
+        0.6514333765842166
+       ],
+       [
+        "attention_dorsal",
+        0.5666645777071818
+       ],
+       [
+        "control_dlpfc",
+        0.23583537430770374
+       ],
+       [
+        "face_body",
+        0.11214549267778923
+       ],
+       [
+        "visual_early",
+        -0.09664302751350641
+       ],
+       [
+        "language",
+        -0.5818372031871178
+       ],
+       [
+        "default_mode",
+        -0.7902958836940671
+       ],
+       [
+        "visual_motion",
+        -1.3150708214892513
+       ]
+      ],
+      "hook": {
+       "attention_early": 0.6801294291223567,
+       "attention_late": 0.5099321519995943,
+       "visual_early": 0.6910141387057893,
+       "visual_late": -0.49047161062315436
+      },
+      "diagnosis": [
+       "물체 형태(LO)·움직임(MT) 반응이 낮음: 뚜렷한 사물 실루엣이 없는 텍스트 위주 화면",
+       "장소 영역(PPA)이 우세: 배경 풍경이 화면을 지배해 내용이 묻힘",
+       "주의 네트워크(IPS/FEF)가 바쁨: 시선을 끄는 후보가 여러 개 → 경쟁",
+       "보상 회로(OFC/vmPFC)는 켜졌는데 끌림 헤드는 평범: 가치 신호가 있지만 무엇이 좋은지 읽히지 않음",
+       "주의 반응이 첫 2초 이후 꺼짐 (+0.68 → +0.51): 첫인상 뒤에 볼 게 없음"
+      ],
+      "directives": [
+       "Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion.",
+       "Simplify the environment: crop or blur the scene, put copy on a solid panel, let one subject own the frame.",
+       "Make a single focal point: one hero element 2–3× larger than anything else; demote secondary cards and badges.",
+       "Name the value explicitly next to what the eye lands on: one benefit line + price/offer under the hero, nothing else competing."
+      ],
+      "cited_areas": [
+       "▼ 좌 전대상 24 (a24) [aesthetic]",
+       "▼ 우 후대상 기본모드 (23d) [aesthetic]",
+       "▲ 움직임·형태(MT/LO) 평균 [attention]",
+       "▲ 1차 시각(V1–V4) 평균 [attention]"
+      ]
+     }
+    },
+    "brain_loop": {
+     "tag": "brain_loop_r1v1",
+     "png": "results/showcase/smoke/popup/brain_loop_r1v1.png",
+     "brain_ui_score": 0.5485827394848535,
+     "heads": {
+      "aesthetic": {
+       "score": 0.5113435983657837,
+       "percentile": 56.166219839142094,
+       "confidence": 0.022687196731567383,
+       "top": "▼ L_a24, ▼ R_23d"
+      },
+      "attention": {
+       "score": 0.5698686838150024,
+       "percentile": 63.013698630136986,
+       "confidence": 0.13973736763000488,
+       "top": "▲ 움직임·형태 평균, ▲ 기본 시각 평균"
+      }
+     },
+     "critique": {
+      "kind": "landing",
+      "ranking": [
+       [
+        "scene_place",
+        1.1505144427156766
+       ],
+       [
+        "value_vmpfc",
+        0.7098797775174798
+       ],
+       [
+        "attention_dorsal",
+        0.6429875641314485
+       ],
+       [
+        "control_dlpfc",
+        0.3993291187763734
+       ],
+       [
+        "face_body",
+        0.10244155042900945
+       ],
+       [
+        "language",
+        -0.3350619898872879
+       ],
+       [
+        "visual_early",
+        -0.5112589264232595
+       ],
+       [
+        "default_mode",
+        -0.5582257996517496
+       ],
+       [
+        "visual_motion",
+        -1.6006057376076905
+       ]
+      ],
+      "hook": {
+       "attention_early": 0.7437528557852999,
+       "attention_late": 0.5926049183045229,
+       "visual_early": 0.2595670899570487,
+       "visual_late": -0.8966719346134138
+      },
+      "diagnosis": [
+       "물체 형태(LO)·움직임(MT) 반응이 낮음: 뚜렷한 사물 실루엣이 없는 텍스트 위주 화면",
+       "장소 영역(PPA)이 우세: 배경 풍경이 화면을 지배해 내용이 묻힘",
+       "보상 회로(OFC/vmPFC)는 켜졌는데 끌림 헤드는 평범: 가치 신호가 있지만 무엇이 좋은지 읽히지 않음",
+       "주의 반응이 첫 2초 이후 꺼짐 (+0.74 → +0.59): 첫인상 뒤에 볼 게 없음"
+      ],
+      "directives": [
+       "Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion.",
+       "Simplify the environment: crop or blur the scene, put copy on a solid panel, let one subject own the frame.",
+       "Name the value explicitly next to what the eye lands on: one benefit line + price/offer under the hero, nothing else competing.",
+       "Add a second discovery after the hero (a detail reveal, micro-illustration, or a strong secondary block) so interest holds past 2 s."
+      ],
+      "cited_areas": [
+       "▼ 좌 전대상 24 (a24) [aesthetic]",
+       "▼ 우 후대상 기본모드 (23d) [aesthetic]",
+       "▲ 움직임·형태(MT/LO) 평균 [attention]",
+       "▲ 1차 시각(V1–V4) 평균 [attention]"
+      ]
+     }
+    }
+   },
+   "pairwise": {
+    "brain_loop_vs_oneshot": {
+     "p_first": 0.485,
+     "order_ab": 0.15,
+     "order_ba": 0.82,
+     "reason": "B는 3일 한정·날짜·시간·장소를 카드로 즉시 전달하고 굿즈 증정 CTA로 단일 초점을 만들어 A보다 전환에 유리하다. | swapped: B는 날짜·시간·장소를 한눈에 전달하고 단일 딸기라떼 비주얼과 구체적 한정 메뉴로 3초 명확성과 구매 욕구가 더 높다"
+    },
+    "brain_loop_vs_muse_loop": {
+     "p_first": 0.125,
+     "order_ab": 0.15,
+     "order_ba": 0.1,
+     "reason": "B wins because its 40%-off signature price, welcome-kit CTA, and ONLY 3-day urgency create a single desirable focal point while date, place and reservation action stay instantly readable for the target. | swapped: A delivers instant 3-second clarity on date-place-offer with one dominant pink pre-booking CTA plus irresistible 40% discount and social proof that better fits sensuous yet informative brief for late-20s women."
+    }
+   }
+  }
+ }
+}
