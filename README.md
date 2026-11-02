@@ -146,8 +146,11 @@ node ../openmuse/scripts/lan-proxy.mjs                                   # 0.0.0
 # iPhone browser: open http://<laptop-ip>:8081 in Safari (the web build already running); API + assets auto-route to :8788.
 #   Safari over plain http cannot open a live camera, so glasses mode there uses the phone's own camera app
 #   (tap → shoot → '사용'); photos are turned into 6 s clips server-side.
-# Expo Go (live camera):
-pnpm --dir ../openmuse/apps/mobile exec expo start --port 8082           # scan the QR with Expo Go; the app derives http://<laptop-ip>:8788 from the Metro host
+# Live camera on the iPhone WITHOUT Expo Go (the App Store Expo Go is SDK 58, this project is SDK 54):
+node ../openmuse/scripts/lan-https.mjs                                   # https://<laptop-ip>:8443 = Metro web + API + assets on one secure origin (self-signed cert)
+#   on the phone open https://<laptop-ip>:8443, accept the certificate warning once → "+" → 글래스 모드 → live rolling camera
+# Expo Go (only if your Expo Go matches SDK 54, e.g. a simulator build):
+pnpm --dir ../openmuse/apps/mobile exec expo start --port 8082 --go      # scan the QR; the app derives http://<laptop-ip>:8788 from the Metro host
 ```
 The Wearables Device Access Toolkit's Mock Device Kit is the SDK-level equivalent (phone camera or a video file streamed through the glasses API); the emulator mode uses the same clip-per-question flow without the SDK dependency.
 
