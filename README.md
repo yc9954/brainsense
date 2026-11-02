@@ -106,6 +106,8 @@ A: 오케이 별로로 저장했어 다음부터 네 취향 반영해서 더 잘
 Grounding works as designed: the number it quotes (0.53 / 상위 65% / 신뢰도 0.05) is the `appeal` head output, and it declines to opine when confidence is low. Note: Muse counts reasoning tokens against `max_tokens`; the loop uses 1024 and never stores an empty assistant turn.
 
 ## App UI (OpenMuse)
+**Look (2026-11-03):** the whole app is restyled in the visual language of Meta's TRIBE v2 site: black canvas, white type, two greys and one red for data, thin outlined cards and icon tiles, no mascot, no emoji. Three tabs only: **대화** (the OpenMuse chat with glasses mode inside), **실험** (a brain lab: pick a stimulus, run TRIBE + heads, answer 좋아/별로 to refit the personal head and watch crowd-vs-you move) and **소개** (what it is, the pipeline figure, measured numbers, limits). The brain card shows its numbers as the site's bar chart (score / confidence / percentile per head) with a written analysis line per head (driver areas as + / −) and the server's critique when present.
+
 The UI *is* [CopilotKit/OpenMuse](https://github.com/CopilotKit/openmuse) (React Native + Expo + Hono, MIT), cloned to `../openmuse` with its chat home, sidebar, thinking process, activity/ideas/goals/apps tabs untouched. BrainSense is not a tab: it is a server tool the agent reaches for mid-conversation plus a prompt that makes the agent speak as its own brain (see below).
 ```bash
 # 1. agent server (this repo): heads, TRIBE proxy, /assets/fsaverage5_pial.bin for the 3D cortex
