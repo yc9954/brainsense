@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>YOYAK 요악 — 요금제 | AI 회의록</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+--bg:#0A0D1F;
+--panel:#141834;
+--panel2:#171C3D;
+--line:rgba(255,255,255,.12);
+--lime:#E9FF4D;
+--lime2:#CFFF00;
+--txt:#FFFFFF;
+--mut:#BFC5DE;
+--mut2:#8E96B8;
+}
+html{-webkit-text-size-adjust:100%}
+body{font-family:"Noto Sans KR",system-ui,sans-serif;background:var(--bg);color:var(--txt);font-size:16px;line-height:1.6;min-height:100vh;overflow-x:hidden}
+body::before{content:"PRICING";position:absolute;top:58px;left:50%;transform:translateX(-50%);font-family:"Space Grotesk",sans-serif;font-weight:700;font-size:148px;letter-spacing:.02em;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.07);pointer-events:none;white-space:nowrap}
+.bg{position:fixed;inset:0;z-index:-2;background:
+radial-gradient(720px 420px at 18% 0%,rgba(124,92,255,.35),transparent 60%),
+radial-gradient(680px 420px at 85% 10%,rgba(0,229,168,.18),transparent 60%),
+radial-gradient(900px 600px at 50% 110%,rgba(233,255,77,.10),transparent 60%),
+linear-gradient(180deg,#0A0D1F 0%,#0C1028 100%)}
+.gridbg{position:fixed;inset:0;z-index:-1;background-image:linear-gradient(rgba(255,255,255,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.055) 1px,transparent 1px);background-size:44px 44px;mask-image:radial-gradient(900px 520px at 50% 0%,black 30%,transparent 75%)}
+.wrap{max-width:1200px;margin:0 auto;padding:0 28px}
+/* NAV */
+nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.brand{display:flex;align-items:center;gap:11px;font-weight:900;font-size:20px;letter-spacing:-.02em}
+.mark{width:34px;height:34px;border-radius:10px;background:var(--lime);display:grid;place-items:center;flex-shrink:0}
+.links{display:flex;gap:28px;font-size:15px;color:var(--mut);font-weight:500}
+.links a{color:inherit;text-decoration:none}
+.links a.on{color:#fff;font-weight:700;border-bottom:2px solid var(--lime);padding-bottom:2px}
+.navcta{display:flex;gap:10px;align-items:center}
+.login{color:#fff;text-decoration:none;font-size:15px;font-weight:600;opacity:.85}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:999px;border:0;cursor:pointer;font-weight:800;font-family:inherit;text-decoration:none;transition:.18s}
+.btn-sm{padding:10px 20px;font-size:15px}
+.btn-lime{background:var(--lime);color:#101300}
+.btn-lime:hover{transform:translateY(-1px);box-shadow:0 8px 28px rgba(233,255,77,.35)}
+.btn-ghost{background:rgba(255,255,255,.08);color:#fff;border:1px solid var(--line)}
+/* HERO */
+.hero{text-align:center;padding:18px 0 18px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13.5px;font-weight:700;letter-spacing:.02em;color:#0E1000;background:var(--lime);border-radius:999px;padding:7px 14px}
+.eyebrow i{width:8px;height:8px;border-radius:50%;background:#0E1000;display:inline-block;animation:blink 1.4s infinite}
+@keyframes blink{50%{opacity:.25}}
+h1{font-size:46px;line-height:1.15;letter-spacing:-.04em;font-weight:900;margin:16px 0 10px}
+h1 .hl{position:relative;white-space:nowrap}
+h1 .hl span{position:relative;z-index:1}
+h1 .hl::after{content:"";position:absolute;left:-4px;right:-4px;bottom:6px;height:16px;background:var(--lime);z-index:0;transform:skew(-12deg);border-radius:3px}
+.sub{color:var(--mut);font-size:17px;max-width:640px;margin:0 auto}
+/* toggle */
+.toggle{display:inline-flex;align-items:center;background:rgba(255,255,255,.07);border:1px solid var(--line);border-radius:999px;padding:5px;margin-top:18px;position:relative}
+.toggle button{border:0;background:transparent;color:var(--mut);font-family:inherit;font-weight:800;font-size:15px;padding:9px 22px;border-radius:999px;cursor:pointer;z-index:1}
+.toggle button.active{background:#fff;color:#0A0D1F}
+.save{font-size:12.5px;font-weight:800;background:#FF5C39;color:#fff;border-radius:999px;padding:3px 8px;margin-left:6px;vertical-align:middle}
+.billnote{font-size:13.5px;color:var(--mut2);margin-top:10px}
+/* PRICING */
+.pricing{display:grid;grid-template-columns:1fr 1.14fr 1fr;gap:18px;align-items:stretch;margin-top:14px;padding-bottom:6px}
+.card{border-radius:22px;padding:26px 26px 24px;border:1px solid var(--line);background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.02));backdrop-filter:blur(8px);display:flex;flex-direction:column;position:relative}
+.card.free,.card.team{background:#141834}
+.card h3{font-size:16px;font-weight:800;letter-spacing:-.01em;display:flex;align-items:center;gap:8px}
+.card h3 .tag{font-size:12px;font-weight:800;padding:4px 9px;border-radius:999px;background:rgba(255,255,255,.1);color:#fff}
+.price{display:flex;align-items:baseline;gap:6px;margin:14px 0 2px}
+.price b{font-family:"Space Grotesk",sans-serif;font-size:38px;letter-spacing:-.04em;line-height:1}
+.price small{font-size:16px;color:var(--mut);font-weight:500}
+.per{font-size:14px;color:var(--mut2)}
+.desc{font-size:15px;color:var(--mut);margin:12px 0 16px;padding-bottom:16px;border-bottom:1px dashed rgba(255,255,255,.16)}
+ul{list-style:none;display:grid;gap:10.5px;font-size:15.5px;margin-bottom:20px}
+li{display:flex;gap:10px;align-items:flex-start;color:#E8EBFF}
+li.dim{color:var(--mut2)}
+.ck{width:20px;height:20px;border-radius:50%;flex-shrink:0;display:grid;place-items:center;margin-top:2px}
+.free .ck,.team .ck{background:rgba(233,255,77,.16);border:1px solid rgba(233,255,77,.4)}
+.cta{margin-top:auto}
+.w100{width:100%;padding:14px;font-size:16px}
+/* PRO */
+.pro{background:var(--lime);color:#131500;border:0;transform:translateY(-10px);box-shadow:0 20px 70px rgba(233,255,77,.28),0 2px 0 #fff inset;border-radius:24px;overflow:hidden}
+.pro::before{content:"";position:absolute;top:-60px;right:-60px;width:220px;height:220px;background:radial-gradient(circle,rgba(0,0,0,.12),transparent 70%);pointer-events:none}
+.pop{position:absolute;top:16px;right:16px;background:#0A0D1F;color:var(--lime);font-size:12px;font-weight:900;letter-spacing:.08em;padding:7px 12px;border-radius:999px;display:flex;align-items:center;gap:6px}
+.pro h3{font-size:17px}
+.pro .price b{font-size:46px}
+.pro .price small,.pro .per,.pro .desc{color:rgba(19,21,0,.7)}
+.pro .desc{border-color:rgba(0,0,0,.18);font-weight:500}
+.pro ul li{color:#131500;font-weight:600}
+.pro .ck{background:#131500}
+.pro .btn-pro{background:#131500;color:var(--lime);width:100%;padding:15px;font-size:16.5px}
+.pro .btn-pro:hover{transform:translateY(-1px);box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.micro{text-align:center;font-size:13.5px;margin-top:10px;opacity:.7;font-weight:600}
+.proof{display:flex;align-items:center;gap:10px;margin-top:14px;background:rgba(0,0,0,.08);border:1px dashed rgba(0,0,0,.25);border-radius:12px;padding:10px 12px;font-size:13.5px;font-weight:700}
+/* TRUST */
+.trust{margin-top:12px;background:rgba(255,255,255,.06);border:1px solid var(--line);border-radius:16px;padding:14px 20px;display:flex;align-items:center;gap:22px}
+.logos{display:flex;align-items:center;gap:22px;flex:1;flex-wrap:nowrap;overflow:hidden}
+.logos em{font-style:normal;font-size:11px;font-weight:800;letter-spacing:.08em;color:var(--mut2);white-space:nowrap}
+.logo{font-weight:900;font-size:17px;color:#fff;opacity:.55;white-space:nowrap;letter-spacing:-.02em}
+.logo.grotesk{font-family:"Space Grotesk",sans-serif}
+.refund{display:flex;align-items:center;gap:12px;background:#fff;color:#0A0D1F;border-radius:12px;padding:9px 14px 9px 10px;white-space:nowrap}
+.shield{width:36px;height:36px;border-radius:10px;background:#0A0D1F;display:grid;place-items:center;flex-shrink:0}
+.refund b{font-size:14.5px;line-height:1.2;display:block}
+.refund span{font-size:13px;color:#525972;display:block;font-weight:500}
+@media(max-width:980px){
+body::before{font-size:72px}
+h1{font-size:34px}
+.links{display:none}
+.pricing{grid-template-columns:1fr}
+.pro{transform:none}
+.trust{flex-direction:column;align-items:stretch}
+}
+:focus-visible{outline:3px solid var(--lime);outline-offset:2px}
+</style>
+</head>
+<body>
+<div class="bg"></div><div class="gridbg"></div>
+<div class="wrap">
+<nav aria-label="상단 메뉴">
+<div class="brand"><span class="mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2" y="7" width="3" height="6" rx="1.5" fill="#0A0D1F"/><rect x="6.5" y="4" width="3" height="12" rx="1.5" fill="#0A0D1F"/><rect x="11" y="7" width="3" height="6" rx="1.5" fill="#0A0D1F"/><rect x="15" y="2.5" width="3" height="15" rx="1.5" fill="#FF4D00"/></svg></span>YOYAK <span style="font-weight:500;color:var(--mut);font-size:15px">요악</span></div>
+<div class="links"><a href="#" class="on">요금제</a><a href="#">기능</a><a href="#">고객 후기</a><a href="#">보안</a><a href="#">고객지원</a></div>
+<div class="navcta"><a class="login" href="#">로그인</a><a class="btn btn-lime btn-sm" href="#">무료로 시작</a></div>
+</nav>
+
+<header class="hero">
+<div class="eyebrow"><i></i> 2,400+ 팀이 회의 시간을 68% 줄였습니다</div>
+<h1>회의록 정리, <span class="hl"><span>야근하지 마세요.</span></span></h1>
+<p class="sub">요악이 Zoom·Meet·오프라인 회의를 자동 기록하고 3분 요약과 할 일까지 뽑아줍니다. Pro 플랜이 가장 많이 선택됩니다.</p>
+<div>
+<div class="toggle" role="tablist" aria-label="결제 주기">
+<button id="bM" class="active" onclick="setBill('m')">월간 결제</button>
+<button id="bY" onclick="setBill('y')">연간 결제 <span class="save">−20%</span></button>
+</div>
+<div class="billnote" id="billnote">부가세 별도 · 언제든 해지 가능 · 연간 결제 시 <b style="color:#fff">2개월 무료</b></div>
+</div>
+</header>
+
+<main class="pricing" aria-label="요금제">
+<!-- FREE -->
+<article class="card free">
+<h3>Free <span class="tag">가볍게 시작</span></h3>
+<div class="price"><b>₩0</b><small>/ 영원히 무료</small></div>
+<div class="per">가입 즉시 사용 · 카드 등록 없음</div>
+<p class="desc">개인 메모용으로 AI 회의록을 처음 써보는 분께.</p>
+<ul>
+<li><span class="ck"><svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.5 4 7.5 10 1" stroke="#E9FF4D" stroke-width="2" stroke-linecap="round"/></svg></span>월 300분 음성 기록</li>
+<li><span class="ck"><svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.5 4 7.5 10 1" stroke="#E9FF4D" stroke-width="2" stroke-linecap="round"/></svg></span>AI 요약 월 10회 · 2개 언어</li>
+<li><span class="ck"><svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.5 4 7.5 10 1" stroke="#E9FF4D" stroke-width="2" stroke-linecap="round"/></svg></span>7일 보관 · 링크 공유</li>
+<li class="dim"><span class="ck" style="border:1px solid rgba(255,255,255,.18);background:transparent"><svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.5 4 7.5 10 1" stroke="#8E96B8" stroke-width="2" stroke-linecap="round"/></svg></span>화자 분리 · 액션아이템 추출 제외</li>
+</ul>
+<div class="cta"><a href="#" class="btn btn-ghost w100">무료로 시작하기</a></div>
+</article>
+
+<!-- PRO -->
+<article class="card pro" aria-label="Pro 추천 요금제">
+<div class="pop">★ MOST LOVED · 78% 선택</div>
+<h3>Pro <span style="font-weight:500;font-size:14px;opacity:.7">개인 · 프리랜서 · 취준생</span></h3>
+<div class="price"><b id="proPrice">₩12,000</b><small>/ 월</small></div>
+<div class="per" id="proPer">월간 결제 · 언제든 해지 가능</div>
+<p class="desc">하루 1시간 회의가 3분 복습으로. 가장 먼저 야근이 사라집니다.</p>
+<ul>
+<li><span class="ck"><svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.5 4 7.5 10 1" stroke="#E9FF4D" stroke-width="2" stroke-linecap="round"/></svg></span>월 1,500분 · 무제한 AI 요약</li>
+<li><span class="ck"><svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.5 4 7.5 10 1" stroke="#E9FF4D" stroke-width="2" stroke-linecap="round"/></svg></span>화자 분리 + 액션아이템 자동 추출</li>
+<li><span class="ck"><svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.5 4 7.5 10 1" stroke="#E9FF4D" stroke-width="2" stroke-linecap="round"/></svg></span>Notion · Slack · 캘린더 연동</li>
+<li><span class="ck"><svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.5 4 7.5 10 1" stroke="#E9FF4D" stroke-width="2" stroke-linecap="round"/></svg></span>무제한 보관 · 키워드 검색</li>
+</ul>
+<div class="cta"><a href="#" class="btn btn-pro">14일 무료 체험하기 →</a>
+<div class="micro">신용카드 등록 없음 · 체험 종료 후 자동 Free 전환</div>
+<div class="proof"><span style="font-size:20px">⚡</span> 평균 리뷰 4.9/5 · “회의록 쓰는데 주 4시간 아꼈어요” — 마케터 김지우님</div>
+</div>
+</article>
+
+<!-- TEAM -->
+<article class="card team">
+<h3>Team <span class="tag" style="background:rgba(0,229,168,.18);color:#4DFFC3;border:1px solid rgba(0,229,168,.35)">팀 협업용</span></h3>
+<div class="price"><b id="teamPrice">₩34,000</b><small>/ 월</small></div>
+<div class="per" id="teamPer">5인 포함 · 인당 추가 ₩7,000</div>
+<p class="desc">공유 워크스페이스로 팀 전체 회의 지식을 자산화.</p>
+<ul>
+<li><span class="ck"><svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.5 4 7.5 10 1" stroke="#E9FF4D" stroke-width="2" stroke-linecap="round"/></svg></span>Pro 모든 기능 + 월 5,000분</li>
+<li><span class="ck"><svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.5 4 7.5 10 1" stroke="#E9FF4D" stroke-width="2" stroke-linecap="round"/></svg></span>공유 폴더 · 권한 관리 · 전사 검색</li>
+<li><span class="ck"><svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.5 4 7.5 10 1" stroke="#E9FF4D" stroke-width="2" stroke-linecap="round"/></svg></span>SSO · 감사 로그 · 데이터 보관 정책</li>
+</ul>
+<div class="cta"><a href="#" class="btn btn-ghost w100">팀 도입 상담하기</a></div>
+</article>
+</main>
+
+<footer class="trust" aria-label="신뢰 요소">
+<div class="logos"><em>TRUSTED BY</em><span class="logo grotesk">toss</span><span class="logo">당근</span><span class="logo">무신사</span><span class="logo grotesk">SOCAR</span><span class="logo">오늘의집</span><span class="logo grotesk">ZIGBANG</span></div>
+<div class="refund"><span class="shield"><svg width="20" height="22" viewBox="0 0 20 22" fill="none"><path d="M10 1 18 5v6c0 5-3.4 8.3-8 10C5.4 19.3 2 16 2 11V5l8-4Z" stroke="#E9FF4D" stroke-width="1.7"/><path d="M6.5 11l2.5 2.5 4.5-5" stroke="#E9FF4D" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><b>14일 100% 환불 보장</b><span>이유 불문 · ISO 27001 · 카드 정보 저장 안 함</span></div></div>
+</footer>
+</div>
+<script>
+function setBill(t){
+const m=t==='m';
+document.getElementById('bM').classList.toggle('active',m);
+document.getElementById('bY').classList.toggle('active',!m);
+document.getElementById('proPrice').textContent=m?'₩12,000':'₩9,600';
+document.getElementById('proPer').textContent=m?'월간 결제 · 언제든 해지 가능':'연간 결제 · 월 환산가 · 2개월 무료';
+document.getElementById('teamPrice').textContent=m?'₩34,000':'₩27,200';
+document.getElementById('teamPer').textContent=m?'5인 포함 · 인당 추가 ₩7,000':'5인 포함 연간가 · 월 환산 · 인당 ₩5,440';
+document.getElementById('billnote').innerHTML=m?'부가세 별도 · 언제든 해지 가능 · 연간 결제 시 <b style="color:#fff">2개월 무료</b>':'연간 결제 적용 중 · <b style="color:#E9FF4D">연 ₩115,200으로 ₩28,800 절약</b> · 언제든 해지';
+}
+</script>
+</body>
+</html>

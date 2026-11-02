@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LUMI LAB — 비타민C 세럼 런칭 30%</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&family=Noto+Serif+KR:wght@800;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+--bg:#EFE8D6; --paper:#F7F2E6; --ink:#1B1611; --muted:#7E7668;
+--line:#DDD3BC; --card:#FFFFFF; --sun:#FFCC33; --sale:#E93A12;
+}
+html,body{height:100%}
+body{
+font-family:"Noto Sans KR",system-ui,sans-serif; background:var(--bg); color:var(--ink);
+font-size:16px; line-height:1.5; -webkit-font-smoothing:antialiased; overflow-x:hidden;
+background-image:radial-gradient(900px 500px at 15% 10%, #FFFBEA 0%, transparent 60%),
+radial-gradient(800px 500px at 90% 90%, #E5D9B8 0%, transparent 60%);
+}
+.page{min-height:100vh; height:100vh; min-height:800px; display:flex; flex-direction:column; position:relative}
+.giant{
+position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+pointer-events:none; user-select:none; overflow:hidden;
+}
+.giant span{
+font-family:"Noto Serif KR",serif; font-weight:900; font-size:22vw; line-height:1;
+color:transparent; -webkit-text-stroke:1.5px #1B161122; letter-spacing:-.04em; transform:translateY(4vh);
+}
+/* header */
+.topbar{
+height:62px; flex:0 0 62px; display:flex; align-items:center; justify-content:space-between;
+padding:0 28px; border-bottom:1px solid var(--line); background:#F9F4E6E6; backdrop-filter:blur(8px); z-index:5;
+}
+.brand{display:flex; align-items:center; gap:12px}
+.mark{width:32px;height:32px;border-radius:50%;background:conic-gradient(from 20deg,#FFCC33,#FF7A00,#E93A12,#FFCC33);display:grid;place-items:center;color:#fff;font-weight:800;font-size:18px;box-shadow:inset 0 0 0 2px #fff}
+.brand b{font-size:17px; letter-spacing:.06em}
+.brand small{font-size:12px; color:var(--muted); border:1px solid var(--line); padding:3px 9px; border-radius:999px; background:#fff}
+.dots{display:flex; gap:8px; align-items:center}
+.dots i{width:28px;height:8px;border-radius:999px;background:#1B1611}
+.dots i.off{width:8px;background:#C6BBA0}
+.top-right{display:flex; align-items:center; gap:12px; font-size:13px; color:var(--muted)}
+.pill-dark{background:var(--ink); color:#fff; border-radius:999px; padding:9px 16px; font-size:13px; font-weight:700; border:0}
+/* stage */
+.stage{flex:1; display:grid; grid-template-columns:230px 1fr 230px; gap:18px; align-items:center; padding:14px 28px 16px; max-width:1280px; width:100%; margin:0 auto; z-index:2}
+.rail{font-size:13px; color:#6E675B; line-height:1.6}
+.rail h4{font-size:11px; letter-spacing:.14em; color:#9A917F; margin-bottom:10px}
+.rail .cardline{background:#FFFDF4; border:1px solid var(--line); border-radius:14px; padding:14px 14px; margin-bottom:12px}
+.rail strong{color:var(--ink)}
+.sw{display:flex; gap:6px; margin-top:10px}
+.sw span{width:22px;height:22px;border-radius:50%;border:2px solid #fff; box-shadow:0 0 0 1px #0001}
+.kpi{display:flex; gap:14px; margin-top:8px}
+.kpi b{display:block; font-size:16px; color:var(--ink)}
+.kpi span{font-size:12px}
+/* insta card - THE single focal */
+.feed-wrap{display:flex; justify-content:center}
+.insta{
+width:476px; background:var(--card); border-radius:20px; overflow:hidden;
+border:1px solid #00000014; box-shadow:0 24px 60px -18px #1B161140, 0 2px 0 #fff inset;
+}
+.insta-head{display:flex; align-items:center; gap:10px; padding:12px 16px}
+.avatar{width:36px;height:36px;border-radius:50%;padding:2px;background:conic-gradient(from 180deg,#FFCC33,#E93A12,#7A2E00,#FFCC33)}
+.avatar div{width:100%;height:100%;border-radius:50%;background:#1B1611;color:#FFCC33;display:grid;place-items:center;font-weight:800;border:2px solid #fff}
+.who{line-height:1.2}
+.who b{font-size:14px} .who span{display:block; font-size:12px; color:#8A8378}
+.follow{margin-left:auto; font-size:13px; font-weight:800; color:#0A66FF; background:#EAF2FF; border:0; padding:7px 13px; border-radius:999px; cursor:pointer}
+/* visual - square ad */
+.visual{
+position:relative; width:100%; aspect-ratio:1/1; overflow:hidden;
+background:linear-gradient(180deg,#FFFFF6 0%, #FFF2C0 42%, #FFC53D 78%, #FFAA1A 100%);
+border-top:1px solid #0001; border-bottom:1px solid #0001;
+}
+.sun{position:absolute; left:50%; top:56%; width:380px;height:380px; transform:translate(-50%,-38%); background:radial-gradient(circle,#FFE47A 0%, #FFC53D 55%, #FF9E00 100%); border-radius:50%; box-shadow:0 0 80px #FFD84D88}
+.ring{position:absolute; left:50%; top:56%; width:440px;height:440px; transform:translate(-50%,-38%); border:1.5px dashed #7A3A00AA; border-radius:50%}
+.drop{position:absolute; font-weight:800; color:#7A3A00}
+.eyebrow{position:absolute; top:18px; left:20px; right:20px; display:flex; align-items:center; gap:8px; z-index:4}
+.eyebrow em{font-style:normal; font-size:12px; font-weight:800; letter-spacing:.08em; background:var(--ink); color:#FFE27A; padding:6px 11px; border-radius:999px}
+.eyebrow span{font-size:12.5px; font-weight:700; color:#5A3A00; background:#FFFFFFCC; padding:6px 11px; border-radius:999px; border:1px solid #0001}
+h1{
+position:absolute; top:62px; left:22px; right:22px; z-index:4;
+font-family:"Noto Serif KR",serif; font-weight:900; font-size:39px; line-height:1.15; letter-spacing:-.02em; color:#1B1300; text-wrap:balance;
+}
+h1 .hl{background:linear-gradient(transparent 62%, #FFFE9E 62% 96%, transparent 96%)}
+.sub{position:absolute; top:164px; left:22px; z-index:4; font-size:15px; font-weight:500; color:#4A2E00}
+.sub b{font-weight:800}
+/* bottle */
+.pedestal{position:absolute; left:50%; bottom:116px; width:300px; height:44px; transform:translateX(-50%); background:radial-gradient(ellipse at center,#7A3A0066 0%, transparent 68%); filter:blur(1px); z-index:2}
+.bottle{position:absolute; left:50%; bottom:126px; transform:translateX(-50%); width:148px; z-index:3; filter:drop-shadow(0 18px 22px #7A2E0033)}
+.cap{width:52px;height:54px;margin:0 auto;background:linear-gradient(180deg,#2B241E,#0F0C09);border-radius:10px 10px 6px 6px;position:relative}
+.cap:after{content:"";position:absolute;left:8px;top:8px;bottom:8px;width:6px;background:#ffffff22;border-radius:99px}
+.neck{width:54px;height:14px;margin:0 auto;background:linear-gradient(90deg,#D9D9D9,#FFF,#BFBFBF)}
+.shoulder{width:124px;height:28px;margin:0 auto;background:linear-gradient(180deg,#E9A93B,#C47A12);clip-path:polygon(18% 0,82% 0,100% 100%,0 100%)}
+.body{width:148px;height:196px;margin:-1px auto 0;background:linear-gradient(90deg,#7A2E00 0%, #D67A0A 12%, #F5A623 28%, #FFD47E 48%, #F5A623 72%, #9A4A00 100%);border-radius:14px 14px 18px 18px;position:relative;overflow:hidden;border:1px solid #7A3A0055}
+.body:before{content:"";position:absolute;left:16px;top:12px;bottom:12px;width:14px;background:linear-gradient(#FFFFFFCC,#FFFFFF00);border-radius:99px}
+.label{position:absolute;left:14px;right:14px;top:34px;background:#FFFEF6;border-radius:10px;padding:12px 10px 11px;text-align:center;box-shadow:0 2px 8px #0002}
+.label small{font-size:10px;letter-spacing:.18em;font-weight:800;color:#8A6A00}
+.label b{display:block;font-size:17px;letter-spacing:.02em;margin:2px 0}
+.label span{font-size:11.5px;font-weight:700;color:#fff;background:#1B1611;border-radius:99px;padding:3px 8px;display:inline-block;margin-top:6px}
+.citrus{position:absolute; right:56px; bottom:112px; width:132px; height:66px; z-index:2; overflow:hidden}
+.citrus div{width:132px;height:132px;border-radius:50%;background:radial-gradient(circle at 50% 50%, #FFF6C8 0 18%, #FF9E00 19% 26%, #FFB52E 27% 34%, #FFF 35% 38%, #FF8A00 39%);border:6px solid #FFF8DC;box-shadow:0 8px 18px #7A2E0033}
+/* badge - only one */
+.badge{
+position:absolute; right:26px; top:200px; z-index:5; width:118px;height:118px;border-radius:50%;
+background:var(--sale); color:#fff; display:grid; place-items:center; text-align:center;
+transform:rotate(-12deg); box-shadow:0 10px 24px #E93A1255, 0 0 0 6px #FFFDF0, 0 0 0 7.5px var(--sale);
+}
+.badge b{font-size:30px;line-height:1} .badge small{font-size:11px;font-weight:800;letter-spacing:.08em}
+.badge span{font-size:11px;font-weight:700;opacity:.9}
+/* cta bar inside visual */
+.cta-bar{
+position:absolute; left:16px; right:16px; bottom:14px; z-index:5;
+background:#FFFEF6F2; backdrop-filter:blur(6px); border:1px solid #0001; border-radius:16px;
+display:flex; align-items:center; gap:12px; padding:10px 10px 10px 16px;
+}
+.price{line-height:1.2} .price s{font-size:13px;color:#8A8378} .price b{font-size:19px}
+.stars{font-size:12px; color:#5A3A00; font-weight:700}
+.btn{margin-left:auto; background:var(--ink); color:#fff; border:0; border-radius:999px; padding:14px 22px; font-size:16px; font-weight:800; cursor:pointer; white-space:nowrap}
+.btn:hover{background:#000}
+/* insta footer */
+.actions{display:flex; align-items:center; gap:14px; padding:12px 16px 6px}
+.actions svg{width:26px;height:26px}
+.likes{padding:2px 16px; font-size:14px; font-weight:800}
+.caption{padding:4px 16px 14px; font-size:14px; line-height:1.55; color:#2A2520}
+.caption b{color:#111} .tag{color:#0A4ABF}
+@media(max-width:1080px){.stage{grid-template-columns:1fr} .rail{display:none} .page{height:auto} .insta{width:min(476px,94vw)}}
+:focus-visible{outline:3px solid #0A66FF; outline-offset:2px}
+</style>
+</head>
+<body>
+<div class="page" role="main" aria-label="비타민C 세럼 인스타그램 피드 광고 미리보기">
+<div class="giant" aria-hidden="true"><span>GLOW</span></div>
+
+<header class="topbar">
+<div class="brand"><div class="mark">C</div><b>LUMI LAB</b><small>VARIANT #1 · MORNING MILK</small></div>
+<div class="dots" aria-hidden="true"><i></i><i class="off"></i><i class="off"></i></div>
+<div class="top-right"><span>Instagram 피드 · 1080 × 1080 미리보기</span><button class="pill-dark">원본 비율로 보기</button></div>
+</header>
+
+<div class="stage">
+<aside class="rail" aria-hidden="true">
+<h4>CONCEPT NOTE</h4>
+<div class="cardline"><strong>아침 우유빛 + 혈액 오렌지</strong><br>어두운 실험실 톤과 차별화된 따뜻하고 투명한 아침 컨셉입니다.<div class="sw"><span style="background:#FFFEF6"></span><span style="background:#FFC53D"></span><span style="background:#E93A12"></span><span style="background:#1B1611"></span></div></div>
+<div class="cardline">단일 초점 원칙: 시선은 <strong>중앙 제품 1개</strong>로만 모이게 설계. 보조 뱃지·스티커 제거.</div>
+</aside>
+
+<div class="feed-wrap">
+<article class="insta" aria-label="인스타그램 광고">
+<div class="insta-head">
+<div class="avatar"><div>L</div></div>
+<div class="who"><b>lumilab.seoul</b><span>Sponsored · 서울</span></div>
+<button class="follow">팔로우</button>
+</div>
+
+<div class="visual">
+<div class="sun" aria-hidden="true"></div><div class="ring" aria-hidden="true"></div>
+<div class="drop" style="left:36px;top:230px;font-size:22px" aria-hidden="true">✦</div>
+<div class="drop" style="right:168px;top:228px;font-size:15px;opacity:.7" aria-hidden="true">＋</div>
+
+<div class="eyebrow"><em>NEW LAUNCH</em><span>런칭 기념 11.4까지</span></div>
+<h1><span class="hl">7일 만에 피어나는</span> 투명한 광채</h1>
+<p class="sub"><b>15% 순수 비타민C</b> + 페룰산 · 잡티와 칙칙함을 한 병에</p>
+
+<div class="pedestal" aria-hidden="true"></div>
+<div class="bottle" role="img" aria-label="루미랩 비타민C 15% 세럼 앰버 보틀">
+<div class="cap"></div><div class="neck"></div><div class="shoulder"></div>
+<div class="body"><div class="label"><small>LUMI LAB</small><b>VITAMIN C 15%</b><span>BRIGHTENING SERUM 30ml</span></div></div>
+</div>
+<div class="citrus" aria-hidden="true"><div></div></div>
+
+<div class="badge" aria-label="런칭 30퍼센트 할인"><div><small>LAUNCH</small><b>30%</b><span>SALE</span></div></div>
+
+<div class="cta-bar">
+<div class="price"><s>55,000원</s><br><b>38,500원</b> <span class="stars">★4.9 (2,317)</span></div>
+<button class="btn" onclick="alert('런칭 30% 혜택이 장바구니에 적용됐어요 🍊')">지금 구매 →</button>
+</div>
+</div>
+
+<div class="actions" aria-hidden="true">
+<svg viewBox="0 0 24 24" fill="#E93A12"><path d="M12 21s-7.5-4.9-10-9.3C.4 8.6 2.3 5 5.7 5c2 0 3.4 1.1 4.3 2.4h4C15 6.1 16.4 5 18.4 5c3.4 0 5.3 3.6 3.7 6.7C19.5 16.1 12 21 12 21z" transform="scale(.92) translate(1,0)"/></svg>
+<svg viewBox="0 0 24 24" fill="none" stroke="#1B1611" stroke-width="1.8"><path d="M21 12a8 8 0 0 1-8 8H5l-2 2V12a8 8 0 0 1 8-8h2a8 8 0 0 1 8 8z"/></svg>
+<svg viewBox="0 0 24 24" fill="none" stroke="#1B1611" stroke-width="1.8"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+<svg viewBox="0 0 24 24" fill="none" stroke="#1B1611" stroke-width="1.8" style="margin-left:auto"><path d="M6 3h12v18l-6-4-6 4z"/></svg>
+</div>
+<div class="likes">좋아요 12,482개</div>
+<p class="caption"><b>lumilab.seoul</b> 아침 3방울, 잡티는 지우고 빛은 채우세요. 민감성 테스트 완료·비타민E + 히알루론산 함유. 지금 런칭 30% + 무료배송 <span class="tag">#비타민C세럼 #잡티세럼 #광채피부 #런칭할인</span></p>
+</article>
+</div>
+
+<aside class="rail" aria-hidden="true">
+<h4>FEED PERFORMANCE</h4>
+<div class="cardline"><div class="kpi"><div><b>1:1</b><span>정사각형</span></div><div><b>3초</b><span>헤드라인 이해</span></div><div><b>1개</b><span>초점·CTA</span></div></div></div>
+<div class="cardline">카피: 한 문장 헤드라인 유지<br>CTA: <strong>지금 구매</strong> 단일 버튼<br>배지: 30% 1종만 사용</div>
+</aside>
+</div>
+</div>
+</body>
+</html>

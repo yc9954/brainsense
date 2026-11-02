@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>스윗스팟 x 모티브 로스터리 — 성수 팝업 3DAYS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Noto+Sans+KR:wght@400;500;700;800;900&family=Noto+Serif+KR:wght@600;700;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+--cream:#FFF6EC;
+--cream2:#FFEDD9;
+--ink:#221310;
+--ink2:#4E342A;
+--red:#D92E14;
+--red-dark:#A81F0D;
+--line:#EADAC8;
+--card:#FFFFFF;
+--arch:#1E1310;
+}
+html{scroll-behavior:smooth}
+body{
+font-family:"Noto Sans KR",system-ui,sans-serif;
+background:var(--cream);
+color:var(--ink);
+font-size:17px;line-height:1.6;
+-webkit-font-smoothing:antialiased;
+overflow-x:hidden;
+}
+body::before{
+content:"";position:fixed;inset:0;pointer-events:none;opacity:.5;z-index:1;
+background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
+}
+::selection{background:var(--red);color:#fff}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+.wrap{max-width:1280px;margin:0 auto;padding:0 32px;position:relative;z-index:2}
+/* top bar */
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:18px 0 14px;border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:12px}
+.brand-mark{width:40px;height:40px;border-radius:50%;background:var(--ink);color:var(--cream);display:grid;place-items:center;font-weight:900;font-size:19px;letter-spacing:-.05em}
+.brand b{font-size:18px;font-weight:900;letter-spacing:-.02em;line-height:1}
+.brand small{display:block;font-size:11.5px;font-weight:700;letter-spacing:.18em;color:var(--ink2)}
+.nav{display:flex;gap:28px;font-size:15px;font-weight:600;color:var(--ink2)}
+.nav a{position:relative;padding:4px 0}
+.nav a:hover{color:var(--ink)}
+.top-right{display:flex;align-items:center;gap:12px}
+.dday{font-size:13px;font-weight:800;letter-spacing:.06em;background:#fff;border:1px solid var(--line);padding:8px 14px;border-radius:100px;display:flex;align-items:center;gap:8px}
+.dday i{width:8px;height:8px;border-radius:50%;background:var(--red);display:inline-block;animation:pulse 1.6s infinite}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.5)}}
+.btn-top{background:var(--ink);color:var(--cream);border:0;border-radius:100px;padding:11px 22px;font-weight:800;font-size:15px;cursor:pointer;transition:.2s}
+.btn-top:hover{background:var(--red);transform:translateY(-1px)}
+/* hero */
+.hero{display:grid;grid-template-columns:1.08fr .92fr;gap:32px;align-items:center;padding:28px 0 18px;min-height:642px}
+.eyebrow{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:18px}
+.pill{font-size:13px;font-weight:800;letter-spacing:.08em;padding:8px 14px;border-radius:100px}
+.pill.red{background:var(--red);color:#fff}
+.pill.line{background:#fff;border:1px solid var(--line);color:var(--ink)}
+.pill em{font-family:"Instrument Serif",serif;font-style:italic;font-weight:400;letter-spacing:.02em}
+h1{font-family:"Noto Serif KR",serif;font-weight:900;font-size:clamp(48px,5vw,72px);line-height:1.04;letter-spacing:-.04em}
+h1 .italic{font-family:"Instrument Serif",serif;font-style:italic;font-weight:400;letter-spacing:-.02em;color:var(--red-dark)}
+h1 .underline{position:relative;white-space:nowrap}
+h1 .underline svg{position:absolute;left:0;right:0;bottom:-10px;width:100%;height:14px}
+.sub{margin-top:18px;font-size:18px;line-height:1.65;color:var(--ink2);max-width:520px;word-break:keep-all}
+.sub strong{color:var(--ink)}
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px;max-width:560px}
+.info{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:14px 16px;display:flex;gap:12px;align-items:flex-start}
+.info-icon{width:38px;height:38px;flex:0 0 38px;border-radius:12px;display:grid;place-items:center;font-size:19px}
+.info-icon.date{background:#FFE2D2}
+.info-icon.pin{background:#E8E0FF}
+.info b{display:block;font-size:15.5px;line-height:1.3;letter-spacing:-.01em}
+.info span{display:block;font-size:13.5px;color:#6B5A52;margin-top:3px;font-weight:500}
+.cta-row{display:flex;gap:12px;margin-top:22px;align-items:stretch;max-width:560px}
+.btn-main{flex:1;background:var(--red);color:#fff;border:0;border-radius:16px;padding:18px 20px;font-size:18px;font-weight:900;letter-spacing:-.01em;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;box-shadow:0 12px 28px rgba(217,46,20,.28);transition:.2s}
+.btn-main:hover{background:var(--red-dark);transform:translateY(-2px)}
+.btn-sub{background:#fff;border:1.5px solid var(--ink);border-radius:16px;padding:0 22px;font-weight:800;font-size:16px;cursor:pointer;transition:.2s;white-space:nowrap}
+.btn-sub:hover{background:var(--ink);color:var(--cream)}
+.micro{font-size:13.5px;color:#7A675F;margin-top:10px;font-weight:500}
+.proof{display:flex;align-items:center;gap:14px;margin-top:18px}
+.faces{display:flex}
+.faces span{width:36px;height:36px;border-radius:50%;border:2.5px solid var(--cream);margin-left:-10px;display:grid;place-items:center;font-size:14px;font-weight:800;color:#fff}
+.faces span:first-child{margin-left:0}
+.proof p{font-size:14.5px;font-weight:700}
+.proof p small{display:block;font-weight:500;color:#7A675F;font-size:13.5px}
+.stars{color:var(--red);letter-spacing:2px;font-size:13px}
+/* visual */
+.visual{position:relative;display:flex;justify-content:center}
+.arch{width:430px;max-width:100%;height:600px;background:radial-gradient(120% 90% at 50% 0%,#4A2A1E 0%,#241310 55%,#140C09 100%);border-radius:999px 999px 28px 28px;border:1px solid #3A241A;position:relative;overflow:hidden;color:#FFF6EC;box-shadow:0 30px 60px rgba(34,19,16,.25)}
+.arch-inner{padding:26px 28px 0;text-align:center;position:relative;z-index:2}
+.arch-label{display:flex;justify-content:space-between;align-items:center;font-size:11px;letter-spacing:.22em;font-weight:700;opacity:.8}
+.arch-label b{border:1px solid rgba(255,246,236,.35);padding:6px 12px;border-radius:100px}
+.arch h2{font-family:"Instrument Serif",serif;font-style:italic;font-weight:400;font-size:36px;margin:16px 0 4px;line-height:1}
+.arch h2+ p{font-size:13px;letter-spacing:.14em;opacity:.7;font-weight:700}
+.cup{margin:10px auto 0;width:300px;height:300px;position:relative}
+.float-card{position:absolute;background:#fff;color:var(--ink);border-radius:18px;padding:14px 15px;box-shadow:0 18px 40px rgba(0,0,0,.22);border:1px solid rgba(0,0,0,.06);text-align:left;z-index:4}
+.float-card .k{font-size:11px;font-weight:800;letter-spacing:.12em;color:var(--red)}
+.float-card b{font-size:15px;display:block;line-height:1.4;letter-spacing:-.02em;margin:3px 0}
+.float-card span{font-size:13px;color:#6B5A52;font-weight:600}
+.fc1{left:-78px;top:200px;width:218px;transform:rotate(-5deg)}
+.fc1 .price{display:flex;justify-content:space-between;align-items:center;margin-top:10px;background:var(--cream);border-radius:12px;padding:8px 10px;font-weight:800;font-size:14px}
+.fc1 .price em{background:var(--ink);color:#fff;font-style:normal;font-size:12px;padding:4px 10px;border-radius:100px}
+.fc2{right:-38px;bottom:92px;width:240px;transform:rotate(3deg)}
+.bar{height:8px;background:#F1E4D3;border-radius:100px;margin:10px 0 6px;overflow:hidden}
+.bar i{display:block;width:78%;height:100%;background:linear-gradient(90deg,var(--red),#FF7A45);border-radius:100px}
+.badge-spin{position:absolute;right:-18px;top:36px;width:124px;height:124px;z-index:5}
+.badge-spin .disc{width:100%;height:100%;background:var(--red);color:#fff;border-radius:50%;display:grid;place-items:center;position:relative;box-shadow:0 12px 30px rgba(217,46,20,.4);border:4px solid var(--cream)}
+.badge-spin svg.spin{position:absolute;inset:6px;animation:spin 12s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.ticket{margin:8px 22px 0;background:var(--cream);color:var(--ink);border-radius:16px;padding:14px 16px;display:flex;align-items:center;gap:14px;text-align:left}
+.ticket-qr{width:52px;height:52px;flex:0 0 52px;border-radius:10px;background:repeating-linear-gradient(90deg,var(--ink) 0 4px,#fff 4px 7px);border:6px solid #fff;outline:1px dashed #B9A99D}
+.ticket b{font-size:14px;line-height:1.3;display:block}
+.ticket span{font-size:12.5px;color:#6B5A52;font-weight:600}
+/* marquee */
+.marquee{margin:6px -32px 0;background:var(--ink);color:var(--cream);overflow:hidden;white-space:nowrap;padding:14px 0;border-top:1px solid #000;border-bottom:1px solid #000}
+.marquee-track{display:inline-block;animation:mq 22s linear infinite;font-weight:800;font-size:15px;letter-spacing:.12em}
+.marquee-track em{font-family:"Instrument Serif",serif;font-style:italic;font-weight:400;color:#FFB59D;margin:0 18px}
+@keyframes mq{to{transform:translateX(-50%)}}
+.hint{text-align:center;font-size:12.5px;letter-spacing:.2em;font-weight:700;color:#9A877E;padding:12px 0 18px}
+@media(max-width:1020px){
+.nav{display:none}
+.hero{grid-template-columns:1fr;min-height:auto}
+.visual{order:-1}
+.arch{width:min(430px,92vw);height:560px}
+.fc1{left:0}.fc2{right:0}
+.info-grid{grid-template-columns:1fr}
+.cta-row{flex-direction:column}
+.btn-sub{padding:16px}
+}
+:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="topbar" aria-label="상단 메뉴">
+<div class="brand"><div class="brand-mark">S</div><div><b>스윗스팟 SWEETSPOT</b><small>SEONGSU POP-UP VOL.2</small></div></div>
+<nav class="nav"><a href="#">팝업 스토리</a><a href="#">시그니처 메뉴</a><a href="#">한정 굿즈</a><a href="#">방문 안내</a></nav>
+<div class="top-right"><span class="dday"><i></i>D-11 · 11.13 OPEN</span><button class="btn-top" onclick="document.getElementById('reserve').scrollIntoView({behavior:'smooth'})">사전예약</button></div>
+</header>
+
+<main class="hero">
+<div>
+<div class="eyebrow"><span class="pill red">● 3 DAYS ONLY</span><span class="pill line"><em>Sweetspot × Motif Roastery</em> &nbsp;·&nbsp; 성수 한정</span></div>
+<h1>성수에 내리는<br><span class="italic">가장 달콤한</span> 3일<span class="underline">.<svg viewBox="0 0 300 14" preserveAspectRatio="none" aria-hidden="true"><path d="M2 10 Q 75 2 150 8 T 298 6" fill="none" stroke="#D92E14" stroke-width="6" stroke-linecap="round"/></svg></span></h1>
+<p class="sub"><strong>스윗스팟 × 로컬 로스터리 모티브.</strong> 가을 딸기와 피스타치오 크림, 깊게 볶은 너티 원두의 만남. 3일 동안만 성수에서 맛볼 수 있어요.</p>
+<div class="info-grid" role="list">
+<div class="info" role="listitem"><div class="info-icon date">📅</div><div><b>11.13(금) — 11.15(일)</b><span>11:00–20:00 · 입장마감 19:30</span></div></div>
+<div class="info" role="listitem"><div class="info-icon pin">📍</div><div><b>서울 성동구 연무장길 45</b><span>성수역 3번 출구 도보 5분</span></div></div>
+</div>
+<div class="cta-row" id="reserve"><button class="btn-main" aria-label="사전예약하고 우선입장하기">사전예약하고 우선입장하기 <span aria-hidden="true">→</span></button><button class="btn-sub">🔔 알림받기</button></div>
+<p class="micro">* 사전예약 시 대기 없이 입장 + 한정 딸기 스티커팩 증정 (선착순 일 200명)</p>
+<div class="proof"><div class="faces" aria-hidden="true"><span style="background:#D92E14">지</span><span style="background:#6B4A2F">은</span><span style="background:#7A5CFF">서</span><span style="background:#1E1310">연</span></div><p><span class="stars">★★★★★ 4.9</span> 지금 2,384명이 예약했어요<small>작년 팝업 3일 만에 조기 마감 · 재방문 의사 96%</small></p></div>
+</div>
+
+<div class="visual" aria-label="팝업 대표 이미지 - 딸기 크림 라떼">
+<div class="badge-spin" aria-hidden="true"><div class="disc"><svg class="spin" viewBox="0 0 100 100"><defs><path id="c" d="M50,50 m-36,0 a36,36 0 1,1 72,0 a36,36 0 1,1 -72,0"/></defs><text style="font-size:10.5px;font-weight:800;letter-spacing:2.2px;fill:#fff"><textPath href="#c">3 DAYS ONLY • RESERVE NOW • </textPath></text></svg><span style="font-size:30px">↓</span></div></div>
+<div class="float-card fc1"><div class="k">SIGNATURE PAIRING</div><b>딸기 피스타치오 타르트<br>+ 너티 크림 라떼</b><span>팝업 한정 세트 · 하루 150개</span><div class="price">9,800원 <em>예약가</em></div></div>
+<div class="float-card fc2"><div class="k">● 실시간 예약 현황</div><b>11.14 (토) 오후 2시 타임</b><div class="bar"><i></i></div><span>잔여 7석 · 곧 마감돼요!</span></div>
+<div class="arch">
+<div class="arch-inner">
+<div class="arch-label"><span>★ SEONGSU 2026</span><b>♥ LIMITED</b></div>
+<h2>Strawberry Cream Latte</h2>
+<p>AUTUMN EDITION — ONLY HERE</p>
+<div class="cup">
+<svg viewBox="0 0 300 300" width="100%" height="100%" role="img" aria-label="딸기 크림 라떼 아트 일러스트">
+<ellipse cx="150" cy="270" rx="95" ry="14" fill="rgba(0,0,0,.35)"/>
+<ellipse cx="150" cy="210" rx="115" ry="115" fill="#FFF6EC"/>
+<ellipse cx="150" cy="210" rx="115" ry="115" fill="none" stroke="#FFD9C7" stroke-width="3"/>
+<ellipse cx="150" cy="210" rx="92" ry="92" fill="#C97A4A"/>
+<ellipse cx="150" cy="210" rx="78" ry="78" fill="#E8B07E"/>
+<ellipse cx="150" cy="210" rx="62" ry="62" fill="#FFF1DE"/>
+<!-- latte leaf -->
+<g fill="#fff" opacity=".95"><ellipse cx="150" cy="185" rx="28" ry="38"/><ellipse cx="150" cy="228" rx="18" ry="16"/></g>
+<g stroke="#C97A4A" stroke-width="3" stroke-linecap="round" fill="none"><path d="M150 155 L150 240"/><path d="M150 175 L132 168 M150 175 L168 168 M150 195 L130 187 M150 195 L170 187 M150 214 L133 207 M150 214 L167 207"/></g>
+<!-- strawberries -->
+<g><ellipse cx="98" cy="150" rx="18" ry="22" fill="#E63A1E"/><path d="M86 134 L98 144 L110 134 L106 124 L90 124 Z" fill="#2E7D32"/><circle cx="93" cy="152" r="1.8" fill="#FFD9C7"/><circle cx="103" cy="160" r="1.8" fill="#FFD9C7"/><circle cx="97" cy="167" r="1.8" fill="#FFD9C7"/></g>
+<g><ellipse cx="205" cy="168" rx="15" ry="18" fill="#E63A1E"/><path d="M195 155 L205 163 L215 155 L212 147 L198 147 Z" fill="#2E7D32"/><circle cx="202" cy="170" r="1.5" fill="#FFD9C7"/></g>
+<!-- steam -->
+<g stroke="#FFD9C7" stroke-width="5" stroke-linecap="round" opacity=".7" fill="none"><path d="M120 85 Q130 65 120 45"/><path d="M150 88 Q160 66 150 42"/><path d="M180 85 Q190 65 180 45"/></g>
+</svg>
+</div>
+</div>
+<div class="ticket"><div class="ticket-qr" aria-hidden="true"></div><div><b>사전예약 티켓 · 우선입장 + 굿즈 증정</b><span>11.13–11.15 · 스윗스팟 성수 (무료입장)</span></div></div>
+</div>
+</div>
+</main>
+</div>
+<div class="marquee" aria-hidden="true"><span class="marquee-track">3 DAYS ONLY <em>Sweet Spot on Tour</em> SEONGSU POP-UP <em>Nov 13–15</em> STRAWBERRY CREAM LATTE <em>reserve now</em> 3 DAYS ONLY <em>Sweet Spot on Tour</em> SEONGSU POP-UP <em>Nov 13–15</em> STRAWBERRY CREAM LATTE <em>reserve now</em>&nbsp;</span></div>
+<div class="wrap"><p class="hint">SCROLL — 시그니처 메뉴 & 한정 굿즈 보기 ↓</p></div>
+</body>
+</html>

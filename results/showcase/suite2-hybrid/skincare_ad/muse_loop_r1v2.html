@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GLOWLAB 비타C 15% 세럼 — 런칭 30% | Variant #2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,900&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+--pine:#10241D;
+--pine-2:#0B1C17;
+--cream:#FFF8EC;
+--paper:#E9E0CE;
+--tang:#FF4D0A;
+--tang-deep:#C22E00;
+--lime:#E4FF4B;
+--line:rgba(16,36,29,.14);
+}
+html,body{height:100%}
+body{
+font-family:"Noto Sans KR",system-ui,sans-serif;
+background:var(--paper);
+color:var(--pine);
+font-size:16px;
+min-height:100vh;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+padding:24px 18px;
+background-image:
+ radial-gradient(circle at 15% 20%, #fff 0 2px, transparent 3px),
+ radial-gradient(circle at 85% 15%, #fff 0 2px, transparent 3px),
+ radial-gradient(1200px 600px at 50% -10%, #FFFDF4 0%, transparent 60%),
+ repeating-linear-gradient(-45deg, rgba(16,36,29,.045) 0 2px, transparent 2px 14px);
+}
+.stage{width:min(1200px,100%)}
+.top-meta{display:flex;justify-content:space-between;align-items:center;margin:0 6px 12px;font-size:13px;font-weight:700;letter-spacing:.08em}
+.top-meta span:last-child{opacity:.6;font-weight:500}
+.ad-card{
+position:relative;
+display:grid;
+grid-template-columns:470px 1fr;
+width:100%;
+min-height:660px;
+background:var(--cream);
+border-radius:28px;
+overflow:hidden;
+border:2px solid var(--pine);
+box-shadow:0 30px 80px rgba(16,36,29,.28), 0 2px 0 var(--pine);
+}
+/* LEFT DARK */
+.ad-left{
+background:var(--pine);
+color:var(--cream);
+padding:22px 36px 20px;
+display:flex;
+flex-direction:column;
+position:relative;
+overflow:hidden;
+}
+.ad-left::after{
+content:"";position:absolute;inset:0;
+background:radial-gradient(520px 380px at -10% 110%, rgba(255,77,10,.35), transparent 60%),
+radial-gradient(400px 300px at 110% -10%, rgba(228,255,75,.12), transparent 60%);
+pointer-events:none;
+}
+.ig-head{display:flex;align-items:center;gap:10px;z-index:1}
+.avatar{width:38px;height:38px;border-radius:50%;background:conic-gradient(from 20deg,#FFB25A,#FF4D0A,#7A2A00,#FFB25A);display:grid;place-items:center;border:2px solid var(--cream);font-weight:900;color:#10241D;font-family:Fraunces,serif}
+.ig-head b{font-size:14px}
+.ig-head small{display:block;font-size:12px;opacity:.7;font-weight:500}
+.ad-pill{margin-left:auto;font-size:11px;font-weight:900;letter-spacing:.12em;border:1px solid rgba(255,248,236,.4);padding:5px 10px;border-radius:999px}
+.kicker{margin-top:22px;display:flex;gap:8px;align-items:center;z-index:1}
+.kicker i{font-style:normal;background:var(--lime);color:var(--pine);font-size:12px;font-weight:900;padding:6px 11px;border-radius:999px;letter-spacing:.04em}
+.kicker em{font-style:normal;font-size:13px;opacity:.85;font-weight:500}
+h1{font-size:42px;line-height:1.22;letter-spacing:-.03em;font-weight:900;margin:14px 0 12px;z-index:1;word-break:keep-all}
+h1 .hl{color:var(--lime);font-family:Fraunces,serif;font-weight:900;letter-spacing:-.02em}
+h1 .u{text-decoration:underline;text-decoration-color:var(--tang);text-decoration-thickness:6px;text-underline-offset:6px}
+.sub{font-size:16.5px;line-height:1.6;opacity:.88;z-index:1;word-break:keep-all}
+.rating{display:flex;align-items:center;gap:10px;margin:16px 0 6px;z-index:1;font-size:14px}
+.stars{color:#FFC531;letter-spacing:2px;font-size:16px}
+.rating b{background:rgba(255,248,236,.14);padding:3px 8px;border-radius:8px}
+.price-row{display:flex;align-items:end;gap:12px;margin:14px 0 12px;z-index:1}
+.price-now{font-family:Fraunces,serif;font-size:44px;font-weight:900;line-height:1}
+.price-old{opacity:.6;text-decoration:line-through;font-size:17px}
+.price-off{font-size:13px;font-weight:900;background:var(--tang);color:#fff;padding:5px 9px;border-radius:8px}
+.cta{display:flex;gap:10px;z-index:1;margin-top:6px}
+.btn-buy{
+flex:1;background:var(--lime);color:#101E18;border:0;border-radius:999px;
+font-size:19px;font-weight:900;padding:16px 20px;cursor:pointer;
+display:flex;align-items:center;justify-content:center;gap:10px;
+box-shadow:0 8px 0 #0B1C17;transition:.18s;
+}
+.btn-buy:hover{transform:translateY(-2px);box-shadow:0 10px 0 #0B1C17}
+.btn-buy:active{transform:translateY(4px);box-shadow:0 2px 0 #0B1C17}
+.btn-cart{width:58px;border-radius:50%;border:1.5px solid rgba(255,248,236,.5);background:transparent;color:var(--cream);font-size:22px;cursor:pointer}
+.trust{display:flex;gap:14px;margin-top:14px;font-size:13px;opacity:.85;z-index:1}
+.ig-actions{margin-top:auto;padding-top:16px;border-top:1px dashed rgba(255,248,236,.25);display:flex;align-items:center;gap:14px;z-index:1;font-size:22px}
+.ig-actions small{font-size:13px;opacity:.75;margin-left:2px}
+.ig-actions .save{margin-left:auto}
+/* CENTER BADGE */
+.seam-badge{
+position:absolute;left:470px;top:96px;transform:translate(-50%,-50%);
+width:152px;height:152px;z-index:5;display:grid;place-items:center;
+}
+.seam-badge .ring{position:absolute;inset:0;animation:spin 14s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.seam-badge .core{
+width:114px;height:114px;background:var(--cream);border:3px solid var(--pine);
+border-radius:50%;display:grid;place-items:center;text-align:center;
+box-shadow:0 10px 30px rgba(0,0,0,.35);
+}
+.core small{font-size:11px;font-weight:900;letter-spacing:.14em;color:var(--pine)}
+.core strong{font-family:Fraunces,serif;font-size:42px;line-height:1;color:var(--tang-deep)}
+.core span{font-size:11px;font-weight:700;color:var(--pine)}
+/* RIGHT LIGHT */
+.ad-right{position:relative;background:var(--cream);overflow:hidden;display:flex;flex-direction:column}
+.marquee{background:var(--pine);color:var(--cream);font-size:12.5px;font-weight:700;letter-spacing:.14em;white-space:nowrap;overflow:hidden;padding:10px 0;border-bottom:2px solid var(--pine)}
+.marquee div{display:inline-block;animation:mq 18s linear infinite}
+@keyframes mq{to{transform:translateX(-50%)}}
+.visual{position:relative;flex:1;display:grid;place-items:center;padding:28px 20px 8px;
+background:
+ radial-gradient(620px 420px at 50% 62%, #FFD9A8 0%, #FFC07A 28%, transparent 70%),
+ radial-gradient(900px 500px at 50% 0%, #fff 0%, var(--cream) 60%);
+}
+.halo{position:absolute;width:520px;height:520px;border-radius:50%;
+background:repeating-conic-gradient(from 0deg, #FF8A2A 0 8deg, #FFB25A 8deg 16deg);
+opacity:.22;filter:blur(1px)}
+.halo::after{content:"";position:absolute;inset:38px;background:var(--cream);border-radius:50%;border:2px dashed rgba(16,36,29,.25)}
+.orange-svg{position:absolute;width:440px;opacity:.95;filter:drop-shadow(0 20px 30px rgba(194,46,0,.25))}
+.bottle{position:relative;z-index:2;width:220px;display:flex;flex-direction:column;align-items:center;animation:float 5s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-12px) rotate(1deg)}}
+.cap{width:74px;height:72px;background:#111915;border-radius:14px 14px 8px 8px;position:relative;border:2px solid #000;box-shadow:inset 0 6px 10px rgba(255,255,255,.25)}
+.cap::before{content:"";position:absolute;inset:12px 8px;background:repeating-linear-gradient(90deg, rgba(255,255,255,.22) 0 3px, transparent 3px 8px);border-radius:6px}
+.neck{width:46px;height:18px;background:linear-gradient(#E8E8E8,#9AA0A0);border:2px solid #111915;border-top:0}
+.body{
+width:200px;height:308px;margin-top:-2px;border-radius:26px 26px 34px 34px;
+background:linear-gradient(102deg, #FFD9A0 0%, #FF9A3D 22%, #E86A00 52%, #7A2600 100%);
+border:3px solid #111915;position:relative;overflow:hidden;
+box-shadow:0 30px 70px rgba(255,77,10,.45), inset 0 0 0 6px rgba(255,255,255,.18);
+}
+.body::before{content:"";position:absolute;left:18px;top:14px;bottom:14px;width:28px;background:linear-gradient(rgba(255,255,255,.9),rgba(255,255,255,.05));border-radius:999px;filter:blur(.2px)}
+.body::after{content:"";position:absolute;right:10px;top:0;bottom:0;width:60px;background:linear-gradient(90deg,transparent,rgba(0,0,0,.28));}
+.label{position:absolute;left:14px;right:14px;top:86px;background:#FFFEF7;border:2px solid #111915;border-radius:16px;padding:14px 12px 12px;text-align:center}
+.label b{font-size:13px;letter-spacing:.18em}
+.label strong{display:block;font-family:Fraunces,serif;font-size:38px;line-height:1;margin:2px 0}
+.label small{display:block;font-size:12px;font-weight:700;color:#5A3D00;background:#FFE8B8;border-radius:999px;padding:4px 8px;margin-top:6px}
+.drop{position:absolute;right:-18px;top:62px;width:22px;height:22px;background:#FFD84D;border:2px solid #111915;border-radius:50% 50% 50% 4px;transform:rotate(45deg);box-shadow:0 4px 10px rgba(0,0,0,.2)}
+.shadow{width:200px;height:24px;background:radial-gradient(closest-side, rgba(16,36,29,.45), transparent);margin-top:14px}
+.chip{position:absolute;z-index:3;background:#fff;border:2px solid var(--pine);border-radius:14px;padding:10px 13px;font-size:13px;font-weight:800;box-shadow:4px 4px 0 var(--pine)}
+.chip small{display:block;font-weight:500;font-size:12px;opacity:.7}
+.chip.c1{right:28px;top:78px;transform:rotate(4deg)}
+.chip.c2{left:28px;bottom:132px;transform:rotate(-4deg)}
+.chip .dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:#1FA85B;margin-right:6px}
+.bottom-info{display:flex;gap:10px;align-items:center;padding:14px 22px;border-top:2px solid var(--pine);background:#FFFDF4;font-size:13px}
+.bottom-info .timer{margin-left:auto;font-weight:900;background:var(--pine);color:var(--lime);padding:7px 12px;border-radius:999px;font-variant-numeric:tabular-nums}
+.foot{display:flex;justify-content:space-between;margin:12px 6px 0;font-size:13px;opacity:.7}
+@media(max-width:980px){
+.ad-card{grid-template-columns:1fr;min-height:auto}
+.seam-badge{left:50%;top:auto;bottom:auto;position:absolute;margin-top:-20px}
+.ad-left{padding-bottom:28px}
+.visual{min-height:560px}
+.chip.c1{right:12px}.chip.c2{left:12px}
+h1{font-size:34px}
+}
+:focus-visible{outline:4px solid #1A73E8;outline-offset:2px}
+</style>
+</head>
+<body>
+<main class="stage">
+<div class="top-meta"><span>VARIANT #2 — EDITORIAL SPLIT / PINE × CREAM × TANGERINE</span><span>1280 × 800 · Instagram Feed 1:1</span></div>
+<article class="ad-card" aria-label="글로우랩 비타민C 세럼 인스타그램 광고">
+<!-- LEFT -->
+<section class="ad-left">
+<div class="ig-head">
+<div class="avatar" aria-hidden="true">G</div>
+<div><b>glowlab.official ✓</b><small>Sponsored · 서울</small></div>
+<div class="ad-pill">AD</div>
+</div>
+<div class="kicker"><i>NEW LAUNCH</i><em>런칭 기념 ~11.10 단 7일</em></div>
+<h1>14일 만에 잡티는 옅어지고 <span class="hl">광채</span>가 차오릅니다<span class="u">.</span></h1>
+<p class="sub">15% 순수 비타민C + 비타민E + 히알루론산. 끈적임 없이 산뜻하게 스며드는 데일리 브라이트닝 세럼 30ml.</p>
+<div class="rating"><span class="stars" aria-hidden="true">★★★★★</span><b>4.9</b><span>12,400개 리뷰 · 민감성 테스트 완료</span></div>
+<div class="price-row"><span class="price-now">26,950원</span><span class="price-old">38,500원</span><span class="price-off">30% OFF</span></div>
+<div class="cta">
+<button class="btn-buy" onclick="this.textContent='장바구니에 담겼어요 ✓';">지금 구매 <span aria-hidden="true">→</span></button>
+<button class="btn-cart" aria-label="장바구니">♡</button>
+</div>
+<div class="trust"><span>🚚 첫구매 무료배송</span><span>↩ 14일 환불보장</span><span>🧪 주름개선 기능성</span></div>
+<div class="ig-actions" aria-hidden="true">♥&nbsp; 💬&nbsp; ➤ <small>25,318명이 좋아합니다</small><span class="save">🔖</span></div>
+</section>
+<!-- BADGE -->
+<div class="seam-badge" aria-label="런칭 30% 할인">
+<svg class="ring" viewBox="0 0 152 152"><defs><path id="c" d="M76,76 m-62,0 a62,62 0 1,1 124,0 a62,62 0 1,1 -124,0"/></defs><circle cx="76" cy="76" r="74" fill="#FF4D0A" stroke="#10241D" stroke-width="3"/><text font-size="13.5" font-weight="900" letter-spacing="3.2" fill="#FFF8EC"><textPath href="#c">LAUNCH SALE • 30% OFF • LAUNCH SALE •</textPath></text></svg>
+<div class="core"><div><small>LAUNCH</small><strong>30%</strong><span>단 7일 특가</span></div></div>
+</div>
+<!-- RIGHT -->
+<section class="ad-right">
+<div class="marquee"><div>✦ VEGAN FORMULA ✦ PURE VITAMIN C 15% ✦ DERMATOLOGIST TESTED ✦ VEGAN FORMULA ✦ PURE VITAMIN C 15% ✦ DERMATOLOGIST TESTED ✦&nbsp;</div></div>
+<div class="visual">
+<div class="halo" aria-hidden="true"></div>
+<svg class="orange-svg" viewBox="0 0 200 200" aria-hidden="true"><circle cx="100" cy="100" r="92" fill="#FF8A1A" stroke="#10241D" stroke-width="4"/><circle cx="100" cy="100" r="76" fill="#FFE4B5"/><g stroke="#E86A00" stroke-width="4" stroke-linecap="round"><line x1="100" y1="24" x2="100" y2="176"/><line x1="24" y1="100" x2="176" y2="100"/><line x1="46" y1="46" x2="154" y2="154"/><line x1="154" y1="46" x2="46" y2="154"/></g><circle cx="100" cy="100" r="14" fill="#FF8A1A"/></svg>
+<div class="chip c1">잡티 −32% 임상완료<small>4주 인체적용시험 · n=32</small></div>
+<div class="chip c2"><span class="dot"></span>민감피부 사용적합<small>저자극 · 무향 · 논코메도제닉</small></div>
+<div class="bottle" role="img" aria-label="글로우랩 비타C 15% 브라이트닝 세럼 병">
+<div class="cap"></div><div class="neck"></div>
+<div class="body"><div class="drop"></div><div class="label"><b>VITA C 15%</b><strong>Glow</strong><small>BRIGHTENING SERUM 30ml</small></div></div>
+<div class="shadow"></div>
+</div>
+</div>
+<div class="bottom-info"><span>⏰ 런칭특가 종료까지</span><strong id="t">02:14:33</strong><span class="timer" id="tt">02:14:33 남음</span></div>
+</div>
+</article>
+<div class="foot"><span>※ 1인 2개 한정 · 쿠폰 중복 불가</span><span>Variant #2 — 다크 에디토리얼 스플릿 레이아웃</span></div>
+</main>
+<script>
+let s=2*3600+14*60+33;
+function tick(){s=Math.max(0,s-1);const h=String(Math.floor(s/3600)).padStart(2,'0'),m=String(Math.floor(s%3600/60)).padStart(2,'0'),x=String(s%60).padStart(2,'0');document.getElementById('t').textContent=h+':'+m+':'+x;document.getElementById('tt').textContent=h+':'+m+':'+x+' 남음';}
+setInterval(tick,1000);
+document.querySelector('.btn-cart').addEventListener('click',e=>{e.currentTarget.textContent=e.currentTarget.textContent==='♡'?'♥':'♡';});
+</script>
+</body>
+</html>

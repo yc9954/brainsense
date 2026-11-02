@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BLUE BRASS 2026 — 11월 재즈 페스티벌</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Playfair+Display:ital,wght@0,800;0,900;1,800;1,900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+--night:#070B18;
+--panel:#111733;
+--gold:#E9B44C;
+--gold-light:#FFE9B0;
+--cream:#FFF7E8;
+--muted:#C8C5D6;
+--pink:#FF4E8A;
+--mint:#86EEC8;
+}
+html,body{height:100%}
+body{
+background:var(--night);
+color:var(--cream);
+font-family:"Noto Sans KR",system-ui,sans-serif;
+font-size:17px;line-height:1.6;
+overflow-x:hidden;
+-webkit-font-smoothing:antialiased;
+}
+body::before{
+content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+background:
+radial-gradient(720px 520px at 18% 18%, rgba(233,180,76,.22), transparent 65%),
+radial-gradient(620px 520px at 82% 88%, rgba(255,78,138,.18), transparent 65%),
+radial-gradient(900px 600px at 50% 110%, rgba(84,62,180,.35), transparent 70%),
+linear-gradient(180deg, #0A1028 0%, #070B18 55%, #0B0A1A 100%);
+}
+.staff{position:fixed;inset:0;z-index:0;opacity:.16;pointer-events:none}
+.wrap{position:relative;z-index:2;max-width:1280px;margin:0 auto;min-height:100vh;min-height:800px;display:flex;flex-direction:column;padding:0 40px 18px}
+/* header */
+header{display:flex;align-items:center;justify-content:space-between;padding:18px 0 14px;border-bottom:1px solid rgba(255,247,232,.12)}
+.brand{display:flex;align-items:center;gap:12px}
+.mark{width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,#FFE9B0,#E9B44C 45%,#FF7A59 85%);display:grid;place-items:center;color:#1A1206;font-weight:900;font-size:22px;box-shadow:0 0 24px rgba(233,180,76,.55)}
+.brand b{font-size:16px;letter-spacing:.14em}
+.brand small{display:block;font-size:11px;letter-spacing:.22em;color:var(--gold);font-weight:700}
+nav{display:flex;gap:26px;font-size:15px;color:var(--muted);align-items:center}
+nav a{color:inherit;text-decoration:none;font-weight:500}
+nav a.on{color:var(--cream)}
+.mini-cta{font-size:14px;font-weight:900;color:#1A1206;background:var(--gold-light);padding:9px 16px;border-radius:999px;text-decoration:none}
+/* main */
+main{flex:1;display:grid;grid-template-columns:1.08fr .92fr;gap:44px;align-items:center;padding:22px 0 10px}
+/* left */
+.eyebrow{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(233,180,76,.55);border-radius:999px;padding:8px 14px;font-size:13.5px;font-weight:700;letter-spacing:.06em;color:var(--gold-light);background:rgba(233,180,76,.08)}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--pink);box-shadow:0 0 12px var(--pink);animation:blink 1.6s infinite}
+@keyframes blink{50%{opacity:.35}}
+h1{margin:16px 0 8px;font-weight:900;line-height:.94;letter-spacing:-.03em;font-size:78px}
+h1 .kr{display:block}
+h1 .gold{background:linear-gradient(92deg,#FFF3C4 5%,#E9B44C 32%,#FF9A5C 58%,#FF4E8A 92%);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 6px 28px rgba(233,180,76,.25))}
+h1 .en{font-family:"Playfair Display",serif;font-style:italic;font-weight:900;font-size:46px;letter-spacing:.01em;color:transparent;-webkit-text-stroke:1.5px rgba(255,247,232,.88);display:block;margin-top:10px}
+.lead{margin-top:12px;max-width:560px;color:#EDE7D6;font-size:18px;line-height:1.65}
+.lead strong{color:var(--gold-light)}
+.info{display:flex;gap:12px;margin:18px 0 20px}
+.info-card{flex:1;display:flex;gap:12px;align-items:center;background:rgba(255,247,232,.06);border:1px solid rgba(255,247,232,.14);border-radius:14px;padding:12px 14px}
+.ico{width:42px;height:42px;flex:0 0 42px;border-radius:12px;display:grid;place-items:center;background:rgba(233,180,76,.16);border:1px solid rgba(233,180,76,.4);font-size:20px}
+.info-card b{display:block;font-size:15px;line-height:1.3}
+.info-card span{font-size:13px;color:var(--muted)}
+.cta-row{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.btn-main{display:inline-flex;align-items:center;gap:12px;background:linear-gradient(180deg,#FFE9B0,#E9B44C 55%,#D99A2B);color:#221503;font-weight:900;font-size:19px;padding:16px 26px;border-radius:16px;text-decoration:none;box-shadow:0 12px 32px rgba(233,180,76,.38), inset 0 1px 0 #fff;border:0;cursor:pointer}
+.btn-main small{font-size:13px;font-weight:700;background:#221503;color:#FFE9B0;padding:4px 9px;border-radius:999px}
+.btn-main:hover{transform:translateY(-1px);filter:brightness(1.03)}
+.price{font-size:15px;color:var(--muted);line-height:1.5}
+.price b{color:var(--cream);font-size:18px}
+.price s{opacity:.6}
+.count{margin-top:14px;display:flex;gap:10px;align-items:center;font-size:14px;color:var(--gold-light)}
+.count .t{display:flex;gap:6px}
+.count .t span{background:#1B2244;border:1px solid rgba(233,180,76,.3);border-radius:8px;padding:4px 9px;font-weight:800;font-variant-numeric:tabular-nums;color:#fff}
+/* right : lineup ticket */
+.stage{position:relative}
+.arch{position:absolute;inset:-22px -18px -18px -18px;border:1.5px solid rgba(233,180,76,.45);border-radius:28px 28px 22px 22px;pointer-events:none;box-shadow:0 0 0 8px rgba(233,180,76,.06), 0 0 60px rgba(233,180,76,.18) inset}
+.ticket{background:linear-gradient(180deg,#1A2145 0%,#101634 58%,#0D122C 100%);border-radius:20px;overflow:hidden;border:1px solid rgba(255,247,232,.14);box-shadow:0 24px 70px rgba(0,0,0,.55)}
+.ticket-top{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;background:linear-gradient(90deg, rgba(233,180,76,.22), rgba(255,78,138,.18));border-bottom:1px solid rgba(233,180,76,.35)}
+.ticket-top b{letter-spacing:.18em;font-size:13px;color:var(--gold-light)}
+.ticket-top i{font-style:normal;font-size:13px;font-weight:700;color:#0E0B1E;background:var(--gold-light);padding:4px 10px;border-radius:999px}
+.lineup{list-style:none}
+.lineup li{display:grid;grid-template-columns:46px 1fr auto;gap:12px;align-items:center;padding:12px 20px;border-bottom:1px dashed rgba(255,247,232,.18)}
+.lineup li:last-child{border-bottom:0}
+.num{font-family:"Playfair Display",serif;font-style:italic;font-weight:900;font-size:22px;color:var(--gold)}
+.lname{font-weight:900;font-size:17px;line-height:1.25}
+.lname em{display:block;font-style:normal;font-weight:500;font-size:12.5px;letter-spacing:.08em;color:var(--muted)}
+.tag{font-size:12px;font-weight:700;padding:6px 10px;border-radius:999px;border:1px solid rgba(255,247,232,.2);color:var(--cream);white-space:nowrap;background:rgba(255,255,255,.06)}
+.tag.hot{background:var(--pink);border-color:var(--pink);color:#fff;box-shadow:0 0 16px rgba(255,78,138,.6)}
+.tag.gold{background:rgba(233,180,76,.18);border-color:rgba(233,180,76,.6);color:var(--gold-light)}
+.ticket-bottom{padding:14px 20px 16px;background:#080C1F;border-top:1px solid rgba(233,180,76,.35)}
+.bar{height:8px;background:#242C55;border-radius:999px;overflow:hidden;margin:8px 0}
+.bar i{display:block;height:100%;width:73%;background:linear-gradient(90deg,var(--gold),var(--pink));border-radius:999px;box-shadow:0 0 12px rgba(255,78,138,.7)}
+.ticket-bottom .row{display:flex;justify-content:space-between;align-items:center;font-size:13.5px;color:var(--muted)}
+.ticket-bottom .row b{color:var(--cream)}
+.trumpet{position:absolute;right:-18px;top:-58px;width:168px;filter:drop-shadow(0 10px 28px rgba(233,180,76,.45));transform:rotate(-8deg)}
+footer{display:flex;justify-content:space-between;font-size:12.5px;color:#9A96AF;padding-top:8px}
+@media(max-width:1020px){main{grid-template-columns:1fr}h1{font-size:58px}.trumpet{display:none}.wrap{padding:0 20px}}
+:focus-visible{outline:3px solid var(--mint);outline-offset:3px}
+</style>
+</head>
+<body>
+<svg class="staff" viewBox="0 0 1280 800" preserveAspectRatio="none" aria-hidden="true">
+<g stroke="#E9B44C" stroke-width="1" fill="none">
+<path d="M0 620 C 300 590, 600 650, 1280 600"/>
+<path d="M0 646 C 300 616, 600 676, 1280 626"/>
+<path d="M0 672 C 300 642, 600 702, 1280 652"/>
+<path d="M0 698 C 300 668, 600 728, 1280 678"/>
+<path d="M0 724 C 300 694, 600 754, 1280 704"/>
+</g>
+<g fill="#E9B44C" opacity=".9"><ellipse cx="240" cy="638" rx="9" ry="7" transform="rotate(-18 240 638)"/><ellipse cx="430" cy="660" rx="9" ry="7" transform="rotate(-18 430 660)"/><ellipse cx="730" cy="640" rx="9" ry="7" transform="rotate(-18 730 640)"/></g>
+</svg>
+
+<div class="wrap">
+<header>
+<div class="brand"><div class="mark">♯</div><div><b>BLUE BRASS NIGHTS</b><small>SEOUL JAZZ FESTIVAL VOL.7</small></div></div>
+<nav><a href="#" class="on">페스티벌</a><a href="#">라인업</a><a href="#">타임테이블</a><a href="#">오시는길</a><a class="mini-cta" href="#ticket">얼리버드 −30%</a></nav>
+</header>
+
+<main>
+<section aria-label="페스티벌 소개">
+<div class="eyebrow"><span class="dot"></span> 2026.11.20 FRI — 11.22 SUN · 3 NIGHTS · 야외 돔</div>
+<h1><span class="kr">밤을 부는 <span class="gold">금빛 네온</span></span><span class="en">Brass in Neon — Jazz After Dark</span></h1>
+<p class="lead">쌀쌀한 11월 밤공기 속, <strong>트럼펫과 더블베이스가 켜는 네온</strong>. 올림픽공원 돔 아래 3일간 펼쳐지는 미드나잇 재즈 파티. 담요보다 따뜻한 금관악기 사운드로 겨울의 입구를 엽니다.</p>
+<div class="info">
+<div class="info-card"><div class="ico">📅</div><div><b>11.20(금) – 11.22(일) 19:00</b><span>금·토·일 3일간, 회당 150분</span></div></div>
+<div class="info-card"><div class="ico">📍</div><div><b>올림픽공원 88잔디마당 특설돔</b><span>9호선 한성백제역 2번출구 5분</span></div></div>
+</div>
+<div class="cta-row" id="ticket">
+<a class="btn-main" href="#">얼리버드 예매하기 <small>~11.08까지 −30%</small> →</a>
+<div class="price"><s>정가 69,000원</s> → <b>48,300원~</b><br>청소년·장애인 20% 추가할인</div>
+</div>
+<div class="count" aria-live="polite">🔥 잔여 <b>&nbsp;73% 소진&nbsp;</b> · 마감까지 <span class="t"><span id="d">05</span>:<span id="h">14</span>:<span id="m">22</span>:<span id="s">10</span></span> 남음</div>
+</section>
+
+<section class="stage" aria-label="라인업 5팀">
+<svg class="trumpet" viewBox="0 0 200 120" aria-hidden="true"><defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#FFF3C4"/><stop offset=".5" stop-color="#E9B44C"/><stop offset="1" stop-color="#FF7A59"/></linearGradient></defs><g stroke="url(#g)" stroke-width="6" stroke-linecap="round" fill="none"><path d="M10 70 H110"/><path d="M110 55 L170 40 L170 95 L110 80"/><circle cx="175" cy="67" r="18"/><path d="M40 70 V95 M60 70 V95 M80 70 V95" stroke-width="5"/></g><circle cx="30" cy="70" r="6" fill="#FF4E8A"/><circle cx="30" cy="70" r="12" fill="none" stroke="#FF4E8A" stroke-width="2" opacity=".6"/></svg>
+<div class="arch"></div>
+<div class="ticket">
+<div class="ticket-top"><b>★ FULL LINEUP — 5 TEAMS</b><i>3DAYS PASS</i></div>
+<ul class="lineup">
+<li><span class="num">01</span><span class="lname">김가온 퀸텟 <em>KIM GAON QUINTET · 11.20 오프닝</em></span><span class="tag hot">HEADLINER</span></li>
+<li><span class="num">02</span><span class="lname">말로 나잇 브라스 <em>MALO NIGHT BRASS (New Orleans)</em></span><span class="tag gold">뉴올리언스</span></li>
+<li><span class="num">03</span><span class="lname">웅산 & 소울재즈 밴드 <em>WOONGSAN SOUL NIGHT · 11.21</em></span><span class="tag">보컬재즈</span></li>
+<li><span class="num">04</span><span class="lname">재즈파크 빅밴드 18인조 <em>JAZZ PARK BIG BAND · 11.22 피날레</em></span><span class="tag">빅밴드</span></li>
+<li><span class="num">05</span><span class="lname">문수진 레이트 라운지 트리오 <em>LATE LOUNGE TRIO · 매일 자정잼</em></span><span class="tag">심야잼</span></li>
+</ul>
+<div class="ticket-bottom"><div class="row"><span>얼리버드 잔여 수량</span><b>73% 판매됨 · 매진 임박</b></div><div class="bar"><i></i></div><div class="row"><span>11.20–22 전일권 · 지정석 + 스탠딩</span><b style="color:#FFE9B0">48,300원~ 예매 →</b></div></div>
+</div>
+</section>
+</main>
+<footer><span>주최 블루브라스 · 후원 서울문화재단 · 12세 이상 관람가 · 우천 시 돔 내 진행</span><span>문의 02-555-1120 · © BLUE BRASS 2026</span></footer>
+</div>
+<script>
+(function(){const end=new Date('2026-11-08T23:59:59+09:00').getTime();
+function p(n){return String(n).padStart(2,'0')}
+function tick(){let d=end-Date.now();if(d<0)d=0;const dd=Math.floor(d/864e5),hh=Math.floor(d%864e5/36e5),mm=Math.floor(d%36e5/6e4),ss=Math.floor(d%6e4/1e3);document.getElementById('d').textContent=p(dd);document.getElementById('h').textContent=p(hh);document.getElementById('m').textContent=p(mm);document.getElementById('s').textContent=p(ss)}tick();setInterval(tick,1000)})();
+</script>
+</body>
+</html>

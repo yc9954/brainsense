@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>11월 재즈 페스티벌 — 밤을 녹이는 금관의 숨</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Noto+Serif+KR:wght@700;900&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+--paper:#FFF8E6; --ink:#16100A; --muted:#6B5D4A;
+--night:#0A0E22; --gold:#FFB636; --gold-lt:#FFE6A3; --coral:#FF4D6D; --mint:#67FFC4;
+}
+html,body{height:100%}
+body{font-family:"Noto Sans KR",system-ui,sans-serif;background:#070914;color:var(--ink);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.poster{display:grid;grid-template-columns:540px 1fr;min-height:100vh;max-width:1440px;margin:0 auto;background:var(--night);overflow:hidden;position:relative}
+/* LEFT TICKET PANEL */
+.ticket{background:var(--paper);background-image:radial-gradient(rgba(0,0,0,.06) 1px,transparent 1px);background-size:18px 18px;position:relative;display:flex;flex-direction:column;justify-content:center;padding:42px 48px 32px 56px;z-index:2}
+.ticket::after{content:"";position:absolute;top:0;right:-18px;width:36px;height:100%;background-image:radial-gradient(circle at 18px 18px, var(--paper) 13px, transparent 14px);background-size:36px 36px;background-repeat:repeat-y;z-index:3}
+.ticket::before{content:"";position:absolute;top:0;right:0;width:2px;height:100%;background:repeating-linear-gradient(to bottom,#16100A 0 8px,transparent 8px 16px);opacity:.25}
+.eyebrow{display:flex;align-items:center;gap:10px;font-family:Oswald,sans-serif;font-size:13px;letter-spacing:.18em;color:#8A6D1E;font-weight:700}
+.eyebrow i{width:9px;height:9px;background:var(--coral);border-radius:50%;box-shadow:0 0 0 6px rgba(255,77,109,.18);display:inline-block}
+h1{font-family:"Noto Serif KR",serif;font-weight:900;font-size:62px;line-height:.98;letter-spacing:-.04em;margin:16px 0 14px;color:#12100A}
+h1 span{position:relative;display:inline-block;color:#9A5B00;background:linear-gradient(100deg,#7A3E00,#E89A0A 45%,#FFF0B6 50%,#E89A0A 55%,#7A3E00);-webkit-background-clip:text;background-clip:text;color:transparent}
+h1 em{font-style:normal;background:#12100A;color:var(--paper);padding:0 12px;border-radius:6px;font-size:52px;vertical-align:middle}
+.sub{font-size:18px;color:#3E3324;font-weight:500}
+.meta{display:flex;gap:12px;margin:20px 0 18px}
+.meta div{flex:1;background:#12100A;color:#FFF4D6;border-radius:14px;padding:12px 14px;display:flex;gap:10px;align-items:center}
+.meta b{display:block;font-size:16px;line-height:1.2}
+.meta small{display:block;font-size:13px;opacity:.7;letter-spacing:.02em}
+.meta .ic{font-size:22px}
+.lineup{border-top:2px solid #12100A;padding-top:14px;margin-top:2px}
+.lineup h2{font-family:Oswald,sans-serif;font-size:12px;letter-spacing:.28em;color:#8A6D1E;margin-bottom:10px}
+.lineup ol{list-style:none}
+.lineup li{display:flex;align-items:baseline;gap:12px;padding:7px 0;border-bottom:1px dashed rgba(0,0,0,.18);font-size:16px}
+.lineup li:last-child{border:none}
+.num{font-family:Oswald,sans-serif;font-weight:700;font-size:13px;color:#fff;background:#12100A;border-radius:99px;min-width:30px;height:22px;display:inline-flex;align-items:center;justify-content:center}
+.lineup li b{font-weight:700}
+.lineup li span{margin-left:auto;font-size:13px;color:var(--muted);white-space:nowrap}
+.cta-box{margin-top:18px;background:#12100A;border-radius:18px;padding:18px 20px 20px;color:#FFF6DE;position:relative;box-shadow:8px 8px 0 #FFB636}
+.cta-box .val{display:flex;align-items:center;gap:10px;font-size:15px}
+.cta-box .val strong{color:var(--gold);font-size:20px}
+.cta-box .val s{opacity:.5}
+.badge{background:var(--coral);color:#fff;font-weight:900;font-size:13px;padding:3px 10px;border-radius:99px;letter-spacing:.02em}
+.cta-btn{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:12px;background:linear-gradient(180deg,#FFD97A,#FFB636);color:#1A1200;text-decoration:none;font-weight:900;font-size:20px;padding:16px 20px;border-radius:14px;transition:.2s}
+.cta-btn:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(255,182,54,.45)}
+.cta-btn small{display:block;font-size:13px;font-weight:500}
+.tiny{margin-top:10px;font-size:13.5px;color:#8C7E64;text-align:center}
+/* RIGHT STAGE */
+.stage{position:relative;overflow:hidden;background:radial-gradient(900px 600px at 70% 20%,#2B1A3A 0%,#12183E 38%,#0A0E22 68%),linear-gradient(180deg,#0A0E22,#0B0A14);display:flex;align-items:center;justify-content:center}
+.beam{position:absolute;left:-10%;top:-20%;width:140%;height:120px;background:linear-gradient(90deg,transparent,var(--mint) 20%,#fff 50%,var(--mint) 80%,transparent);opacity:.18;transform:rotate(-18deg);filter:blur(1px)}
+.beam.b2{top:12%;opacity:.12}
+.beam.b3{top:78%;background:linear-gradient(90deg,transparent,var(--gold) 20%,#fff 50%,var(--coral) 80%,transparent);opacity:.22}
+.bokeh{position:absolute;border-radius:50%;filter:blur(14px);opacity:.5}
+.moon{position:absolute;right:84px;top:62px;width:132px;height:132px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#FFF8D6,#FFC65C 55%,#FF7A3D 100%);box-shadow:0 0 60px 18px rgba(255,182,54,.35),0 0 0 18px rgba(255,182,54,.12),0 0 0 38px rgba(255,77,109,.08)}
+.moon::after{content:"LIVE";position:absolute;inset:36px;border:1.5px solid rgba(0,0,0,.45);border-radius:50%;display:grid;place-items:center;font-family:Oswald;font-size:14px;letter-spacing:.2em;font-weight:700;color:rgba(0,0,0,.6)}
+.hero-svg{width:min(720px,92%);height:auto;z-index:2;filter:drop-shadow(0 30px 60px rgba(0,0,0,.6));margin-top:20px}
+.wave{animation:wave 2.2s ease-out infinite;transform-origin:80px 360px;opacity:0}
+.wave.w2{animation-delay:.55s}.wave.w3{animation-delay:1.1s}
+@keyframes wave{0%{opacity:0;transform:scale(.6)}20%{opacity:1}100%{opacity:0;transform:scale(1.25)}}
+.note{animation:float 3.6s ease-in-out infinite}
+.note.n2{animation-delay:1s}.note.n3{animation-delay:2s}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-16px)}}
+.glowPulse{animation:pulse 2.8s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:.75}50%{opacity:1}}
+.price-tag{position:absolute;left:38px;top:50%;transform:translateY(-40%) rotate(-6deg);background:#FFF8E6;color:#12100A;border-radius:16px;padding:14px 18px;z-index:4;box-shadow:0 18px 40px rgba(0,0,0,.5);border:2px solid #12100A;width:230px}
+.price-tag::before{content:"";position:absolute;top:-22px;left:50%;width:2px;height:22px;background:#fff}
+.price-tag strong{font-size:28px;letter-spacing:-.03em}
+.price-tag p{font-size:13.5px;color:#5A4D36}
+.price-tag .off{background:#12100A;color:#FFB636;font-weight:900;font-size:13px;padding:2px 8px;border-radius:99px;margin-left:6px}
+.stage-foot{position:absolute;bottom:22px;left:0;right:0;display:flex;justify-content:center;gap:18px;z-index:3;color:#D8D6FF;font-size:14px;letter-spacing:.04em}
+.stage-foot span{border:1px solid rgba(255,255,255,.25);padding:6px 14px;border-radius:99px;background:rgba(0,0,0,.35);backdrop-filter:blur(6px)}
+.topbar{position:absolute;top:22px;left:32px;right:32px;display:flex;justify-content:space-between;align-items:center;z-index:5;color:#fff;font-size:13px;letter-spacing:.18em;font-family:Oswald}
+.topbar a{color:#fff;text-decoration:none;border:1px solid rgba(255,255,255,.35);padding:7px 14px;border-radius:99px;background:rgba(0,0,0,.3)}
+@media(max-width:980px){.poster{grid-template-columns:1fr}.ticket::after{display:none}.stage{min-height:620px}.price-tag{left:18px}h1{font-size:48px}}
+:focus-visible{outline:3px solid var(--mint);outline-offset:3px}
+</style>
+</head>
+<body>
+<main class="poster" aria-label="11월 재즈 페스티벌 포스터">
+<section class="ticket">
+<div class="eyebrow"><i></i> NOV JAZZ FEST 2026 · VOL.2 · NAMSAN NEON HALL</div>
+<h1>밤을 녹이는<br><span>금관의 숨결</span><br><em>11월 재즈</em></h1>
+<p class="sub">네온보다 뜨겁고, 위스키보다 부드럽게. 3일간 이어지는 브라스의 밤.</p>
+<div class="meta">
+<div><div class="ic">📅</div><div><b>11.20(금) — 22(일)</b><small>OPEN 18:00 / START 19:00</small></div></div>
+<div><div class="ic">📍</div><div><b>남산 네온홀 + 재즈가든</b><small>서울 중구 · 전석 자유석</small></div></div>
+</div>
+<div class="lineup" aria-label="라인업 5팀">
+<h2>LINEUP — 5 NIGHTS / 5 SOUNDS</h2>
+<ol>
+<li><span class="num">01</span><b>김오키 새턴 쿼텟</b><span>HEADLINER · 11.22</span></li>
+<li><span class="num">02</span><b>웅산 & 블루스 앙상블</b><span>SOUL BALLAD · 11.20</span></li>
+<li><span class="num">03</span><b>선우정아 × 프렐류드 트리오</b><span>CROSSOVER · 11.21</span></li>
+<li><span class="num">04</span><b>루나리프 빅밴드 18인</b><span>BIG BRASS · 11.21</span></li>
+<li><span class="num">05</span><b>도쿄 네온 브라스 Collective</b><span>FINALE JAM · 11.22</span></li>
+</ol>
+</div>
+<div class="cta-box">
+<div class="val"><span class="badge">EARLY BIRD -40%</span><span><s>149,000원</s> <strong>89,000원</strong> 3일권</span></div>
+<a class="cta-btn" href="#" aria-label="얼리버드 티켓 예매하기"> <span>얼리버드 티켓 예매하기<small>오늘 자정 마감 · 잔여 214매</small></span> <span aria-hidden="true" style="font-size:28px">↗</span></a>
+</div>
+<p class="tiny">예스24 · 멜론티켓 · 네이버예약 — 1인 4매까지 · 우천 시 실내 전환</p>
+</section>
+<section class="stage" aria-hidden="false">
+<div class="beam"></div><div class="beam b2"></div><div class="beam b3"></div>
+<div class="bokeh" style="left:12%;top:18%;width:18px;height:18px;background:#FF4D6D"></div>
+<div class="bokeh" style="left:22%;top:72%;width:28px;height:28px;background:#FFB636"></div>
+<div class="bokeh" style="right:22%;bottom:18%;width:14px;height:14px;background:#67FFC4"></div>
+<div class="bokeh" style="left:48%;top:10%;width:10px;height:10px;background:#fff"></div>
+<div class="moon"></div>
+<div class="topbar"><span>🎷 NIGHT · NEON · BRASS</span><a href="#">LINEUP ↓</a></div>
+<div class="price-tag" aria-hidden="true"><div style="font-size:12px;letter-spacing:.2em;font-weight:700">✦ WHAT YOU GET <span class="off">-40%</span></div><strong>89,000원</strong><p>3일 자유이용 + 웰컴 하이볼 1잔<br>지금이 가장 싸고 가장 앞자리</p></div>
+<!-- HERO : trumpeter looking left to CTA -->
+<svg class="hero-svg" viewBox="0 0 740 560" role="img" aria-label="트럼펫 연주자 실루엣">
+<defs>
+<linearGradient id="brass" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFF0B6"/><stop offset=".28" stop-color="#FFB636"/><stop offset=".55" stop-color="#9A4D00"/><stop offset=".78" stop-color="#FFD97A"/><stop offset="1" stop-color="#7A3200"/></linearGradient>
+<radialGradient id="bellGlow" cx=".35" cy=".5" r=".7"><stop offset="0" stop-color="#FFF8D6"/><stop offset=".4" stop-color="#FFB636"/><stop offset="1" stop-color="#FF4D6D" stop-opacity="0"/></radialGradient>
+<filter id="neon" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<!-- sound waves to LEFT toward ticket -->
+<g fill="none" stroke-linecap="round">
+<path class="wave" d="M155 210 Q 95 300 155 390" stroke="#67FFC4" stroke-width="7" filter="url(#neon)"/>
+<path class="wave w2" d="M115 175 Q 30 300 115 425" stroke="#FFB636" stroke-width="5" filter="url(#neon)"/>
+<path class="wave w3" d="M75 135 Q -25 300 75 465" stroke="#FF4D6D" stroke-width="4" filter="url(#neon)"/>
+</g>
+<ellipse cx="140" cy="300" rx="110" ry="110" fill="url(#bellGlow)" opacity=".55" class="glowPulse"/>
+<!-- trumpet -->
+<g>
+<rect x="195" y="288" width="250" height="18" rx="9" fill="url(#brass)" stroke="#3A1E00" stroke-width="2"/>
+<rect x="195" y="312" width="250" height="10" rx="5" fill="#7A3200" opacity=".9"/>
+<!-- valves -->
+<g fill="url(#brass)" stroke="#3A1E00" stroke-width="2"><rect x="340" y="255" width="22" height="70" rx="8"/><rect x="370" y="255" width="22" height="70" rx="8"/><rect x="400" y="255" width="22" height="70" rx="8"/></g>
+<circle cx="351" cy="248" r="10" fill="#FFE6A3" stroke="#3A1E00" stroke-width="2"/><circle cx="381" cy="248" r="10" fill="#FFE6A3" stroke="#3A1E00" stroke-width="2"/><circle cx="411" cy="248" r="10" fill="#FFE6A3" stroke="#3A1E00" stroke-width="2"/>
+<!-- bell flaring LEFT -->
+<path d="M195 240 L 195 360 L 120 410 L 110 390 L 110 210 L 120 190 Z" fill="url(#brass)" stroke="#3A1E00" stroke-width="3"/>
+<ellipse cx="112" cy="300" rx="28" ry="102" fill="#1A0E00" stroke="#FFE6A3" stroke-width="5"/>
+<ellipse cx="112" cy="300" rx="14" ry="78" fill="#FF7A3D" opacity=".9"/>
+<ellipse cx="112" cy="300" rx="6" ry="50" fill="#FFF8D6"/>
+</g>
+<!-- player silhouette facing LEFT -->
+<g>
+<!-- neck/body -->
+<path d="M500 520 L 500 420 Q 505 380 470 370 L 445 365 L 445 520 Z" fill="#141010"/>
+<path d="M500 430 L 700 430 L 700 520 L 500 520 Z" fill="#141010"/>
+<!-- head profile looking left -->
+<ellipse cx="520" cy="300" rx="62" ry="78" fill="#171111" stroke="#FFB636" stroke-width="2" stroke-opacity=".6"/>
+<!-- nose/lips -->
+<path d="M458 295 L 444 310 L 452 318 L 448 327 L 460 330" fill="none" stroke="#171111" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+<!-- mouthpiece -->
+<rect x="448" y="324" width="40" height="12" rx="6" fill="#E8E8E8"/>
+<!-- eye gazing LEFT to CTA -->
+<ellipse cx="490" cy="288" rx="16" ry="11" fill="#FFF8E6"/>
+<circle cx="481" cy="288" r="6.5" fill="#12100A"/><circle cx="479" cy="286" r="2" fill="#fff"/>
+<path d="M474 275 Q 490 270 506 275" stroke="#FFB636" stroke-width="3" fill="none" stroke-linecap="round"/>
+<!-- fedora -->
+<path d="M450 245 L 590 245 L 605 265 L 435 265 Z" fill="#0D0D0D" stroke="#FFB636" stroke-width="2"/>
+<path d="M475 180 L 565 180 L 575 245 L 465 245 Z" fill="#1A1A1A" stroke="#FFB636" stroke-width="2"/>
+<rect x="472" y="215" width="98" height="14" fill="#FF4D6D"/>
+<!-- rim light -->
+<path d="M575 250 Q 590 300 575 370" stroke="#FFB636" stroke-width="4" fill="none" opacity=".9" filter="url(#neon)"/>
+</g>
+<!-- floating notes -->
+<g font-size="38" font-weight="900" fill="#FFE6A3"><text class="note" x="180" y="170">♪</text><text class="note n2" x="260" y="130" fill="#67FFC4">♫</text><text class="note n3" x="90" y="220" fill="#FF4D6D">♩</text></g>
+</svg>
+<div class="stage-foot"><span>🎺 3DAYS · 18 STAGES</span><span>🌙 11월 밤공기 + 브라스</span><span>✦ 시선은 티켓으로</span></div>
+</section>
+</main>
+</body>
+</html>

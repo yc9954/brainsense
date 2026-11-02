@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>쪼미 — 비싼 주식도 1,000원부터</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&family=Archivo:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+ --paper:#F6F2E8;
+ --paper2:#FFFBF2;
+ --ink:#121318;
+ --muted:#5B5E6A;
+ --line:#E6DDC9;
+ --orange:#C9360A;
+ --orange-bright:#FF4E16;
+ --yellow:#FFD84D;
+ --forest:#0E3D34;
+ --forest-deep:#0A2B25;
+ --card-dark:#14181F;
+ --blue:#1A3BFF;
+}
+html{background:var(--paper)}
+body{
+ font-family:"Noto Sans KR",system-ui,-apple-system,sans-serif;
+ color:var(--ink);
+ background:var(--paper);
+ font-size:17px;
+ line-height:1.6;
+ -webkit-font-smoothing:antialiased;
+}
+.page{max-width:1280px;margin:0 auto;min-height:800px;display:flex;flex-direction:column;background:
+ radial-gradient(700px 380px at 85% 10%, #FFE9A8 0%, transparent 60%),
+ radial-gradient(600px 500px at -10% 30%, #fff 0%, transparent 60%),
+ var(--paper);
+ overflow:hidden;position:relative;border-left:1px solid var(--line);border-right:1px solid var(--line);
+}
+.topbar{
+ display:flex;align-items:center;justify-content:space-between;
+ padding:18px 40px 14px;
+}
+.brand{display:flex;align-items:center;gap:11px}
+.mark{width:38px;height:38px;border-radius:12px;background:var(--ink);color:#fff;display:grid;place-items:center;font-weight:900;font-size:22px;position:relative}
+.mark:after{content:"";position:absolute;right:-4px;top:-4px;width:14px;height:14px;background:var(--orange-bright);border-radius:50%;border:3px solid var(--paper)}
+.brand b{font-size:23px;letter-spacing:-.03em}
+.brand b span{font-family:Archivo;font-weight:800;font-size:13px;background:var(--ink);color:#fff;border-radius:999px;padding:2px 7px;vertical-align:middle;margin-left:4px;letter-spacing:.06em}
+.nav{display:flex;gap:28px;font-size:16px;font-weight:500;color:#2A2D36}
+.nav a{color:inherit;text-decoration:none}
+.nav a:hover{text-decoration:underline;text-underline-offset:6px}
+.head-act{display:flex;gap:10px;align-items:center}
+.login{font-weight:700;font-size:16px;text-decoration:none;color:var(--ink)}
+.dl{background:var(--ink);color:#fff;border-radius:999px;padding:11px 20px;font-weight:700;font-size:15px;text-decoration:none}
+.hero{
+ display:grid;grid-template-columns:600px 1fr;
+ gap:20px;padding:18px 40px 0;align-items:start;flex:1;
+}
+.eyebrow{
+ display:inline-flex;align-items:center;gap:8px;
+ background:#fff;border:1.5px solid var(--ink);border-radius:999px;
+ padding:8px 14px;font-size:14.5px;font-weight:800;box-shadow:3px 3px 0 var(--ink);
+}
+.eyebrow i{width:9px;height:9px;background:#12B76A;border-radius:50%;box-shadow:0 0 0 5px #D3F5E0;display:inline-block}
+h1{font-size:59px;line-height:1.04;letter-spacing:-.035em;font-weight:900;margin:20px 0 16px;word-break:keep-all}
+h1 .u{position:relative;white-space:nowrap;z-index:1}
+h1 .u:before{content:"";position:absolute;left:-6px;right:-6px;top:52%;bottom:2px;background:var(--yellow);z-index:-1;transform:rotate(-1.2deg);border-radius:4px}
+h1 .tangerine{color:var(--orange-bright)}
+.sub{font-size:18.5px;color:#2F333E;line-height:1.65;word-break:keep-all;max-width:520px}
+.sub strong{color:var(--ink)}
+.price-strip{display:flex;gap:10px;margin:20px 0 22px}
+.price{flex:1;background:var(--paper2);border:1.5px solid var(--line);border-radius:16px;padding:12px 16px;display:flex;align-items:center;gap:12px}
+.price .coin{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;font-weight:900;font-size:18px;flex-shrink:0}
+.c1{background:#0E3D34;color:#C6FF8A}
+.c2{background:var(--yellow);color:var(--ink);border:1.5px solid var(--ink)}
+.c3{background:#FFE3D6;color:#7A1E00}
+.price b{display:block;font-size:17px;line-height:1.2;letter-spacing:-.02em}
+.price small{font-size:13.5px;color:var(--muted);font-weight:500}
+.cta-row{display:flex;gap:12px;align-items:stretch;margin-top:4px}
+.btn-main{
+ flex:1;background:var(--orange);color:#fff;border:none;border-radius:16px;
+ padding:18px 20px;font-size:20px;font-weight:900;letter-spacing:-.02em;
+ display:flex;align-items:center;justify-content:center;gap:10px;
+ box-shadow:0 10px 0 #7A1E00, 0 18px 30px rgba(201,54,10,.28);
+ cursor:pointer;
+}
+.btn-main small{background:#fff;color:var(--orange);font-size:13px;font-weight:800;border-radius:999px;padding:4px 10px}
+.btn-main:hover{transform:translateY(-1px)}
+.btn-sub{background:#fff;border:1.5px solid var(--ink);border-radius:16px;padding:0 22px;font-size:17px;font-weight:800;cursor:pointer}
+.micro{display:flex;gap:16px;margin:14px 2px 18px;font-size:14.5px;font-weight:600;color:#3E424E}
+.micro span{display:flex;gap:6px;align-items:center}
+.steps{display:flex;align-items:center;gap:0;background:var(--forest);color:#EAF7EF;border-radius:18px;padding:14px 18px;box-shadow:5px 5px 0 var(--ink)}
+.step{flex:1;text-align:center}
+.step em{display:block;font-style:normal;font-family:Archivo;font-size:12px;letter-spacing:.12em;opacity:.7}
+.step b{font-size:16px}
+.step-line{width:34px;height:2px;background:rgba(255,255,255,.25);border-radius:2px;position:relative}
+.step-line:after{content:"›";position:absolute;top:-14px;left:10px;color:#C6FF8A;font-weight:900}
+.trust{display:flex;align-items:center;gap:14px;margin-top:16px}
+.avatars{display:flex}
+.avatars div{width:36px;height:36px;border-radius:50%;border:2.5px solid var(--paper);margin-left:-10px;display:grid;place-items:center;font-size:14px;font-weight:900;color:#fff}
+.avatars div:first-child{margin-left:0}
+.trust p{font-size:14.5px;line-height:1.45;color:#2A2E38}
+.trust p b{font-size:15px}
+.stars{color:#E89300;letter-spacing:2px;font-size:14px}
+/* RIGHT */
+.visual{position:relative;min-height:640px}
+.board{
+ position:absolute;inset:0 0 0 18px;
+ background:var(--card-dark);border-radius:28px 28px 0 0;
+ border:1.5px solid var(--ink);border-bottom:none;
+ overflow:hidden;color:#fff;padding:24px 26px;
+}
+.grid-bg{position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.14) 1.5px, transparent 1.5px);background-size:22px 22px;mask-image:linear-gradient(to bottom, black 20%, transparent 75%)}
+.big-won{
+ position:absolute;right:-18px;top:54px;width:188px;height:188px;border-radius:50%;
+ background:conic-gradient(from 20deg, #FFD84D, #FFB800, #FFE89A, #FFD84D);
+ border:6px solid #121318;display:grid;place-items:center;text-align:center;
+ transform:rotate(10deg);box-shadow:0 12px 30px rgba(0,0,0,.4);z-index:3;
+}
+.big-won:before{content:"";position:absolute;inset:12px;border:2px dashed rgba(0,0,0,.55);border-radius:50%}
+.big-won b{font-size:36px;line-height:1;letter-spacing:-.04em;color:#121318}
+.big-won span{font-size:13px;font-weight:800;background:#121318;color:#FFD84D;border-radius:999px;padding:3px 10px;display:inline-block;margin-top:6px}
+.board-head{display:flex;justify-content:space-between;align-items:center;position:relative;z-index:2}
+.live{display:inline-flex;align-items:center;gap:8px;background:#1E2532;border:1px solid rgba(255,255,255,.14);border-radius:999px;padding:7px 13px;font-size:13px;font-weight:700}
+.live i{width:8px;height:8px;background:#2EFF7A;border-radius:50%;animation:blink 1.4s infinite}
+@keyframes blink{50%{opacity:.3}}
+.phone{
+ position:relative;z-index:2;width:290px;background:#fff;color:var(--ink);
+ border-radius:36px;padding:14px 14px 16px;margin-top:18px;
+ border:8px solid #000;box-shadow:0 24px 60px rgba(0,0,0,.45);
+}
+.notch{width:110px;height:22px;background:#000;border-radius:999px;margin:0 auto 10px}
+.app-top{display:flex;justify-content:space-between;align-items:center}
+.app-top b{font-size:16px}
+.bal{background:#121318;color:#fff;border-radius:18px;padding:14px 15px;margin:12px 0}
+.bal small{font-size:12px;opacity:.7;font-weight:600}
+.bal strong{font-size:24px;font-family:Archivo;letter-spacing:-.03em;display:block}
+.bal strong em{font-style:normal;font-size:13px;background:#C6FF8A;color:#0A2B25;border-radius:999px;padding:2px 8px;vertical-align:middle;margin-left:6px;font-family:"Noto Sans KR"}
+.chart{height:72px;background:#F2F4F7;border-radius:12px;margin-top:10px;padding:8px;position:relative;overflow:hidden}
+.row{display:flex;justify-content:space-between;align-items:center;padding:9px 4px;border-bottom:1px solid #EEE}
+.row:last-child{border:none}
+.tok{display:flex;gap:10px;align-items:center;font-size:14px;font-weight:700}
+.logo{width:32px;height:32px;border-radius:10px;display:grid;place-items:center;font-size:16px;color:#fff;font-weight:900}
+.buybox{background:#FFF3D6;border:1.5px dashed #C99A00;border-radius:16px;padding:12px;margin-top:10px}
+.buybox p{font-size:13px;font-weight:800}
+.slider{height:8px;background:#EADDAE;border-radius:999px;margin:10px 0;position:relative}
+.slider:after{content:"";position:absolute;left:0;top:0;width:38%;height:100%;background:var(--ink);border-radius:999px}
+.slider:before{content:"●";position:absolute;left:36%;top:-11px;font-size:20px}
+.chips{display:flex;gap:6px}
+.chips span{font-size:12px;font-weight:800;background:#fff;border:1px solid #D9C98F;border-radius:999px;padding:4px 10px}
+.chips span.on{background:var(--ink);color:#fff}
+.buybtn{background:var(--orange);color:#fff;text-align:center;font-weight:900;border-radius:12px;padding:11px;margin-top:10px;font-size:15px}
+.float{position:absolute;z-index:4;background:rgba(255,255,255,.96);color:var(--ink);border:1.5px solid var(--ink);border-radius:16px;padding:11px 14px;box-shadow:4px 4px 0 rgba(0,0,0,.9);font-size:14px;font-weight:700;backdrop-filter:blur(6px)}
+.f1{left:-8px;top:148px;transform:rotate(-4deg)}
+.f2{right:18px;bottom:132px;transform:rotate(2deg);display:flex;gap:10px;align-items:center}
+.f2 .sw{width:40px;height:22px;background:#12B76A;border-radius:999px;position:relative}
+.f2 .sw:after{content:"";position:absolute;right:3px;top:3px;width:16px;height:16px;background:#fff;border-radius:50%}
+.secure{display:flex;gap:8px;margin-top:16px;position:relative;z-index:2}
+.secure div{flex:1;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:14px;padding:10px 12px;font-size:12.5px;line-height:1.4}
+.secure b{display:block;font-size:13px}
+.ticker{border-top:1.5px solid var(--ink);background:var(--yellow);display:flex;align-items:center;overflow:hidden;white-space:nowrap;font-weight:800;font-size:14.5px}
+.ticker .label{background:var(--ink);color:#fff;padding:11px 18px;font-family:Archivo;font-size:13px;letter-spacing:.08em;flex-shrink:0}
+.marquee{display:inline-block;padding-left:20px;animation:scroll 22s linear infinite}
+@keyframes scroll{to{transform:translateX(-50%)}}
+@media(max-width:1020px){
+ .hero{grid-template-columns:1fr}.visual{min-height:700px}.nav{display:none}h1{font-size:44px}
+}
+</style>
+</head>
+<body>
+<div class="page">
+ <header class="topbar">
+  <div class="brand"><div class="mark">◧</div><b>쪼미<span>JOMI</span></b></div>
+  <nav class="nav" aria-label="주 메뉴">
+   <a href="#">소수점 투자란?</a><a href="#">수수료</a><a href="#">안전장치</a><a href="#">자동모으기</a>
+  </nav>
+  <div class="head-act"><a class="login" href="#">로그인</a><a class="dl" href="#">앱 다운로드</a></div>
+ </header>
+
+ <main class="hero">
+  <section>
+   <span class="eyebrow"><i></i> 지금 가입하면 · 인기 미국주식 1주 랜덤 지급</span>
+   <h1>테슬라 1주가 부담된다면,<br><span class="u">1,000원</span>부터 <span class="tangerine">쪼개 사세요.</span></h1>
+   <p class="sub">쪼미는 비싼 주식도 <strong>1,000원 단위로 쪼개 사는 소수점 투자</strong> 앱이에요. 커피 한 잔 값으로 애플·테슬라 주주가 되고, 매일 1,000원씩 자동으로 모을 수 있어요.</p>
+
+   <div class="price-strip">
+    <div class="price"><div class="coin c1">₩</div><div><b>1,000원 최소금액</b><small>한 주도 안 비싸게</small></div></div>
+    <div class="price"><div class="coin c2">◐</div><div><b>0.001주 단위</b><small>원하는 만큼만</small></div></div>
+    <div class="price"><div class="coin c3">◍</div><div><b>수수료 0.05%</b><small>환전수수료 평생우대</small></div></div>
+   </div>
+
+   <div class="cta-row">
+    <button class="btn-main" aria-label="3분 만에 시작하기">3분 만에 시작하기 <span aria-hidden="true">→</span> <small>⏱ 3분</small></button>
+    <button class="btn-sub">수수료 보기</button>
+   </div>
+   <div class="micro"><span>✅ 신분증만 있으면 OK</span><span>· 가입비·유지비 0원</span><span>· 미성년자도 가능</span></div>
+
+   <div class="steps" aria-label="시작 절차">
+    <div class="step"><em>STEP 01</em><b>📱 계정 만들기</b></div><div class="step-line"></div>
+    <div class="step"><em>STEP 02</em><b>🪪 신분증 인증</b></div><div class="step-line"></div>
+    <div class="step"><em>STEP 03</em><b>💰 1천원 매수</b></div>
+   </div>
+
+   <div class="trust">
+    <div class="avatars" aria-hidden="true">
+     <div style="background:#FF6B3D">김</div><div style="background:#1A3BFF">박</div><div style="background:#0E3D34">이</div><div style="background:#121318">+9</div>
+    </div>
+    <p><span class="stars">★★★★★</span> <b>4.9 · 누적 128만 명이 선택</b><br>ISMS-P 인증 · 투자자별 별도 보관 · 2단계 인증으로 안전하게</p>
+   </div>
+  </section>
+
+  <section class="visual" aria-label="앱 미리보기">
+   <div class="board">
+    <div class="grid-bg"></div>
+    <div class="big-won" aria-hidden="true"><div><b>1,000<small style="font-size:18px">원</small></b><br><span>부터 시작!</span></div></div>
+    <div class="board-head">
+     <span class="live"><i></i> 실시간 소수점 시세 · NASDAQ 연결중</span>
+     <span style="font-family:Archivo;font-size:13px;opacity:.7">JOMI LIVE</span>
+    </div>
+
+    <div class="phone" role="img" aria-label="쪼미 앱에서 1000원으로 애플 주식을 사는 화면">
+     <div class="notch"></div>
+     <div class="app-top"><b>🍀 내 조각들</b><span style="font-size:13px;background:#F1F2F5;border-radius:999px;padding:4px 10px;font-weight:700">🔔 3</span></div>
+     <div class="bal"><small>내 조각 포트폴리오</small><strong>128,400원 <em>+12.8%</em></strong>
+      <div class="chart">
+       <svg viewBox="0 0 260 60" width="100%" height="56" aria-hidden="true">
+        <path d="M0 48 L25 44 L50 46 L75 32 L100 36 L125 22 L150 26 L175 14 L200 18 L225 8 L260 10" fill="none" stroke="#121318" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="225" cy="8" r="5" fill="#FF4E16" stroke="#fff" stroke-width="3"/>
+        <path d="M0 48 L25 44 L50 46 L75 32 L100 36 L125 22 L150 26 L175 14 L200 18 L225 8 L260 10 L260 60 L0 60 Z" fill="rgba(255,78,22,.12)"/>
+       </svg>
+      </div>
+     </div>
+     <div class="row"><div class="tok"><div class="logo" style="background:#000">◍</div>애플 <small style="color:#888;font-weight:500">0.0821주</small></div><b style="font-size:13px;color:#12925E">+2.4%</b></div>
+     <div class="row"><div class="tok"><div class="logo" style="background:#E31937">T</div>테슬라 <small style="color:#888;font-weight:500">0.1210주</small></div><b style="font-size:13px;color:#12925E">+5.1%</b></div>
+     <div class="buybox"><p>🍕 얼마큼 살까요? <span style="float:right;font-family:Archivo">1,000원 = 0.0031주</span></p>
+      <div class="slider"></div>
+      <div class="chips"><span class="on">1천원</span><span>5천원</span><span>1만원</span><span>꽉 채우기</span></div>
+      <div class="buybtn">1,000원어치 사기</div>
+     </div>
+    </div>
+
+    <div class="float f1">✅ <b>NVDA 0.005주 체결완료</b><br><span style="font-weight:500;color:#555;font-size:13px">2초 전 · 1,500원</span></div>
+    <div class="float f2"><div><b>1,000원 자동모으기</b><br><span style="font-weight:500;color:#12925E;font-size:13px">● 매일 아침 ON</span></div><div class="sw"></div></div>
+
+    <div class="secure">
+     <div>🔒 <b>ISMS-P 인증</b>은행급 암호화·보안관제</div>
+     <div>🏦 <b>별도 보관</b>내 주식은 예탁결제원 안전보관</div>
+     <div>🛡️ <b>이상거래 탐지</b>24시간 모니터링·2단계 인증</div>
+    </div>
+   </div>
+  </section>
+ </main>
+
+ <footer class="ticker" aria-label="인기 종목 시세">
+  <span class="label">● TODAY</span>
+  <span class="marquee">AAPL 232.14 ▲1.2% &nbsp;&nbsp;·&nbsp;&nbsp; TSLA 248.50 ▲3.8% &nbsp;&nbsp;·&nbsp;&nbsp; NVDA 131.88 ▲2.4% &nbsp;&nbsp;·&nbsp;&nbsp; S&P500 조각 1,000원부터 &nbsp;&nbsp;·&nbsp;&nbsp; 환전수수료 0원 이벤트중 &nbsp;&nbsp;·&nbsp;&nbsp; AAPL 232.14 ▲1.2% &nbsp;&nbsp;·&nbsp;&nbsp; TSLA 248.50 ▲3.8% &nbsp;&nbsp;·&nbsp;&nbsp; NVDA 131.88 ▲2.4% &nbsp;&nbsp;·&nbsp;&nbsp; S&P500 조각 1,000원부터 &nbsp;&nbsp;·&nbsp;&nbsp; 환전수수료 0원 이벤트중</span>
+ </footer>
+</div>
+</body>
+</html>

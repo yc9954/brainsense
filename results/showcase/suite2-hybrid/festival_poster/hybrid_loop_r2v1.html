@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SEOUL BRASS NIGHTS — 11월 재즈 페스티벌</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#080816;color:#FFF6E8;font-family:"Noto Sans KR",sans-serif;font-size:16px;line-height:1.5;overflow-x:hidden}
+.stage{position:relative;min-height:100vh;max-width:1440px;margin:0 auto;background:
+radial-gradient(900px 600px at 82% 35%,rgba(242,169,59,.28),transparent 60%),
+radial-gradient(700px 500px at 95% 80%,rgba(255,61,127,.22),transparent 60%),
+radial-gradient(600px 500px at 55% 110%,rgba(61,242,195,.14),transparent 60%),
+linear-gradient(180deg,#0D0A1A 0%,#0B0B1E 55%,#080816 100%);
+overflow:hidden}
+.bokeh{position:absolute;border-radius:50%;filter:blur(28px);opacity:.35;pointer-events:none}
+header{display:flex;align-items:center;justify-content:space-between;padding:20px 36px;position:relative;z-index:5}
+.logo{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:.06em}
+.logo-mark{width:40px;height:40px;border-radius:50%;background:conic-gradient(from 0deg,#F2A93B,#FF3D7F,#F2A93B);display:grid;place-items:center;color:#0D0A1A;font-weight:900;font-size:22px;box-shadow:0 0 24px rgba(242,169,59,.7)}
+.logo small{display:block;font-weight:500;font-size:11px;letter-spacing:.28em;color:#F2A93B}
+.nav{display:flex;gap:28px;font-size:14px;color:#CFC6B8}
+.nav b{color:#fff}
+.date-pill{border:1px solid rgba(242,169,59,.6);border-radius:999px;padding:8px 16px;font-size:13px;font-weight:700;letter-spacing:.08em;background:rgba(242,169,59,.1);color:#FFD98A}
+main{display:grid;grid-template-columns:560px 1fr;gap:0;padding:6px 36px 18px;align-items:stretch;position:relative;z-index:3}
+.copy{background:#141226;border:1px solid rgba(255,217,138,.22);border-radius:24px;padding:30px 32px 24px;position:relative;box-shadow:0 24px 80px rgba(0,0,0,.55)}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:700;letter-spacing:.22em;color:#3DF2C3}
+.eyebrow i{width:8px;height:8px;border-radius:50%;background:#FF3D7F;box-shadow:0 0 12px #FF3D7F;animation:blink 1.6s infinite}
+@keyframes blink{50%{opacity:.3}}
+h1{font-family:"Playfair Display",serif;font-size:62px;line-height:.95;margin:14px 0 10px;letter-spacing:-.02em;color:#fff}
+h1 .gold{background:linear-gradient(92deg,#FFE9B0 0%,#F2A93B 45%,#FF7A3D 80%);-webkit-background-clip:text;background-clip:text;color:transparent;font-style:italic;text-shadow:0 0 40px rgba(242,169,59,.25)}
+h1 .neon{color:#fff;text-shadow:0 0 18px rgba(255,61,127,.9),0 0 46px rgba(255,61,127,.5)}
+.desc{font-size:17px;color:#EADFC8;margin:6px 0 16px}
+.meta{display:flex;gap:12px;margin-bottom:16px}
+.meta div{flex:1;background:#1D1A37;border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:10px 14px}
+.meta span{font-size:12px;letter-spacing:.18em;color:#F2A93B;font-weight:700}
+.meta strong{display:block;font-size:17px;margin-top:2px}
+.lineup{border-top:1px solid rgba(255,255,255,.1);margin-top:4px}
+.lineup-title{display:flex;justify-content:space-between;align-items:center;font-size:13px;letter-spacing:.2em;font-weight:700;color:#FFD98A;margin:14px 0 6px}
+.lineup ol{list-style:none}
+.lineup li{display:flex;align-items:center;gap:14px;padding:9px 10px;border-radius:12px;border-bottom:1px solid rgba(255,255,255,.07)}
+.lineup li:last-child{border:none}
+.lineup li:hover{background:rgba(242,169,59,.09)}
+.num{font-family:"Playfair Display",serif;font-style:italic;font-size:18px;color:#F2A93B;width:28px}
+.nm{flex:1}.nm strong{font-size:16px}.nm em{font-style:normal;font-size:12.5px;color:#BEB49E;display:block}
+.time{font-size:12px;font-weight:700;color:#3DF2C3;background:rgba(61,242,195,.1);border:1px solid rgba(61,242,195,.3);padding:4px 9px;border-radius:999px;white-space:nowrap}
+.cta-wrap{margin-top:16px;background:linear-gradient(180deg,rgba(242,169,59,.14),rgba(242,169,59,.04));border:1px solid rgba(242,169,59,.35);border-radius:18px;padding:16px}
+.btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:17px;border:0;border-radius:14px;font-size:19px;font-weight:900;letter-spacing:-.01em;color:#160E02;background:linear-gradient(92deg,#FFE9B0,#F2A93B 55%,#FF7A3D);cursor:pointer;box-shadow:0 10px 34px rgba(242,169,59,.45);text-decoration:none}
+.btn:hover{filter:brightness(1.06)}
+.value{margin-top:10px;text-align:center;font-size:16px;font-weight:700;color:#FFE9B0}
+.value s{color:#9A917F;font-weight:400;margin-left:6px}
+.urg{margin-top:10px;height:8px;background:#26224A;border-radius:999px;overflow:hidden}
+.urg i{display:block;height:100%;width:78%;background:linear-gradient(90deg,#3DF2C3,#F2A93B,#FF3D7F);border-radius:999px}
+.urg-t{font-size:13px;color:#CFC6B8;margin-top:6px;text-align:center}
+.urg-t b{color:#FF6B8A}
+/* HERO */
+.hero{position:relative;display:flex;align-items:center;justify-content:center;min-height:660px}
+.arch{position:relative;width:500px;height:648px;border-radius:260px 260px 28px 28px;background:
+radial-gradient(420px 320px at 50% 28%,#3A2150 0%,#141226 55%),
+linear-gradient(180deg,#1E1440 0%,#0F0E24 70%);
+border:1px solid rgba(255,217,138,.45);overflow:hidden;box-shadow:0 0 0 10px rgba(242,169,59,.06),0 0 90px rgba(242,169,59,.25),inset 0 0 80px rgba(0,0,0,.6)}
+.arch::before{content:"";position:absolute;inset:18px;border-radius:240px 240px 18px 18px;border:1.5px solid rgba(61,242,195,.55);box-shadow:0 0 24px rgba(61,242,195,.5),inset 0 0 24px rgba(61,242,195,.2);pointer-events:none}
+.halo{position:absolute;left:50%;top:46%;width:420px;height:420px;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(255,190,80,.55) 0%,rgba(255,61,127,.25) 45%,transparent 70%);filter:blur(2px)}
+.hero svg{position:absolute;inset:0;width:100%;height:100%;filter:drop-shadow(0 18px 40px rgba(0,0,0,.6))}
+.note{position:absolute;font-size:28px;animation:float 3.8s ease-in-out infinite;text-shadow:0 0 18px currentColor}
+@keyframes float{50%{transform:translateY(-18px) rotate(12deg)}}
+.diag{position:absolute;left:-30px;right:-30px;top:46%;transform:rotate(-12deg);background:#0B0B1A;border-top:1px solid #FF3D7F;border-bottom:1px solid #FF3D7F;color:#FFE9B0;font-weight:900;letter-spacing:.28em;font-size:13px;padding:10px 0;white-space:nowrap;overflow:hidden;box-shadow:0 0 30px rgba(255,61,127,.55);z-index:4}
+.diag span{color:#3DF2C3}
+.stamp{position:absolute;right:34px;bottom:88px;width:138px;height:138px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#FFF2C8,#F2A93B 55%,#B4530A);color:#1A0E02;display:grid;place-items:center;text-align:center;font-weight:900;line-height:1.05;transform:rotate(10deg);box-shadow:0 12px 40px rgba(242,169,59,.6);border:4px dashed #1A0E02;z-index:5;animation:spinPulse 6s ease-in-out infinite}
+@keyframes spinPulse{0%,100%{transform:rotate(10deg) scale(1)}50%{transform:rotate(-4deg) scale(1.06)}}
+.stamp small{font-size:11px;letter-spacing:.18em}
+.stamp big{font-size:30px}
+.gaze-arrow{position:absolute;left:-22px;top:50%;transform:translateY(-50%);background:#3DF2C3;color:#06281F;font-weight:900;font-size:13px;padding:8px 12px;border-radius:999px;box-shadow:0 0 20px rgba(61,242,195,.8)}
+footer{display:flex;justify-content:space-between;padding:0 36px 20px;font-size:13px;color:#8E86A3;position:relative;z-index:3}
+@media(max-width:1050px){main{grid-template-columns:1fr}.hero{min-height:620px}.nav{display:none}h1{font-size:52px}}
+</style>
+</head>
+<body>
+<div class="stage">
+<div class="bokeh" style="left:62%;top:12%;width:180px;height:180px;background:#F2A93B"></div>
+<div class="bokeh" style="left:88%;top:22%;width:120px;height:120px;background:#FF3D7F"></div>
+<div class="bokeh" style="left:70%;top:68%;width:140px;height:140px;background:#3DF2C3;opacity:.18"></div>
+
+<header>
+<div class="logo"><div class="logo-mark">♫</div><div>SEOUL BRASS NIGHTS<small>NOV JAZZ FESTIVAL</small></div></div>
+<nav class="nav"><span><b>라인업</b></span><span>타임테이블</span><span>장소</span><span>티켓</span></nav>
+<div class="date-pill">● 11.21 FRI — 11.23 SUN · 블루스퀘어</div>
+</header>
+
+<main>
+<section class="copy">
+<div class="eyebrow"><i></i> 2026 NOV · 3 NIGHTS · LIVE BRASS & NEON</div>
+<h1><span class="gold">밤을 부는</span><br><span class="neon">금빛 재즈</span></h1>
+<p class="desc">어둠이 내리면 브라우스가 깨어납니다. 새벽까지 이어지는 다섯 팀의 라이브, 따뜻한 금관과 네온의 밤.</p>
+<div class="meta">
+<div><span>DATE</span><strong>11.21(금) — 11.23(일)</strong></div>
+<div><span>VENUE</span><strong>블루스퀘어 마스터카드홀</strong></div>
+</div>
+<div class="lineup">
+<div class="lineup-title"><span>★ LINE-UP 5</span><span style="letter-spacing:.05em;color:#8E86A3">전 공연 생연주</span></div>
+<ol>
+<li><span class="num">01</span><div class="nm"><strong>웅산 & Brass Soul</strong><em>소울 디바 · 오프닝 나이트</em></div><span class="time">11.21 19:30</span></li>
+<li><span class="num">02</span><div class="nm"><strong>김가온 트리오</strong><em>모던 피아노 재즈</em></div><span class="time">11.22 17:00</span></li>
+<li><span class="num">03</span><div class="nm"><strong>문리버 콰르텟</strong><em>스윙 스탠더드</em></div><span class="time">11.22 20:00</span></li>
+<li><span class="num">04</span><div class="nm"><strong>선우정아 meets 오케스트라</strong><em>크로스오버 하이라이트</em></div><span class="time">11.23 18:00</span></li>
+<li><span class="num">05</span><div class="nm"><strong>미드나잇 펑크 잼</strong><em>전원 합류 피날레 잼</em></div><span class="time">11.23 21:30</span></li>
+</ol>
+</div>
+<div class="cta-wrap">
+<a class="btn" href="#">얼리버드 티켓 예매하기 →</a>
+<div class="value">지금 30% 할인 · 49,000원부터 <s>70,000원</s></div>
+<div class="urg"><i></i></div>
+<div class="urg-t"><b>얼리버드 마감 D-6</b> · ~10.20까지 + 웰컴 하이볼 쿠폰 증정</div>
+</div>
+</section>
+
+<section class="hero" aria-label="색소폰 연주자 비주얼">
+<div class="arch">
+<div class="halo"></div>
+<svg viewBox="0 0 500 648" aria-hidden="true">
+<defs>
+<linearGradient id="brass" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFE9B0"/><stop offset=".45" stop-color="#F2A93B"/><stop offset=".8" stop-color="#C46A1A"/><stop offset="1" stop-color="#7A2E0A"/></linearGradient>
+<radialGradient id="bellIn" cx=".5" cy=".5" r=".6"><stop offset="0" stop-color="#1A0E1A"/><stop offset=".7" stop-color="#5A1E2E"/><stop offset="1" stop-color="#FF9A3D"/></radialGradient>
+<filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<!-- city blur -->
+<g opacity=".35"><circle cx="90" cy="120" r="8" fill="#FF3D7F"/><circle cx="420" cy="110" r="6" fill="#3DF2C3"/><circle cx="380" cy="150" r="10" fill="#F2A93B"/><circle cx="120" cy="180" r="5" fill="#fff"/></g>
+<!-- body suit -->
+<path d="M140 648 Q165 420 245 285 L375 305 Q410 450 430 648 Z" fill="#0E0E22" stroke="#2A2650" stroke-width="2"/>
+<path d="M245 285 L300 420 L275 480" fill="none" stroke="#F2A93B" stroke-width="3" opacity=".9"/>
+<!-- neck + head profile facing LEFT -->
+<path d="M250 250 L245 285 L300 295 L295 245 Z" fill="#1A1636"/>
+<path d="M195 145 Q175 155 172 182 L158 195 L170 204 L166 218 L180 232 Q195 248 230 250 L285 242 Q305 210 300 165 Q280 130 235 132 Z" fill="#141226" stroke="#FFD98A" stroke-width="2.5"/>
+<!-- fedora -->
+<ellipse cx="238" cy="140" rx="105" ry="22" fill="#0A0A18" stroke="#F2A93B" stroke-width="2.5"/>
+<rect x="185" y="72" width="110" height="68" rx="10" fill="#0A0A18" stroke="#F2A93B" stroke-width="2.5"/>
+<rect x="185" y="118" width="110" height="12" fill="#FF3D7F"/>
+<!-- eye gazing LEFT toward copy/CTA -->
+<ellipse cx="198" cy="190" rx="13" ry="8" fill="#fff"/>
+<circle cx="191" cy="190" r="4.5" fill="#0A0A18"/><circle cx="191" cy="190" r="1.5" fill="#fff"/>
+<path d="M185 178 Q198 174 211 179" stroke="#FFD98A" stroke-width="2" fill="none"/>
+<!-- mouthpiece -->
+<rect x="160" y="216" width="28" height="10" rx="4" transform="rotate(-18 174 221)" fill="#0B0B1A" stroke="#FFD98A"/>
+<!-- sax tube diagonal motion -->
+<g transform="rotate(-14 260 380)" filter="url(#glow)">
+<path d="M182 222 C230 300 285 380 295 470" fill="none" stroke="url(#brass)" stroke-width="38" stroke-linecap="round"/>
+<path d="M182 222 C230 300 285 380 295 470" fill="none" stroke="#FFE9B0" stroke-width="6" stroke-linecap="round" opacity=".7"/>
+<g fill="#FFF2C8" stroke="#7A2E0A"><circle cx="225" cy="304" r="8"/><circle cx="245" cy="342" r="8"/><circle cx="263" cy="380" r="8"/><circle cx="278" cy="418" r="8"/></g>
+<!-- bell -->
+<g transform="translate(295 530) rotate(-18)"><ellipse cx="0" cy="0" rx="84" ry="68" fill="url(#brass)" stroke="#FFE9B0" stroke-width="3"/><ellipse cx="0" cy="0" rx="58" ry="46" fill="url(#bellIn)"/><ellipse cx="-18" cy="-12" rx="18" ry="10" fill="#fff" opacity=".55"/></g>
+</g>
+<!-- rim light -->
+<path d="M300 165 Q305 210 285 242" fill="none" stroke="#FF3D7F" stroke-width="3" opacity=".9" filter="url(#glow)"/>
+<text x="70" y="560" font-size="34" fill="#3DF2C3" opacity=".9">♪</text>
+<text x="400" y="340" font-size="30" fill="#FFD98A" opacity=".9">♫</text>
+</svg>
+<div class="note" style="left:54px;top:150px;color:#3DF2C3">♪</div>
+<div class="note" style="right:58px;top:220px;color:#FFD98A;animation-delay:.8s">♫</div>
+<div class="note" style="left:84px;bottom:190px;color:#FF3D7F;animation-delay:1.4s">♩</div>
+</div>
+<div class="diag">NEON NIGHT <span>●</span> LIVE BRASS <span>●</span> NOV 21-23 SEOUL <span>●</span> 5 TEAMS <span>●</span> NEON NIGHT <span>●</span> LIVE BRASS ●</div>
+<div class="stamp"><div><small>EARLY BIRD</small><br><big>-30%</big><br><small>~10.20까지</small><div class="gaze-arrow">◀ 이 가격으로</div></div></div>
+</section>
+</main>
+
+<footer><span>주최 Seoul Brass Nights · 02-1234-5678</span><span>3일권 129,000원 · 단독 판매 인터파크</span></footer>
+</div>
+</body>
+</html>

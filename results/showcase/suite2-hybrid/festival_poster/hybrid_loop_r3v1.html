@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>서울 문라이트 재즈 페스티벌 2026 · 11.21-23 올림픽공원</title>
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@400;500;700;900&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+--night:#0a0c1e; --night2:#13142e; --panel:#14152f;
+--gold:#f5b942; --gold2:#ffdf8e; --brass:#c67c1b;
+--neon:#ff3d6e; --cream:#fff6e6; --muted:#b9b8d0;
+--line:rgba(245,185,66,.22);
+}
+html,body{height:100%}
+body{background:#05061a;color:var(--cream);font-family:"Noto Sans KR",sans-serif;font-size:16px;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0;background:radial-gradient(900px 520px at 72% 38%,rgba(245,185,66,.22),transparent 60%),radial-gradient(700px 500px at 15% 90%,rgba(255,61,110,.18),transparent 60%),radial-gradient(1200px 800px at 50% -10%,#1d2150 0%,#0a0c1e 55%,#05061a 100%);z-index:-2}
+.wrap{max-width:1280px;height:800px;margin:0 auto;display:flex;flex-direction:column;padding:0 32px;position:relative}
+header{height:68px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,246,230,.12)}
+.brand{display:flex;align-items:center;gap:12px}
+.mark{width:38px;height:38px;border-radius:50%;background:conic-gradient(from 0deg,#ffdf8e,#f5b942,#ff3d6e,#7a2bff,#f5b942,#ffdf8e);display:grid;place-items:center;box-shadow:0 0 18px rgba(245,185,66,.7)}
+.mark span{width:28px;height:28px;border-radius:50%;background:#0a0c1e;display:grid;place-items:center;font-size:16px}
+.brand b{font-family:"Black Han Sans";font-weight:400;letter-spacing:.02em;font-size:18px}
+.brand b i{font-family:"Playfair Display";font-style:italic;color:var(--gold2);font-weight:700}
+.nav{display:flex;align-items:center;gap:22px;font-size:14px;color:var(--muted)}
+.nav a{color:var(--muted);text-decoration:none}
+.dday{display:flex;align-items:center;gap:8px;background:rgba(255,61,110,.14);border:1px solid rgba(255,61,110,.5);color:#ffd6e2;border-radius:999px;padding:7px 14px;font-weight:700;font-size:13px;box-shadow:0 0 16px rgba(255,61,110,.35)}
+.dday em{font-style:normal;background:var(--neon);color:#fff;border-radius:6px;padding:2px 7px}
+main{flex:1;display:grid;grid-template-columns:500px 1fr;gap:28px;padding:22px 0 14px;min-height:0}
+/* LEFT SOLID PANEL */
+.panel{background:linear-gradient(180deg,#191a3a 0%,#12132a 100%);border:1px solid var(--line);border-radius:20px;padding:22px 24px 18px;position:relative;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.panel::after{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(var(--gold2),var(--neon))}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:#0a0c1e;border:1px solid var(--line);border-radius:999px;padding:7px 12px;font-size:13px;font-weight:700;letter-spacing:.02em}
+.eyebrow .dot{width:8px;height:8px;border-radius:50%;background:#3bff9e;box-shadow:0 0 10px #3bff9e;animation:blink 1.6s infinite}
+@keyframes blink{50%{opacity:.35}}
+h1{font-family:"Black Han Sans";font-size:52px;line-height:.98;margin:14px 0 8px;letter-spacing:-.02em}
+h1 .gold{color:var(--gold2);text-shadow:0 0 22px rgba(245,185,66,.7)}
+h1 .neon{color:#fff;text-shadow:0 0 14px var(--neon),0 0 34px var(--neon)}
+h1 .eng{display:block;font-family:"Playfair Display";font-style:italic;font-size:22px;letter-spacing:.14em;color:var(--gold);text-shadow:none;margin-top:6px}
+.sub{color:#e9e2d1;font-size:16px;line-height:1.55}
+.benefit{display:flex;gap:10px;align-items:center;margin:14px 0 12px;background:rgba(245,185,66,.1);border:1px dashed rgba(245,185,66,.6);border-radius:12px;padding:10px 12px;font-size:14px}
+.benefit strong{color:var(--gold2)}
+.cta-row{display:flex;gap:12px;align-items:stretch;margin:4px 0 12px}
+.btn-early{flex:1;background:linear-gradient(180deg,#ffe6a3,#f5b942 60%,#e69a1f);color:#1a1206;border:0;border-radius:14px;padding:14px 16px;font-weight:900;font-size:18px;cursor:pointer;position:relative;box-shadow:0 8px 28px rgba(245,185,66,.45),inset 0 1px 0 #fff;display:flex;align-items:center;justify-content:space-between}
+.btn-early small{display:block;font-size:12px;font-weight:700;opacity:.7}
+.btn-early .arrow{font-size:26px;line-height:1}
+.btn-early::after{content:"";position:absolute;inset:-4px;border-radius:18px;border:2px solid rgba(245,185,66,.7);animation:pulse 1.8s ease-out infinite}
+@keyframes pulse{0%{transform:scale(.98);opacity:1}100%{transform:scale(1.04);opacity:0}}
+.price-mini{background:#0a0c1e;border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:10px 14px;text-align:center;min-width:148px}
+.price-mini s{color:var(--muted);font-size:13px}
+.price-mini b{font-size:22px;color:#fff}
+.price-mini span{font-size:12px;color:var(--gold2);font-weight:700}
+.bar{height:8px;background:#0a0c1e;border-radius:999px;overflow:hidden;border:1px solid rgba(255,255,255,.12);margin-top:8px}
+.bar i{display:block;width:77%;height:100%;background:linear-gradient(90deg,var(--neon),var(--gold));box-shadow:0 0 12px var(--neon)}
+.stock{font-size:12.5px;color:#ffd6e2;margin-top:6px}
+.lineup{list-style:none;margin-top:12px;border-top:1px solid rgba(255,246,230,.14)}
+.lineup li{display:flex;align-items:center;gap:12px;padding:8.5px 2px;border-bottom:1px solid rgba(255,246,230,.1)}
+.num{font-family:"Playfair Display";font-style:italic;color:var(--gold);font-size:18px;width:26px}
+.day{font-size:11px;font-weight:900;letter-spacing:.06em;background:#fff;color:#111;border-radius:6px;padding:3px 7px;white-space:nowrap}
+.day.hot{background:var(--neon);color:#fff;box-shadow:0 0 12px rgba(255,61,110,.7)}
+.lname{flex:1;line-height:1.2}
+.lname strong{display:block;font-size:16px}
+.lname span{font-size:12.5px;color:var(--muted)}
+.ltime{font-size:13px;color:var(--gold2);font-weight:700;white-space:nowrap}
+.meta{display:flex;gap:14px;margin-top:12px;font-size:13.5px;color:#e9e2d1}
+.meta div{display:flex;gap:7px;align-items:center}
+/* RIGHT HERO */
+.hero{position:relative;border-radius:20px;overflow:hidden;background:radial-gradient(520px 520px at 58% 45%,rgba(245,185,66,.32),transparent 65%),linear-gradient(180deg,rgba(20,22,55,.2),rgba(5,6,26,.6));border:1px solid rgba(245,185,66,.25);min-height:0}
+.beam{position:absolute;left:-10%;top:18%;width:120%;height:120px;background:linear-gradient(90deg,transparent,rgba(245,185,66,.55) 20%,rgba(255,61,110,.55) 50%,rgba(245,185,66,.55) 80%,transparent);transform:rotate(-14deg);filter:blur(1px);box-shadow:0 0 60px rgba(245,185,66,.5)}
+.moon{position:absolute;right:72px;top:46px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff7d6 0%,#ffdf8e 18%,#f5b942 38%,#9a5a12 62%,#1a1440 78%,transparent 78%);box-shadow:0 0 80px rgba(245,185,66,.8),0 0 180px rgba(255,61,110,.4);opacity:.95}
+.moon::after{content:"";position:absolute;inset:18px;border-radius:50%;border:2px solid rgba(255,255,255,.25);box-shadow:inset 0 0 40px rgba(0,0,0,.4)}
+.skyline{position:absolute;left:0;right:0;bottom:0;height:110px;background:linear-gradient(transparent,#05061a 60%);} 
+.bokeh{position:absolute;border-radius:50%;filter:blur(14px);opacity:.5}
+.stage-svg{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+.waves circle{transform-origin:175px 285px;animation:wave 2.2s ease-out infinite}
+.waves circle:nth-child(2){animation-delay:.55s}.waves circle:nth-child(3){animation-delay:1.1s}
+@keyframes wave{0%{opacity:.9;transform:scale(.25)}100%{opacity:0;transform:scale(1.15)}}
+.float-tag{position:absolute;left:36px;top:88px;background:#fff6e6;color:#13112a;border-radius:14px;padding:12px 14px;box-shadow:0 12px 30px rgba(0,0,0,.5);transform:rotate(-6deg);border:2px solid #13112a}
+.float-tag::after{content:"";position:absolute;right:-10px;top:50%;width:18px;height:18px;background:inherit;border-right:2px solid #13112a;border-top:2px solid #13112a;transform:translateY(-50%) rotate(45deg)}
+.float-tag small{font-size:11px;font-weight:900;letter-spacing:.08em;background:#111;color:#ffdf8e;padding:3px 7px;border-radius:6px}
+.float-tag b{display:block;font-size:22px;margin:4px 0 0}
+.float-tag b s{font-size:14px;color:#7a7690}
+.float-tag em{font-style:normal;font-size:12px;font-weight:700;color:#c62b52}
+.gaze{position:absolute;left:210px;top:210px;width:170px;border-top:2px dashed rgba(255,223,142,.9);transform:rotate(18deg)}
+.gaze::before{content:"◀ 시선이 향하는 곳";position:absolute;left:-8px;top:-22px;font-size:11px;color:#ffdf8e;background:rgba(0,0,0,.6);padding:2px 7px;border-radius:999px;white-space:nowrap}
+.hero-bottom{position:absolute;left:18px;right:18px;bottom:14px;display:flex;gap:12px;align-items:center;background:rgba(8,9,26,.85);backdrop-filter:blur(8px);border:1px solid rgba(255,246,230,.16);border-radius:14px;padding:10px 14px}
+.hero-bottom .live{width:10px;height:10px;border-radius:50%;background:#ff3d6e;box-shadow:0 0 12px #ff3d6e;animation:blink 1.2s infinite}
+.hero-bottom p{font-size:13.5px;color:#fff}
+.hero-bottom p strong{color:var(--gold2)}
+.ticker{height:42px;border:1px solid rgba(245,185,66,.3);border-radius:999px;display:flex;align-items:center;overflow:hidden;background:#0d0e27;white-space:nowrap;margin-bottom:12px}
+.ticker div{display:inline-block;padding-left:100%;animation:mar 18s linear infinite;font-size:13px;letter-spacing:.08em;color:var(--gold2);font-weight:700}
+@keyframes mar{to{transform:translateX(-100%)}}
+a:focus,.btn-early:focus{outline:3px solid #fff;outline-offset:2px}
+@media(max-width:900px){.wrap{height:auto}main{grid-template-columns:1fr}.hero{min-height:520px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<div class="brand"><div class="mark"><span>🎺</span></div><b>SEOUL MOONLIGHT <i>Jazz Fest</i> 2026</b></div>
+<nav class="nav"><a href="#">라인업</a><a href="#">타임테이블</a><a href="#">오시는 길</a><div class="dday"><em>D-19</em> 얼리버드 10.31 자정 마감</div></nav>
+</header>
+<main>
+<section class="panel" aria-label="페스티벌 안내">
+<div class="eyebrow"><span class="dot"></span> 2026.11.21 FRI — 11.23 SUN · 올림픽공원 88잔디마당 야외무대</div>
+<h1><span class="gold">밤을 부는</span><br><span class="neon">금빛 트럼펫</span><span class="eng">NOVEMBER BRASS NIGHTS</span></h1>
+<p class="sub">가을 밤, 돗자리에 앉아 듣는 3일간의 라이브. 네온 아래 금관악기가 가장 뜨겁게 타오릅니다.</p>
+<div class="benefit">🎟️ <span><strong>얼리버드 단 3일 혜택</strong> · 전석 피크닉존 + 웰컴 글루바인 1잔 포함</span></div>
+<div class="cta-row">
+<button class="btn-early"><span>얼리버드 예매하기<small>10.31까지 · 매진 전 마감</small></span><span class="arrow">→</span></button>
+<div class="price-mini"><s>정가 79,000원</s><br><b>49,000원</b><br><span>38% OFF · ~10.31</span><div class="bar"><i></i></div></div>
+</div>
+<div class="stock">🔥 현재 77% 판매됨 · 잔여 312매 — 어제보다 2배 빠르게 줄고 있어요</div>
+<ol class="lineup">
+<li><span class="num">01</span><span class="day">FRI 11.21</span><div class="lname"><strong>웅산 & 블루노트 콰르텟</strong><span>Opening Night · 보컬 재즈</span></div><span class="ltime">18:30</span></li>
+<li><span class="num">02</span><span class="day">SAT 11.22</span><div class="lname"><strong>김가온 쿼텟</strong><span>Kim Gaon Quartet · 모던 하드밥</span></div><span class="ltime">17:00</span></li>
+<li><span class="num">03</span><span class="day">SAT 11.22</span><div class="lname"><strong>하나 리 트리오</strong><span>Hana Lee Trio · 피아노 트리오</span></div><span class="ltime">19:20</span></li>
+<li><span class="num">04</span><span class="day">SUN 11.23</span><div class="lname"><strong>선셋 브라스 컬렉티브</strong><span>8인조 브라밴드 · 퍼레이드</span></div><span class="ltime">16:30</span></li>
+<li><span class="num">05</span><span class="day hot">SUN ★헤드</span><div class="lname"><strong>도쿄 문나이트 오케스트라</strong><span>Finale · 15인조 빅밴드</span></div><span class="ltime">20:00</span></li>
+</ol>
+<div class="meta"><div>📍 잠실 · 2·8호선 잠실역 도보 8분</div><div>🌙 우천 시 실내전환 · 전석 자유석</div></div>
+</section>
+<section class="hero" aria-label="트럼페터 일러스트">
+<div class="beam"></div>
+<div class="moon"></div>
+<div class="bokeh" style="left:40px;top:60px;width:22px;height:22px;background:#ff3d6e"></div>
+<div class="bokeh" style="left:120px;top:320px;width:34px;height:34px;background:#f5b942"></div>
+<div class="bokeh" style="right:40px;top:120px;width:18px;height:18px;background:#fff"></div>
+<div class="float-tag"><small>★ EARLY BIRD</small><b>49,000원 <s>79,000</s></b><em>지금 예매하면 30,000원 세이브 →</em></div>
+<div class="gaze"></div>
+<div class="stage-svg">
+<svg width="660" height="520" viewBox="0 0 660 520" role="img" aria-label="왼쪽을 바라보며 트럼펫을 부는 재즈 뮤지션 실루엣">
+<defs>
+<radialGradient id="bellGlow" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#fff7d6"/><stop offset="35%" stop-color="#ffdf8e"/><stop offset="65%" stop-color="#ff3d6e"/><stop offset="100%" stop-color="#ff3d6e" stop-opacity="0"/></radialGradient>
+<linearGradient id="brass" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#fff0b8"/><stop offset="30%" stop-color="#f5b942"/><stop offset="70%" stop-color="#c67c1b"/><stop offset="100%" stop-color="#7a3f0e"/></linearGradient>
+<filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<g class="waves" fill="none" stroke="#ffdf8e" stroke-width="3" opacity=".9">
+<circle cx="175" cy="285" r="70" stroke="#ff3d6e"/>
+<circle cx="175" cy="285" r="110" stroke="#f5b942"/>
+<circle cx="175" cy="285" r="150" stroke="#fff" stroke-opacity=".6"/>
+</g>
+<ellipse cx="175" cy="285" rx="58" ry="58" fill="url(#bellGlow)" opacity=".85" filter="url(#glow)"/>
+<!-- trumpet -->
+<g filter="url(#glow)">
+<polygon points="175,233 175,337 130,315 130,255" fill="url(#brass)" stroke="#2a1505" stroke-width="3"/>
+<ellipse cx="131" cy="285" rx="14" ry="41" fill="#1a0e08" stroke="#ffdf8e" stroke-width="3"/>
+<rect x="175" y="277" width="180" height="16" rx="8" fill="url(#brass)" stroke="#2a1505" stroke-width="2.5"/>
+<rect x="285" y="258" width="18" height="52" rx="6" fill="#1a0e08" stroke="#ffdf8e" stroke-width="2"/>
+<rect x="310" y="258" width="18" height="52" rx="6" fill="#1a0e08" stroke="#ffdf8e" stroke-width="2"/>
+<rect x="335" y="258" width="18" height="52" rx="6" fill="#1a0e08" stroke="#ffdf8e" stroke-width="2"/>
+<circle cx="294" cy="250" r="9" fill="#ffdf8e"/><circle cx="319" cy="250" r="9" fill="#ffdf8e"/><circle cx="344" cy="250" r="9" fill="#ffdf8e"/>
+<rect x="355" y="279" width="55" height="12" rx="6" fill="url(#brass)" stroke="#2a1505" stroke-width="2"/>
+</g>
+<!-- face profile looking left -->
+<g>
+<path d="M470 110 Q430 115 415 150 L400 180 Q392 195 385 208 L372 225 Q384 230 398 232 L392 242 Q402 248 412 248 L410 260 Q425 275 445 278 L470 285 L520 285 L530 220 L520 140 Z" fill="#1c1322" stroke="#ffdf8e" stroke-width="3" stroke-linejoin="round"/>
+<!-- eye looking left to CTA -->
+<circle cx="418" cy="192" r="11" fill="#fff"/>
+<circle cx="412" cy="193" r="5.5" fill="#0a0c1e"/>
+<circle cx="410" cy="191" r="1.8" fill="#fff"/>
+<path d="M405 182 Q418 178 431 184" stroke="#ffdf8e" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+<!-- cheek neon rim -->
+<path d="M385 208 Q398 232 412 248" stroke="#ff3d6e" stroke-width="3" fill="none" stroke-linecap="round" filter="url(#glow)"/>
+<!-- fedora -->
+<g transform="rotate(-8 480 120)">
+<ellipse cx="480" cy="128" rx="95" ry="18" fill="#0d0a18" stroke="#f5b942" stroke-width="3"/>
+<path d="M420 128 Q425 70 480 68 Q535 70 540 128 Z" fill="#1a1430" stroke="#f5b942" stroke-width="3"/>
+<rect x="422" y="108" width="116" height="16" fill="#ff3d6e"/>
+</g>
+<!-- body / suit -->
+<path d="M440 285 Q430 360 390 440 L620 440 Q600 360 560 285 Z" fill="#0e0d22" stroke="#f5b942" stroke-width="3"/>
+<path d="M480 285 L500 340 L520 285" fill="#fff6e6"/>
+<path d="M500 340 L495 380 L505 380 Z" fill="#ff3d6e"/>
+<path d="M440 285 Q500 310 560 285" stroke="#ffdf8e" stroke-width="2" fill="none" opacity=".6"/>
+</g>
+<!-- motion notes -->
+<text x="95" y="180" font-size="28" fill="#ffdf8e" opacity=".9">♪</text>
+<text x="70" y="360" font-size="22" fill="#ff3d6e" opacity=".9">♫</text>
+</svg>
+</div>
+<div class="skyline"> <svg width="100%" height="110" viewBox="0 0 700 110" preserveAspectRatio="none"><path d="M0 70 L40 70 L40 45 L80 45 L80 70 L120 70 L120 30 L150 30 L150 70 L210 70 L210 50 L260 50 L260 70 L320 70 L320 20 L360 20 L360 70 L420 70 L420 48 L470 48 L470 70 L530 70 L530 35 L580 35 L580 70 L640 70 L640 55 L700 55 L700 110 L0 110 Z" fill="#05061a" opacity=".9"/><g fill="#f5b942" opacity=".9"><circle cx="135" cy="45" r="2"/><circle cx="340" cy="35" r="2"/><circle cx="555" cy="50" r="2"/><circle cx="60" cy="58" r="1.6"/><circle cx="445" cy="60" r="1.6"/></g></svg></div>
+<div class="hero-bottom"><span class="live"></span><p><strong>그가 바라보는 곳에 혜택이 있습니다</strong> — 왼쪽 골드 버튼을 누르면 얼리버드 49,000원 확정 · 내일 자정 전 마감</p></div>
+</section>
+</main>
+<div class="ticker"><div>★ NOV 21-23 OLYMPIC PARK 88 LAWN ★ 5 TEAMS · 웅산 · 김가온 쿼텟 · 하나 리 트리오 · 선셋 브라스 · 도쿄 문나이트 ★ EARLY BIRD 49,000원 (38% OFF) ★ 10.31 MIDNIGHT CLOSE ★ NOV 21-23 OLYMPIC PARK 88 LAWN ★</div></div>
+</div>
+</body>
+</html>

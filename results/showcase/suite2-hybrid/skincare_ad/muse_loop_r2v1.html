@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<title>LUMIÈRE 비타민C 15% 세럼 — 런칭 30%</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,ital,wght@9..144,0,700;9..144,1,700&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Noto Sans KR",system-ui,sans-serif;background:#E9E2D3;color:#10231C;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;display:flex;justify-content:center;min-height:100vh}
+.page{width:1280px;min-height:800px;background:#FFFBF0;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 30px 80px rgba(16,35,28,.18)}
+.top{height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 44px;border-bottom:1px solid #10231C14;background:#FFFBF0}
+.brand{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:.14em;font-size:19px}
+.brand-mark{width:32px;height:32px;border-radius:50%;background:#0F2F25;color:#FFDD33;display:grid;place-items:center;font-size:18px}
+.spon{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:700;letter-spacing:.06em;color:#5B6B64}
+.spon-dot{width:8px;height:8px;border-radius:50%;background:#22A06B}
+.pill{border:1px solid #10231C33;border-radius:999px;padding:7px 14px;font-size:13px;font-weight:700}
+.hero{display:grid;grid-template-columns:590px 1fr;flex:1;min-height:732px}
+.left{padding:52px 20px 28px 56px;display:flex;flex-direction:column;justify-content:center}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:900;letter-spacing:.16em;color:#0F2F25}
+.eyebrow i{width:36px;height:2px;background:#FF5A1F;display:inline-block}
+.eyebrow b{background:#0F2F25;color:#fff;font-size:11px;letter-spacing:.12em;padding:5px 10px;border-radius:999px}
+h1{font-family:"Fraunces","Noto Sans KR",serif;font-size:62px;line-height:1.04;letter-spacing:-.02em;margin:18px 0 16px;color:#0F231C;font-weight:700}
+h1 em{font-style:italic;font-weight:700;background:linear-gradient(transparent 62%, #FFDD33 62%, #FFDD33 96%, transparent 96%)}
+.sub{font-size:18px;color:#33463F;max-width:460px;line-height:1.65}
+.sub strong{color:#0F2F25}
+.price-row{display:flex;align-items:center;gap:14px;margin:26px 0 18px}
+.price-now{font-size:38px;font-weight:900;letter-spacing:-.02em}
+.price-orig{font-size:19px;color:#8A9A93;text-decoration:line-through}
+.price-off{font-size:14px;font-weight:900;background:#FFE45E;border:1.5px solid #0F2F25;border-radius:8px;padding:4px 10px}
+.cta-row{display:flex;align-items:center;gap:16px;margin-top:6px}
+.btn-primary{background:#0F2F25;color:#fff;border:0;border-radius:999px;padding:19px 42px;font-size:19px;font-weight:900;letter-spacing:.02em;cursor:pointer;display:inline-flex;align-items:center;gap:10px;box-shadow:0 12px 28px rgba(15,47,37,.28);transition:.2s}
+.btn-primary:hover{transform:translateY(-2px);background:#143D30}
+.btn-sub{font-size:15px;font-weight:700;color:#0F2F25;text-decoration:underline;text-underline-offset:6px}
+.trust{display:flex;align-items:center;gap:12px;margin-top:26px;font-size:14.5px;color:#33463F}
+.stars{color:#E69B00;font-size:17px;letter-spacing:2px}
+.ig-bar{display:flex;align-items:center;gap:18px;margin-top:28px;padding-top:18px;border-top:1px dashed #10231C22;font-size:14px;color:#5B6B64}
+.ig-bar span{display:flex;align-items:center;gap:6px;font-weight:700}
+.right{padding:28px 36px 28px 10px;display:flex;flex-direction:column}
+.stage{position:relative;flex:1;background:radial-gradient(120% 90% at 50% 10%, #1C4E3E 0%, #0F2F25 52%, #0A211A 100%);border-radius:280px 280px 28px 28px;overflow:hidden;display:flex;align-items:flex-end;justify-content:center;min-height:620px;border:1px solid #0F2F25}
+.stage::before{content:"";position:absolute;inset:0;background:radial-gradient(420px 420px at 50% 38%, rgba(255,221,51,.22), transparent 70%),radial-gradient(600px 300px at 50% 100%, rgba(255,90,31,.28), transparent 70%)}
+.ring{position:absolute;top:54px;left:50%;transform:translateX(-50%);width:520px;height:520px;border:1px solid rgba(255,255,255,.14);border-radius:50%}
+.ring.r2{width:420px;height:420px;top:104px;border-color:rgba(255,255,255,.18)}
+.citrus{position:absolute;bottom:-90px;left:50%;transform:translateX(-50%);width:560px;opacity:.18}
+.badge{position:absolute;top:34px;right:34px;width:118px;height:118px;background:#FFDD33;border:2px solid #0F2F25;border-radius:50%;display:grid;place-items:center;text-align:center;transform:rotate(10deg);box-shadow:6px 6px 0 #0F2F25;z-index:5}
+.badge div{line-height:1.1}
+.badge small{font-size:11px;font-weight:900;letter-spacing:.14em}
+.badge strong{font-size:32px;font-weight:900;display:block;letter-spacing:-.04em}
+.badge span{font-size:12px;font-weight:700}
+.product-wrap{position:relative;z-index:3;display:flex;flex-direction:column;align-items:center;padding-bottom:18px}
+.glow{position:absolute;bottom:92px;width:300px;height:54px;background:radial-gradient(50% 50% at 50% 50%, rgba(0,0,0,.45), transparent 70%);filter:blur(6px)}
+.bottle{filter:drop-shadow(0 30px 40px rgba(0,0,0,.4))}
+.stage-caption{display:flex;justify-content:space-between;align-items:center;color:#D8E5DD;font-size:12.5px;letter-spacing:.08em;font-weight:700;padding:16px 6px 0}
+.stage-caption b{color:#FFDD33}
+@media(max-width:900px){.page{width:100%}.hero{grid-template-columns:1fr}.right{padding:20px}h1{font-size:46px}}
+:focus-visible{outline:3px solid #FF5A1F;outline-offset:3px}
+</style>
+</head>
+<body>
+<div class="page" role="main" aria-label="비타민C 세럼 인스타그램 광고">
+<div class="top">
+<div class="brand"><div class="brand-mark">◍</div> LUMIÈRE</div>
+<div class="spon"><span class="spon-dot"></span> lumier_official • Sponsored • 1:1 Feed</div>
+<div class="pill">○ &nbsp; NEW LAUNCH 2026</div>
+</div>
+<div class="hero">
+<section class="left">
+<div class="eyebrow"><i></i> PURE VITAMIN C 15% SERUM <b>NEW</b></div>
+<h1>7일 만에 되찾는<br>맑고 빛나는 <em>유리피부.</em></h1>
+<p class="sub">순수 비타민C 15% + 비타민E + 히알루론산. 칙칙함과 잡티 흔적에 집중 작용하는 <strong>7일 브라이트닝 루틴</strong>을 런칭 특가로 시작하세요.</p>
+<div class="price-row" aria-label="가격">
+<div class="price-now">26,600원</div>
+<div class="price-orig">38,000원</div>
+<div class="price-off">런칭 30% ↓</div>
+</div>
+<div class="cta-row">
+<button class="btn-primary" aria-label="지금 구매하기">지금 구매 <span aria-hidden="true">→</span></button>
+<a class="btn-sub" href="#">전성분 보기</a>
+</div>
+<div class="trust"><span class="stars" aria-hidden="true">★★★★★</span> <span><strong>4.9</strong> (8,214개 리뷰) · 민감성 피부 테스트 완료 · 무료배송</span></div>
+<div class="ig-bar"><span>♡ 12,402</span><span>◯ 864 댓글</span><span>➤ 공유</span><span style="margin-left:auto">🔖 런칭 ~11.9까지</span></div>
+</section>
+<section class="right">
+<div class="stage" aria-label="제품 이미지: 비타민C 세럼">
+<div class="ring"></div><div class="ring r2"></div>
+<svg class="citrus" viewBox="0 0 400 200" aria-hidden="true"><g fill="none" stroke="#FFDD33" stroke-width="2"><circle cx="200" cy="180" r="120"/><circle cx="200" cy="180" r="95"/><path d="M200 60 L200 180 M90 130 L310 130 M120 80 L280 180 M280 80 L120 180"/></g></svg>
+<div class="badge" aria-label="런칭 30퍼센트 할인"><div><small>LAUNCH</small><strong>30%</strong><span>런칭특가</span></div></div>
+<div class="product-wrap">
+<div class="glow"></div>
+<svg class="bottle" width="250" height="470" viewBox="0 0 220 460" role="img" aria-label="루미에르 비타민C 세럼 병">
+<defs><linearGradient id="glass" x1="0" x2="1"><stop offset="0" stop-color="#F7B84A"/><stop offset=".5" stop-color="#D67A12"/><stop offset="1" stop-color="#7A3205"/></linearGradient><linearGradient id="cap" x1="0" x2="1"><stop offset="0" stop-color="#3A3A3A"/><stop offset="1" stop-color="#0B0B0B"/></linearGradient></defs>
+<!-- dropper -->
+<rect x="82" y="8" width="56" height="58" rx="12" fill="url(#cap)"/><rect x="82" y="24" width="56" height="6" fill="#ffffff" opacity=".12"/><rect x="74" y="66" width="72" height="18" rx="6" fill="#1A1A1A"/><rect x="88" y="84" width="44" height="18" fill="#2B1A0E"/>
+<!-- bottle -->
+<rect x="48" y="102" width="124" height="330" rx="30" fill="url(#glass)" stroke="#3A1E05" stroke-width="3"/>
+<rect x="62" y="118" width="18" height="290" rx="9" fill="#fff" opacity=".38"/>
+<rect x="148" y="130" width="8" height="260" rx="4" fill="#fff" opacity=".18"/>
+<!-- label -->
+<rect x="48" y="196" width="124" height="148" fill="#FFFEF6"/>
+<rect x="48" y="196" width="124" height="8" fill="#0F2F25"/><rect x="48" y="336" width="124" height="8" fill="#0F2F25"/>
+<text x="110" y="224" text-anchor="middle" font-size="11" font-weight="900" letter-spacing="2" fill="#0F2F25">LUMIÈRE</text>
+<text x="110" y="254" text-anchor="middle" font-size="29" font-weight="900" fill="#0F2F25">VIT-C</text>
+<text x="110" y="276" text-anchor="middle" font-size="13" font-weight="700" fill="#0F2F25">15% SERUM</text>
+<text x="110" y="298" text-anchor="middle" font-size="10.5" fill="#5B6B64">brightening • 30ml</text>
+<text x="110" y="322" text-anchor="middle" font-size="16">🍋✦</text>
+<!-- drop -->
+<g transform="translate(158,150)"><path d="M0 -14 C 8 0 12 6 0 14 C -12 6 -8 0 0 -14Z" fill="#FFDD33" stroke="#0F2F25" stroke-width="2.5"/></g>
+</svg>
+<div style="margin-top:14px;background:rgba(255,255,255,.12);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.22);color:#fff;font-size:13px;font-weight:700;letter-spacing:.06em;padding:10px 20px;border-radius:999px">잡티 32% 개선 * 7일 인체적용시험</div>
+</div>
+</div>
+<div class="stage-caption"><span>30ML · VEGAN · FRAGRANCE-FREE</span><span><b>●</b> 1 / 3 &nbsp;&nbsp; SQUARE FEED READY</span></div>
+</div>
+</div>
+</div>
+</body>
+</html>

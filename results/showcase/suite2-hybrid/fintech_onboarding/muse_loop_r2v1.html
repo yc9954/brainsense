@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>조각조각 — 비싼 주식도, 천 원어치부터</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&family=Inter:wght@700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --paper:#FFFBF0;
+  --paper2:#F6EEDC;
+  --ink:#121A2B;
+  --muted:#5A6375;
+  --line:#E8DEc6;
+  --green:#0E7A5F;
+  --green-dark:#0A5C48;
+  --yellow:#FFD84D;
+  --card:#FFFFFF;
+}
+html,body{height:100%}
+body{
+  font-family:"Noto Sans KR","Inter",system-ui,-apple-system,sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+  font-size:17px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+}
+/* soft background - single wash, not competing */
+body::before{
+  content:"";
+  position:fixed;inset:0;
+  background:
+    radial-gradient(700px 420px at 50% 0%, #FFF0B8 0%, rgba(255,240,184,0) 70%),
+    radial-gradient(900px 600px at 50% 110%, #DDEDE6 0%, rgba(221,237,230,0) 60%);
+  pointer-events:none;z-index:0;
+}
+body::after{
+  content:"";
+  position:fixed;inset:0;
+  background-image:linear-gradient(rgba(18,26,43,.055) 1px, transparent 1px),linear-gradient(90deg, rgba(18,26,43,.055) 1px, transparent 1px);
+  background-size:44px 44px;
+  mask-image:radial-gradient(720px 460px at 50% 38%, black 0%, transparent 78%);
+  pointer-events:none;z-index:0;
+}
+.wrap{position:relative;z-index:1;width:100%;max-width:1160px;margin:0 auto;padding:0 32px;display:flex;flex-direction:column;min-height:100vh}
+/* NAV */
+.nav{display:flex;align-items:center;justify-content:space-between;padding:20px 0 10px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:900;font-size:20px;letter-spacing:-.02em}
+.brand-mark{width:32px;height:32px;border-radius:10px;background:var(--ink);color:var(--yellow);display:grid;place-items:center;font-size:18px;font-weight:900}
+.nav-right{display:flex;align-items:center;gap:14px;font-size:14px;color:var(--muted)}
+.nav-pill{display:inline-flex;align-items:center;gap:7px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 13px;font-weight:700;color:#2B3548;font-size:13.5px}
+.dot{width:7px;height:7px;border-radius:50%;background:#12A56B;box-shadow:0 0 0 4px rgba(18,165,107,.18)}
+.login{font-weight:700;color:var(--ink);text-decoration:none;border-bottom:2px solid var(--yellow);line-height:1.2}
+/* HERO - centered, airy */
+.hero{text-align:center;padding:14px 0 0}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:#fff;font-size:13.5px;font-weight:700;letter-spacing:.02em;border-radius:999px;padding:8px 14px}
+.eyebrow b{color:var(--yellow)}
+h1{font-size:64px;line-height:1.05;letter-spacing:-.045em;font-weight:900;margin:18px 0 12px}
+h1 .mark{position:relative;display:inline-block;white-space:nowrap}
+h1 .mark::before{content:"";position:absolute;left:-6px;right:-6px;top:58%;bottom:6px;background:var(--yellow);z-index:-1;border-radius:6px;transform:rotate(-1deg)}
+.sub{font-size:18.5px;color:var(--muted);font-weight:500;letter-spacing:-.01em}
+.sub strong{color:var(--ink)}
+/* FOCAL CARD - the one and only visual focus */
+.focal{margin:24px auto 0;width:min(760px,100%);background:var(--card);border:1px solid #E7DCC0;border-radius:28px;box-shadow:0 24px 64px rgba(18,26,43,.14),0 2px 0 rgba(18,26,43,.06);overflow:hidden;position:relative}
+.focal-top{display:flex;align-items:center;justify-content:space-between;padding:16px 24px 14px;border-bottom:1px dashed #EADFC2;font-size:13.5px;font-weight:700;color:var(--muted)}
+.live{display:inline-flex;align-items:center;gap:7px;color:var(--green-dark)}
+.focal-body{padding:22px 24px 20px;display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.stock{display:flex;gap:14px;align-items:center;background:#F8F4E8;border:1px solid #EDE2C3;border-radius:18px;padding:14px 16px}
+.stock-logo{width:48px;height:48px;border-radius:50%;background:#121A2B;color:#fff;display:grid;place-items:center;font-weight:800;font-size:22px;flex-shrink:0}
+.stock-name{font-weight:800;font-size:17px;letter-spacing:-.02em}
+.stock-price{font-size:14px;color:var(--muted);font-weight:500}
+.stock-price b{color:var(--ink)}
+.calc{background:#EFF7F3;border:1px solid #CBE5D8;border-radius:18px;padding:14px 16px;text-align:left}
+.calc-label{font-size:13px;font-weight:700;color:var(--green-dark);letter-spacing:.02em}
+.calc-value{font-family:Inter,"Noto Sans KR",sans-serif;font-size:32px;font-weight:800;letter-spacing:-.04em;line-height:1;margin:4px 0 2px}
+.calc-value small{font-size:15px;font-weight:700;letter-spacing:-.02em}
+.calc-sub{font-size:13.5px;color:#3A4A43}
+.amount-row{display:flex;gap:8px;padding:0 24px}
+.amount{flex:1;border:1.5px solid #E7DCC0;background:#FFFEFA;border-radius:14px;padding:11px 0;font-size:16px;font-weight:800;color:#6B7488;cursor:pointer;transition:.18s}
+.amount.active{background:var(--ink);border-color:var(--ink);color:var(--yellow);box-shadow:0 8px 20px rgba(18,26,43,.22)}
+.amount:focus-visible{outline:3px solid var(--green);outline-offset:2px}
+.bar-wrap{padding:18px 24px 6px}
+.bar-meta{display:flex;justify-content:space-between;font-size:13.5px;font-weight:700;color:var(--muted);margin-bottom:8px}
+.bar-meta strong{color:var(--ink)}
+.bar{height:12px;background:#EEE7D1;border-radius:999px;overflow:hidden;position:relative}
+.bar-fill{height:100%;width:8%;background:linear-gradient(90deg,var(--green),#14B183);border-radius:999px;transition:width .5s cubic-bezier(.2,.9,.2,1)}
+.cta-zone{padding:16px 24px 10px}
+.cta{width:100%;border:0;cursor:pointer;background:var(--ink);color:#fff;border-radius:18px;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;transition:transform .15s, box-shadow .15s}
+.cta:hover{transform:translateY(-1px);box-shadow:0 14px 30px rgba(18,26,43,.28)}
+.cta:focus-visible{outline:4px solid var(--yellow);outline-offset:2px}
+.cta-text{text-align:left}
+.cta-text strong{display:block;font-size:20px;letter-spacing:-.02em;line-height:1.1}
+.cta-text span{display:block;font-size:14px;color:#CBD2E1;margin-top:4px;font-weight:500}
+.cta-badge{background:var(--yellow);color:var(--ink);font-weight:900;font-size:14px;border-radius:999px;padding:10px 16px;white-space:nowrap}
+.focal-foot{display:flex;align-items:center;justify-content:center;gap:8px;padding:12px 24px 16px;font-size:13.5px;color:var(--muted);font-weight:500;background:#FFFEF7}
+.focal-foot i{font-style:normal;background:#121A2B;color:#fff;width:20px;height:20px;border-radius:50%;display:inline-grid;place-items:center;font-size:12px;font-weight:800}
+/* TRUST - single quiet line */
+.trust{display:flex;align-items:center;justify-content:center;gap:22px;flex-wrap:wrap;margin:18px auto 0;padding:10px 18px;font-size:14px;color:#4A5468;font-weight:600}
+.trust span{display:inline-flex;align-items:center;gap:7px;white-space:nowrap}
+.trust svg{flex-shrink:0}
+.disclaimer{text-align:center;font-size:12.5px;color:#8A93A6;margin:8px 0 18px}
+@media(max-width:860px){
+  h1{font-size:42px}
+  .focal-body{grid-template-columns:1fr}
+  .nav-right .hide-m{display:none}
+  .wrap{padding:0 18px}
+}
+@media(max-height:800px){
+  h1{font-size:54px;margin:12px 0 8px}
+  .focal{margin-top:18px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="nav" aria-label="상단 내비게이션">
+    <div class="brand"><span class="brand-mark">◧</span> 조각조각</div>
+    <div class="nav-right">
+      <span class="nav-pill hide-m"><span class="dot"></span> 한국예탁결제원 안전보관 · 예치금 별도예탁</span>
+      <a class="login" href="#">로그인</a>
+    </div>
+  </header>
+
+  <main class="hero">
+    <span class="eyebrow">국내 · 미국 주식 소수점 투자 <b>· 1,000원부터</b></span>
+    <h1>비싼 주식도, <span class="mark">천 원어치</span>부터.</h1>
+    <p class="sub">애플 1주가 24만원이어도 괜찮아요. <strong>1,000원으로 0.004주</strong>부터 매일 모아가세요.</p>
+
+    <!-- SINGLE FOCAL ELEMENT -->
+    <section class="focal" aria-label="첫 투자 미리보기와 시작하기">
+      <div class="focal-top">
+        <span>내 첫 조각 미리보기</span>
+        <span class="live"><span class="dot"></span> 실시간 시세 반영중</span>
+      </div>
+
+      <div class="focal-body">
+        <div class="stock">
+          <div class="stock-logo" aria-hidden="true"></div>
+          <div>
+            <div class="stock-name">애플 · AAPL</div>
+            <div class="stock-price">1주 <b>242,500원</b> · 어제보다 +1.2%</div>
+          </div>
+        </div>
+        <div class="calc" aria-live="polite">
+          <div class="calc-label" id="amtLabel">1,000원으로 살 수 있는 조각</div>
+          <div class="calc-value"><span id="shareNum">0.00412</span><small> 주</small></div>
+          <div class="calc-sub" id="calcSub">≈ 1,000원 · 수수료 0원 (첫 달)</div>
+        </div>
+      </div>
+
+      <div class="amount-row" role="group" aria-label="투자 금액 선택">
+        <button class="amount active" data-amt="1000">1,000원</button>
+        <button class="amount" data-amt="5000">5,000원</button>
+        <button class="amount" data-amt="10000">10,000원</button>
+      </div>
+
+      <div class="bar-wrap">
+        <div class="bar-meta"><span>내 소유 지분</span><strong id="pctLabel">1주의 0.41%</strong></div>
+        <div class="bar" aria-hidden="true"><div class="bar-fill" id="barFill"></div></div>
+      </div>
+
+      <div class="cta-zone">
+        <button class="cta" onclick="alert('3분 온보딩 데모: 간편인증 → 계좌개설 → 첫 1,000원 매수')">
+          <span class="cta-text"><strong>3분 만에 시작하기 →</strong><span>신분증만 있으면 돼요 · 평균 소요 3분 12초</span></span>
+          <span class="cta-badge">첫 매수 수수료 0원</span>
+        </button>
+      </div>
+      <div class="focal-foot"><i>1</i> 간편인증 &nbsp;→&nbsp; <i>2</i> 계좌개설 &nbsp;→&nbsp; <i>3</i> 첫 조각 매수</div>
+    </section>
+
+    <div class="trust" aria-label="신뢰 및 안전 신호">
+      <span><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1l5 2v4c0 3.2-2.2 5.6-5 6.5C5.2 12.6 3 10.2 3 7V3l5-2z" stroke="#0E7A5F" stroke-width="1.6" stroke-linejoin="round"/><path d="M5.8 7.2l1.5 1.5 2.9-3" stroke="#0E7A5F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg> 금융위 혁신금융서비스</span>
+      <span><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="3" y="7" width="10" height="6.5" rx="1.5" stroke="#0E7A5F" stroke-width="1.6"/><path d="M5.5 7V5.2a2.5 2.5 0 015 0V7" stroke="#0E7A5F" stroke-width="1.6"/></svg> 예금자보호 5,000만원</span>
+      <span><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.2" stroke="#0E7A5F" stroke-width="1.6"/><path d="M8 4.8V8l2 1.4" stroke="#0E7A5F" stroke-width="1.6" stroke-linecap="round"/></svg> 누적 회원 320만명 · 앱 평점 4.8</span>
+    </div>
+    <p class="disclaimer">투자 전 설명서 확인 · 원금손실 가능 · 예치금은 우리은행에 별도 예탁되어 안전하게 보호됩니다.</p>
+  </main>
+</div>
+
+<script>
+const price = 242500;
+const shareNum = document.getElementById('shareNum');
+const pctLabel = document.getElementById('pctLabel');
+const calcSub = document.getElementById('calcSub');
+const barFill = document.getElementById('barFill');
+const btns = document.querySelectorAll('.amount');
+function fmt(n){return n.toLocaleString('ko-KR')}
+btns.forEach(b=>{
+  b.addEventListener('click',()=>{
+    btns.forEach(x=>x.classList.remove('active'));
+    b.classList.add('active');
+    const amt = +b.dataset.amt;
+    const share = amt/price;
+    shareNum.textContent = share.toFixed(5);
+    pctLabel.textContent = '1주의 '+(share*100).toFixed(2)+'%';
+    calcSub.textContent = '≈ '+fmt(amt)+'원 · 수수료 0원 (첫 달)';
+    barFill.style.width = Math.min(100, 8 + (amt/10000)*52)+'%';
+  });
+});
+</script>
+</body>
+</html>

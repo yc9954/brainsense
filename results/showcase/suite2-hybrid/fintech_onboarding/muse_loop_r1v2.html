@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PIECE — 비싼 주식도 1,000원부터</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&family=Outfit:wght@500;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#060B1A;
+  --panel:#0D1430;
+  --lime:#D8FF3E;
+  --lime-d:#B8E600;
+  --mint:#7DF9D4;
+  --violet:#8B7CFF;
+  --line:rgba(255,255,255,.12);
+  --muted:#A8B0C7;
+}
+body{
+  font-family:'Noto Sans KR',sans-serif;
+  background:#02040C;
+  color:#fff;
+  font-size:17px;
+  line-height:1.6;
+  display:flex;
+  justify-content:center;
+  min-height:100vh;
+}
+.page{
+  width:1280px;
+  min-height:800px;
+  background:var(--bg);
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+}
+/* BG FX */
+.bg-glow{position:absolute;inset:0;pointer-events:none}
+.bg-glow::before{
+  content:"";position:absolute;width:780px;height:780px;left:-180px;top:-280px;
+  background:radial-gradient(circle,rgba(139,124,255,.35) 0%,transparent 62%);
+}
+.bg-glow::after{
+  content:"";position:absolute;width:900px;height:700px;right:-200px;top:-100px;
+  background:radial-gradient(circle,rgba(216,255,62,.18) 0%,transparent 60%);
+}
+.grid-bg{
+  position:absolute;inset:0;opacity:.22;pointer-events:none;
+  background-image:linear-gradient(rgba(255,255,255,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.08) 1px,transparent 1px);
+  background-size:56px 56px;
+  mask-image:radial-gradient(ellipse 90% 80% at 50% 20%,black 30%,transparent 75%);
+}
+.giant{
+  position:absolute;left:18px;top:118px;
+  font-family:'Outfit',sans-serif;font-weight:900;
+  font-size:172px;line-height:1;letter-spacing:-8px;
+  color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.13);
+  user-select:none;pointer-events:none;white-space:nowrap;
+}
+.giant span{-webkit-text-stroke:1.5px rgba(216,255,62,.55)}
+/* HEADER */
+header{
+  height:70px;display:flex;align-items:center;justify-content:space-between;
+  padding:0 40px;position:relative;z-index:5;
+  border-bottom:1px solid var(--line);
+  background:rgba(6,11,26,.72);backdrop-filter:blur(12px);
+}
+.brand{display:flex;align-items:center;gap:11px}
+.logo-mark{
+  width:34px;height:34px;border-radius:10px;background:var(--lime);
+  display:flex;align-items:center;justify-content:center;
+  font-weight:900;color:#0A0F00;font-size:19px;box-shadow:0 0 24px rgba(216,255,62,.55);
+}
+.brand b{font-family:'Outfit',sans-serif;font-size:22px;letter-spacing:.5px}
+.brand b i{font-style:normal;color:var(--lime)}
+.brand small{display:block;font-size:11px;color:var(--muted);font-weight:500;letter-spacing:.4px;line-height:1}
+nav{display:flex;gap:28px;font-size:15px;color:#D3D9EC;font-weight:500}
+nav a{color:inherit;text-decoration:none;opacity:.85}
+nav a:hover{color:var(--lime)}
+.h-right{display:flex;align-items:center;gap:12px}
+.login{color:#fff;text-decoration:none;font-size:15px;font-weight:600;opacity:.9}
+.btn-app{
+  background:#fff;color:#060B1A;border:0;border-radius:100px;
+  padding:10px 18px;font-weight:800;font-size:14px;cursor:pointer;
+}
+/* MAIN */
+main{
+  flex:1;display:grid;grid-template-columns:600px 1fr;
+  position:relative;z-index:2;
+}
+.left{padding:38px 16px 20px 40px;position:relative}
+.live-pill{
+  display:inline-flex;align-items:center;gap:9px;
+  background:rgba(255,255,255,.08);border:1px solid var(--line);
+  border-radius:100px;padding:7px 14px 7px 9px;font-size:13.5px;color:#E8ECFA;
+}
+.dot{width:8px;height:8px;border-radius:50%;background:#3DFF88;box-shadow:0 0 0 4px rgba(61,255,136,.2);animation:blink 1.6s infinite}
+@keyframes blink{50%{opacity:.4}}
+.live-pill strong{color:var(--lime);font-family:'Outfit';font-weight:800}
+h1{
+  margin-top:18px;font-size:54px;line-height:1.08;letter-spacing:-1.8px;font-weight:900;
+}
+h1 .hl{
+  background:var(--lime);color:#0A0F00;padding:0 12px;border-radius:10px;
+  display:inline-block;transform:rotate(-1.5deg);box-shadow:0 6px 0 #5A6800;
+}
+h1 .mint{color:var(--mint)}
+.sub{margin-top:16px;color:var(--muted);font-size:17.5px;line-height:1.65;max-width:520px}
+.sub b{color:#fff}
+.thousand-card{
+  margin-top:20px;display:flex;align-items:center;gap:18px;
+  background:linear-gradient(135deg,#151D3D 0%,#0D1430 100%);
+  border:1px solid rgba(216,255,62,.35);
+  border-radius:18px;padding:16px 18px;max-width:540px;position:relative;overflow:hidden;
+}
+.thousand-card::after{
+  content:"";position:absolute;right:-30px;top:-40px;width:180px;height:180px;
+  background:radial-gradient(circle,rgba(216,255,62,.28),transparent 70%);
+}
+.coin{
+  width:68px;height:68px;border-radius:50%;flex-shrink:0;
+  background:conic-gradient(from 20deg,#FFF7B0,var(--lime) 30%,#9CC400 50%,#EFFF9A 70%,var(--lime));
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Outfit';font-weight:900;color:#0A0F00;font-size:15px;line-height:1;text-align:center;
+  border:4px solid #0A0F00;outline:2px solid var(--lime);box-shadow:0 8px 24px rgba(216,255,62,.4);
+  transform:rotate(-8deg);
+}
+.thousand-card h3{font-size:19px;font-weight:800}
+.thousand-card h3 span{color:var(--lime);font-family:'Outfit';font-size:26px}
+.thousand-card p{font-size:14.5px;color:var(--muted)}
+.cta-row{display:flex;gap:12px;margin-top:20px;align-items:center}
+.btn-primary{
+  background:var(--lime);color:#0B1000;border:0;border-radius:14px;
+  font-size:19px;font-weight:900;padding:17px 28px;cursor:pointer;
+  display:flex;align-items:center;gap:10px;
+  box-shadow:0 10px 32px rgba(216,255,62,.35),0 2px 0 var(--lime-d);
+  transition:.2s;
+}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 40px rgba(216,255,62,.45)}
+.btn-primary small{background:#0B1000;color:var(--lime);border-radius:100px;font-size:12px;padding:3px 9px;font-weight:800}
+.btn-ghost{
+  background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.25);
+  border-radius:14px;padding:16px 20px;font-size:16px;font-weight:700;cursor:pointer;
+  display:flex;align-items:center;gap:9px;
+}
+.micro{margin-top:12px;font-size:13.8px;color:#8E97B3;display:flex;gap:8px;align-items:center}
+.micro em{font-style:normal;background:rgba(125,249,212,.15);color:var(--mint);padding:2px 8px;border-radius:100px;font-weight:700;font-size:12.5px}
+.trust-mini{margin-top:18px;display:flex;gap:10px;max-width:540px}
+.trust-mini div{
+  flex:1;background:rgba(255,255,255,.06);border:1px solid var(--line);
+  border-radius:12px;padding:10px 12px;font-size:13px;line-height:1.45;color:#DDE3F5;
+}
+.trust-mini div b{display:block;font-size:13px;color:#fff}
+.trust-mini div span{color:var(--muted);font-size:12.5px}
+/* RIGHT */
+.right{position:relative;padding:28px 40px 10px 10px;display:flex;justify-content:center;align-items:flex-start;gap:18px}
+.phone-wrap{position:relative;width:300px;flex-shrink:0}
+.phone{
+  width:300px;height:606px;background:#0F1633;border-radius:42px;
+  border:1px solid rgba(255,255,255,.22);
+  outline:8px solid #080D20;box-shadow:0 30px 80px rgba(0,0,0,.6),0 0 0 1px #000,0 0 60px rgba(139,124,255,.25);
+  overflow:hidden;position:relative;
+}
+.phone-top{background:linear-gradient(180deg,#1A2450,#0F1633);padding:18px 18px 14px}
+.status{display:flex;justify-content:space-between;font-family:'Outfit';font-size:12px;color:#CBD2EA}
+.app-bar{display:flex;justify-content:space-between;align-items:center;margin-top:12px}
+.app-bar b{font-size:16px}
+.bell{width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-size:14px}
+.balance{margin-top:12px}
+.balance small{color:var(--muted);font-size:12px}
+.balance h4{font-family:'Outfit';font-size:28px;letter-spacing:-.5px}
+.balance h4 span{font-size:14px;color:#3DFF88;font-weight:700}
+.chart-box{background:rgba(255,255,255,.06);border-radius:16px;padding:10px;margin-top:10px;border:1px solid rgba(255,255,255,.1)}
+.buy-sheet{background:#fff;color:#0B1025;border-radius:22px 22px 0 0;padding:16px 16px 18px;margin-top:10px;height:100%}
+.stock-row{display:flex;align-items:center;gap:10px}
+.t-logo{width:36px;height:36px;border-radius:50%;background:#000;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-family:'Outfit'}
+.stock-row b{font-size:14px;display:block;line-height:1.2}
+.stock-row small{font-size:12px;color:#6B7390}
+.stock-price{margin-left:auto;text-align:right;font-family:'Outfit';font-weight:800;font-size:14px}
+.stock-price small{display:block;color:#E11D48;font-weight:700}
+.amount-btns{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-top:12px}
+.amount-btns button{border:1.5px solid #E2E6F2;background:#F5F6FB;border-radius:10px;padding:8px 0;font-size:13px;font-weight:800;color:#0B1025;cursor:pointer}
+.amount-btns button.on{background:#0B1025;color:var(--lime);border-color:#0B1025}
+input[type=range]{width:100%;margin-top:14px;accent-color:#0B1025}
+.buy-result{display:flex;justify-content:space-between;align-items:center;background:#F1FFB8;border:1.5px dashed #8AB000;border-radius:12px;padding:10px 12px;margin-top:10px}
+.buy-result b{font-family:'Outfit';font-size:18px}
+.buy-btn{width:100%;margin-top:10px;background:#0B1025;color:var(--lime);border:0;border-radius:12px;padding:13px;font-size:15px;font-weight:900;cursor:pointer}
+.float{
+  position:absolute;background:#fff;color:#0B1025;border-radius:16px;
+  padding:11px 13px;box-shadow:0 18px 40px rgba(0,0,0,.45);font-size:13px;
+  display:flex;gap:10px;align-items:center;z-index:4;animation:float 4s ease-in-out infinite;
+}
+@keyframes float{50%{transform:translateY(-8px)}}
+.f1{left:-132px;top:132px;width:170px}
+.f2{right:-118px;top:300px;width:178px;animation-delay:1s}
+.f-check{width:32px;height:32px;border-radius:50%;background:#16A34A;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;flex-shrink:0}
+.side-stack{width:250px;display:flex;flex-direction:column;gap:14px;padding-top:8px}
+.feed{background:rgba(255,255,255,.07);border:1px solid var(--line);border-radius:18px;padding:16px;backdrop-filter:blur(10px)}
+.feed h5{font-size:13px;letter-spacing:.6px;color:var(--mint);font-weight:800}
+.feed ul{list-style:none;margin-top:10px;display:flex;flex-direction:column;gap:9px}
+.feed li{display:flex;justify-content:space-between;font-size:13px;background:rgba(0,0,0,.3);border-radius:10px;padding:8px 10px;border:1px solid rgba(255,255,255,.08)}
+.feed li b{font-family:'Outfit'}
+.feed li span{color:#3DFF88;font-family:'Outfit';font-weight:700}
+.port-card{background:var(--lime);color:#0A0F00;border-radius:18px;padding:16px;transform:rotate(1.5deg);box-shadow:0 16px 40px rgba(216,255,62,.25)}
+.port-card small{font-weight:800;font-size:12px;letter-spacing:.4px}
+.port-card h4{font-family:'Outfit';font-size:26px;letter-spacing:-1px}
+.port-card p{font-size:13px;font-weight:600}
+/* BOTTOM TRUST BAR */
+.trustbar{
+  position:relative;z-index:3;margin:8px 40px 0;
+  background:rgba(255,255,255,.06);border:1px solid var(--line);
+  border-radius:16px;padding:13px 20px;
+  display:flex;align-items:center;gap:22px;font-size:14px;
+}
+.trustbar .t{display:flex;align-items:center;gap:9px;color:#E6EAF7;font-weight:600;white-space:nowrap}
+.icon{width:30px;height:30px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0}
+.i1{background:rgba(125,249,212,.18)} .i2{background:rgba(216,255,62,.18)} .i3{background:rgba(139,124,255,.22)}
+.div{width:1px;height:28px;background:rgba(255,255,255,.15)}
+.partners{margin-left:auto;display:flex;gap:16px;color:#8E97B3;font-size:12.5px;font-weight:600;white-space:nowrap}
+.marquee{
+  position:relative;z-index:2;margin-top:10px;border-top:1px solid var(--line);
+  overflow:hidden;white-space:nowrap;padding:10px 0 14px;color:#7E88A6;font-size:13px;background:rgba(0,0,0,.35);
+}
+.marquee-inner{display:inline-block;animation:scroll 22s linear infinite;padding-left:40px}
+@keyframes scroll{to{transform:translateX(-50%)}}
+a:focus,button:focus{outline:3px solid var(--mint);outline-offset:2px}
+@media(max-width:1020px){
+  .page{width:100%} main{grid-template-columns:1fr} .right{padding:20px} .giant{display:none} h1{font-size:42px}
+}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="grid-bg"></div>
+  <div class="bg-glow"></div>
+  <div class="giant">₩1,000 <span>PIECE</span></div>
+
+  <header>
+    <div class="brand">
+      <div class="logo-mark">◧</div>
+      <div><b>PIECE<i>.</i></b><small>소수점 주식투자</small></div>
+    </div>
+    <nav aria-label="메뉴">
+      <a href="#">쪼개기란?</a>
+      <a href="#">종목 4,200개</a>
+      <a href="#">수수료 0원</a>
+      <a href="#">고객센터</a>
+    </nav>
+    <div class="h-right">
+      <a class="login" href="#">로그인</a>
+      <button class="btn-app">앱 다운로드</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="left">
+      <span class="live-pill"><span class="dot"></span> 실시간 체결 &nbsp;·&nbsp; 방금 <strong>NVDA 0.0031주</strong> &nbsp;1,000원에 체결됨</span>
+      <h1>좋은 주식,<br><span class="mint">통째로 살 필요</span> 없어요.<br><span class="hl">1,000원부터</span> 쪼개 사세요.</h1>
+      <p class="sub">엔비디아 한 주 180만원이 부담된다면, <b>지갑에 있는 만큼만 0.0001주 단위로</b> 담으세요. 삼성전자·애플·테슬라 국내외 4,200개 종목을 소수점으로 나눠 드려요.</p>
+
+      <div class="thousand-card">
+        <div class="coin">₩<br>1000</div>
+        <div>
+          <h3><span>1,000원</span>이면 첫 주주가 됩니다</h3>
+          <p>첫 매수 수수료 0원 · 1주 미만도 배당금 똑같이 · 매도도 1초 체결</p>
+        </div>
+      </div>
+
+      <div class="cta-row">
+        <button class="btn-primary" onclick="alert('3분 온보딩 데모: 신분증 촬영 → 계좌 개설 → 1,000원 첫 매수')">3분 만에 시작하기 <span aria-hidden="true">→</span> <small>평균 2:47</small></button>
+        <button class="btn-ghost">▶ 1분으로 보는 쪼개기</button>
+      </div>
+      <p class="micro"><em>✓ 신분증만 OK</em> 계좌개설부터 첫 매수까지 평균 2분 47초 · 탈퇴 시 전액 즉시 출금</p>
+
+      <div class="trust-mini">
+        <div><b>🏦 예탁결제원 보관</b><span>내 조각은 별도 예탁, 회사와 분리</span></div>
+        <div><b>🛡️ 5,000만원 보호</b><span>제휴 증권사 예금자보호 적용</span></div>
+        <div><b>🔒 ISMS-P 인증</b><span>2채널 인증·이상거래 탐지 24h</span></div>
+      </div>
+    </section>
+
+    <section class="right" aria-label="앱 미리보기">
+      <div class="phone-wrap">
+        <div class="float f1"><div class="f-check">✓</div><div><b>매수 체결 완료</b><br><span style="font-family:Outfit">AAPL 0.0041주 · ₩1,000</span></div></div>
+        <div class="phone">
+          <div class="phone-top">
+            <div class="status"><span>9:41</span><span>● ● ●</span></div>
+            <div class="app-bar"><b>내 조각함 🧺</b><div class="bell">🔔</div></div>
+            <div class="balance"><small>총 조각 자산</small><h4>128,400원 <span>▲ +1.86%</span></h4></div>
+            <div class="chart-box">
+              <svg viewBox="0 0 260 70" width="100%" height="56" aria-hidden="true">
+                <defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D8FF3E"/><stop offset="1" stop-color="#D8FF3E" stop-opacity="0"/></linearGradient></defs>
+                <path d="M0 55 L30 48 L60 52 L90 36 L120 40 L150 28 L180 32 L210 16 L260 20 L260 70 L0 70Z" fill="url(#g)" opacity=".35"/>
+                <path d="M0 55 L30 48 L60 52 L90 36 L120 40 L150 28 L180 32 L210 16 L260 20" fill="none" stroke="#D8FF3E" stroke-width="3" stroke-linecap="round"/>
+                <circle cx="210" cy="16" r="5" fill="#D8FF3E" stroke="#0F1633" stroke-width="2"/>
+              </svg>
+              <div style="display:flex;justify-content:space-between;font-size:11px;color:#A8B0C7"><span>1주 · 1개월 · 1년</span><span style="color:#3DFF88;font-weight:800">+12.4% 수익중</span></div>
+            </div>
+          </div>
+          <div class="buy-sheet">
+            <div class="stock-row">
+              <div class="t-logo">T</div>
+              <div><b>테슬라 · TSLA</b><small>1주 342,500원</small></div>
+              <div class="stock-price">342,500원<small>▼ -0.8% 오늘</small></div>
+            </div>
+            <div class="amount-btns">
+              <button class="on" onclick="setAmt(1000,this)">1천원</button>
+              <button onclick="setAmt(5000,this)">5천원</button>
+              <button onclick="setAmt(10000,this)">1만원</button>
+              <button onclick="setAmt(50000,this)">5만원</button>
+            </div>
+            <input type="range" min="1000" max="50000" step="1000" value="1000" id="rng" oninput="updateAmt(this.value)" aria-label="투자 금액 조절">
+            <div class="buy-result"><span style="font-size:13px;font-weight:700">내가 사게 될 조각</span><b id="share">0.0029주</b></div>
+            <button class="buy-btn" id="buyBtn">1,000원만큼 사기</button>
+            <p style="font-size:11px;color:#6B7390;text-align:center;margin-top:8px">소수점 4자리까지 · 수수료 0원 · 배당 동일 지급</p>
+          </div>
+        </div>
+        <div class="float f2"><div style="width:38px;height:38px;border-radius:50%;background:conic-gradient(#D8FF3E 0 62%,#8B7CFF 62% 82%,#7DF9D4 82% 100%);flex-shrink:0;border:3px solid #0B1025"></div><div><b>내 조각 분포</b><br>미국 62% · 한국 38%</div></div>
+      </div>
+
+      <div class="side-stack">
+        <div class="feed">
+          <h5>● LIVE 조각 체결 피드</h5>
+          <ul>
+            <li><span>김*현 · 삼전</span><b>0.012주</b></li>
+            <li><span>박*우 · 엔비디아</span><b style="color:#D8FF3E">0.002주</b></li>
+            <li><span>이*아 · 애플</span><b>0.004주</b></li>
+            <li><span>최*민 · 테슬라</span><b>0.009주</b></li>
+          </ul>
+          <p style="font-size:12px;color:#8E97B3;margin-top:10px">지금까지 <b style="color:#fff">128만 4,213명</b>이 1,000원으로 시작했어요</p>
+        </div>
+        <div class="port-card">
+          <small>★ 첫 투자 평균 4,200원</small>
+          <h4>89%가 두 번째 조각 담음</h4>
+          <p>부담 없이 시작하니 꾸준히 모여요. 자동 모으기 ON →</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="trustbar">
+    <div class="t"><span class="icon i1">🔒</span> 금융위 혁신금융서비스 지정</div>
+    <div class="div"></div>
+    <div class="t"><span class="icon i2">🏛️</span> 신한투자증권 제휴 · 전액 별도예탁</div>
+    <div class="div"></div>
+    <div class="t"><span class="icon i3">⭐</span> 앱스토어 평점 4.9 (8.2만개 리뷰)</div>
+    <div class="partners"><span>예탁결제원</span><span>ISMS-P</span><span>토스페이먼츠</span></div>
+  </div>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-inner">* 원금손실 유의 · 예금자보호는 제휴 증권사 계좌 내 현금성 자산에 한함 · 소수점 매매는 증권사 주문을 합산 집행합니다 &nbsp;&nbsp;&nbsp; * 원금손실 유의 · 예금자보호는 제휴 증권사 계좌 내 현금성 자산에 한함 · 소수점 매매는 증권사 주문을 합산 집행합니다 &nbsp;&nbsp;&nbsp; * 원금손실 유의 · 예금자보호는 제휴 증권사 계좌 내 현금성 자산에 한함 · 소수점 매매는 증권사 주문을 합산 집행합니다</div>
+  </div>
+</div>
+
+<script>
+let price = 342500;
+function updateAmt(v){
+  document.getElementById('share').textContent = (v/price).toFixed(4)+'주';
+  document.getElementById('buyBtn').textContent = Number(v).toLocaleString()+'원만큼 사기';
+  document.querySelectorAll('.amount-btns button').forEach(b=>b.classList.remove('on'));
+}
+function setAmt(v,el){
+  document.getElementById('rng').value=v;
+  updateAmt(v);
+  el.classList.add('on');
+}
+</script>
+</body>
+</html>

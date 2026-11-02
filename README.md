@@ -133,6 +133,16 @@ Each score costs one TRIBE call (~14 s warm). The metric is honest about its lim
 
 UI repo: https://github.com/yc9954/openmuse-brainsense (private, branch `brainsense-ui`; upstream CopilotKit/openmuse kept as `upstream`).
 
+**Showcase A/B (2026-11-03, `brainsense/showcase/`, `results/showcase/index.html`):** same brief, same Muse Spark, same generation budget; only the feedback differs. Arms: `oneshot` (ask once), `muse_loop` (Muse reviews its own screenshot, picks by self-judge), `brain_loop` (TRIBE cortex → `skills.read_brain` expert critique, picks by brain+judge blend), `hybrid_loop` (designer review + brain critique = the shipped harness). Verdict = blind pairwise Muse multimodal judge, both image orders averaged. Five page briefs × 3 rounds × 2 variants (+1 ad clip):
+
+| comparison | brain-arm wins | mean P(brain arm better) | brain ui_score of finalists |
+|---|---|---|---|
+| `brain_loop` vs `oneshot` | 5 / 6 | 0.69 | 0.51 vs 0.43 |
+| `brain_loop` vs `muse_loop` | 2 / 6 | 0.42 | 0.51 vs 0.42 |
+| `hybrid_loop` vs `muse_loop` (suite2) | 1 / 5 | 0.27 | 0.53 vs 0.45 |
+
+Reading: a brain in the loop beats "just ask the model" clearly, and the brain arms always end with the highest brain score (the signal they optimise). Against Muse's own self-critique loop they lose by Muse's verdict — with the one-sentence caveat that the self-loop optimises the very judge that scores it, and the hybrid's judge score *falls* across rounds (0.76 → 0.75 → 0.67) while its brain score rises, i.e. the brain directives (object silhouette, face/gaze toward the CTA, concrete reward cues) pull the pages away from what the Muse judge rewards. Which taste matches humans is the open question; `results/showcase/vote.html` is a blind human-preference page over every finalist pair (shuffled, side-swapped, `votes.json` export → `vote.py --tally`). 12-second CSS-animated ad clips go through the same loop (`video ab`): per-frame seek via the Web Animations API → mp4 → TRIBE 1 Hz time course → hook/hold critique (clips shorter than ~10 s give a flat cortex because of the hemodynamic lag); first serum clip: brain arm preferred 0.90 / 0.90.
+
 ## OpenMuse integration (2026-11-03): the agent's own brain
 BrainSense is wired into OpenMuse's own agent loop, not a side tab:
 - **Server tool `brain_eval`** (`apps/server/src/engine/conversation.ts`): takes `artifact_id` of a photo/clip attached in chat (OpenMuse's file store now accepts images and video, sniffed by magic bytes) or `brain_item_id` from agent context; calls this server's `/analyze` + `/eval`; returns heads, percentiles, confidence, top cortical areas, the 1 Hz region series, the per-vertex cortex time series and a Korean summary. Muse Spark calls it on its own when the user asks "이거 어때?" / attaches an image.

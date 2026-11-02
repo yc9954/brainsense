@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>모이 MOI — 비싼 주식도 1,000원부터 쪼개 사세요</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+--paper:#FFF8E8;
+--paper2:#FFFEF7;
+--ink:#12141A;
+--muted:#5B5E6B;
+--line:#E8DDC2;
+--blue:#2244FF;
+--blue-dark:#162EB8;
+--lime:#D8F626;
+--lime-dark:#BDDD0A;
+--dark:#111827;
+--card:#FFFFFF;
+}
+html{scroll-behavior:smooth}
+body{
+font-family:'Noto Sans KR',system-ui,sans-serif;
+background:var(--paper);
+color:var(--ink);
+font-size:17px;
+line-height:1.6;
+-webkit-font-smoothing:antialiased;
+overflow-x:hidden;
+}
+button{font-family:inherit}
+.outfit{font-family:'Outfit','Noto Sans KR',sans-serif}
+/* TICKER */
+.ticker{background:#111318;color:#fff;font-size:13.5px;white-space:nowrap;overflow:hidden;height:38px;display:flex;align-items:center;border-bottom:1px solid #000}
+.ticker-track{display:flex;gap:0;animation:marquee 28s linear infinite;will-change:transform}
+.ticker span{display:inline-flex;align-items:center;gap:8px;padding:0 22px;letter-spacing:-.01em}
+.ticker b{color:var(--lime);font-weight:800}
+.ticker i{font-style:normal;opacity:.35}
+@keyframes marquee{to{transform:translateX(-50%)}}
+/* HEADER */
+.wrap{max-width:1280px;margin:0 auto;padding:0 40px}
+header.nav{height:70px;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:10px;font-weight:900;font-size:22px;letter-spacing:-.04em}
+.logo-mark{width:36px;height:36px;background:var(--ink);border-radius:11px;display:grid;place-items:center;position:relative;overflow:hidden}
+.logo-mark::after{content:'';position:absolute;right:-6px;top:-6px;width:22px;height:22px;background:var(--lime);border-radius:50%}
+.logo-mark span{color:#fff;font-weight:900;font-size:20px;z-index:1;transform:translateY(-1px)}
+.logo small{font-size:11px;font-weight:700;background:var(--lime);border:1.5px solid var(--ink);border-radius:100px;padding:2px 8px;margin-left:2px;letter-spacing:0}
+.nav-links{display:flex;gap:28px;font-size:15.5px;font-weight:500;color:#2B2E36}
+.nav-links a{text-decoration:none;color:inherit}
+.nav-links a:hover{color:var(--blue)}
+.nav-cta{display:flex;align-items:center;gap:12px}
+.btn-ghost{border:1.5px solid var(--ink);background:#fff;border-radius:12px;padding:9px 18px;font-weight:700;font-size:15px;cursor:pointer}
+.btn-small{background:var(--ink);color:#fff;border:1.5px solid var(--ink);border-radius:12px;padding:10px 18px;font-weight:700;font-size:15px;cursor:pointer}
+/* HERO */
+.hero{display:grid;grid-template-columns:600px 1fr;gap:20px;align-items:center;padding:14px 0 10px;position:relative}
+.badge{display:inline-flex;align-items:center;gap:9px;background:#fff;border:1.5px solid var(--ink);border-radius:100px;padding:7px 14px 7px 8px;font-size:14.5px;font-weight:700;box-shadow:3px 3px 0 var(--ink)}
+.dot-live{width:28px;height:28px;background:var(--lime);border:1.5px solid var(--ink);border-radius:50%;display:grid;place-items:center;font-size:14px}
+.pulse{width:8px;height:8px;background:#00A02B;border-radius:50%;box-shadow:0 0 0 4px rgba(0,160,43,.18);animation:pulse 1.8s infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 7px rgba(0,160,43,.08)}}
+h1{font-size:62px;line-height:1.04;letter-spacing:-.045em;font-weight:900;margin:18px 0 16px}
+h1 .hl{position:relative;display:inline-block;background:var(--lime);border:2px solid var(--ink);border-radius:14px;padding:0 14px 3px;margin:0 2px;box-shadow:4px 4px 0 var(--ink);transform:rotate(-1.2deg)}
+h1 .u-blue{color:var(--blue);text-decoration:underline;text-decoration-thickness:6px;text-underline-offset:8px;text-decoration-color:var(--blue)}
+.sub{font-size:18.5px;line-height:1.65;color:#2E323E;letter-spacing:-.02em;max-width:520px}
+.sub strong{color:var(--ink);background:#fff;border-bottom:3px solid var(--lime);padding:0 2px}
+.cta-row{display:flex;align-items:center;gap:16px;margin-top:22px}
+.btn-primary{background:var(--blue);color:#fff;border:2px solid var(--ink);border-radius:16px;padding:17px 28px;font-size:19px;font-weight:800;letter-spacing:-.02em;cursor:pointer;display:inline-flex;align-items:center;gap:10px;box-shadow:6px 6px 0 var(--ink);transition:.18s}
+.btn-primary:hover{transform:translate(-1px,-2px);box-shadow:8px 8px 0 var(--ink);background:#1A35E6}
+.btn-primary:active{transform:translate(3px,3px);box-shadow:2px 2px 0 var(--ink)}
+.btn-primary .arrow{background:var(--lime);color:var(--ink);width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-size:18px;font-weight:900}
+.cta-sub{font-size:14px;line-height:1.5;color:var(--muted)}
+.cta-sub b{color:var(--ink);font-family:'Outfit';background:#fff;border:1px solid var(--line);border-radius:6px;padding:1px 6px}
+.video-link{display:inline-flex;align-items:center;gap:8px;margin-top:14px;font-size:15px;font-weight:700;color:var(--ink);text-decoration:none}
+.play{width:28px;height:28px;border:1.5px solid var(--ink);border-radius:50%;display:grid;place-items:center;background:#fff;font-size:12px}
+/* trust mini */
+.trust3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:18px;max-width:560px}
+.tcard{background:var(--paper2);border:1.5px solid var(--line);border-radius:16px;padding:12px 14px;display:flex;gap:10px;align-items:flex-start}
+.ticon{width:36px;height:36px;border-radius:11px;display:grid;place-items:center;font-size:18px;flex-shrink:0;border:1.5px solid var(--ink)}
+.tcard b{display:block;font-size:14.5px;letter-spacing:-.02em;line-height:1.3}
+.tcard span{font-size:13px;color:var(--muted);line-height:1.4;display:block;margin-top:2px}
+.rating{display:flex;align-items:center;gap:12px;margin-top:16px}
+.avatars{display:flex}
+.avatars div{width:32px;height:32px;border-radius:50%;border:2px solid var(--paper);margin-left:-8px;display:grid;place-items:center;font-size:13px;font-weight:800;color:#fff}
+.avatars div:first-child{margin-left:0}
+.stars{color:#FF8A00;font-size:15px;letter-spacing:2px}
+.rating p{font-size:14px;color:var(--muted)}
+.rating p b{color:var(--ink)}
+/* VISUAL */
+.visual{position:relative;height:620px;display:flex;justify-content:center;align-items:center}
+.blob{position:absolute;width:520px;height:520px;background:var(--lime);border:2px solid var(--ink);border-radius:46% 54% 55% 45% / 48% 46% 54% 52%;right:20px;top:20px;box-shadow:8px 8px 0 var(--ink)}
+.blob::after{content:'';position:absolute;inset:18px;border:2px dashed rgba(0,0,0,.25);border-radius:inherit}
+.ring{position:absolute;width:560px;height:560px;border:2px solid var(--ink);border-radius:50%;right:0;top:0;opacity:.12;pointer-events:none}
+.dots{position:absolute;left:10px;top:40px;width:120px;height:80px;background-image:radial-gradient(#12141A 2.2px, transparent 2.3px);background-size:14px 14px;opacity:.18}
+.phone{position:relative;width:300px;height:604px;background:#fff;border:8px solid #14161D;border-radius:46px;box-shadow:0 24px 60px rgba(18,20,26,.28), 12px 12px 0 var(--blue);overflow:hidden;z-index:2}
+.notch{position:absolute;top:12px;left:50%;transform:translateX(-50%);width:110px;height:26px;background:#14161D;border-radius:100px;z-index:3}
+.screen{padding:44px 18px 12px;height:100%;display:flex;flex-direction:column;background:linear-gradient(180deg,#fff 0%, #F6F8FF 100%)}
+.status{display:flex;justify-content:space-between;font-size:12px;font-weight:700;opacity:.8}
+.app-head{display:flex;justify-content:space-between;align-items:center;margin:10px 0}
+.app-head b{font-size:18px;letter-spacing:-.03em}
+.app-head b i{font-style:normal;background:var(--ink);color:var(--lime);border-radius:7px;padding:1px 6px;font-size:14px;margin-right:6px}
+.search{background:#EEF0F6;border-radius:11px;padding:9px 12px;font-size:13px;color:#7A7E8C;display:flex;gap:6px;align-items:center}
+.stock{margin-top:12px;background:#fff;border:1.5px solid #14161D;border-radius:18px;padding:14px;box-shadow:4px 4px 0 #14161D}
+.stock-top{display:flex;gap:10px;align-items:center}
+.apple{width:38px;height:38px;background:#111318;border-radius:12px;display:grid;place-items:center;font-size:20px;color:#fff}
+.stock-top b{font-size:15px;display:block;line-height:1.1}
+.stock-top small{font-size:12px;color:#7A7E8C}
+.price{font-family:'Outfit';font-weight:800;font-size:22px;margin-top:8px;letter-spacing:-.02em}
+.price em{font-style:normal;font-size:12px;background:#E6F7E8;color:#0A7A2E;border-radius:100px;padding:2px 8px;margin-left:6px;vertical-align:middle;font-family:'Noto Sans KR';font-weight:800}
+.amt-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:7px;margin-top:12px}
+.amt{border:1.5px solid #D7DBE6;border-radius:10px;text-align:center;padding:8px 0;font-size:13px;font-weight:700;color:#5B5E6B;background:#F8F9FC}
+.amt.on{background:var(--blue);border-color:#14161D;color:#fff;box-shadow:2px 2px 0 #14161D}
+.convert{margin-top:10px;background:#FFF3B8;border:1.5px dashed #14161D;border-radius:10px;text-align:center;font-size:13.5px;font-weight:700;padding:8px}
+.buybtn{margin-top:10px;background:var(--blue);color:#fff;border-radius:13px;text-align:center;font-weight:800;padding:13px;font-size:15px;border:2px solid #14161D}
+.tabbar{margin-top:auto;display:flex;justify-content:space-around;border-top:1px solid #E7EAF2;padding:10px 0 6px;font-size:20px;color:#9AA0B0}
+.tabbar span:first-child{color:var(--blue)}
+.float{position:absolute;background:#fff;border:2px solid #14161D;border-radius:16px;padding:11px 14px;box-shadow:5px 5px 0 #14161D;z-index:3;display:flex;gap:10px;align-items:center;animation:float 4s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-9px)}}
+.f1{right:0;top:74px;animation-delay:.2s}
+.f2{left:0;top:250px}
+.f3{right:10px;bottom:56px;background:var(--ink);color:#fff;box-shadow:5px 5px 0 var(--blue);animation-delay:1s}
+.f-check{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;font-weight:900;color:#fff;flex-shrink:0}
+.float b{font-size:13.5px;display:block;line-height:1.3;letter-spacing:-.02em}
+.float small{font-size:12px;opacity:.7}
+.toggle{width:42px;height:24px;background:var(--lime);border-radius:100px;position:relative;border:1.5px solid #fff}
+.toggle::after{content:'';position:absolute;right:2px;top:2px;width:16px;height:16px;background:#111318;border-radius:50%}
+.coin{position:absolute;left:54px;bottom:92px;width:64px;height:64px;background:linear-gradient(145deg,#FFD84D,#FF9E2C);border:2px solid #14161D;border-radius:50%;display:grid;place-items:center;font-weight:900;font-size:13px;box-shadow:4px 4px 0 #14161D;transform:rotate(-12deg);z-index:3;font-family:'Outfit'}
+.coin small{display:block;font-size:10px;line-height:1}
+/* BOTTOM BAR */
+.bottom{border-top:2px solid var(--ink);background:#111318;color:#fff;margin-top:6px}
+.bottom-inner{max-width:1280px;margin:0 auto;padding:0 40px;height:66px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.b-logos{display:flex;gap:22px;align-items:center;font-size:13.5px;font-weight:600;color:#D6D8DE}
+.b-logos span{display:inline-flex;gap:7px;align-items:center}
+.b-logos i{font-style:normal;width:22px;height:22px;background:var(--lime);color:#111318;border-radius:50%;display:grid;place-items:center;font-size:13px;font-weight:900}
+.steps{display:flex;align-items:center;gap:10px;font-size:13px;color:#A9ADBA}
+.steps b{color:#fff;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:100px;padding:3px 10px;font-size:12.5px}
+.compliance{font-size:11.5px;color:#8A8E99;text-align:center;padding:7px 10px;background:#0B0D11}
+a:focus-visible,button:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+@media(max-width:1020px){
+.hero{grid-template-columns:1fr}.visual{height:640px}.wrap{padding:0 20px}h1{font-size:46px}.nav-links{display:none}.bottom-inner{flex-direction:column;height:auto;padding:12px 20px}
+}
+</style>
+</head>
+<body>
+<div class="ticker" aria-hidden="true">
+<div class="ticker-track">
+<span><b>AAPL 0.0043주</b> 1,000원으로 매수 체결 <i>●</i></span>
+<span><b>NVDA +12.4%</b> 조각 수익 중 <i>●</i></span>
+<span><b>TSLA 0.0026주</b> 1,000원부터 가능 <i>●</i></span>
+<span><b>수수료 0원</b> 미국 소수점 매수 <i>●</i></span>
+<span><b>120만명</b>이 모이로 시작 <i>●</i></span>
+<span><b>AAPL 0.0043주</b> 1,000원으로 매수 체결 <i>●</i></span>
+<span><b>NVDA +12.4%</b> 조각 수익 중 <i>●</i></span>
+<span><b>TSLA 0.0026주</b> 1,000원부터 가능 <i>●</i></span>
+<span><b>수수료 0원</b> 미국 소수점 매수 <i>●</i></span>
+<span><b>120만명</b>이 모이로 시작 <i>●</i></span>
+</div>
+</div>
+
+<div class="wrap">
+<header class="nav" aria-label="상단 메뉴">
+<div class="logo"><div class="logo-mark"><span>%</span></div>모이<small>MOI</small></div>
+<nav class="nav-links" aria-label="주 메뉴">
+<a href="#">소수점 투자</a>
+<a href="#">자동모으기</a>
+<a href="#">수수료</a>
+<a href="#">안전장치</a>
+<a href="#">리뷰 12,438</a>
+</nav>
+<div class="nav-cta">
+<button class="btn-ghost">로그인</button>
+<button class="btn-small">앱 다운로드</button>
+</div>
+</header>
+
+<main class="hero">
+<!-- LEFT -->
+<section aria-labelledby="main-title">
+<div class="badge"><span class="dot-live"><span class="pulse"></span></span> 지금 28,412명이 1,000원으로 시작했어요</div>
+<h1 id="main-title">비싼 주식도<br><span class="hl">1,000원</span>부터<br><span class="u-blue">쪼개 사세요.</span></h1>
+<p class="sub">테슬라 1주가 38만원이라 못 샀다면? <strong>0.0026주부터 쪼개서</strong> 사세요. 국내·미국 3,200개 주식을 1,000원 단위로, <strong>소수점 수수료 0원</strong>으로 시작할 수 있어요.</p>
+
+<div class="cta-row">
+<button class="btn-primary">3분 만에 시작하기 <span class="arrow">→</span></button>
+<div class="cta-sub">계좌 개설부터 첫 매수까지<br>평균 <b>2분 47초</b> · 신분증만 있으면 돼요</div>
+</div>
+<a class="video-link" href="#"><span class="play">▶</span> 1분 설명 영상 보기 (1:02) — 소수점이 뭔지 쉽게 알려드려요</a>
+
+<div class="trust3">
+<div class="tcard"><div class="ticon" style="background:#D8F626">🔒</div><div><b>예탁원 안전 보관</b><span>내 조각은 예탁결제원에 별도 보관</span></div></div>
+<div class="tcard"><div class="ticon" style="background:#E8EFFF">🛡️</div><div><b>256-bit 암호화</b><span>ISMS-P 인증 · 2채널 인증</span></div></div>
+<div class="tcard"><div class="ticon" style="background:#111318;color:#fff">🏦</div><div><b>신한투자증권 제휴</b><span>금융위 혁신금융서비스 지정</span></div></div>
+</div>
+
+<div class="rating">
+<div class="avatars" aria-hidden="true">
+<div style="background:#2244FF">김</div><div style="background:#111318">박</div><div style="background:#FF6B3D">이</div><div style="background:#00A02B">최</div><div style="background:#fff;color:#111318;border:2px solid #111318">+</div>
+</div>
+<div><div class="stars" aria-label="별점 4.9점">★★★★★ <span style="color:#111318;font-weight:800;font-size:14px">4.9</span></div><p><b>12,438개 리뷰</b> · “1,000원으로 애플 주주가 됐어요”</p></div>
+</div>
+</section>
+
+<!-- RIGHT / FOCAL -->
+<section class="visual" aria-label="앱 미리보기">
+<div class="ring"></div>
+<div class="dots"></div>
+<div class="blob" aria-hidden="true"></div>
+
+<div class="float f1"><div class="f-check" style="background:#00A02B">✓</div><div><b>NVDA 0.012주 매수 완료</b><small>방금 · 5,000원 · 수수료 0원</small></div></div>
+<div class="float f2"><div class="f-check" style="background:#2244FF">↗</div><div><b class="outfit">내 조각 +12.4% · +86,400원</b><small>이번 달 모은 조각 32개</small></div></div>
+
+<div class="phone" role="img" aria-label="모이 앱에서 1,000원으로 애플 주식 0.0043주를 사는 화면">
+<div class="notch"></div>
+<div class="screen">
+<div class="status"><span>9:41</span><span>●●● ▮</span></div>
+<div class="app-head"><b><i>ㅁ</i>모이</b><span style="font-size:18px">🔔 ⚙️</span></div>
+<div class="search">🔍 테슬라, 애플, 엔비디아 검색</div>
+<div class="stock">
+<div class="stock-top"><div class="apple"></div><div><b>Apple Inc.</b><small>AAPL · 미국 나스닥</small></div></div>
+<div class="price outfit">232,400원 <em>▲ +1.24%</em></div>
+<svg viewBox="0 0 240 68" width="100%" height="58" style="margin-top:8px" aria-hidden="true">
+<defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2244FF" stop-opacity=".28"/><stop offset="1" stop-color="#2244FF" stop-opacity="0"/></linearGradient></defs>
+<path d="M0 52 C20 50 30 38 50 40 C70 42 80 28 100 26 C120 24 130 34 150 22 C170 10 190 14 240 6 L240 68 L0 68 Z" fill="url(#g)"/>
+<path d="M0 52 C20 50 30 38 50 40 C70 42 80 28 100 26 C120 24 130 34 150 22 C170 10 190 14 240 6" fill="none" stroke="#2244FF" stroke-width="3.5" stroke-linecap="round"/>
+<circle cx="150" cy="22" r="5" fill="#D8F626" stroke="#111318" stroke-width="2.5"/>
+</svg>
+<div class="amt-row"><div class="amt on">1,000원</div><div class="amt">5,000원</div><div class="amt">10,000원</div></div>
+<div class="convert">💛 1,000원 = <span class="outfit" style="font-weight:800">0.0043주</span> 살 수 있어요</div>
+<div class="buybtn">1,000원 사보기 →</div>
+</div>
+<div class="tabbar"><span>●</span><span>◎</span><span>♡</span><span>◐</span></div>
+</div>
+</div>
+
+<div class="coin"><div><small>1,000원</small>START</div></div>
+<div class="float f3"><div><b>💰 1,000원 자동모으기 ON</b><small>매일 커피값으로 주식 모으기</small></div><div class="toggle"></div></div>
+</section>
+</main>
+</div>
+
+<div class="bottom">
+<div class="bottom-inner">
+<div class="b-logos"><span><i>✓</i> 예탁결제원 안전보관</span><span><i>✓</i> 신한투자증권 제휴</span><span><i>✓</i> ISMS-P 인증</span><span><i>✓</i> 예금자보호와 별도 · 투자자예탁금 보호</span></div>
+<div class="steps"><b>STEP 1 계좌개설 30초</b> → <b>STEP 2 관심주식 담기</b> → <b style="background:#D8F626;color:#111318;border-color:#D8F626">STEP 3 1,000원 첫 매수</b></div>
+</div>
+</div>
+<div class="compliance">모이증권 준법감시인 심사필 · 투자 시 원금 손실이 발생할 수 있으며, 소수점 거래는 예탁결제원 및 제휴 증권사를 통해 안전하게 보관됩니다. 과거 수익률이 미래를 보장하지 않습니다.</div>
+</body>
+</html>

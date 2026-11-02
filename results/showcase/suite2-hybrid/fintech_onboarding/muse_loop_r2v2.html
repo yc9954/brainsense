@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>천원주주 — 좋아하는 주식을 1,000원부터</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+--cream:#FFFBF0;
+--ink:#16281D;
+--muted:#44564A;
+--line:#E7DCC4;
+--card:#FFFFFF;
+--green:#153823;
+--green2:#1B6B3E;
+--yellow:#FFD84D;
+--coral:#FF5A2D;
+}
+html,body{height:100%}
+body{
+font-family:"Noto Sans KR",system-ui,-apple-system,sans-serif;
+background:var(--cream);
+color:var(--ink);
+font-size:17px;
+line-height:1.6;
+-webkit-font-smoothing:antialiased;
+overflow-x:hidden;
+}
+body::before{
+content:"";position:fixed;inset:0;pointer-events:none;
+background-image:radial-gradient(#D9CFAF 1.2px, transparent 1.2px);
+background-size:22px 22px;opacity:.28;
+}
+.blob{position:fixed;border-radius:50%;filter:blur(70px);pointer-events:none;z-index:0}
+.b1{width:640px;height:640px;right:-160px;top:-220px;background:#D6EDD9;opacity:.9}
+.b2{width:520px;height:520px;left:-180px;bottom:-220px;background:#FFE3C2;opacity:.85}
+.page{position:relative;z-index:1;max-width:1280px;margin:0 auto;padding:0 40px;min-height:100vh;display:flex;flex-direction:column}
+header{display:flex;align-items:center;justify-content:space-between;height:76px;flex-shrink:0}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--ink)}
+.mark{width:36px;height:36px;border-radius:11px;background:var(--green);color:#fff;display:grid;place-items:center;font-weight:900;font-size:20px;box-shadow:0 6px 14px rgba(21,56,35,.25)}
+.brand b{font-size:20px;font-weight:900;letter-spacing:-.5px}
+.brand small{display:block;font-size:10.5px;letter-spacing:2.2px;color:var(--muted);font-weight:700;line-height:1}
+nav{display:flex;gap:30px}
+nav a{text-decoration:none;color:var(--muted);font-weight:700;font-size:16px}
+nav a.on{color:var(--ink)}
+.hright{display:flex;align-items:center;gap:12px}
+.login{font-weight:800;font-size:16px;color:var(--ink);text-decoration:none}
+.appbtn{border:1.5px solid var(--ink);border-radius:999px;padding:9px 18px;font-weight:800;font-size:15px;background:transparent;color:var(--ink);text-decoration:none}
+.hero{flex:1;display:grid;grid-template-columns:600px 1fr;gap:48px;align-items:center;padding:18px 0 18px}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 14px 8px 10px;font-size:15px;font-weight:800;box-shadow:0 2px 10px rgba(0,0,0,.05)}
+.dot{width:26px;height:26px;border-radius:50%;background:var(--green);color:#fff;display:grid;place-items:center;font-size:14px}
+.eyebrow em{font-style:normal;background:var(--green);color:#fff;border-radius:999px;padding:2px 8px;font-size:13px;margin-left:2px}
+h1{font-size:56px;line-height:1.12;letter-spacing:-1.8px;font-weight:900;margin:22px 0 16px}
+.hl{position:relative;white-space:nowrap;z-index:0;padding:0 8px}
+.hl::before{content:"";position:absolute;left:0;right:0;top:58%;bottom:6px;background:var(--yellow);z-index:-1;border-radius:4px;transform:rotate(-1deg)}
+.desc{font-size:18px;color:var(--muted);line-height:1.65;max-width:520px;font-weight:500}
+.desc strong{color:var(--ink)}
+.cta-row{display:flex;align-items:center;gap:16px;margin-top:28px}
+.cta-primary{display:inline-flex;align-items:center;gap:14px;background:var(--green);color:#fff;text-decoration:none;border-radius:18px;padding:10px 10px 10px 26px;font-weight:900;font-size:19px;letter-spacing:-.3px;box-shadow:0 16px 30px rgba(21,56,35,.28);border:2px solid var(--green)}
+.cta-primary:hover{background:#1E4A30}
+.cta-primary .arr{width:48px;height:48px;border-radius:13px;background:var(--yellow);color:var(--ink);display:grid;place-items:center;font-size:24px}
+.cta-sub{font-weight:800;color:var(--ink);font-size:16px;text-decoration:none;border-bottom:2px solid var(--yellow);padding-bottom:2px}
+.micro{display:flex;align-items:center;gap:8px;margin-top:14px;font-size:15.5px;color:var(--muted);font-weight:600}
+.micro .lock{width:22px;height:22px;border-radius:50%;background:#EAF3EB;display:grid;place-items:center;font-size:13px}
+.proof{display:flex;align-items:center;gap:12px;margin-top:20px}
+.faces{display:flex}
+.faces span{width:36px;height:36px;border-radius:50%;border:3px solid var(--cream);display:grid;place-items:center;font-weight:900;font-size:15px;color:#fff;margin-left:-10px}
+.faces span:first-child{margin-left:0}
+.stars{color:#E9A100;font-size:16px;letter-spacing:1px}
+.proof p{font-size:15.5px;font-weight:700}
+.proof p small{color:var(--muted);font-weight:600}
+/* RIGHT : SINGLE FOCAL */
+.stage{position:relative;display:grid;place-items:center;padding:10px 0}
+.stage-bg{position:absolute;width:560px;height:560px;background:radial-gradient(circle at 50% 40%, #FFFFFF 0%, #FFF1C7 38%, rgba(255,241,199,0) 68%);border-radius:50%}
+.ghost{position:absolute;top:8px;font-size:132px;font-weight:900;letter-spacing:-6px;color:transparent;-webkit-text-stroke:1.5px #D8C99F;opacity:.55;user-select:none}
+.ticket{position:relative;width:460px;background:var(--card);border-radius:28px;border:1px solid #EDE3C9;box-shadow:0 30px 60px rgba(35,45,35,.18), 0 2px 0 #fff inset;overflow:hidden}
+.ticket-top{padding:24px 26px 18px;display:flex;justify-content:space-between;align-items:center}
+.stock{display:flex;gap:13px;align-items:center}
+.logo-s{width:48px;height:48px;border-radius:14px;background:#0B2A5B;color:#fff;display:grid;place-items:center;font-weight:900;font-size:22px}
+.stock b{font-size:18px;display:block;line-height:1.2}
+.stock small{font-size:14px;color:var(--muted);font-weight:600}
+.up{background:#E7F6EB;color:#147A3A;font-weight:900;font-size:14px;border-radius:999px;padding:6px 12px}
+.slice-wrap{margin:2px 26px 0;background:#F6F1E2;border-radius:18px;padding:18px 18px 16px;display:flex;gap:18px;align-items:center}
+.pie{width:96px;height:96px;flex-shrink:0;border-radius:50%;background:conic-gradient(var(--green) 0 52deg, #DCEADF 52deg 360deg);display:grid;place-items:center;position:relative;border:6px solid #fff;box-shadow:0 6px 16px rgba(0,0,0,.12)}
+.pie::after{content:"0.0138주";position:absolute;background:var(--ink);color:#fff;font-size:12.5px;font-weight:800;padding:4px 9px;border-radius:999px;white-space:nowrap}
+.slice-info b{font-size:16px}
+.slice-info .price{font-size:28px;font-weight:900;letter-spacing:-.8px;line-height:1.1}
+.slice-info .price small{font-size:15px;font-weight:700;color:var(--muted)}
+.slice-info p{font-size:14.5px;color:var(--muted);font-weight:600}
+.perf{margin:18px 26px 0;border-top:2px dashed #E5D9BB;padding-top:16px}
+.row{display:flex;justify-content:space-between;font-size:15px;font-weight:700;color:var(--muted)}
+.row strong{color:var(--ink);font-size:16px}
+.slider{margin:14px 0 6px;height:10px;background:#EEE5CC;border-radius:999px;position:relative}
+.slider i{position:absolute;left:0;top:0;bottom:0;width:22%;background:var(--green);border-radius:999px}
+.knob{position:absolute;left:22%;top:50%;transform:translate(-50%,-50%);width:34px;height:34px;background:#fff;border:3px solid var(--green);border-radius:50%;display:grid;place-items:center;font-weight:900;font-size:12px;box-shadow:0 4px 12px rgba(0,0,0,.2)}
+.scale{display:flex;justify-content:space-between;font-size:13.5px;font-weight:800;color:#8A978D}
+.ticket-foot{margin:16px 14px 14px;background:var(--ink);border-radius:16px;padding:14px 18px;display:flex;align-items:center;justify-content:space-between;color:#fff}
+.ticket-foot b{font-size:19px}
+.ticket-foot b small{font-weight:600;font-size:14px;opacity:.7}
+.ticket-foot span{background:var(--yellow);color:var(--ink);font-weight:900;border-radius:10px;padding:9px 16px;font-size:16px}
+.seal{position:absolute;right:22px;top:92px;transform:rotate(10deg);background:#fff;border:2px solid var(--green2);color:var(--green2);font-weight:900;font-size:13px;border-radius:10px;padding:7px 11px;box-shadow:0 4px 10px rgba(0,0,0,.12)}
+.trust{border-top:1px solid var(--line);display:flex;align-items:center;gap:0;padding:16px 0 20px;flex-shrink:0}
+.trust div{flex:1;display:flex;align-items:center;gap:10px;font-size:15px;font-weight:700;color:#3E4F43}
+.trust div+div{border-left:1px solid var(--line);padding-left:28px}
+.trust svg{flex-shrink:0}
+@media(max-width:1020px){
+.page{padding:0 22px}
+.hero{grid-template-columns:1fr;gap:10px}
+h1{font-size:42px}
+.ghost{display:none}
+.ticket{width:100%;max-width:460px}
+nav{display:none}
+.trust{flex-wrap:wrap;gap:12px}
+.trust div+div{border:0;padding-left:0}
+}
+:focus-visible{outline:3px solid #1B6B3E;outline-offset:3px}
+</style>
+</head>
+<body>
+<div class="blob b1"></div><div class="blob b2"></div>
+<div class="page">
+<header>
+<a class="brand" href="#"><span class="mark">천</span><span><b>천원주주</b><small>1,000 WON JUJU</small></span></a>
+<nav aria-label="주요 메뉴">
+<a class="on" href="#">조각투자란</a><a href="#">수수료 0원</a><a href="#">안전장치</a><a href="#">214만 후기</a>
+</nav>
+<div class="hright"><a class="login" href="#">로그인</a><a class="appbtn" href="#">앱 다운로드</a></div>
+</header>
+
+<main class="hero">
+<div>
+<span class="eyebrow"><span class="dot">✓</span> 1,000원 소수점 투자 · 누적 214만 주주 <em>혁신금융 지정</em></span>
+<h1>좋아하는 주식을<br><span class="hl">1,000원부터</span> 조각으로.</h1>
+<p class="desc">삼성전자 1주가 7만원이어도, 애플 1주가 30만원이어도 괜찮아요. <strong>원하는 금액만큼 소수점으로 쪼개서</strong> 매일 모으세요. 첫 매수 수수료 0원, 1원 단위로 언제든 팔 수 있어요.</p>
+<div class="cta-row">
+<a class="cta-primary" href="#">3분 만에 시작하기 <span class="arr">→</span></a>
+<a class="cta-sub" href="#">1분 설명 보기</a>
+</div>
+<div class="micro"><span class="lock">◷</span> 평균 소요 2분 47초 · 신분증 하나로 계좌 개설 · 중도해지 수수료 없음</div>
+<div class="proof" aria-label="사용자 평가">
+<div class="faces"><span style="background:#153823">김</span><span style="background:#E76F2E">박</span><span style="background:#2A7FFF">이</span><span style="background:#fff;color:#16281D;border:3px solid #16281D">+</span></div>
+<div><span class="stars">★★★★★</span><p>4.9 · 32,104개 리뷰 <small>“용돈으로 시작했어요”</small></p></div>
+</div>
+</div>
+
+<div class="stage" aria-label="1,000원 조각 매수 예시">
+<div class="stage-bg"></div>
+<div class="ghost">1,000</div>
+<div class="seal">실물주식 안전보관 ✓</div>
+<article class="ticket">
+<div class="ticket-top">
+<div class="stock"><div class="logo-s">S</div><div><b>삼성전자 · 005930</b><small>1주 72,400원 → 조각으로 구매</small></div></div>
+<span class="up">▲ 0.8%</span>
+</div>
+<div class="slice-wrap">
+<div class="pie" role="img" aria-label="전체 1주 중 내 조각"></div>
+<div class="slice-info"><b>내가 살 조각</b><div class="price">1,000<small>원</small></div><p>수수료 0원 · 매도 즉시 출금 가능</p></div>
+</div>
+<div class="perf">
+<div class="row"><span>구매 금액</span><strong>1,000원</strong></div>
+<div class="slider" aria-hidden="true"><i></i><span class="knob">●</span></div>
+<div class="scale"><span>1천원부터</span><span>최대 100만원</span></div>
+</div>
+<div class="ticket-foot"><b>1,000원 담기 <small>/ 0.0138주</small></b><span>담기</span></div>
+</article>
+</div>
+</main>
+
+<footer class="trust" aria-label="신뢰 및 안전">
+<div><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="14" rx="3" stroke="#153823" stroke-width="2"/><path d="M8 12l3 3 5-6" stroke="#1B6B3E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg> 한국예탁결제원 실물주식 별도 보관</div>
+<div><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v5c0 5-3.5 8-7 10-3.5-2-7-5-7-10V6l7-3z" stroke="#153823" stroke-width="2" fill="#E7F6EB"/></svg> ISMS-P · 정보보호 인증 취득</div>
+<div><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#153823" stroke-width="2"/><path d="M12 8v5l3 2" stroke="#153823" stroke-width="2" stroke-linecap="round"/></svg> 신한투자증권 제휴 · 투자자 보호</div>
+<div><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.5-7-10a4 4 0 017-2.5A4 4 0 0119 11c0 5.5-7 10-7 10z" stroke="#153823" stroke-width="2" fill="#FFD84D"/></svg> 금융소비자보호 · 원금손실 고지 준수</div>
+</footer>
+</div>
+</body>
+</html>
