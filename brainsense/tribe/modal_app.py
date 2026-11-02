@@ -76,7 +76,12 @@ class Tribe:
 
         t0 = time.time()
         Path(f"{CACHE}/subjects").mkdir(parents=True, exist_ok=True)
-        self.model = TribeModel.from_pretrained("facebook/tribev2", cache_folder=f"{CACHE}/tribe")
+        # TRIBE's text pathway is Llama-3.2-3B. meta-llama/Llama-3.2-3B is gated per account; the unsloth
+        # repo is a byte-identical re-upload of the same base weights under the same Llama licence, so the
+        # features are the same. Override with BRAINSENSE_TEXT_MODEL once Meta approves the account.
+        text_model = os.environ.get("BRAINSENSE_TEXT_MODEL", "unsloth/Llama-3.2-3B")
+        self.model = TribeModel.from_pretrained("facebook/tribev2", cache_folder=f"{CACHE}/tribe",
+                                                config_update={"data.text_feature.model_name": text_model})
         self.groups = resolve_group_vertices(subjects_dir=f"{CACHE}/subjects")
         from brainsense.tribe.rois import resolve_area_vertices
         self.areas = resolve_area_vertices(subjects_dir=f"{CACHE}/subjects")
@@ -111,17 +116,34 @@ class Tribe:
 
     @staticmethod
     def _word_events(text: str, words_per_sec: float = 2.7, language: str = "english"):
-        """Text-only stimulus: TRIBE reads Word events (text, start, duration). The reference demo gets
-        word timing from TTS + transcription; we synthesise it at a reading pace instead (160 wpm),
-        which is what the Llama text pathway actually consumes. AddText/AddContextToWords in the
-        model's own event pipeline build the sentence context."""
+        """Text-only stimulus: TRIBE reads Word events (text, start, duration, sentence, context).
+        The reference demo gets word timing from TTS + transcription and rebuilds sentences and
+        context with spaCy; we have the real punctuated text, so timing is synthesised at a reading
+        pace (160 wpm) and `context` (everything read so far, what the Llama pathway consumes) and
+        `sentence` are filled directly."""
+        import re
+
         import pandas as pd
-        words = [w for w in text.replace("\n", " ").split(" ") if w.strip()]
-        if not words:
+        clean = re.sub(r"\s+", " ", text.replace("\n", " ")).strip()
+        words = clean.split(" ")
+        if not words or not clean:
             raise ValueError("empty text")
+        # sentence boundaries on the punctuated text
+        sentences = [x.strip() for x in re.split(r"(?<=[.!?])\s+", clean) if x.strip()] or [clean]
+        sent_of_word: list[tuple[str, int]] = []
+        for sent in sentences:
+            pos = 0
+            for w in sent.split(" "):
+                sent_of_word.append((sent, pos))
+                pos += len(w) + 1
         step = 1.0 / words_per_sec
-        rows = [{"type": "Word", "text": w, "start": round(i * step, 3), "duration": round(step * 0.85, 3),
-                 "language": language, "timeline": "default", "subject": "default"} for i, w in enumerate(words)]
+        rows = []
+        for i, w in enumerate(words):
+            sent, schar = sent_of_word[i] if i < len(sent_of_word) else (clean, 0)
+            rows.append({"type": "Word", "text": w, "start": round(i * step, 3), "duration": round(step * 0.85, 3),
+                         "language": language, "modality": "read", "timeline": "default", "subject": "default",
+                         "sentence": sent, "sentence_char": schar,
+                         "context": " ".join(words[max(0, i - 1023): i + 1])})
         return pd.DataFrame(rows)
 
     @modal.method()

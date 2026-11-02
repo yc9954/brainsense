@@ -175,6 +175,54 @@ def feedback(inp: FeedbackIn) -> dict[str, Any]:
     return registry.call("record_feedback", item_id=inp.item_id, liked=inp.liked)
 
 
+def text_critique(series: dict[str, list[float]], heads: dict[str, Any]) -> dict[str, Any]:
+    """Expert reading of the cortex pattern for a piece of writing (kind=text): which networks the
+    text engages while being read, and what a writer would change. Relative within the item (z-scored
+    group means), so it says what is quiet *for this text*, not absolute truth."""
+    if not series:
+        return {}
+    means = {g: float(np.mean(v)) for g, v in series.items() if v}
+    if len(means) < 4:
+        return {}
+    vals = np.array(list(means.values()))
+    mu, sd = vals.mean(), vals.std() or 1.0
+    rel = {g: (m - mu) / sd for g, m in means.items()}
+    lo = lambda g: rel.get(g, 0.0) < -0.6
+    hi = lambda g: rel.get(g, 0.0) > 0.6
+    diag: list[str] = []
+    todo: list[str] = []
+    if lo("value_vmpfc"):
+        diag.append("보상·가치 회로가 조용함: 읽는 사람에게 이 글이 왜 중요한지, 어떤 감정을 건드리는지가 없음")
+        todo.append("첫 두 문장 안에 독자의 이해관계나 감정을 하나 박아라 (잃는 것, 바라는 것, 놀라운 것)")
+    if lo("face_body") and lo("scene_place"):
+        diag.append("사람·장면 영역이 둘 다 꺼져 있음: 구체적인 인물·장소·감각이 없는 추상적인 글")
+        todo.append("실명이든 가명이든 한 사람, 한 장소, 한 감각(냄새·소리·촉감)을 넣어라")
+    elif lo("face_body"):
+        diag.append("사람 영역이 조용함: 글에 사람이 등장하지 않음")
+        todo.append("누가 겪은 일인지 한 사람을 등장시켜라")
+    elif lo("scene_place"):
+        diag.append("장면 영역이 조용함: 어디서 벌어지는 일인지 그림이 안 그려짐")
+        todo.append("장소나 상황을 한 줄로 그려라")
+    if lo("default_mode"):
+        diag.append("이야기·상상 네트워크(디폴트 모드)가 조용함: 설명은 되는데 이야기가 없음")
+        todo.append("시간 순서가 있는 작은 에피소드 하나로 바꿔라 (그때 → 그래서 → 결국)")
+    if hi("language") and all(lo(g) for g in ("value_vmpfc", "default_mode")):
+        diag.append("언어 영역만 균일하게 높음: 문장은 매끈한데 아무 데도 닿지 않는 기계적 문체의 전형")
+        todo.append("접속사·나열·'또한/뿐만 아니라'류를 걷어내고 문장 길이를 들쭉날쭉하게 만들어라")
+    if hi("control_dlpfc") or hi("attention_dorsal"):
+        diag.append("집중·통제 영역이 높음: 읽는 데 힘이 드는 문장(길이, 밀도, 전문용어)")
+        todo.append("긴 문장을 둘로 쪼개고 전문용어 하나당 비유 하나를 붙여라")
+    if hi("default_mode") and hi("value_vmpfc"):
+        diag.append("이야기 몰입과 보상 반응이 함께 높음: 사람이 쓴 글의 전형적 패턴")
+    ranked = sorted(rel.items(), key=lambda kv: -kv[1])
+    out = {"kind": "text", "ranking": [g for g, _ in ranked], "relative_z": {g: round(v, 2) for g, v in rel.items()},
+           "diagnosis": diag[:4], "directives": todo[:3]}
+    h = heads.get("humanlike") if isinstance(heads, dict) else None
+    if isinstance(h, dict) and isinstance(h.get("percentile"), (int, float)):
+        out["humanlike_percentile"] = h["percentile"]
+    return out
+
+
 @app.get("/eval/{item_id}")
 def eval_item(item_id: str, heads: str | None = None) -> dict[str, Any]:
     """Head outputs for an analyzed item (what the BrainCard renders). `heads` = comma list to
@@ -189,6 +237,8 @@ def eval_item(item_id: str, heads: str | None = None) -> dict[str, Any]:
     if meta.get("stimulus_text"):
         out["stimulus_text"] = meta["stimulus_text"]
     out["roi_ts"] = roi_ts.get(item_id, {})
+    if kind == "text":
+        out["critique"] = text_critique(out["roi_ts"], out.get("heads", {}))
     import json as _json
     f = _ROI_DIR / f"{item_id}.frames.json"
     if f.exists():
