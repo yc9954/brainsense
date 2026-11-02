@@ -45,7 +45,7 @@ def render_frames(preds: np.ndarray, max_frames: int = 8, views: tuple[str, ...]
         for ax, view in zip(axes, views):
             plotting.plot_surf_stat_map(fs["infl_left"], lh, hemi="left", view=view, bg_map=fs["sulc_left"],
                                         cmap="hot", threshold=0.25 * scale, vmax=scale, colorbar=False,
-                                        axes=ax, figure=fig, darkness=0.55)
+                                        axes=ax, figure=fig)
             ax.set_facecolor("white")
         fig.patch.set_facecolor("white")
         fig.subplots_adjust(left=0, right=1, top=1, bottom=0, wspace=0)

@@ -183,8 +183,21 @@ class Tribe:
             np.save(out_dir / f"{item_id}.npy", preds)
             vol.commit()
 
+        # Per-vertex activation for the live 3D cortex in the app: z-scores clipped to [-3, 3]
+        # quantized to uint8 (T x 20484, ~120 KB for 6 s) — fsaverage5 lh then rh, same order as the mesh.
+        # Range is per item (0.5th–99.5th percentile): a still photo moves the cortex by ~0.3 z, which a
+        # fixed [-3, 3] grid would flatten into a single quantization step.
+        import base64 as _b64
+        v_lo, v_hi = (float(x) for x in np.percentile(preds, [0.5, 99.5]))
+        if v_hi - v_lo < 1e-3:
+            v_lo, v_hi = v_lo - 0.5, v_hi + 0.5
+        u8 = np.clip((preds - v_lo) / (v_hi - v_lo) * 255.0, 0, 255).astype(np.uint8)
+        vertex_ts = {"t": int(preds.shape[0]), "n": int(preds.shape[1]), "lo": round(v_lo, 4), "hi": round(v_hi, 4),
+                     "u8": _b64.b64encode(u8.tobytes()).decode()}
+
         timing["total_s"] = sum(v for k, v in timing.items() if k != "total_s")
         return {"item_id": item_id, "n_timesteps": int(preds.shape[0]), "n_vertices": int(preds.shape[1]),
+                "vertex_ts": vertex_ts,
                 "roi_feats": feats.tolist(), "roi_feat_names": names,
                 "roi_area_feats": area_feats.tolist(), "roi_area_names": area_names,
                 "brain_frames": frames,

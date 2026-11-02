@@ -104,8 +104,10 @@ def analyze(inp: AnalyzeIn) -> dict[str, Any]:
     (_ROI_DIR / f"{inp.item_id}.json").write_text(_json.dumps(roi_ts[inp.item_id]))
     if res.get("brain_frames"):
         (_ROI_DIR / f"{inp.item_id}.frames.json").write_text(_json.dumps(res["brain_frames"]))
+    if res.get("vertex_ts"):
+        (_ROI_DIR / f"{inp.item_id}.vertices.json").write_text(_json.dumps(res["vertex_ts"]))
     return {"item_id": inp.item_id, "timing": res.get("timing"), "roi_ts": roi_ts[inp.item_id],
-            "brain_frames": res.get("brain_frames") or []}
+            "brain_frames": res.get("brain_frames") or [], "vertex_ts": res.get("vertex_ts")}
 
 
 @app.post("/agent")
@@ -128,11 +130,28 @@ def eval_item(item_id: str) -> dict[str, Any]:
         raise HTTPException(404, f"no features for {item_id}")
     out = registry.call("brain_eval", item_id=item_id)
     out["roi_ts"] = roi_ts.get(item_id, {})
+    import json as _json
     f = _ROI_DIR / f"{item_id}.frames.json"
     if f.exists():
-        import json as _json
         out["brain_frames"] = _json.loads(f.read_text())
+    f = _ROI_DIR / f"{item_id}.vertices.json"
+    if f.exists():
+        out["vertex_ts"] = _json.loads(f.read_text())
     return out
+
+
+_ASSETS = Path(__file__).resolve().parents[2] / "assets"
+
+
+@app.get("/assets/{name}")
+def asset(name: str):
+    """Static assets for the app (fsaverage5 pial mesh for the live 3D cortex)."""
+    from fastapi.responses import FileResponse
+    p = _ASSETS / Path(name).name
+    if not p.exists():
+        raise HTTPException(404, name)
+    return FileResponse(p, media_type="application/octet-stream",
+                        headers={"Cache-Control": "public, max-age=86400"})
 
 
 @app.get("/items")
