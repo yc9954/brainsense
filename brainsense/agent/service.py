@@ -10,7 +10,12 @@ from ..heads.head import Head
 from ..heads.personal import PersonalHead
 from .tools import ToolRegistry
 
-CROWD_HEADS = ("aesthetic", "attention", "appeal", "popularity")
+CROWD_HEADS = ("aesthetic", "attention", "appeal", "popularity", "humanlike", "hook")
+# Which heads make sense for which stimulus; Muse can still ask for any subset explicitly.
+HEADS_BY_KIND = {"image": ("aesthetic", "attention", "appeal", "popularity", "personal"),
+                 "video": ("aesthetic", "attention", "appeal", "popularity", "personal"),
+                 "text": ("humanlike", "attention"),
+                 "audio": ("hook", "attention", "appeal")}
 
 
 class FeatureCache:

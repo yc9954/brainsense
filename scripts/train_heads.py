@@ -42,9 +42,10 @@ def _train_one(name: str, store: Path, out: Path, arch: str) -> None:
 
 @app.command()
 def main(aesthetic: Path | None = None, attention: Path | None = None, appeal: Path | None = None,
-         popularity: Path | None = None,
+         popularity: Path | None = None, humanlike: Path | None = None, hook: Path | None = None,
          out: Path = Path("heads"), arch: str = "linear"):
-    for name, store in (("aesthetic", aesthetic), ("attention", attention), ("appeal", appeal), ("popularity", popularity)):
+    for name, store in (("aesthetic", aesthetic), ("attention", attention), ("appeal", appeal), ("popularity", popularity),
+                        ("humanlike", humanlike), ("hook", hook)):
         if store is not None:
             _train_one(name, store, out, arch)
     print(f"[green]heads saved under {out}/")

@@ -107,11 +107,30 @@ class Tribe:
             out = self.vjepa(**{k: (v.to(torch.bfloat16) if v.is_floating_point() else v) for k, v in inputs.items()})
         return out.last_hidden_state.float().mean(dim=1)[0].cpu().tolist()
 
+    AUDIO_EXT = {"mp3", "wav", "m4a", "aac", "flac", "ogg", "opus"}
+
+    @staticmethod
+    def _word_events(text: str, words_per_sec: float = 2.7, language: str = "english"):
+        """Text-only stimulus: TRIBE reads Word events (text, start, duration). The reference demo gets
+        word timing from TTS + transcription; we synthesise it at a reading pace instead (160 wpm),
+        which is what the Llama text pathway actually consumes. AddText/AddContextToWords in the
+        model's own event pipeline build the sentence context."""
+        import pandas as pd
+        words = [w for w in text.replace("\n", " ").split(" ") if w.strip()]
+        if not words:
+            raise ValueError("empty text")
+        step = 1.0 / words_per_sec
+        rows = [{"type": "Word", "text": w, "start": round(i * step, 3), "duration": round(step * 0.85, 3),
+                 "language": language, "timeline": "default", "subject": "default"} for i, w in enumerate(words)]
+        return pd.DataFrame(rows)
+
     @modal.method()
     def predict(self, video_bytes: bytes, filename: str = "clip.mp4", item_id: str | None = None,
                 with_raw_embed: bool = True, save_vertices: bool = True,
-                transcribe: bool = True, bf16: bool = False, render_brain: bool = False) -> dict:
-        """transcribe=False skips WhisperX + spaCy + Llama (use for clips with no speech: product
+                transcribe: bool = True, bf16: bool = False, render_brain: bool = False,
+                text: str | None = None) -> dict:
+        """Stimulus = video/image clip (bytes), audio-only file (mp3/wav/...), or `text` (Word events).
+        transcribe=False skips WhisperX + spaCy + Llama (use for clips with no speech: product
         shots, stills). bf16=True wraps the whole predict pass in torch.autocast(bfloat16)."""
         import contextlib
         import hashlib
@@ -124,20 +143,30 @@ class Tribe:
 
         timing: dict[str, float] = {}
         work = Path("/tmp/work"); work.mkdir(exist_ok=True)
-        # neuralset caches extracted features by file path: two different uploads named "clip.mp4"
-        # would silently share features. Key the on-disk name by content hash instead.
-        digest = hashlib.sha1(video_bytes).hexdigest()[:16]
-        path = work / f"{digest}_{Path(filename).name}"
-        path.write_bytes(video_bytes)
-
         t = time.time()
-        if transcribe:
-            events = self.model.get_events_dataframe(video_path=str(path))   # ffmpeg + whisperx + spacy
+        if text is not None:
+            from neuralset.events.utils import standardize_events
+            events = standardize_events(self._word_events(text))
+            path = None
         else:
-            from tribev2.demo_utils import get_audio_and_text_events
-            ev = pd.DataFrame([{"type": "Video", "filepath": str(path), "start": 0,
-                                "timeline": "default", "subject": "default"}])
-            events = get_audio_and_text_events(ev, audio_only=True)       # ffmpeg only
+            # neuralset caches extracted features by file path: two different uploads named "clip.mp4"
+            # would silently share features. Key the on-disk name by content hash instead.
+            digest = hashlib.sha1(video_bytes).hexdigest()[:16]
+            path = work / f"{digest}_{Path(filename).name}"
+            path.write_bytes(video_bytes)
+            ext = Path(filename).suffix.lower().lstrip(".")
+            if ext in self.AUDIO_EXT:
+                from tribev2.demo_utils import get_audio_and_text_events
+                ev = pd.DataFrame([{"type": "Audio", "filepath": str(path), "start": 0,
+                                    "timeline": "default", "subject": "default"}])
+                events = get_audio_and_text_events(ev, audio_only=not transcribe)
+            elif transcribe:
+                events = self.model.get_events_dataframe(video_path=str(path))   # ffmpeg + whisperx + spacy
+            else:
+                from tribev2.demo_utils import get_audio_and_text_events
+                ev = pd.DataFrame([{"type": "Video", "filepath": str(path), "start": 0,
+                                    "timeline": "default", "subject": "default"}])
+                events = get_audio_and_text_events(ev, audio_only=True)       # ffmpeg only
         timing["events_s"] = time.time() - t
 
         t = time.time()
@@ -170,7 +199,7 @@ class Tribe:
             timing["render_s"] = time.time() - t
 
         raw = None
-        if with_raw_embed:
+        if with_raw_embed and path is not None and Path(filename).suffix.lower().lstrip(".") not in self.AUDIO_EXT:
             t = time.time()
             try:
                 raw = self._raw_embed(str(path))
@@ -210,6 +239,10 @@ class Tribe:
         """JSON: {"video_b64": ..., "filename": "x.mp4", "item_id": "..."} — for the phone app.
         Live defaults: no transcription (product shots have no speech) + bf16 (14 s per fresh 6 s clip)."""
         import base64
+        if body.get("text"):
+            return self.predict.local(b"", "text.txt", body.get("item_id"), False,
+                                      transcribe=False, bf16=body.get("bf16", True),
+                                      render_brain=body.get("render_brain", True), text=body["text"])
         return self.predict.local(base64.b64decode(body["video_b64"]), body.get("filename", "clip.mp4"),
                                   body.get("item_id"), body.get("with_raw_embed", False),
                                   transcribe=body.get("transcribe", False), bf16=body.get("bf16", True),
