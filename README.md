@@ -142,7 +142,11 @@ BrainSense is wired into OpenMuse's own agent loop, not a side tab:
 
 **Demo without glasses (built in, 2026-11-03):** the app has a glasses-emulator mode that looks and behaves like the glasses, not like a chat. In the chat, "+" → **글래스 모드 · 카메라로 보기** opens a full-bleed POV with a Meta-AI-style overlay: a device pill ("Ray-Ban Meta · 에뮬레이터"), the Meta AI orb that breathes while watching, spins while the brain looks and ripples while it speaks, glass quick-ask chips, and the answer as large spoken captions over the view (TTS via SpeechSynthesis / expo-speech; on web you can also tap the orb and ask by voice). The camera keeps a rolling 6 s clip of whatever you point it at (phone: expo-camera; laptop: webcam via MediaRecorder; no camera at all: a demo feed of the sample photos). Tap "이거 어때?" / "이 글 어때?" / "이 영상 어때?" or type a question: the latest clip is uploaded to `POST /api/glasses/clip` (ffmpeg → 6 s H.264 mp4 artifact `glasses_*.mp4`), the message lands in the normal chat, and the agent calls `look_at` (Muse Spark vision on a frame: description, verbatim on-screen text, kind) then `brain_eval` on the same clip, then answers as its brain about *that* content. Phone (Expo Go) setup, the sample server is loopback-only so a tiny proxy exposes it on Wi-Fi:
 ```bash
-node ../openmuse/scripts/lan-proxy.mjs                                   # 0.0.0.0:8788 → 127.0.0.1:8787, prints the Wi-Fi URL
+node ../openmuse/scripts/lan-proxy.mjs                                   # 0.0.0.0:8788 → 127.0.0.1:8787 (+ /assets → :8000), rewrites Origin for the localhost-only CORS
+# iPhone browser: open http://<laptop-ip>:8081 in Safari (the web build already running); API + assets auto-route to :8788.
+#   Safari over plain http cannot open a live camera, so glasses mode there uses the phone's own camera app
+#   (tap → shoot → '사용'); photos are turned into 6 s clips server-side.
+# Expo Go (live camera):
 pnpm --dir ../openmuse/apps/mobile exec expo start --port 8082           # scan the QR with Expo Go; the app derives http://<laptop-ip>:8788 from the Metro host
 ```
 The Wearables Device Access Toolkit's Mock Device Kit is the SDK-level equivalent (phone camera or a video file streamed through the glasses API); the emulator mode uses the same clip-per-question flow without the SDK dependency.
