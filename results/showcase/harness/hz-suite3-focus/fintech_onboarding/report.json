@@ -1,0 +1,310 @@
+{
+ "brief": "주식 소수점 투자 앱의 첫 온보딩 화면(웹 미리보기 1280x800). 핵심 가치 한 줄, 1,000원부터 시작 가능 강조, '3분 만에 시작' CTA, 신뢰·안전 신호.",
+ "kind": "app",
+ "baseline": {
+  "round": 0,
+  "accepted": true,
+  "ui_score": 0.5195914339855245,
+  "brain_only": 0.375,
+  "judge": 0.694,
+  "changes": [],
+  "sourced": [],
+  "diagnosis": [
+   "물체 형태(LO)·움직임(MT) 반응이 낮음: 뚜렷한 사물 실루엣이 없는 텍스트 위주 화면",
+   "장소 영역(PPA)이 우세: 배경 풍경이 화면을 지배해 내용이 묻힘",
+   "보상 회로(OFC/vmPFC)는 켜졌는데 끌림 헤드는 평범: 가치 신호가 있지만 무엇이 좋은지 읽히지 않음"
+  ]
+ },
+ "best_round": 4,
+ "best": {
+  "round": 4,
+  "ui_score": 0.5618097661741038,
+  "heads": {
+   "aesthetic": {
+    "score": 0.2138807475566864,
+    "percentile": 11.796246648793565,
+    "confidence": 0.5722385048866272,
+    "top": "▼ L_a24, ▲ R_IP1"
+   },
+   "attention": {
+    "score": 0.559050977230072,
+    "percentile": 61.64383561643836,
+    "confidence": 0.11810195446014404,
+    "top": "▲ 움직임·형태 평균, ▲ 움직임·형태 최대"
+   }
+  },
+  "judge": {
+   "aesthetic": 0.778,
+   "clarity": 0.889,
+   "attention": 0.556,
+   "brief_fit": 0.889,
+   "judge_score": 0.778,
+   "reason": "Polished dark-neon fintech visual with clear 1,000-won value prop and 3-minute CTA, but competing badges, popups, and calculator widget fragment the focal point."
+  },
+  "brain_only": 0.367,
+  "critique": {
+   "kind": "app",
+   "ranking": [
+    [
+     "scene_place",
+     1.3085807414410844
+    ],
+    [
+     "value_vmpfc",
+     0.9246164171242942
+    ],
+    [
+     "control_dlpfc",
+     0.5846878924684958
+    ],
+    [
+     "attention_dorsal",
+     0.4994011658523458
+    ],
+    [
+     "visual_early",
+     0.28757678566488726
+    ],
+    [
+     "language",
+     -0.3090821915599344
+    ],
+    [
+     "default_mode",
+     -0.3351903731771233
+    ],
+    [
+     "face_body",
+     -0.9201876959462671
+    ],
+    [
+     "visual_motion",
+     -2.040402741867782
+    ]
+   ],
+   "hook": {
+    "attention_early": 0.4682454024558337,
+    "attention_late": 0.5149790475506018,
+    "visual_early": 0.5617126926453698,
+    "visual_late": 0.15050883217464597
+   },
+   "diagnosis": [
+    "물체 형태(LO)·움직임(MT) 반응이 낮음: 뚜렷한 사물 실루엣이 없는 텍스트 위주 화면",
+    "장소 영역(PPA)이 우세: 배경 풍경이 화면을 지배해 내용이 묻힘",
+    "보상 회로(OFC/vmPFC)는 켜졌는데 끌림 헤드는 평범: 가치 신호가 있지만 무엇이 좋은지 읽히지 않음"
+   ],
+   "directives": [
+    "Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion.",
+    "Simplify the environment: crop or blur the scene, put copy on a solid panel, let one subject own the frame.",
+    "Name the value explicitly next to what the eye lands on: one benefit line + price/offer under the hero, nothing else competing."
+   ],
+   "cited_areas": [
+    "▼ 좌 전대상 24 (a24) [aesthetic]",
+    "▲ 우 두정내구 주의 (IP1) [aesthetic]",
+    "▲ 움직임·형태(MT/LO) 평균 [attention]",
+    "▲ 움직임·형태(MT/LO) 최대 [attention]"
+   ],
+   "groups": [
+    "visual_motion",
+    "scene_place",
+    "value_vmpfc"
+   ],
+   "prompt_block": "BRAIN CRITIQUE (TRIBE v2 predicted human cortex while looking at the last render; values are relative within this image):\n- most driven regions: 장소·배경(PPA/RSC) +1.31, 보상·가치(OFC/vmPFC) +0.92, 인지 통제(dlPFC) +0.58; least: 얼굴·사람(FFA/STS) -0.92, 움직임·형태(MT/LO) -2.04\n- first-2s hook vs later: attention +0.47 → +0.51, visual drive +0.56 → +0.15\n- areas the aesthetic head cites: ▼ 좌 전대상 24 (a24) [aesthetic]; ▲ 우 두정내구 주의 (IP1) [aesthetic]; ▲ 움직임·형태(MT/LO) 평균 [attention]; ▲ 움직임·형태(MT/LO) 최대 [attention]\n- diagnosis: 물체 형태(LO)·움직임(MT) 반응이 낮음: 뚜렷한 사물 실루엣이 없는 텍스트 위주 화면 / 장소 영역(PPA)이 우세: 배경 풍경이 화면을 지배해 내용이 묻힘 / 보상 회로(OFC/vmPFC)는 켜졌는데 끌림 헤드는 평범: 가치 신호가 있지만 무엇이 좋은지 읽히지 않음\n- DO NEXT (highest priority first): (1) Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion. (2) Simplify the environment: crop or blur the scene, put copy on a solid panel, let one subject own the frame. (3) Name the value explicitly next to what the eye lands on: one benefit line + price/offer under the hero, nothing else competing."
+  }
+ },
+ "rounds": [
+  {
+   "round": 0,
+   "accepted": true,
+   "ui_score": 0.5195914339855245,
+   "brain_only": 0.375,
+   "judge": 0.694,
+   "changes": [],
+   "sourced": [],
+   "diagnosis": [
+    "물체 형태(LO)·움직임(MT) 반응이 낮음: 뚜렷한 사물 실루엣이 없는 텍스트 위주 화면",
+    "장소 영역(PPA)이 우세: 배경 풍경이 화면을 지배해 내용이 묻힘",
+    "보상 회로(OFC/vmPFC)는 켜졌는데 끌림 헤드는 평범: 가치 신호가 있지만 무엇이 좋은지 읽히지 않음"
+   ]
+  },
+  {
+   "round": 1,
+   "accepted": true,
+   "ui_score": 0.5442505842227504,
+   "brain_only": 0.35,
+   "judge": 0.75,
+   "changes": [
+    {
+     "issue": "물체형태LO·움직임MT 반응이낮음",
+     "change": "우측 폰 뒤에 대형 라임 대각선 슬래시+아웃라인+모션 스피드선 추가해 단일 오브젝트 실루엣과 사선 움직임 부여, 기존 폰·카피·CTA는 그대로 유지"
+    }
+   ],
+   "sourced": [],
+   "diagnosis": [
+    "물체 형태(LO)·움직임(MT) 반응이 낮음: 뚜렷한 사물 실루엣이 없는 텍스트 위주 화면",
+    "장소 영역(PPA)이 우세: 배경 풍경이 화면을 지배해 내용이 묻힘",
+    "보상 회로(OFC/vmPFC)는 켜졌는데 끌림 헤드는 평범: 가치 신호가 있지만 무엇이 좋은지 읽히지 않음"
+   ]
+  },
+  {
+   "round": 2,
+   "accepted": false,
+   "ui_score": 0.535013062445103,
+   "brain_only": 0.28,
+   "judge": 0.778,
+   "changes": [
+    {
+     "issue": "물체형태lo움직임mt반응이낮음",
+     "change": "faint 배경 슬래시를 860px 솔리드 매스+화살촉+자이언트 실물 코인+샤인 스윕·굵은 스피드선으로 교체해 단일 오브젝트 실루엣과 사선 모션 강화, 폰·카피·CTA는 그대로 유지"
+    }
+   ],
+   "sourced": [],
+   "diagnosis": [
+    "물체 형태(LO)·움직임(MT) 반응이 낮음: 뚜렷한 사물 실루엣이 없는 텍스트 위주 화면",
+    "장소 영역(PPA)이 우세: 배경 풍경이 화면을 지배해 내용이 묻힘"
+   ]
+  },
+  {
+   "round": 3,
+   "accepted": false,
+   "ui_score": 0.509239059750635,
+   "brain_only": 0.306,
+   "judge": 0.694,
+   "changes": [
+    {
+     "issue": "물체형태LO·움직임MT반응이낮음",
+     "change": "배경 슬래시를 화살촉·테두리·샤인스윕 갖춘 단일 애로우 오브젝트로 전환하고 폰을 4도 기울여 뒤에 라임 잔상 실루엣을 겹쳐 디바이스 프레임 실루엣과 사선 모션 강화"
+    }
+   ],
+   "sourced": [],
+   "diagnosis": [
+    "물체 형태(LO)·움직임(MT) 반응이 낮음: 뚜렷한 사물 실루엣이 없는 텍스트 위주 화면",
+    "장소 영역(PPA)이 우세: 배경 풍경이 화면을 지배해 내용이 묻힘"
+   ]
+  },
+  {
+   "round": 4,
+   "accepted": true,
+   "ui_score": 0.5618097661741038,
+   "brain_only": 0.367,
+   "judge": 0.778,
+   "changes": [
+    {
+     "issue": "물체형태lo움직임mt반응이낮음",
+     "change": "사각 슬래시 바 2겹을 단일 화살표 실루엣 오브젝트(검정 외곽선+라임 솔리드+전진 애니메이션)로 교체해 LO/MT 강화"
+    }
+   ],
+   "sourced": [],
+   "diagnosis": [
+    "물체 형태(LO)·움직임(MT) 반응이 낮음: 뚜렷한 사물 실루엣이 없는 텍스트 위주 화면",
+    "장소 영역(PPA)이 우세: 배경 풍경이 화면을 지배해 내용이 묻힘",
+    "보상 회로(OFC/vmPFC)는 켜졌는데 끌림 헤드는 평범: 가치 신호가 있지만 무엇이 좋은지 읽히지 않음"
+   ]
+  },
+  {
+   "round": 5,
+   "accepted": false,
+   "ui_score": 0.5461773186493136,
+   "brain_only": 0.338,
+   "judge": 0.75,
+   "changes": [
+    {
+     "issue": "물체형태LO·움직임MT 반응이낮음",
+     "change": "화살표 오브젝트/스피드선 제거 후 단일 사선 레일+거대 1,000원 코인 실루엣+폰 라임 잔상 프레임을 지배적 오브젝트로 교체하고 실제 사용자 사진 배지로 LO 강화"
+    }
+   ],
+   "sourced": [
+    {
+     "path": "assets/woman-sits-on-a-bench-and-smiles-while-l.jpg",
+     "title": "Woman sits on a bench and smiles while looking at her phone in a bright area wit",
+     "license": "CC BY 2.0",
+     "author": "Shixart1985",
+     "source": "https://commons.wikimedia.org/wiki/File:Woman_sits_on_a_bench_and_smiles_while_looking_at_her_phone_in_a_bright_area_with_yellow_background.jpg",
+     "query": "smiling woman looking at phone",
+     "w": 1000,
+     "h": 1500,
+     "gate": "7/10 Smiling woman with smartphone gives clear human/object silhouette fixi"
+    }
+   ],
+   "diagnosis": [
+    "물체 형태(LO)·움직임(MT) 반응이 낮음: 뚜렷한 사물 실루엣이 없는 텍스트 위주 화면",
+    "장소 영역(PPA)이 우세: 배경 풍경이 화면을 지배해 내용이 묻힘",
+    "보상 회로(OFC/vmPFC)는 켜졌는데 끌림 헤드는 평범: 가치 신호가 있지만 무엇이 좋은지 읽히지 않음"
+   ]
+  },
+  {
+   "round": 6,
+   "accepted": false,
+   "ui_score": 0.5251502272951485,
+   "brain_only": 0.317,
+   "judge": 0.722,
+   "changes": [
+    {
+     "issue": "물체형태LO·움직임MT 반응이낮음",
+     "change": "화살표 실루엣+스피드선+3개 플로팅 팝업을 제거하고 단일 사선 런웨이+자이언트 틸트 포토폰(실사용자 사진 내장, 라임 외곽선+에코 잔상 2겹) 단일 지배 오브젝트로 교체해 LO/MT 강화"
+    }
+   ],
+   "sourced": [],
+   "diagnosis": [
+    "물체 형태(LO)·움직임(MT) 반응이 낮음: 뚜렷한 사물 실루엣이 없는 텍스트 위주 화면",
+    "장소 영역(PPA)이 우세: 배경 풍경이 화면을 지배해 내용이 묻힘",
+    "보상 회로(OFC/vmPFC)는 켜졌는데 끌림 헤드는 평범: 가치 신호가 있지만 무엇이 좋은지 읽히지 않음"
+   ]
+  }
+ ],
+ "ledger": [
+  {
+   "id": "물체형태lo움직임mt반응이낮음",
+   "text": "물체 형태(LO)·움직임(MT) 반응이 낮음: 뚜렷한 사물 실루엣이 없는 텍스트 위주 화면",
+   "directive": "Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion.",
+   "group": "visual_motion",
+   "z_opened": -2.127232376487683,
+   "opened": 0,
+   "resolved": null,
+   "attempts": 6,
+   "tried": [
+    "r1: 우측 폰 뒤에 대형 라임 대각선 슬래시+아웃라인+모션 스피드선 추가해 단일 오브젝트 실루엣과 사선 움직임 부여, 기존 폰·카피·CTA는 그대로 유지",
+    "r2: faint 배경 슬래시를 860px 솔리드 매스+화살촉+자이언트 실물 코인+샤인 스윕·굵은 스피드선으로 교체해 단일 오브젝트 실루엣과 사선 모션 강화, 폰·카피·",
+    "r3: 배경 슬래시를 화살촉·테두리·샤인스윕 갖춘 단일 애로우 오브젝트로 전환하고 폰을 4도 기울여 뒤에 라임 잔상 실루엣을 겹쳐 디바이스 프레임 실루엣과 사선 모션 강",
+    "r4: 사각 슬래시 바 2겹을 단일 화살표 실루엣 오브젝트(검정 외곽선+라임 솔리드+전진 애니메이션)로 교체해 LO/MT 강화",
+    "r5: 화살표 오브젝트/스피드선 제거 후 단일 사선 레일+거대 1,000원 코인 실루엣+폰 라임 잔상 프레임을 지배적 오브젝트로 교체하고 실제 사용자 사진 배지로 LO ",
+    "r6: 화살표 실루엣+스피드선+3개 플로팅 팝업을 제거하고 단일 사선 런웨이+자이언트 틸트 포토폰(실사용자 사진 내장, 라임 외곽선+에코 잔상 2겹) 단일 지배 오브젝트"
+   ]
+  },
+  {
+   "id": "장소영역ppa이우세",
+   "text": "장소 영역(PPA)이 우세: 배경 풍경이 화면을 지배해 내용이 묻힘",
+   "directive": "Simplify the environment: crop or blur the scene, put copy on a solid panel, let one subject own the frame.",
+   "group": "scene_place",
+   "z_opened": 1.1661991320485285,
+   "opened": 0,
+   "resolved": null,
+   "attempts": 6,
+   "tried": []
+  },
+  {
+   "id": "보상회로ofcvmpfc는켜졌는데끌림헤드는평범",
+   "text": "보상 회로(OFC/vmPFC)는 켜졌는데 끌림 헤드는 평범: 가치 신호가 있지만 무엇이 좋은지 읽히지 않음",
+   "directive": "Name the value explicitly next to what the eye lands on: one benefit line + price/offer under the hero, nothing else competing.",
+   "group": "value_vmpfc",
+   "z_opened": 0.9747601299247693,
+   "opened": 0,
+   "resolved": null,
+   "attempts": 6,
+   "tried": []
+  }
+ ],
+ "assets": [
+  {
+   "path": "assets/woman-sits-on-a-bench-and-smiles-while-l.jpg",
+   "title": "Woman sits on a bench and smiles while looking at her phone in a bright area wit",
+   "license": "CC BY 2.0",
+   "author": "Shixart1985",
+   "source": "https://commons.wikimedia.org/wiki/File:Woman_sits_on_a_bench_and_smiles_while_looking_at_her_phone_in_a_bright_area_with_yellow_background.jpg",
+   "query": "smiling woman looking at phone",
+   "w": 1000,
+   "h": 1500,
+   "gate": "7/10 Smiling woman with smartphone gives clear human/object silhouette fixi"
+  }
+ ]
+}

@@ -147,13 +147,16 @@ You are now REVISING an existing page, not starting over. You receive the curren
 predicted human cortex still flags, how many rounds it has been open, what was already tried and did not help),
 a designer's review, and a list of locally available CC-licensed photos (use them with <img src="assets/..."> when
 an issue calls for a real face/product/scene; credit them in a small footer line with author and license).
-Fix the OPEN issues in priority order while keeping what already works. If an attempt is listed as tried-and-failed,
+Fix the OPEN issues in priority order while keeping what already works (when only one issue is listed, change ONLY what that issue needs — a minimal, surgical edit; do not restyle the rest). If an attempt is listed as tried-and-failed,
 do something materially different. Start with ONE line: <!-- CHANGES: [{"issue": "...", "change": "..."}] --> then
 output ONLY the full revised HTML document."""
 
 
-def revise(html: str, brief: str, ledger: list[dict], assets: list[dict], judge_reason: str, round_no: int, retries: int = 2) -> tuple[str, list[dict]]:
+def revise(html: str, brief: str, ledger: list[dict], assets: list[dict], judge_reason: str, round_no: int, retries: int = 2,
+           focus: int = 0) -> tuple[str, list[dict]]:
     open_issues = [i for i in ledger if i["resolved"] is None]
+    if focus:   # small steps: only the top-priority open issue(s) this round, everything else must stay as is
+        open_issues = sorted(open_issues, key=lambda i: (i["attempts"], i["opened"]))[:focus]
     led = "\n".join(f"- [{i['id']}] {i['text']} (open since r{i['opened']}, {i['attempts']} attempt(s)"
                     f"{'; tried: ' + ' / '.join(i['tried'][-2:]) if i['tried'] else ''}) → DO: {i['directive']}" for i in open_issues) or "- none open"
     fixed = ", ".join(f"[{i['id']}] fixed r{i['resolved']}" for i in ledger if i["resolved"] is not None) or "none yet"
@@ -224,7 +227,7 @@ def _score(png: Path, item_id: str, brief: str, kind: str) -> dict:
             "critique": crit.to_dict() | {"prompt_block": crit.prompt_block}}
 
 
-def run_brief(key: str, cfg: dict, run_dir: Path, rounds: int, patience: int, stamp: str) -> dict:
+def run_brief(key: str, cfg: dict, run_dir: Path, rounds: int, patience: int, stamp: str, focus: int = 0) -> dict:
     brief, kind = cfg["brief"], cfg["kind"]
     d = run_dir / key
     (d / "assets").mkdir(parents=True, exist_ok=True)
@@ -268,7 +271,7 @@ def run_brief(key: str, cfg: dict, run_dir: Path, rounds: int, patience: int, st
             if sourced or dropped:
                 print(f"  r{r} sourced {len(sourced)} photo(s), gate dropped {dropped}: " + "; ".join(f"{a['title'][:28]} ({a['gate'][:5]})" for a in sourced))
         try:
-            new_html, changes = revise(best["html"], brief, ledger, assets, best["judge"].get("reason", ""), r)
+            new_html, changes = revise(best["html"], brief, ledger, assets, best["judge"].get("reason", ""), r, focus=focus)
         except GenerationError as e:
             print(f"  r{r} skipped: {e}")
             continue
@@ -339,13 +342,14 @@ def build_page(d: Path) -> Path:
 
 @app.command()
 def run(rounds: int = typer.Option(6), patience: int = typer.Option(3), only: str = typer.Option(""),
-        out: Path = typer.Option(Path("results/showcase/harness")), name: str = typer.Option("")):
+        out: Path = typer.Option(Path("results/showcase/harness")), name: str = typer.Option(""),
+        focus: int = typer.Option(0, help="revise only the top-N open issues per round (surgical edits); 0 = all")):
     run_dir = out / (name or time.strftime("%Y%m%d-%H%M%S"))
     run_dir.mkdir(parents=True, exist_ok=True)
     stamp = run_dir.name
     summary = {}
     for key in [k for k in BRIEFS if not only or k in only.split(",")]:
-        rep = run_brief(key, BRIEFS[key], run_dir, rounds, patience, stamp)
+        rep = run_brief(key, BRIEFS[key], run_dir, rounds, patience, stamp, focus)
         summary[key] = {"baseline_ui": rep["baseline"]["ui_score"], "best_ui": rep["best"]["ui_score"], "best_round": rep["best_round"],
                         "issues_fixed": sum(1 for i in rep["ledger"] if i["resolved"] is not None), "issues": len(rep["ledger"]), "photos": len(rep["assets"])}
         (run_dir / "summary.json").write_text(json.dumps(summary, ensure_ascii=False, indent=1), encoding="utf-8")

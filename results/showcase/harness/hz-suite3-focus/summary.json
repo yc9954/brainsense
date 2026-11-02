@@ -1,0 +1,18 @@
+{
+ "skincare_ad": {
+  "baseline_ui": 0.6396004207732975,
+  "best_ui": 0.6396004207732975,
+  "best_round": 0,
+  "issues_fixed": 0,
+  "issues": 2,
+  "photos": 0
+ },
+ "fintech_onboarding": {
+  "baseline_ui": 0.5195914339855245,
+  "best_ui": 0.5618097661741038,
+  "best_round": 4,
+  "issues_fixed": 0,
+  "issues": 3,
+  "photos": 1
+ }
+}

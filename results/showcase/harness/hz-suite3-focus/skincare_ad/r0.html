@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LUMIVERA 비타C 15 — 런칭 30% | 인스타그램 런칭 광고</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@800;900&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+--cream:#FFF6E9; --paper:#FFFEFA; --ink:#1C130B; --ink2:#4A3A2E;
+--orange:#FF4D00; --orange-d:#C93300; --yellow:#FFC531; --green:#0E3B2E;
+}
+html,body{height:100%}
+body{
+font-family:"Noto Sans KR",system-ui,sans-serif;
+background:var(--cream);
+background-image:radial-gradient(#E9D9BE 1.6px, transparent 1.6px);
+background-size:22px 22px;
+color:var(--ink);
+font-size:17px; line-height:1.6;
+display:flex; justify-content:center; align-items:flex-start;
+min-height:100vh; padding:18px 18px 22px;
+-webkit-font-smoothing:antialiased;
+}
+.wrap{width:100%; max-width:1240px; display:flex; flex-direction:column; gap:14px}
+.chrome{
+background:var(--paper); border:2.5px solid var(--ink); border-radius:18px;
+box-shadow:6px 6px 0 var(--ink);
+display:flex; align-items:center; justify-content:space-between;
+padding:11px 18px; gap:12px;
+}
+.profile{display:flex; align-items:center; gap:12px; min-width:0}
+.avatar{width:42px;height:42px;border-radius:50%;border:2.5px solid var(--ink);
+background:conic-gradient(from 0deg,#FF4D00,#FFC531,#FF8A3D,#FF4D00);
+display:grid;place-items:center; font-weight:900; color:#fff; font-size:20px; flex-shrink:0}
+.avatar span{background:var(--ink);width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-size:15px;border:2px solid #fff}
+.pmeta{line-height:1.25}
+.pmeta strong{font-size:16px; display:flex; align-items:center; gap:6px}
+.pmeta small{color:var(--ink2); font-size:13.5px}
+.verified{width:18px;height:18px;border-radius:50%;background:#0095F6;color:#fff;display:inline-grid;place-items:center;font-size:12px}
+.spon{font-size:12.5px; font-weight:700; letter-spacing:.06em; border:1.5px solid var(--ink); border-radius:999px; padding:3px 10px; background:var(--yellow)}
+.chrome-right{display:flex;align-items:center;gap:10px;color:var(--ink2);font-size:14px}
+.dots{letter-spacing:2px;font-weight:900;color:var(--ink);font-size:20px}
+.ad{
+background:var(--paper); border:2.5px solid var(--ink); border-radius:24px;
+box-shadow:8px 8px 0 var(--ink); overflow:hidden;
+display:grid; grid-template-columns:1.02fr .98fr; min-height:620px;
+}
+.copy{padding:38px 40px 22px 42px; display:flex; flex-direction:column; justify-content:center}
+.eyebrow{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.pill{font-size:13.5px;font-weight:900;letter-spacing:.02em;border:2px solid var(--ink);border-radius:999px;padding:6px 14px;background:#fff}
+.pill.hot{background:var(--ink);color:#fff}
+.pill.sun{background:var(--yellow);color:var(--ink)}
+h1{font-size:44px;line-height:1.18;letter-spacing:-.03em;font-weight:900;word-break:keep-all}
+h1 .hl{position:relative;white-space:nowrap}
+h1 .hl i{font-style:normal;position:relative;z-index:1}
+h1 .hl::after{content:"";position:absolute;left:-4px;right:-4px;bottom:6px;height:16px;background:var(--yellow);border:1.5px solid var(--ink);border-radius:6px;z-index:0;transform:rotate(-1deg)}
+.sub{margin-top:14px;color:var(--ink2);font-size:18px;line-height:1.65;word-break:keep-all}
+.sub strong{color:var(--ink)}
+.proof{display:flex;align-items:center;gap:10px;margin-top:14px;font-size:15.5px}
+.stars{color:#FF8A00;letter-spacing:2px;font-size:18px}
+.proof b{font-weight:900}
+.price-row{display:flex;align-items:center;gap:12px;margin-top:20px;flex-wrap:wrap}
+.price-row s{color:#9A8877;font-size:19px}
+.price-now{font-size:34px;font-weight:900;letter-spacing:-.02em}
+.off{background:var(--orange);color:#fff;border:2px solid var(--ink);border-radius:10px;font-weight:900;padding:4px 10px;font-size:16px;box-shadow:3px 3px 0 var(--ink)}
+.timer{font-size:14.5px;font-weight:700;background:#FFF0D6;border:1.5px dashed var(--ink);border-radius:10px;padding:7px 12px}
+.cta-row{display:flex;gap:12px;margin-top:18px;align-items:stretch}
+.btn-buy{
+flex:1;background:var(--ink);color:#fff;text-decoration:none;font-weight:900;font-size:20px;
+border-radius:999px;display:flex;align-items:center;justify-content:center;gap:10px;
+padding:17px 22px;border:2.5px solid var(--ink);box-shadow:5px 5px 0 var(--orange);
+transition:.15s;
+}
+.btn-buy:hover{transform:translate(-1px,-1px);box-shadow:6px 6px 0 var(--orange)}
+.btn-buy:active{transform:translate(3px,3px);box-shadow:1px 1px 0 var(--orange)}
+.btn-buy .arr{background:var(--yellow);color:var(--ink);width:32px;height:32px;border-radius:50%;display:grid;place-items:center;font-size:18px}
+.btn-sub{border:2.5px solid var(--ink);background:#fff;border-radius:999px;padding:0 22px;font-weight:800;font-size:16px;color:var(--ink);text-decoration:none;display:grid;place-items:center}
+.trust{display:flex;gap:16px;margin-top:18px;flex-wrap:wrap;font-size:14.5px;font-weight:700;color:var(--ink2)}
+.trust span{display:flex;align-items:center;gap:7px}
+.check{width:22px;height:22px;border-radius:50%;background:#E8F5D6;border:2px solid var(--ink);display:grid;place-items:center;font-size:13px;color:#1A7A2E}
+.caption-mini{margin-top:16px;border-top:2px dashed #E5D7C0;padding-top:12px;font-size:14.8px;color:var(--ink2)}
+.caption-mini b{color:var(--ink)}
+/* VISUAL - square feel */
+.visual{
+position:relative;background:var(--orange);
+background-image:linear-gradient(165deg,#FF7A1A 0%, #FF4D00 48%, #D62E00 100%);
+border-left:2.5px solid var(--ink);
+display:flex;flex-direction:column;overflow:hidden;min-height:100%;
+}
+.v-top{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;z-index:5}
+.v-tag{background:#fff;border:2px solid var(--ink);border-radius:999px;padding:5px 12px;font-size:13px;font-weight:900;box-shadow:3px 3px 0 var(--ink)}
+.v-tag2{font-family:Archivo,sans-serif;font-size:12px;letter-spacing:.14em;color:#fff;border:1.5px solid #fff;border-radius:999px;padding:6px 12px}
+.stage{position:relative;flex:1;display:grid;place-items:center;padding:10px 20px 0;min-height:460px}
+.halo{position:absolute;width:470px;height:470px;border-radius:50%;background:radial-gradient(circle,#FFD84D 0 62%, #FFB52E 62% 100%);border:3px solid var(--ink);box-shadow:inset -18px -18px 0 rgba(0,0,0,.12), 0 20px 40px rgba(0,0,0,.25)}
+.halo::after{content:"";position:absolute;inset:18px;border:2.5px dashed rgba(28,19,11,.55);border-radius:50%}
+.citrus{position:absolute;border-radius:50%;border:3px solid var(--ink);display:grid;place-items:center;overflow:hidden;background:#FFD84D}
+.citrus.c1{width:132px;height:132px;left:36px;bottom:78px;transform:rotate(-14deg);box-shadow:5px 5px 0 var(--ink)}
+.citrus.c2{width:96px;height:96px;right:44px;top:18px;transform:rotate(18deg);box-shadow:4px 4px 0 var(--ink)}
+.citrus i{position:absolute;width:78%;height:78%;border-radius:50%;background:repeating-conic-gradient(#FF8A00 0 18deg, #FFE59A 18deg 36deg);border:2px solid var(--ink)}
+.citrus::after{content:"";width:18px;height:18px;background:#fff;border:2px solid var(--ink);border-radius:50%;z-index:1}
+.bottle-wrap{position:relative;z-index:3;display:flex;flex-direction:column;align-items:center;filter:drop-shadow(0 22px 22px rgba(0,0,0,.35))}
+.badge{
+position:absolute;right:28px;top:6px;z-index:6;width:138px;height:138px;
+background:var(--yellow);border:3px solid var(--ink);border-radius:50%;
+display:grid;place-items:center;text-align:center;transform:rotate(12deg);
+box-shadow:5px 5px 0 var(--ink);animation:wiggle 3.2s ease-in-out infinite;
+}
+.badge::before{content:"";position:absolute;inset:8px;border:2px dashed var(--ink);border-radius:50%}
+.badge b{line-height:1.05}
+.badge .s1{font-size:12px;letter-spacing:.14em;font-weight:900}
+.badge .s2{font-family:Archivo,sans-serif;font-size:42px;font-weight:900;line-height:1}
+.badge .s3{font-size:14px;font-weight:900;background:var(--ink);color:var(--yellow);border-radius:999px;padding:2px 10px;margin-top:4px;display:inline-block}
+@keyframes wiggle{0%,100%{transform:rotate(12deg) scale(1)}50%{transform:rotate(6deg) scale(1.05)}}
+.float-card{position:absolute;z-index:6;background:#fff;border:2.5px solid var(--ink);border-radius:14px;box-shadow:4px 4px 0 var(--ink);padding:9px 13px;font-size:14px;font-weight:800;line-height:1.35}
+.fc1{left:22px;top:78px;transform:rotate(-4deg)}
+.fc2{right:22px;bottom:92px;transform:rotate(3deg);display:flex;gap:8px;align-items:center}
+.fc1 small,.fc2 small{display:block;font-weight:500;color:var(--ink2);font-size:12.5px}
+.v-bottom{background:#fff;border-top:2.5px solid var(--ink);padding:13px 18px 15px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.engage{display:flex;align-items:center;gap:13px;font-size:22px}
+.engage span{display:flex;align-items:center;gap:6px;font-size:14px;font-weight:800}
+.heart{color:var(--orange-d)}
+.likes{font-size:14px;color:var(--ink2)} .likes b{color:var(--ink)}
+:focus-visible{outline:4px solid #005FCC;outline-offset:2px;border-radius:8px}
+@media(max-width:980px){
+body{padding:12px}.ad{grid-template-columns:1fr}.visual{border-left:0;border-top:2.5px solid var(--ink)}.copy{padding:28px 22px}h1{font-size:32px}.stage{min-height:440px}.halo{width:380px;height:380px}.cta-row{flex-direction:column}.btn-sub{padding:14px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<!-- top instagram chrome -->
+<div class="chrome" role="banner" aria-label="인스타그램 스폰서 헤더">
+<div class="profile">
+<div class="avatar" aria-hidden="true"><span>L</span></div>
+<div class="pmeta"><strong>lumivera.kr <span class="verified" aria-label="인증됨">✓</span></strong><small>Sponsored · Original audio · 1:1 피드 광고</small></div>
+<span class="spon">런칭 AD</span>
+</div>
+<div class="chrome-right"><span>▢ 1/3</span><span class="dots" aria-hidden="true">•••</span></div>
+</div>
+
+<!-- main ad -->
+<main class="ad" aria-label="루미베라 비타C 세럼 런칭 광고">
+<!-- COPY -->
+<section class="copy">
+<div class="eyebrow"><span class="pill hot">● NEW 11.02 런칭</span><span class="pill sun">잡티 · 기미 · 광채</span><span class="pill">민감피부 테스트 완료</span></div>
+<h1>잡티는 옅어지고, 광채는 짙어진다 — <span class="hl"><i>15% 순수 비타민C의 14일 기적.</i></span></h1>
+<p class="sub"><strong>루미베라 비타C 15 브라이트닝 세럼 30ml.</strong> 산화 걱정 없는 이중 밀폐 용기에 담은 15% 순수 아스코빅애씨드 + 비타민E + 페룰산. 아침 세안 후 2방울로 투명해지는 피부.</p>
+<div class="proof" aria-label="리뷰 평점"><span class="stars" aria-hidden="true">★★★★★</span><span><b>4.9</b> · 2,317개 리뷰 · 재구매율 78%</span></div>
+<div class="price-row">
+<s>39,000원</s><span class="price-now">27,300원</span><span class="off">30% OFF</span>
+<span class="timer" role="timer">⏰ 런칭특가 오늘 자정 종료 · 무료배송</span>
+</div>
+<div class="cta-row">
+<a class="btn-buy" href="#" aria-label="루미베라 비타C 세럼 지금 구매하기">지금 구매하기 <span class="arr" aria-hidden="true">→</span></a>
+<a class="btn-sub" href="#">성분 보기</a>
+</div>
+<div class="trust"><span><i class="check">✓</i> 비건 · 무향료</span><span><i class="check">✓</i> 14일 임상 잡티 -32%</span><span><i class="check">✓</i> 30일 환불보장</span></div>
+<p class="caption-mini"><b>lumivera.kr</b> 14일 광채 챌린지 참여 시 적립금 5천원 💛 #비타민C세럼 #잡티세럼 #광채피부 <u>더 보기</u></p>
+</section>
+
+<!-- VISUAL square creative -->
+<section class="visual" aria-label="제품 이미지: 비타민C 세럼">
+<div class="v-top"><span class="v-tag">🍊 15% PURE VITAMIN C</span><span class="v-tag2">30ml / BRIGHTENING</span></div>
+<div class="stage">
+<div class="halo" aria-hidden="true"></div>
+<div class="citrus c1" aria-hidden="true"><i></i></div>
+<div class="citrus c2" aria-hidden="true"><i></i></div>
+
+<div class="badge" aria-label="런칭 기념 30퍼센트 할인"><b><span class="s1">LAUNCH</span><br><span class="s2">30%</span><br><span class="s3">런칭 할인</span></b></div>
+<div class="float-card fc1">임상 완료<small>2주 사용 후 잡티 면적 -32%*</small></div>
+
+<!-- Bottle SVG -->
+<div class="bottle-wrap">
+<svg width="230" height="360" viewBox="0 0 230 360" role="img" aria-label="루미베라 비타C 15 세럼 병">
+<defs>
+<linearGradient id="glass" x1="0" x2="1"><stop offset="0" stop-color="#FFB35C"/><stop offset=".5" stop-color="#E46A00"/><stop offset="1" stop-color="#7A2600"/></linearGradient>
+<linearGradient id="cap" x1="0" x2="1"><stop offset="0" stop-color="#3A3A3A"/><stop offset="1" stop-color="#0B0B0B"/></linearGradient>
+</defs>
+<ellipse cx="115" cy="335" rx="72" ry="16" fill="rgba(0,0,0,.28)"/>
+<!-- dropper top -->
+<rect x="92" y="10" width="46" height="26" rx="13" fill="#1C130B" stroke="#1C130B"/>
+<rect x="86" y="32" width="58" height="52" rx="10" fill="url(#cap)" stroke="#1C130B" stroke-width="3"/>
+<rect x="93" y="40" width="8" height="36" rx="4" fill="#fff" opacity=".28"/>
+<!-- neck -->
+<rect x="96" y="82" width="38" height="18" fill="#FFF6E9" stroke="#1C130B" stroke-width="3"/>
+<!-- bottle body -->
+<rect x="55" y="98" width="120" height="220" rx="22" fill="url(#glass)" stroke="#1C130B" stroke-width="4"/>
+<!-- highlight -->
+<rect x="68" y="115" width="14" height="170" rx="7" fill="#fff" opacity=".55"/>
+<rect x="88" y="115" width="6" height="170" rx="3" fill="#fff" opacity=".35"/>
+<!-- label -->
+<rect x="63" y="165" width="104" height="110" rx="12" fill="#FFFEFA" stroke="#1C130B" stroke-width="3"/>
+<text x="115" y="188" text-anchor="middle" font-family="Archivo,sans-serif" font-weight="900" font-size="13" letter-spacing="1.5" fill="#1C130B">LUMIVERA</text>
+<text x="115" y="214" text-anchor="middle" font-family="Archivo,sans-serif" font-weight="900" font-size="28" fill="#C93300">VIT-C</text>
+<text x="115" y="233" text-anchor="middle" font-family="Noto Sans KR,sans-serif" font-weight="900" font-size="15" fill="#1C130B">15% 브라이트닝</text>
+<rect x="83" y="242" width="64" height="20" rx="10" fill="#1C130B"/><text x="115" y="256" text-anchor="middle" font-size="11.5" font-weight="700" fill="#FFC531" font-family="Noto Sans KR,sans-serif">30ml · 미백기능성</text>
+<!-- drop -->
+<path d="M178 128c10 14 16 22 16 31a16 16 0 1 1-32 0c0-9 6-17 16-31z" fill="#FFD84D" stroke="#1C130B" stroke-width="3"/>
+<path d="M172 158a6 6 0 0 0 6 6" stroke="#1C130B" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+<g font-size="18">✨</g>
+</svg>
+<div style="margin-top:6px;background:#1C130B;color:#FFC531;font-weight:900;font-size:13px;letter-spacing:.08em;border-radius:999px;padding:6px 16px;border:2px solid #FFFEFA">DARK SPOT CORRECTOR • 14 DAYS</div>
+</div>
+
+<div class="float-card fc2">💧 <span>산뜻 흡수 제형<small>끈적임 0 · 메이크업 전 OK</small></span></div>
+</div>
+<div class="v-bottom">
+<div><div class="engage" aria-hidden="true"><span class="heart">♥</span><span>◯</span><span>➤</span></div><div class="likes"><b>12,482명이 좋아합니다</b> · 댓글 842개</div></div>
+<a href="#" style="background:#1C130B;color:#fff;text-decoration:none;font-weight:900;border-radius:999px;padding:12px 22px;font-size:16px;white-space:nowrap">지금 구매 →</a>
+</div>
+</section>
+</main>
+</div>
+</body>
+</html>
