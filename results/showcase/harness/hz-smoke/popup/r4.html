@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>스윗스팟 x 로컬 로스터리 — 성수 3일 한정 팝업</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,900;1,9..144,900&family=Noto+Sans+KR:wght@400;500;700;900&family=Noto+Serif+KR:wght@700;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family:"Noto Sans KR",system-ui,sans-serif;background:#FFF6EB;color:#2B1E16;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1280px;margin:0 auto;padding:0 32px}
+.topbar{background:#1E130E;color:#FFEEDD;text-align:center;font-size:14.5px;font-weight:700;padding:11px 16px;letter-spacing:-.01em}
+.topbar strong{color:#FFB3C1}
+header{display:flex;align-items:center;justify-content:space-between;padding:18px 0;gap:16px}
+.logo{display:flex;align-items:center;gap:11px;text-decoration:none;color:inherit}
+.logo-mark{width:42px;height:42px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#FF8FA3 0%,#FF4D6D 52%,#1E130E 100%);display:grid;place-items:center;color:#fff;font-weight:900;font-size:21px;border:2px solid #1E130E}
+.logo-txt{line-height:1.15}
+.logo-txt strong{font-size:18px;letter-spacing:-.04em;display:block}
+.logo-txt span{font-family:Fraunces,serif;font-size:11px;letter-spacing:.22em;color:#8A6E5E;font-weight:700}
+.btn-small{background:#1E130E;color:#FFF6EB;text-decoration:none;font-weight:900;font-size:15.5px;padding:12px 22px;border-radius:100px;border:1.5px solid #1E130E;box-shadow:3px 3px 0 #FF4D6D;transition:.18s;white-space:nowrap}
+.btn-small:hover{transform:translate(-1px,-1px);box-shadow:5px 5px 0 #FF4D6D}
+/* unified hero panel */
+.hero-panel{background:#FFFEFB;border:2.5px solid #1E130E;border-radius:28px;box-shadow:9px 9px 0 #1E130E;display:grid;grid-template-columns:540px 1fr;overflow:hidden;margin:6px 0 16px;min-height:600px}
+.copy{padding:38px 10px 28px 40px;display:flex;flex-direction:column;justify-content:center}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;background:#1E130E;color:#FFEEDD;border-radius:100px;padding:8px 18px 8px 9px;font-size:14px;font-weight:900;width:max-content}
+.eyebrow i{font-style:normal;background:#FF4D6D;color:#fff;border-radius:100px;padding:4px 12px;font-size:12px;letter-spacing:.12em}
+h1{font-family:"Noto Serif KR",serif;font-size:clamp(54px,4.9vw,72px);line-height:1.02;letter-spacing:-.045em;margin:18px 0 14px;font-weight:900;color:#1E130E}
+h1 em{font-family:Fraunces,serif;font-style:italic;font-weight:900;color:#C9184A;white-space:nowrap;position:relative}
+h1 em svg{position:absolute;left:0;right:0;bottom:-10px;width:100%;height:12px}
+.sub{font-size:19px;color:#4A372D;max-width:460px;margin:0;word-break:keep-all;line-height:1.62}
+.sub strong{color:#1E130E}
+.cta-row{margin:26px 0 6px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.btn-primary{display:inline-flex;align-items:center;gap:10px;background:#C9184A;color:#fff;text-decoration:none;font-size:20px;font-weight:900;letter-spacing:-.02em;padding:17px 36px;border-radius:100px;border:2px solid #1E130E;box-shadow:6px 6px 0 #1E130E;transition:.18s}
+.btn-primary:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 #1E130E;background:#A4123C}
+.cta-note{font-size:14.5px;font-weight:700;color:#6B5548;margin:10px 0 0}
+.info-line{margin:16px 0 0;background:#FFF3E2;border:1.5px solid #1E130E;border-radius:14px;padding:13px 16px;font-size:16px;font-weight:800;letter-spacing:-.02em;line-height:1.5}
+.info-line b{color:#C9184A}
+.proof{font-size:14.5px;font-weight:700;color:#6B5548;margin:12px 0 0}
+.proof b{color:#1E130E}
+/* visual - one subject owns frame */
+.visual{position:relative;background:#FFEEDD;display:flex;align-items:flex-end;justify-content:center;overflow:hidden;min-height:600px}
+.visual::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 78%,#FFF6EB 0 18%,transparent 18.5%)}
+.arch{position:relative;width:410px;height:545px;background:#FF4D6D;border:2.5px solid #1E130E;border-bottom:0;border-radius:230px 230px 0 0;margin-top:36px;z-index:1;box-shadow:inset -18px 0 0 #E63A5D, inset 14px 0 0 #FF7A90}
+.arch::after{content:"SWEETSPOT SEONGSU POP-UP";position:absolute;top:34px;left:50%;transform:translateX(-50%);font-family:Fraunces,serif;font-size:11px;letter-spacing:.28em;color:#fff;font-weight:700;opacity:.95;white-space:nowrap}
+.floor-shadow{position:absolute;bottom:44px;left:50%;width:460px;height:34px;background:#1E130E;border-radius:50%;transform:translateX(-58%) rotate(-8deg);opacity:.22;z-index:1;filter:blur(.5px)}
+.floor-shadow2{position:absolute;bottom:52px;left:50%;width:380px;height:22px;background:#1E130E;border-radius:50%;transform:translateX(-52%) rotate(-8deg);opacity:.9;z-index:2}
+.dashes{position:absolute;top:78px;right:78px;z-index:3;display:flex;gap:10px;transform:rotate(-18deg)}
+.dashes span{display:block;width:54px;height:14px;background:#fff;border:2.5px solid #1E130E;border-radius:100px}
+.dashes span:nth-child(2){width:36px;opacity:.9}
+.dashes span:nth-child(3){width:22px;opacity:.75}
+.cup-wrap{position:absolute;bottom:-18px;left:50%;transform:translateX(-50%) rotate(-7deg);z-index:4;filter:drop-shadow(10px 12px 0 rgba(30,19,14,.9));animation:sway 5s ease-in-out infinite}
+@keyframes sway{0%,100%{transform:translateX(-50%) rotate(-7deg) translateY(0)}50%{transform:translateX(-50%) rotate(-5.5deg) translateY(-12px)}}
+.steam-curl{position:absolute;top:-58px;left:50%;transform:translateX(-50%);z-index:5;opacity:.95;animation:steamCurl 3.2s ease-in-out infinite}
+@keyframes steamCurl{0%,100%{opacity:.35;transform:translateX(-50%) translateY(6px)}50%{opacity:1;transform:translateX(-50%) translateY(-4px)}}
+.big-straw{position:absolute;top:132px;left:72px;z-index:4;transform:rotate(-18deg);filter:drop-shadow(5px 6px 0 #1E130E);animation:strawBob 4s ease-in-out infinite}
+@keyframes strawBob{0%,100%{transform:rotate(-18deg) translateY(0)}50%{transform:rotate(-14deg) translateY(-10px)}}
+.price-pill{position:absolute;bottom:26px;left:50%;transform:translateX(-50%) rotate(-1.2deg);z-index:6;background:#1E130E;color:#FFEEDD;border:2px solid #1E130E;border-radius:16px;box-shadow:6px 6px 0 rgba(30,19,14,.28);padding:11px 16px;display:flex;align-items:center;gap:14px;white-space:nowrap;outline:3px solid #fff}
+.price-pill .p{background:#FF4D6D;border-radius:10px;padding:7px 13px;text-align:center;line-height:1.1;border:1.5px solid #fff}
+.price-pill .p s{display:block;font-size:12px;opacity:.85;font-weight:700;color:#FFEEDD}
+.price-pill .p b{font-size:22px;font-weight:900;color:#fff;letter-spacing:-.03em}
+.price-pill p{margin:0;font-size:16.5px;font-weight:900;letter-spacing:-.02em;line-height:1.35;color:#fff}
+.price-pill p span{display:block;font-size:13.5px;font-weight:700;color:#FFD6DE}
+.tip{position:absolute;top:116px;left:56px;z-index:7;background:#FFF36B;border:2px solid #1E130E;border-radius:4px 16px 16px 16px;box-shadow:5px 5px 0 #1E130E;padding:12px 14px;max-width:190px;transform:rotate(-7deg) scale(0);animation:popIn .55s cubic-bezier(.2,1.6,.4,1) 2.5s forwards}
+@keyframes popIn{to{transform:rotate(-7deg) scale(1)}}
+.tip strong{display:block;font-size:14.5px;font-weight:900;letter-spacing:-.02em}
+.tip span{font-size:13.5px;font-weight:700;color:#5A4438;line-height:1.45;display:block;margin-top:2px}
+/* second discovery bar */
+.livebar{background:#1E130E;color:#FFEEDD;border:2px solid #1E130E;border-radius:16px;box-shadow:5px 5px 0 #FF4D6D;display:flex;align-items:stretch;overflow:hidden;margin:0 0 18px}
+.livebar .cd{flex:0 0 300px;padding:14px 20px;border-right:1px solid #3A2A22;display:flex;flex-direction:column;justify-content:center}
+.livebar .cd small{font-size:12.5px;font-weight:900;letter-spacing:.14em;color:#FFB3C1}
+.livebar .cd strong{font-family:Fraunces,serif;font-size:26px;letter-spacing:.02em;line-height:1.1}
+.livebar .perk{flex:1;padding:14px 20px;font-size:15px;font-weight:700;display:flex;gap:10px;align-items:center;border-right:1px solid #3A2A22;transition:.18s}
+.livebar .perk:last-child{border-right:0}
+.livebar .perk:hover{background:#2A1D16}
+.livebar .perk b{font-size:22px}
+.livebar .perk span small{display:block;font-size:13px;color:#D8C2B3;font-weight:700}
+:focus-visible{outline:3px solid #C9184A;outline-offset:3px;border-radius:6px}
+@media(max-width:1020px){.hero-panel{grid-template-columns:1fr}.copy{padding:30px 26px 10px}.visual{min-height:620px}.price-pill{white-space:normal;width:calc(100% - 36px);justify-content:center}.livebar{flex-direction:column}.livebar .cd,.livebar .perk{border-right:0;border-bottom:1px solid #3A2A22}.livebar .perk:last-child{border-bottom:0}}
+@media(max-width:640px){.wrap{padding:0 16px}h1{font-size:48px}.arch{width:340px;height:500px}.cup-wrap svg{width:360px!important;height:auto!important}.tip{left:16px;top:88px}.dashes{right:18px}}
+@media(prefers-reduced-motion:reduce){.cup-wrap,.steam-curl,.big-straw,.tip{animation:none}.tip{transform:rotate(-7deg) scale(1)}}
+</style>
+</head>
+<body>
+<div class="topbar">11.14(금)–11.16(일) 11:00–20:00 · 서울 성수 <strong>연무장길 45</strong> · 성수역 4번 출구 6분</div>
+<div class="wrap">
+<header>
+<a class="logo" href="#" aria-label="스윗스팟 홈"><span class="logo-mark">S</span><span class="logo-txt"><strong>스윗스팟 성수</strong><span>SWEETSPOT × ROASTERY</span></span></a>
+<a class="btn-small" href="#reserve">사전예약 →</a>
+</header>
+<main>
+<div class="hero-panel">
+<section class="copy" aria-labelledby="title">
+<span class="eyebrow"><i>3 DAYS ONLY</i> 11.14 FRI — 11.16 SUN · 성수동</span>
+<h1 id="title">달콤함이<br>머무는 <em>자리.<svg viewBox="0 0 200 14" preserveAspectRatio="none" aria-hidden="true"><path d="M2 10 Q 50 2 100 8 T 198 6" fill="none" stroke="#FF4D6D" stroke-width="6" stroke-linecap="round"/></svg></em></h1>
+<p class="sub"><strong>스윗스팟 케이크 × 성수 로스터리 4곳</strong>의 3일 한정 테이스팅 바. 딸기 디저트와 갓 내린 드립을 한 자리에서.</p>
+<div class="cta-row" id="reserve">
+<a class="btn-primary" href="#">사전예약하기 <span aria-hidden="true">→</span></a>
+</div>
+<p class="cta-note">지금 예약하면 대기 없이 바로 입장 · 취소 무료</p>
+<div class="info-line">📅 11.14(금)–11.16(일) 11:00–20:00 · 📍 <b>연무장길 45 · 성수역 4번 6분</b></div>
+<p class="proof">★★★★★ 4.9 · <b>2,318명</b> 알림 신청 중 · 도보 6분 거리</p>
+</section>
+<section class="visual" aria-label="아치 문 안에 놓인 딸기 케이크 대형 커피잔">
+<div class="dashes" aria-hidden="true"><span></span><span></span><span></span></div>
+<div class="arch" aria-hidden="true"></div>
+<div class="floor-shadow" aria-hidden="true"></div>
+<div class="floor-shadow2" aria-hidden="true"></div>
+<div class="big-straw" aria-hidden="true">
+<svg width="86" height="92" viewBox="0 0 86 92"><path d="M43 88 C10 72 4 44 18 22 C28 8 52 4 66 16 C82 30 78 62 43 88Z" fill="#FF4D6D" stroke="#1E130E" stroke-width="5" stroke-linejoin="round"/><path d="M30 28 L38 18 L46 28 L52 18" fill="none" stroke="#2FB662" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="36" cy="48" r="3.5" fill="#fff"/><circle cx="50" cy="56" r="3.5" fill="#fff"/><circle cx="42" cy="66" r="3" fill="#fff"/></svg>
+</div>
+<div class="cup-wrap">
+<div class="steam-curl" aria-hidden="true">
+<svg width="56" height="64" viewBox="0 0 56 64" fill="none"><path d="M18 60 C10 46 26 38 20 26 C15 16 24 8 28 4 M38 60 C30 46 46 38 40 26 C35 16 44 8 48 4" stroke="#fff" stroke-width="6" stroke-linecap="round"/><path d="M18 60 C10 46 26 38 20 26 C15 16 24 8 28 4 M38 60 C30 46 46 38 40 26 C35 16 44 8 48 4" stroke="#1E130E" stroke-width="1.6" stroke-linecap="round" opacity=".25"/></svg>
+</div>
+<svg width="440" height="430" viewBox="0 0 360 430" fill="none" role="img" aria-label="딸기를 올린 스윗스팟 커피잔">
+<ellipse cx="180" cy="402" rx="118" ry="14" fill="#1E130E" opacity=".18"/>
+<g>
+<path d="M108 132 L252 132 L244 82 L116 82 Z" fill="#FFD6E0" stroke="#1E130E" stroke-width="6" stroke-linejoin="round"/>
+<path d="M112 112 L248 112 L244 82 L116 82 Z" fill="#fff" stroke="#1E130E" stroke-width="5"/>
+<path d="M132 82 C132 58 150 48 180 48 C210 48 228 58 228 82 Z" fill="#fff" stroke="#1E130E" stroke-width="6"/>
+<circle cx="148" cy="38" r="18" fill="#FF4D6D" stroke="#1E130E" stroke-width="5"/>
+<circle cx="188" cy="30" r="22" fill="#FF4D6D" stroke="#1E130E" stroke-width="5"/>
+<circle cx="218" cy="44" r="15" fill="#FF4D6D" stroke="#1E130E" stroke-width="5"/>
+<path d="M188 12 L194 2 L182 2 Z" fill="#2FB662" stroke="#1E130E" stroke-width="3" stroke-linejoin="round"/>
+</g>
+<g>
+<path d="M62 160 H298 L268 384 H92 Z" fill="#1E130E" stroke="#1E130E" stroke-width="6" stroke-linejoin="round"/>
+<path d="M62 160 H298 L290 200 H70 Z" fill="#FF4D6D"/>
+<ellipse cx="180" cy="160" rx="119" ry="30" fill="#FFF6EB" stroke="#1E130E" stroke-width="6"/>
+<ellipse cx="180" cy="160" rx="88" ry="20" fill="#C68A3C" stroke="#1E130E" stroke-width="4"/>
+<path d="M148 160 Q180 142 212 160 Q200 180 180 177 Q160 180 148 160Z" fill="#FFF6EB"/>
+<path d="M180 177 C180 160 165 155 165 144 C165 136 176 136 180 144 C184 136 195 136 195 144 C195 155 180 160 180 177Z" fill="#fff" stroke="#1E130E" stroke-width="3.5"/>
+<path d="M298 196 Q336 196 330 236 Q324 272 268 274" fill="none" stroke="#1E130E" stroke-width="18" stroke-linecap="round"/>
+<rect x="104" y="248" width="152" height="54" rx="27" fill="#FFF6EB" stroke="#FFD6E0" stroke-width="3"/>
+<text x="180" y="282" text-anchor="middle" font-family="Fraunces,serif" font-weight="900" font-size="23" fill="#1E130E">sweet spot</text>
+<path d="M96 316 H264" stroke="#FF4D6D" stroke-width="7" stroke-linecap="round"/>
+</g>
+</svg>
+</div>
+<div class="tip" role="note"><strong>💡 언니, 꿀팁!</strong><span>14시 이전 방문이 제일 한가해요. 창가자리가 포토스팟!</span></div>
+<div class="price-pill" aria-label="사전예약 혜택과 가격"><div class="p"><s>19,500원</s><b>12,000원</b></div><p>딸기×드립 페어링 2종 + 굿즈팩<span>7,500원 아끼고 웰컴 딸기쿠키까지</span></p></div>
+</section>
+</div>
+<section class="livebar" aria-label="팝업 카운트다운과 혜택">
+<div class="cd"><small>● POP-UP COUNTDOWN</small><strong id="cd">D-12 04:23:11</strong></div>
+<div class="perk"><b>🎁</b><span>선착순 300명 굿즈팩<small>딸기 키링 + 드립백 2종</small></span></div>
+<div class="perk"><b>📸</b><span>창가 포토부스 운영<small>인생샷 각도 카드 증정</small></span></div>
+<div class="perk"><b>🍰</b><span>스탬프 4개면 미니케이크<small>로스터리 4곳 투어 완성</small></span></div>
+</section>
+</main>
+</div>
+<script>
+(function(){
+var target=new Date('2026-11-14T11:00:00+09:00').getTime();
+var el=document.getElementById('cd');
+function pad(n){return (n<10?'0':'')+n;}
+function tick(){
+var now=Date.now();var d=target-now;if(d<0)d=0;
+var days=Math.floor(d/86400000);
+var h=Math.floor(d%86400000/3600000);
+var m=Math.floor(d%3600000/60000);
+var s=Math.floor(d%60000/1000);
+el.textContent='D-'+days+' '+pad(h)+':'+pad(m)+':'+pad(s);
+}
+tick();setInterval(tick,1000);
+})();
+</script>
+</body>
+</html>

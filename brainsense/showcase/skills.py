@@ -86,6 +86,7 @@ class Critique:
     diagnosis: list[str] = field(default_factory=list)   # what the cortex says (Korean)
     directives: list[str] = field(default_factory=list)  # what to change next (English, for the generator)
     cited_areas: list[str] = field(default_factory=list)
+    groups: list[str] = field(default_factory=list)       # region group behind each diagnosis ("" for time-course rules)
 
     @property
     def prompt_block(self) -> str:
@@ -104,7 +105,7 @@ class Critique:
 
     def to_dict(self) -> dict:
         return {"kind": self.kind, "ranking": self.ranking, "hook": self.hook, "diagnosis": self.diagnosis,
-                "directives": self.directives, "cited_areas": self.cited_areas}
+                "directives": self.directives, "cited_areas": self.cited_areas, "groups": self.groups}
 
 
 def _rel(series: dict[str, list[float]]) -> dict[str, np.ndarray]:
@@ -146,50 +147,51 @@ def read_brain(ev: dict, kind: str = "landing") -> Critique:
     hi = lambda g: rank_of.get(g, 9) <= 1 and means.get(g, 0.0) > 0.45       # noqa: E731
     lo = lambda g: rank_of.get(g, 0) >= len(ranking) - 2 and means.get(g, 0.0) < -0.45   # noqa: E731
 
-    cand: list[tuple[float, str, str]] = []   # (salience, diagnosis, directive)
+    cand: list[tuple[float, str, str, str]] = []   # (salience, diagnosis, directive, group)
     diag: list[str] = []
     todo: list[str] = []
+    grps: list[str] = []
 
-    def add(sal: float, d: str, t: str) -> None:
-        cand.append((sal, d, t))
+    def add(sal: float, d: str, t: str, g: str = "") -> None:
+        cand.append((sal, d, t, g))
 
     def z(g: str) -> float:
         return abs(means.get(g, 0.0))
     # --- early vision: contrast / clutter
     if hi("visual_early") and aest < 50:
-        add(z("visual_early") + (0.5 if aest < 50 else 0.0), "1차 시각피질이 가장 세게 반응: 대비·질감 밀도가 높은데 미학 헤드는 낮음 → 어수선함", "Reduce visual noise: one background tone, max 2 accent colors, more whitespace, fewer borders/textures.")
+        add(z("visual_early") + (0.5 if aest < 50 else 0.0), "1차 시각피질이 가장 세게 반응: 대비·질감 밀도가 높은데 미학 헤드는 낮음 → 어수선함", "Reduce visual noise: one background tone, max 2 accent colors, more whitespace, fewer borders/textures.", "visual_early")
     elif lo("visual_early") and attn < 50:
-        add(z("visual_early") + (0.5 if aest < 50 else 0.0), "1차 시각피질이 조용함: 대비가 약해 눈을 끌 자극이 없음", "Raise figure–ground contrast of the hero: darker/lighter backdrop behind the headline, bolder weight, bigger size.")
+        add(z("visual_early") + (0.5 if aest < 50 else 0.0), "1차 시각피질이 조용함: 대비가 약해 눈을 끌 자극이 없음", "Raise figure–ground contrast of the hero: darker/lighter backdrop behind the headline, bolder weight, bigger size.", "visual_early")
     # --- objects / motion
     if lo("visual_motion"):
-        add(z("visual_motion") + (0.5 if aest < 50 else 0.0), "물체 형태(LO)·움직임(MT) 반응이 낮음: 뚜렷한 사물 실루엣이 없는 텍스트 위주 화면", "Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion.")
+        add(z("visual_motion") + (0.5 if aest < 50 else 0.0), "물체 형태(LO)·움직임(MT) 반응이 낮음: 뚜렷한 사물 실루엣이 없는 텍스트 위주 화면", "Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion.", "visual_motion")
     # --- faces / social
     if lo("face_body") and kind in ("landing", "ad", "poster", "video"):
-        add(z("face_body") + (0.5 if aest < 50 else 0.0), "얼굴 영역(FFA/STS)이 조용함: 사람·시선 단서가 없음", "Introduce a human cue: a portrait or illustrated face whose gaze points at the CTA/product (faces win attention fastest).")
+        add(z("face_body") + (0.5 if aest < 50 else 0.0), "얼굴 영역(FFA/STS)이 조용함: 사람·시선 단서가 없음", "Introduce a human cue: a portrait or illustrated face whose gaze points at the CTA/product (faces win attention fastest).", "face_body")
     elif hi("face_body") and attn < 50:
-        add(z("face_body") + (0.5 if aest < 50 else 0.0), "얼굴 반응은 강한데 주의 헤드가 낮음: 얼굴이 CTA가 아닌 곳으로 시선을 끔", "Keep the face but turn its gaze and body orientation toward the headline/CTA; shrink competing imagery.")
+        add(z("face_body") + (0.5 if aest < 50 else 0.0), "얼굴 반응은 강한데 주의 헤드가 낮음: 얼굴이 CTA가 아닌 곳으로 시선을 끔", "Keep the face but turn its gaze and body orientation toward the headline/CTA; shrink competing imagery.", "face_body")
     # --- scene / layout
     if hi("scene_place") and aest < 60:
-        add(z("scene_place") + (0.5 if aest < 50 else 0.0), "장소 영역(PPA)이 우세: 배경 풍경이 화면을 지배해 내용이 묻힘", "Simplify the environment: crop or blur the scene, put copy on a solid panel, let one subject own the frame.")
+        add(z("scene_place") + (0.5 if aest < 50 else 0.0), "장소 영역(PPA)이 우세: 배경 풍경이 화면을 지배해 내용이 묻힘", "Simplify the environment: crop or blur the scene, put copy on a solid panel, let one subject own the frame.", "scene_place")
     # --- attention map
     if hi("attention_dorsal") and aest < 50:
-        add(z("attention_dorsal") + (0.5 if aest < 50 else 0.0), "주의 네트워크(IPS/FEF)가 바쁨: 시선을 끄는 후보가 여러 개 → 경쟁", "Make a single focal point: one hero element 2–3× larger than anything else; demote secondary cards and badges.")
+        add(z("attention_dorsal") + (0.5 if aest < 50 else 0.0), "주의 네트워크(IPS/FEF)가 바쁨: 시선을 끄는 후보가 여러 개 → 경쟁", "Make a single focal point: one hero element 2–3× larger than anything else; demote secondary cards and badges.", "attention_dorsal")
     elif lo("attention_dorsal"):
-        add(z("attention_dorsal") + (0.5 if aest < 50 else 0.0), "주의 네트워크가 잠잠함: 눈이 갈 곳이 정해지지 않음", "Create an obvious target: strong size hierarchy, a saturated CTA on a calm field, directional cues (arrow, gaze, line) toward it.")
+        add(z("attention_dorsal") + (0.5 if aest < 50 else 0.0), "주의 네트워크가 잠잠함: 눈이 갈 곳이 정해지지 않음", "Create an obvious target: strong size hierarchy, a saturated CTA on a calm field, directional cues (arrow, gaze, line) toward it.", "attention_dorsal")
     # --- reward
     if lo("value_vmpfc") or (appeal < 50 and not hi("value_vmpfc")):
-        add(z("value_vmpfc") + (0.5 if appeal < 50 else 0.0), "보상·가치(OFC/vmPFC) 반응이 낮음: '갖고 싶다'는 신호가 없음", "Make the benefit concrete and desirable: show the outcome (before/after, real numbers, price or scarcity), warm highlight color on the offer, social proof near the CTA.")
+        add(z("value_vmpfc") + (0.5 if appeal < 50 else 0.0), "보상·가치(OFC/vmPFC) 반응이 낮음: '갖고 싶다'는 신호가 없음", "Make the benefit concrete and desirable: show the outcome (before/after, real numbers, price or scarcity), warm highlight color on the offer, social proof near the CTA.", "value_vmpfc")
     elif hi("value_vmpfc") and appeal < 50:
-        add(z("value_vmpfc") + (0.5 if appeal < 50 else 0.0), "보상 회로(OFC/vmPFC)는 켜졌는데 끌림 헤드는 평범: 가치 신호가 있지만 무엇이 좋은지 읽히지 않음", "Name the value explicitly next to what the eye lands on: one benefit line + price/offer under the hero, nothing else competing.")
+        add(z("value_vmpfc") + (0.5 if appeal < 50 else 0.0), "보상 회로(OFC/vmPFC)는 켜졌는데 끌림 헤드는 평범: 가치 신호가 있지만 무엇이 좋은지 읽히지 않음", "Name the value explicitly next to what the eye lands on: one benefit line + price/offer under the hero, nothing else competing.", "value_vmpfc")
     # --- language load
     if hi("language") and attn < 55:
-        add(z("language") + (0.5 if aest < 50 else 0.0), "언어 영역(브로카/STG)이 바쁨: 읽을 글자가 너무 많음", "Cut copy: headline ≤ 7 words, one supporting line, one CTA; move details below the fold.")
+        add(z("language") + (0.5 if aest < 50 else 0.0), "언어 영역(브로카/STG)이 바쁨: 읽을 글자가 너무 많음", "Cut copy: headline ≤ 7 words, one supporting line, one CTA; move details below the fold.", "language")
     # --- default mode
     if hi("default_mode"):
-        add(z("default_mode") + (0.5 if aest < 50 else 0.0), "기본모드 네트워크가 올라옴: 익숙하고 예측 가능한 화면 → 딴생각", "Add one unexpected element (asymmetric layout, oversized number, playful illustration, unusual color pairing) so the viewer re-engages.")
+        add(z("default_mode") + (0.5 if aest < 50 else 0.0), "기본모드 네트워크가 올라옴: 익숙하고 예측 가능한 화면 → 딴생각", "Add one unexpected element (asymmetric layout, oversized number, playful illustration, unusual color pairing) so the viewer re-engages.", "default_mode")
     # --- control load
     if hi("control_dlpfc"):
-        add(z("control_dlpfc") + (0.5 if aest < 50 else 0.0), "인지 통제(dlPFC)가 동원됨: 구조를 해석하는 데 노력이 듦", "Lower effort: fewer choices on the first screen, consistent grid, one navigation level, clear reading order.")
+        add(z("control_dlpfc") + (0.5 if aest < 50 else 0.0), "인지 통제(dlPFC)가 동원됨: 구조를 해석하는 데 노력이 듦", "Lower effort: fewer choices on the first screen, consistent grid, one navigation level, clear reading order.", "control_dlpfc")
     # --- time course
     if T > 2 and al < ae - 0.15:
         add(abs(ae - al) + 0.6, f"주의 반응이 첫 2초 이후 꺼짐 ({ae:+.2f} → {al:+.2f}): 첫인상 뒤에 볼 게 없음", "Add a second discovery after the hero (a detail reveal, micro-illustration, or a strong secondary block) so interest holds past 2 s.")
@@ -199,11 +201,12 @@ def read_brain(ev: dict, kind: str = "landing") -> Critique:
     for h in ("aesthetic", "attention", "appeal"):
         for f in (heads.get(h) or {}).get("top_features", [])[:2]:
             cited.append(f"{'▲' if f['contribution'] >= 0 else '▼'} {area_label(f['name'])} [{h}]")
-    for _, d, t in sorted(cand, key=lambda x: -x[0]):
+    for _, d, t, g in sorted(cand, key=lambda x: -x[0]):
         diag.append(d)
         todo.append(t)
+        grps.append(g)
     if not diag:
         diag.append("눈에 띄는 병목 없음: 현재 구성을 유지하고 디테일(타이포 리듬, 여백, 색 온도)만 다듬을 것")
         todo.append("Keep the structure; refine typography rhythm, spacing scale and color temperature only.")
     # keep the generator focused: 4 directives max, weakest head first
-    return Critique(kind=kind, ranking=ranking, hook=hook, diagnosis=diag[:5], directives=todo[:4], cited_areas=cited[:4])
+    return Critique(kind=kind, ranking=ranking, hook=hook, diagnosis=diag[:5], directives=todo[:4], cited_areas=cited[:4], groups=grps[:5])
