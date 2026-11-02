@@ -72,6 +72,8 @@ class Tribe:
         Path(f"{CACHE}/subjects").mkdir(parents=True, exist_ok=True)
         self.model = TribeModel.from_pretrained("facebook/tribev2", cache_folder=f"{CACHE}/tribe")
         self.groups = resolve_group_vertices(subjects_dir=f"{CACHE}/subjects")
+        from brainsense.tribe.rois import resolve_area_vertices
+        self.areas = resolve_area_vertices(subjects_dir=f"{CACHE}/subjects")
         self.vjepa = None  # lazy; only needed for the ablation baseline
         self.device = "cuda" if torch.cuda.is_available() else "cpu"
         vol.commit()
@@ -112,7 +114,7 @@ class Tribe:
         import pandas as pd
         import torch
 
-        from brainsense.tribe.rois import pool_features, roi_timeseries
+        from brainsense.tribe.rois import area_features, pool_features, roi_timeseries
 
         timing: dict[str, float] = {}
         work = Path("/tmp/work"); work.mkdir(exist_ok=True)
@@ -148,6 +150,7 @@ class Tribe:
         t = time.time()
         ts = roi_timeseries(preds, self.groups)
         feats, names = pool_features(ts)
+        area_feats, area_names = area_features(preds, self.areas)
         timing["roi_s"] = time.time() - t
 
         raw = None
@@ -167,6 +170,7 @@ class Tribe:
         timing["total_s"] = sum(v for k, v in timing.items() if k != "total_s")
         return {"item_id": item_id, "n_timesteps": int(preds.shape[0]), "n_vertices": int(preds.shape[1]),
                 "roi_feats": feats.tolist(), "roi_feat_names": names,
+                "roi_area_feats": area_feats.tolist(), "roi_area_names": area_names,
                 "roi_ts": {g: [round(float(v), 4) for v in x] for g, x in ts.items()},
                 "raw_embed": raw, "timing": {k: round(v, 2) for k, v in timing.items()},
                 "load_s": round(self.load_s, 1)}

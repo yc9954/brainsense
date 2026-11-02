@@ -38,7 +38,9 @@ def _feature_ko(name: str) -> str:
     return f"{ko.get(group, group)} {st.get(stat, stat)}".strip()
 
 
-def score_image(png: Path, item_id: str, timeout_s: int = 900) -> Score:
+def score_image(png: Path, item_id: str, timeout_s: int = 900, brief: str | None = None,
+                judge_weight: float = 0.5) -> Score:
+    """brief given → blend the brain ui_score with a Muse Spark multimodal judge (judge_weight)."""
     data = base64.b64encode(Path(png).read_bytes()).decode()
     with httpx.Client(timeout=timeout_s) as c:
         r = c.post(f"{SERVER}/analyze", json={"video_b64": data, "filename": Path(png).name, "item_id": item_id})
@@ -60,4 +62,11 @@ def score_image(png: Path, item_id: str, timeout_s: int = 900) -> Score:
         out_heads[name] = {k: h[k] for k in ("score", "percentile", "confidence")} | {"top": tops}
         parts.append(f"{name}: 상위 {100 - h['percentile']:.0f}% (확신 {conf:.2f}; {tops})")
     ui = total / wsum if wsum else 0.5
+    if brief:
+        from .judge import judge_image
+        j = judge_image(png, brief)
+        out_heads["judge"] = {k: round(v, 3) for k, v in j.items() if k != "reason"} | {"reason": j["reason"]}
+        parts.append(f"judge {j['judge_score']:.2f} (미학 {j['aesthetic']:.2f}, 명확성 {j['clarity']:.2f}, "
+                     f"주목 {j['attention']:.2f}, 브리프 {j['brief_fit']:.2f}): {j['reason']}")
+        ui = (1 - judge_weight) * ui + judge_weight * j["judge_score"]
     return Score(item_id, ui, out_heads, " · ".join(parts))

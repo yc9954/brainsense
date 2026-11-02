@@ -111,3 +111,44 @@ def pool_features(ts: dict[str, np.ndarray], early_s: int = 3) -> tuple[np.ndarr
 
 def feature_names() -> list[str]:
     return [f"{g}__{s}" for g in ROI_GROUPS for s in TIME_STATS]
+
+
+# ---------------------------------------------------------------------------------------------
+# Richer features: every HCP-MMP1 area (180 per hemisphere) instead of 9 functional groups.
+# The 54-d group features saturate below a width-matched PCA of the raw embedding (AADB 0.69 vs
+# 0.73); per-area means keep far more of the predicted cortex while staying nameable.
+
+def resolve_area_vertices(subjects_dir: str | None = None) -> dict[str, np.ndarray]:
+    """{"L_V1": idx, ..., "R_V1": idx, ...} on fsaverage5 (both hemispheres, 360 areas)."""
+    import os
+
+    import mne
+
+    subjects_dir = subjects_dir or os.environ.get("SUBJECTS_DIR") or str(mne.datasets.fetch_fsaverage(verbose=False).parent)
+    labels = mne.read_labels_from_annot("fsaverage", "HCPMMP1", subjects_dir=subjects_dir, verbose=False)
+    out: dict[str, np.ndarray] = {}
+    for lab in labels:
+        name = lab.name  # e.g. "L_V1_ROI-lh"
+        if "???" in name:
+            continue
+        hemi_off = 0 if name.endswith("-lh") else N_HEMI_FS5
+        area = name.split("_ROI")[0]
+        v = lab.vertices[lab.vertices < N_HEMI_FS5] + hemi_off
+        if len(v):
+            out[area] = v.astype(np.int64)
+    return dict(sorted(out.items()))
+
+
+def area_features(preds: np.ndarray, areas: dict[str, np.ndarray]) -> tuple[np.ndarray, list[str]]:
+    """(T, 20484) -> per-area time-mean (360-d) + per-area early/late slope (360-d) = 720-d."""
+    T = preds.shape[0]
+    means, slopes, names = [], [], []
+    for a, idx in areas.items():
+        ts = preds[:, idx].mean(axis=1)
+        means.append(ts.mean())
+        early = ts[:3].mean() if T else 0.0
+        late = ts[3:].mean() if T > 3 else early
+        slopes.append(late - early)
+        names.append(a)
+    feats = np.concatenate([np.asarray(means), np.asarray(slopes)]).astype(np.float32)
+    return feats, [f"{n}__mean" for n in names] + [f"{n}__slope" for n in names]

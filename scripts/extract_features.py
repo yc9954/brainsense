@@ -17,10 +17,12 @@ from brainsense.tribe.modal_app import Tribe, app
 
 
 @app.local_entrypoint()
-def extract(manifest: str, out: str, with_raw: bool = True, transcribe: bool = True, bf16: bool = True):
+def extract(manifest: str, out: str, with_raw: bool = True, transcribe: bool = True, bf16: bool = True,
+            cache_dir: str = "features/cache", limit: int = 0):
     """--no-transcribe for stills/product shots (3x faster, identical features); keep it for UGC with speech."""
     df = pd.read_csv(manifest)
-    cache = Path("features/cache"); cache.mkdir(parents=True, exist_ok=True)
+    df = df.head(limit) if limit else df
+    cache = Path(cache_dir); cache.mkdir(parents=True, exist_ok=True)
     todo = [r for r in df.itertuples() if not (cache / f"{r.item_id}.json").exists()]
     print(f"{len(df)} items, {len(todo)} to compute")
 
@@ -38,7 +40,7 @@ def extract(manifest: str, out: str, with_raw: bool = True, transcribe: bool = T
         if i % 25 == 0:
             print(f"{i}/{len(todo)} last timing={res['timing']}")
 
-    ids, y, roi, raw, split = [], [], [], [], []
+    ids, y, roi, raw, split, area = [], [], [], [], [], []
     for r in df.itertuples():
         p = cache / f"{r.item_id}.json"
         if not p.exists():
@@ -47,7 +49,9 @@ def extract(manifest: str, out: str, with_raw: bool = True, transcribe: bool = T
         if not isinstance(d.get("raw_embed"), list):
             continue
         ids.append(r.item_id); y.append(r.label); roi.append(d["roi_feats"]); raw.append(d["raw_embed"]); split.append(r.split)
+        area.append(d.get("roi_area_feats") or [])
     Path(out).parent.mkdir(parents=True, exist_ok=True)
     np.savez(out, ids=np.array(ids), y=np.array(y, dtype=np.float32), tribe_roi=np.array(roi, dtype=np.float32),
-             raw_embed=np.array(raw, dtype=np.float32), split=np.array(split))
+             raw_embed=np.array(raw, dtype=np.float32), split=np.array(split),
+             roi_area=np.array(area, dtype=np.float32) if area and all(len(a) == len(area[0]) and len(a) for a in area) else np.zeros((len(ids), 0), np.float32))
     print(f"wrote {out}: N={len(ids)}")
