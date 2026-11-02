@@ -143,6 +143,16 @@ UI repo: https://github.com/yc9954/openmuse-brainsense (private, branch `brainse
 
 Reading: a brain in the loop beats "just ask the model" clearly, and the brain arms always end with the highest brain score (the signal they optimise). Against Muse's own self-critique loop they lose by Muse's verdict — with the one-sentence caveat that the self-loop optimises the very judge that scores it, and the hybrid's judge score *falls* across rounds (0.76 → 0.75 → 0.67) while its brain score rises, i.e. the brain directives (object silhouette, face/gaze toward the CTA, concrete reward cues) pull the pages away from what the Muse judge rewards. Which taste matches humans is the open question; `results/showcase/vote.html` is a blind human-preference page over every finalist pair (shuffled, side-swapped, `votes.json` export → `vote.py --tally`). 12-second CSS-animated ad clips go through the same loop (`video ab`): per-frame seek via the Web Animations API → mp4 → TRIBE 1 Hz time course → hook/hold critique (clips shorter than ~10 s give a flat cortex because of the hemodynamic lag); first serum clip: brain arm preferred 0.90 / 0.90.
 
+**Brain-guided redesign of live sites (`brainsense/showcase/redesign.py`, `results/showcase/redesign/*/index.html`):** screenshot the real page → TRIBE cortex → `read_brain` directives → Muse rebuilds the first screen *keeping brand and copy* (it must list each directive ↔ concrete change; every claim is checked against the page's own text) → score again, 2 rounds, best kept. Before/after pages show the diagnosis, the directives, what changed and the per-round scores.
+
+| site | ui_score | brain-only | Muse judge | what the brain asked for → what changed |
+|---|---|---|---|---|
+| sweetspot.co.kr | 0.663 → 0.740 | 0.91 → 0.82 | 0.44 → 0.72 | no face/gaze cue → two expert faces looking at the CTA; reward signal with nothing to attach to → one benefit line (누적 8,700건 · A to Z) under the H1; no object silhouette → pop-up store box hero |
+| news.ycombinator.com | 0.475 → 0.558 | 0.75 → 0.41 | 0.28 → 0.69 | no object silhouette + dlPFC effort → 22 rows cut to 5 ranked cards, one nav level, terminal-window hero |
+| craigslist.org/about/sites | 0.486 → 0.656 | 0.66 → 0.61 | 0.33 → 0.75 | no silhouette + attention decays after 2 s → globe hero, benefit line, region cards + city ticker as the second discovery |
+
+Honest note: on Hacker News the photo-trained brain heads rate the dense original as "top 20 % aesthetic" and the redesign lower, while the judge goes the other way — the brain's *diagnosis* (which regions are silent) transfers to screenshots much better than its *score* does, which is why ui_score blends the two and why the pages show both numbers.
+
 ## OpenMuse integration (2026-11-03): the agent's own brain
 BrainSense is wired into OpenMuse's own agent loop, not a side tab:
 - **Server tool `brain_eval`** (`apps/server/src/engine/conversation.ts`): takes `artifact_id` of a photo/clip attached in chat (OpenMuse's file store now accepts images and video, sniffed by magic bytes) or `brain_item_id` from agent context; calls this server's `/analyze` + `/eval`; returns heads, percentiles, confidence, top cortical areas, the 1 Hz region series, the per-vertex cortex time series and a Korean summary. Muse Spark calls it on its own when the user asks "이거 어때?" / attaches an image.
