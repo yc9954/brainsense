@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Fraunces:opsz,ital,wght@9..144,0,900;9..144,1,900&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<title>VITAGLOW 비타민C 세럼 — 런칭 30%</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#17110B;font-family:"Noto Sans KR",system-ui,sans-serif;display:flex;align-items:center;justify-content:center;min-height:100vh;padding:18px;color:#1E130A}
+.stage{width:1280px;max-width:100%;height:800px;background:#FFFBF0;border-radius:28px;overflow:hidden;display:flex;flex-direction:column;position:relative;box-shadow:0 40px 100px rgba(0,0,0,.55)}
+/* IG top bar */
+.igbar{height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 28px;border-bottom:1px solid #EADFC8;background:#FFFBF0;z-index:5}
+.ig-left{display:flex;align-items:center;gap:12px}
+.avatar{width:36px;height:36px;border-radius:50%;background:conic-gradient(from 20deg,#FF4D00,#FFB800,#FF4D00);padding:2.5px}
+.avatar span{display:block;width:100%;height:100%;background:#1E130A;color:#FFD84D;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:"Archivo Black";font-size:15px}
+.ig-meta{line-height:1.2}
+.ig-meta b{font-size:15px}
+.ig-meta small{font-size:12.5px;color:#7A6E5D;display:flex;align-items:center;gap:6px}
+.dotlive{background:#1E130A;color:#fff;font-size:11px;font-weight:800;padding:2px 8px;border-radius:20px;letter-spacing:.02em}
+.ig-right{display:flex;align-items:center;gap:14px;color:#1E130A;font-size:20px}
+.pill-count{background:#FFF0D1;border:1px solid #1E130A;border-radius:20px;padding:6px 12px;font-size:13px;font-weight:800;display:flex;gap:8px;align-items:center}
+/* main */
+.main{flex:1;display:grid;grid-template-columns:544px 1fr;min-height:0}
+/* left copy */
+.copy{padding:34px 36px 24px 40px;display:flex;flex-direction:column;justify-content:center;position:relative;background:#FFFBF0}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:900;letter-spacing:.14em}
+.eyebrow i{width:32px;height:2px;background:#FF4D00;display:block}
+.tag-new{background:#FF4D00;color:#fff;padding:4px 10px;border-radius:6px;letter-spacing:.08em}
+h1{font-size:58px;line-height:1.02;letter-spacing:-.03em;font-weight:900;margin:14px 0 12px;word-break:keep-all}
+h1 em{font-family:"Fraunces",serif;font-style:italic;font-weight:900;background:linear-gradient(92deg,#FF4D00 10%,#FF8A00 60%,#C76A00 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{font-size:17px;line-height:1.6;color:#4E4436}
+.sub b{color:#1E130A}
+.price-row{display:flex;align-items:end;gap:12px;margin:18px 0 16px}
+.price-now{font-family:"Archivo Black";font-size:44px;letter-spacing:-.02em}
+.price-old{font-size:18px;color:#9A8E79;text-decoration:line-through;margin-bottom:8px}
+.price-off{background:#1E130A;color:#D8FF3E;font-weight:900;font-size:14px;padding:6px 10px;border-radius:8px;margin-bottom:10px}
+.cta-row{display:flex;gap:10px;margin-top:2px}
+.btn-primary{flex:1;background:#1A120B;color:#fff;border:0;border-radius:16px;padding:18px 20px;font-size:19px;font-weight:900;display:flex;align-items:center;justify-content:center;gap:10px;cursor:pointer;box-shadow:0 12px 24px rgba(26,18,11,.25);transition:.2s}
+.btn-primary:hover{transform:translateY(-2px);background:#FF4D00;box-shadow:0 16px 30px rgba(255,77,0,.35)}
+.btn-sub{border:2px solid #1A120B;background:#fff;border-radius:16px;padding:16px 18px;font-weight:800;font-size:16px;cursor:pointer}
+.trust{display:flex;align-items:center;gap:10px;margin-top:14px;font-size:14.5px;color:#5B4F3E}
+.stars{color:#FF4D00;letter-spacing:2px;font-size:15px}
+/* clinical mini card = second discovery */
+.clinical{margin-top:16px;background:#1E130A;color:#FFF6E9;border-radius:16px;padding:14px 16px;display:flex;gap:14px;align-items:center}
+.clinical .bars{display:flex;align-items:end;gap:5px;height:48px}
+.clinical .bars span{width:18px;border-radius:6px 6px 3px 3px}
+.clinical p{font-size:13.5px;line-height:1.5}
+.clinical p b{color:#D8FF3E}
+/* right visual */
+.visual{position:relative;overflow:hidden;background:radial-gradient(520px 520px at 55% 38%,#FFD84D 0%,#FF8A00 38%,#FF4D00 65%,#C93300 100%);display:flex;align-items:center;justify-content:center}
+.visual:before{content:"VITA";position:absolute;font-family:"Archivo Black";font-size:210px;color:rgba(255,255,255,.14);letter-spacing:-.04em;top:36px;left:18px;transform:rotate(-6deg)}
+.visual:after{content:"";position:absolute;inset:-20%;background:linear-gradient(115deg,transparent 42%,rgba(255,255,255,.35) 50%,transparent 58%);transform:translateX(-60%);animation:shine 4.2s ease-in-out infinite}
+@keyframes shine{0%{transform:translateX(-60%)}55%,100%{transform:translateX(60%)}}
+.diag{position:absolute;width:150%;height:98px;background:#FFFBF0;transform:rotate(-12deg);top:118px;left:-25%;display:flex;align-items:center;overflow:hidden;box-shadow:0 8px 0 #1E130A}
+.diag div{white-space:nowrap;font-weight:900;font-size:18px;letter-spacing:.12em;animation:marq2 12s linear infinite}
+@keyframes marq2{to{transform:translateX(-50%)}}
+.halo{position:absolute;width:560px;height:560px;background:radial-gradient(circle,rgba(255,255,255,.85) 0%,rgba(255,255,255,0) 62%);top:140px}
+.floor{position:absolute;bottom:92px;width:520px;height:56px;background:radial-gradient(ellipse at center,rgba(0,0,0,.38),transparent 70%)}
+.bottle-wrap{position:relative;z-index:2;animation:float 3.4s ease-in-out infinite;filter:drop-shadow(0 30px 30px rgba(60,10,0,.35))}
+@keyframes float{0%,100%{transform:translateY(0) rotate(-1.5deg)}50%{transform:translateY(-14px) rotate(1.2deg)}}
+/* orange slice */
+.slice{position:absolute;left:62px;bottom:132px;width:172px;height:172px;border-radius:50%;background:radial-gradient(circle at 50% 50%,#FFF3C4 0 18%,#FFB800 19% 32%,#FF7A00 33% 100%);border:10px solid #FFE9A8;z-index:2;box-shadow:0 18px 30px rgba(0,0,0,.25);animation:spinBob 6s ease-in-out infinite}
+.slice:before{content:"";position:absolute;inset:18px;border-radius:50%;background:repeating-conic-gradient(#FFE9A8 0 12deg,#FF8A00 12deg 14deg);opacity:.95}
+.slice:after{content:"";position:absolute;inset:62px;background:#FFF6D6;border-radius:50%}
+@keyframes spinBob{0%,100%{transform:rotate(-12deg) translateY(0)}50%{transform:rotate(10deg) translateY(-12px)}}
+.drops{position:absolute;z-index:3}
+.d1{right:120px;top:200px;animation:drop 2.8s ease-in-out infinite}
+.d2{left:160px;top:300px;animation:drop 3.6s .6s ease-in-out infinite}
+@keyframes drop{0%,100%{transform:translateY(0)}50%{transform:translateY(-16px)}}
+/* 30% badge */
+.badge{position:absolute;top:74px;right:44px;width:148px;height:148px;z-index:4}
+.badge .disc{position:absolute;inset:0;background:#D8FF3E;border:3px solid #1A120B;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:6px 6px 0 #1A120B}
+.badge svg.ring{position:absolute;inset:-10px;animation:spin 9s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.badge small{font-size:11px;font-weight:900;letter-spacing:.12em;background:#1A120B;color:#D8FF3E;padding:3px 8px;border-radius:20px}
+.badge strong{font-family:"Archivo Black";font-size:42px;line-height:1}
+.badge span{font-size:12px;font-weight:800}
+/* bottom ticker */
+.ticker{height:64px;background:#1A120B;color:#FFF6E9;display:flex;align-items:center;overflow:hidden;gap:0}
+.ticker div{white-space:nowrap;font-size:15px;font-weight:700;letter-spacing:.02em;animation:marq2 18s linear infinite;padding-right:40px}
+.ticker b{color:#D8FF3E}
+@media(max-width:900px){.stage{height:auto}.main{grid-template-columns:1fr}.visual{min-height:560px}}
+</style>
+</head>
+<body>
+<div class="stage" role="main" aria-label="비타민C 세럼 인스타그램 광고">
+<div class="igbar">
+<div class="ig-left"><div class="avatar"><span>V</span></div><div class="ig-meta"><b>vitaglow.kr</b><small>Sponsored · 피부 광채 랩 <span class="dotlive">● 런칭 D-3</span></small></div></div>
+<div class="ig-right"><div class="pill-count">⏳ 런칭특가 종료까지 <b id="timer" style="font-variant-numeric:tabular-nums">47:22:10</b></div><span>♡</span><span>✈</span><span>···</span></div>
+</div>
+<div class="main">
+<section class="copy">
+<div class="eyebrow"><i></i> NEW · PURE VITAMIN C 15% <span class="tag-new">런칭 30%</span></div>
+<h1>7일 만에 깨우는<br><em>유리알 광채</em> 한 병.</h1>
+<p class="sub">순수 비타민C 15% + 비타민E + 5중 히알루론산. <b>칙칙함·기미·모공</b>까지 — 아침 3방울로 피부 속부터 환해지는 런칭 신상 세럼.</p>
+<div class="price-row"><div class="price-now">26,600원</div><div class="price-old">38,000원</div><div class="price-off">30% OFF + 무료배송</div></div>
+<div class="cta-row"><button class="btn-primary" onclick="this.textContent='✓ 장바구니에 담았어요!'">지금 구매 🛒 →</button><button class="btn-sub">🎁 선물하기</button></div>
+<div class="trust"><span class="stars">★★★★★</span><span><b>4.9</b> (12,438개 리뷰) · 피부과 테스트 완료 · 비건·저자극</span></div>
+<div class="clinical"><div class="bars"><span style="height:18px;background:#5A4A3A"></span><span style="height:26px;background:#8A735E"></span><span style="height:34px;background:#FFB800"></span><span style="height:48px;background:#D8FF3E"></span></div><p><b>DAY 7 인체적용시험</b> 멜라닌 23%↓ · 수분광 41%↑<br>칙칙한 피부도 다시 빛나게 — 두 번째 발견!</p></div>
+</section>
+<section class="visual" id="visual">
+<div class="diag"><div>✦ LAUNCH 30% ✦ 무료배송 ✦ 7일 광채 챌린지 ✦ LAUNCH 30% ✦ 무료배송 ✦ 7일 광채 챌린지 ✦ LAUNCH 30% ✦ 무료배송 ✦ 7일 광채 챌린지&nbsp;</div></div>
+<div class="halo"></div>
+<div class="badge" aria-label="런칭 30퍼센트 할인"><svg class="ring" viewBox="0 0 168 168"><defs><path id="c" d="M84,84 m-72,0 a72,72 0 1,1 144,0 a72,72 0 1,1 -144,0"/></defs><text font-size="13.5" font-weight="900" letter-spacing="3.5" fill="#1A120B"><textPath href="#c">LAUNCH SALE • 30% OFF • VITAGLOW • </textPath></text></svg><div class="disc"><small>런칭특가</small><strong>30%</strong><span>~11.9까지</span></div></div>
+<div class="slice" aria-hidden="true"></div>
+<svg class="drops d1" width="54" height="72" viewBox="0 0 54 72"><path d="M27 2 C27 2 4 32 4 46 A23 23 0 0 0 50 46 C50 32 27 2 27 2Z" fill="#FFF6D6" stroke="#1A120B" stroke-width="3"/><circle cx="19" cy="48" r="5" fill="#FFB800"/></svg>
+<svg class="drops d2" width="36" height="48" viewBox="0 0 54 72"><path d="M27 2 C27 2 4 32 4 46 A23 23 0 0 0 50 46 C50 32 27 2 27 2Z" fill="#D8FF3E" stroke="#1A120B" stroke-width="4"/></svg>
+<div class="bottle-wrap">
+<svg width="300" height="480" viewBox="0 0 300 480" role="img" aria-label="비타글로우 비타민C 세럼 병">
+<ellipse cx="150" cy="452" rx="92" ry="16" fill="rgba(0,0,0,.28)"/>
+<!-- dropper cap -->
+<rect x="108" y="18" width="84" height="88" rx="14" fill="#1A120B"/><g stroke="#3A2E22" stroke-width="3" opacity=".9"><line x1="122" y1="30" x2="122" y2="94"/><line x1="136" y1="30" x2="136" y2="94"/><line x1="150" y1="30" x2="150" y2="94"/><line x1="164" y1="30" x2="164" y2="94"/><line x1="178" y1="30" x2="178" y2="94"/></g>
+<rect x="132" y="106" width="36" height="22" fill="#1A120B"/>
+<!-- glass neck -->
+<path d="M105 128 L195 128 L188 162 L112 162 Z" fill="#FFE9A8" stroke="#1A120B" stroke-width="5" stroke-linejoin="round"/>
+<!-- body -->
+<rect x="72" y="162" width="156" height="272" rx="28" fill="#FFD84D" stroke="#1A120B" stroke-width="6"/>
+<rect x="86" y="190" width="128" height="210" rx="18" fill="url(#liq)"/>
+<defs><linearGradient id="liq" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FF8A00"/><stop offset="1" stop-color="#FF4D00"/></linearGradient></defs>
+<!-- highlight -->
+<rect x="94" y="198" width="16" height="180" rx="8" fill="white" opacity=".65"/>
+<!-- label -->
+<rect x="72" y="238" width="156" height="128" fill="#FFFBF0" stroke="#1A120B" stroke-width="5"/>
+<text x="150" y="266" text-anchor="middle" font-family="Archivo Black" font-size="22" fill="#1A120B">VITA C</text>
+<text x="150" y="286" text-anchor="middle" font-size="12" font-weight="900" letter-spacing="2" fill="#FF4D00">15% SERUM</text>
+<line x1="96" y1="298" x2="204" y2="298" stroke="#1A120B" stroke-width="2"/>
+<text x="150" y="318" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1A120B">7-DAY GLOW • 30ml</text>
+<text x="150" y="340" text-anchor="middle" font-size="11" fill="#7A6E5D">미백 + 주름 이중기능성</text>
+<!-- C drop icon -->
+<circle cx="150" cy="406" r="14" fill="#1A120B"/><text x="150" y="411" text-anchor="middle" font-size="14" font-weight="900" fill="#D8FF3E">C</text>
+</svg>
+</div>
+<div class="floor"></div>
+<div style="position:absolute;bottom:18px;right:22px;z-index:4;background:rgba(26,18,11,.85);color:#fff;border-radius:12px;padding:10px 14px;font-size:13px;display:flex;gap:10px;align-items:center"><span style="background:#D8FF3E;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center">◐</span> BEFORE → AFTER 7일 · 실제 후기 2,314개 ↗</div>
+</section>
+</div>
+<div class="ticker"><div>✦ <b>런칭 30% ~11.9까지</b> ✦ 첫구매 3,000P 적립 ✦ 오늘출발 무료배송 ✦ 7일 사용 후 불만족시 100% 환불 ✦ <b>런칭 30% ~11.9까지</b> ✦ 첫구매 3,000P 적립 ✦ 오늘출발 무료배송 ✦ 7일 사용 후 불만족시 100% 환불 ✦&nbsp;</div></div>
+</div>
+<script>
+let s=47*3600+22*60+10;
+setInterval(()=>{s=Math.max(0,s-1);let h=String(Math.floor(s/3600)).padStart(2,'0'),m=String(Math.floor(s%3600/60)).padStart(2,'0'),x=String(s%60).padStart(2,'0');document.getElementById('timer').textContent=h+':'+m+':'+x},1000);
+const v=document.getElementById('visual');
+v.addEventListener('mousemove',e=>{const r=v.getBoundingClientRect();const dx=(e.clientX-r.left)/r.width-.5;document.querySelector('.bottle-wrap').style.transform=`perspective(800px) rotateY(${dx*14}deg)`});
+v.addEventListener('mouseleave',()=>document.querySelector('.bottle-wrap').style.transform='');
+</script>
+</body>
+</html>

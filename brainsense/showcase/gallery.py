@@ -42,3 +42,30 @@ h1{{font-weight:600;font-size:22px}} h2{{font-size:16px;font-weight:600;margin:4
     out = run_dir / "index.html"
     out.write_text("\n".join(parts), encoding="utf-8")
     return out
+
+
+def build_index(out_dir: Path) -> Path:
+    """results/showcase/index.html: one page linking every run's gallery with its headline numbers."""
+    from .report import summarize
+    runs = sorted((p for p in out_dir.iterdir() if (p / "summary.json").exists()), key=lambda p: p.stat().st_mtime, reverse=True)
+    parts = ["""<!doctype html><html lang=ko><head><meta charset=utf-8><title>BrainSense showcase runs</title>
+<style>body{font-family:-apple-system,Pretendard,sans-serif;background:#0b0b0f;color:#eee;margin:0;padding:32px}
+h1{font-weight:600;font-size:22px} table{border-collapse:collapse;font-size:13px;margin-top:16px} td,th{padding:8px 12px;border-bottom:1px solid #23232b;text-align:left}
+a{color:#ffb38a} .k{color:#8b8b96}</style></head><body><h1>BrainSense showcase — runs</h1>
+<p class=k>brain_loop = TRIBE v2 예측 피질 → 전문가 비평 → Muse 수정. 승률은 순서를 바꿔 두 번 묻는 블라인드 판정 기준.</p>
+<table><tr><th>run</th><th>briefs</th><th>vs Muse one-shot</th><th>vs Muse self-loop</th><th>brain score (oneshot / muse / brain)</th></tr>"""]
+    for r in runs:
+        try:
+            s = summarize([r])
+        except Exception:
+            continue
+        pw = s["pairwise"]
+        b = s["brain_score_by_arm"]
+        f = lambda k: f"{pw[k]['win_rate']:.0%} (P {pw[k]['mean_p']:.2f}, n={pw[k]['n']})" if k in pw else "—"   # noqa: E731
+        parts.append(f"<tr><td><a href='{r.name}/index.html'>{html.escape(r.name)}</a></td><td>{len(s['rows'])}</td>"
+                     f"<td>{f('brain_loop_vs_oneshot')}</td><td>{f('brain_loop_vs_muse_loop')}</td>"
+                     f"<td>{b.get('oneshot', float('nan')):.3f} / {b.get('muse_loop', float('nan')):.3f} / {b.get('brain_loop', float('nan')):.3f}</td></tr>")
+    parts.append("</table></body></html>")
+    out = out_dir / "index.html"
+    out.write_text("\n".join(parts), encoding="utf-8")
+    return out

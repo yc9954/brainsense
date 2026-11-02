@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1280">
+<title>Meetly AI — 요금제 | AI 회의록</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800&family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+ --bg:#F4F5FB; --ink:#131432; --muted:#5E607A;
+ --line:#E4E6F0; --card:#FFFFFF;
+ --navy:#17183A; --lime:#D9FF3D; --lime2:#C4F000;
+ --violet:#5B50FF;
+}
+body{
+ font-family:'Noto Sans KR','Inter',system-ui,sans-serif;
+ background:var(--bg); color:var(--ink);
+ font-size:16px; line-height:1.5;
+ -webkit-font-smoothing:antialiased;
+ min-height:100vh;
+ overflow-x:hidden;
+}
+body::before{
+ content:"";position:fixed;inset:0;pointer-events:none;
+ background:
+  radial-gradient(560px 380px at 15% 0%, #DDD8FF 0%, transparent 65%),
+  radial-gradient(620px 420px at 88% 8%, #FFE9C7 0%, transparent 62%),
+  radial-gradient(800px 400px at 50% 115%, #D2E4FF 0%, transparent 60%);
+ opacity:.9;
+}
+.bg-grid{
+ position:fixed;inset:0;pointer-events:none;opacity:.5;
+ background-image:linear-gradient(#13143208 1px,transparent 1px),linear-gradient(90deg,#13143208 1px,transparent 1px);
+ background-size:44px 44px;
+ mask-image:radial-gradient(760px 420px at 50% 0%, black 30%, transparent 75%);
+}
+.wrap{max-width:1280px;margin:0 auto;padding:0 40px;position:relative;z-index:1}
+/* NAV */
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:900;font-size:19px;letter-spacing:-.5px}
+.mark{width:32px;height:32px;border-radius:10px;background:linear-gradient(135deg,#5B50FF,#1A1B4D);display:grid;place-items:center;color:#fff;font-size:18px;box-shadow:0 6px 16px rgba(91,80,255,.35)}
+.links{display:flex;gap:28px;font-size:15px;font-weight:500;color:#3A3C5A}
+.links a{text-decoration:none;color:inherit}
+.links a.on{color:var(--ink);font-weight:700;border-bottom:2px solid var(--ink);padding-bottom:2px}
+.nav-cta{display:flex;gap:10px;align-items:center}
+.login{font-size:15px;font-weight:600;color:var(--ink);text-decoration:none}
+.btn-start{background:var(--ink);color:#fff;border:0;border-radius:999px;padding:10px 18px;font-weight:700;font-size:14.5px;cursor:pointer}
+/* HERO centered for clarity */
+.hero{text-align:center;padding:18px 0 18px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-size:13.5px;font-weight:700;box-shadow:0 4px 14px rgba(19,20,50,.06)}
+.dot{width:8px;height:8px;border-radius:50%;background:#00C389;box-shadow:0 0 0 4px #00C38922}
+.hero h1{font-size:46px;line-height:1.15;letter-spacing:-1.5px;font-weight:900;margin:14px 0 10px}
+.hero h1 span{background:linear-gradient(90deg,#5B50FF,#9A4DFF);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p.sub{color:var(--muted);font-size:17px;font-weight:500}
+/* toggle */
+.toggle{display:inline-flex;align-items:center;gap:0;margin-top:14px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:4px;position:relative}
+.toggle button{border:0;background:transparent;padding:8px 18px;border-radius:999px;font-size:14.5px;font-weight:700;color:var(--muted);cursor:pointer;font-family:inherit}
+.toggle button.active{background:var(--ink);color:#fff}
+.save{font-size:12.5px;font-weight:800;color:#0A7A4B;background:#D8F5E4;border-radius:999px;padding:3px 8px;margin-left:6px}
+/* PRICING */
+.pricing{display:grid;grid-template-columns:1fr 1.08fr 1fr;gap:18px;max-width:1080px;margin:8px auto 0;align-items:stretch}
+.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:26px 26px 22px;position:relative;box-shadow:0 10px 30px rgba(19,20,50,.06)}
+.card h3{font-size:16px;font-weight:800;letter-spacing:-.3px;display:flex;align-items:center;gap:8px}
+.card .desc{font-size:14px;color:var(--muted);margin-top:4px;min-height:21px}
+.price-row{margin:14px 0 6px;display:flex;align-items:baseline;gap:6px}
+.price{font-family:'Inter','Noto Sans KR',sans-serif;font-size:34px;font-weight:800;letter-spacing:-1px}
+.per{font-size:14px;color:var(--muted);font-weight:500}
+.vat{font-size:12.5px;color:#9A9DB4}
+.feat{list-style:none;margin:14px 0 18px;display:grid;gap:10px;border-top:1px solid #EEF0F6;padding-top:16px}
+.feat li{display:flex;gap:9px;align-items:flex-start;font-size:14.8px;font-weight:500;line-height:1.45}
+.tick{flex:0 0 20px;width:20px;height:20px;border-radius:50%;display:grid;place-items:center;font-size:12px;font-weight:900;margin-top:1px}
+.white .tick{background:#EEF0FF;color:#4A44FF}
+.btn{width:100%;border-radius:12px;padding:13px;font-size:15.5px;font-weight:800;cursor:pointer;font-family:inherit;border:1.5px solid var(--ink);background:#fff;color:var(--ink);transition:.15s}
+.btn:hover{background:#F0F0F7}
+/* PRO focal */
+.pro{background:linear-gradient(180deg,#232458 0%,#141533 62%,#10112A 100%);border:1px solid #3A3D8A;color:#fff;box-shadow:0 24px 60px rgba(23,24,58,.45),0 0 0 6px #D9FF3D33;padding:30px 28px 24px;transform:translateY(-12px)}
+.pro::after{content:"";position:absolute;inset:-1px;border-radius:22px;padding:1px;background:linear-gradient(135deg,#D9FF3D88,#5B50FF88,#D9FF3D88);-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+.best{position:absolute;top:-15px;left:50%;transform:translateX(-50%);background:var(--lime);color:#131432;font-size:13px;font-weight:900;padding:6px 14px;border-radius:999px;display:flex;gap:6px;align-items:center;box-shadow:0 8px 20px rgba(217,255,61,.5);white-space:nowrap}
+.pro h3{color:#fff}
+.pro .desc{color:#B9BBD6}
+.pro .price{color:var(--lime);font-size:40px}
+.pro .per{color:#B9BBD6}
+.pro .vat{color:#7E81A3}
+.pro .feat{border-top-color:#2E3060}
+.pro .feat li{color:#EDEEFF}
+.pro .tick{background:var(--lime);color:#131432}
+.btn-pro{background:var(--lime);border-color:var(--lime);color:#131432;font-size:16px;padding:14px;box-shadow:0 10px 24px rgba(217,255,61,.35)}
+.btn-pro:hover{background:var(--lime2)}
+.pro-note{text-align:center;font-size:12.8px;color:#A8ABD0;margin-top:10px}
+/* TRUST */
+.trust{max-width:1080px;margin:14px auto 0;background:#fff;border:1px solid var(--line);border-radius:16px;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logos{display:flex;align-items:center;gap:20px}
+.logos small{font-size:12.5px;font-weight:700;color:#9A9DB4;white-space:nowrap}
+.logo-set{display:flex;gap:18px;align-items:center;color:#B0B3C7;font-weight:800;font-size:15px;letter-spacing:-.3px}
+.logo-set span:nth-child(1){font-family:'Inter';font-weight:800}
+.logo-set span:nth-child(2){font-weight:900}
+.guarantee{display:flex;align-items:center;gap:10px;font-size:13.8px;font-weight:600;white-space:nowrap}
+.shield{width:30px;height:30px;border-radius:50%;background:#E6F8ED;display:grid;place-items:center;font-size:16px}
+.guarantee strong{font-weight:800}
+@media(max-width:900px){.pricing{grid-template-columns:1fr}.pro{transform:none}.hero h1{font-size:34px}.trust{flex-direction:column}}
+</style>
+</head>
+<body>
+<div class="bg-grid"></div>
+<div class="wrap">
+<header class="nav">
+<div class="brand"><div class="mark">◍</div> Meetly AI</div>
+<nav class="links"><a href="#">기능</a><a href="#" class="on">요금제</a><a href="#">보안</a><a href="#">고객사례</a></nav>
+<div class="nav-cta"><a class="login" href="#">로그인</a><button class="btn-start">무료로 시작</button></div>
+</header>
+
+<section class="hero">
+<div class="eyebrow"><span class="dot"></span> 3,200+ 팀이 매일 쓰는 AI 회의록 &nbsp;·&nbsp; ★ 4.9/5</div>
+<h1>회의는 짧게, 기록은 <span>완벽하게</span></h1>
+<p class="sub">필요한 만큼만 시작하세요. Pro는 첫 달 무료, 카드 등록 없이 체험할 수 있어요.</p>
+<div class="toggle" role="tablist" aria-label="결제 주기">
+<button id="bM" class="active" onclick="setBilling('m')">월간</button>
+<button id="bY" onclick="setBilling('y')">연간 <span class="save">−20%</span></button>
+</div>
+</section>
+
+<section class="pricing">
+<!-- FREE -->
+<div class="card white">
+<h3>Free</h3>
+<div class="desc">가볍게 체험하는 개인용</div>
+<div class="price-row"><span class="price">0원</span><span class="per">/ forever</span></div>
+<div class="vat">월 300분 · 카드 등록 불필요</div>
+<ul class="feat">
+<li><span class="tick">✓</span> AI 자동 요약 + 액션아이템 추출</li>
+<li><span class="tick">✓</span> Zoom · Meet · Teams 연동</li>
+<li><span class="tick">✓</span> 한국어 화자 분리 (2인까지)</li>
+<li><span class="tick">✓</span> 7일 녹음 보관</li>
+</ul>
+<button class="btn">무료로 시작하기</button>
+</div>
+
+<!-- PRO focal -->
+<div class="card pro">
+<div class="best">⚡ 가장 많이 선택 · PRO</div>
+<h3>Pro <span style="font-size:12px;font-weight:700;background:#ffffff1f;padding:3px 8px;border-radius:999px;color:#fff">1인 · 무제한 요약</span></h3>
+<div class="desc">회의 많은 프로페셔널을 위한 플랜</div>
+<div class="price-row"><span class="price" id="proPrice">12,000원</span><span class="per">/ 월</span></div>
+<div class="vat" id="proVat">월간 결제 · VAT 별도 · 언제든 해지</div>
+<ul class="feat">
+<li><span class="tick">✓</span> <b>월 2,000분 · 무제한 AI 요약·검색</b></li>
+<li><span class="tick">✓</span> 10인 화자분리 + 99.2% 한국어 인식</li>
+<li><span class="tick">✓</span> Notion · Slack 자동 전송</li>
+<li><span class="tick">✓</span> 무제한 보관 + 맞춤 템플릿</li>
+</ul>
+<button class="btn btn-pro">Pro 14일 무료 체험 →</button>
+<div class="pro-note">첫 결제 전 미리 알림 · 해지 1클릭</div>
+</div>
+
+<!-- TEAM -->
+<div class="card white">
+<h3>Team</h3>
+<div class="desc">팀 전체가 함께 쓰는 워크스페이스</div>
+<div class="price-row"><span class="price" id="teamPrice">35,000원</span><span class="per">/ 월</span></div>
+<div class="vat">5인 포함 · 인당 추가 7,000원</div>
+<ul class="feat">
+<li><span class="tick">✓</span> Pro 모든 기능 + 공유 드라이브</li>
+<li><span class="tick">✓</span> 권한 관리 · SSO · 감사 로그</li>
+<li><span class="tick">✓</span> ISMS-P · SOC2 · 데이터 암호화</li>
+<li><span class="tick">✓</span> 전담 매니저 · 도입 교육 지원</li>
+</ul>
+<button class="btn">팀 상담 받기</button>
+</div>
+</section>
+
+<div class="trust">
+<div class="logos"><small>TRUSTED BY LEADING TEAMS</small>
+<div class="logo-set"><span>toss</span><span>당근</span><span style="font-weight:500">kakao ent.</span><span>MUSINSA</span><span>YANOLJA</span></div>
+</div>
+<div class="guarantee"><div class="shield">🛡️</div><div><strong>14일 100% 환불 보장</strong> · 이유 묻지 않음 · 평균 응답 8분 고객지원</div></div>
+</div>
+</div>
+<script>
+function setBilling(t){
+ const m=document.getElementById('bM'), y=document.getElementById('bY');
+ const pp=document.getElementById('proPrice'), tp=document.getElementById('teamPrice'), pv=document.getElementById('proVat');
+ if(t==='y'){m.classList.remove('active');y.classList.add('active');pp.textContent='9,600원';tp.textContent='28,000원';pv.textContent='연간 결제 · 월 환산 · VAT 별도';}
+ else{y.classList.remove('active');m.classList.add('active');pp.textContent='12,000원';tp.textContent='35,000원';pv.textContent='월간 결제 · VAT 별도 · 언제든 해지';}
+}
+</script>
+</body>
+</html>

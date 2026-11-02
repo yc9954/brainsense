@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>스윗스팟 x 로컬 로스터리 — 성수 3일 팝업</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&family=Noto+Serif+KR:wght@700;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--cream:#FFF6E8;--paper:#FFFDF6;--cocoa:#1C1008;--cocoa2:#2E1A0C;--tang:#FF4E1A;--butter:#FFC83D;--line:#EADCC5;--muted:#6B5A4A}
+body{font-family:"Noto Sans KR",system-ui,sans-serif;background:var(--cream);color:var(--cocoa);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.topbar{background:var(--cocoa);color:#FFEFD6;font-size:14px;font-weight:700;letter-spacing:.02em;text-align:center;padding:10px 16px}
+.topbar b{color:var(--butter)}
+.wrap{max-width:1280px;margin:0 auto;padding:0 28px}
+header.nav{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+.logo{display:flex;align-items:center;gap:12px;font-weight:900;font-size:18px;letter-spacing:-.02em}
+.logo-mark{width:38px;height:38px;border-radius:50%;background:conic-gradient(from 20deg,var(--tang),#FF8A3D,var(--butter),var(--tang));display:grid;place-items:center;color:#1C1008;font-size:20px;border:2px solid #1C1008;box-shadow:3px 3px 0 #1C1008}
+.logo small{display:block;font-size:11px;font-weight:700;letter-spacing:.18em;color:var(--tang)}
+.nav-links{display:flex;gap:28px;font-size:15px;font-weight:700;color:#3D2A1A}
+.nav-cta{background:var(--cocoa);color:#FFF6E8;border-radius:999px;padding:11px 20px;font-weight:800;font-size:15px;border:2px solid var(--cocoa);box-shadow:3px 3px 0 var(--tang)}
+.hero{display:grid;grid-template-columns:1.02fr .98fr;gap:26px;align-items:stretch;padding:8px 0 22px;min-height:664px}
+.copy{background:var(--paper);border:2px solid var(--cocoa);border-radius:28px;padding:36px 38px 28px;position:relative;overflow:hidden;box-shadow:8px 8px 0 var(--cocoa)}
+.copy:before{content:"";position:absolute;right:-70px;top:-70px;width:200px;height:200px;background:radial-gradient(circle,#FFE2B8 0 60%,transparent 61%);opacity:.9}
+.badge{display:inline-flex;align-items:center;gap:9px;background:#1C1008;color:#FFF0D6;border-radius:999px;padding:8px 14px;font-size:13.5px;font-weight:800;letter-spacing:.06em}
+.dot{width:9px;height:9px;border-radius:50%;background:#34D399;box-shadow:0 0 0 5px rgba(52,211,153,.25);animation:pulse 1.6s infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 8px rgba(52,211,153,.12)}}
+h1{font-size:54px;line-height:1.06;letter-spacing:-.04em;font-weight:900;margin:18px 0 12px}
+h1 em{font-family:"Noto Serif KR",serif;font-style:normal;font-weight:900;background:linear-gradient(transparent 62%,var(--butter) 62% 96%,transparent 96%);padding:0 4px}
+h1 .tang{color:var(--tang)}
+.sub{font-size:18px;color:#3E2D1E;line-height:1.65;max-width:480px}
+.sub strong{color:#1C1008}
+.info{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:20px 0 18px}
+.info-card{background:#FFF6E8;border:1.5px solid var(--cocoa);border-radius:18px;padding:14px 15px;display:flex;gap:12px;align-items:flex-start}
+.info-card .ic{width:40px;height:40px;border-radius:12px;background:#fff;border:1.5px solid var(--cocoa);display:grid;place-items:center;font-size:20px;flex-shrink:0}
+.info-card h3{font-size:12.5px;letter-spacing:.12em;color:#8A7560;font-weight:800}
+.info-card p{font-size:16px;font-weight:800;line-height:1.4;letter-spacing:-.01em}
+.info-card p span{font-weight:500;font-size:14px;color:var(--muted)}
+.cta-row{display:flex;gap:12px;align-items:center;margin-top:4px}
+.btn-primary{flex:1;background:var(--cocoa);color:#FFF6E8;border-radius:16px;padding:16px 18px;display:flex;align-items:center;justify-content:space-between;font-weight:900;font-size:18px;border:2px solid var(--cocoa);cursor:pointer}
+.btn-primary .arrow{width:38px;height:38px;border-radius:50%;background:var(--tang);display:grid;place-items:center;font-size:20px;color:#fff;flex-shrink:0}
+.btn-primary small{display:block;font-size:12px;font-weight:700;color:var(--butter);letter-spacing:.04em}
+.btn-sub{border:2px solid var(--cocoa);background:#fff;border-radius:16px;padding:14px 18px;font-weight:800;font-size:16px;white-space:nowrap}
+.meter{margin-top:14px;background:#FFF0D6;border:1.5px dashed #C9B08A;border-radius:14px;padding:11px 14px;display:flex;align-items:center;gap:12px;font-size:14px;font-weight:700}
+.bar{flex:1;height:10px;background:#fff;border:1px solid var(--cocoa);border-radius:99px;overflow:hidden}
+.bar i{display:block;width:87%;height:100%;background:repeating-linear-gradient(-45deg,var(--tang) 0 8px,#ff7a45 8px 16px)}
+.proof{display:flex;align-items:center;gap:12px;margin-top:14px}
+.avatars{display:flex}
+.avatars span{width:36px;height:36px;border-radius:50%;border:2px solid #fff;outline:2px solid var(--cocoa);margin-left:-10px;display:grid;place-items:center;font-size:20px}
+.avatars span:first-child{margin-left:0}
+.proof p{font-size:14.5px;font-weight:700}
+.stars{color:#E69A00;letter-spacing:2px;font-size:14px}
+/* VISUAL */
+.visual{position:relative;background:#1E0E05;border:2px solid #1C1008;border-radius:28px;overflow:hidden;box-shadow:8px 8px 0 #1C1008;min-height:640px;display:flex;align-items:center;justify-content:center}
+.halo{position:absolute;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#FF8A3D 0%,var(--tang) 38%,#7A2A0E 72%,transparent 73%);filter:saturate(1.1)}
+.halo:after{content:"";position:absolute;inset:46px;border-radius:50%;background:radial-gradient(circle at 50% 40%,#FFD9A8 0 18%,#FFB86B 19% 45%,transparent 46%);opacity:.9}
+.grain{position:absolute;inset:0;background:radial-gradient(rgba(255,255,255,.14) 1px,transparent 1.5px);background-size:18px 18px;opacity:.25;pointer-events:none}
+.tape{position:absolute;top:34px;left:-8%;width:116%;transform:rotate(-7deg);background:var(--butter);border-top:2px solid #1C1008;border-bottom:2px solid #1C1008;color:#1C1008;font-weight:900;font-size:14px;letter-spacing:.12em;white-space:nowrap;overflow:hidden;padding:9px 0;z-index:5}
+.tape-inner{display:inline-block;animation:slide 14s linear infinite}
+@keyframes slide{to{transform:translateX(-50%)}}
+.cup-wrap{position:relative;z-index:3;transform:rotate(-7deg);margin-top:38px;filter:drop-shadow(0 28px 28px rgba(0,0,0,.45))}
+.float{position:absolute;z-index:4;background:#FFFDF6;border:2px solid #1C1008;border-radius:16px;padding:10px 13px;font-size:14px;font-weight:800;box-shadow:4px 4px 0 #000;display:flex;gap:8px;align-items:center;animation:float 3.4s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-10px) rotate(-1deg)}}
+.f1{top:118px;left:28px}
+.f2{bottom:118px;right:26px;animation-delay:.7s}
+.f2 b{background:var(--tang);color:#fff;border-radius:8px;padding:2px 7px}
+.sticker{position:absolute;right:38px;top:96px;width:118px;height:118px;z-index:5;animation:spin 12s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.bean{position:absolute;font-size:28px;z-index:4;filter:drop-shadow(0 6px 8px rgba(0,0,0,.4));animation:float 4s ease-in-out infinite}
+.bottombar{position:absolute;left:0;right:0;bottom:0;background:#FFF6E8;border-top:2px solid #1C1008;display:flex;z-index:6}
+.bottombar div{flex:1;padding:12px 6px;text-align:center;font-size:13.5px;font-weight:800;border-right:1.5px solid #1C1008}
+.bottombar div:last-child{border:none;background:var(--cocoa);color:var(--butter)}
+.bottombar div small{display:block;font-size:11px;font-weight:700;letter-spacing:.12em;opacity:.7}
+@media(max-width:980px){.hero{grid-template-columns:1fr}.nav-links{display:none}h1{font-size:42px}.visual{min-height:520px}}
+:focus-visible{outline:4px solid var(--tang);outline-offset:3px}
+</style>
+</head>
+<body>
+<div class="topbar">🎉 사전예약 OPEN — <b>선착순 300명 한정 딸기 크림 텀블러</b> 증정 · 11월 14일(금) 낮 12시 마감</div>
+<div class="wrap">
+<header class="nav" aria-label="상단 내비게이션">
+<div class="logo"><div class="logo-mark">🍓</div><div>SWEET SPOT × 성수 로스터리<small>SEONGSU POP-UP 3DAYS</small></div></div>
+<nav class="nav-links" aria-label="메뉴"><a href="#">팝업 소개</a><a href="#">시그니처 메뉴</a><a href="#">한정 굿즈</a><a href="#">오시는 길</a></nav>
+<a class="nav-cta" href="#reserve">사전예약 하기 →</a>
+</header>
+<main class="hero">
+<!-- COPY SOLID PANEL -->
+<section class="copy" aria-label="팝업 안내">
+<span class="badge"><span class="dot"></span> 11.14 FRI — 11.16 SUN · 3일 한정 팝업</span>
+<h1>성수에서 만나는<br><em>가장 달콤한 주말</em><span class="tang">.</span></h1>
+<p class="sub"><strong>스윗스팟 디저트 × 성수 로컬 로스터리</strong>가 만났어요. 딸기 크림 라떼와 갓 구운 바스크 치즈케이크, 로스터리 투어까지 — <strong>3일만 열리는 작은 축제</strong>에 초대합니다.</p>
+<div class="info">
+<div class="info-card"><div class="ic">📅</div><div><h3>DATE · 시간</h3><p>11.14(금)–11.16(일)<br><span>11:00 – 20:00 · 입장은 19:30까지</span></p></div></div>
+<div class="info-card"><div class="ic">📍</div><div><h3>PLACE · 장소</h3><p>스윗스팟 성수점<br><span>연무장길 45 · 성수역 3번 5분</span></p></div></div>
+</div>
+<div class="cta-row" id="reserve">
+<a class="btn-primary" href="#" role="button"><span><small>사전예약 시 20% + 굿즈 증정</small>지금 사전예약하기</span><span class="arrow">↗</span></a>
+<a class="btn-sub" href="#">메뉴 보기</a>
+</div>
+<div class="meter" aria-live="polite"><span>🔥 금 타임 87% 마감</span><span class="bar"><i></i></span><span>잔여 42석</span></div>
+<div class="proof"><div class="avatars" aria-hidden="true"><span style="background:#FFD9C7">👩🏻</span><span style="background:#FFE79D">👩‍🦰</span><span style="background:#FFC2D6">🧒🏻</span><span style="background:#1C1008;color:#fff;font-size:13px;font-weight:900">+2k</span></div><p><span class="stars">★★★★★</span> 4.9 · 벌써 <u>2,347명</u>이 예약했어요</p></div>
+</section>
+<!-- HERO OBJECT -->
+<section class="visual" aria-label="시그니처 딸기 파르페 이미지">
+<div class="halo" aria-hidden="true"></div><div class="grain" aria-hidden="true"></div>
+<div class="tape" aria-hidden="true"><span class="tape-inner">SWEET WEEKEND IN SEONGSU ● STRAWBERRY CREAM LATTE ● FRESH BASQUE ● SWEET WEEKEND IN SEONGSU ● STRAWBERRY CREAM LATTE ● FRESH BASQUE ●&nbsp;</span></div>
+<div class="float f1">🍓 시그니처 <u>딸기 크림 라떼</u> ONLY HERE</div>
+<div class="float f2"><span>🎁 <b>선착순</b> 텀블러 굿즈</span></div>
+<svg class="sticker" viewBox="0 0 120 120" aria-hidden="true"><defs><path id="c" d="M60,60 m-42,0 a42,42 0 1,1 84,0 a42,42 0 1,1 -84,0"/></defs><circle cx="60" cy="60" r="58" fill="#FFF6E8" stroke="#1C1008" stroke-width="3"/><circle cx="60" cy="60" r="28" fill="#FF4E1A" stroke="#1C1008" stroke-width="3"/><text font-size="13" font-weight="900" letter-spacing="2.5" fill="#1C1008"><textPath href="#c">● 3 DAYS ONLY ● SEONGSU SWEET ●</textPath></text><text x="60" y="68" text-anchor="middle" font-size="22" font-weight="900" fill="#fff">20%</text></svg>
+<span class="bean" style="left:58px;top:220px">🫘</span><span class="bean" style="right:66px;top:250px;animation-delay:.9s">☕</span><span class="bean" style="left:96px;bottom:130px;animation-delay:1.4s">🍓</span>
+<div class="cup-wrap" role="img" aria-label="딸기 파르페 컵 일러스트">
+<svg width="340" height="470" viewBox="0 0 340 470" fill="none" xmlns="http://www.w3.org/2000/svg">
+<ellipse cx="170" cy="447" rx="108" ry="18" fill="#000" opacity=".35"/>
+<!-- straw -->
+<rect x="188" y="38" width="28" height="170" rx="10" transform="rotate(18 202 123)" fill="#FFC83D" stroke="#1C1008" stroke-width="5"/>
+<rect x="188" y="68" width="28" height="12" transform="rotate(18 202 123)" fill="#FF4E1A"/><rect x="188" y="96" width="28" height="12" transform="rotate(18 202 123)" fill="#FF4E1A"/><rect x="188" y="124" width="28" height="12" transform="rotate(18 202 123)" fill="#FF4E1A"/>
+<!-- cream swirl -->
+<path d="M95 200 C95 140 130 118 160 128 C150 105 175 88 198 102 C220 88 248 110 235 132 C262 128 278 155 252 192 L95 200Z" fill="#FFFDF6" stroke="#1C1008" stroke-width="6" stroke-linejoin="round"/>
+<!-- strawberries -->
+<g stroke="#1C1008" stroke-width="5" stroke-linejoin="round"><path d="M122 148 L98 118 L128 112 L150 130 Z" fill="#2FBF6B"/><ellipse cx="185" cy="125" rx="38" ry="42" fill="#FF2E4D"/><ellipse cx="128" cy="155" rx="32" ry="34" fill="#FF2E4D"/></g>
+<g fill="#FFE79D"><circle cx="175" cy="118" r="3.5"/><circle cx="190" cy="130" r="3.5"/><circle cx="178" cy="142" r="3.5"/><circle cx="120" cy="150" r="3"/><circle cx="134" cy="160" r="3"/></g>
+<path d="M205 98 C215 82 235 78 248 90 C258 78 276 84 274 100 C288 104 284 122 268 124 L210 118 Z" fill="#3ECF7A" stroke="#1C1008" stroke-width="5" stroke-linejoin="round"/>
+<!-- glass -->
+<path d="M72 200 L108 410 Q170 432 232 410 L268 200 Z" fill="#FFE9C9" stroke="#1C1008" stroke-width="7" stroke-linejoin="round"/>
+<path d="M80 255 L260 255 L250 300 L90 300 Z" fill="#FF2E4D" stroke="#1C1008" stroke-width="5"/>
+<path d="M90 300 L250 300 L238 360 L102 360 Z" fill="#FFFDF6" stroke="#1C1008" stroke-width="5"/>
+<path d="M102 360 L238 360 L232 392 Q170 410 108 392 Z" fill="#7A3B1A" stroke="#1C1008" stroke-width="5"/>
+<ellipse cx="170" cy="200" rx="98" ry="22" fill="#FFFDF6" stroke="#1C1008" stroke-width="7"/>
+<path d="M100 350 L110 260" stroke="#fff" stroke-width="10" stroke-linecap="round" opacity=".7"/>
+<circle cx="132" cy="278" r="9" fill="#fff"/><circle cx="202" cy="332" r="11" fill="#fff" opacity=".9"/>
+</svg>
+</div>
+<div class="bottombar"><div><small>DAY 1–3</small>11.14 — 11.16</div><div><small>LOCATION</small>성수 연무장길 45</div><div><small>RESERVE →</small>사전예약 20% 혜택</div></div>
+</section>
+</main>
+</div>
+</body>
+</html>

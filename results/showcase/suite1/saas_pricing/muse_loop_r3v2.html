@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MeetLog AI — 요금제</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+--paper:#FFFBF1;
+--ink:#15130E;
+--muted:#6B675C;
+--line:#E9E0CC;
+--card:#FFFFFF;
+--pro:#131511;
+--lime:#D8FF3E;
+--lime-d:#BFE800;
+--teal:#0E4B43;
+--orange:#FF5C28;
+}
+body{
+font-family:"IBM Plex Sans KR",system-ui,sans-serif;
+background:var(--paper);
+color:var(--ink);
+font-size:16px;
+line-height:1.6;
+-webkit-font-smoothing:antialiased;
+overflow-x:hidden;
+}
+body::before{
+content:"";position:fixed;inset:0;pointer-events:none;
+background:
+radial-gradient(520px 320px at 12% 8%, #FFE9B8 0%, transparent 70%),
+radial-gradient(600px 380px at 88% 12%, #D6E8D5 0%, transparent 65%),
+radial-gradient(700px 400px at 50% 110%, #FFE2D1 0%, transparent 60%);
+opacity:.9;
+}
+body::after{
+content:"";position:fixed;inset:0;pointer-events:none;opacity:.5;
+background-image:radial-gradient(#CFC5A8 1px, transparent 1px);
+background-size:22px 22px;
+mask-image:linear-gradient(to bottom, black, transparent 70%);
+opacity:.18;
+}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1200px;margin:0 auto;padding:0 28px;position:relative;z-index:1}
+/* NAV */
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:19px;letter-spacing:-.02em}
+.brand-mark{width:32px;height:32px;border-radius:10px;background:var(--ink);color:var(--lime);display:grid;place-items:center;font-size:18px}
+.brand small{font-weight:500;font-size:12px;background:var(--ink);color:#fff;border-radius:99px;padding:2px 8px;margin-left:2px;letter-spacing:0}
+.links{display:flex;gap:28px;font-size:15.5px;color:#3D3A32;font-weight:500}
+.links a.on{color:var(--ink);font-weight:700;border-bottom:2px solid var(--ink)}
+.nav-cta{display:flex;align-items:center;gap:12px}
+.login{font-size:15px;font-weight:600;color:#3D3A32}
+.btn-free{background:var(--ink);color:#fff;border-radius:99px;padding:10px 18px;font-weight:700;font-size:15px;border:1px solid var(--ink)}
+/* HERO */
+.hero{text-align:center;padding:18px 0 14px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:99px;padding:7px 14px;font-size:14px;font-weight:600;box-shadow:0 2px 0 var(--ink)}
+.eyebrow i{width:8px;height:8px;border-radius:50%;background:#1DB954;display:inline-block;box-shadow:0 0 0 4px #1DB95422}
+h1{font-size:46px;line-height:1.12;letter-spacing:-.035em;font-weight:700;margin:16px 0 10px}
+h1 span{position:relative;white-space:nowrap}
+h1 span::after{content:"";position:absolute;left:-4px;right:-4px;bottom:4px;height:14px;background:var(--lime);z-index:-1;border-radius:4px;transform:rotate(-1deg)}
+.sub{color:var(--muted);font-size:17px;font-weight:500}
+.sub strong{color:var(--ink)}
+.billing{display:flex;align-items:center;justify-content:center;gap:12px;margin:16px 0 18px}
+.switch{background:#fff;border:1px solid var(--ink);border-radius:99px;padding:4px;display:flex;gap:4px;box-shadow:0 2px 0 var(--ink)}
+.switch button{border:0;background:transparent;padding:8px 18px;border-radius:99px;font-family:inherit;font-weight:700;font-size:15px;cursor:pointer;color:#6B675C}
+.switch button.active{background:var(--ink);color:#fff}
+.save{font-size:13.5px;font-weight:700;background:var(--teal);color:#fff;border-radius:99px;padding:5px 10px}
+/* PLANS */
+.plans{display:grid;grid-template-columns:1fr 1.12fr 1fr;gap:18px;align-items:stretch}
+.card{background:var(--card);border:1.5px solid var(--ink);border-radius:22px;padding:24px 24px 22px;position:relative;box-shadow:0 3px 0 var(--ink);display:flex;flex-direction:column}
+.card-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+.plan-name{font-weight:700;font-size:17px;display:flex;align-items:center;gap:8px}
+.plan-icon{width:30px;height:30px;border-radius:9px;display:grid;place-items:center;font-size:16px}
+.free-ic{background:#F3EEDF}
+.team-ic{background:#E6EFE9}
+.plan-desc{color:var(--muted);font-size:15px;margin-bottom:12px}
+.price-row{display:flex;align-items:baseline;gap:6px;margin:2px 0 2px}
+.price{font-family:"Plus Jakarta Sans","IBM Plex Sans KR",sans-serif;font-size:36px;font-weight:800;letter-spacing:-.04em}
+.per{color:var(--muted);font-size:15px;font-weight:500}
+.year-note{font-size:13.5px;color:var(--teal);font-weight:700;min-height:20px}
+.feats{list-style:none;margin:12px 0 18px;display:grid;gap:10px;font-size:16px;font-weight:500}
+.feats li{display:flex;gap:10px;align-items:flex-start;line-height:1.45}
+.check{flex:0 0 22px;width:22px;height:22px;border-radius:50%;background:#EFF5E8;border:1px solid #CBD8B8;display:grid;place-items:center;font-size:13px;font-weight:800;margin-top:1px}
+.btn{display:block;text-align:center;border-radius:13px;padding:13px 16px;font-weight:700;font-size:16px;border:1.5px solid var(--ink);transition:.15s}
+.btn-ghost{background:#fff;color:var(--ink)}
+.btn-ghost:hover{background:#F7F2E3}
+.micro{font-size:13.5px;color:var(--muted);text-align:center;margin-top:9px}
+/* PRO */
+.card.pro{background:var(--pro);color:#F7F6F0;border-color:var(--pro);box-shadow:0 10px 0 #0A0A0A, 0 24px 60px rgba(0,0,0,.28);transform:translateY(-12px);overflow:hidden}
+.card.pro::before{content:"";position:absolute;inset:-1px;border:2px solid var(--lime);border-radius:22px;pointer-events:none}
+.card.pro::after{content:"";position:absolute;width:420px;height:220px;left:50%;top:-110px;transform:translateX(-50%);background:radial-gradient(closest-side, #D8FF3E55, transparent);pointer-events:none}
+.pop{position:absolute;top:14px;left:50%;transform:translateX(-50%);background:var(--lime);color:#131511;font-size:13px;font-weight:800;letter-spacing:.02em;border-radius:99px;padding:6px 14px;white-space:nowrap;z-index:2}
+.card.pro .plan-name{margin-top:26px;color:#fff}
+.card.pro .plan-desc{color:#B9B8AE}
+.card.pro .per{color:#B9B8AE}
+.card.pro .year-note{color:var(--lime)}
+.card.pro .feats li{color:#EDECE4}
+.card.pro .check{background:var(--lime);border-color:var(--lime);color:#111}
+.pro-ic{background:var(--lime)}
+.btn-lime{background:var(--lime);color:#131511;border-color:var(--lime);font-size:17px;padding:14px 16px;box-shadow:0 4px 0 #8AA800}
+.btn-lime:hover{background:#E6FF70}
+.card.pro .micro{color:#9E9D93}
+.card.pro .micro strong{color:var(--lime)}
+/* TRUST */
+.trustbar{margin-top:14px;background:#fff;border:1.5px solid var(--ink);border-radius:16px;box-shadow:0 3px 0 var(--ink);display:flex;align-items:center;justify-content:space-between;padding:12px 18px;gap:18px}
+.refund{display:flex;align-items:center;gap:12px;min-width:300px}
+.shield{width:42px;height:42px;border-radius:12px;background:var(--teal);display:grid;place-items:center;font-size:22px;flex:0 0 42px}
+.refund b{font-size:15px;display:block;line-height:1.3}
+.refund span{font-size:13.5px;color:var(--muted)}
+.logos{display:flex;align-items:center;gap:22px;flex-wrap:wrap;justify-content:flex-end}
+.logos em{font-style:normal;font-size:12px;font-weight:700;color:#8A867A;letter-spacing:.08em}
+.logo{font-weight:800;font-size:16px;color:#9A968A;letter-spacing:-.02em;white-space:nowrap}
+.logo:nth-child(3){font-weight:900}
+.logo:nth-child(4){font-family:"Plus Jakarta Sans";font-style:italic}
+.secure{font-size:12.5px;color:#8A867A;font-weight:600}
+@media(max-width:980px){
+h1{font-size:34px}.links{display:none}.plans{grid-template-columns:1fr}.card.pro{transform:none}.trustbar{flex-direction:column;text-align:center}.logos{justify-content:center}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav class="nav" aria-label="주 내비게이션">
+<div class="brand"><span class="brand-mark">◉</span> MeetLog AI <small>요금제</small></div>
+<div class="links"><a href="#">기능</a><a href="#" class="on">요금제</a><a href="#">고객 사례</a><a href="#">보안</a><a href="#">지원</a></div>
+<div class="nav-cta"><a class="login" href="#">로그인</a><a class="btn-free" href="#">무료로 시작하기</a></div>
+</nav>
+
+<header class="hero">
+<div class="eyebrow"><i></i> 신규 요금제 출시 · 첫 달 Pro 무료 체험 중</div>
+<h1>회의는 짧게, <span>기록은 완벽하게</span></h1>
+<p class="sub">AI가 <strong>요약 · 결정사항 · 할 일</strong>까지 자동 정리합니다. <strong>카드 등록 없이</strong> 바로 시작하세요.</p>
+<div class="billing" role="group" aria-label="결제 주기">
+<div class="switch"><button id="bM" class="active" type="button">월간 결제</button><button id="bY" type="button">연간 결제</button></div>
+<span class="save">연간 −20% 절약</span>
+</div>
+</header>
+
+<section class="plans" aria-label="요금제">
+<!-- FREE -->
+<article class="card">
+<div class="card-top"><div class="plan-name"><span class="plan-icon free-ic">🌱</span> Free</div><span style="font-size:13px;font-weight:700;color:#6B675C;border:1px solid var(--line);padding:4px 10px;border-radius:99px">개인용</span></div>
+<p class="plan-desc">가볍게 AI 회의록을 시작하는 분께</p>
+<div class="price-row"><span class="price">0원</span><span class="per">/ 영원히 무료</span></div>
+<div class="year-note">&nbsp;</div>
+<ul class="feats">
+<li><span class="check">✓</span> 월 300분 음성 기록 · 텍스트 변환</li>
+<li><span class="check">✓</span> 월 10회 AI 핵심 요약</li>
+<li><span class="check">✓</span> 1개 워크스페이스 · 링크 공유</li>
+</ul>
+<a class="btn btn-ghost" href="#">무료로 시작</a>
+<div class="micro">신용카드 등록 불필요</div>
+</article>
+
+<!-- PRO -->
+<article class="card pro" aria-label="Pro 가장 인기">
+<div class="pop">★ MOST POPULAR · 78%가 선택</div>
+<div class="card-top"><div class="plan-name"><span class="plan-icon pro-ic">⚡</span> Pro</div><span style="font-size:13px;font-weight:800;color:var(--lime)">무제한 요약</span></div>
+<p class="plan-desc">매일 회의하는 프로 · 프리랜서를 위한 정답</p>
+<div class="price-row"><span class="price" id="proPrice">12,000원</span><span class="per">/ 월</span></div>
+<div class="year-note" id="proNote">월간 결제 · 언제든 해지 가능</div>
+<ul class="feats">
+<li><span class="check">✓</span> 무제한 AI 요약 + 화자 분리 · 액션 추출</li>
+<li><span class="check">✓</span> Notion · Slack · 캘린더 자동 연동</li>
+<li><span class="check">✓</span> 99% 보안 저장 + 우선 고객 지원</li>
+</ul>
+<a class="btn btn-lime" href="#">14일 무료로 Pro 체험 →</a>
+<div class="micro"><strong>카드 등록 불필요</strong> · 체험 후 월 12,000원</div>
+</article>
+
+<!-- TEAM -->
+<article class="card">
+<div class="card-top"><div class="plan-name"><span class="plan-icon team-ic">👥</span> Team</div><span style="font-size:13px;font-weight:700;color:#0E4B43;background:#E6EFE9;padding:4px 10px;border-radius:99px">협업용</span></div>
+<p class="plan-desc">보안과 공유가 중요한 성장팀을 위해</p>
+<div class="price-row"><span class="price" id="teamPrice">29,000원</span><span class="per">/ 인 · 월</span></div>
+<div class="year-note" id="teamNote">5인부터 · 관리 콘솔 포함</div>
+<ul class="feats">
+<li><span class="check">✓</span> Pro 전부 + 공용 드라이브 · 권한 관리</li>
+<li><span class="check">✓</span> SSO · 감사 로그 · 국내 서버 저장</li>
+<li><span class="check">✓</span> 전담 매니저 · 도입 교육 지원</li>
+</ul>
+<a class="btn btn-ghost" href="#">팀 상담 받기</a>
+<div class="micro">견적서 · 세금계산서 발급 가능</div>
+</article>
+</section>
+
+<section class="trustbar" aria-label="신뢰 요소">
+<div class="refund">
+<div class="shield">🛡️</div>
+<div><b>30일 100% 환불 보장</b><span>첫 결제 후 이유 불문 전액 환불 · 클릭 한 번으로 해지</span></div>
+</div>
+<div class="logos" aria-label="도입 고객">
+<em>TRUSTED BY 4,200+ TEAMS</em>
+<span class="logo">Toss</span><span class="logo">당근</span><span class="logo">SOCAR</span><span class="logo">Zigbang</span><span class="logo">무신사</span>
+<span class="secure">🔒 SOC2 · ISO27001</span>
+</div>
+</section>
+</div>
+<script>
+const bM=document.getElementById('bM'),bY=document.getElementById('bY');
+const proPrice=document.getElementById('proPrice'),teamPrice=document.getElementById('teamPrice');
+const proNote=document.getElementById('proNote'),teamNote=document.getElementById('teamNote');
+function setMode(m){
+const y=m==='y';
+bM.classList.toggle('active',!y);bY.classList.toggle('active',y);
+proPrice.textContent=y?'9,600원':'12,000원';
+teamPrice.textContent=y?'23,200원':'29,000원';
+proNote.textContent=y?'연간 결제 · 연 115,200원 (28,800원 절약)':'월간 결제 · 언제든 해지 가능';
+teamNote.textContent=y?'연간 결제 · 인당 연 278,400원':'5인부터 · 관리 콘솔 포함';
+}
+bM.onclick=()=>setMode('m');bY.onclick=()=>setMode('y');
+</script>
+</body>
+</html>

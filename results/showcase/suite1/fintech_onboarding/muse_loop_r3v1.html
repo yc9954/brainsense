@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>쪼개미 — 테슬라 한 주도 천 원부터</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800&family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+--bg:#070C0A;
+--panel:#101715;
+--lime:#D8FF3E;
+--lime-dark:#0A0F0D;
+--line:rgba(255,255,255,.11);
+--txt:#EFF4EE;
+--mut:#B8C4B8;
+--mut2:#8A978A;
+}
+html,body{height:100%}
+body{
+background:var(--bg);
+color:var(--txt);
+font-family:'Noto Sans KR','Inter',system-ui,-apple-system,sans-serif;
+font-size:17px;line-height:1.6;
+-webkit-font-smoothing:antialiased;
+overflow-x:hidden;
+}
+body::before{
+content:"";position:fixed;inset:0;pointer-events:none;
+background:
+radial-gradient(720px 520px at 78% 32%, rgba(216,255,62,.16), transparent 60%),
+radial-gradient(900px 600px at 10% 100%, rgba(216,255,62,.07), transparent 60%),
+radial-gradient(600px 500px at -10% 0%, rgba(64,180,120,.14), transparent 60%);
+}
+.grid-bg{position:fixed;inset:0;pointer-events:none;opacity:.5;
+background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);
+background-size:56px 56px;
+mask-image:radial-gradient(900px 600px at 50% 30%,black 40%,transparent 85%);
+}
+.wrap{max-width:1200px;margin:0 auto;padding:0 40px;position:relative;z-index:1}
+/* NAV */
+.nav{display:flex;align-items:center;justify-content:space-between;height:76px;border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:12px;font-weight:900;font-size:22px;letter-spacing:-.5px}
+.brand-mark{width:36px;height:36px;border-radius:11px;background:var(--lime);display:grid;place-items:center;color:#0A0F0D;font-weight:900;font-size:20px;box-shadow:0 0 24px rgba(216,255,62,.45)}
+.brand small{font-size:12px;font-weight:700;color:var(--mut);letter-spacing:.08em;display:block;line-height:1;margin-top:2px}
+.nav-links{display:flex;gap:28px;font-size:15px;color:var(--mut);font-weight:500}
+.nav-right{display:flex;align-items:center;gap:12px}
+.login{color:var(--txt);text-decoration:none;font-size:15px;font-weight:700;padding:10px 14px}
+.btn-app{background:transparent;border:1px solid rgba(255,255,255,.22);color:#fff;border-radius:999px;padding:11px 20px;font-size:15px;font-weight:700;cursor:pointer}
+/* HERO */
+.hero{display:grid;grid-template-columns:1.08fr .92fr;gap:56px;align-items:center;padding:44px 0 18px;min-height:604px}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;border:1px solid rgba(216,255,62,.4);background:rgba(216,255,62,.08);color:var(--lime);border-radius:999px;padding:9px 16px;font-size:14px;font-weight:800;letter-spacing:-.2px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--lime);box-shadow:0 0 12px var(--lime)}
+h1{font-size:62px;line-height:1.08;letter-spacing:-2.5px;font-weight:900;margin:22px 0 18px}
+h1 .hl{display:inline-block;background:var(--lime);color:#0B100C;border-radius:14px;padding:2px 14px 6px;transform:rotate(-1.2deg);box-shadow:0 8px 30px rgba(216,255,62,.35)}
+.sub{font-size:19px;color:var(--mut);line-height:1.65;max-width:520px;word-break:keep-all}
+.sub strong{color:#fff}
+.cta-row{display:flex;align-items:center;gap:16px;margin-top:28px}
+.btn-main{background:var(--lime);color:#0B100C;border:0;border-radius:999px;padding:19px 34px;font-size:19px;font-weight:900;letter-spacing:-.5px;cursor:pointer;display:inline-flex;align-items:center;gap:10px;box-shadow:0 10px 40px rgba(216,255,62,.35), inset 0 -2px 0 rgba(0,0,0,.15);transition:.2s}
+.btn-main:hover{transform:translateY(-2px);box-shadow:0 16px 50px rgba(216,255,62,.45)}
+.btn-sub{color:#fff;text-decoration:none;font-weight:700;font-size:16px;border-bottom:1px solid rgba(255,255,255,.35);padding-bottom:2px}
+.steps3{display:flex;align-items:center;gap:10px;margin-top:18px;font-size:14.5px;color:var(--mut2);font-weight:500}
+.steps3 b{color:var(--mut);font-weight:800}
+.steps3 .n{width:24px;height:24px;border-radius:50%;background:rgba(255,255,255,.1);border:1px solid var(--line);display:inline-grid;place-items:center;font-size:12px;font-weight:800;color:#fff}
+.steps3 .bar{width:28px;height:1px;background:rgba(255,255,255,.2)}
+.trust{margin-top:26px;border-top:1px solid var(--line);padding-top:20px;display:flex;gap:28px}
+.trust-item{display:flex;gap:11px;align-items:flex-start}
+.trust-ic{width:36px;height:36px;border-radius:10px;background:rgba(216,255,62,.1);border:1px solid rgba(216,255,62,.25);display:grid;place-items:center;flex-shrink:0}
+.trust-item p{font-size:14.5px;line-height:1.5;color:var(--mut)}
+.trust-item p strong{display:block;color:#fff;font-size:15px}
+/* VISUAL */
+.visual{position:relative;display:flex;justify-content:center}
+.glow{position:absolute;width:520px;height:520px;background:radial-gradient(circle,rgba(216,255,62,.22),transparent 65%);filter:blur(10px);top:0}
+.big-won{position:absolute;top:34px;right:6px;font-family:'Inter';font-weight:800;font-size:88px;letter-spacing:-5px;color:transparent;-webkit-text-stroke:1px rgba(216,255,62,.35);opacity:.9;user-select:none}
+.phone{position:relative;width:350px;background:linear-gradient(180deg,#151D1A,#0D1311);border:1px solid rgba(255,255,255,.16);border-radius:36px;padding:18px 18px 20px;box-shadow:0 30px 80px rgba(0,0,0,.6),0 0 0 8px rgba(255,255,255,.04),0 0 60px rgba(216,255,62,.12)}
+.notch{width:110px;height:26px;background:#000;border-radius:999px;margin:0 auto 14px}
+.app-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+.app-head span{font-size:13px;color:var(--mut2);font-weight:700;letter-spacing:-.2px}
+.app-head strong{font-size:14px}
+.live{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:800;color:var(--lime);background:rgba(216,255,62,.1);border:1px solid rgba(216,255,62,.25);padding:5px 10px;border-radius:999px}
+.stock{display:flex;align-items:center;gap:12px;background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:18px;padding:14px}
+.logo-a{width:46px;height:46px;border-radius:50%;background:#fff;display:grid;place-items:center;font-weight:800;color:#000;font-size:22px;flex-shrink:0}
+.stock-name{font-weight:800;font-size:16px}
+.stock-sub{font-size:13px;color:var(--mut2)}
+.stock-price{margin-left:auto;text-align:right}
+.stock-price strong{font-family:'Inter';font-size:17px}
+.up{color:var(--lime);font-size:13px;font-weight:800}
+.chart-box{margin:14px 0;background:#0A0F0D;border:1px solid var(--line);border-radius:18px;padding:16px 16px 12px}
+.chart-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px}
+.chart-top small{color:var(--mut2);font-size:13px}
+.chart-top strong{font-size:22px;letter-spacing:-.5px}
+.chart-top strong em{font-style:normal;color:var(--lime);font-size:14px;margin-left:6px}
+.buy-card{background:var(--lime);border-radius:18px;padding:18px;color:#0B100C;margin-top:2px}
+.buy-card small{font-weight:800;font-size:13px;opacity:.7}
+.buy-card .amt{font-size:38px;font-weight:900;letter-spacing:-1.5px;line-height:1.1}
+.buy-card .amt span{font-size:16px;font-weight:800}
+.frac-bar{height:10px;background:rgba(0,0,0,.15);border-radius:999px;margin:12px 0 8px;overflow:hidden}
+.frac-bar i{display:block;width:34%;height:100%;background:#0B100C;border-radius:999px}
+.frac-row{display:flex;justify-content:space-between;font-size:13.5px;font-weight:800}
+.btn-phone{width:100%;margin-top:14px;background:#0B100C;color:var(--lime);border:0;border-radius:14px;padding:15px;font-size:16px;font-weight:900;cursor:pointer}
+.phone-foot{display:flex;justify-content:center;gap:8px;margin-top:12px;font-size:12.5px;color:var(--mut2)}
+.float-chip{position:absolute;left:-8px;bottom:92px;background:#fff;color:#111;border-radius:16px;padding:12px 16px;display:flex;gap:10px;align-items:center;box-shadow:0 16px 40px rgba(0,0,0,.45);animation:float 3.2s ease-in-out infinite}
+.check{width:30px;height:30px;border-radius:50%;background:#0B100C;color:var(--lime);display:grid;place-items:center;font-weight:900}
+.float-chip strong{font-size:14px;display:block;line-height:1.2}
+.float-chip small{font-size:12.5px;color:#555}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+/* TICKER */
+.ticker{border-top:1px solid var(--line);margin-top:10px;padding:16px 0 20px;display:flex;gap:32px;align-items:center;overflow:hidden;font-size:14px;color:var(--mut);white-space:nowrap}
+.ticker b{color:#fff;font-family:'Inter'}
+.ticker .g{color:var(--lime);font-weight:800}
+.ticker .r{color:#FF8A8A;font-weight:800}
+.safe{margin-left:auto;display:flex;align-items:center;gap:8px;font-size:13px;color:var(--mut2);flex-shrink:0}
+@media(max-width:980px){
+.hero{grid-template-columns:1fr;min-height:auto}
+h1{font-size:44px}
+.visual{order:2}
+.nav-links{display:none}
+.float-chip{left:10px}
+.ticker{flex-wrap:wrap}
+}
+</style>
+</head>
+<body>
+<div class="grid-bg"></div>
+<div class="wrap">
+<header class="nav">
+<div class="brand"><div class="brand-mark">∕</div><div>쪼개미<small>JOGAEMI · 소수점 투자</small></div></div>
+<nav class="nav-links"><span>수수료</span><span>안전장치</span><span>투자 가이드</span><span>고객후기</span></nav>
+<div class="nav-right"><a class="login" href="#">로그인</a><button class="btn-app">앱 다운로드</button></div>
+</header>
+
+<main class="hero">
+<section class="copy">
+<div class="eyebrow"><span class="dot"></span> 금융위원회 혁신금융서비스 지정 · 누적 512만 가입</div>
+<h1>테슬라 한 주도<br><span class="hl">1,000원부터</span> 쪼개 사세요</h1>
+<p class="sub">비싼 해외 우량주 4,200개를 커피 한 잔 값으로 나눠 담는 소수점 투자. <strong>1,000원만 있으면 오늘부터 진짜 주주</strong>가 됩니다. 환전도, 복잡한 주문도 필요 없어요.</p>
+<div class="cta-row">
+<button class="btn-main">3분 만에 시작하기 <span>→</span></button>
+<a class="btn-sub" href="#">수수료 먼저 보기</a>
+</div>
+<div class="steps3"><span class="n">1</span><b>본인인증 1분</b><span class="bar"></span><span class="n">2</span><b>계좌개설 1분</b><span class="bar"></span><span class="n">3</span><b>첫 매수 1분</b><span style="color:var(--lime);font-weight:800">· 신분증만 OK</span></div>
+<div class="trust">
+<div class="trust-item"><div class="trust-ic">🛡️</div><p><strong>예탁결제원 안전보관</strong>내 주식은 증권사·예탁원에 별도 보관</p></div>
+<div class="trust-item"><div class="trust-ic">🔒</div><p><strong>ISMS-P · 정보보호 인증</strong>은행 수준 암호화·2채널 인증</p></div>
+<div class="trust-item"><div class="trust-ic">★</div><p><strong>★ 4.8 · 12만 리뷰</strong>수수료 0원, 첫 달 환전우대 90%</p></div>
+</div>
+</section>
+
+<section class="visual">
+<div class="glow"></div>
+<div class="big-won">₩1,000</div>
+<div class="phone">
+<div class="notch"></div>
+<div class="app-head"><span>내 쪼개기 포트폴리오</span><span class="live">● 실시간 체결중</span></div>
+<div class="stock">
+<div class="logo-a"></div>
+<div><div class="stock-name">애플 Apple</div><div class="stock-sub">AAPL · 소수점 4번째 자리까지</div></div>
+<div class="stock-price"><strong>$232.14</strong><div class="up">+0.82% ▲</div></div>
+</div>
+<div class="chart-box">
+<div class="chart-top"><small>이번 주 담은 금액</small><strong>12,000원 <em>+3주 연속 모으는 중</em></strong></div>
+<svg viewBox="0 0 300 80" width="100%" height="74" aria-hidden="true"><defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D8FF3E" stop-opacity=".9"/><stop offset="1" stop-color="#D8FF3E" stop-opacity="0"/></linearGradient></defs><path d="M0 62 C30 60 45 48 65 50 C85 52 95 30 120 32 C145 34 155 22 180 24 C205 26 215 14 240 16 C265 18 280 8 300 6 L300 80 L0 80 Z" fill="url(#g)" opacity=".35"/><path d="M0 62 C30 60 45 48 65 50 C85 52 95 30 120 32 C145 34 155 22 180 24 C205 26 215 14 240 16 C265 18 280 8 300 6" fill="none" stroke="#D8FF3E" stroke-width="3" stroke-linecap="round"/></svg>
+<div class="buy-card"><small>1,000원으로 보유하게 될 주식</small><div class="amt">0.0056<span>주</span></div><div class="frac-bar"><i></i></div><div class="frac-row"><span>1주 $232.14 중</span><span>✓ 1,000원 체결 가능</span></div></div>
+<button class="btn-phone">1,000원 담기 완료</button>
+</div>
+<div class="phone-foot"><span>자동모으기 ON</span><span>·</span><span>매주 금요일 1천원</span></div>
+</div>
+<div class="float-chip"><div class="check">✓</div><div><strong>1,000원 체결 완료</strong><small>애플 0.0056주 · 수수료 0원</small></div></div>
+</section>
+</main>
+
+<footer class="ticker">
+<span><b>삼성전자</b> 72,300 <span class="g">+1.2%</span></span>
+<span><b>TSLA</b> $248.50 <span class="g">+2.4%</span></span>
+<span><b>NVDA</b> $131.88 <span class="g">+3.1%</span></span>
+<span><b>AAPL</b> $232.14 <span class="g">+0.8%</span></span>
+<span><b>토스증권 제휴계좌</b> 개설 지원</span>
+<div class="safe">🔒 KB증권 제휴 · 한국예탁결제원 별도보관 · 예금자보호와 별개로 투자원금 손실 유의</div>
+</footer>
+</div>
+</body>
+</html>

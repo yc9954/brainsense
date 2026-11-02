@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GLOWLAB 비타C 15% 세럼 — 런칭 30%</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;0,9..144,900;1,9..144,800&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+--pine:#0B211C; --pine2:#102E28; --cream:#FFF7E8; --cream2:#FDEDC8;
+--lime:#DDF247; --lime2:#E8FF6A; --tang:#FF4E1A; --mint:#BFE9C9;
+--ink:#0B211C; --muted:#C8D9CF;
+}
+body{background:#061310;font-family:"Noto Sans KR",system-ui,sans-serif;color:var(--cream);min-height:100vh;display:flex;align-items:center;justify-content:center;padding:18px}
+.page{width:1280px;max-width:100%;min-height:760px;background:radial-gradient(900px 500px at 15% 0%, #174439 0%, transparent 60%),radial-gradient(700px 500px at 95% 100%, #1A4A3E 0%, transparent 60%),linear-gradient(180deg,var(--pine) 0%, #081713 100%);border-radius:28px;border:1px solid rgba(255,247,232,.14);overflow:hidden;position:relative;display:flex;flex-direction:column}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;border-bottom:1px solid rgba(255,247,232,.12);font-size:13px;letter-spacing:.14em}
+.topbar b{letter-spacing:.18em}
+.dotlive{display:inline-flex;align-items:center;gap:8px;background:rgba(221,242,71,.12);border:1px solid rgba(221,242,71,.4);color:var(--lime);border-radius:100px;padding:6px 12px;font-weight:700;font-size:12px;letter-spacing:.08em}
+.pulse{width:8px;height:8px;background:var(--lime);border-radius:50%;box-shadow:0 0 0 0 rgba(221,242,71,.7);animation:p 1.6s infinite}
+@keyframes p{70%{box-shadow:0 0 0 8px rgba(221,242,71,0)}100%{box-shadow:0 0 0 0 rgba(221,242,71,0)}}
+.ad{display:grid;grid-template-columns:560px 1fr;min-height:640px}
+.left{padding:28px 34px 22px 36px;display:flex;flex-direction:column;justify-content:center;position:relative}
+.insta-head{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.avatar{width:44px;height:44px;border-radius:50%;background:conic-gradient(from 0deg,#FFD166,#FF4E1A,#C13584,#5B5BD6,#FFD166);padding:3px;flex-shrink:0}
+.avatar span{display:block;width:100%;height:100%;background:#0B211C;border-radius:50%;display:grid;place-items:center;font-weight:900;color:var(--lime);font-family:Fraunces,serif;font-size:20px;border:2px solid var(--cream)}
+.insta-head .name{line-height:1.2}
+.insta-head .name strong{font-size:15px}
+.insta-head .name em{font-style:normal;font-size:12px;color:var(--muted)}
+.follow{margin-left:auto;border:1px solid rgba(255,247,232,.3);border-radius:100px;padding:7px 14px;font-size:13px;font-weight:700;color:var(--cream);background:transparent}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;background:var(--lime);color:#0B211C;font-weight:900;font-size:13px;letter-spacing:.02em;border-radius:100px;padding:9px 14px;width:fit-content;margin-bottom:16px}
+h1{font-size:48px;line-height:1.08;letter-spacing:-.03em;font-weight:900;word-break:keep-all}
+h1 .hl{position:relative;white-space:nowrap}
+h1 .hl i{font-style:normal;position:relative;z-index:1}
+h1 .hl::after{content:"";position:absolute;left:-4px;right:-4px;bottom:6px;height:18px;background:var(--lime);z-index:0;border-radius:4px;transform:rotate(-1deg)}
+h1 .en{font-family:Fraunces,serif;font-style:italic;font-weight:800;letter-spacing:-.02em}
+.sub{margin-top:14px;font-size:18px;line-height:1.6;color:#E7F2E9;word-break:keep-all}
+.sub strong{color:var(--lime)}
+.chips{display:flex;gap:8px;margin-top:16px;flex-wrap:wrap}
+.chip{font-size:14px;font-weight:700;border:1px solid rgba(255,247,232,.25);border-radius:100px;padding:8px 12px;background:rgba(255,247,232,.07);color:var(--cream)}
+.chip b{color:var(--lime)}
+.price-row{display:flex;align-items:end;gap:12px;margin-top:20px}
+.price-now{font-family:Fraunces,serif;font-size:44px;font-weight:900;line-height:1}
+.price-old{color:#9AB8A8;text-decoration:line-through;font-size:18px;padding-bottom:6px}
+.price-off{background:var(--tang);color:#fff;font-weight:900;border-radius:8px;padding:5px 9px;font-size:15px;transform:rotate(-3deg)}
+.cta-row{display:flex;gap:12px;margin-top:14px;align-items:center}
+.btn-buy{flex:1;background:var(--lime);color:#0B211C;border:0;border-radius:16px;padding:18px 20px;font-size:20px;font-weight:900;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;box-shadow:0 10px 30px rgba(221,242,71,.35);transition:.2s}
+.btn-buy:hover{transform:translateY(-2px);background:var(--lime2)}
+.btn-sub{border-radius:16px;padding:18px 18px;background:transparent;border:1.5px solid rgba(255,247,232,.3);color:var(--cream);font-weight:700;font-size:16px;cursor:pointer}
+.trust{display:flex;align-items:center;gap:10px;margin-top:14px;font-size:15px;color:var(--muted)}
+.stars{color:#FFC531;letter-spacing:2px;font-size:16px}
+.insta-actions{display:flex;align-items:center;gap:16px;margin-top:18px;padding-top:16px;border-top:1px solid rgba(255,247,232,.12);font-size:14px;color:#E7F2E9}
+.ic{width:26px;height:26px;display:inline-grid;place-items:center}
+.right{padding:22px 22px 22px 0;display:flex;align-items:center;justify-content:center}
+.stage{position:relative;width:100%;max-width:660px;aspect-ratio:1/1;background:radial-gradient(520px 380px at 50% 38%, #FFFDF3 0%, var(--cream) 38%, var(--cream2) 62%, #F5D99A 100%);border-radius:26px;overflow:hidden;color:var(--ink);display:flex;align-items:center;justify-content:center;border:1px solid rgba(0,0,0,.08)}
+.stage::before{content:"VITA-C";position:absolute;top:18px;left:50%;transform:translateX(-50%);font-family:Fraunces,serif;font-weight:900;font-size:112px;letter-spacing:.02em;color:transparent;-webkit-text-stroke:1.5px rgba(11,33,28,.16);white-space:nowrap}
+.stage-top{position:absolute;top:16px;left:20px;right:20px;display:flex;justify-content:space-between;align-items:center;font-size:12px;font-weight:800;letter-spacing:.16em}
+.pill-dark{background:var(--ink);color:var(--cream);border-radius:100px;padding:8px 12px}
+.orb{position:absolute;width:460px;height:460px;background:radial-gradient(circle at 35% 30%, #FFEAA1 0%, #FFC46B 28%, #FF8A3D 52%, rgba(255,78,26,.0) 70%);opacity:.9;filter:saturate(1.1)}
+.ring{position:absolute;width:420px;height:420px;border:1.5px dashed rgba(11,33,28,.25);border-radius:50%}
+.ring2{position:absolute;width:520px;height:520px;border:1px solid rgba(11,33,28,.12);border-radius:50%}
+.bottle-wrap{position:relative;z-index:3;display:flex;flex-direction:column;align-items:center;margin-top:34px}
+.drop{width:18px;height:18px;background:linear-gradient(180deg,#FFD34D,#FF7A1A);border-radius:50% 50% 50% 50% / 60% 60% 40% 40%;border-radius:0 50% 50% 50%;transform:rotate(45deg);margin-bottom:-6px;box-shadow:0 4px 12px rgba(255,122,26,.6)}
+.cap-bulb{width:62px;height:34px;background:linear-gradient(180deg,#2B2B2B,#0B0B0B);border-radius:18px 18px 8px 8px;border:1px solid #000}
+.cap{width:78px;height:82px;background:repeating-linear-gradient(90deg,#1B1B1B 0 8px,#2E2E2E 8px 12px);border-radius:10px 10px 6px 6px;border:1px solid #000;box-shadow:inset 0 2px 0 rgba(255,255,255,.25)}
+.neck{width:56px;height:16px;background:linear-gradient(90deg,#8A8A8A,#E9E9E9,#8A8A8A)}
+.bottle{width:210px;height:304px;background:linear-gradient(90deg,#5E2A06 0%, #A64E0E 12%, #E99A2E 28%, #FFD88A 42%, #F5A63B 55%, #8A3D0A 78%, #4A2005 100%);border-radius:22px 22px 30px 30px;position:relative;box-shadow:0 30px 50px rgba(90,40,0,.35), inset 0 2px 6px rgba(255,255,255,.6);border:1px solid rgba(0,0,0,.25);overflow:hidden}
+.bottle::after{content:"";position:absolute;left:18px;top:14px;bottom:14px;width:28px;background:linear-gradient(180deg,rgba(255,255,255,.85),rgba(255,255,255,.05));border-radius:20px;filter:blur(.2px)}
+.label{position:absolute;left:14px;right:14px;top:66px;background:#FFFEF7;border-radius:14px;padding:14px 12px 12px;text-align:center;box-shadow:0 6px 16px rgba(0,0,0,.18)}
+.label small{font-size:10px;letter-spacing:.22em;font-weight:800}
+.label h3{font-size:22px;line-height:1;font-weight:900;letter-spacing:-.02em;margin:4px 0}
+.label h3 span{font-family:Fraunces,serif;font-style:italic}
+.label p{font-size:11px;font-weight:700;background:var(--ink);color:var(--lime);display:inline-block;border-radius:100px;padding:4px 8px;margin-top:6px}
+.label em{display:block;font-style:normal;font-size:11px;color:#5B6B62;margin-top:6px}
+.shadow{width:220px;height:26px;background:radial-gradient(closest-side, rgba(0,0,0,.35), transparent);margin-top:10px}
+.badge{position:absolute;z-index:5;top:86px;right:28px;width:148px;height:148px;display:grid;place-items:center}
+.badge .rot{position:absolute;inset:0;animation:spin 12s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.badge-center{width:108px;height:108px;background:var(--tang);border-radius:50%;display:grid;place-items:center;text-align:center;color:#fff;border:4px solid #fff;box-shadow:0 12px 28px rgba(255,78,26,.45);transform:rotate(8deg)}
+.badge-center b{font-size:34px;line-height:1;font-family:Fraunces,serif}
+.badge-center span{font-size:12px;font-weight:900;line-height:1.2}
+.f-card{position:absolute;z-index:4;background:rgba(255,255,255,.88);backdrop-filter:blur(8px);border:1px solid rgba(0,0,0,.08);border-radius:16px;padding:10px 12px;display:flex;gap:10px;align-items:center;box-shadow:0 10px 24px rgba(0,0,0,.12)}
+.f-card b{font-size:14px;display:block;line-height:1.2}
+.f-card small{font-size:12px;color:#4A5A52}
+.f1{left:18px;top:200px;transform:rotate(-4deg)}
+.f2{right:18px;bottom:132px;transform:rotate(3deg)}
+.f-emoji{width:38px;height:38px;border-radius:12px;display:grid;place-items:center;font-size:22px;background:#FFF0C8}
+.stage-bottom{position:absolute;left:0;right:0;bottom:0;background:rgba(11,33,28,.92);color:var(--cream);display:flex;align-items:center;gap:12px;padding:12px 18px;font-size:13px}
+.stage-bottom .bar{flex:1;height:6px;background:rgba(255,255,255,.18);border-radius:100px;overflow:hidden}
+.stage-bottom .bar i{display:block;width:72%;height:100%;background:var(--lime)}
+.marquee{background:var(--lime);color:#0B211C;font-weight:900;font-size:14px;letter-spacing:.06em;padding:10px 0;overflow:hidden;white-space:nowrap}
+.marquee span{display:inline-block;padding:0 18px;animation:m 18s linear infinite}
+@keyframes m{to{transform:translateX(-50%)}}
+@media(max-width:1020px){.ad{grid-template-columns:1fr}.right{padding:0 18px 18px}.left{padding:24px 22px}h1{font-size:38px}.stage{aspect-ratio:auto;min-height:560px}}
+</style>
+</head>
+<body>
+<main class="page" aria-label="글로우랩 비타민C 세럼 인스타그램 광고">
+<div class="topbar"><span><b>GLOWLAB</b> &nbsp;·&nbsp; INSTAGRAM FEED — 1:1 PREVIEW</span><span class="dotlive"><i class="pulse"></i> LAUNCH LIVE · 11.02 — 11.09</span><span style="opacity:.7">◯ ◯ ◯</span></div>
+<div class="ad">
+<section class="left">
+<div class="insta-head"><div class="avatar"><span>G</span></div><div class="name"><strong>glowlab.seoul</strong><br><em>Sponsored · 서울</em></div><button class="follow" aria-label="팔로우">팔로우</button><span style="font-size:20px;letter-spacing:4px;color:var(--cream)">···</span></div>
+<div class="eyebrow">✦ 런칭 얼리버드 · 오늘만 30% + 무료배송</div>
+<h1>15% 순수 비타민C가<br><span class="hl"><i>7일 만에 깨우는 투명 광채.</i></span></h1>
+<p class="sub">칙칙함·잡티·늘어난 모공, 하나로 해결하세요. <strong>제주 그린감귤 + 나이아신아마이드 + 비타민E</strong>를 담아 끈적임 없이 산뜻하게 스며듭니다. 민감피부 임상·저자극 테스트 완료.</p>
+<div class="chips"><span class="chip"><b>15%</b> 퓨어 비타민C</span><span class="chip">잡티 32% 개선<sup>*</sup></span><span class="chip">산뜻한 워터 텍스처</span></div>
+<div class="price-row"><div class="price-now">26,600원</div><div class="price-old">38,000원</div><div class="price-off">30% ↓</div></div>
+<div class="cta-row"><button class="btn-buy" onclick="alert('장바구니에 담겼습니다 · 런칭 30% 적용중')">지금 구매하기 <span aria-hidden="true">→</span></button><button class="btn-sub">성분 보기</button></div>
+<div class="trust"><span class="stars" aria-label="별점 4.9">★★★★★</span><span><b style="color:#fff">4.9</b> · 3,214개 리뷰 · 오늘출발 · 30일 환불보장</span></div>
+<div class="insta-actions"><span class="ic">❤️</span><span class="ic">💬</span><span class="ic">✈️</span><span style="margin-left:2px"><b>좋아요 12,482개</b> · 댓글 842개</span><span style="margin-left:auto">🔖</span></div>
+</section>
+<section class="right" aria-label="제품 이미지">
+<div class="stage">
+<div class="orb"></div><div class="ring"></div><div class="ring2"></div>
+<div class="stage-top"><span class="pill-dark">NEW · VITA C 15% SERUM 30ml</span><span style="background:#fff;border-radius:100px;padding:8px 12px;border:1px solid rgba(0,0,0,.1)">pH 4.5 · VEGAN 🌱</span></div>
+<div class="badge" aria-label="런칭 30퍼센트 할인"><svg class="rot" viewBox="0 0 148 148"><defs><path id="c" d="M74,74 m-62,0 a62,62 0 1,1 124,0 a62,62 0 1,1 -124,0"/></defs><text font-size="13.5" font-weight="900" letter-spacing="2.5" fill="#0B211C"><textPath href="#c">LAUNCH SALE • 30% OFF • LAUNCH SALE •</textPath></text></svg><div class="badge-center"><div><span>런칭<br>특가</span><br><b>30%</b></div></div></div>
+<div class="f-card f1"><div class="f-emoji">🍊</div><div><b>제주 그린감귤 추출물</b><small>생기 톤-업 부스터</small></div></div>
+<div class="f-card f2"><div class="f-emoji">💧</div><div><b>7일 광채 임상 완료</b><small>*인체적용시험 32명 / 글로우랩</small></div></div>
+<div class="bottle-wrap"><div class="drop"></div><div class="cap-bulb"></div><div class="cap"></div><div class="neck"></div><div class="bottle"><div class="label"><small>GLOWLAB SEOUL</small><h3>VITA <span>C 15%</span></h3><p>잡티 · 모공 · 광채 세럼</p><em>30 ml / 1.01 fl.oz.</em></div></div><div class="shadow"></div></div>
+<div class="stage-bottom"><span>🔊 소리켜고 보기</span><div class="bar"><i></i></div><span>0:15</span></div>
+</div>
+</div>
+</div>
+<div class="marquee" aria-hidden="true"><span>잡티 케어 ✦ 유리알 광채 ✦ 모공 타이트닝 ✦ 다크스팟 완화 ✦ 산뜻 워터 텍스처 ✦ 잡티 케어 ✦ 유리알 광채 ✦ 모공 타이트닝 ✦ 다크스팟 완화 ✦ 산뜻 워터 텍스처 ✦&nbsp;</span><span>잡티 케어 ✦ 유리알 광채 ✦ 모공 타이트닝 ✦ 다크스팟 완화 ✦ 산뜻 워터 텍스처 ✦ 잡티 케어 ✦ 유리알 광채 ✦ 모공 타이트닝 ✦ 다크스팟 완화 ✦ 산뜻 워터 텍스처 ✦&nbsp;</span></div>
+</main>
+</body>
+</html>

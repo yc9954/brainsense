@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>밋노트 MeetNote — 요금제</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+--paper:#EFE8D8;
+--paper2:#E7DDC6;
+--ink:#141510;
+--ink2:#2B2B23;
+--lime:#D8FF3E;
+--lime2:#C2F000;
+--orange:#FF4D1C;
+--white:#FFFEF8;
+--line:#141510;
+--muted:#6B6758;
+}
+body{
+font-family:"Noto Sans KR",system-ui,sans-serif;
+background:var(--paper);
+color:var(--ink);
+font-size:16px;
+line-height:1.55;
+min-height:100vh;
+background-image:
+radial-gradient(520px 320px at 8% 0%, #FFF6D6 0%, transparent 60%),
+radial-gradient(600px 380px at 95% 15%, #D6E8FF 0%, transparent 60%),
+radial-gradient(700px 400px at 50% 110%, #FFD6B8 0%, transparent 60%);
+}
+body::before{
+content:"";position:fixed;inset:0;pointer-events:none;opacity:.55;
+background-image:radial-gradient(#141510 1.1px, transparent 1.1px);
+background-size:22px 22px;
+mask-image:linear-gradient(to bottom, black 0 22%, transparent 60%);
+opacity:.12;
+}
+.wrap{max-width:1200px;margin:0 auto;padding:18px 24px 14px;position:relative}
+nav{display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:10px;font-weight:900;font-size:19px;letter-spacing:-.5px}
+.logo-mark{width:34px;height:34px;background:var(--ink);border-radius:11px;display:grid;place-items:center;color:var(--lime);font-family:"Space Grotesk";font-weight:700;font-size:18px;box-shadow:3px 3px 0 rgba(20,21,16,.25)}
+.brand small{font-family:"Space Grotesk";font-weight:700;font-size:11px;background:var(--ink);color:#fff;border-radius:100px;padding:3px 8px;margin-left:2px;letter-spacing:.5px}
+.nav-links{display:flex;gap:26px;font-size:15px;font-weight:500;color:#3A382E}
+.nav-links a{color:inherit;text-decoration:none}
+.nav-links a.on{font-weight:900;color:var(--ink);border-bottom:3px solid var(--lime2)}
+.nav-cta{display:flex;gap:10px;align-items:center}
+.btn{border:2px solid var(--ink);border-radius:100px;padding:9px 18px;font-weight:700;font-size:15px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:6px;transition:.18s}
+.btn-ghost{background:transparent;color:var(--ink)}
+.btn-dark{background:var(--ink);color:#fff;box-shadow:3px 3px 0 rgba(20,21,16,.2)}
+.btn-dark:hover{transform:translate(-1px,-1px);box-shadow:5px 5px 0 rgba(20,21,16,.25)}
+.btn-lime{background:var(--lime);color:var(--ink);box-shadow:4px 4px 0 #000}
+.btn-lime:hover{transform:translate(-1px,-2px);box-shadow:6px 6px 0 #000}
+/* HERO */
+.hero{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;margin-top:16px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:"Space Grotesk";font-size:12px;font-weight:700;letter-spacing:1.5px;background:#fff;border:2px solid var(--ink);border-radius:100px;padding:5px 12px;box-shadow:3px 3px 0 var(--ink)}
+.dot{width:8px;height:8px;background:#22C55E;border-radius:50%;box-shadow:0 0 0 4px rgba(34,197,94,.2)}
+h1{font-size:42px;line-height:1.1;letter-spacing:-1.5px;font-weight:900;margin-top:10px}
+h1 .hl{background:var(--lime);padding:0 10px;border:2px solid var(--ink);border-radius:12px;display:inline-block;transform:rotate(-1.5deg);box-shadow:4px 4px 0 var(--ink)}
+.sub{margin-top:8px;color:#3E3B30;font-size:16px;max-width:560px}
+.hero-right{text-align:right;flex-shrink:0}
+.toggle{display:inline-flex;background:#fff;border:2px solid var(--ink);border-radius:100px;padding:4px;box-shadow:4px 4px 0 var(--ink);gap:4px}
+.toggle button{border:0;background:transparent;border-radius:100px;padding:9px 18px;font-weight:700;font-size:15px;cursor:pointer;color:#6B6758}
+.toggle button.active{background:var(--ink);color:var(--lime)}
+.save{font-size:13px;font-weight:700;color:#fff;background:var(--orange);border-radius:100px;padding:3px 8px;margin-left:6px;vertical-align:middle}
+.bill-note{margin-top:8px;font-size:13px;color:var(--muted);font-weight:500}
+/* GRID */
+.grid{display:grid;grid-template-columns:1.58fr .92fr;gap:18px;margin-top:16px}
+.pro{background:#15160F;color:#F3F1E6;border:2px solid var(--ink);border-radius:22px;position:relative;box-shadow:8px 8px 0 var(--ink), 0 0 0 6px var(--lime), 0 18px 60px rgba(0,0,0,.25);overflow:hidden;display:grid;grid-template-columns:1.05fr .95fr}
+.pro::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(500px 220px at 20% 0%, rgba(216,255,62,.22), transparent 60%), radial-gradient(400px 300px at 100% 100%, rgba(255,77,28,.18), transparent 60%)}
+.best{position:absolute;top:14px;left:50%;transform:translateX(-50%) rotate(-2deg);background:var(--orange);color:#fff;font-weight:900;font-size:13px;letter-spacing:.3px;border:2px solid #000;border-radius:100px;padding:5px 14px;z-index:3;box-shadow:3px 3px 0 #000}
+.pro-left{padding:30px 26px 22px;position:relative;z-index:2}
+.pro-right{background:#1E2016;border-left:2px dashed rgba(255,255,255,.18);padding:22px 20px;position:relative;z-index:2;display:flex;flex-direction:column;gap:12px}
+.kicker{font-family:"Space Grotesk";letter-spacing:1.5px;font-size:12px;color:var(--lime);font-weight:700}
+.pro h2{font-size:26px;letter-spacing:-.8px;margin:6px 0 4px}
+.pro-desc{font-size:14.5px;color:#CFCABB}
+.price-row{display:flex;align-items:baseline;gap:8px;margin:14px 0 4px}
+.price{font-size:44px;font-weight:900;letter-spacing:-1.5px;color:#fff}
+.price small{font-size:16px;font-weight:500}
+.was{font-size:14px;color:#8E8A76;text-decoration:line-through}
+.vat{font-size:12.5px;color:#8E8A76}
+.pro-cta{margin-top:12px;width:100%;justify-content:center;font-size:16px;padding:13px}
+.micro{margin-top:8px;font-size:13px;color:#B8B49E;text-align:center}
+.feat2{display:grid;grid-template-columns:1fr 1fr;gap:7px 12px;margin-top:14px;font-size:14px}
+.feat2 div{display:flex;gap:7px;align-items:flex-start;color:#EDE9D6}
+.check{flex:0 0 20px;width:20px;height:20px;border-radius:50%;background:var(--lime);color:#000;display:grid;place-items:center;font-weight:900;font-size:13px;margin-top:2px}
+/* AI preview */
+.preview-label{font-size:12px;font-weight:700;letter-spacing:.8px;color:#A9A48C}
+.mock{background:#FFFEF8;color:var(--ink);border-radius:14px;overflow:hidden;border:2px solid #000}
+.mock-top{display:flex;align-items:center;gap:6px;padding:9px 12px;border-bottom:1px solid #E6DFC8;font-size:12px;font-weight:700}
+.rec{width:9px;height:9px;background:#FF3B30;border-radius:50%;animation:blink 1.2s infinite}
+@keyframes blink{50%{opacity:.25}}
+.wave{display:flex;align-items:end;gap:3px;height:28px;padding:8px 12px 0}
+.wave i{width:5px;background:var(--ink);border-radius:3px;display:block}
+.mock-body{padding:10px 12px 12px;font-size:13px;line-height:1.5}
+.line{display:flex;gap:8px;margin:5px 0}
+.who{flex:0 0 auto;font-size:11px;font-weight:900;border-radius:6px;padding:2px 6px;height:fit-content}
+.ai-box{background:#F2FFA8;border:1.5px solid var(--ink);border-radius:10px;padding:8px 10px;margin-top:8px;font-size:13px}
+.ai-box b{display:flex;align-items:center;gap:6px;font-size:12px}
+/* right stack */
+.stack{display:grid;gap:14px}
+.mini{background:var(--white);border:2px solid var(--ink);border-radius:18px;padding:18px 18px 16px;box-shadow:6px 6px 0 var(--ink);position:relative}
+.mini.team{background:#fff}
+.mini-top{display:flex;justify-content:space-between;align-items:center}
+.mini-name{font-weight:900;font-size:16px}
+.pill{font-size:12px;font-weight:700;border:1.5px solid var(--ink);border-radius:100px;padding:3px 10px;background:var(--paper)}
+.mini-price{font-size:28px;font-weight:900;letter-spacing:-.8px;margin:8px 0 2px}
+.mini-price span{font-size:14px;font-weight:500;color:var(--muted)}
+.mini ul{list-style:none;margin:10px 0 12px;font-size:14px;color:#2E2C23;display:grid;gap:6px}
+.mini li::before{content:"✓";font-weight:900;margin-right:7px}
+.mini .btn{width:100%;justify-content:center;padding:10px;font-size:15px}
+.mini.team .btn{background:var(--ink);color:#fff}
+.link{display:block;text-align:center;font-size:13px;margin-top:8px;color:var(--muted)}
+/* trust bar */
+.trust{margin-top:14px;background:var(--white);border:2px solid var(--ink);border-radius:16px;box-shadow:5px 5px 0 var(--ink);display:flex;align-items:center;gap:18px;padding:11px 18px}
+.logos{display:flex;align-items:center;gap:16px;flex:1;flex-wrap:nowrap;overflow:hidden}
+.logos span{font-weight:900;font-size:15px;color:#9A9583;white-space:nowrap;letter-spacing:-.3px}
+.logos span b{color:var(--ink)}
+.trust-label{font-size:12px;font-weight:900;letter-spacing:1px;background:var(--ink);color:#fff;border-radius:8px;padding:5px 9px;white-space:nowrap}
+.guarantee{display:flex;align-items:center;gap:10px;background:#FFF3D6;border:2px dashed var(--ink);border-radius:12px;padding:7px 12px;font-size:13.5px;font-weight:700;white-space:nowrap}
+.shield{width:32px;height:32px;border-radius:50%;background:var(--ink);display:grid;place-items:center;font-size:16px;flex:0 0 32px}
+@media(max-width:980px){
+.hero{flex-direction:column;align-items:flex-start}
+.grid{grid-template-columns:1fr}
+.pro{grid-template-columns:1fr}
+.pro-right{border-left:0;border-top:2px dashed rgba(255,255,255,.18)}
+h1{font-size:34px}
+.trust{flex-wrap:wrap}
+}
+:focus-visible{outline:3px solid var(--orange);outline-offset:2px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav aria-label="상단 메뉴">
+<div class="brand"><div class="logo-mark">●M</div>밋노트 <small>MEETNOTE</small></div>
+<div class="nav-links"><a href="#">기능</a><a href="#" class="on">요금제</a><a href="#">고객 후기</a><a href="#">보안</a></div>
+<div class="nav-cta"><a class="btn btn-ghost" href="#">로그인</a><a class="btn btn-dark" href="#">무료로 시작 →</a></div>
+</nav>
+
+<div class="hero">
+<div>
+<span class="eyebrow"><span class="dot"></span> PRICING · 48,200팀이 쓰는 AI 회의록</span>
+<h1>회의는 짧게, <span class="hl">기록은 완벽하게.</span></h1>
+<p class="sub">녹음부터 요약·할 일 추출·공유까지 3분 컷. 지금 쓰는 줌·밋·팀즈 그대로 연동됩니다. 언제든 해지, 14일 100% 환불.</p>
+</div>
+<div class="hero-right">
+<div class="toggle" role="tablist" aria-label="결제 주기">
+<button id="bM" class="active" onclick="setBill('m')">월간 결제</button>
+<button id="bY" onclick="setBill('y')">연간 결제<span class="save">−20%</span></button>
+</div>
+<div class="bill-note" id="billNote">매월 결제 · 언제든 해지 가능 · VAT 별도</div>
+</div>
+</div>
+
+<div class="grid">
+<!-- PRO focal -->
+<section class="pro" aria-label="Pro 요금제">
+<div class="best">★ 가장 많이 선택 · BEST</div>
+<div class="pro-left">
+<div class="kicker">PRO · FOR HEAVY MEETERS</div>
+<h2>Pro, 하루 400원으로 비서 고용</h2>
+<p class="pro-desc">매일 2~3개 회의하는 실무자·매니저용. 놓친 맥락이 제로가 됩니다.</p>
+<div class="price-row"><div class="price"><span id="proPrice">12,000</span><small>원/월</small></div></div>
+<div><span class="was" id="proWas">정가 15,000원</span> <span class="vat">· VAT 별도 · 인당</span></div>
+<a href="#" class="btn btn-lime pro-cta">14일 무료로 Pro 써보기 →</a>
+<div class="micro">신용카드 등록 없음 · 3분 만에 첫 요약 생성</div>
+<div class="feat2">
+<div><span class="check">✓</span>월 1,500분·무제한 요약</div>
+<div><span class="check">✓</span>화자 분리 99.2% + 속기록</div>
+<div><span class="check">✓</span>액션아이템·결정사항 자동추출</div>
+<div><span class="check">✓</span>Notion·Slack·메일 자동공유</div>
+</div>
+</div>
+<div class="pro-right">
+<div class="preview-label">● LIVE PREVIEW — 어제 마케팅 주간회의 32:14</div>
+<div class="mock">
+<div class="mock-top"><span class="rec"></span> REC 32:14 · 참여 6명 · 한국어/영어 혼합 인식 중</div>
+<div class="wave" aria-hidden="true">
+<i style="height:12px"></i><i style="height:22px"></i><i style="height:16px"></i><i style="height:26px"></i><i style="height:10px"></i><i style="height:20px"></i><i style="height:28px"></i><i style="height:14px"></i><i style="height:18px"></i><i style="height:24px"></i><i style="height:11px"></i><i style="height:19px"></i><i style="height:27px"></i><i style="height:15px"></i><i style="height:21px"></i><i style="height:13px"></i><i style="height:25px"></i><i style="height:17px"></i>
+</div>
+<div class="mock-body">
+<div class="line"><span class="who" style="background:#FFE2D6">지훈</span> 이번 스프린트 QA 리소스가 빈다고 했죠?</div>
+<div class="line"><span class="who" style="background:#D6E8FF">미나</span> 네, 화요일에 A/B 테스트 먼저 돌리고요…</div>
+<div class="ai-box"><b>✨ AI 요약 · 8초 전 생성</b>결정: A/B테스트 화요일 시작 / 할 일: @지훈 QA 일정표 공유(~금), @미나 랜딩 문구 2안 준비</div>
+</div>
+</div>
+<div style="font-size:12.5px;color:#B8B49E;display:flex;gap:8px;align-items:center">🔒 ISMS-P · SOC2 · 국내 서버 저장 <span style="margin-left:auto;color:var(--lime);font-weight:700">★ 4.9/5 (2,340개 리뷰)</span></div>
+</div>
+</section>
+
+<div class="stack">
+<section class="mini" aria-label="Free 요금제">
+<div class="mini-top"><div class="mini-name">Free</div><div class="pill">가볍게 체험</div></div>
+<div class="mini-price">0원 <span>/ 영원히 무료</span></div>
+<ul><li>월 300분 · AI 요약 10회</li><li>1인 · 40분 회의까지</li></ul>
+<a href="#" class="btn btn-ghost">무료로 시작하기</a>
+</section>
+<section class="mini team" aria-label="Team 요금제">
+<div class="mini-top"><div class="mini-name">Team 🤝</div><div class="pill" style="background:var(--ink);color:#fff">5인 이상 · 협업</div></div>
+<div class="mini-price"><span id="teamPrice">29,000</span>원 <span>/월 · 5인 포함</span></div>
+<ul><li>팀 워크스페이스·권한 관리</li><li>전사 검색 + SSO·감사로그</li></ul>
+<a href="#" class="btn">팀 도입 상담하기 →</a>
+<a href="#" class="link">도입 사례서 받기 · 보안 점검표 포함</a>
+</section>
+</div>
+</div>
+
+<div class="trust">
+<div class="trust-label">도입 기업 4,800+</div>
+<div class="logos" aria-label="고객사 로고"><span><b>TOSS</b> 토스</span><span>🥕 <b>당근</b></span><span><b>MUSINSA</b></span><span>✈ <b>YANOLJA</b></span><span>🚗 <b>SOCAR</b></span><span>💬 <b>카카오엔터</b></span></div>
+<div class="guarantee"><div class="shield">🛡️</div><div>14일 무조건 100% 환불 보장<br><span style="font-weight:500;color:#6B6758;font-size:12.5px">환불 문의 1분 컷 · 위약금 0원</span></div></div>
+</div>
+
+</div>
+<script>
+function setBill(t){
+const m=document.getElementById('bM'), y=document.getElementById('bY');
+const pp=document.getElementById('proPrice'), tp=document.getElementById('teamPrice');
+const note=document.getElementById('billNote'), was=document.getElementById('proWas');
+if(t==='y'){m.classList.remove('active');y.classList.add('active');pp.textContent='9,600';tp.textContent='23,200';was.textContent='정가 12,000원';note.textContent='연간 결제 · 2개월 무료 · VAT 별도';}
+else{y.classList.remove('active');m.classList.add('active');pp.textContent='12,000';tp.textContent='29,000';was.textContent='정가 15,000원';note.textContent='매월 결제 · 언제든 해지 가능 · VAT 별도';}
+}
+</script>
+</body>
+</html>

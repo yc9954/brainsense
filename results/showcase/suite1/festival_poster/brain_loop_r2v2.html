@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>서울 미드나잇 재즈 페스티벌 2026 — 11월 얼리버드</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Noto+Sans+KR:wght@400;500;700;900&family=Noto+Serif+KR:wght@700;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#05070F;font-family:"Noto Sans KR",system-ui,sans-serif;color:#14101F;display:flex;align-items:center;justify-content:center;min-height:100vh;padding:18px}
+.stage{width:1280px;max-width:100%;height:800px;min-height:800px;background:#FFF8EC;border-radius:28px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 30px 120px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.12);position:relative}
+.topbar{height:62px;display:flex;align-items:center;justify-content:space-between;padding:0 28px 0 32px;background:#FFF8EC;border-bottom:1.5px solid #14101F;flex-shrink:0;z-index:5}
+.brand{display:flex;align-items:center;gap:12px;font-weight:900;font-size:15px;letter-spacing:.02em}
+.brand-mark{width:34px;height:34px;border-radius:50%;background:conic-gradient(from 0deg,#FF4D6D,#FFB347,#2DD4BF,#FF4D6D);display:grid;place-items:center;color:#fff;font-size:18px;border:2px solid #14101F}
+.brand small{display:block;font-size:11px;font-weight:700;letter-spacing:.22em;color:#8A7A60}
+.top-links{display:flex;gap:22px;font-size:14px;font-weight:700;color:#3A332A}
+.top-right{display:flex;align-items:center;gap:12px}
+.d-badge{font-size:13px;font-weight:900;background:#14101F;color:#FFD88A;border-radius:100px;padding:7px 14px;letter-spacing:.04em}
+.mini-cta{background:#FF2E63;color:#fff;border:2px solid #14101F;border-radius:100px;padding:9px 18px;font-weight:900;font-size:14px;box-shadow:3px 3px 0 #14101F;cursor:pointer}
+.main{flex:1;display:grid;grid-template-columns:560px 1fr;min-height:0}
+/* LEFT solid panel */
+.left{background:#FFF8EC;padding:28px 34px 20px 36px;position:relative;display:flex;flex-direction:column;justify-content:flex-start;border-right:2px solid #14101F}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12.5px;font-weight:900;letter-spacing:.18em}
+.eyebrow .dot{width:9px;height:9px;border-radius:50%;background:#FF2E63;box-shadow:0 0 0 5px rgba(255,46,99,.18);animation:blink 1.6s infinite}
+@keyframes blink{50%{box-shadow:0 0 0 8px rgba(255,46,99,.08)}}
+.eyebrow b{background:#14101F;color:#fff;padding:4px 10px;border-radius:100px;letter-spacing:.12em}
+h1{font-family:"Noto Serif KR",serif;font-size:58px;line-height:.98;letter-spacing:-.03em;margin:14px 0 10px;color:#14101F}
+h1 em{font-family:"DM Serif Display",serif;font-style:italic;font-weight:400;background:linear-gradient(92deg,#FF2E63 0%,#FF7A00 55%,#B87B00 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{font-size:17px;line-height:1.55;color:#3E372E;font-weight:500}
+.sub strong{color:#14101F}
+.value-box{margin:16px 0 14px;background:#14101F;color:#FFF3D6;border-radius:16px;padding:14px 16px;display:flex;align-items:center;gap:14px;position:relative;overflow:hidden}
+.value-box:after{content:"";position:absolute;right:-30px;top:-30px;width:130px;height:130px;background:radial-gradient(circle,rgba(255,180,70,.55),transparent 70%)}
+.v-price{flex-shrink:0;background:#FFD02F;color:#14101F;border-radius:12px;padding:8px 12px;text-align:center;line-height:1}
+.v-price s{font-size:13px;font-weight:700;opacity:.7}
+.v-price b{font-size:22px;font-weight:900;display:block}
+.v-price span{font-size:11px;font-weight:900;letter-spacing:.08em}
+.v-text{font-size:15.5px;line-height:1.45}
+.v-text b{color:#FFD88A}
+.cta-row{display:flex;gap:12px;margin:4px 0 12px}
+.btn-main{flex:1;background:#FF2E63;color:#fff;border:2.5px solid #14101F;border-radius:14px;padding:16px 18px;font-size:18px;font-weight:900;box-shadow:5px 5px 0 #14101F;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;transition:.15s}
+.btn-main:hover{transform:translate(-1px,-1px);box-shadow:7px 7px 0 #14101F;background:#E91E53}
+.btn-sub{background:#fff;border:2.5px solid #14101F;border-radius:14px;padding:16px 16px;font-size:16px;font-weight:800;box-shadow:5px 5px 0 #14101F;cursor:pointer}
+.micro{font-size:13.5px;font-weight:700;color:#6B604F;display:flex;gap:8px;align-items:center}
+.info-grid{display:grid;grid-template-columns:1fr 1fr 1fr;margin:14px 0 12px;border:2px solid #14101F;border-radius:14px;overflow:hidden;background:#fff}
+.info-grid div{padding:10px 12px;font-size:13.5px;line-height:1.4}
+.info-grid div+div{border-left:2px solid #14101F}
+.info-grid b{display:block;font-size:12px;letter-spacing:.12em;color:#FF2E63;margin-bottom:2px}
+.info-grid strong{font-size:15px}
+.lineup{border-top:2px dashed #CBBFA6;padding-top:12px}
+.lineup-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.lineup-head h2{font-size:14px;letter-spacing:.16em;font-weight:900}
+.lineup-head a{font-size:13px;font-weight:800;color:#14101F}
+ol{list-style:none;display:flex;flex-direction:column;gap:6px}
+ol li{display:flex;align-items:center;gap:10px;background:#fff;border:1.8px solid #14101F;border-radius:12px;padding:7px 10px 7px 8px;font-size:14.5px}
+.num{width:28px;height:28px;border-radius:50%;background:#14101F;color:#FFD88A;font-weight:900;font-size:13px;display:grid;place-items:center;flex-shrink:0}
+.day{font-size:11px;font-weight:900;padding:3px 8px;border-radius:100px;flex-shrink:0}
+.d1{background:#FFE27A;border:1.5px solid #14101F}.d2{background:#FFB3C6;border:1.5px solid #14101F}.d3{background:#9BF0E3;border:1.5px solid #14101F}
+li strong{font-weight:900} li span{color:#6B604F;font-size:13px}
+/* RIGHT night stage */
+.right{background:radial-gradient(120% 90% at 50% 0%,#27215E 0%,#150E35 38%,#080B1E 68%,#050716 100%);position:relative;overflow:hidden;color:#fff;display:flex;flex-direction:column;padding:22px 28px 20px 30px}
+.stars{position:absolute;inset:0;pointer-events:none;opacity:.9;background-image:radial-gradient(1.8px 1.8px at 20% 15%,#fff,transparent),radial-gradient(1.5px 1.5px at 75% 12%,#FFE9A8,transparent),radial-gradient(1.6px 1.6px at 60% 28%,#fff,transparent),radial-gradient(1.2px 1.2px at 90% 35%,#fff,transparent),radial-gradient(1.4px 1.4px at 12% 45%,#fff,transparent),radial-gradient(2px 2px at 35% 10%,#FFD88A,transparent)}
+.beam{position:absolute;left:-10%;top:-10%;width:130%;height:220px;background:linear-gradient(100deg,transparent 20%,rgba(255,77,109,.55) 42%,rgba(255,180,70,.75) 50%,rgba(45,212,191,.45) 58%,transparent 80%);transform:rotate(-14deg);filter:blur(2px);opacity:.85;animation:beam 5s ease-in-out infinite alternate}
+@keyframes beam{to{transform:rotate(-12deg) translateX(30px);opacity:.65}}
+.moon{position:absolute;left:50%;top:52%;transform:translate(-50%,-58%);width:460px;height:460px;border-radius:50%;background:radial-gradient(circle at 50% 40%,#FFF0C2 0%,#FFC86B 22%,#FF8A3D 45%,#7A1E3A 72%,transparent 72%);filter:saturate(1.1);box-shadow:0 0 80px 20px rgba(255,150,50,.45),0 0 180px 60px rgba(255,46,99,.25)}
+.moon:after{content:"";position:absolute;inset:18px;border-radius:50%;border:2px dashed rgba(255,240,200,.5);animation:spin 30s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.top-pills{display:flex;gap:8px;align-items:center;position:relative;z-index:3}
+.pill{font-size:12px;font-weight:900;letter-spacing:.12em;border:1.5px solid rgba(255,255,255,.7);border-radius:100px;padding:6px 12px;background:rgba(0,0,0,.35);backdrop-filter:blur(6px)}
+.pill.live{background:#FF2E63;border-color:#FF2E63;box-shadow:0 0 18px rgba(255,46,99,.8)}
+.trumpet-wrap{position:relative;z-index:2;flex:1;display:flex;align-items:center;justify-content:center;margin:6px 0 2px}
+.trumpet-svg{width:620px;max-width:110%;height:auto;filter:drop-shadow(0 18px 30px rgba(0,0,0,.6)) drop-shadow(0 0 22px rgba(255,180,70,.55));transform:rotate(-8deg)}
+.sound{position:absolute;font-weight:900;color:#FFD88A;text-shadow:0 0 12px rgba(255,180,70,.9);animation:floatN 3.2s ease-in-out infinite}
+@keyframes floatN{50%{transform:translateY(-14px) rotate(8deg)}}
+.price-badge{position:absolute;right:36px;top:8px;width:118px;height:118px;border-radius:50%;background:conic-gradient(#FFD02F,#FF8A00,#FF2E63,#FFD02F);border:3px solid #0B0B14;display:grid;place-items:center;text-align:center;transform:rotate(12deg);box-shadow:0 0 0 6px rgba(255,208,47,.25),0 0 30px rgba(255,140,0,.7);z-index:4;animation:badge 4s ease-in-out infinite}
+@keyframes badge{50%{transform:rotate(6deg) scale(1.05)}}
+.price-badge div{background:#0B0B14;color:#fff;border-radius:50%;width:96px;height:96px;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1.05}
+.price-badge b{color:#FFD02F;font-size:20px}
+.singer-card{position:relative;z-index:4;background:rgba(12,12,22,.86);border:1.8px solid rgba(255,216,138,.7);border-radius:18px;padding:12px 14px;display:flex;gap:14px;align-items:center;backdrop-filter:blur(10px);box-shadow:0 12px 40px rgba(0,0,0,.5)}
+.face{width:92px;height:92px;border-radius:50%;flex-shrink:0;border:3px solid #FFD88A;overflow:hidden;background:#FF4D6D}
+.bubble{position:absolute;left:118px;top:-34px;background:#FFD02F;color:#14101F;font-size:13.5px;font-weight:900;padding:7px 12px;border-radius:12px 12px 12px 2px;border:2px solid #14101F;white-space:nowrap}
+.bubble:after{content:"";position:absolute;left:-6px;bottom:-6px;width:12px;height:12px;background:inherit;border-right:2px solid #14101F;border-bottom:2px solid #14101F;transform:rotate(45deg)}
+.gaze-line{position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none;z-index:3}
+.singer-txt h3{font-size:17px;line-height:1.2} .singer-txt h3 em{color:#FFD88A;font-style:normal}
+.singer-txt p{font-size:14px;color:#D8D2C6;margin-top:3px;line-height:1.45}
+.singer-txt p b{color:#fff}
+.go{margin-left:auto;background:#fff;color:#14101F;border-radius:12px;padding:10px 14px;font-weight:900;font-size:14px;border:2px solid #FFD88A;white-space:nowrap;cursor:pointer}
+@media(max-width:900px){.stage{height:auto}.main{grid-template-columns:1fr}.right{min-height:620px}}
+</style>
+</head>
+<body>
+<div class="stage" role="main" aria-label="서울 미드나잇 재즈 페스티벌 포스터">
+<header class="topbar">
+<div class="brand"><div class="brand-mark">♪</div><div>SEOUL MIDNIGHT JAZZ<small>NOV FEST • VOL.8</small></div></div>
+<nav class="top-links" aria-label="메뉴"><span>라인업</span><span>타임테이블</span><span>오시는길</span><span>굿즈</span></nav>
+<div class="top-right"><span class="d-badge">⏳ D-18 · 얼리버드 마감 10.20</span><button class="mini-cta">티켓 예매</button></div>
+</header>
+<div class="main">
+<!-- LEFT -->
+<section class="left">
+<div class="eyebrow"><span class="dot"></span> 11월 단 3일간의 심야 재즈 <b>SEOUL • 2026</b></div>
+<h1>금관이 깨우는<br><em>한밤의 네온</em></h1>
+<p class="sub"><strong>11.20 FRI — 11.22 SUN, 올림픽공원 88호수 수변무대.</strong> 호수 위로 번지는 트럼펫, 더블베이스, 그리고 5팀의 밤.</p>
+<div class="value-box" aria-label="얼리버드 혜택">
+<div class="v-price"><span>EARLY BIRD -30%</span><s>88,000원</s><b>61,600원~</b></div>
+<div class="v-text"><b>오늘 예매하면 첫 잔 무료</b> + 전석 지정석 보장<br>하이볼 / 모크테일 중 1잔 · ~10.20까지만</div>
+</div>
+<div class="cta-row">
+<button class="btn-main" onclick="alert('얼리버드 예매로 이동합니다')">얼리버드 티켓 잡기 →</button>
+<button class="btn-sub">▶ 미리듣기</button>
+</div>
+<div class="micro">✔ 전석 실내·외 우천무관 &nbsp; ✔ 8세 이상 &nbsp; ✔ 호수 수변 지정석 1,200석</div>
+<div class="info-grid">
+<div><b>📅 DATE</b><strong>11.20(금)–22(일)</strong>19:00–01:00</div>
+<div><b>📍 PLACE</b><strong>올림픽공원 88호수</strong>수변 특설무대</div>
+<div><b>🎺 LINE-UP</b><strong>총 5팀 · 9시간</strong>빅밴드~잼</div>
+</div>
+<div class="lineup">
+<div class="lineup-head"><h2>LINE-UP 5</h2><a href="#">전체 타임테이블 →</a></div>
+<ol>
+<li><span class="num">1</span><span class="day d1">11.20 FRI</span><div><strong>선우정아 X 김주환 쿼텟</strong> <span>· 헤드라이너 / 보컬 재즈</span></div></li>
+<li><span class="num">2</span><span class="day d1">11.20 FRI</span><div><strong>Tigran Hamasyan Trio</strong> <span>· 내한 / 피아노 트리오</span></div></li>
+<li><span class="num">3</span><span class="day d2">11.21 SAT</span><div><strong>Brass Empire Big Band</strong> <span>· 17인조 / 심야 스윙</span></div></li>
+<li><span class="num">4</span><span class="day d2">11.21 SAT</span><div><strong>김현아 Velvet Night</strong> <span>· 재즈 보컬 / 발라드</span></div></li>
+<li><span class="num">5</span><span class="day d3">11.22 SUN</span><div><strong>Clazziquai Late Jam</strong> <span>· DJ + 올나잇 잼 세션</span></div></li>
+</ol>
+</div>
+</section>
+<!-- RIGHT -->
+<section class="right" aria-label="공연 이미지">
+<div class="stars"></div><div class="beam"></div><div class="moon"></div>
+<div class="top-pills"><span class="pill live">● LIVE NOW</span><span class="pill">3 DAYS · 5 ARTISTS</span><span class="pill">야외 + 돔 STAGE</span></div>
+<div class="trumpet-wrap">
+<div class="price-badge" aria-label="얼리버드 30퍼센트 할인"><div><span style="font-size:11px;letter-spacing:.12em;font-weight:900;color:#FFD02F">EARLY BIRD</span><b>-30%</b><span style="font-size:12px;font-weight:800">38,500원~</span></div></div>
+<!-- Dominant object: diagonal brass trumpet -->
+<svg class="trumpet-svg" viewBox="0 0 620 320" fill="none" aria-label="황금빛 트럼펫">
+<defs><linearGradient id="brass" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFF3C4"/><stop offset=".35" stop-color="#FFC86B"/><stop offset=".65" stop-color="#FF8A1A"/><stop offset="1" stop-color="#8A3B00"/></linearGradient>
+<linearGradient id="bellG" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#6E2A0A"/><stop offset=".25" stop-color="#FF9A2E"/><stop offset=".55" stop-color="#FFF0B8"/><stop offset="1" stop-color="#FF6B3D"/></linearGradient>
+<filter id="glow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="0" stdDeviation="12" flood-color="#FFB347" flood-opacity=".8"/></filter>
+</defs>
+<!-- motion trails -->
+<g stroke="#FFD88A" stroke-linecap="round" opacity=".9"><line x1="500" y1="95" x2="590" y2="70" stroke-width="5"/><line x1="505" y1="150" x2="605" y2="150" stroke-width="7"/><line x1="500" y1="205" x2="590" y2="230" stroke-width="5"/><line x1="480" y1="122" x2="550" y2="108" stroke-width="2.5" opacity=".6"/><line x1="480" y1="178" x2="550" y2="192" stroke-width="2.5" opacity=".6"/></g>
+<!-- tube -->
+<g filter="url(#glow)">
+<rect x="160" y="138" width="300" height="22" rx="11" fill="url(#brass)" stroke="#1A0E00" stroke-width="4"/>
+<rect x="160" y="170" width="300" height="14" rx="7" fill="url(#brass)" stroke="#1A0E00" stroke-width="4"/>
+<!-- valves -->
+<g><rect x="300" y="102" width="18" height="58" rx="6" fill="#FFF0C2" stroke="#1A0E00" stroke-width="4"/><rect x="330" y="102" width="18" height="58" rx="6" fill="#FFF0C2" stroke="#1A0E00" stroke-width="4"/><rect x="360" y="102" width="18" height="58" rx="6" fill="#FFF0C2" stroke="#1A0E00" stroke-width="4"/><ellipse cx="309" cy="96" rx="14" ry="8" fill="#FF2E63" stroke="#1A0E00" stroke-width="3"/><ellipse cx="339" cy="96" rx="14" ry="8" fill="#FF2E63" stroke="#1A0E00" stroke-width="3"/><ellipse cx="369" cy="96" rx="14" ry="8" fill="#FF2E63" stroke="#1A0E00" stroke-width="3"/></g>
+<!-- bell pointing left to CTA -->
+<path d="M160 120 L55 70 L55 230 L160 180 Z" fill="url(#bellG)" stroke="#1A0E00" stroke-width="5" stroke-linejoin="round"/>
+<ellipse cx="55" cy="150" rx="18" ry="80" fill="#2B0E1A" stroke="#FFD88A" stroke-width="5"/>
+<ellipse cx="55" cy="150" rx="9" ry="55" fill="#FF8A3D" opacity=".9"/>
+<!-- mouthpiece -->
+<rect x="458" y="142" width="46" height="14" rx="7" fill="#1A0E00"/><circle cx="512" cy="149" r="10" fill="#FFD88A" stroke="#1A0E00" stroke-width="3"/>
+</g>
+<!-- notes implying motion -->
+<g font-family="sans-serif" font-size="34" font-weight="900" fill="#fff"><text x="90" y="70">♪</text><text x="130" y="260" fill="#9BF0E3">♫</text><text x="470" y="70" fill="#FFD02F">♩</text></g>
+</svg>
+<span class="sound" style="left:12%;top:28%;font-size:26px">♪</span>
+<span class="sound" style="left:18%;bottom:32%;font-size:22px;animation-delay:.6s;color:#9BF0E3">♫</span>
+<span class="sound" style="right:12%;top:24%;font-size:30px;animation-delay:1.1s">♩</span>
+<!-- gaze line from face to CTA direction -->
+<svg class="gaze-line" viewBox="0 0 700 500" preserveAspectRatio="none"><path d="M520 420 C 380 410, 200 380, 40 300" stroke="rgba(255,208,47,.0)" stroke-width="2" stroke-dasharray="8 8" stroke="#FFD02F" opacity=".7"/></svg>
+</div>
+<div class="singer-card">
+<div class="bubble">👈 이쪽! 지금이 제일 싸요 · 38,500원~</div>
+<div class="face" aria-label="재즈 보컬리스트 일러스트">
+<svg viewBox="0 0 100 100" width="92" height="92"><circle cx="50" cy="50" r="50" fill="#FF9EB0"/><path d="M8 55 Q10 12 50 10 Q90 12 92 58 Q88 38 78 32 Q70 48 50 46 Q30 48 22 32 Q12 40 8 55" fill="#14101F"/><ellipse cx="50" cy="58" rx="26" ry="28" fill="#FFDDB8"/><ellipse cx="50" cy="64" rx="15" ry="12" fill="#FFDDB8"/><circle cx="37" cy="57" r="7.5" fill="#fff"/><circle cx="63" cy="57" r="7.5" fill="#fff"/><circle cx="34.5" cy="57.5" r="3.2" fill="#14101F"/><circle cx="60.5" cy="57.5" r="3.2" fill="#14101F"/><circle cx="35.5" cy="56.5" r="1" fill="#fff"/><circle cx="61.5" cy="56.5" r="1" fill="#fff"/><path d="M31 50 Q37 47 43 50" stroke="#14101F" stroke-width="2.2" fill="none" stroke-linecap="round"/><path d="M57 50 Q63 47 69 50" stroke="#14101F" stroke-width="2.2" fill="none" stroke-linecap="round"/><path d="M49 60 Q48 66 44 67" stroke="#B07A4A" stroke-width="1.8" fill="none" stroke-linecap="round"/><path d="M40 76 Q50 82 60 76 Q58 84 50 84 Q42 84 40 76" fill="#B3123A"/><path d="M41 76 Q50 79 59 76" stroke="#FF7A95" stroke-width="1.5" fill="none"/><circle cx="24" cy="68" r="5" fill="#FFD02F" stroke="#14101F" stroke-width="2"/><circle cx="76" cy="68" r="5" fill="#FFD02F" stroke="#14101F" stroke-width="2"/></svg>
+</div>
+<div class="singer-txt"><h3>헤드라이너 <em>선우정아</em>가 보는 곳 👁</h3><p>시선을 따라가면 <b>얼리버드 혜택</b>이 보여요.<br>3일권·1일권 모두 <b>10.20까지 30%</b></p></div>
+<button class="go" onclick="alert('얼리버드 예매로 이동합니다')">예매하기 →</button>
+</div>
+</section>
+</div>
+</div>
+</body>
+</html>

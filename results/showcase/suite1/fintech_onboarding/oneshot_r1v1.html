@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>쪼개미 — 1,000원으로 시작하는 소수점 투자</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&family=Inter:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+--cream:#FFF6E5;
+--paper:#FFFEF9;
+--ink:#17142E;
+--indigo:#3532EE;
+--indigo-dark:#1E1CB8;
+--coral:#FF4A2B;
+--lime:#DAFF3D;
+--mint:#C7F5DD;
+--line:2px solid var(--ink);
+}
+html,body{height:100%}
+body{
+font-family:"Noto Sans KR",system-ui,sans-serif;
+background:var(--cream);
+color:var(--ink);
+font-size:17px;
+line-height:1.6;
+-webkit-font-smoothing:antialiased;
+background-image: radial-gradient(#17142E14 1.5px, transparent 1.5px);
+background-size:22px 22px;
+}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit}
+.page{max-width:1280px;min-height:800px;height:100vh;max-height:800px;margin:0 auto;display:flex;flex-direction:column;padding:0 32px;position:relative;overflow:hidden}
+@media(max-height:820px){.page{height:auto;max-height:none;min-height:800px}}
+/* NAV */
+.nav{display:flex;align-items:center;justify-content:space-between;height:72px;flex-shrink:0}
+.brand{display:flex;align-items:center;gap:10px;font-weight:900;font-size:22px;letter-spacing:-.02em}
+.logo-mark{width:36px;height:36px;background:var(--lime);border:var(--line);border-radius:11px;display:grid;place-items:center;font-size:20px;box-shadow:3px 3px 0 var(--ink)}
+.nav-links{display:flex;gap:28px;font-size:16px;font-weight:700}
+.nav-links a{opacity:.75}.nav-links a:hover{opacity:1}
+.nav-cta{display:flex;gap:10px;align-items:center}
+.btn-ghost{border:var(--line);background:#fff;border-radius:999px;padding:9px 18px;font-weight:800;font-size:15px;box-shadow:3px 3px 0 var(--ink);transition:.15s}
+.btn-ghost:hover{transform:translate(-1px,-1px);box-shadow:4px 4px 0 var(--ink)}
+.btn-smalldark{background:var(--ink);color:#fff;border:var(--line);border-radius:999px;padding:10px 18px;font-weight:800;font-size:15px}
+/* HERO */
+.hero{flex:1;display:grid;grid-template-columns:560px 1fr;gap:28px;align-items:center;padding:8px 0 14px}
+.live-badge{display:inline-flex;align-items:center;gap:8px;background:#fff;border:var(--line);border-radius:999px;padding:7px 14px 7px 10px;font-size:14px;font-weight:800;box-shadow:4px 4px 0 var(--ink)}
+.dot{width:10px;height:10px;background:#00C24E;border-radius:50%;border:2px solid var(--ink);position:relative}
+.dot::after{content:"";position:absolute;inset:-6px;border:2px solid #00C24E;border-radius:50%;opacity:.5;animation:ping 1.6s infinite}
+@keyframes ping{to{transform:scale(1.4);opacity:0}}
+h1{font-size:60px;line-height:1.04;letter-spacing:-.035em;font-weight:900;margin:18px 0 14px}
+h1 .hl{position:relative;display:inline-block;white-space:nowrap}
+h1 .hl span{position:relative;z-index:1}
+h1 .hl::before{content:"";position:absolute;left:-6px;right:-6px;top:52%;bottom:6px;background:var(--lime);border:var(--line);border-radius:8px;z-index:0;transform:rotate(-1.2deg)}
+h1 .coral{color:var(--indigo)}
+.sub{font-size:18px;line-height:1.65;color:#3A375A;font-weight:500;max-width:500px}
+.sub strong{color:var(--ink);background:#fff;padding:0 6px;border:1.5px solid var(--ink);border-radius:6px;white-space:nowrap}
+.cta-row{display:flex;gap:14px;margin:22px 0 12px;align-items:center}
+.btn-primary{background:var(--indigo);color:#fff;border:var(--line);border-radius:16px;padding:17px 26px;font-size:19px;font-weight:900;display:inline-flex;align-items:center;gap:10px;box-shadow:6px 6px 0 var(--ink);cursor:pointer;transition:.15s}
+.btn-primary:hover{background:var(--indigo-dark);transform:translate(-2px,-2px);box-shadow:8px 8px 0 var(--ink)}
+.btn-primary small{background:var(--lime);color:var(--ink);font-size:13px;font-weight:900;border:1.5px solid var(--ink);border-radius:999px;padding:3px 9px}
+.btn-video{background:var(--paper);border:var(--line);border-radius:16px;padding:16px 20px;font-weight:800;font-size:16px;display:flex;align-items:center;gap:10px;box-shadow:6px 6px 0 var(--ink);cursor:pointer}
+.play{width:32px;height:32px;background:var(--coral);border:2px solid var(--ink);border-radius:50%;display:grid;place-items:center;color:#fff;font-size:14px}
+.micro-checks{display:flex;gap:16px;font-size:15px;font-weight:700;margin-top:4px;flex-wrap:wrap}
+.micro-checks i{font-style:normal;background:#000;color:#fff;border-radius:50%;width:20px;height:20px;display:inline-grid;place-items:center;font-size:13px;margin-right:6px}
+.trust{margin-top:18px;background:var(--paper);border:var(--line);border-radius:18px;box-shadow:6px 6px 0 var(--ink);display:grid;grid-template-columns:1fr 1fr 1fr;padding:14px 6px;position:relative}
+.trust div{padding:0 18px;text-align:left}
+.trust div+div{border-left:2px dashed #17142E33}
+.trust b{display:block;font-size:15px}
+.trust span{font-size:13.5px;color:#5A587D;line-height:1.4;display:block;margin-top:2px}
+.trust .stars{color:#FF8A00;letter-spacing:1px;font-size:13px;font-weight:900}
+/* VISUAL */
+.visual{position:relative;height:620px;background:linear-gradient(180deg,#3532EE 0%,#6A67FF 55%,#FFB59E 100%);border:var(--line);border-radius:28px;box-shadow:8px 8px 0 var(--ink);overflow:hidden;display:flex;align-items:center;justify-content:center}
+.visual::before{content:"1,000";position:absolute;font-family:Inter,sans-serif;font-weight:900;font-size:210px;letter-spacing:-.06em;color:transparent;-webkit-text-stroke:2px #ffffff55;top:6px;left:18px;line-height:1;pointer-events:none}
+.grid-lines{position:absolute;inset:0;background-image:linear-gradient(#ffffff22 1px,transparent 1px),linear-gradient(90deg,#ffffff22 1px,transparent 1px);background-size:44px 44px;mask-image:radial-gradient(70% 70% at 50% 40%,black,transparent)}
+.coin{position:absolute;top:28px;right:34px;background:var(--lime);border:var(--line);border-radius:999px;padding:8px 14px;font-weight:900;font-size:15px;box-shadow:4px 4px 0 var(--ink);transform:rotate(6deg)}
+.phone{width:300px;height:560px;background:#fff;border:3px solid var(--ink);border-radius:42px;box-shadow:10px 10px 0 var(--ink);overflow:hidden;position:relative;z-index:2;display:flex;flex-direction:column}
+.notch{position:absolute;top:12px;left:50%;transform:translateX(-50%);width:110px;height:26px;background:var(--ink);border-radius:999px;z-index:3}
+.p-head{padding:44px 18px 10px;display:flex;justify-content:space-between;align-items:center;font-weight:900;font-size:16px}
+.p-search{margin:0 16px;background:#F2F1FF;border:2px solid var(--ink);border-radius:12px;padding:9px 12px;font-size:14px;font-weight:800;display:flex;justify-content:space-between}
+.p-stock{padding:14px 18px 0}
+.p-stock h3{font-size:18px}.p-stock h3 small{font-size:13px;color:#666;background:#eee;border-radius:6px;padding:2px 6px;margin-left:6px}
+.price{font-family:Inter,sans-serif;font-size:28px;font-weight:900;letter-spacing:-.02em}.up{font-size:13px;background:#00C24E;color:#fff;font-weight:800;border-radius:999px;padding:2px 8px;margin-left:8px;vertical-align:middle}
+.chart{margin:8px 16px 0;background:#0F0E24;border-radius:14px;padding:10px 10px 6px;border:2px solid var(--ink)}
+.amount-box{margin:12px 16px 0;border:2px solid var(--ink);border-radius:14px;padding:12px;background:var(--lime)}
+.amount-box label{font-size:12px;font-weight:900;letter-spacing:.02em}
+.amt-btns{display:flex;gap:6px;margin:8px 0}
+.amt-btns button{flex:1;border:2px solid var(--ink);border-radius:999px;background:#fff;font-size:12.5px;font-weight:800;padding:6px 0;cursor:pointer}
+.amt-btns button.on{background:var(--ink);color:var(--lime)}
+.big-amt{font-size:26px;font-weight:900;font-family:Inter,sans-serif} .shares{font-size:14px;font-weight:800}
+.p-buy{margin:12px 16px;background:var(--indigo);color:#fff;border:2px solid var(--ink);border-radius:12px;padding:13px;font-weight:900;font-size:16px;box-shadow:3px 3px 0 var(--ink);cursor:pointer}
+.p-nav{margin-top:auto;border-top:2px solid var(--ink);display:flex;justify-content:space-around;padding:10px;font-size:20px;background:#fff}
+.float{position:absolute;z-index:3;background:#fff;border:var(--line);border-radius:14px;box-shadow:5px 5px 0 var(--ink);padding:10px 13px;font-size:14px;font-weight:800;display:flex;gap:10px;align-items:center;animation:float 3.2s ease-in-out infinite}
+.f1{top:96px;right:18px;transform:rotate(3deg)}
+.f2{bottom:118px;left:18px;animation-delay:.8s;transform:rotate(-2deg)}
+.f3{top:280px;left:14px;animation-delay:1.6s;background:var(--ink);color:#fff;box-shadow:5px 5px 0 #ffffff}
+@keyframes float{0%,100%{translate:0 0}50%{translate:0 -9px}}
+.check{width:28px;height:28px;border-radius:50%;background:#00C24E;border:2px solid var(--ink);display:grid;place-items:center;color:#fff;flex-shrink:0}
+.bar{width:110px;height:8px;background:#E9E8FF;border:1.5px solid var(--ink);border-radius:999px;overflow:hidden;margin-top:6px}
+.bar i{display:block;width:72%;height:100%;background:var(--coral)}
+/* TICKER */
+.ticker{flex-shrink:0;background:var(--ink);color:#fff;border:var(--line);border-radius:14px;box-shadow:5px 5px 0 #3532EE;display:flex;align-items:center;overflow:hidden;height:52px;margin-bottom:10px}
+.tick-label{background:var(--coral);border-right:2px solid #fff;height:100%;display:flex;align-items:center;padding:0 16px;font-weight:900;font-size:14px;white-space:nowrap}
+.marquee{display:flex;gap:36px;white-space:nowrap;padding-left:22px;animation:scroll 22s linear infinite;font-size:15px;font-weight:700}
+.marquee b{color:var(--lime);font-family:Inter,sans-serif}
+@keyframes scroll{to{transform:translateX(-50%)}}
+.legal{font-size:12.5px;color:#6B698A;padding:0 4px 12px;display:flex;justify-content:space-between}
+:focus-visible{outline:3px solid var(--coral);outline-offset:2px}
+@media(max-width:1020px){.page{max-height:none;height:auto}.hero{grid-template-columns:1fr}.visual{height:640px}h1{font-size:46px}}
+</style>
+</head>
+<body>
+<div class="page">
+<nav class="nav" aria-label="주요 메뉴">
+<div class="brand"><span class="logo-mark" aria-hidden="true">✂️</span> 쪼개미</div>
+<div class="nav-links"><a href="#">소수점 투자</a><a href="#">수수료 0원</a><a href="#">안전장치</a><a href="#">리뷰 12만개</a></div>
+<div class="nav-cta"><a class="btn-ghost" href="#">로그인</a><a class="btn-smalldark" href="#">앱 다운로드</a></div>
+</nav>
+
+<main class="hero">
+<section aria-labelledby="title">
+<div class="live-badge"><span class="dot"></span> LIVE · 지금 1,284,302명이 쪼개 사는 중 <span style="background:var(--ink);color:#fff;border-radius:999px;padding:1px 8px;font-size:12px">⏱ 평균 2분 47초 개설</span></div>
+<h1 id="title">비싼 주식도,<br><span class="hl"><span>1,000원</span></span>부터 <span class="coral">쪼개 사자.</span></h1>
+<p class="sub">테슬라 1주 34만원? 애플 1주 31만원? 목돈 없이도 <strong>0.001주 단위</strong>로 살 수 있어요. 커피 한 잔 값으로 미국 우량주 주주가 되세요. <strong>지금 수수료 0원</strong></p>
+<div class="cta-row">
+<button class="btn-primary" onclick="alert('쪼개미 가입을 시작합니다! 신분증을 준비해주세요 📸')">3분 만에 시작하기 <span aria-hidden="true">→</span> <small>수수료 0원</small></button>
+<button class="btn-video"><span class="play">▶</span> 1분 소개 영상</button>
+</div>
+<div class="micro-checks"><span><i>✓</i>신분증만 있으면 OK</span><span><i>✓</i>비대면 3분 계좌개설</span><span><i>✓</i>언제든 1원부터 출금</span></div>
+<div class="trust" role="list" aria-label="신뢰 신호">
+<div role="listitem"><span class="stars">★★★★★ 4.9</span><b>🛡️ 한국예탁원 별도 보관</b><span>내 주식은 제휴 증권사·예탁원에 분리 보관</span></div>
+<div role="listitem"><span class="stars">금융위 지정 ✓</span><b>🏦 혁신금융서비스 지정</b><span>신한투자증권 제휴 · ISMS-P 인증</span></div>
+<div role="listitem"><span class="stars">128만 선택</span><b>🔒 256-bit · 생체인증 보안</b><span>12만 리뷰 · 고객자산 100% 보호</span></div>
+</div>
+</section>
+
+<section class="visual" aria-label="앱 미리보기">
+<div class="grid-lines"></div>
+<div class="coin">🎉 첫 매수 5,000원 쿠폰</div>
+<div class="float f1"><span class="check">✓</span><span>애플 0.004주 체결 완료!<br><small style="font-weight:700;color:#555">1,000원 · 방금 전</small></span></div>
+<div class="float f3"><span>💸</span><span>수수료 0원 D-12</span></div>
+
+<div class="phone" role="img" aria-label="쪼개미 앱에서 5000원으로 테슬라 소수점 매수하는 화면">
+<div class="notch"></div>
+<div class="p-head"><span>✂️ 쪼개미</span><span>🔔 <span style="background:var(--coral);color:#fff;font-size:11px;border-radius:999px;padding:1px 6px;border:1.5px solid var(--ink)">3</span></span></div>
+<div class="p-search"><span>🔍 테슬라 TSLA</span><span>›</span></div>
+<div class="p-stock"><h3>테슬라 <small>TSLA</small></h3><div><span class="price">$248.32</span><span class="up">▲ +2.4%</span></div></div>
+<div class="chart">
+<svg viewBox="0 0 260 70" width="100%" height="62" aria-hidden="true"><path d="M0 55 L25 48 L50 52 L75 35 L100 40 L125 28 L150 32 L175 18 L200 22 L225 10 L260 14" fill="none" stroke="#DAFF3D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="225" cy="10" r="5" fill="#FF4A2B" stroke="#fff" stroke-width="2"/><path d="M0 55 L25 48 L50 52 L75 35 L100 40 L125 28 L150 32 L175 18 L200 22 L225 10 L260 14 L260 70 L0 70Z" fill="#DAFF3D" opacity=".18"/></svg>
+<div style="display:flex;justify-content:space-between;color:#B9B8D6;font-size:11px;font-weight:700"><span>1일</span><span>1주</span><span style="color:#DAFF3D">1달</span><span>1년</span></div>
+</div>
+<div class="amount-box">
+<label for="amt">얼마 살까요? · 1,000원부터</label>
+<div class="amt-btns" role="group" aria-label="금액 선택">
+<button data-amt="1000">1천원</button>
+<button data-amt="5000" class="on">5천원</button>
+<button data-amt="10000">1만원</button>
+<button data-amt="50000">5만원</button>
+</div>
+<div class="big-amt"><span id="amtView">5,000</span>원</div>
+<div class="shares">≈ <span id="shareView">0.0148</span>주 살 수 있어요 🥳</div>
+</div>
+<button class="p-buy">지금 쪼개 사기</button>
+<div class="p-nav"><span>🏠</span><span>📊</span><span style="background:var(--ink);color:#fff;border-radius:10px;padding:0 10px">✂️</span><span>💬</span><span>👤</span></div>
+</div>
+
+<div class="float f2"><span style="font-size:24px">💰</span><span>1,000원 → 엔비디아 주주됨<br><span class="bar"><i></i></span></span></div>
+</section>
+</main>
+
+<div class="ticker" aria-label="실시간 소수점 체결">
+<div class="tick-label">● 실시간 체결</div>
+<div class="marquee" aria-hidden="true">
+<span>삼성전자 0.013주 <b>1,000원</b> ✓</span><span>테슬라 0.014주 <b>5,000원</b> ✓</span><span>엔비디아 0.008주 <b>10,000원</b> ✓</span><span>애플 0.004주 <b>1,000원</b> ✓</span><span>코카콜라 0.021주 <b>2,000원</b> ✓</span>
+<span>삼성전자 0.013주 <b>1,000원</b> ✓</span><span>테슬라 0.014주 <b>5,000원</b> ✓</span><span>엔비디아 0.008주 <b>10,000원</b> ✓</span><span>애플 0.004주 <b>1,000원</b> ✓</span><span>코카콜라 0.021주 <b>2,000원</b> ✓</span>
+</div>
+</div>
+<p class="legal"><span>※ 투자 시 원금 손실 가능 · 예금자보호법 미적용 · 한국예탁원 분리보관 · 준법감시인 심사필 2026-11-02</span><span>도움말 · 이용약관 · 개인정보처리방침</span></p>
+</div>
+<script>
+// interactive amount -> shares demo (TSLA $248.32, 환율 1,360원 가정)
+const rate=1360, price=248.32;
+const amtView=document.getElementById('amtView'), shareView=document.getElementById('shareView');
+document.querySelectorAll('.amt-btns button').forEach(b=>{
+b.addEventListener('click',()=>{
+document.querySelectorAll('.amt-btns button').forEach(x=>x.classList.remove('on'));
+b.classList.add('on');
+const amt=+b.dataset.amt;
+amtView.textContent=amt.toLocaleString('ko-KR');
+shareView.textContent=(amt/(price*rate)).toFixed(4);
+});
+});
+</script>
+</body>
+</html>

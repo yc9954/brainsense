@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>서울 나이트 브라스 재즈 페스티벌 2026 — 11.20-22 올림픽공원</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@400;500;700;900&family=Playfair+Display:ital,wght@1,700;1,900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+--bg:#11060E;
+--bg2:#25101A;
+--gold:#FFC46B;
+--brass:#E99A2E;
+--pink:#FF2E7A;
+--mint:#3DF0C0;
+--cream:#FFF6E9;
+--cream-dim:#EAD3BE;
+--muted:#C8A99A;
+--line:rgba(255,196,107,.18);
+}
+html{scroll-behavior:smooth}
+body{
+background:var(--bg);
+color:var(--cream);
+font-family:"Noto Sans KR",sans-serif;
+font-size:17px;line-height:1.6;
+min-height:100vh;
+overflow-x:hidden;
+-webkit-font-smoothing:antialiased;
+}
+body::before{
+content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+background:
+radial-gradient(700px 420px at 68% 38%, rgba(255,46,122,.28), transparent 65%),
+radial-gradient(800px 500px at 20% 100%, rgba(233,154,46,.22), transparent 60%),
+radial-gradient(600px 600px at 95% 10%, rgba(61,240,192,.10), transparent 60%),
+linear-gradient(180deg, #1A0C15 0%, #11060E 55%, #0A0408 100%);
+}
+body::after{
+content:"";position:fixed;inset:0;z-index:0;opacity:.07;pointer-events:none;
+background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.9'/%3E%3C/svg%3E");
+}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--mint);outline-offset:3px;border-radius:6px}
+.marquee{background:var(--gold);color:#160A0E;font-weight:900;font-size:13px;letter-spacing:.12em;white-space:nowrap;overflow:hidden;height:36px;display:flex;align-items:center;position:relative;z-index:5}
+.marquee-track{display:flex;gap:0;animation:scroll 22s linear infinite;width:max-content}
+.marquee-track span{padding:0 18px;display:flex;align-items:center;gap:18px}
+.marquee-track i{font-style:normal;background:#160A0E;color:var(--gold);border-radius:100px;padding:2px 10px;font-size:11px}
+@keyframes scroll{to{transform:translateX(-50%)}}
+.wrap{max-width:1280px;margin:0 auto;padding:0 28px;position:relative;z-index:2}
+nav{display:flex;align-items:center;justify-content:space-between;height:70px;border-bottom:1px solid var(--line)}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo-mark{width:40px;height:40px;border-radius:12px;background:radial-gradient(circle at 30% 30%, #FFE3A8, #E99A2E 55%, #7A2B1A 100%);display:grid;place-items:center;font-size:22px;box-shadow:0 0 22px rgba(255,196,107,.7), inset 0 1px 0 #fff8}
+.logo b{font-family:"Black Han Sans",sans-serif;font-size:19px;letter-spacing:.02em;line-height:1}
+.logo small{display:block;font-family:"Space Grotesk",sans-serif;font-size:11px;letter-spacing:.28em;color:var(--gold);font-weight:700}
+.nav-links{display:flex;gap:26px;font-size:15px;font-weight:700;color:var(--cream-dim)}
+.nav-links a{text-decoration:none;opacity:.9}
+.nav-links a:hover{color:var(--gold)}
+.nav-cta{display:flex;align-items:center;gap:12px}
+.badge-live{font-size:12px;font-weight:900;letter-spacing:.08em;border:1px solid rgba(61,240,192,.5);color:var(--mint);border-radius:100px;padding:7px 12px;display:flex;align-items:center;gap:8px;background:rgba(61,240,192,.08)}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--mint);box-shadow:0 0 10px var(--mint);animation:blink 1.6s infinite}
+@keyframes blink{50%{opacity:.3}}
+.btn-small{background:var(--cream);color:#170A0F;font-weight:900;font-size:15px;border-radius:100px;padding:11px 20px;text-decoration:none;display:inline-flex;align-items:center;gap:8px;border:2px solid var(--cream)}
+.btn-small:hover{background:var(--gold);border-color:var(--gold)}
+.stage{display:grid;grid-template-columns:310px 1fr 348px;gap:0;margin-top:18px;border:1px solid var(--line);border-radius:28px;overflow:hidden;background:rgba(255,246,233,.03);backdrop-filter:blur(6px);min-height:654px;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+/* LEFT */
+.lineup{background:linear-gradient(180deg, rgba(255,196,107,.08), rgba(0,0,0,.25));border-right:1px solid var(--line);padding:22px 20px 18px;display:flex;flex-direction:column}
+.lineup-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+.lineup-head h2{font-family:"Space Grotesk",sans-serif;font-size:13px;letter-spacing:.28em;color:var(--gold)}
+.lineup-head em{font-style:normal;font-size:12px;background:var(--pink);color:#fff;border-radius:6px;padding:3px 8px;font-weight:900;box-shadow:0 0 14px rgba(255,46,122,.7)}
+.lineup-list{list-style:none;margin-top:10px}
+.lineup-list li{border-top:1px solid rgba(255,246,233,.12);padding:13px 10px 12px;border-radius:12px;cursor:pointer;transition:.2s;position:relative}
+.lineup-list li:last-child{border-bottom:1px solid rgba(255,246,233,.12)}
+.lineup-list li:hover,.lineup-list li.active{background:rgba(255,196,107,.10);transform:translateX(4px)}
+.lineup-list .num{font-family:"Space Grotesk",sans-serif;font-size:12px;color:var(--mint);letter-spacing:.15em;font-weight:700}
+.lineup-list h3{font-size:18px;font-weight:900;line-height:1.25;margin:2px 0}
+.lineup-list h3 span{display:block;font-size:12px;font-weight:500;color:var(--muted);letter-spacing:.06em}
+.tag-row{display:flex;gap:6px;margin-top:7px;flex-wrap:wrap}
+.tag{font-size:11.5px;font-weight:700;letter-spacing:.04em;border-radius:100px;padding:3px 9px;border:1px solid rgba(255,246,233,.22);color:var(--cream-dim)}
+.tag.day{background:var(--cream);color:#170A0F;border-color:var(--cream)}
+.tag.hot{border-color:var(--pink);color:#FF9EBD}
+.left-foot{margin-top:auto;background:#0D0509;border:1px dashed rgba(255,196,107,.4);border-radius:14px;padding:12px 14px;font-size:13.5px;color:var(--cream-dim)}
+.left-foot strong{color:var(--gold)}
+/* CENTER */
+.center{position:relative;padding:30px 36px 18px;overflow:hidden;display:flex;flex-direction:column;align-items:center;text-align:center}
+.spot{position:absolute;top:-40px;left:50%;transform:translateX(-50%);width:520px;height:420px;background:linear-gradient(180deg, rgba(255,196,107,.35), rgba(255,46,122,.08) 60%, transparent 75%);clip-path:polygon(42% 0,58% 0,92% 100%,8% 100%);filter:blur(.5px);pointer-events:none}
+.rings{position:absolute;top:132px;left:50%;transform:translateX(-50%);width:460px;height:460px;pointer-events:none;opacity:.9}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:900;letter-spacing:.22em;color:var(--gold);border:1px solid rgba(255,196,107,.4);border-radius:100px;padding:8px 16px;background:rgba(0,0,0,.45)}
+.eyebrow::before{content:"●";color:var(--pink);font-size:10px;text-shadow:0 0 8px var(--pink)}
+h1{font-family:"Black Han Sans",sans-serif;font-size:60px;line-height:.95;margin:16px 0 8px;letter-spacing:-.02em;text-wrap:balance}
+h1 .neon{font-family:"Playfair Display",serif;font-style:italic;font-weight:900;color:transparent;-webkit-text-stroke:2px var(--gold);text-shadow:0 0 26px rgba(255,196,107,.55);letter-spacing:0}
+h1 .pink{color:var(--pink);text-shadow:0 0 18px rgba(255,46,122,.9),0 0 46px rgba(255,46,122,.5)}
+.sub{max-width:560px;color:#F3DCC8;font-size:16.5px;line-height:1.65}
+.sub strong{color:var(--cream);background:linear-gradient(transparent 60%, rgba(255,46,122,.55) 60%)}
+.trumpet-wrap{position:relative;width:100%;display:flex;justify-content:center;margin:6px 0 2px}
+.trumpet{width:520px;max-width:100%;height:auto;filter:drop-shadow(0 12px 34px rgba(0,0,0,.6)) drop-shadow(0 0 28px rgba(255,180,70,.35));}
+.float-note{position:absolute;font-size:28px;animation:float 4s ease-in-out infinite;filter:drop-shadow(0 0 10px rgba(255,46,122,.8))}
+@keyframes float{0%,100%{transform:translateY(0) rotate(-8deg)}50%{transform:translateY(-16px) rotate(8deg)}}
+.eq{display:flex;gap:5px;align-items:end;height:34px;margin:8px 0 6px}
+.eq i{width:6px;border-radius:4px;background:linear-gradient(180deg,var(--mint),var(--gold));animation:eq 1s ease-in-out infinite}
+.eq i:nth-child(1){height:18px}.eq i:nth-child(2){height:30px;animation-delay:.15s}.eq i:nth-child(3){height:12px;animation-delay:.3s}.eq i:nth-child(4){height:26px;animation-delay:.45s}.eq i:nth-child(5){height:20px;animation-delay:.6s}.eq i:nth-child(6){height:32px;animation-delay:.2s}.eq i:nth-child(7){height:14px;animation-delay:.5s}
+@keyframes eq{50%{transform:scaleY(.4)}}
+.meta{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:6px}
+.meta-card{display:flex;align-items:center;gap:10px;background:rgba(0,0,0,.55);border:1px solid var(--line);border-radius:14px;padding:10px 16px;font-size:15px;font-weight:700}
+.meta-card small{display:block;font-size:11px;letter-spacing:.18em;color:var(--gold);font-weight:900}
+.meta-card .ico{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;background:rgba(255,196,107,.15);font-size:18px}
+/* RIGHT TICKET */
+.ticket-side{background:var(--cream);color:#1A0C12;border-left:1px solid var(--line);padding:0;display:flex;flex-direction:column;position:relative}
+.ticket-top{background:#1A0C12;color:var(--cream);padding:20px 24px 16px;position:relative;overflow:hidden}
+.ticket-top::after{content:"JAZZ";position:absolute;right:-6px;bottom:-18px;font-family:"Black Han Sans",sans-serif;font-size:86px;line-height:1;opacity:.08}
+.kicker{font-family:"Space Grotesk",sans-serif;font-size:12px;letter-spacing:.26em;color:var(--gold);font-weight:700}
+.ticket-top h2{font-family:"Black Han Sans",sans-serif;font-size:28px;line-height:1.1;margin:6px 0}
+.ticket-top h2 em{font-family:"Playfair Display",serif;color:var(--pink);text-shadow:0 0 12px rgba(255,46,122,.6)}
+.count{display:flex;gap:8px;margin-top:12px}
+.count div{background:rgba(255,246,233,.08);border:1px solid rgba(255,196,107,.25);border-radius:10px;flex:1;text-align:center;padding:7px 0}
+.count b{font-size:20px;display:block;line-height:1}
+.count span{font-size:11px;letter-spacing:.12em;color:var(--cream-dim)}
+.ticket-body{padding:20px 24px 22px;position:relative}
+.perf{position:absolute;top:-1px;left:0;right:0;height:18px;background-image:radial-gradient(circle at 9px -2px, #1A0C12 12px, transparent 13px);background-size:22px 18px;background-repeat:repeat-x}
+.price-row{display:flex;align-items:end;gap:10px;margin-top:8px}
+.price-old{font-size:16px;color:#8A6E62;text-decoration:line-through;font-weight:700}
+.price-new{font-family:"Black Han Sans",sans-serif;font-size:44px;line-height:1}
+.price-new small{font-size:16px;font-family:"Noto Sans KR",sans-serif;font-weight:900}
+.save{background:var(--pink);color:#fff;font-weight:900;font-size:13px;border-radius:8px;padding:5px 10px;transform:rotate(3deg);box-shadow:0 6px 16px rgba(255,46,122,.35)}
+.progress{margin:14px 0 6px;background:#E8D5C2;border-radius:100px;height:12px;overflow:hidden;position:relative}
+.progress i{display:block;height:100%;width:68%;background:linear-gradient(90deg,var(--brass),var(--pink));border-radius:100px}
+.progress-label{display:flex;justify-content:space-between;font-size:13px;font-weight:700;color:#5A3E35}
+.ticket-list{list-style:none;margin:14px 0;font-size:14.5px;color:#3D2630;font-weight:500}
+.ticket-list li{padding:7px 0 7px 28px;position:relative;border-bottom:1px dashed #D9BFAE}
+.ticket-list li::before{content:"✓";position:absolute;left:4px;top:7px;width:20px;height:20px;border-radius:50%;background:#1A0C12;color:var(--gold);font-size:12px;display:grid;place-items:center;font-weight:900}
+.btn-big{display:block;text-align:center;text-decoration:none;background:#14090F;color:var(--cream);font-weight:900;font-size:19px;border-radius:16px;padding:16px;box-shadow:0 12px 28px rgba(20,9,15,.35), 0 0 0 3px var(--gold) inset;transition:.2s;position:relative;overflow:hidden}
+.btn-big small{display:block;font-size:13px;font-weight:700;color:var(--gold);letter-spacing:.06em}
+.btn-big:hover{transform:translateY(-2px);box-shadow:0 18px 36px rgba(255,46,122,.35), 0 0 0 3px var(--gold) inset}
+.btn-big::after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.35),transparent);animation:shine 2.8s infinite}
+@keyframes shine{to{left:130%}}
+.sub-cta{text-align:center;font-size:13px;color:#6B4E45;margin-top:10px;font-weight:500}
+.qr-row{display:flex;gap:12px;align-items:center;margin-top:14px;background:#fff;border:1px solid #E8D5C2;border-radius:12px;padding:10px 12px}
+.qr{width:52px;height:52px;background:repeating-linear-gradient(90deg,#111 0 3px,#fff 3px 6px),repeating-linear-gradient(0deg,#111 0 3px,#fff 3px 6px);background-blend-mode:multiply;border-radius:6px;flex-shrink:0;border:4px solid #fff;outline:1px solid #111}
+.qr-row p{font-size:12.5px;line-height:1.5;color:#5A3E35}
+.bottom-bar{display:flex;justify-content:space-between;align-items:center;padding:12px 28px;font-size:13px;color:var(--muted);position:relative;z-index:2}
+.bottom-bar strong{color:var(--cream)}
+@media(max-width:1080px){
+.stage{grid-template-columns:1fr 1fr}.ticket-side{grid-column:1/-1;border-top:1px solid var(--line)}.center{grid-column:span 1}h1{font-size:48px}
+}
+@media(max-width:760px){
+.wrap{padding:0 14px}.nav-links{display:none}.stage{grid-template-columns:1fr}.lineup{border-right:0;border-bottom:1px solid var(--line)}h1{font-size:42px}.bottom-bar{flex-direction:column;gap:6px;text-align:center}
+}
+</style>
+</head>
+<body>
+<div class="marquee" aria-hidden="true">
+<div class="marquee-track">
+<span><i>NOV 20—22</i> SEOUL NIGHT BRASS JAZZ FEST 2026 ★ 얼리버드 30% ~10.15까지 ★ 나윤선 · KAMASI WASHINGTON · 김오키 · 선우정아 · YUSSEF DAYES ★ 올림픽공원 88잔디마당 + KSPO DOME ★</span>
+<span><i>NOV 20—22</i> SEOUL NIGHT BRASS JAZZ FEST 2026 ★ 얼리버드 30% ~10.15까지 ★ 나윤선 · KAMASI WASHINGTON · 김오키 · 선우정아 · YUSSEF DAYES ★ 올림픽공원 88잔디마당 + KSPO DOME ★</span>
+</div>
+</div>
+
+<div class="wrap">
+<header>
+<nav aria-label="주요 메뉴">
+<a class="logo" href="#"><span class="logo-mark">🎺</span><span><b>나이트 브라스 재즈 페스</b><small>SEOUL NIGHT JAZZ · VOL.8</small></span></a>
+<div class="nav-links"><a href="#lineup">라인업</a><a href="#info">날짜·장소</a><a href="#ticket">티켓</a><a href="#faq">오시는 길</a></div>
+<div class="nav-cta"><span class="badge-live"><span class="dot"></span> EARLY BIRD OPEN</span><a class="btn-small" href="#ticket">예매하기 →</a></div>
+</nav>
+</header>
+
+<main class="stage">
+<!-- LEFT : LINEUP -->
+<aside class="lineup" id="lineup" aria-label="라인업 5팀">
+<div class="lineup-head"><h2>LINE-UP 05</h2><em>3DAYS 22HRS</em></div>
+<p style="font-size:13.5px;color:var(--muted)">밤 11시까지 이어지는 헤드라이너 릴레이. 호버하면 무대가 바뀝니다.</p>
+<ul class="lineup-list" id="lineupList">
+<li class="active" data-stage="DAY 1 · FRI HEADLINER"><span class="num">01 — FRI 20:30</span><h3>나윤선 쿼텟<span>YOUN SUN NAH QUARTET</span></h3><div class="tag-row"><span class="tag day">11.20 금</span><span class="tag">보컬 재즈</span><span class="tag hot">★ 헤드라이너</span></div></li>
+<li data-stage="DAY 2 · SAT HEADLINER"><span class="num">02 — SAT 20:30</span><h3>Kamasi Washington<span>KAMASI WASHINGTON</span></h3><div class="tag-row"><span class="tag day">11.21 토</span><span class="tag">스피리추얼 재즈</span><span class="tag hot">★ 내한 단독</span></div></li>
+<li data-stage="DAY 2 · SAT LATE NIGHT"><span class="num">03 — SAT 18:00</span><h3>김오키 새턴 발라드<span>KIM OKI SATURN BALLAD</span></h3><div class="tag-row"><span class="tag day">11.21 토</span><span class="tag">프리·펑크</span></div></li>
+<li data-stage="DAY 3 · SUN ORCHESTRA"><span class="num">04 — SUN 18:30</span><h3>선우정아 재즈 오케스트라<span>18인조 빅밴드</span></h3><div class="tag-row"><span class="tag day">11.22 일</span><span class="tag">소울·빅밴드</span></div></li>
+<li data-stage="DAY 3 · SUN CLOSING"><span class="num">05 — SUN 20:30</span><h3>Yussef Dayes Trio<span>CLOSING JAM 90MIN</span></h3><div class="tag-row"><span class="tag day">11.22 일</span><span class="tag">브로큰비트</span><span class="tag hot">클로징잼</span></div></li>
+</ul>
+<div class="left-foot">🎷 <strong>전 공연 자막·해설 제공</strong><br>11월 한파 대비 실내 돔 + 온열존·핫와인 바 운영</div>
+</aside>
+
+<!-- CENTER -->
+<section class="center" id="info" aria-label="페스티벌 소개">
+<div class="spot"></div>
+<svg class="rings" viewBox="0 0 460 460" aria-hidden="true"><circle cx="230" cy="230" r="200" fill="none" stroke="#FFC46B" stroke-opacity=".35" stroke-dasharray="4 10" stroke-width="1.5"/><circle cx="230" cy="230" r="165" fill="none" stroke="#FF2E7A" stroke-opacity=".45" stroke-width="1.5"/><circle cx="230" cy="230" r="130" fill="none" stroke="#3DF0C0" stroke-opacity=".25" stroke-width="1"/></svg>
+<p class="eyebrow">2026.11.20 FRI — 11.22 SUN · VOL.8</p>
+<h1>밤을 녹이는<br><span class="neon">Night Brass</span> <span class="pink">재즈</span></h1>
+<p class="sub">11월의 차가운 공기, 무대 위 <strong>뜨거운 브라스 18인조</strong>. 나윤선부터 카마시 워싱턴까지, 5팀이 올림픽공원을 네온빛 재즈 클럽으로 바꿉니다.</p>
+
+<div class="trumpet-wrap">
+<span class="float-note" style="left:12%;top:18%">♫</span>
+<span class="float-note" style="right:12%;top:10%;animation-delay:1s;color:#FFC46B">♪</span>
+<span class="float-note" style="right:18%;bottom:18%;animation-delay:2s;font-size:22px;color:#3DF0C0">♩</span>
+<!-- TRUMPET ILLUSTRATION -->
+<svg class="trumpet" viewBox="0 0 560 340" role="img" aria-label="네온 조명을 받는 황금 트럼펫 일러스트">
+<defs>
+<linearGradient id="brass" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFE9B8"/><stop offset=".35" stop-color="#FFC46B"/><stop offset=".7" stop-color="#C46A1A"/><stop offset="1" stop-color="#FFD98A"/></linearGradient>
+<linearGradient id="bell" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7A2B1A"/><stop offset=".4" stop-color="#E99A2E"/><stop offset=".75" stop-color="#FFE3A8"/><stop offset="1" stop-color="#FF9E5E"/></linearGradient>
+<radialGradient id="glow" cx=".5" cy=".5" r=".6"><stop offset="0" stop-color="#FF2E7A" stop-opacity=".9"/><stop offset="1" stop-color="#FF2E7A" stop-opacity="0"/></radialGradient>
+<filter id="neon" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<ellipse cx="280" cy="270" rx="180" ry="22" fill="#000" opacity=".5"/>
+<ellipse cx="460" cy="170" rx="90" ry="90" fill="url(#glow)" opacity=".55"/>
+<g transform="rotate(-12 280 170)">
+<rect x="70" y="155" width="250" height="20" rx="10" fill="url(#brass)" stroke="#5A2A10" stroke-width="2"/>
+<rect x="90" y="185" width="230" height="16" rx="8" fill="none" stroke="url(#brass)" stroke-width="6"/>
+<rect x="70" y="152" width="18" height="26" rx="6" fill="#2A1216" stroke="#FFC46B" stroke-width="2"/>
+<!-- valves -->
+<g>
+<rect x="160" y="100" width="22" height="80" rx="8" fill="url(#brass)" stroke="#5A2A10" stroke-width="2"/>
+<rect x="200" y="100" width="22" height="80" rx="8" fill="url(#brass)" stroke="#5A2A10" stroke-width="2"/>
+<rect x="240" y="100" width="22" height="80" rx="8" fill="url(#brass)" stroke="#5A2A10" stroke-width="2"/>
+<ellipse cx="171" cy="92" rx="16" ry="10" fill="#FFE9B8" stroke="#7A2B1A" stroke-width="2"/>
+<ellipse cx="211" cy="92" rx="16" ry="10" fill="#FFE9B8" stroke="#7A2B1A" stroke-width="2"/>
+<ellipse cx="251" cy="92" rx="16" ry="10" fill="#FFE9B8" stroke="#7A2B1A" stroke-width="2"/>
+<circle cx="171" cy="190" r="8" fill="#FF2E7A" filter="url(#neon)"/><circle cx="211" cy="190" r="8" fill="#FF2E7A" filter="url(#neon)"/><circle cx="251" cy="190" r="8" fill="#FF2E7A" filter="url(#neon)"/>
+</g>
+<!-- bell -->
+<path d="M320 120 C380 110 440 85 478 118 C500 138 500 202 478 222 C440 256 380 230 320 220 Z" fill="url(#bell)" stroke="#FFE3A8" stroke-width="2.5"/>
+<ellipse cx="480" cy="170" rx="26" ry="58" fill="#14060E" stroke="#FFC46B" stroke-width="3"/>
+<ellipse cx="480" cy="170" rx="15" ry="38" fill="#FF2E7A" opacity=".9" filter="url(#neon)"/>
+<ellipse cx="480" cy="170" rx="7" ry="20" fill="#FFD0E0" opacity=".9"/>
+<path d="M110 165 Q280 125 360 140" stroke="#3DF0C0" stroke-width="2.5" fill="none" opacity=".8" stroke-dasharray="8 8"/>
+</g>
+<!-- sparkles -->
+<g fill="#FFF6E9"><circle cx="90" cy="80" r="2.5"/><circle cx="500" cy="70" r="3"/><circle cx="530" cy="260" r="2"/><circle cx="40" cy="220" r="2.5"/></g>
+<g font-family="sans-serif" font-size="22" fill="#FFC46B"><text x="60" y="110">✦</text><text x="505" y="120" fill="#FF2E7A">✦</text></g>
+</svg>
+</div>
+
+<div class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<p id="stageLabel" style="font-family:'Space Grotesk';font-size:12px;letter-spacing:.24em;color:var(--mint);font-weight:700">● NOW ON STAGE — DAY 1 · FRI HEADLINER</p>
+
+<div class="meta">
+<div class="meta-card"><span class="ico">📅</span><span><small>DATE · 3 DAYS</small>11.20(금) — 11.22(일) · 17:00-23:00</span></div>
+<div class="meta-card"><span class="ico">📍</span><span><small>PLACE · SEOUL</small>올림픽공원 88잔디 + KSPO DOME</span></div>
+</div>
+</section>
+
+<!-- RIGHT : TICKET -->
+<aside class="ticket-side" id="ticket" aria-label="얼리버드 티켓">
+<div class="ticket-top">
+<p class="kicker">EARLY BIRD — 30% OFF</p>
+<h2>지금 사면<br><em>3일권 89,000원</em></h2>
+<p style="font-size:14px;color:#EAD3BE">정가 129,000원 · ~10.15(수) 자정까지 · 선착순 1,000매</p>
+<div class="count" aria-label="얼리버드 마감까지 남은 시간"><div><b id="d">12</b><span>DAYS</span></div><div><b id="h">08</b><span>HOURS</span></div><div><b id="m">42</b><span>MINS</span></div><div><b id="s">10</b><span>SECS</span></div></div>
+</div>
+<div class="ticket-body">
+<div class="perf"></div>
+<div class="price-row"><span class="price-old">129,000원</span><span class="price-new">89,000<small>원</small></span><span class="save">-30%</span></div>
+<div class="progress" aria-hidden="true"><i></i></div>
+<div class="progress-label"><span>🔥 687 / 1,000매 소진</span><span>잔여 313매</span></div>
+<ul class="ticket-list">
+<li>3일 자유 입장 + 실내 돔 우선 입장</li>
+<li>1일권도 할인 — 55,000 → 39,000원</li>
+<li>네이버 단독: 한정 넘버링 포스터 증정</li>
+</ul>
+<a class="btn-big" href="#">얼리버드 티켓 잡기<small>10.15 자정 마감 · 매진 전 예매하기 →</small></a>
+<p class="sub-cta">KB카드 10% 중복할인 · 문화누리·청소년 20% · 우천 시 실내 전환 보장</p>
+<div class="qr-row"><div class="qr" aria-hidden="true"></div><p><strong>모바일 티켓 · 줄서기 없음</strong><br>예매 후 QR로 바로 입장 · 친구에게 선물하기 가능</p></div>
+</div>
+</aside>
+</main>
+
+<div class="bottom-bar"><span>주최 <strong>서울문화재단 · 재즈앤피플</strong> &nbsp;|&nbsp; 협찬 <strong>YAMAHA · Blue Bottle</strong> &nbsp;|&nbsp; 문의 02-3141-1199</span><span>ⓘ 만 7세 이상 관람가 · 돔 내 전석 지정 + 잔디 자유석</span></div>
+</div>
+
+<script>
+const items=document.querySelectorAll('#lineupList li');
+const label=document.getElementById('stageLabel');
+items.forEach(li=>{
+li.addEventListener('mouseenter',()=>{
+items.forEach(x=>x.classList.remove('active'));li.classList.add('active');
+label.textContent='● NOW ON STAGE — '+li.dataset.stage;
+});
+li.addEventListener('click',()=>{
+items.forEach(x=>x.classList.remove('active'));li.classList.add('active');
+label.textContent='● NOW ON STAGE — '+li.dataset.stage;
+});
+});
+// countdown to Oct 15 2026
+const end=new Date('2026-10-15T23:59:59+09:00').getTime();
+function tick(){
+let diff=Math.max(0,end-Date.now());
+let d=Math.floor(diff/86400000),h=Math.floor(diff%86400000/3600000),m=Math.floor(diff%3600000/60000),s=Math.floor(diff%60000/1000);
+document.getElementById('d').textContent=String(d).padStart(2,'0');
+document.getElementById('h').textContent=String(h).padStart(2,'0');
+document.getElementById('m').textContent=String(m).padStart(2,'0');
+document.getElementById('s').textContent=String(s).padStart(2,'0');
+}
+setInterval(tick,1000);tick();
+</script>
+</body>
+</html>

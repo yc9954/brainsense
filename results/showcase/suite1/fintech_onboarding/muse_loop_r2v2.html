@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>피스탁 — 비싼 주식도 1,000원부터</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+--paper:#FAF6EC;
+--paper2:#F3EDDC;
+--ink:#191712;
+--muted:#645E52;
+--line:#E5DBC3;
+--green:#0E5C3E;
+--green-dark:#0A3D2A;
+--yellow:#FFD43B;
+--yellow-deep:#F5B800;
+--card:#FFFFFF;
+}
+html,body{height:100%}
+body{
+font-family:"Noto Sans KR",system-ui,-apple-system,sans-serif;
+background:var(--paper);
+color:var(--ink);
+font-size:17px;
+line-height:1.6;
+-webkit-font-smoothing:antialiased;
+overflow-x:hidden;
+}
+body::before{
+content:"";position:fixed;inset:0;pointer-events:none;
+background:
+ radial-gradient(900px 500px at 85% 10%, rgba(255,212,59,.28), transparent 60%),
+ radial-gradient(800px 600px at -10% 100%, rgba(14,92,62,.10), transparent 60%);
+}
+.page{max-width:1280px;margin:0 auto;min-height:100vh;min-height:800px;display:flex;flex-direction:column;padding:0 48px}
+/* NAV */
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:12px;font-weight:900;font-size:22px;letter-spacing:-.02em}
+.brand-mark{width:36px;height:36px;border-radius:11px;background:var(--ink);color:var(--yellow);display:grid;place-items:center;font-family:Outfit;font-weight:800;font-size:20px;position:relative}
+.brand-mark::after{content:"";position:absolute;right:-4px;top:-4px;width:12px;height:12px;background:var(--green);border-radius:50%;border:2.5px solid var(--paper)}
+.brand small{font-weight:700;font-size:12px;color:var(--muted);display:block;line-height:1;letter-spacing:.08em}
+.nav-links{display:flex;gap:32px;font-size:16px;font-weight:500;color:#3D3830}
+.nav-links a{text-decoration:none;color:inherit}
+.nav-right{display:flex;align-items:center;gap:14px}
+.login{font-size:16px;font-weight:700;color:var(--ink);text-decoration:none}
+.dl{font-size:16px;font-weight:700;border:1.5px solid var(--ink);border-radius:999px;padding:9px 18px;background:transparent;cursor:pointer}
+/* HERO */
+.hero{flex:1;display:grid;grid-template-columns:1.08fr .92fr;gap:24px;align-items:center;padding:28px 0 18px}
+.eyebrow{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:700;color:var(--green);letter-spacing:-.01em;margin-bottom:18px}
+.dot{width:10px;height:10px;border-radius:50%;background:var(--green);box-shadow:0 0 0 6px rgba(14,92,62,.14)}
+.eyebrow span.bar{width:36px;height:2px;background:var(--green);border-radius:2px;opacity:.35}
+h1{font-size:68px;line-height:1.04;letter-spacing:-.035em;font-weight:900}
+h1 mark{background:linear-gradient(transparent 58%, var(--yellow) 58%, var(--yellow) 96%, transparent 96%);color:inherit;padding:0 6px;margin:0 -6px}
+.sub{margin-top:18px;font-size:19px;line-height:1.65;color:#3E392F;max-width:520px}
+.sub strong{color:var(--ink)}
+.cta-row{margin-top:28px;display:flex;align-items:center;gap:18px}
+.cta-main{
+display:inline-flex;align-items:center;gap:12px;
+background:var(--ink);color:#fff;border:0;border-radius:16px;
+font-size:20px;font-weight:800;padding:19px 28px;cursor:pointer;
+box-shadow:0 14px 30px rgba(25,23,18,.22), inset 0 1px 0 rgba(255,255,255,.15);
+transition:transform .15s, box-shadow .15s;
+text-decoration:none;
+}
+.cta-main:hover{transform:translateY(-2px);box-shadow:0 18px 36px rgba(25,23,18,.28)}
+.cta-main .arr{background:var(--yellow);color:var(--ink);width:32px;height:32px;border-radius:50%;display:grid;place-items:center;font-size:18px;font-weight:900}
+.cta-note{font-size:16px;color:var(--muted);line-height:1.5}
+.cta-note b{color:var(--ink)}
+.steps{margin-top:22px;display:flex;align-items:center;gap:10px;font-size:16px;font-weight:700;color:#3D3830}
+.steps i{font-style:normal;width:28px;height:28px;border-radius:50%;background:var(--ink);color:#fff;display:inline-grid;place-items:center;font-size:14px;font-family:Outfit}
+.steps em{font-style:normal;font-weight:400;color:var(--muted)}
+.steps .line{width:24px;height:1.5px;background:var(--line)}
+/* VISUAL - single focal phone */
+.stage{position:relative;display:flex;align-items:center;justify-content:center;min-height:600px}
+.blob{position:absolute;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle at 30% 30%, #FFF3B0 0%, var(--yellow) 38%, #EDBE00 100%);opacity:1}
+.blob-ring{position:absolute;width:600px;height:600px;border-radius:50%;border:1.5px dashed rgba(25,23,18,.22)}
+.blob-card{position:absolute;width:460px;height:540px;background:#FFFDF4;border:1px solid var(--line);border-radius:32px;transform:rotate(4deg);box-shadow:0 20px 60px rgba(25,23,18,.08)}
+.phone{
+position:relative;z-index:2;width:302px;height:614px;background:#111;
+border-radius:48px;padding:11px;
+box-shadow:0 40px 80px rgba(25,23,18,.28), 0 2px 0 rgba(255,255,255,.6) inset;
+}
+.screen{background:#fff;border-radius:38px;height:100%;overflow:hidden;display:flex;flex-direction:column;position:relative}
+.notch{position:absolute;top:11px;left:50%;transform:translateX(-50%);width:110px;height:26px;background:#111;border-radius:999px;z-index:3}
+.s-top{padding:48px 20px 12px 20px}
+.s-app{display:flex;align-items:center;justify-content:space-between;font-weight:900;font-size:16px}
+.s-app span:last-child{font-weight:400;color:#9A9486;font-size:18px}
+.stock-head{display:flex;align-items:center;gap:12px;margin-top:14px}
+.t-logo{width:44px;height:44px;border-radius:50%;background:#111;color:#fff;display:grid;place-items:center;font-family:Outfit;font-weight:800;font-size:22px}
+.stock-head h3{font-size:18px;line-height:1.2}
+.stock-head p{font-size:13px;color:#8A8476;font-family:Outfit}
+.price{margin-top:10px;display:flex;align-items:baseline;gap:8px}
+.price strong{font-family:Outfit;font-size:30px;letter-spacing:-.02em}
+.up{font-size:14px;font-weight:800;color:var(--green);background:#E6F3EC;padding:4px 8px;border-radius:8px}
+.chart{margin:6px -4px 0 -4px}
+.order{margin:0 14px;background:#F7F3E7;border:1px solid #EDE4CB;border-radius:20px;padding:16px 16px 14px 16px}
+.order label{font-size:14px;font-weight:700;color:#6B6456}
+.amount{display:flex;align-items:center;justify-content:space-between;margin-top:10px}
+.stepbtn{width:36px;height:36px;border-radius:12px;border:1.5px solid var(--line);background:#fff;font-size:20px;font-weight:800;cursor:pointer;line-height:1}
+.amt{font-family:Outfit;font-size:26px;font-weight:800}
+.amt small{font-family:"Noto Sans KR";font-size:16px;font-weight:700}
+.slider{margin-top:12px;height:8px;background:#E9E0C8;border-radius:999px;position:relative}
+.slider-fill{position:absolute;left:0;top:0;bottom:0;width:18%;background:var(--green);border-radius:999px}
+.slider-knob{position:absolute;left:18%;top:50%;transform:translate(-50%,-50%);width:22px;height:22px;background:#fff;border:4px solid var(--ink);border-radius:50%;box-shadow:0 2px 8px rgba(0,0,0,.2)}
+.shares{margin-top:10px;display:flex;justify-content:space-between;font-size:14px;font-weight:700}
+.shares span:last-child{color:var(--green)}
+.buy{margin:12px 14px 0 14px;background:var(--green);color:#fff;border:0;border-radius:14px;padding:15px;font-size:17px;font-weight:800;cursor:pointer}
+.buy small{opacity:.7;font-weight:400}
+.safe{margin:10px 14px 0 14px;font-size:13px;color:#8A8476;text-align:center;line-height:1.5}
+.s-nav{margin-top:auto;border-top:1px solid #EEE8D6;display:flex;justify-content:space-around;padding:12px 0 16px 0;font-size:11px;color:#9A9486;font-weight:700}
+.s-nav b{display:block;font-size:18px}
+/* TRUSTBAR single row */
+.trust{border-top:1px solid var(--line);padding:16px 0 18px 0;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.trust-left{display:flex;align-items:center;gap:0;font-size:16px;color:#2E2A23;font-weight:500}
+.trust-left div{display:flex;align-items:center;gap:8px;padding:0 20px}
+.trust-left div+div{border-left:1px solid var(--line)}
+.shield{width:28px;height:28px;border-radius:50%;background:#E6F3EC;display:grid;place-items:center;font-size:15px}
+.trust-right{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:700}
+.stars{color:#EAA800;letter-spacing:2px;font-size:16px}
+.trust-right small{font-weight:400;color:var(--muted)}
+@media(max-width:1000px){
+.page{padding:0 24px}.hero{grid-template-columns:1fr}h1{font-size:52px}.stage{min-height:560px}.trust{flex-direction:column;align-items:flex-start}
+}
+button:focus-visible,a:focus-visible{outline:3px solid var(--green);outline-offset:3px}
+</style>
+</head>
+<body>
+<div class="page">
+<header class="nav" aria-label="상단 메뉴">
+<div class="brand"><div class="brand-mark">P</div><div>피스탁<small>PIECE STOCK</small></div></div>
+<nav class="nav-links" aria-label="주 메뉴">
+<a href="#">왜 소수점인가</a><a href="#">수수료</a><a href="#">안전장치</a><a href="#">투자 후기</a>
+</nav>
+<div class="nav-right"><a class="login" href="#">로그인</a><button class="dl">앱 다운로드</button></div>
+</header>
+
+<main class="hero">
+<div class="copy">
+<div class="eyebrow"><span class="dot" aria-hidden="true"></span> 소수점 투자 · 누적 328만 계좌 <span class="bar"></span> 금융위 혁신금융</div>
+<h1>비싼 주식도,<br><mark>1,000원</mark>부터<br>내 몫으로.</h1>
+<p class="sub">테슬라 1주가 35만원이어도 괜찮아요. <strong>원하는 금액만큼 0.0001주 단위</strong>로 쪼개 사세요. 커피 한 잔보다 가벼운 첫 미국주식.</p>
+<div class="cta-row">
+<a class="cta-main" href="#">3분 만에 시작하기 <span class="arr">→</span></a>
+<div class="cta-note"><b>신분증 하나면 OK</b><br>계좌개설부터 첫 매수까지 평균 2분 47초</div>
+</div>
+<div class="steps" aria-label="시작 절차"><i>1</i> 계좌 만들기 <span class="line"></span> <i>2</i> 금액 입력 <span class="line"></span> <i>3</i> 조각 사기 <em>· 단 3단계</em></div>
+</div>
+
+<div class="stage" aria-label="1,000원 투자 예시 화면">
+<div class="blob-card" aria-hidden="true"></div>
+<div class="blob" aria-hidden="true"></div>
+<div class="blob-ring" aria-hidden="true"></div>
+
+<div class="phone" role="img" aria-label="테슬라 주식을 1,000원에 매수하는 앱 화면">
+<div class="screen">
+<div class="notch"></div>
+<div class="s-top">
+<div class="s-app"><span>피스탁</span><span>🔔</span></div>
+<div class="stock-head">
+<div class="t-logo">T</div>
+<div><h3>테슬라</h3><p>TSLA · NASDAQ</p></div>
+</div>
+<div class="price"><strong>$248.50</strong><span class="up">▲ +2.40%</span></div>
+<div class="chart">
+<svg viewBox="0 0 260 70" width="100%" height="62" aria-hidden="true">
+<defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0E5C3E" stop-opacity=".25"/><stop offset="1" stop-color="#0E5C3E" stop-opacity="0"/></linearGradient></defs>
+<path d="M0 52 L20 48 L40 50 L60 38 L80 42 L100 30 L120 34 L140 22 L160 26 L180 18 L200 22 L220 12 L240 16 L260 8 L260 70 L0 70 Z" fill="url(#g)"/>
+<path d="M0 52 L20 48 L40 50 L60 38 L80 42 L100 30 L120 34 L140 22 L160 26 L180 18 L200 22 L220 12 L240 16 L260 8" fill="none" stroke="#0E5C3E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="220" cy="12" r="5" fill="#FFD43B" stroke="#191712" stroke-width="2.5"/>
+</svg>
+</div>
+</div>
+<div class="order">
+<label>얼마 살까요?</label>
+<div class="amount">
+<button class="stepbtn" id="minus" aria-label="금액 낮추기">−</button>
+<div class="amt"><span id="amt">1,000</span><small>원</small></div>
+<button class="stepbtn" id="plus" aria-label="금액 높이기">＋</button>
+</div>
+<div class="slider" aria-hidden="true"><div class="slider-fill" id="fill"></div><div class="slider-knob" id="knob"></div></div>
+<div class="shares"><span>≈ <span id="share">0.0054</span>주 살 수 있어요</span><span>수수료 0원</span></div>
+</div>
+<button class="buy">1,000원으로 사기 <small>· 실시간</small></button>
+<p class="safe">1,000원으로도 주주권·배당 동일<br>한국예탁결제원에 안전 보관</p>
+<div class="s-nav"><div><b>🏠</b>홈</div><div><b>◍</b>조각</div><div><b>◫</b>자산</div><div><b>☺</b>마이</div></div>
+</div>
+</div>
+</div>
+</main>
+
+<footer class="trust" aria-label="신뢰 정보">
+<div class="trust-left">
+<div><span class="shield">🛡️</span> 한국예탁결제원 안전보관</div>
+<div><span class="shield">🔒</span> 투자자 예치금 5천만원 보호</div>
+<div><span class="shield">✓</span> ISMS-P 인증 · NH투자증권 제휴</div>
+</div>
+<div class="trust-right"><span class="stars">★★★★★</span> 4.8 <small>앱스토어 리뷰 12만개 · 첫 달 수수료 0원</small></div>
+</footer>
+</div>
+<script>
+const amtEl=document.getElementById('amt'),shareEl=document.getElementById('share'),fill=document.getElementById('fill'),knob=document.getElementById('knob');
+let amt=1000;const price=248.5*1350;
+function render(){amtEl.textContent=amt.toLocaleString('ko-KR');shareEl.textContent=(amt/price).toFixed(4);const p=Math.min(100,amt/50000*100);fill.style.width=p+'%';knob.style.left=p+'%';}
+document.getElementById('plus').onclick=()=>{amt=Math.min(50000,amt+1000);render()};
+document.getElementById('minus').onclick=()=>{amt=Math.max(1000,amt-1000);render()};
+render();
+</script>
+</body>
+</html>

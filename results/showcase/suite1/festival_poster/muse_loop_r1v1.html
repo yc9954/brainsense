@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>미드나잇 브라스 2026 — 서울 재즈 페스티벌 | 11.21-23 노들섬</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+KR:wght@400;500;700;900&family=Noto+Serif+KR:wght@600;700;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+--bg:#060a1d; --bg2:#0d1330; --panel:rgba(255,255,255,.055);
+--line:rgba(255,255,255,.14);
+--gold:#f5b54a; --gold-hi:#ffe8b0; --copper:#c06a1f;
+--pink:#ff3d7f; --mint:#5cf2c0; --ink:#fff8ea; --muted:#c3c9e2; --dim:#9098bb;
+--r:20px;
+}
+html{scroll-behavior:smooth}
+body{
+font-family:"Noto Sans KR",system-ui,sans-serif; font-size:16px; line-height:1.6; color:var(--ink);
+background:
+radial-gradient(900px 500px at 50% -10%, #2a1a4a 0%, transparent 60%),
+radial-gradient(700px 500px at 85% 20%, rgba(255,61,127,.22) 0%, transparent 60%),
+radial-gradient(800px 600px at 10% 30%, rgba(92,242,192,.12) 0%, transparent 60%),
+radial-gradient(1200px 800px at 50% 110%, #3a1e08 0%, transparent 55%),
+linear-gradient(180deg, #060a1d 0%, #0a0f2a 55%, #080a1c 100%);
+min-height:100vh; overflow-x:hidden;
+}
+body::before{
+content:""; position:fixed; inset:0; pointer-events:none; z-index:0; opacity:.9;
+background-image:
+radial-gradient(1.5px 1.5px at 12% 18%, #fff 100%, transparent 100%),
+radial-gradient(1px 1px at 22% 8%, #fff 100%, transparent 100%),
+radial-gradient(1.2px 1.2px at 78% 12%, #fff 100%, transparent 100%),
+radial-gradient(1px 1px at 88% 32%, #fff 100%, transparent 100%),
+radial-gradient(1.6px 1.6px at 65% 6%, #ffe8b0 100%, transparent 100%),
+radial-gradient(1px 1px at 5% 42%, #fff 100%, transparent 100%),
+radial-gradient(1px 1px at 94% 58%, #fff 100%, transparent 100%),
+radial-gradient(1.3px 1.3px at 35% 10%, #fff 100%, transparent 100%);
+}
+body::after{
+content:""; position:fixed; inset:0; z-index:50; pointer-events:none; opacity:.07; mix-blend-mode:overlay;
+background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+a{color:inherit}
+.shell{position:relative; z-index:1; max-width:1280px; margin:0 auto; padding:18px 32px 0;}
+/* header */
+header{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:8px 0 14px;}
+.brand{display:flex; align-items:center; gap:12px}
+.mark{width:44px; height:44px; border-radius:50%; display:grid; place-items:center; font-size:22px; font-weight:900; color:#1a1005;
+background:conic-gradient(from 20deg, #fff2cc, var(--gold), #9a4a0e, var(--gold), #fff2cc);
+box-shadow:0 0 0 2px rgba(245,181,74,.6), 0 0 22px rgba(245,181,74,.55), 0 0 36px rgba(255,61,127,.35);}
+.brand b{font-size:17px; letter-spacing:-.02em; line-height:1.1; display:block}
+.brand small{font-family:"Bebas Neue"; letter-spacing:.28em; font-size:11px; color:var(--gold-hi)}
+.nav{display:flex; gap:22px; font-size:14.5px; color:var(--muted); font-weight:500}
+.nav a{text-decoration:none; border-bottom:1px solid transparent; padding-bottom:2px}
+.nav a:hover{color:#fff}
+.top-cta{display:flex; align-items:center; gap:12px}
+.dday{font-size:13px; font-weight:700; letter-spacing:.04em; color:#0a0f1e; background:var(--mint); border-radius:100px; padding:7px 13px; box-shadow:0 0 18px rgba(92,242,192,.6)}
+.btn-tiny{font-weight:900; font-size:14.5px; text-decoration:none; color:#1d1204; background:linear-gradient(180deg,var(--gold-hi),var(--gold) 55%, #d68a25); padding:11px 18px; border-radius:100px; box-shadow:0 6px 22px rgba(245,181,74,.45), inset 0 1px 0 #fff}
+.btn-tiny:hover{filter:brightness(1.05)}
+/* hero title */
+.eyebrow{display:flex; align-items:center; justify-content:center; gap:12px; margin-top:4px}
+.eyebrow span{font-family:"Bebas Neue"; letter-spacing:.34em; font-size:13px; color:var(--mint)}
+.eyebrow i{width:44px; height:1px; background:linear-gradient(90deg,transparent,var(--mint)); display:block}
+.eyebrow i:last-child{background:linear-gradient(90deg,var(--mint),transparent)}
+h1{text-align:center; font-family:"Noto Serif KR",serif; font-weight:900; line-height:.95; letter-spacing:-.03em; margin:10px 0 6px;
+font-size:clamp(48px,6vw,78px); text-wrap:balance;}
+h1 .neon{color:transparent; -webkit-text-stroke:1.5px var(--gold-hi); text-shadow:0 0 28px rgba(245,181,74,.55);}
+h1 .pink{color:var(--pink); text-shadow:0 0 18px rgba(255,61,127,.85), 0 0 60px rgba(255,61,127,.4);}
+.sub{ text-align:center; color:var(--muted); font-size:16.5px; }
+.sub strong{color:var(--ink)}
+/* main grid */
+.grid{display:grid; grid-template-columns:340px 1fr 346px; gap:18px; margin-top:18px; align-items:stretch}
+.card{background:var(--panel); border:1px solid var(--line); border-radius:var(--r); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); position:relative; overflow:hidden}
+.card::before{content:""; position:absolute; inset:0 0 auto 0; height:1px; background:linear-gradient(90deg,transparent,rgba(255,255,255,.5),transparent)}
+.pad{padding:20px 20px 18px}
+.kicker{font-family:"Bebas Neue"; letter-spacing:.28em; font-size:12px; color:var(--gold); display:flex; align-items:center; gap:8px}
+.kicker::after{content:""; flex:1; height:1px; background:rgba(245,181,74,.35)}
+.lineup-list{list-style:none; margin-top:12px; display:flex; flex-direction:column; gap:10px}
+.lineup-list li{border:1px solid rgba(255,255,255,.11); background:rgba(6,10,29,.55); border-radius:14px; padding:11px 12px; display:grid; grid-template-columns:32px 1fr auto; gap:10px; align-items:center; transition:.2s; cursor:default}
+.lineup-list li:hover{border-color:rgba(245,181,74,.7); transform:translateX(4px); box-shadow:0 6px 22px rgba(0,0,0,.35)}
+.num{font-family:"Bebas Neue"; font-size:20px; color:var(--gold-hi); opacity:.9}
+.lineup-list h3{font-size:15.5px; line-height:1.3; letter-spacing:-.02em}
+.lineup-list p{font-size:13px; color:var(--muted); line-height:1.45; margin-top:2px}
+.tag{font-size:11px; font-weight:800; letter-spacing:.04em; padding:5px 8px; border-radius:100px; white-space:nowrap}
+.t-pink{background:rgba(255,61,127,.16); color:#ff9ab8; border:1px solid rgba(255,61,127,.45)}
+.t-gold{background:rgba(245,181,74,.15); color:#ffd88a; border:1px solid rgba(245,181,74,.5)}
+.t-mint{background:rgba(92,242,192,.14); color:#9cf5d5; border:1px solid rgba(92,242,192,.45)}
+.headline{border-color:rgba(255,61,127,.55)!important; background:linear-gradient(180deg, rgba(255,61,127,.18), rgba(6,10,29,.6))!important}
+/* center stage */
+.stage{padding:18px 18px 14px; display:flex; flex-direction:column; align-items:center; text-align:center;
+background:
+radial-gradient(500px 300px at 50% 0%, rgba(255,61,127,.18), transparent 70%),
+radial-gradient(600px 420px at 50% 100%, rgba(245,181,74,.16), transparent 70%),
+rgba(255,255,255,.045);}
+.arch{position:relative; width:min(100%,420px); aspect-ratio:.94; margin:6px auto 0; display:grid; place-items:center}
+.halo{position:absolute; inset:6px; border-radius:50%; border:1.5px solid rgba(255,61,127,.85); box-shadow:0 0 18px rgba(255,61,127,.8), 0 0 70px rgba(255,61,127,.35), inset 0 0 30px rgba(255,61,127,.25);}
+.halo2{position:absolute; inset:-10px; border-radius:50%; border:1px dashed rgba(92,242,192,.6); animation:spin 28s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.wave{position:absolute; border-radius:50%; border:1px solid rgba(255,232,176,.5); animation:pulse 3.2s ease-out infinite; pointer-events:none}
+.w1{inset:18px} .w2{inset:18px; animation-delay:1.05s} .w3{inset:18px; animation-delay:2.1s}
+@keyframes pulse{0%{transform:scale(.78); opacity:.9}100%{transform:scale(1.18); opacity:0}}
+.bell{position:relative; width:72%; aspect-ratio:1; border-radius:50%;
+background:
+radial-gradient(circle at 32% 28%, #fff8dc 0%, #ffe8b0 10%, #f5b54a 28%, #9e5010 56%, #2a1002 72%, #05020a 78%),
+conic-gradient(from 210deg, #ffe8b0, #b96a1f, #5a2405, #f5b54a, #7a3208, #ffe8b0);
+box-shadow:0 0 0 8px #0a0a12, 0 0 0 10px rgba(245,181,74,.9), 0 0 0 12px rgba(255,61,127,.7), 0 18px 60px rgba(0,0,0,.7), 0 0 90px rgba(245,181,74,.65), 0 0 150px rgba(255,61,127,.35);
+display:grid; place-items:center; overflow:hidden}
+.bell::after{content:""; position:absolute; inset:0; border-radius:50%;
+background:conic-gradient(from 0deg, transparent 0 18deg, rgba(255,255,255,.55) 22deg 34deg, transparent 38deg 180deg, transparent 180deg 198deg, rgba(255,255,255,.25) 205deg 218deg, transparent 224deg);}
+.bell-core{width:56%; aspect-ratio:1; border-radius:50%; position:relative; z-index:1;
+background:radial-gradient(circle at 50% 42%, #ffdf95 0%, #c97a1e 22%, #4a1c05 48%, #0b0300 68%, #000 75%);
+box-shadow:inset 0 10px 30px rgba(0,0,0,.9), inset 0 -8px 22px rgba(245,181,74,.35), 0 0 40px rgba(0,0,0,.8);
+display:grid; place-items:center}
+.bell-core::before{content:"TRUMPET BELL • Ø 134mm"; position:absolute; bottom:18%; font-family:"Bebas Neue"; font-size:9px; letter-spacing:.28em; color:rgba(255,232,176,.7)}
+.trumpet-icon{width:62%; filter:drop-shadow(0 0 12px rgba(245,181,74,.9)); z-index:2}
+.notes span{position:absolute; font-size:26px; filter:drop-shadow(0 0 10px currentColor); animation:float 4s ease-in-out infinite}
+.notes .n1{left:6%; top:22%; color:var(--mint)} .notes .n2{right:8%; top:16%; color:var(--pink); animation-delay:.8s; font-size:30px} .notes .n3{right:12%; bottom:18%; color:var(--gold-hi); animation-delay:1.6s}
+@keyframes float{0%,100%{transform:translateY(0) rotate(-6deg)}50%{transform:translateY(-14px) rotate(6deg)}}
+.chip{position:absolute; font-size:12px; font-weight:800; letter-spacing:.02em; background:#0b1030; border:1px solid var(--line); border-radius:100px; padding:7px 11px; box-shadow:0 8px 20px rgba(0,0,0,.5); display:flex; gap:6px; align-items:center; white-space:nowrap}
+.chip .dot{width:8px; height:8px; border-radius:50%; background:#ff3b30; box-shadow:0 0 10px #ff3b30; animation:blink 1.2s infinite}
+@keyframes blink{50%{opacity:.3}}
+.c-live{left:0; top:8%} .c-brass{right:0; bottom:10%; border-color:rgba(245,181,74,.6)}
+.stage h2{font-family:"Bebas Neue"; letter-spacing:.18em; font-weight:400; font-size:22px; margin-top:10px; color:#fff}
+.stage h2 em{font-style:normal; color:var(--gold); text-shadow:0 0 14px rgba(245,181,74,.7)}
+.timeline{display:flex; gap:8px; margin-top:10px; flex-wrap:wrap; justify-content:center}
+.timeline div{font-size:13px; font-weight:700; background:rgba(0,0,0,.45); border:1px solid var(--line); border-radius:10px; padding:8px 10px}
+.timeline b{color:var(--gold-hi)}
+/* ticket card */
+.ticket{background:linear-gradient(180deg, #fff8e8 0%, #ffe9bd 100%); color:#221303; border:1px solid #fff; overflow:hidden}
+.ticket .kicker{color:#8a4a0a} .ticket .kicker::after{background:rgba(138,74,10,.3)}
+.date-big{display:flex; gap:12px; align-items:center; margin-top:12px}
+.date-box{background:#140b02; color:#ffe8b0; border-radius:14px; padding:10px 14px; text-align:center; min-width:86px}
+.date-box b{font-family:"Bebas Neue"; font-size:32px; line-height:1; display:block; letter-spacing:.04em}
+.date-box span{font-size:12px; font-weight:700; letter-spacing:.08em}
+.date-info h3{font-size:18px; letter-spacing:-.02em; line-height:1.35}
+.date-info p{font-size:14px; color:#5a3a15; margin-top:2px}
+.venue{display:flex; gap:8px; align-items:flex-start; margin-top:12px; background:rgba(20,11,2,.06); border:1px dashed rgba(138,74,10,.4); border-radius:12px; padding:10px 11px; font-size:14px}
+.price{margin-top:12px; border-top:1.5px dashed rgba(0,0,0,.18); padding-top:12px}
+.price-row{display:flex; justify-content:space-between; align-items:center; font-size:14.5px; font-weight:700}
+.price-row s{color:#8a6a4a; font-weight:500}
+.big-price{font-size:30px; font-weight:900; letter-spacing:-.04em}
+.big-price small{font-size:14px}
+.stock{margin-top:8px}
+.stock-top{display:flex; justify-content:space-between; font-size:12.5px; font-weight:800; color:#7a4a15}
+.bar{height:10px; background:rgba(0,0,0,.12); border-radius:100px; overflow:hidden; margin-top:6px}
+.bar i{display:block; height:100%; width:73%; background:linear-gradient(90deg, #ff3d7f, #f5b54a); border-radius:100px; box-shadow:0 0 10px rgba(255,61,127,.6)}
+.cta{margin-top:14px; display:block; text-align:center; text-decoration:none; font-weight:900; font-size:18px; letter-spacing:-.02em; color:#1c1102;
+background:linear-gradient(180deg, #1a1206 0%, #1a1206 18%, #f5b54a 18.5%, #f5b54a 100%);
+padding:12px 12px 14px; border-radius:14px; border:2px solid #140b02; box-shadow:0 10px 24px rgba(0,0,0,.25); position:relative; overflow:hidden}
+.cta small{display:block; font-size:12.5px; font-weight:700; background:#140b02; color:#ffe8b0; border-radius:100px; padding:3px 10px; width:max-content; margin:0 auto 8px}
+.cta:hover{transform:translateY(-1px)}
+.cta::after{content:""; position:absolute; top:0; left:-60%; width:40%; height:100%; background:linear-gradient(100deg,transparent,rgba(255,255,255,.7),transparent); transform:skewX(-18deg); animation:shine 2.8s infinite}
+@keyframes shine{0%{left:-60%}60%,100%{left:130%}}
+.subcta{display:flex; gap:8px; margin-top:8px}
+.subcta a{flex:1; text-align:center; font-size:14px; font-weight:700; text-decoration:none; border:1.5px solid #221303; border-radius:12px; padding:10px}
+.ghost{background:transparent; color:#221303} .solid{background:#221303; color:#ffe8b0}
+.count{display:flex; gap:6px; margin-top:12px}
+.count div{flex:1; background:#140b02; color:#fff; border-radius:10px; text-align:center; padding:7px 0}
+.count b{font-size:18px; display:block; line-height:1} .count span{font-size:11px; letter-spacing:.1em; color:#f5b54a}
+/* ticker */
+.ticker{margin:18px -32px 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line); background:rgba(0,0,0,.45); overflow:hidden; white-space:nowrap}
+.ticker-inner{display:inline-block; padding:11px 0; animation:mar 22s linear infinite; font-family:"Bebas Neue"; letter-spacing:.22em; font-size:14px; color:var(--gold-hi)}
+.ticker-inner i{color:var(--pink); font-style:normal; margin:0 14px}
+@keyframes mar{to{transform:translateX(-50%)}}
+footer{display:flex; justify-content:space-between; align-items:center; padding:12px 0 18px; color:var(--dim); font-size:13px}
+@media(max-width:1020px){
+.grid{grid-template-columns:1fr 1fr} .stage{grid-column:1/-1; order:-1} .nav{display:none}
+}
+@media(max-width:640px){.grid{grid-template-columns:1fr} .shell{padding:14px 16px 0} .ticker{margin:14px -16px 0} h1{font-size:46px}}
+:focus-visible{outline:3px solid var(--mint); outline-offset:3px}
+</style>
+</head>
+<body>
+<div class="shell">
+<header>
+<div class="brand"><div class="mark">♪</div><div><b>미드나잇 브라스</b><small>MIDNIGHT BRASS 2026</small></div></div>
+<nav class="nav" aria-label="메뉴"><a href="#lineup">라인업</a><a href="#stage">스테이지</a><a href="#ticket">티켓</a><a href="#info">오시는길</a></nav>
+<div class="top-cta"><span class="dday" id="ddayTop">D-19 · 얼리버드 마감임박</span><a class="btn-tiny" href="#ticket">티켓 예매</a></div>
+</header>
+
+<div class="eyebrow"><i></i><span>SEOUL JAZZ FESTIVAL · NOV 21—23 · NODEUL ISLAND</span><i></i></div>
+<h1>밤이 깊어질수록 <span class="neon">황홀해지는</span><br><span class="pink">금관</span>의 숨결</h1>
+<p class="sub">11월, 노들섬이 <strong>가장 뜨거운 재즈 클럽</strong>이 됩니다 — 빅밴드 18인조의 숨부터 자정 스윙댄스까지, <strong>5팀 · 3일 · 22시간</strong>의 live.</p>
+
+<main class="grid">
+<!-- LEFT : lineup -->
+<section class="card pad" id="lineup" aria-label="라인업">
+<div class="kicker">LINE-UP · 5 TEAMS</div>
+<ul class="lineup-list">
+<li class="headline"><span class="num">01</span><div><h3>웅산 &amp; 재즈파크 빅밴드</h3><p>헤드라이너 · 18인조와 울려 퍼지는 소울풀 클로징</p></div><span class="tag t-pink">11.23 CLOSING</span></li>
+<li><span class="num">02</span><div><h3>신현필 트리오</h3><p>더블베이스의 심장박동 · 가장 뜨거운 오프닝</p></div><span class="tag t-mint">11.21 FRI</span></li>
+<li><span class="num">03</span><div><h3>선우정아 meets 프렐류드</h3><p>경계를 녹이는 보이스와 피아노의 재해석</p></div><span class="tag t-gold">11.22 SAT</span></li>
+<li><span class="num">04</span><div><h3>MALO 퀸텟</h3><p>뉴욕이 반한 트럼펫 · 네온보다 뜨거운 브라스</p></div><span class="tag t-gold">11.22 SAT</span></li>
+<li><span class="num">05</span><div><h3>문라이트 스윙 오케스트라</h3><p>자정 이후 DJ와 함께하는 스윙댄스 나이트</p></div><span class="tag t-mint">EVERY NIGHT</span></li>
+</ul>
+<p style="margin-top:12px; font-size:13.5px; color:var(--muted)">※ 전 공연 <b style="color:#fff">라이브 70분 + 앵콜</b> · Late Night 세션은 스탠딩으로 운영됩니다.</p>
+</section>
+
+<!-- CENTER : focal -->
+<section class="card stage" id="stage" aria-label="페스티벌 비주얼">
+<div class="arch" role="img" aria-label="네온 불빛 속에서 빛나는 트럼펫 벨">
+<div class="halo"></div><div class="halo2"></div>
+<div class="wave w1"></div><div class="wave w2"></div><div class="wave w3"></div>
+<div class="notes" aria-hidden="true"><span class="n1">♪</span><span class="n2">♫</span><span class="n3">♩</span></div>
+<div class="chip c-live"><span class="dot"></span> LIVE · NODEUL 360°</div>
+<div class="chip c-brass">🎺 WARM BRASS · 18K GOLD</div>
+<div class="bell"><div class="bell-core">
+<svg class="trumpet-icon" viewBox="0 0 220 120" fill="none" aria-hidden="true">
+<defs><linearGradient id="br" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff6d6"/><stop offset=".5" stop-color="#f5b54a"/><stop offset="1" stop-color="#7a3208"/></linearGradient></defs>
+<rect x="20" y="52" width="120" height="10" rx="5" fill="url(#br)"/>
+<rect x="20" y="72" width="110" height="8" rx="4" fill="url(#br)" opacity=".85"/>
+<ellipse cx="160" cy="57" rx="38" ry="34" fill="url(#br)" stroke="#fff2cc" stroke-width="2"/>
+<ellipse cx="160" cy="57" rx="24" ry="20" fill="#160701"/>
+<ellipse cx="160" cy="57" rx="12" ry="10" fill="#000"/>
+<rect x="68" y="28" width="10" height="30" rx="3" fill="url(#br)" stroke="#3a1c05"/><rect x="88" y="28" width="10" height="30" rx="3" fill="url(#br)" stroke="#3a1c05"/><rect x="108" y="28" width="10" height="30" rx="3" fill="url(#br)" stroke="#3a1c05"/>
+<rect x="64" y="20" width="18" height="8" rx="4" fill="#ffe8b0"/><rect x="84" y="20" width="18" height="8" rx="4" fill="#ffe8b0"/><rect x="104" y="20" width="18" height="8" rx="4" fill="#ffe8b0"/>
+<circle cx="18" cy="57" r="8" fill="none" stroke="#ffe8b0" stroke-width="3"/>
+</svg>
+</div></div>
+</div>
+<h2>TRUMPET <em>AS THE MOON</em></h2>
+<div class="timeline"><div><b>FRI 11.21</b> OPEN 14:00</div><div><b>SAT 11.22</b> BRASS DAY</div><div><b>SUN 11.23</b> FINALE 23:00</div></div>
+</section>
+
+<!-- RIGHT : ticket -->
+<aside class="card ticket pad" id="ticket" aria-label="티켓 안내">
+<div class="kicker">EARLY BIRD · 25% OFF</div>
+<div class="date-big"><div class="date-box"><b>11.21—23</b><span>FRI–SUN 3DAYS</span></div>
+<div class="date-info"><h3>2026 서울 재즈 페스티벌</h3><p>낮 2시 – 밤 11시 (심야 ~01:00)</p></div></div>
+<div class="venue" id="info"><span aria-hidden="true">📍</span><span><b>노들섬 다목적홀 · 잔디마당</b><br><span style="color:#6b4a25">노들역 2번 출구 도보 5분 · 한강 노을 스테이지</span></span></div>
+<div class="price"><div class="price-row"><span>얼리버드 1일권 <s>88,000원</s></span><span class="big-price">66,000<small>원</small></span></div>
+<div class="stock"><div class="stock-top"><span>🔥 73% 소진 · 11.10 마감</span><span>잔여 214매</span></div><div class="bar" role="progressbar" aria-valuenow="73" aria-valuemin="0" aria-valuemax="100"><i></i></div></div>
+<a class="cta" href="#" onclick="alert('얼리버드 예매로 이동합니다 🎺 11.10 자정 마감!');return false;"><small>⏰ 오늘 자정 전 결제 시 웰컴드링크 증정</small>얼리버드 티켓 예매하기 →</a>
+<div class="subcta"><a class="ghost" href="#lineup">라인업 보기</a><a class="solid" href="#">3일권 149,000원</a></div>
+<div class="count" aria-label="남은 시간"><div><b id="cd-d">19</b><span>DAYS</span></div><div><b id="cd-h">08</b><span>HOURS</span></div><div><b id="cd-m">42</b><span>MINS</span></div><div><b id="cd-s">11</b><span>SECS</span></div></div>
+</div>
+</aside>
+</main>
+
+<div class="ticker" aria-hidden="true"><div class="ticker-inner" id="tick">MIDNIGHT BRASS 2026 <i>●</i> EARLY BIRD OPEN — 66,000원 <i>●</i> 11.21–11.23 NODEUL ISLAND SEOUL <i>●</i> 웅산 · 신현필 · 선우정아 · MALO · 문라이트 스윙 <i>●</i> MIDNIGHT BRASS 2026 <i>●</i> EARLY BIRD OPEN — 66,000원 <i>●</i> 11.21–11.23 NODEUL ISLAND SEOUL <i>●</i> 웅산 · 신현필 · 선우정아 · MALO · 문라이트 스윙 <i>●</i></div></div>
+<footer><span>주최 미드나잇브라스 · 후원 서울문화재단 · 문의 02-6400-1123</span><span>ⓒ 2026 Midnight Brass. All nights swing.</span></footer>
+</div>
+<script>
+const end=new Date('2026-11-10T23:59:59+09:00').getTime();
+function pad(n){return String(n).padStart(2,'0')}
+function tick(){
+let d=end-Date.now(); if(d<0)d=0;
+const dd=Math.floor(d/864e5), hh=Math.floor(d%864e5/36e5), mm=Math.floor(d%36e5/6e4), ss=Math.floor(d%6e4/1e3);
+document.getElementById('cd-d').textContent=dd; document.getElementById('cd-h').textContent=pad(hh);
+document.getElementById('cd-m').textContent=pad(mm); document.getElementById('cd-s').textContent=pad(ss);
+document.getElementById('ddayTop').textContent='D-'+dd+' · 얼리버드 마감임박';
+} tick(); setInterval(tick,1000);
+</script>
+</body>
+</html>

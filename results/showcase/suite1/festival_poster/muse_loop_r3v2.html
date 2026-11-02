@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SEOUL MOONLIGHT JAZZ FEST 2026 — 11.21-23 롯데콘서트홀</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Noto+Serif+KR:wght@700;900&family=Outfit:wght@600;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+--bg:#07071a; --plum:#1b0f33; --gold:#ffbf5a; --gold-hi:#ffe9b8; --gold-deep:#9a5a12;
+--neon-pink:#ff3d9a; --neon-cyan:#3df5ff; --paper:#fff8ec; --muted:#b8b3cc;
+}
+html,body{height:100%}
+body{
+font-family:"Noto Sans KR",system-ui,sans-serif; font-size:17px; line-height:1.6; color:#fff;
+background:
+radial-gradient(900px 500px at 50% -10%, #3d1a5e 0%, transparent 60%),
+radial-gradient(700px 420px at 12% 20%, rgba(255,61,154,.22) 0%, transparent 60%),
+radial-gradient(700px 520px at 88% 18%, rgba(61,245,255,.14) 0%, transparent 60%),
+radial-gradient(1000px 600px at 50% 38%, #ffb84d26 0%, transparent 62%),
+linear-gradient(180deg,#08081c 0%, #120b2e 48%, #08071a 100%);
+min-height:100vh; display:flex; justify-content:center; overflow-x:hidden;
+}
+body::before{
+content:""; position:fixed; inset:0; pointer-events:none; opacity:.5;
+background-image:radial-gradient(#fff 1px, transparent 1.4px);
+background-size:82px 82px, 130px 130px; background-position:0 0, 40px 60px;
+mask-image:radial-gradient(80% 60% at 50% 20%, black 30%, transparent 75%);
+opacity:.28;
+}
+.stage{width:1280px; max-width:100vw; min-height:100vh; display:flex; flex-direction:column; position:relative}
+.topbar{
+height:62px; display:flex; align-items:center; justify-content:space-between;
+padding:0 32px; border-bottom:1px solid rgba(255,255,255,.1);
+background:rgba(7,7,26,.55); backdrop-filter:blur(10px); z-index:5;
+}
+.brand{display:flex; align-items:center; gap:12px; font-family:Outfit,sans-serif; letter-spacing:.14em; font-size:13px; font-weight:800}
+.brand i{width:32px;height:32px; border-radius:50%; display:grid; place-items:center; font-style:normal; font-size:18px; color:#1a0d00;
+background:linear-gradient(135deg,var(--gold-hi),var(--gold) 55%,#ff8a2a); box-shadow:0 0 18px rgba(255,184,77,.8), inset 0 1px 2px #fff}
+.brand b{color:#fff} .brand span{color:var(--gold)}
+.top-meta{display:flex; align-items:center; gap:14px; font-size:14px; color:#e9e4ff}
+.pill{display:inline-flex; align-items:center; gap:8px; padding:7px 14px; border-radius:999px; font-size:13.5px; font-weight:700;
+background:rgba(255,61,154,.12); border:1px solid rgba(255,61,154,.55); color:#ffd3e8; box-shadow:0 0 14px rgba(255,61,154,.35), inset 0 0 12px rgba(255,61,154,.15)}
+.pill .dot{width:8px;height:8px;border-radius:50%;background:#ff5fb0;box-shadow:0 0 10px #ff5fb0; animation:blink 1.6s infinite}
+@keyframes blink{50%{opacity:.35}}
+.top-link{color:#fff; text-decoration:none; border-bottom:1px solid var(--gold); padding-bottom:2px; font-weight:700}
+.hero{flex:1; position:relative; display:flex; flex-direction:column; align-items:center; text-align:center; padding:10px 32px 12px; overflow:hidden}
+.halo{position:absolute; top:-20px; left:50%; transform:translateX(-50%); width:560px; height:560px; border-radius:50%; pointer-events:none;
+background:radial-gradient(circle, rgba(255,201,90,.38) 0%, rgba(255,150,60,.18) 28%, transparent 62%);
+filter:blur(2px);}
+.halo::after{content:""; position:absolute; inset:78px; border-radius:50%;
+border:1.5px solid rgba(255,61,154,.65); box-shadow:0 0 22px rgba(255,61,154,.55), inset 0 0 32px rgba(255,61,154,.25);}
+.halo::before{content:""; position:absolute; inset:62px; border-radius:50%; border:1px solid rgba(61,245,255,.5); box-shadow:0 0 18px rgba(61,245,255,.4)}
+.beams{position:absolute; top:-40px; left:50%; transform:translateX(-50%); width:900px; height:420px; pointer-events:none; opacity:.5;
+background:conic-gradient(from 180deg at 50% 0%, transparent 0deg, rgba(255,191,90,.18) 12deg, transparent 24deg, transparent 156deg, rgba(255,61,154,.14) 168deg, transparent 180deg);
+filter:blur(1px);}
+.trumpet-zone{position:relative; z-index:2; margin-top:6px; width:460px; height:168px; transform:rotate(-6deg)}
+.trumpet-zone svg{width:100%; height:100%; overflow:visible; filter:drop-shadow(0 0 22px rgba(255,183,77,.9)) drop-shadow(0 0 46px rgba(255,61,154,.35))}
+.note{position:absolute; font-size:22px; line-height:1; filter:drop-shadow(0 0 8px currentColor); animation:float 3.6s ease-in-out infinite}
+.n1{left:8px; top:10px; color:var(--neon-cyan)} .n2{right:26px; top:-6px; color:#ff8ac2; font-size:28px; animation-delay:.8s} .n3{right:78px; bottom:6px; color:var(--gold-hi); font-size:18px; animation-delay:1.6s}
+@keyframes float{50%{transform:translateY(-12px) rotate(8deg)}}
+.eyebrow{position:relative; z-index:2; display:flex; gap:10px; align-items:center; justify-content:center; flex-wrap:wrap; margin-top:8px}
+.eyebrow .date{font-family:Outfit,sans-serif; letter-spacing:.18em; font-size:13px; font-weight:800; color:var(--neon-cyan); border:1px solid rgba(61,245,255,.5); padding:7px 14px; border-radius:999px; background:rgba(61,245,255,.08); box-shadow:0 0 14px rgba(61,245,255,.25)}
+.eyebrow .early{font-size:13.5px; font-weight:800; color:#1d1000; background:linear-gradient(180deg,#fff2d1,var(--gold)); padding:7px 14px; border-radius:999px; box-shadow:0 0 18px rgba(255,191,90,.7)}
+h1{position:relative; z-index:2; font-family:"Noto Serif KR",serif; font-weight:900; line-height:1.02; letter-spacing:-.02em; margin-top:12px; font-size:68px; color:var(--paper); text-wrap:balance}
+h1 .neon{color:#fff; text-shadow:0 0 10px #ff3d9a,0 0 28px #ff3d9a,0 0 68px #ff3d9a99}
+h1 .gold{background:linear-gradient(180deg,#fff8e2 5%, #ffcf7a 38%, #ff9a2e 62%, #ffe9b8 92%); -webkit-background-clip:text; background-clip:text; color:transparent; filter:drop-shadow(0 2px 18px rgba(255,160,40,.45))}
+h1 small{display:block; font-family:Outfit,sans-serif; font-weight:800; font-size:15px; letter-spacing:.42em; color:#d9d4ff; margin-bottom:10px}
+.venue{position:relative; z-index:2; margin-top:10px; font-size:19px; font-weight:700; color:#fff}
+.venue strong{color:var(--gold-hi); background:rgba(255,191,90,.12); border:1px solid rgba(255,191,90,.4); padding:4px 12px; border-radius:8px; margin:0 6px; white-space:nowrap}
+.desc{position:relative; z-index:2; margin-top:8px; color:#d8d3ea; font-size:17px; max-width:640px}
+.desc b{color:#fff}
+.cta-row{position:relative; z-index:2; display:flex; align-items:center; gap:16px; margin-top:16px; flex-wrap:wrap; justify-content:center}
+.btn-main{display:inline-flex; align-items:center; gap:12px; text-decoration:none; color:#1d0e00; font-weight:900; font-size:19px; padding:16px 30px; border-radius:16px;
+background:linear-gradient(180deg,#fff3d4 0%, #ffc96a 45%, #ff9d2b 100%); box-shadow:0 0 0 1px #ffe9b8 inset, 0 10px 30px rgba(255,150,30,.45), 0 0 36px rgba(255,170,50,.55); transition:.2s}
+.btn-main:hover{transform:translateY(-2px); box-shadow:0 0 0 1px #fff inset, 0 14px 36px rgba(255,150,30,.6), 0 0 54px rgba(255,170,50,.7)}
+.btn-main .arrow{background:#1a0e00; color:var(--gold-hi); width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-size:18px}
+.btn-sub{display:inline-flex; align-items:center; gap:8px; color:#fff; text-decoration:none; font-weight:700; font-size:16px; padding:15px 20px; border-radius:16px; border:1px solid rgba(255,255,255,.28); background:rgba(255,255,255,.06)}
+.ticket-meta{position:relative; z-index:2; margin-top:12px; display:flex; align-items:center; gap:12px; font-size:14px; color:#cfc9e6}
+.bar{width:180px; height:8px; border-radius:999px; background:rgba(255,255,255,.14); overflow:hidden; border:1px solid rgba(255,255,255,.18)}
+.bar i{display:block; width:78%; height:100%; background:linear-gradient(90deg,var(--neon-pink),var(--gold)); box-shadow:0 0 12px rgba(255,61,154,.8)}
+.lineup{position:relative; z-index:3; border-top:1px solid transparent; background:linear-gradient(90deg,var(--gold),var(--neon-pink),var(--neon-cyan)) top/100% 2px no-repeat, rgba(8,6,22,.82); backdrop-filter:blur(12px); padding:14px 32px 12px}
+.lineup-head{display:flex; align-items:center; justify-content:space-between; max-width:1216px; margin:0 auto 8px}
+.lineup-head h2{font-family:Outfit,sans-serif; font-size:12px; letter-spacing:.32em; color:var(--gold); font-weight:800}
+.lineup-head p{font-size:13px; color:#a9a3c6}
+ol.list{list-style:none; display:grid; grid-template-columns:repeat(5,1fr); max-width:1216px; margin:0 auto; border:1px solid rgba(255,255,255,.12); border-radius:14px; overflow:hidden; background:rgba(255,255,255,.03)}
+ol.list li{padding:12px 16px 11px; border-left:1px solid rgba(255,255,255,.1); position:relative; min-width:0}
+ol.list li:first-child{border-left:0}
+ol.list li b.num{font-family:Outfit,sans-serif; font-size:12px; letter-spacing:.2em; color:var(--gold)}
+ol.list li h3{font-size:16px; line-height:1.35; margin:3px 0 2px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+ol.list li h3 span{font-weight:400; color:#b9b3d1; font-size:12.5px; display:block; font-family:Outfit,sans-serif; letter-spacing:.06em}
+ol.list li p.meta{font-size:13px; color:#9ff3ff; font-weight:700}
+ol.list li p.meta em{font-style:normal; color:#ffb3d9; border:1px solid rgba(255,61,154,.4); border-radius:6px; padding:1px 6px; margin-right:6px; font-size:11.5px}
+ol.list li.hl{background:linear-gradient(180deg, rgba(255,191,90,.16), rgba(255,61,154,.1)); box-shadow:inset 0 2px 0 var(--gold)}
+.skyline{position:absolute; bottom:132px; left:0; right:0; height:90px; opacity:.28; pointer-events:none}
+a:focus-visible{outline:3px solid var(--neon-cyan); outline-offset:3px}
+@media(max-width:900px){
+h1{font-size:44px} .trumpet-zone{width:320px;height:120px} ol.list{grid-template-columns:1fr 1fr} ol.list li{border-top:1px solid rgba(255,255,255,.1)} .top-meta .hide{display:none}
+}
+</style>
+</head>
+<body>
+<div class="stage">
+<header class="topbar">
+<div class="brand"><i>♪</i><div><b>SEOUL MOONLIGHT</b> <span>JAZZ FEST 2026</span></div></div>
+<div class="top-meta">
+<span class="pill"><span class="dot"></span>EARLY BIRD · ~10.15(수) 30% 할인</span>
+<span class="hide">11.21 FRI — 11.23 SUN · 잠실 롯데콘서트홀</span>
+<a class="top-link" href="#tickets">예매하기</a>
+</div>
+</header>
+
+<main class="hero">
+<div class="beams"></div><div class="halo"></div>
+<svg class="skyline" viewBox="0 0 1280 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0 90V62h40V48h30v14h26V36h48v26h22V52h34v10h40V40h52v22h28V30h18v32h36V48h44v14h30V38h56v24h24V50h38v12h44V42h50v20h30V36h42v26h32V52h36v10h48V44h44v18h30V90Z" fill="#000"/></svg>
+
+<div class="trumpet-zone" aria-hidden="true">
+<span class="note n1">♫</span><span class="note n2">♪</span><span class="note n3">♩</span>
+<svg viewBox="0 0 520 180" role="img" aria-label="황금빛 트럼펫 일러스트">
+<defs>
+<linearGradient id="brass" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff3d1"/><stop offset=".35" stop-color="#ffcf7a"/><stop offset=".62" stop-color="#e68a1f"/><stop offset=".85" stop-color="#7a3d06"/><stop offset="1" stop-color="#ffdf9a"/></linearGradient>
+<radialGradient id="bellIn" cx=".7" cy=".5" r=".7"><stop offset="0" stop-color="#fff7df"/><stop offset=".45" stop-color="#ff9d2e"/><stop offset="1" stop-color="#4a1500"/></radialGradient>
+</defs>
+<!-- main tubes -->
+<rect x="52" y="82" width="300" height="18" rx="9" fill="url(#brass)"/>
+<rect x="52" y="120" width="300" height="16" rx="8" fill="url(#brass)"/>
+<path d="M52 82 Q22 82 22 101 Q22 120 52 120 L62 120 L62 112 L40 112 Q32 112 32 101 Q32 90 62 90 Z" fill="url(#brass)"/>
+<rect x="18" y="94" width="26" height="14" rx="7" fill="#ffe9b8"/>
+<!-- valves -->
+<g>
+<rect x="198" y="48" width="18" height="78" rx="6" fill="url(#brass)"/><rect x="232" y="48" width="18" height="78" rx="6" fill="url(#brass)"/><rect x="266" y="48" width="18" height="78" rx="6" fill="url(#brass)"/>
+<ellipse cx="207" cy="40" rx="16" ry="8" fill="#ffe9b8"/><ellipse cx="241" cy="40" rx="16" ry="8" fill="#ffe9b8"/><ellipse cx="275" cy="40" rx="16" ry="8" fill="#ffe9b8"/>
+<rect x="202" y="126" width="28" height="10" rx="5" fill="#4a2405"/><rect x="236" y="126" width="28" height="10" rx="5" fill="#4a2405"/><rect x="270" y="126" width="28" height="10" rx="5" fill="#4a2405"/>
+</g>
+<!-- bell -->
+<path d="M352 78 L472 18 L472 164 L352 104 Z" fill="url(#brass)"/>
+<ellipse cx="472" cy="91" rx="22" ry="73" fill="url(#bellIn)" stroke="#ffe9b8" stroke-width="3"/>
+<ellipse cx="472" cy="91" rx="10" ry="48" fill="#ffd98a" opacity=".9"/>
+<!-- highlights -->
+<rect x="70" y="85" width="180" height="4" rx="2" fill="#fff" opacity=".75"/>
+<rect x="362" y="82" width="80" height="5" rx="2.5" fill="#fff" opacity=".7"/>
+<circle cx="130" cy="128" r="18" fill="none" stroke="#ffe9b8" stroke-width="3" opacity=".8"/>
+<circle cx="310" cy="128" r="18" fill="none" stroke="#ffe9b8" stroke-width="3" opacity=".8"/>
+</svg>
+</div>
+
+<div class="eyebrow">
+<span class="date">2026 · 11.21 FRI — 11.23 SUN</span>
+<span class="early">얼리버드 오픈중 · 3일권 30% ↓</span>
+</div>
+
+<h1><small>SEOUL MOONLIGHT JAZZ FESTIVAL</small><span class="neon">밤을 깨우는</span> <span class="gold">금빛 트럼펫</span></h1>
+<div class="venue">롯데콘서트홀 &amp; 잔디마당 <strong>잠실 · 석촌호수 옆</strong> 오후 6시 — 밤 11시</div>
+<p class="desc">가을 끝자락, 가장 따뜻한 금관의 숨결. <b>나윤선 · 마커스 밀러 · 하이로미</b>까지 — 네온 아래 3일간의 심야 재즈 여정.</p>
+
+<div class="cta-row" id="tickets">
+<a class="btn-main" href="#">얼리버드 티켓 예매하기 <span class="arrow">→</span></a>
+<a class="btn-sub" href="#">▶ 라인업 미리듣기</a>
+</div>
+<div class="ticket-meta"><span><b style="color:#fff">3일권 92,400원</b> <s style="color:#8f89ad">132,000원</s> · 잔여 214매</span><span class="bar"><i></i></span><span>78% 소진</span></div>
+</main>
+
+<footer class="lineup" aria-label="라인업">
+<div class="lineup-head"><h2>● LINE-UP — 5 TEAMS / 3 NIGHTS</h2><p>전석 지정 · 8세 이상 · 우천 시 실내 전환</p></div>
+<ol class="list">
+<li><b class="num">01 — FRI</b><h3>나윤선 쿼텟<span>YOUN SUN NAH</span></h3><p class="meta"><em>19:30</em>보컬 재즈</p></li>
+<li><b class="num">02 — FRI</b><h3>마커스 밀러<span>MARCUS MILLER</span></h3><p class="meta"><em>21:30</em>펑크 · 퓨전</p></li>
+<li class="hl"><b class="num">03 — SAT ★</b><h3>하이로미 소닉원더<span>HIROMI SONICWONDER</span></h3><p class="meta"><em>19:00</em>피아노 트리오</p></li>
+<li><b class="num">04 — SAT</b><h3>웅산 빅밴드<span>WOONGSAN BIG BAND</span></h3><p class="meta"><em>21:00</em>스윙 · 빅밴드</p></li>
+<li><b class="num">05 — SUN</b><h3>김오키 새턴 발라드<span>KIM OKI</span></h3><p class="meta"><em>20:00</em>프리 · 발라드</p></li>
+</ol>
+</footer>
+</div>
+</body>
+</html>

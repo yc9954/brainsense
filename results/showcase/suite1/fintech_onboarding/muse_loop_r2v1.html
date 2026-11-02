@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>쪼개미 — 비싼 주식도 1,000원부터</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=Inter:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+--bg:#080E0C;
+--bg2:#0C1512;
+--lime:#D8FF3E;
+--lime-dim:#B9E02E;
+--cream:#FFFEF6;
+--ink:#0B100E;
+--mut:#9FB0A7;
+--mut2:#6E7F77;
+--line:rgba(255,255,255,.09);
+}
+html,body{height:100%}
+body{
+background:var(--bg);
+color:#fff;
+font-family:"IBM Plex Sans KR","Inter",system-ui,-apple-system,sans-serif;
+font-size:16px;
+-webkit-font-smoothing:antialiased;
+overflow-x:hidden;
+}
+.page{
+min-height:100vh;
+max-width:1280px;
+margin:0 auto;
+padding:0 48px 18px;
+position:relative;
+display:flex;
+flex-direction:column;
+}
+/* background */
+.bg{position:fixed;inset:0;pointer-events:none;z-index:0}
+.bg::before{
+content:"";position:absolute;inset:0;
+background:
+radial-gradient(720px 420px at 50% 72%, rgba(216,255,62,.14), transparent 65%),
+radial-gradient(900px 500px at 50% -10%, rgba(255,255,255,.07), transparent 60%),
+radial-gradient(600px 500px at 8% 20%, rgba(46,184,134,.14), transparent 60%),
+radial-gradient(600px 500px at 92% 18%, rgba(216,255,62,.06), transparent 60%);
+}
+.grid{position:absolute;inset:0;opacity:.5;
+background-image:radial-gradient(rgba(255,255,255,.10) 1px, transparent 1px);
+background-size:26px 26px;
+mask-image:radial-gradient(700px 420px at 50% 35%, black 30%, transparent 75%);
+}
+/* header */
+header{
+position:relative;z-index:2;
+display:flex;align-items:center;justify-content:space-between;
+height:72px;
+border-bottom:1px solid var(--line);
+}
+.brand{display:flex;align-items:center;gap:11px}
+.mark{width:34px;height:34px;border-radius:10px;background:var(--lime);display:grid;place-items:center;position:relative}
+.mark svg{width:20px;height:20px}
+.brand b{font-size:19px;letter-spacing:-.02em}
+.brand b span{color:var(--lime)}
+.brand small{display:block;font-size:11px;font-weight:500;color:var(--mut);letter-spacing:.14em}
+nav{display:flex;gap:28px;color:var(--mut);font-size:16px}
+nav a{color:var(--mut);text-decoration:none}
+nav a.on{color:#fff;font-weight:600}
+.h-right{display:flex;align-items:center;gap:18px;font-size:16px}
+.h-right a{color:#D9E3DD;text-decoration:none}
+.h-right .dl{border:1px solid rgba(255,255,255,.18);padding:9px 16px;border-radius:100px;font-size:15px}
+/* hero */
+main{position:relative;z-index:2;text-align:center;padding-top:34px;flex:1}
+.kicker{display:flex;align-items:center;justify-content:center;gap:8px;color:var(--lime);font-size:16px;font-weight:600;letter-spacing:-.01em}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--lime);box-shadow:0 0 12px var(--lime)}
+h1{margin-top:12px;font-size:64px;line-height:1.06;letter-spacing:-.04em;font-weight:700}
+h1 .hl{color:var(--lime);position:relative;white-space:nowrap}
+h1 .hl::after{content:"";position:absolute;left:0;right:0;bottom:6px;height:10px;background:rgba(216,255,62,.22);border-radius:4px;z-index:-1}
+.sub{margin:16px auto 0;max-width:620px;color:#C3D1C9;font-size:18px;line-height:1.6}
+.sub strong{color:#fff}
+/* CTA - single primary */
+.cta-zone{margin-top:22px;display:flex;flex-direction:column;align-items:center;gap:10px}
+.cta{
+display:inline-flex;align-items:center;gap:10px;
+background:var(--lime);color:#0A0F0C;
+font-size:18px;font-weight:700;letter-spacing:-.02em;
+padding:17px 30px;border-radius:100px;text-decoration:none;
+box-shadow:0 10px 36px rgba(216,255,62,.28), inset 0 -2px 0 rgba(0,0,0,.15);
+transition:transform .15s;
+}
+.cta:hover{transform:translateY(-1px)}
+.cta .arr{background:#0A0F0C;color:var(--lime);width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-size:16px}
+.cta-note{color:var(--mut);font-size:16px;display:flex;gap:8px;align-items:center}
+.cta-note b{color:#fff}
+/* THE ONE FOCAL CARD */
+.focal-wrap{margin:24px auto 0;max-width:780px;position:relative}
+.glow{position:absolute;inset:-22px -18px;background:radial-gradient(50% 60% at 50% 50%, rgba(216,255,62,.22), transparent 70%);filter:blur(10px);z-index:0}
+.focal{
+position:relative;z-index:1;
+background:var(--cream);color:var(--ink);
+border-radius:22px;
+display:grid;grid-template-columns:1.05fr .9fr 1fr;
+overflow:hidden;
+text-align:left;
+box-shadow:0 30px 80px rgba(0,0,0,.55), 0 0 0 1px rgba(255,255,255,.6) inset;
+}
+.f-left{padding:22px 22px 20px}
+.stock{display:flex;gap:12px;align-items:center}
+.logo{width:46px;height:46px;border-radius:50%;background:#111;color:#fff;display:grid;place-items:center;font-weight:800;font-size:22px;flex-shrink:0}
+.stock-name{font-weight:700;font-size:17px;line-height:1.2}
+.stock-name span{display:block;font-weight:500;font-size:14px;color:#6B7570}
+.price{margin-top:14px;display:flex;align-items:baseline;gap:8px}
+.price strong{font-size:24px;letter-spacing:-.03em}
+.price em{font-style:normal;font-size:14px;color:#0A7A4B;background:#DFF7E8;padding:3px 8px;border-radius:100px;font-weight:700}
+.per{margin-top:8px;font-size:14px;color:#6B7570}
+.f-mid{padding:22px 20px;background:#F5F1DF;border-left:1.5px dashed rgba(0,0,0,.16);border-right:1.5px dashed rgba(0,0,0,.16);position:relative}
+.f-mid::before,.f-mid::after{content:"";position:absolute;left:-9px;width:16px;height:16px;background:var(--bg);border-radius:50%}
+.f-mid::before{top:-8px}.f-mid::after{bottom:-8px}
+.label{font-size:14px;font-weight:700;letter-spacing:.06em;color:#6B7570}
+.big{font-size:40px;font-weight:800;letter-spacing:-.05em;line-height:1;margin:4px 0 2px}
+.big small{font-size:18px;font-weight:700}
+.share{font-size:16px;font-weight:600}
+.share b{background:#0B100E;color:var(--lime);padding:2px 8px;border-radius:6px}
+.bar{margin-top:14px;height:12px;background:#0B100E;border-radius:100px;position:relative;overflow:hidden}
+.bar i{position:absolute;left:0;top:0;bottom:0;width:18%;background:var(--lime);border-radius:100px}
+.bar::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg, transparent 0 46px, rgba(255,255,255,.18) 46px 47px)}
+.bar-cap{margin-top:7px;display:flex;justify-content:space-between;font-size:13px;color:#6B7570;font-weight:600}
+.f-right{padding:22px 22px 20px;background:#0B100E;color:#fff}
+.receipt-top{display:flex;justify-content:space-between;align-items:center}
+.receipt-top span{font-size:13px;letter-spacing:.12em;color:var(--lime);font-weight:700}
+.check{width:26px;height:26px;border-radius:50%;background:var(--lime);color:#000;display:grid;place-items:center;font-weight:800}
+.rows{margin-top:12px;display:grid;gap:8px;font-size:15px}
+.rows div{display:flex;justify-content:space-between}
+.rows div span:first-child{color:#9FB0A7}
+.rows div span:last-child{font-weight:600}
+.total{margin-top:12px;border-top:1px solid rgba(255,255,255,.14);padding-top:10px;display:flex;justify-content:space-between;align-items:center}
+.total strong{font-size:20px}
+.mini{font-size:13px;color:#9FB0A7;margin-top:6px}
+/* trust - single quiet line */
+.trust{margin:18px auto 0;display:flex;align-items:center;justify-content:center;gap:12px;color:#8EA099;font-size:15px;flex-wrap:wrap}
+.trust i{font-style:normal;opacity:.4}
+.trust svg{width:16px;height:16px;vertical-align:-3px;margin-right:5px}
+footer{position:relative;z-index:2;text-align:center;padding:12px 0 6px;color:var(--mut2);font-size:12.5px;line-height:1.5}
+@media(max-width:900px){
+.page{padding:0 20px}
+h1{font-size:44px}
+.focal{grid-template-columns:1fr}
+.f-mid{border:none;border-top:1.5px dashed rgba(0,0,0,.16);border-bottom:1.5px dashed rgba(0,0,0,.16)}
+nav{display:none}
+}
+</style>
+</head>
+<body>
+<div class="bg"><div class="grid"></div></div>
+<div class="page">
+<header>
+<div class="brand">
+<div class="mark" aria-hidden="true">
+<svg viewBox="0 0 20 20" fill="none"><path d="M10 10V2A8 8 0 0 1 18 10H10Z" fill="#0B100E"/><path d="M10 10V18A8 8 0 0 1 2 10H10Z" fill="#0B100E" opacity=".55"/><path d="M10 10H18A8 8 0 0 1 10 18V10Z" fill="#0B100E" opacity=".85"/></svg>
+</div>
+<div><b>쪼개미 <span>1,000</span></b><small>FRACTIONAL INVEST</small></div>
+</div>
+<nav><a href="#" class="on">소수점 투자</a><a href="#">수수료 0원</a><a href="#">안전장치</a><a href="#">자동모으기</a></nav>
+<div class="h-right"><a href="#">로그인</a><a class="dl" href="#">앱 다운로드</a></div>
+</header>
+
+<main>
+<p class="kicker"><span class="dot"></span> 국내 · 미국 3,200개 종목 소수점 거래</p>
+<h1>비싼 주식도,<br><span class="hl">1,000원부터</span> 담으세요.</h1>
+<p class="sub">테슬라 1주가 340,000원이어도 괜찮아요. <strong>천 원 단위로 쪼개 사고 매일 자동으로 모으는</strong> 주식 소수점 투자, 커피 한 잔 값으로 시작하세요.</p>
+
+<div class="cta-zone">
+<a class="cta" href="#">3분 만에 시작하기 <span class="arr">→</span></a>
+<p class="cta-note">✓ 신분증만 있으면 돼요 &nbsp;·&nbsp; 계좌개설 <b>0원</b> &nbsp;·&nbsp; 평균 <b>2분 47초</b> 완료</p>
+</div>
+
+<div class="focal-wrap">
+<div class="glow"></div>
+<div class="focal" role="img" aria-label="1,000원으로 애플 0.0029주를 사는 예시">
+<div class="f-left">
+<div class="stock"><div class="logo"></div><div class="stock-name">애플 · AAPL<span>Apple Inc. · 나스닥</span></div></div>
+<div class="price"><strong>342,500원</strong><em>▲ +1.8%</em></div>
+<div class="per">1주 가격 부담될 땐, 쪼개서 사는 게 정답</div>
+</div>
+<div class="f-mid">
+<div class="label">내가 살 금액</div>
+<div class="big">1,000<small>원</small></div>
+<div class="share">→ <b>0.0029주</b> 확보</div>
+<div class="bar"><i></i></div>
+<div class="bar-cap"><span>● 내 1,000원 조각</span><span>1주 전체</span></div>
+</div>
+<div class="f-right">
+<div class="receipt-top"><span>첫 매수 미리보기</span><div class="check">✓</div></div>
+<div class="rows">
+<div><span>주문 금액</span><span>1,000원</span></div>
+<div><span>예상 수량</span><span>0.0029주</span></div>
+<div><span>수수료 · 세금</span><span>0원 첫달 무료</span></div>
+</div>
+<div class="total"><span>매일 모으기 ON</span><strong>+1,000원</strong></div>
+<div class="mini">매일 아침 9시 자동 매수 · 언제든 해지</div>
+</div>
+</div>
+</div>
+
+<div class="trust">
+<span><svg viewBox="0 0 16 16" fill="none"><path d="M8 1 13 3v4c0 3.5-2.2 5.8-5 6.5C5.2 12.8 3 10.5 3 7V3l5-2Z" stroke="#8EA099" stroke-width="1.3"/></svg>한국예탁원 안전보관</span><i>·</i>
+<span>예금자보호 5,000만원</span><i>·</i>
+<span>ISMS-P 인증</span><i>·</i>
+<span>제휴 NH투자증권</span>
+</div>
+</main>
+<footer>소수점 투자는 원금 손실이 발생할 수 있으며, 환율 변동에 따라 수익이 달라질 수 있습니다. · 쪼개미는 금융위원회 등록 투자중개업자 (제2024-12호) 입니다.</footer>
+</div>
+</body>
+</html>

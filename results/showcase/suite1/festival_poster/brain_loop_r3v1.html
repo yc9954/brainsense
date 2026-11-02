@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SEOUL MIDNIGHT BRASS — 11월 재즈 페스티벌</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Playfair+Display:ital,wght@0,800;0,900;1,800;1,900&family=Outfit:wght@600;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+--bg:#080b1c; --panel:#111637; --gold:#ffc76a; --brass:#e99a2e; --neon:#ff2e7e; --mint:#00e5cc; --cream:#fff6e8; --muted:#a9b0d0;
+}
+html,body{background:var(--bg);color:var(--cream);font-family:"Noto Sans KR",sans-serif;font-size:16px;line-height:1.5}
+body{min-height:100vh;overflow-x:hidden}
+.stage{max-width:1280px;min-height:800px;margin:0 auto;position:relative;display:flex;flex-direction:column;background:
+radial-gradient(900px 500px at 78% 32%, rgba(255,46,126,.22), transparent 60%),
+radial-gradient(700px 500px at 85% 70%, rgba(255,199,106,.18), transparent 60%),
+radial-gradient(1000px 700px at 10% 0%, #1c1850 0%, transparent 60%),
+linear-gradient(180deg,#0b0f2a 0%, #080b1c 60%, #060814 100%);
+overflow:hidden;border-left:1px solid rgba(255,255,255,.06);border-right:1px solid rgba(255,255,255,.06)}
+.stage::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.09) 1px, transparent 1px);background-size:22px 22px;opacity:.25;pointer-events:none}
+.diag{position:absolute;top:-120px;right:-80px;width:720px;height:1100px;transform:rotate(18deg);background:linear-gradient(180deg, rgba(255,199,106,.14), rgba(255,46,126,.10) 50%, transparent);border-left:1px solid rgba(255,199,106,.35);border-right:1px solid rgba(255,46,126,.3);pointer-events:none}
+.diag2{position:absolute;top:-120px;right:120px;width:2px;height:1100px;transform:rotate(18deg);background:linear-gradient(180deg,var(--gold),var(--neon));box-shadow:0 0 18px var(--gold);opacity:.9}
+/* header */
+header{display:flex;align-items:center;justify-content:space-between;padding:20px 36px;position:relative;z-index:5}
+.brand{display:flex;align-items:center;gap:12px}
+.mark{width:42px;height:42px;border-radius:50%;background:conic-gradient(from 0deg,#ffc76a,#ff2e7e,#00e5cc,#ffc76a);display:grid;place-items:center;box-shadow:0 0 22px rgba(255,46,126,.6)}
+.mark span{background:#0b0f2a;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;font-size:18px}
+.brand b{font-family:Outfit;letter-spacing:.14em;font-size:13px}
+.brand b i{color:var(--gold);font-style:normal}
+.topmeta{display:flex;gap:10px;align-items:center;font-size:13.5px;color:var(--muted)}
+.pill{border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:7px 14px;background:rgba(255,255,255,.06);backdrop-filter:blur(6px);color:#fff}
+.pill.gold{border-color:rgba(255,199,106,.6);color:var(--gold);font-weight:700}
+.topbtn{background:#fff;color:#0b0f2a;border:0;border-radius:999px;padding:10px 20px;font-weight:900;font-size:14px;cursor:pointer}
+/* main */
+main{display:grid;grid-template-columns:560px 1fr;gap:0;padding:8px 36px 0 36px;position:relative;z-index:4;flex:1}
+.left{padding-top:10px}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;background:rgba(255,46,126,.12);border:1px solid rgba(255,46,126,.45);color:#ffb3cc;border-radius:999px;padding:7px 13px;font-size:13px;font-weight:700;letter-spacing:.04em}
+.eyebrow .dot{width:8px;height:8px;border-radius:50%;background:var(--neon);box-shadow:0 0 10px var(--neon);animation:blink 1.2s infinite}
+@keyframes blink{50%{opacity:.3}}
+h1{margin:16px 0 6px;font-family:"Playfair Display",serif;font-weight:900;line-height:.95;letter-spacing:-.02em}
+h1 .kr{display:block;font-family:"Noto Sans KR";font-weight:900;font-size:64px;line-height:1.02;color:#fff}
+h1 .kr em{font-style:normal;background:linear-gradient(90deg,#ffe9b8,#ffc76a 40%,#ff7a3d);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:0 0 30px rgba(255,199,106,.25)}
+h1 .en{display:block;margin-top:8px;font-size:54px;font-style:italic;color:transparent;-webkit-text-stroke:1.5px var(--gold);letter-spacing:.01em}
+.sub{margin:12px 0 18px;color:#d6dbee;font-size:17px;max-width:480px}
+.sub strong{color:#fff}
+.cta-row{display:flex;gap:12px;align-items:center;margin:6px 0 14px}
+.btn-primary{background:linear-gradient(90deg,#ff2e7e,#ff7a3d 60%,#ffc76a);color:#14060f;font-weight:900;font-size:18px;border:0;border-radius:14px;padding:16px 26px;cursor:pointer;box-shadow:0 8px 30px rgba(255,46,126,.55),0 2px 0 #fff inset;position:relative}
+.btn-primary small{display:block;font-size:12px;font-weight:700;letter-spacing:.06em}
+.btn-ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.35);border-radius:14px;padding:15px 20px;font-size:16px;font-weight:700;cursor:pointer}
+.value-line{display:flex;align-items:center;gap:10px;margin:2px 0 16px;font-size:15.5px;color:#ffe9b8;background:rgba(255,199,106,.08);border:1px dashed rgba(255,199,106,.5);border-radius:12px;padding:10px 14px;max-width:490px}
+.value-line b{color:var(--gold)}
+/* lineup */
+.lineup{border-top:1px solid rgba(255,255,255,.12);margin-top:4px;padding-top:12px;max-width:510px}
+.lineup h3{font-size:12px;letter-spacing:.22em;color:var(--muted);margin-bottom:8px;font-family:Outfit}
+.l-row{display:grid;grid-template-columns:36px 1fr auto;gap:10px;align-items:center;padding:8px 10px;border-radius:10px}
+.l-row:nth-child(odd){background:rgba(255,255,255,.04)}
+.num{font-family:Outfit;font-weight:800;color:var(--gold);font-size:14px}
+.l-name{font-weight:900;font-size:16.5px;color:#fff}
+.l-name span{display:block;font-weight:400;font-size:12.5px;color:var(--muted);letter-spacing:.06em;font-family:Outfit}
+.l-time{font-size:13px;font-weight:700;color:#0b0f2a;background:var(--gold);border-radius:999px;padding:4px 10px;white-space:nowrap}
+/* right hero */
+.right{position:relative;display:flex;justify-content:center;align-items:flex-start;padding-top:0}
+.hero-wrap{position:relative;width:620px;height:620px;margin-top:-10px}
+.halo{position:absolute;left:50%;top:50%;transform:translate(-50%,-48%);width:500px;height:500px;border-radius:50%;background:radial-gradient(circle at 35% 30%, #fff2d0 0%, #ffc76a 18%, #e99a2e 38%, #7a2a4a 62%, #13163a 75%);box-shadow:0 0 80px rgba(255,199,106,.55),0 0 160px rgba(255,46,126,.35),inset 0 0 60px rgba(0,0,0,.5);border:3px solid rgba(255,231,180,.9)}
+.ring{position:absolute;left:50%;top:50%;transform:translate(-50%,-48%);width:560px;height:560px;border-radius:50%;border:1.5px dashed rgba(255,199,106,.55);animation:spin 28s linear infinite}
+.ring::after{content:"● SEOUL MIDNIGHT BRASS ● NOV 21-23 ● NODEUL ISLAND ●";position:absolute;inset:-22px;display:grid;place-items:center;font-family:Outfit;font-size:13px;letter-spacing:.32em;color:var(--gold)}
+@keyframes spin{to{transform:translate(-50%,-48%) rotate(360deg)}}
+.beam{position:absolute;left:-40px;top:60px;width:700px;height:86px;transform:rotate(-14deg);background:linear-gradient(90deg,transparent,rgba(0,229,204,.35),rgba(255,46,126,.55),#ffc76a);filter:blur(1px);mix-blend-mode:screen;clip-path:polygon(0 30%,100% 0,100% 100%,0 70%)}
+.eq{position:absolute;left:48px;bottom:98px;display:flex;gap:5px;align-items:end;height:54px}
+.eq i{width:7px;background:linear-gradient(180deg,var(--mint),var(--neon));border-radius:4px;box-shadow:0 0 10px rgba(0,229,204,.8);animation:eq 1s infinite ease-in-out alternate}
+.eq i:nth-child(1){height:22px}.eq i:nth-child(2){height:44px;animation-delay:.15s}.eq i:nth-child(3){height:30px;animation-delay:.3s}.eq i:nth-child(4){height:52px;animation-delay:.1s}.eq i:nth-child(5){height:26px;animation-delay:.25s}
+@keyframes eq{to{transform:scaleY(.4)}}
+.notes span{position:absolute;font-size:28px;filter:drop-shadow(0 0 8px rgba(255,199,106,.9));animation:float 3.2s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-14px) rotate(-8deg)}}
+.price-card{position:absolute;left:18px;bottom:18px;width:300px;background:rgba(10,12,28,.88);backdrop-filter:blur(10px);border:1px solid rgba(255,199,106,.55);border-radius:18px;padding:16px 18px;box-shadow:0 18px 50px rgba(0,0,0,.5)}
+.price-card .off{display:inline-block;background:var(--neon);color:#fff;font-weight:900;font-size:13px;border-radius:999px;padding:4px 10px;letter-spacing:.06em;box-shadow:0 0 14px var(--neon)}
+.price-card h4{margin:8px 0 2px;font-size:18px}
+.price-card h4 s{color:var(--muted);font-weight:400;font-size:14px;margin-left:6px}
+.price{font-family:Outfit;font-size:32px;font-weight:800;color:var(--gold)}
+.price small{font-family:"Noto Sans KR";font-size:13px;color:#fff;font-weight:700}
+.price-card p{font-size:13.5px;color:#d6dbee;margin-top:4px}
+.place-tag{position:absolute;right:10px;top:46px;background:#fff;color:#0b0f2a;border-radius:14px;padding:10px 14px;font-size:13.5px;font-weight:800;box-shadow:0 10px 30px rgba(0,0,0,.4);transform:rotate(3deg)}
+.place-tag b{color:#c1225c}
+/* ticker */
+.ticker{position:relative;z-index:5;margin-top:6px;background:linear-gradient(90deg,#ffc76a,#ff2e7e);color:#14060f;font-weight:900;font-size:14px;letter-spacing:.08em;white-space:nowrap;overflow:hidden;padding:11px 0;border-top:2px solid #fff;border-bottom:2px solid #fff}
+.ticker div{display:inline-block;animation:mar 18s linear infinite}
+@keyframes mar{to{transform:translateX(-50%)}}
+@media(max-width:1050px){main{grid-template-columns:1fr}.hero-wrap{width:100%;max-width:620px;margin:0 auto}.stage{min-height:auto}}
+</style>
+</head>
+<body>
+<div class="stage">
+<div class="diag"></div><div class="diag2"></div>
+<header>
+<div class="brand"><div class="mark"><span>🎺</span></div><b>SEOUL MIDNIGHT BRASS<br><i>제3회 서울 미드나잇 브라스</i></b></div>
+<div class="topmeta"><span class="pill gold">● 11.21 FRI — 11.23 SUN</span><span class="pill">노들섬 라이브하우스 + 잔디마당</span><button class="topbtn">티켓 보기</button></div>
+</header>
+<main>
+<section class="left">
+<div class="eyebrow"><span class="dot"></span> EARLY BIRD OPEN · 11.10까지 30% 할인 종료</div>
+<h1><span class="kr">밤을 부는 <em>금빛 재즈</em></span><span class="en">Midnight Brass Nights</span></h1>
+<p class="sub"><strong>쌀쌀한 11월 밤,</strong> 트럼펫 하나로 데워지는 3일. 18인조 빅밴드부터 새벽 재즈바 세션까지 — 올가을 가장 뜨거운 금관의 밤에 당신을 초대합니다.</p>
+<div class="cta-row">
+<button class="btn-primary">얼리버드 예매하기<small>3일권 89,000원 · 지금 가장 저렴해요 →</small></button>
+<button class="btn-ghost">▶ 라인업 듣기</button>
+</div>
+<div class="value-line">🎁 <span><b>얼리버드 혜택:</b> 앞자리 스탠딩 + 웰컴 하이볼 1잔 + 포스터 증정 (선착순 800매)</span></div>
+<div class="lineup"><h3>LINE-UP — 5 TEAMS</h3>
+<div class="l-row"><div class="num">01</div><div class="l-name">웅산 & 더 블로우<span>WOONG SAN QUINTET · VOCAL JAZZ</span></div><div class="l-time">11.21 19:30</div></div>
+<div class="l-row"><div class="num">02</div><div class="l-name">김가온 쿼텟<span>KIM GAON QUARTET · MODERN BOP</span></div><div class="l-time">11.21 21:30</div></div>
+<div class="l-row"><div class="num">03</div><div class="l-name">서울 네온 브라스 10인조<span>NEON BRASS COLLECTIVE</span></div><div class="l-time">11.22 19:00</div></div>
+<div class="l-row"><div class="num">04</div><div class="l-name">문빛 트리오 & 유지로<span>MOONLIGHT TRIO · BALLAD NIGHT</span></div><div class="l-time">11.22 21:00</div></div>
+<div class="l-row"><div class="num">05</div><div class="l-name">재즈파크 빅밴드 피날레<span>JAZZ PARK BIG BAND · 18PIECE FINALE</span></div><div class="l-time">11.23 20:00</div></div>
+</div>
+</section>
+<section class="right">
+<div class="hero-wrap">
+<div class="halo"></div><div class="ring"></div><div class="beam"></div>
+<!-- HERO SVG : face + trumpet pointing LEFT to CTA -->
+<svg viewBox="0 0 620 600" width="620" height="600" style="position:absolute;inset:0;overflow:visible" role="img" aria-label="트럼펫을 부는 재즈 연주자">
+<defs>
+<linearGradient id="brassG" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff2c8"/><stop offset=".45" stop-color="#ffc76a"/><stop offset=".8" stop-color="#c66a12"/><stop offset="1" stop-color="#ffe9a8"/></linearGradient>
+<filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<!-- motion streaks -->
+<g opacity=".9"><line x1="90" y1="150" x2="260" y2="110" stroke="#00e5cc" stroke-width="3" stroke-linecap="round" opacity=".7"/><line x1="70" y1="190" x2="240" y2="155" stroke="#ff2e7e" stroke-width="4" stroke-linecap="round" opacity=".7"/><line x1="90" y1="230" x2="220" y2="200" stroke="#ffc76a" stroke-width="2.5" stroke-linecap="round"/></g>
+<!-- TRUMPET dominant diagonal pointing left -->
+<g filter="url(#glow)">
+<polygon points="175,325 42,268 38,292 172,345" fill="url(#brassG)" stroke="#5a2a00" stroke-width="2"/>
+<!-- bell -->
+<path d="M42 268 L12 228 L5 235 L5 305 L12 312 Z" fill="url(#brassG)" stroke="#5a2a00" stroke-width="2"/>
+<ellipse cx="9" cy="270" rx="10" ry="42" fill="#2b1200" stroke="#ffe9a8" stroke-width="3"/>
+<rect x="150" y="300" width="70" height="18" rx="4" fill="url(#brassG)" stroke="#5a2a00" stroke-width="1.6"/>
+<circle cx="175" cy="298" r="7" fill="none" stroke="#5a2a00" stroke-width="2"/><circle cx="190" cy="296" r="7" fill="none" stroke="#5a2a00" stroke-width="2"/><circle cx="205" cy="294" r="7" fill="none" stroke="#5a2a00" stroke-width="2"/>
+<rect x="172" y="280" width="6" height="20" fill="#5a2a00"/><rect x="187" y="278" width="6" height="20" fill="#5a2a00"/><rect x="202" y="276" width="6" height="20" fill="#5a2a00"/>
+</g>
+<!-- HANDS -->
+<ellipse cx="195" cy="330" rx="18" ry="14" fill="#f2b88a" stroke="#5a2a00" stroke-width="2"/>
+<ellipse cx="230" cy="322" rx="16" ry="13" fill="#f2b88a" stroke="#5a2a00" stroke-width="2"/>
+<!-- FACE profile facing LEFT (human cue, gaze to CTA) -->
+<g>
+<!-- neck/suit -->
+<path d="M280 600 C275 500 285 445 330 425 L420 425 C460 445 475 520 480 600 Z" fill="#0e1230" stroke="#ffe9a8" stroke-width="2.5"/>
+<path d="M330 425 L360 500 L340 510 L320 430 Z" fill="#ffc76a"/><path d="M420 425 L390 500 L410 510 L430 430 Z" fill="#ffc76a"/>
+<circle cx="375" cy="525" r="10" fill="#ff2e7e"/>
+<!-- face base -->
+<ellipse cx="285" cy="320" rx="72" ry="78" fill="#f6c79e" stroke="#1a0f00" stroke-width="3"/>
+<!-- nose pointing left -->
+<path d="M215 315 L188 328 L215 340 Z" fill="#f6c79e" stroke="#1a0f00" stroke-width="2.5" stroke-linejoin="round"/>
+<!-- lips on mouthpiece -->
+<ellipse cx="197" cy="335" rx="10" ry="8" fill="#a14a2a"/>
+<!-- eye looking LEFT to CTA -->
+<ellipse cx="245" cy="305" rx="14" ry="11" fill="#fff" stroke="#1a0f00" stroke-width="2"/>
+<circle cx="236" cy="305" r="6" fill="#111"/><circle cx="234" cy="303" r="2" fill="#fff"/>
+<path d="M228 285 Q245 278 262 285" fill="none" stroke="#1a0f00" stroke-width="3" stroke-linecap="round"/>
+<!-- fedora -->
+<path d="M200 260 Q285 210 390 250 L400 270 Q310 240 190 280 Z" fill="#131637" stroke="#ffc76a" stroke-width="2"/>
+<path d="M225 250 L235 175 L355 175 L365 245 Q295 225 225 250" fill="#131637" stroke="#ffc76a" stroke-width="2.5"/>
+<rect x="232" y="210" width="125" height="18" fill="#ff2e7e"/>
+</g>
+<!-- sound waves from bell to left -->
+<g fill="none" stroke-linecap="round"><path d="M -10 220 Q 5 270  -10 320" stroke="#00e5cc" stroke-width="4" opacity=".9"/><path d="M 20 210 Q 40 270 20 330" stroke="#fff" stroke-width="3" opacity=".8"/><path d="M 50 200 Q 75 270 50 340" stroke="#ffc76a" stroke-width="3" opacity=".8"/></g>
+</svg>
+<div class="notes"><span style="left:20px;top:120px">🎶</span><span style="left:560px;top:160px;animation-delay:.6s">🎷</span><span style="left:520px;top:420px;animation-delay:1.1s">✨</span></div>
+<div class="eq"><i></i><i></i><i></i><i></i><i></i></div>
+<div class="place-tag">📍 노들섬 · 11.21—23<br><b>지하철 9호선 노들역 2번 출구</b></div>
+<div class="price-card"><span class="off">EARLY BIRD −30%</span><h4>3일 통합권 <s>129,000원</s></h4><div class="price">89,000원 <small>· 11.10까지</small></div><p>지금 예매하면 매일 앞자리 + 첫잔 무료. 시선은 왼쪽 CTA로!</p></div>
+</div>
+</section>
+</main>
+<div class="ticker"><div>🎺 EARLY BIRD OPEN — 11.10까지 30% · 3일권 89,000원 &nbsp;&nbsp;●&nbsp;&nbsp; 11.21 웅산 — 11.22 네온 브라스 — 11.23 빅밴드 피날레 &nbsp;&nbsp;●&nbsp;&nbsp; 노들섬 라이브하우스 · 밤 7시 오픈 &nbsp;&nbsp;●&nbsp;&nbsp; 🎺 EARLY BIRD OPEN — 11.10까지 30% · 3일권 89,000원 &nbsp;&nbsp;●&nbsp;&nbsp; 11.21 웅산 — 11.22 네온 브라스 — 11.23 빅밴드 피날레 &nbsp;&nbsp;●&nbsp;&nbsp; 노들섬 라이브하우스 · 밤 7시 오픈 &nbsp;&nbsp;●&nbsp;&nbsp;</div></div>
+</div>
+</body>
+</html>

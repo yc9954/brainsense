@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MeetLog AI — 요금제</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800;900&family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Noto Sans KR','Inter',system-ui,sans-serif;background:#FFFBF2;color:#1A1E2A;font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1280px;margin:0 auto;padding:0 40px;position:relative}
+.bg-deco{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.blob{position:absolute;border-radius:50%;filter:blur(0)}
+.blob.b1{width:640px;height:640px;left:-180px;top:-220px;background:radial-gradient(circle at 40% 40%,#FFE9C7 0%,#FFFBF2 68%)}
+.blob.b2{width:520px;height:520px;right:-140px;top:40px;background:radial-gradient(circle at 50% 50%,#DFF5E1 0%,#FFFBF2 70%)}
+.grid-dots{position:absolute;left:50%;top:86px;transform:translateX(-50%);width:1080px;height:120px;background-image:radial-gradient(#D8D0BF 1.6px,transparent 1.6px);background-size:18px 18px;opacity:.5;mask-image:linear-gradient(to bottom,black,transparent)}
+/* NAV */
+nav{display:flex;align-items:center;justify-content:space-between;height:68px;position:relative;z-index:2}
+.logo{display:flex;align-items:center;gap:10px;font-weight:900;font-size:19px;letter-spacing:-.02em}
+.logo-mark{width:32px;height:32px;border-radius:9px;background:#131722;color:#D9FF3D;display:grid;place-items:center;font-family:Inter;font-weight:900;font-size:18px}
+.nav-links{display:flex;gap:28px;font-size:15.5px;font-weight:500;color:#4E4C46}
+.nav-links a:first-child{color:#131722;font-weight:700;border-bottom:2px solid #131722;padding-bottom:2px}
+.nav-cta{display:flex;align-items:center;gap:10px}
+.btn-login{font-size:15px;font-weight:700;padding:10px 16px;border-radius:10px;color:#2B2B2B}
+.btn-start{font-size:15px;font-weight:800;padding:11px 18px;border-radius:11px;background:#131722;color:#fff;border:1px solid #131722}
+/* HERO */
+.hero{text-align:center;position:relative;z-index:2;margin-top:10px}
+.pill{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid #E9E1D1;border-radius:100px;padding:7px 14px;font-size:13.5px;font-weight:700;color:#3D3B35;box-shadow:0 2px 10px rgba(0,0,0,.04)}
+.pill i{width:8px;height:8px;border-radius:50%;background:#1DB262;display:inline-block}
+.pill b{color:#111}
+h1{font-size:44px;line-height:1.15;letter-spacing:-.04em;font-weight:900;margin:14px 0 8px}
+h1 .hl{position:relative;white-space:nowrap}
+h1 .hl span{position:relative;z-index:1}
+h1 .hl::after{content:"";position:absolute;left:-4px;right:-4px;bottom:6px;height:14px;background:#D9FF3D;z-index:0;border-radius:4px}
+.sub{font-size:17px;color:#5D5B54;font-weight:500}
+/* toggle */
+.toggle{display:inline-flex;align-items:center;background:#EDE7D8;border-radius:100px;padding:4px;margin-top:16px;gap:4px}
+.toggle button{border:0;background:transparent;font-family:inherit;font-size:15px;font-weight:700;color:#6B695F;padding:9px 20px;border-radius:100px;cursor:pointer}
+.toggle button.on{background:#131722;color:#fff;box-shadow:0 4px 12px rgba(0,0,0,.2)}
+.toggle .save{font-size:12.5px;font-weight:800;background:#1DB262;color:#fff;border-radius:100px;padding:3px 8px;margin-left:6px;vertical-align:middle}
+/* PRICING */
+.pricing{display:grid;grid-template-columns:1fr 1.14fr 1fr;gap:18px;max-width:1060px;margin:22px auto 0;align-items:stretch;position:relative;z-index:2}
+.card{background:#fff;border:1.5px solid #E8E0CE;border-radius:20px;padding:24px 26px 22px;display:flex;flex-direction:column;box-shadow:0 8px 24px rgba(60,50,20,.06)}
+.card.pro{background:#141821;color:#fff;border:2px solid #141821;box-shadow:0 22px 50px rgba(20,24,33,.28),0 0 0 6px rgba(217,255,61,.55);transform:translateY(-10px);position:relative;border-radius:22px}
+.pro-badge{position:absolute;top:-15px;left:50%;transform:translateX(-50%);background:#D9FF3D;color:#131722;font-size:13px;font-weight:900;letter-spacing:-.01em;padding:6px 14px;border-radius:100px;display:flex;align-items:center;gap:6px;white-space:nowrap;box-shadow:0 4px 12px rgba(0,0,0,.2)}
+.plan-name{font-size:15px;font-weight:800;letter-spacing:.02em;display:flex;align-items:center;gap:8px}
+.plan-name small{font-weight:500;color:#8A877D;font-size:13px}
+.pro .plan-name small{color:#B9BECB}
+.price-row{display:flex;align-items:baseline;gap:6px;margin:10px 0 2px}
+.price{font-family:Inter,'Noto Sans KR';font-size:36px;font-weight:900;letter-spacing:-.04em}
+.per{font-size:15px;font-weight:500;color:#7A786E}
+.pro .per{color:#B9BECB}
+.desc{font-size:15px;color:#6B695F;margin-bottom:14px}
+.pro .desc{color:#CBD0DD}
+ul{list-style:none;display:grid;gap:10px;margin:6px 0 18px}
+li{display:flex;gap:9px;align-items:flex-start;font-size:15.5px;font-weight:500;line-height:1.45}
+.card.pro li{font-weight:500}
+.check{flex:0 0 22px;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-size:13px;font-weight:900;margin-top:1px}
+.free .check,.team .check{background:#EAF7ED;color:#148A3E;border:1px solid #C9E9D0}
+.pro .check{background:#D9FF3D;color:#131722}
+li.dim{color:#9A978D}
+.pro li.dim{color:#8E94A8}
+.btn{height:52px;border-radius:13px;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;gap:6px;cursor:pointer;border:1.5px solid transparent;width:100%;font-family:inherit}
+.btn-pro{background:#D9FF3D;color:#131722;border-color:#D9FF3D;margin-top:auto;box-shadow:0 8px 20px rgba(217,255,61,.35)}
+.btn-pro:hover{filter:brightness(1.05)}
+.btn-ghost{background:#fff;border-color:#DDD5C0;color:#2B2B2B}
+.btn-ghost:hover{background:#F7F2E6}
+.micro{text-align:center;font-size:13px;margin-top:10px;font-weight:500}
+.free .micro,.team .micro{color:#8A877D}
+.pro .micro{color:#9AA0B3}
+.pro .micro b{color:#D9FF3D}
+/* TRUST */
+.trust{max-width:1060px;margin:18px auto 0;background:#fff;border:1px solid #E8E0CE;border-radius:14px;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:18px;position:relative;z-index:2}
+.logos{display:flex;align-items:center;gap:20px}
+.logos span{font-family:Inter;font-weight:800;font-size:15px;color:#9AA094;letter-spacing:.02em}
+.logos span b{color:#55534C}
+.stars{font-size:13.5px;font-weight:700;color:#3D3B35;white-space:nowrap}
+.stars em{color:#FF9A1F;font-style:normal;letter-spacing:1px}
+.guarantee{display:flex;align-items:center;gap:10px;background:#EFF9F0;border:1px dashed #1DB262;border-radius:10px;padding:8px 14px;font-size:14px;font-weight:700;color:#0E5A28;white-space:nowrap}
+.shield{width:30px;height:30px;border-radius:50%;background:#1DB262;color:#fff;display:grid;place-items:center;font-size:16px}
+@media(max-width:980px){.pricing{grid-template-columns:1fr}.card.pro{transform:none}h1{font-size:34px}.trust{flex-direction:column}.nav-links{display:none}}
+</style>
+</head>
+<body>
+<div class="bg-deco"><div class="blob b1"></div><div class="blob b2"></div><div class="grid-dots"></div></div>
+<div class="wrap">
+<nav>
+<div class="logo"><div class="logo-mark">M</div> MeetLog AI</div>
+<div class="nav-links"><a href="#">요금제</a><a href="#">기능</a><a href="#">보안</a><a href="#">고객사례</a><a href="#">문의</a></div>
+<div class="nav-cta"><a class="btn-login" href="#">로그인</a><a class="btn-start" href="#">무료로 시작</a></div>
+</nav>
+
+<header class="hero">
+<div class="pill"><i></i> 지금 <b>&nbsp;12,400개 팀</b>이 회의록을 자동화하고 있어요</div>
+<h1>회의는 짧게, 기록은 <span class="hl"><span>완벽하게</span></span></h1>
+<p class="sub">필요한 팀만 Pro로. 언제든 해지, 14일 100% 환불.</p>
+<div class="toggle" role="tablist" aria-label="결제 주기">
+<button id="bM" class="on" onclick="setBilling('m')">월간 결제</button>
+<button id="bY" onclick="setBilling('y')">연간 결제 <span class="save">−20%</span></button>
+</div>
+</header>
+
+<main class="pricing">
+<!-- FREE -->
+<div class="card free">
+<div class="plan-name">Free <small>가볍게 시작</small></div>
+<div class="price-row"><div class="price">0원</div><div class="per">/ 영원히 무료</div></div>
+<p class="desc">개인 회의 정리에 충분해요.</p>
+<ul>
+<li><span class="check">✓</span> 월 300분 AI 회의록</li>
+<li><span class="check">✓</span> 실시간 자막 + 3줄 요약</li>
+<li><span class="check">✓</span> Zoom · Meet 연동</li>
+<li><span class="check">✓</span> 최대 10개 파일 보관</li>
+</ul>
+<button class="btn btn-ghost">무료로 시작하기</button>
+<div class="micro">카드 등록 필요 없어요</div>
+</div>
+
+<!-- PRO -->
+<div class="card pro">
+<div class="pro-badge">✦ 가장 인기 · 78%가 선택</div>
+<div class="plan-name">Pro <small style="color:#D9FF3D;font-weight:800">팀 생산성 플랜</small></div>
+<div class="price-row"><div class="price" id="proPrice">월 12,000원</div></div>
+<div class="per" id="proPer">1인당 · VAT 별도 · 언제든 해지</div>
+<p class="desc">회의 후 정리 0분. 요약·액션아이템 자동.</p>
+<ul>
+<li><span class="check">✓</span> 무제한 회의록 + 화자 분리 99.2%</li>
+<li><span class="check">✓</span> 액션아이템·결정사항 자동 추출</li>
+<li><span class="check">✓</span> Notion · Slack · 캘린더 연동</li>
+<li><span class="check">✓</span> 42개국어 번역 · 보안 암호화</li>
+</ul>
+<button class="btn btn-pro">Pro 14일 무료로 시작 →</button>
+<div class="micro">오늘 결제 없음 · <b>14일 100% 환불 보장</b></div>
+</div>
+
+<!-- TEAM -->
+<div class="card team">
+<div class="plan-name">Team <small>조직용 · 5인~</small></div>
+<div class="price-row"><div class="price">28,000원</div><div class="per">/ 인 · 월 · 연간 기준</div></div>
+<p class="desc">전사 회의 자산을 한곳에.</p>
+<ul>
+<li><span class="check">✓</span> Pro 모든 기능 포함</li>
+<li><span class="check">✓</span> SSO · 감사로그 · 권한 관리</li>
+<li><span class="check">✓</span> 전사 검색 + 인사이트 리포트</li>
+<li><span class="check">✓</span> 전담 매니저 · 도입 교육</li>
+</ul>
+<button class="btn btn-ghost">도입 상담 받기</button>
+<div class="micro">견적서 · 보안심사서 제공</div>
+</div>
+</main>
+
+<div class="trust">
+<div class="logos"><span><b>toss</b></span><span>DAANGN</span><span><b>SOCAR</b></span><span>Kurly</span><span>YANOLJA</span></div>
+<div class="stars"><em>★★★★★</em> 4.9/5 · 실사용 리뷰 3,200+ · ISMS · SOC2 인증</div>
+<div class="guarantee"><div class="shield">🛡</div> 14일 100% 환불 보장 · 이유 묻지 않음</div>
+</div>
+
+</div>
+<script>
+function setBilling(t){
+document.getElementById('bM').classList.toggle('on',t==='m');
+document.getElementById('bY').classList.toggle('on',t==='y');
+document.getElementById('proPrice').textContent = t==='m' ? '월 12,000원' : '월 9,600원';
+document.getElementById('proPer').textContent = t==='m' ? '1인당 · VAT 별도 · 언제든 해지' : '1인당 · 연간 결제 시 · 2개월 무료';
+}
+</script>
+</body>
+</html>

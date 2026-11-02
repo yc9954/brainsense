@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<title>SummAI — 요금제</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"IBM Plex Sans KR",system-ui,sans-serif;background:#FAF6EC;color:#131524;font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased;display:flex;justify-content:center}
+.page{width:1280px;min-height:800px;background:#FAF6EC;position:relative;overflow:hidden;display:flex;flex-direction:column}
+/* subtle dot texture, kept faint to not dominate */
+.page:before{content:"";position:absolute;inset:0;background-image:radial-gradient(#13152418 1px,transparent 1px);background-size:22px 22px;mask-image:linear-gradient(to right,transparent 62%,black 100%);opacity:.35;pointer-events:none}
+/* diagonal motion band */
+.motion-band{position:absolute;top:-90px;right:-40px;width:760px;height:220px;background:linear-gradient(90deg,#2B2CFF 0%,#6A6CFF 55%,#D8FF3E 100%);transform:rotate(-8deg);border-radius:0 0 28px 28px;opacity:.14;pointer-events:none}
+.motion-line{position:absolute;top:118px;right:0;width:860px;height:3px;background:repeating-linear-gradient(90deg,#2B2CFF 0 22px,transparent 22px 36px);transform:rotate(-8deg);opacity:.35;pointer-events:none}
+header{display:flex;align-items:center;justify-content:space-between;padding:16px 32px;position:relative;z-index:2}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:19px;letter-spacing:-.02em}
+.brand-mark{width:34px;height:34px;border-radius:10px;background:#131524;color:#D8FF3E;display:grid;place-items:center;font-family:"Space Grotesk";font-size:20px;font-weight:700;box-shadow:3px 3px 0 #2B2CFF}
+nav{display:flex;gap:26px;font-size:15px;font-weight:500;color:#3A3D52}
+nav b{color:#131524;border-bottom:3px solid #D8FF3E;padding-bottom:2px}
+.h-actions{display:flex;gap:10px;align-items:center}
+.btn{border-radius:999px;padding:10px 18px;font-weight:700;font-size:15px;border:1px solid #131524;cursor:pointer}
+.btn-ghost{background:#fff;color:#131524}
+.btn-dark{background:#131524;color:#fff;border-color:#131524}
+main{display:grid;grid-template-columns:400px 1fr;gap:22px;padding:6px 32px 14px;position:relative;z-index:2}
+/* LEFT solid panel - owns frame */
+.hero-panel{background:#101220;color:#fff;border-radius:24px;padding:26px 24px 20px;position:relative;overflow:hidden;box-shadow:0 20px 50px rgba(16,18,32,.25)}
+.hero-panel:after{content:"";position:absolute;left:-30px;bottom:-60px;width:260px;height:260px;background:radial-gradient(circle at center,#2B2CFF 0%,transparent 70%);opacity:.55;pointer-events:none}
+.pill{display:inline-flex;align-items:center;gap:8px;background:#1E2138;border:1px solid #3A3E66;color:#D8FF3E;font-size:13px;font-weight:700;padding:7px 12px;border-radius:999px}
+.pill i{width:8px;height:8px;background:#D8FF3E;border-radius:50%;box-shadow:0 0 0 4px #d8ff3e33;animation:pulse 1.6s infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 7px #d8ff3e00}}
+.hero-panel h1{font-size:39px;line-height:1.08;letter-spacing:-.04em;margin:14px 0 10px;font-weight:700}
+.hero-panel h1 span{color:#D8FF3E;font-family:"Space Grotesk";letter-spacing:-.05em}
+.hero-panel p{color:#C5C7D8;font-size:16px;line-height:1.55}
+.hero-panel p strong{color:#fff}
+/* product silhouette - dominant object */
+.mock{margin-top:16px;background:#fff;color:#131524;border-radius:18px;padding:14px 14px 12px;transform:rotate(-1.6deg);position:relative;z-index:2;box-shadow:0 12px 0 #2B2CFF,0 18px 30px rgba(0,0,0,.35)}
+.mock-top{display:flex;align-items:center;gap:10px}
+.mic{width:44px;height:44px;border-radius:50%;background:#131524;color:#D8FF3E;display:grid;place-items:center;font-size:20px;flex-shrink:0}
+.eq{display:flex;gap:3px;align-items:end;height:26px}
+.eq span{width:4px;border-radius:2px;background:#2B2CFF;animation:eq 1s infinite ease-in-out}
+.eq span:nth-child(1){height:12px}.eq span:nth-child(2){height:22px;animation-delay:.15s}.eq span:nth-child(3){height:16px;animation-delay:.3s}.eq span:nth-child(4){height:26px;background:#131524;animation-delay:.1s}.eq span:nth-child(5){height:10px;animation-delay:.25s}.eq span:nth-child(6){height:18px;animation-delay:.4s}
+@keyframes eq{50%{transform:scaleY(.4)}}
+.rec{margin-left:auto;font-family:"Space Grotesk";font-size:12px;font-weight:700;background:#FFE9E3;color:#C62E0F;padding:5px 9px;border-radius:999px;display:flex;gap:6px;align-items:center}
+.rec i{width:8px;height:8px;background:#FF3B1F;border-radius:50%;animation:pulse 1.2s infinite}
+.lines{margin-top:12px;display:grid;gap:8px}
+.line{display:flex;gap:8px;align-items:center;font-size:13.5px}
+.tag{font-size:11px;font-weight:700;padding:3px 7px;border-radius:6px;flex-shrink:0}
+.t1{background:#E8E9FF;color:#2B2CFF}.t2{background:#FFF1B8;color:#6B5900}.t3{background:#E5F5E5;color:#14662E}
+.bar{height:8px;border-radius:99px;background:#EEE}
+.ai-box{margin-top:12px;background:#131524;color:#fff;border-radius:12px;padding:10px 12px;display:flex;gap:10px;align-items:center}
+.ai-box small{display:block;color:#D8FF3E;font-weight:700;font-size:12px}
+.ai-box p{font-size:13.5px;color:#EDEEFF}
+.check{width:26px;height:26px;border-radius:50%;background:#D8FF3E;color:#131524;display:grid;place-items:center;font-weight:900;flex-shrink:0}
+.float1,.float2{position:absolute;z-index:3;font-size:13px;font-weight:700;padding:8px 12px;border-radius:12px;box-shadow:0 8px 20px rgba(0,0,0,.25)}
+.float1{right:14px;top:196px;background:#D8FF3E;color:#131524;transform:rotate(6deg);animation:float 3s ease-in-out infinite}
+.float2{left:14px;bottom:72px;background:#fff;color:#131524;transform:rotate(-4deg);animation:float 3.4s .3s ease-in-out infinite}
+@keyframes float{50%{translate:0 -7px}}
+.stats{display:flex;gap:18px;margin-top:14px;position:relative;z-index:2}
+.stats b{font-family:"Space Grotesk";font-size:20px;display:block}
+.stats span{font-size:12.5px;color:#A8ABC0}
+/* RIGHT pricing */
+.price-head{display:flex;align-items:end;justify-content:space-between;gap:12px}
+.price-head h2{font-size:30px;letter-spacing:-.04em;line-height:1.1}
+.price-head h2 em{font-style:normal;background:linear-gradient(transparent 55%,#D8FF3E 55%)}
+.toggle{display:flex;background:#fff;border:1px solid #E2DCCB;border-radius:999px;padding:4px;gap:4px;align-items:center;font-size:14px;font-weight:700}
+.toggle button{border:0;background:transparent;padding:7px 14px;border-radius:999px;font-weight:700;font-size:14px;cursor:pointer;color:#6B6E86}
+.toggle .on{background:#131524;color:#fff}
+.toggle small{background:#FF3B1F;color:#fff;border-radius:999px;padding:2px 7px;font-size:12px;margin-left:4px}
+.cards{display:grid;grid-template-columns:1fr 1.12fr 1fr;gap:14px;margin-top:12px;align-items:stretch;position:relative}
+.card{background:#fff;border:1.5px solid #E6DFCC;border-radius:20px;padding:18px 18px 16px;display:flex;flex-direction:column;position:relative}
+.card h3{font-size:15px;font-weight:700;display:flex;align-items:center;gap:8px}
+.card .won{font-family:"Space Grotesk";font-size:32px;font-weight:700;letter-spacing:-.05em;margin:6px 0 2px}
+.card .won small{font-family:"IBM Plex Sans KR";font-size:14px;font-weight:500;color:#6B6E86;letter-spacing:0}
+.card .desc{font-size:14px;color:#5B5E75;min-height:42px}
+.card ul{list-style:none;margin:12px 0 14px;display:grid;gap:8px;font-size:14.5px}
+.card li{display:flex;gap:8px;align-items:flex-start}
+.tick{width:20px;height:20px;border-radius:50%;background:#EFEFFF;color:#2B2CFF;display:grid;place-items:center;font-size:12px;font-weight:900;flex-shrink:0;margin-top:1px}
+.card .cta{margin-top:auto;border-radius:12px;padding:12px;font-weight:700;font-size:15px;border:1.5px solid #131524;background:#fff;cursor:pointer}
+.card.pro{background:#151735;color:#fff;border-color:#151735;transform:translateY(-8px) scale(1.02);box-shadow:0 18px 40px rgba(43,44,255,.35),0 0 0 4px #D8FF3E;overflow:hidden}
+.card.pro:before{content:"";position:absolute;top:-28px;right:-28px;width:140px;height:140px;background:#D8FF3E;transform:rotate(18deg);border-radius:24px;opacity:.18}
+.card.pro .desc{color:#C5C7D8}
+.card.pro .won small{color:#C5C7D8}
+.card.pro .tick{background:#D8FF3E;color:#131524}
+.card.pro .cta{background:#D8FF3E;border-color:#D8FF3E;color:#131524;font-size:16px}
+.badge{position:absolute;top:-13px;left:50%;translate:-50% 0;background:#FF3B1F;color:#fff;font-size:13px;font-weight:800;padding:6px 14px;border-radius:999px;white-space:nowrap;box-shadow:0 6px 16px rgba(255,59,31,.4);letter-spacing:-.01em}
+.pro-flag{font-size:11px;font-weight:800;background:#2B2CFF;color:#fff;padding:3px 8px;border-radius:999px;letter-spacing:.06em}
+.team-flag{font-size:11px;font-weight:800;background:#EFEAD9;color:#6B5E2E;padding:3px 8px;border-radius:999px}
+.free-flag{font-size:11px;font-weight:800;background:#EFEFFF;color:#2B2CFF;padding:3px 8px;border-radius:999px}
+/* trust */
+.trust{margin-top:12px;background:#fff;border:1px solid #E6DFCC;border-radius:16px;padding:11px 16px;display:flex;align-items:center;gap:18px}
+.logos{display:flex;gap:18px;align-items:center;font-weight:800;font-size:15px;color:#131524;opacity:.9;white-space:nowrap}
+.logos span{opacity:.55}.logos span:first-child{opacity:1}
+.div{width:1px;height:28px;background:#E6DFCC}
+.guarantee{display:flex;gap:10px;align-items:center;font-size:14px}
+.guarantee b{font-size:14px}
+.shield{width:34px;height:34px;border-radius:50%;background:#E8FFE0;display:grid;place-items:center;font-size:18px;flex-shrink:0}
+.foot{display:flex;justify-content:space-between;padding:0 4px;margin-top:8px;font-size:13px;color:#7A7D93}
+a{color:inherit}
+@media (max-width:900px){.page{width:100%}main{grid-template-columns:1fr}.cards{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="page">
+<div class="motion-band"></div><div class="motion-line"></div>
+<header>
+<div class="brand"><div class="brand-mark">◐</div> SummAI <span style="font-weight:400;color:#6B6E86;font-size:14px">for Work</span></div>
+<nav><span>기능</span><span>활용법</span><span>고객사례</span><b>요금제</b><span>보안</span></nav>
+<div class="h-actions"><button class="btn btn-ghost">로그인</button><button class="btn btn-dark">무료로 시작</button></div>
+</header>
+<main>
+<!-- LEFT -->
+<section class="hero-panel" aria-label="서비스 소개">
+<div class="pill"><i></i> AI 회의록 · 98.2% 한국어 정확도</div>
+<h1>회의는 짧게,<br>기록은 <span>완벽하게.</span></h1>
+<p>녹음만 누르세요. <strong>화자 분리·요약·할 일 추출</strong>까지 3분 만에 끝납니다.</p>
+<div class="float1">요약 완료 ✓ 2분 43초</div>
+<div class="float2">📋 할 일 5개 → Notion 전송</div>
+<div class="mock" aria-hidden="true">
+<div class="mock-top"><div class="mic">🎙</div><div><div style="font-weight:800;font-size:14px">주간 기획 회의 · 00:14:32</div><div class="eq"><span></span><span></span><span></span><span></span><span></span><span></span></div></div><div class="rec"><i></i> REC</div></div>
+<div class="lines">
+<div class="line"><span class="tag t1">김지훈</span><span>이번 스프린트에서 온보딩 이탈이 12%…</span></div>
+<div class="line"><span class="tag t2">박서연</span><div class="bar" style="width:62%"></div></div>
+<div class="line"><span class="tag t3">AI 요약</span><span>결정: 무료체험 7→14일로 확대 ✓</span></div>
+</div>
+<div class="ai-box"><div class="check">✓</div><div><small>AI ACTION ITEMS</small><p>담당자 지정 3건 · 마감일 자동 등록 완료</p></div></div>
+</div>
+<div class="stats"><div><b>42,000+</b><span>도입 팀 수</span></div><div><b>4.9 / 5.0</b><span>★ 6,200개 리뷰</span></div><div><b>−68%</b><span>회의 정리 시간 절감</span></div></div>
+</section>
+<!-- RIGHT -->
+<section aria-label="요금제">
+<div class="price-head">
+<h2>팀 크기에 맞는 <em>심플한 요금제</em></h2>
+<div class="toggle" role="tablist" aria-label="결제 주기"><button class="on">월간</button><button>연간 <small>-20%</small></button></div>
+</div>
+<div class="cards">
+<div class="card">
+<h3>Free <span class="free-flag">입문용</span></h3>
+<div class="won">0원 <small>/ forever</small></div>
+<p class="desc">가볍게 AI 회의록을 체험해 보세요.</p>
+<ul><li><span class="tick">✓</span> 월 300분 음성 기록</li><li><span class="tick">✓</span> 실시간 자막 + 화자구분</li><li><span class="tick">✓</span> 최대 3인 공유</li></ul>
+<button class="cta">무료로 시작하기</button>
+</div>
+<div class="card pro">
+<div class="badge">🔥 가장 많이 선택 · 14일 무료체험</div>
+<h3>Pro <span class="pro-flag">PRO</span></h3>
+<div class="won">12,000원 <small>/ 인 · 월</small></div>
+<p class="desc">핵심 업무를 자동화하는 개인·프로용.</p>
+<ul><li><span class="tick">✓</span> <b>월 2,000분 + AI 요약 무제한</b></li><li><span class="tick">✓</span> 할 일 추출 → Slack·Notion 연동</li><li><span class="tick">✓</span> 99개 언어 번역 · 보안 저장</li></ul>
+<button class="cta">Pro 14일 무료로 체험 →</button>
+</div>
+<div class="card">
+<h3>Team <span class="team-flag">조직용</span></h3>
+<div class="won">29,000원 <small>/ 인 · 월</small></div>
+<p class="desc">보안·관리가 필요한 10인 이상 팀.</p>
+<ul><li><span class="tick">✓</span> Pro 전부 + 무제한 워크스페이스</li><li><span class="tick">✓</span> SSO·감사로그·권한 관리</li><li><span class="tick">✓</span> 전담 CSM + 도입 교육</li></ul>
+<button class="cta">영업팀에 문의하기</button>
+</div>
+</div>
+<div class="trust">
+<div class="logos" aria-label="도입 고객"><span>● TOSS</span><span>당근</span><span>SSG.COM</span><span>쏘카 SOCAR</span><span>여기어때</span></div>
+<div class="div"></div>
+<div class="guarantee"><div class="shield">🛡</div><div><b>14일 100% 환불 보장</b><br><span style="color:#5B5E75">카드 해지 1클릭 · 위약금 0원 · 부가세 별도</span></div></div>
+<div style="margin-left:auto;font-size:13px;font-weight:700;color:#2B2CFF;white-space:nowrap">도입사례 보기 →</div>
+</div>
+<div class="foot"><span>언제든 해지 가능 · 연간 결제 시 20% 할인 (Pro 월 9,600원)</span><span>문의: sales@summai.kr · 1544-0000</span></div>
+</section>
+</main>
+</div>
+</body>
+</html>
