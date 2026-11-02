@@ -24,6 +24,8 @@ glasses/phone ─clip(≤6s)─▶ Modal: TRIBE v2 ─▶ ROI time series (9 gro
 | Demo video + write-up | script in `docs/demo_script.md` |
 
 ## Ablation results (real TRIBE features; AADB updated to 2,500 images on 2026-11-02)
+**Shipped aesthetic head (2026-11-03):** 360 HCP-MMP1 area means → PCA-54 → logistic, trained on the full 2,500-image AADB area-feature store (`features/aadb_area.npz`, `heads_area2500/`): holdout AUROC **0.721**, ECE 0.041 (temperature 1.30), n_train 1,492. The 600-image version scored 0.718 on its smaller holdout; the extra data mostly buys calibration, not accuracy, which is consistent with the ablation below.
+
 Linear heads, AUROC on a fixed 25% test split, mean over seeds. `raw_pca54` compresses the raw V-JEPA2 embedding to the same width as the brain features (the fair control).
 
 | dataset (label) | n_train | TRIBE ROI (54-d) | raw V-JEPA2 (1408-d) | raw PCA-54 |
