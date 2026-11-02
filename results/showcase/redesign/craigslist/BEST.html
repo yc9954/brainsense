@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1280, initial-scale=1">
+<title>craigslist &gt; sites</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,700;1,9..144,900&family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',Arial,sans-serif;background:#FFFEF9;color:#14101F;width:1280px;height:800px;overflow:hidden;display:flex;flex-direction:column}
+.top{padding:10px 0 6px;text-align:center;background:#FFFEF9}
+.logo{font-weight:900;font-size:58px;color:#4B1FA2;letter-spacing:-2px;line-height:1}
+.logo sup{font-size:18px;font-weight:700}
+.nav{display:flex;gap:16px;justify-content:center;align-items:center;font-weight:800;font-size:14px;color:#2B1BB0;margin-top:2px}
+.nav span{background:#4B1FA2;color:#fff;padding:2px 12px;border-radius:20px}
+.main{flex:1;display:grid;grid-template-columns:500px 780px;min-height:0}
+.left{padding:18px 24px 10px 48px}
+.badge{display:inline-flex;align-items:center;gap:8px;background:#111;color:#fff;font-size:11px;font-weight:800;letter-spacing:2px;padding:7px 14px;border-radius:20px}
+.dot{width:9px;height:9px;background:#2EFFC3;border-radius:50%}
+h1{font-size:62px;line-height:.92;letter-spacing:-3px;font-weight:900;margin:12px 0 8px}
+h1 em{font-family:'Fraunces',serif;font-style:italic;font-weight:900;color:#4B1FA2;letter-spacing:-1px}
+.value{background:#FFF3B0;border:2.5px solid #111;border-radius:14px;padding:10px 12px;box-shadow:4px 4px 0 #111;margin:10px 0}
+.value b{font-size:15px}
+.value .offer{display:flex;gap:10px;margin-top:6px;font-size:13px;font-weight:800}
+.offer-pill{background:#111;color:#2EFFC3;padding:3px 10px;border-radius:20px;font-size:12px}
+.offer-pill.y{background:#FFE600;color:#111}
+.sub{font-size:14.5px;line-height:1.4;color:#333;margin-top:8px}
+.sub strong{color:#111}
+.search{display:flex;background:#fff;border:2.5px solid #111;border-radius:14px;overflow:hidden;margin-top:12px;box-shadow:4px 4px 0 #111}
+.search input{flex:1;border:0;padding:12px 14px;font-size:13px;outline:none}
+.search button{background:#111;color:#fff;border:0;padding:0 22px;font-weight:900;font-size:14px;cursor:pointer}
+.meta{font-size:12px;margin-top:10px;line-height:1.4}
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:8px}
+.chip{font-size:12.5px;padding:5px 12px;border-radius:20px;border:1.5px solid #B9A8FF;background:#EDE8FF}
+.chip.hot{background:#4B1FA2;color:#fff;border-color:#111;font-weight:800}
+.right{position:relative;background:linear-gradient(135deg,#8BE9DE 0%,#2EA9DE 35%,#1E7DFF 70%,#4B1FA2 100%);clip-path:polygon(7% 0,100% 0,93% 100%,0 100%);margin-left:-10px;overflow:hidden;border-left:6px solid #4B1FA2}
+.right:before{content:"";position:absolute;left:-30px;top:0;bottom:0;width:18px;background:#4B1FA2;transform:rotate(5deg)}
+.globe-wrap{position:absolute;left:150px;top:18px;width:520px;height:520px}
+.orbit{position:absolute;inset:-20px 20px 20px -20px;border:3px dashed #111;border-radius:50%;transform:rotate(-18deg);opacity:.9}
+.globe{width:500px;height:500px;background:radial-gradient(circle at 35% 30%,#C8F1FF 0%,#7AC8FF 18%,#3A9AE8 45%,#0F3A9E 78%,#071A5A 100%);border:10px solid #111;border-radius:50%;position:relative;box-shadow:18px 18px 0 #111;overflow:hidden}
+.cont{position:absolute;background:#E6F2C0;border:3px solid #111;box-shadow:3px 3px 0 #111}
+.c1{left:70px;top:80px;width:140px;height:100px;border-radius:60px;transform:rotate(-12deg)}
+.c2{left:270px;top:60px;width:110px;height:90px;border-radius:50px;background:#FFE9B0;transform:rotate(10deg)}
+.c3{left:360px;top:160px;width:90px;height:140px;border-radius:45px;background:#DFF2B8}
+.c4{left:100px;top:270px;width:90px;height:140px;border-radius:45px}
+.c5{left:240px;top:280px;width:90px;height:110px;border-radius:35px;background:#FFE9B0}
+.pin{position:absolute;width:34px;height:34px;border-radius:50%;border:3px solid #111;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:18px;box-shadow:2px 2px 0 #111}
+.tag{position:absolute;font-weight:900;font-size:14px;padding:8px 14px;border:3px solid #111;border-radius:12px;box-shadow:5px 5px 0 #111;transform:rotate(-8deg)}
+.tag1{left:-40px;top:70px;background:#FFE600}
+.tag2{right:10px;bottom:60px;background:#fff;transform:rotate(6deg);font-size:13px}
+.bottom{background:#111;padding:10px 14px 0;display:flex;gap:10px}
+.card{flex:1;background:#fff;border-radius:12px;padding:8px 10px;display:flex;gap:8px;align-items:flex-start;border:2.5px solid #111;min-height:74px}
+.card.dark{background:#4B1FA2;color:#fff}
+.card b{font-size:13px;display:block;line-height:1}
+.card small{font-size:11px;color:inherit;opacity:.8}
+.ticker{background:#FFE600;border-top:3px solid #111;font-size:12px;font-weight:800;white-space:nowrap;overflow:hidden;padding:6px 0;margin-top:10px}
+.ticker-inner{display:inline-block;animation:marq 28s linear infinite}
+@keyframes marq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes floaty{0%,100%{transform:translateY(0) rotate(-8deg)}50%{transform:translateY(-8px) rotate(-8deg)}}
+.float{animation:floaty 3s ease-in-out infinite}
+</style>
+</head>
+<body>
+<div class="top">
+<div class="logo">craigslist<sup>®</sup></div>
+<div class="nav"><span>US</span><a>Canada</a><a>Europe</a><a>Asia/Pacific/Middle East</a><a>Oceania</a><a>Latin America</a><a>Africa</a></div>
+</div>
+<div class="main">
+<div class="left">
+<div class="badge"><span class="dot"></span> CRAIGSLIST SITES WORLDWIDE</div>
+<h1>Find your<br><em>local site.</em></h1>
+<div class="value"><b>Your neighborhood marketplace — post, shop, search local in seconds.</b>
+<div class="offer"><span class="offer-pill">✔ FREE forever to browse</span><span class="offer-pill y">★ 700+ cities live</span></div>
+</div>
+<p class="sub"><strong>US • Canada • Europe • Asia/Pacific/Middle East • Oceania • Latin America • Africa.</strong> Choose your city to post, shop, and search local.</p>
+<div class="search"><input value="Find your city — try los angeles, chicago, miami..."><button>Go →</button></div>
+<p class="meta"><strong>US:</strong> Alabama • Alaska • Arizona • Arkansas • California • Colorado • Connecticut...</p>
+<div class="chips"><span class="chip hot">📍 los angeles</span><span class="chip">chicago</span><span class="chip">san francisco bay area</span><span class="chip">miami / dade</span><span class="chip">denver</span><span class="chip">+ 400 more ↓</span></div>
+</div>
+<div class="right">
+<div class="globe-wrap">
+<div class="orbit"></div>
+<div class="globe">
+<div class="cont c1"></div><div class="cont c2"></div><div class="cont c3"></div><div class="cont c4"></div><div class="cont c5"></div>
+<div class="pin" style="left:150px;top:95px;background:#D6B3FF">+</div>
+<div class="pin" style="left:295px;top:90px;background:#D6B3FF">+</div>
+<div class="pin" style="left:385px;top:175px;background:#FFE600">+</div>
+<div class="pin" style="left:140px;top:300px;background:#fff">+</div>
+<div class="pin" style="left:300px;top:305px;background:#2EFFC3">+</div>
+</div>
+<div class="tag tag1 float">🌍 700+ cities live</div>
+<div class="tag tag2">auburn → yuba-sutter → 🇺🇸</div>
+</div>
+</div>
+</div>
+<div class="bottom">
+<div class="card dark"><span>🇺🇸</span><div><b>US</b><small>auburn, birmingham...</small></div></div>
+<div class="card"><span>🍁</span><div><b>Canada</b><small>toronto, vancouver...</small></div></div>
+<div class="card"><span>🏰</span><div><b>Europe</b><small>london, paris, berlin...</small></div></div>
+<div class="card"><span>🌍</span><div><b>Asia / Pacific</b><small>tokyo, sydney...</small></div></div>
+<div class="card"><span>🦘</span><div><b>Oceania</b><small>auckland, perth...</small></div></div>
+<div class="card"><span>🌵</span><div><b>Latin America</b><small>mexico, bogota...</small></div></div>
+<div class="card"><span>🦁</span><div><b>Africa</b><small>cairo, nairobi...</small></div></div>
+</div>
+<div class="ticker"><span class="ticker-inner">★ ALABAMA: auburn • birmingham • dothan • florence / muscle shoals • gadsden-anniston • huntsville / decatur • mobile • montgomery • tuscaloosa &nbsp; ★ ALASKA: anchorage / mat-su • fairbanks • kenai peninsula • southeast alaska &nbsp; ★ ARIZONA: flagstaff / sedona • phoenix • prescott • tucson • yuma &nbsp; ★ CALIFORNIA: bakersfield • fresno / madera • los angeles • sacramento • san diego • san francisco bay area • stockton • ventura county ★ ALABAMA: auburn • birmingham • dothan • florence / muscle shoals • gadsden-anniston • huntsville / decatur • mobile • montgomery • tuscaloosa &nbsp; ★ ALASKA: anchorage / mat-su • fairbanks • kenai peninsula • southeast alaska &nbsp;</span></div>
+</body>
+</html>

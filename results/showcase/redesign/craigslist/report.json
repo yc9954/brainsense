@@ -1,0 +1,308 @@
+{
+ "source": "https://www.craigslist.org/about/sites",
+ "brief": "Redesign the first screen of https://www.craigslist.org/about/sites so it reads faster and feels more desirable, keeping brand and copy.",
+ "kind": "app",
+ "steps": [
+  {
+   "round": 0,
+   "png": "results/showcase/redesign/craigslist/r0.png",
+   "html": null,
+   "changes": [],
+   "ui_score": 0.4864452331167366,
+   "heads": {
+    "aesthetic": {
+     "score": 0.7161432504653931,
+     "percentile": 83.4450402144772,
+     "confidence": 0.43228650093078613,
+     "top": "▼ R_23d, ▲ L_31a"
+    },
+    "attention": {
+     "score": 0.505099892616272,
+     "percentile": 47.94520547945205,
+     "confidence": 0.010199785232543945,
+     "top": "▲ 움직임·형태 평균, ▲ 움직임·형태 최대"
+    }
+   },
+   "judge": {
+    "aesthetic": 0.222,
+    "clarity": 0.667,
+    "attention": 0.333,
+    "brief_fit": 0.111,
+    "judge_score": 0.333,
+    "reason": "This is essentially the legacy page unchanged with dated map styling and dense lists that remains understandable but is neither faster nor more desirable."
+   },
+   "brain_only": 0.657,
+   "critique": {
+    "kind": "app",
+    "ranking": [
+     [
+      "scene_place",
+      1.2631400135298438
+     ],
+     [
+      "value_vmpfc",
+      0.81898986044475
+     ],
+     [
+      "visual_early",
+      0.3186321197483913
+     ],
+     [
+      "control_dlpfc",
+      0.2952122915770309
+     ],
+     [
+      "attention_dorsal",
+      0.29052832594275874
+     ],
+     [
+      "face_body",
+      -0.20652308607058437
+     ],
+     [
+      "language",
+      -0.40021884141724745
+     ],
+     [
+      "default_mode",
+      -0.5900572133003924
+     ],
+     [
+      "visual_motion",
+      -1.7897034704545478
+     ]
+    ],
+    "hook": {
+     "attention_early": 0.41258695982408417,
+     "attention_late": 0.22949900900209613,
+     "visual_early": 1.0044197940838742,
+     "visual_late": -0.024261717419350196
+    },
+    "diagnosis": [
+     "물체 형태(LO)·움직임(MT) 반응이 낮음: 뚜렷한 사물 실루엣이 없는 텍스트 위주 화면",
+     "주의 반응이 첫 2초 이후 꺼짐 (+0.41 → +0.23): 첫인상 뒤에 볼 게 없음"
+    ],
+    "directives": [
+     "Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion.",
+     "Add a second discovery after the hero (a detail reveal, micro-illustration, or a strong secondary block) so interest holds past 2 s."
+    ],
+    "cited_areas": [
+     "▼ 우 후대상 기본모드 (23d) [aesthetic]",
+     "▲ 좌 31a [aesthetic]",
+     "▲ 움직임·형태(MT/LO) 평균 [attention]",
+     "▲ 움직임·형태(MT/LO) 최대 [attention]"
+    ],
+    "prompt_block": "BRAIN CRITIQUE (TRIBE v2 predicted human cortex while looking at the last render; values are relative within this image):\n- most driven regions: 장소·배경(PPA/RSC) +1.26, 보상·가치(OFC/vmPFC) +0.82, 1차 시각(V1–V4) +0.32; least: 기본모드(딴생각) -0.59, 움직임·형태(MT/LO) -1.79\n- first-2s hook vs later: attention +0.41 → +0.23, visual drive +1.00 → -0.02\n- areas the aesthetic head cites: ▼ 우 후대상 기본모드 (23d) [aesthetic]; ▲ 좌 31a [aesthetic]; ▲ 움직임·형태(MT/LO) 평균 [attention]; ▲ 움직임·형태(MT/LO) 최대 [attention]\n- diagnosis: 물체 형태(LO)·움직임(MT) 반응이 낮음: 뚜렷한 사물 실루엣이 없는 텍스트 위주 화면 / 주의 반응이 첫 2초 이후 꺼짐 (+0.41 → +0.23): 첫인상 뒤에 볼 게 없음\n- DO NEXT (highest priority first): (1) Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion. (2) Add a second discovery after the hero (a detail reveal, micro-illustration, or a strong secondary block) so interest holds past 2 s."
+   }
+  },
+  {
+   "round": 1,
+   "png": "results/showcase/redesign/craigslist/r1.png",
+   "html": "results/showcase/redesign/craigslist/r1.html",
+   "changes": [
+    {
+     "directive": "Add one dominant object silhouette or diagonal that implies motion",
+     "change": "Built large 420px globe silhouette with orbit rings + diagonal purple motion slash and pulsing + pins behind hero"
+    },
+    {
+     "directive": "Add a second discovery after the hero so interest holds past 2s",
+     "change": "Added 7-region card strip + infinite scrolling US city ticker with hover detail reveal"
+    }
+   ],
+   "based_on": 0,
+   "ui_score": 0.6504637132409861,
+   "heads": {
+    "aesthetic": {
+     "score": 0.5714641809463501,
+     "percentile": 65.54959785522789,
+     "confidence": 0.1429283618927002,
+     "top": "▼ L_a24, ▼ R_23d"
+    },
+    "attention": {
+     "score": 0.5582515597343445,
+     "percentile": 61.369863013698634,
+     "confidence": 0.11650311946868896,
+     "top": "▲ 움직임·형태 평균, ▲ 기본 시각 평균"
+    }
+   },
+   "judge": {
+    "aesthetic": 0.778,
+    "clarity": 0.778,
+    "attention": 0.556,
+    "brief_fit": 0.778,
+    "judge_score": 0.722,
+    "reason": "Search-first layout with regional shortcuts reads instantly and feels inviting, though ticker, pills, and globe compete for focus."
+   },
+   "brain_only": 0.635,
+   "critique": {
+    "kind": "app",
+    "ranking": [
+     [
+      "scene_place",
+      1.1004400802355268
+     ],
+     [
+      "value_vmpfc",
+      0.7613794598274563
+     ],
+     [
+      "attention_dorsal",
+      0.5182990765810548
+     ],
+     [
+      "control_dlpfc",
+      0.3860654346219073
+     ],
+     [
+      "face_body",
+      0.02248812319971476
+     ],
+     [
+      "visual_early",
+      -0.1736454049132614
+     ],
+     [
+      "language",
+      -0.2620619820812122
+     ],
+     [
+      "default_mode",
+      -0.5158358156635602
+     ],
+     [
+      "visual_motion",
+      -1.837128971807626
+     ]
+    ],
+    "hook": {
+     "attention_early": 0.6672249336987535,
+     "attention_late": 0.4438361480222055,
+     "visual_early": 0.5498577958651907,
+     "visual_late": -0.5353970053024875
+    },
+    "diagnosis": [
+     "물체 형태(LO)·움직임(MT) 반응이 낮음: 뚜렷한 사물 실루엣이 없는 텍스트 위주 화면",
+     "보상 회로(OFC/vmPFC)는 켜졌는데 끌림 헤드는 평범: 가치 신호가 있지만 무엇이 좋은지 읽히지 않음",
+     "주의 반응이 첫 2초 이후 꺼짐 (+0.67 → +0.44): 첫인상 뒤에 볼 게 없음"
+    ],
+    "directives": [
+     "Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion.",
+     "Name the value explicitly next to what the eye lands on: one benefit line + price/offer under the hero, nothing else competing.",
+     "Add a second discovery after the hero (a detail reveal, micro-illustration, or a strong secondary block) so interest holds past 2 s."
+    ],
+    "cited_areas": [
+     "▼ 좌 전대상 24 (a24) [aesthetic]",
+     "▼ 우 후대상 기본모드 (23d) [aesthetic]",
+     "▲ 움직임·형태(MT/LO) 평균 [attention]",
+     "▲ 1차 시각(V1–V4) 평균 [attention]"
+    ],
+    "prompt_block": "BRAIN CRITIQUE (TRIBE v2 predicted human cortex while looking at the last render; values are relative within this image):\n- most driven regions: 장소·배경(PPA/RSC) +1.10, 보상·가치(OFC/vmPFC) +0.76, 시각 주의(IPS/FEF) +0.52; least: 기본모드(딴생각) -0.52, 움직임·형태(MT/LO) -1.84\n- first-2s hook vs later: attention +0.67 → +0.44, visual drive +0.55 → -0.54\n- areas the aesthetic head cites: ▼ 좌 전대상 24 (a24) [aesthetic]; ▼ 우 후대상 기본모드 (23d) [aesthetic]; ▲ 움직임·형태(MT/LO) 평균 [attention]; ▲ 1차 시각(V1–V4) 평균 [attention]\n- diagnosis: 물체 형태(LO)·움직임(MT) 반응이 낮음: 뚜렷한 사물 실루엣이 없는 텍스트 위주 화면 / 보상 회로(OFC/vmPFC)는 켜졌는데 끌림 헤드는 평범: 가치 신호가 있지만 무엇이 좋은지 읽히지 않음 / 주의 반응이 첫 2초 이후 꺼짐 (+0.67 → +0.44): 첫인상 뒤에 볼 게 없음\n- DO NEXT (highest priority first): (1) Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion. (2) Name the value explicitly next to what the eye lands on: one benefit line + price/offer under the hero, nothing else competing. (3) Add a second discovery after the hero (a detail reveal, micro-illustration, or a strong secondary block) so interest holds past 2 s."
+   }
+  },
+  {
+   "round": 2,
+   "png": "results/showcase/redesign/craigslist/r2.png",
+   "html": "results/showcase/redesign/craigslist/r2.html",
+   "changes": [
+    {
+     "directive": "Add one dominant object silhouette / diagonal implying motion",
+     "change": "Built oversized 540px black-outlined globe silhouette on slanted cyan-blue gradient panel with dashed orbit ring, motion ticks and tilted badges"
+    },
+    {
+     "directive": "Name the value explicitly under hero",
+     "change": "Added single benefit line - Your local marketplace to post, shop, search - plus FREE forever / 700+ cities live offer directly under headline"
+    },
+    {
+     "directive": "Add second discovery after hero",
+     "change": "Added bottom 7-region cards strip + scrolling yellow city ticker marquee with real city names as sustained discovery"
+    }
+   ],
+   "based_on": 1,
+   "ui_score": 0.6559716460108758,
+   "heads": {
+    "aesthetic": {
+     "score": 0.5539235472679138,
+     "percentile": 61.99731903485255,
+     "confidence": 0.10784709453582764,
+     "top": "▼ L_a24, ▼ R_23d"
+    },
+    "attention": {
+     "score": 0.551742672920227,
+     "percentile": 60.0,
+     "confidence": 0.1034853458404541,
+     "top": "▲ 움직임·형태 평균, ▲ 움직임·형태 최대"
+    }
+   },
+   "judge": {
+    "aesthetic": 0.778,
+    "clarity": 0.889,
+    "attention": 0.556,
+    "brief_fit": 0.778,
+    "judge_score": 0.75,
+    "reason": "Search-first hero makes finding a city instant and playful while keeping Craigslist brand, though stickers, pills, cards, and ticker create competing focal points."
+   },
+   "brain_only": 0.61,
+   "critique": {
+    "kind": "app",
+    "ranking": [
+     [
+      "scene_place",
+      1.112174725894667
+     ],
+     [
+      "value_vmpfc",
+      0.7881298293765107
+     ],
+     [
+      "attention_dorsal",
+      0.42038543686511703
+     ],
+     [
+      "control_dlpfc",
+      0.40963965916186207
+     ],
+     [
+      "visual_early",
+      0.023269251964826616
+     ],
+     [
+      "face_body",
+      -0.06269696966121344
+     ],
+     [
+      "language",
+      -0.16442366525202742
+     ],
+     [
+      "default_mode",
+      -0.44285870529636817
+     ],
+     [
+      "visual_motion",
+      -2.083619563053371
+     ]
+    ],
+    "hook": {
+     "attention_early": 0.5104111745123867,
+     "attention_late": 0.3753725680414823,
+     "visual_early": 0.6644339882590419,
+     "visual_late": -0.29731311618228107
+    },
+    "diagnosis": [
+     "물체 형태(LO)·움직임(MT) 반응이 낮음: 뚜렷한 사물 실루엣이 없는 텍스트 위주 화면"
+    ],
+    "directives": [
+     "Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion."
+    ],
+    "cited_areas": [
+     "▼ 좌 전대상 24 (a24) [aesthetic]",
+     "▼ 우 후대상 기본모드 (23d) [aesthetic]",
+     "▲ 움직임·형태(MT/LO) 평균 [attention]",
+     "▲ 움직임·형태(MT/LO) 최대 [attention]"
+    ],
+    "prompt_block": "BRAIN CRITIQUE (TRIBE v2 predicted human cortex while looking at the last render; values are relative within this image):\n- most driven regions: 장소·배경(PPA/RSC) +1.11, 보상·가치(OFC/vmPFC) +0.79, 시각 주의(IPS/FEF) +0.42; least: 기본모드(딴생각) -0.44, 움직임·형태(MT/LO) -2.08\n- first-2s hook vs later: attention +0.51 → +0.38, visual drive +0.66 → -0.30\n- areas the aesthetic head cites: ▼ 좌 전대상 24 (a24) [aesthetic]; ▼ 우 후대상 기본모드 (23d) [aesthetic]; ▲ 움직임·형태(MT/LO) 평균 [attention]; ▲ 움직임·형태(MT/LO) 최대 [attention]\n- diagnosis: 물체 형태(LO)·움직임(MT) 반응이 낮음: 뚜렷한 사물 실루엣이 없는 텍스트 위주 화면\n- DO NEXT (highest priority first): (1) Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion."
+   }
+  }
+ ],
+ "best_round": 2
+}

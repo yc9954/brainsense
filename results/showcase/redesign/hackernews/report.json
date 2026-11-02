@@ -1,0 +1,306 @@
+{
+ "source": "https://news.ycombinator.com",
+ "brief": "Redesign the first screen of https://news.ycombinator.com so it reads faster and feels more desirable, keeping brand and copy.",
+ "kind": "app",
+ "steps": [
+  {
+   "round": 0,
+   "png": "results/showcase/redesign/hackernews/r0.png",
+   "html": null,
+   "changes": [],
+   "ui_score": 0.47526474292015336,
+   "heads": {
+    "aesthetic": {
+     "score": 0.6789997220039368,
+     "percentile": 79.62466487935657,
+     "confidence": 0.35799944400787354,
+     "top": "▼ L_a24, ▼ L_pOFC"
+    },
+    "attention": {
+     "score": 0.6209875345230103,
+     "percentile": 70.95890410958904,
+     "confidence": 0.2419750690460205,
+     "top": "▲ 기본 시각 평균, ▲ 움직임·형태 평균"
+    }
+   },
+   "judge": {
+    "aesthetic": 0.222,
+    "clarity": 0.667,
+    "attention": 0.222,
+    "brief_fit": 0.0,
+    "judge_score": 0.278,
+    "reason": "This is the unchanged legacy HN list, functionally legible but visually dated, cluttered with no focal point and no redesign effort."
+   },
+   "brain_only": 0.753,
+   "critique": {
+    "kind": "app",
+    "ranking": [
+     [
+      "value_vmpfc",
+      0.9721291066424614
+     ],
+     [
+      "control_dlpfc",
+      0.781358412858784
+     ],
+     [
+      "scene_place",
+      0.7299918868293981
+     ],
+     [
+      "attention_dorsal",
+      0.5835770646039043
+     ],
+     [
+      "language",
+      0.2829278440119605
+     ],
+     [
+      "default_mode",
+      0.10321241304825592
+     ],
+     [
+      "face_body",
+      -0.23532130574383867
+     ],
+     [
+      "visual_early",
+      -1.0915648931785633
+     ],
+     [
+      "visual_motion",
+      -2.1263105290723607
+     ]
+    ],
+    "hook": {
+     "attention_early": 0.6160687516723611,
+     "attention_late": 0.567331221069676,
+     "visual_early": -0.6705211640715494,
+     "visual_late": -1.3020867577320703
+    },
+    "diagnosis": [
+     "물체 형태(LO)·움직임(MT) 반응이 낮음: 뚜렷한 사물 실루엣이 없는 텍스트 위주 화면",
+     "인지 통제(dlPFC)가 동원됨: 구조를 해석하는 데 노력이 듦"
+    ],
+    "directives": [
+     "Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion.",
+     "Lower effort: fewer choices on the first screen, consistent grid, one navigation level, clear reading order."
+    ],
+    "cited_areas": [
+     "▼ 좌 전대상 24 (a24) [aesthetic]",
+     "▼ 좌 후측 안와전두 보상 (pOFC) [aesthetic]",
+     "▲ 1차 시각(V1–V4) 평균 [attention]",
+     "▲ 움직임·형태(MT/LO) 평균 [attention]"
+    ],
+    "prompt_block": "BRAIN CRITIQUE (TRIBE v2 predicted human cortex while looking at the last render; values are relative within this image):\n- most driven regions: 보상·가치(OFC/vmPFC) +0.97, 인지 통제(dlPFC) +0.78, 장소·배경(PPA/RSC) +0.73; least: 1차 시각(V1–V4) -1.09, 움직임·형태(MT/LO) -2.13\n- first-2s hook vs later: attention +0.62 → +0.57, visual drive -0.67 → -1.30\n- areas the aesthetic head cites: ▼ 좌 전대상 24 (a24) [aesthetic]; ▼ 좌 후측 안와전두 보상 (pOFC) [aesthetic]; ▲ 1차 시각(V1–V4) 평균 [attention]; ▲ 움직임·형태(MT/LO) 평균 [attention]\n- diagnosis: 물체 형태(LO)·움직임(MT) 반응이 낮음: 뚜렷한 사물 실루엣이 없는 텍스트 위주 화면 / 인지 통제(dlPFC)가 동원됨: 구조를 해석하는 데 노력이 듦\n- DO NEXT (highest priority first): (1) Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion. (2) Lower effort: fewer choices on the first screen, consistent grid, one navigation level, clear reading order."
+   }
+  },
+  {
+   "round": 1,
+   "png": "results/showcase/redesign/hackernews/r1.png",
+   "html": "results/showcase/redesign/hackernews/r1.html",
+   "changes": [
+    {
+     "directive": "Add one dominant object silhouette or diagonal that implies motion",
+     "change": "Built large orange hero with diagonal edge, tilted terminal window silhouette + giant upvote arrow and animated upward trajectory"
+    },
+    {
+     "directive": "Lower effort: fewer choices, consistent grid, one navigation level, clear reading order",
+     "change": "Cut 22 dense rows to 5 ranked cards in 2-col grid, single top nav, eyebrow-headline-list-CTA reading order"
+    }
+   ],
+   "based_on": 0,
+   "ui_score": 0.5576455087273542,
+   "heads": {
+    "aesthetic": {
+     "score": 0.3293760418891907,
+     "percentile": 28.083109919571047,
+     "confidence": 0.34124791622161865,
+     "top": "▼ L_a24, ▼ R_23d"
+    },
+    "attention": {
+     "score": 0.5318710803985596,
+     "percentile": 54.24657534246575,
+     "confidence": 0.06374216079711914,
+     "top": "▲ 움직임·형태 평균, ▲ 움직임·형태 최대"
+    }
+   },
+   "judge": {
+    "aesthetic": 0.778,
+    "clarity": 0.778,
+    "attention": 0.556,
+    "brief_fit": 0.667,
+    "judge_score": 0.694,
+    "reason": "Energetic on-brand polish makes the top 5 scannable fast, but the tilted terminal and floating badges split focus and stray from HN restraint."
+   },
+   "brain_only": 0.412,
+   "critique": {
+    "kind": "app",
+    "ranking": [
+     [
+      "scene_place",
+      1.3222167236112816
+     ],
+     [
+      "value_vmpfc",
+      0.8603242712125766
+     ],
+     [
+      "attention_dorsal",
+      0.4375899143099678
+     ],
+     [
+      "control_dlpfc",
+      0.41509023512989035
+     ],
+     [
+      "visual_early",
+      0.3943213005021266
+     ],
+     [
+      "language",
+      -0.3888406094197994
+     ],
+     [
+      "default_mode",
+      -0.4814354429685799
+     ],
+     [
+      "face_body",
+      -0.5422278453685966
+     ],
+     [
+      "visual_motion",
+      -2.0170385470088648
+     ]
+    ],
+    "hook": {
+     "attention_early": 0.43412842520534045,
+     "attention_late": 0.43932065886228144,
+     "visual_early": 0.8806605197022619,
+     "visual_late": 0.15115169090205888
+    },
+    "diagnosis": [
+     "물체 형태(LO)·움직임(MT) 반응이 낮음: 뚜렷한 사물 실루엣이 없는 텍스트 위주 화면",
+     "장소 영역(PPA)이 우세: 배경 풍경이 화면을 지배해 내용이 묻힘"
+    ],
+    "directives": [
+     "Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion.",
+     "Simplify the environment: crop or blur the scene, put copy on a solid panel, let one subject own the frame."
+    ],
+    "cited_areas": [
+     "▼ 좌 전대상 24 (a24) [aesthetic]",
+     "▼ 우 후대상 기본모드 (23d) [aesthetic]",
+     "▲ 움직임·형태(MT/LO) 평균 [attention]",
+     "▲ 움직임·형태(MT/LO) 최대 [attention]"
+    ],
+    "prompt_block": "BRAIN CRITIQUE (TRIBE v2 predicted human cortex while looking at the last render; values are relative within this image):\n- most driven regions: 장소·배경(PPA/RSC) +1.32, 보상·가치(OFC/vmPFC) +0.86, 시각 주의(IPS/FEF) +0.44; least: 얼굴·사람(FFA/STS) -0.54, 움직임·형태(MT/LO) -2.02\n- first-2s hook vs later: attention +0.43 → +0.44, visual drive +0.88 → +0.15\n- areas the aesthetic head cites: ▼ 좌 전대상 24 (a24) [aesthetic]; ▼ 우 후대상 기본모드 (23d) [aesthetic]; ▲ 움직임·형태(MT/LO) 평균 [attention]; ▲ 움직임·형태(MT/LO) 최대 [attention]\n- diagnosis: 물체 형태(LO)·움직임(MT) 반응이 낮음: 뚜렷한 사물 실루엣이 없는 텍스트 위주 화면 / 장소 영역(PPA)이 우세: 배경 풍경이 화면을 지배해 내용이 묻힘\n- DO NEXT (highest priority first): (1) Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion. (2) Simplify the environment: crop or blur the scene, put copy on a solid panel, let one subject own the frame."
+   }
+  },
+  {
+   "round": 2,
+   "png": "results/showcase/redesign/hackernews/r2.png",
+   "html": "results/showcase/redesign/hackernews/r2.html",
+   "changes": [
+    {
+     "directive": "Add one dominant object silhouette or diagonal implying motion",
+     "change": "Enlarged hero terminal to single dominant device frame with thick border, -4deg tilt, giant ▲ watermark and dashed motion trajectory + speed lines"
+    },
+    {
+     "directive": "Simplify environment: crop/blur scene, solid panel, one subject owns frame",
+     "change": "Replaced scenic striped landscape with flat solid black panel + solid cream copy panel split by sharp diagonal divider; removed background Y illustration"
+    }
+   ],
+   "based_on": 1,
+   "ui_score": 0.49804212251745233,
+   "heads": {
+    "aesthetic": {
+     "score": 0.12997932732105255,
+     "percentile": 4.021447721179625,
+     "confidence": 0.7400413453578949,
+     "top": "▼ L_a24, ▼ R_10r"
+    },
+    "attention": {
+     "score": 0.53879314661026,
+     "percentile": 56.43835616438356,
+     "confidence": 0.07758629322052002,
+     "top": "▲ 움직임·형태 평균, ▲ 움직임·형태 최대"
+    }
+   },
+   "judge": {
+    "aesthetic": 0.778,
+    "clarity": 0.778,
+    "attention": 0.556,
+    "brief_fit": 0.778,
+    "judge_score": 0.722,
+    "reason": "Bold orange-black system feels desirable and scannable while keeping HN copy, but the tilted trajectory panel and floating stickers compete with the headline for focus."
+   },
+   "brain_only": 0.302,
+   "critique": {
+    "kind": "app",
+    "ranking": [
+     [
+      "scene_place",
+      1.2636430135792756
+     ],
+     [
+      "value_vmpfc",
+      0.9459649941010566
+     ],
+     [
+      "control_dlpfc",
+      0.4961002479793297
+     ],
+     [
+      "attention_dorsal",
+      0.47912016439422883
+     ],
+     [
+      "visual_early",
+      0.416358336459425
+     ],
+     [
+      "language",
+      -0.3806309032058222
+     ],
+     [
+      "default_mode",
+      -0.4934732308283291
+     ],
+     [
+      "face_body",
+      -0.6649935688145392
+     ],
+     [
+      "visual_motion",
+      -2.062089053664622
+     ]
+    ],
+    "hook": {
+     "attention_early": 0.4240960960678255,
+     "attention_late": 0.5066321985574305,
+     "visual_early": 0.7568197592290453,
+     "visual_late": 0.24612762507461494
+    },
+    "diagnosis": [
+     "물체 형태(LO)·움직임(MT) 반응이 낮음: 뚜렷한 사물 실루엣이 없는 텍스트 위주 화면",
+     "장소 영역(PPA)이 우세: 배경 풍경이 화면을 지배해 내용이 묻힘",
+     "보상 회로(OFC/vmPFC)는 켜졌는데 끌림 헤드는 평범: 가치 신호가 있지만 무엇이 좋은지 읽히지 않음"
+    ],
+    "directives": [
+     "Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion.",
+     "Simplify the environment: crop or blur the scene, put copy on a solid panel, let one subject own the frame.",
+     "Name the value explicitly next to what the eye lands on: one benefit line + price/offer under the hero, nothing else competing."
+    ],
+    "cited_areas": [
+     "▼ 좌 전대상 24 (a24) [aesthetic]",
+     "▼ 우 내측 전전두 10r 보상 (10r) [aesthetic]",
+     "▲ 움직임·형태(MT/LO) 평균 [attention]",
+     "▲ 움직임·형태(MT/LO) 최대 [attention]"
+    ],
+    "prompt_block": "BRAIN CRITIQUE (TRIBE v2 predicted human cortex while looking at the last render; values are relative within this image):\n- most driven regions: 장소·배경(PPA/RSC) +1.26, 보상·가치(OFC/vmPFC) +0.95, 인지 통제(dlPFC) +0.50; least: 얼굴·사람(FFA/STS) -0.66, 움직임·형태(MT/LO) -2.06\n- first-2s hook vs later: attention +0.42 → +0.51, visual drive +0.76 → +0.25\n- areas the aesthetic head cites: ▼ 좌 전대상 24 (a24) [aesthetic]; ▼ 우 내측 전전두 10r 보상 (10r) [aesthetic]; ▲ 움직임·형태(MT/LO) 평균 [attention]; ▲ 움직임·형태(MT/LO) 최대 [attention]\n- diagnosis: 물체 형태(LO)·움직임(MT) 반응이 낮음: 뚜렷한 사물 실루엣이 없는 텍스트 위주 화면 / 장소 영역(PPA)이 우세: 배경 풍경이 화면을 지배해 내용이 묻힘 / 보상 회로(OFC/vmPFC)는 켜졌는데 끌림 헤드는 평범: 가치 신호가 있지만 무엇이 좋은지 읽히지 않음\n- DO NEXT (highest priority first): (1) Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion. (2) Simplify the environment: crop or blur the scene, put copy on a solid panel, let one subject own the frame. (3) Name the value explicitly next to what the eye lands on: one benefit line + price/offer under the hero, nothing else competing."
+   }
+  }
+ ],
+ "best_round": 1
+}

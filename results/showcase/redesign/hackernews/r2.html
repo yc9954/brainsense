@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1280">
+<title>Hacker News — What hackers read now.</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@700;800;900&family=JetBrains+Mono:wght@500;700;800&family=Inter+Tight:wght@800;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#222;font-family:'Inter',system-ui,sans-serif;display:flex;justify-content:center}
+.viewport{width:1280px;height:800px;background:#FFFCF2;overflow:hidden;display:flex;flex-direction:column;position:relative}
+.topbar{height:58px;background:#FF6600;display:flex;align-items:center;padding:0 20px 0 16px;gap:14px;border-bottom:3px solid #111;z-index:5;flex-shrink:0}
+.ylogo{width:36px;height:36px;background:#fff;border:3px solid #111;border-radius:7px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:22px;box-shadow:3px 3px 0 #111}
+.brand{font-family:'Inter Tight',sans-serif;font-weight:900;font-size:22px;letter-spacing:-.5px}
+.nav{display:flex;gap:10px;align-items:center;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;margin-left:10px}
+.nav b{background:#111;color:#fff;border-radius:20px;padding:3px 11px}
+.nav span{opacity:.9}
+.login{margin-left:auto;font-family:'JetBrains Mono',monospace;font-weight:800;font-size:14px}
+.submit{background:#111;color:#fff;border-radius:20px;padding:8px 16px;font-family:'JetBrains Mono',monospace;font-weight:800;font-size:14px}
+.main{flex:1;display:grid;grid-template-columns:660px 1fr;position:relative}
+.left{padding:28px 28px 12px 36px;background:#FFFCF2;position:relative;z-index:1}
+.live{display:inline-flex;align-items:center;gap:10px;background:#111;color:#fff;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:800;letter-spacing:1.5px;padding:7px 14px;border-radius:20px}
+.dot{width:8px;height:8px;background:#00FF6A;border-radius:50%;box-shadow:0 0 8px #00FF6A}
+.h1{font-family:'Inter Tight',sans-serif;font-weight:900;font-size:62px;line-height:.92;letter-spacing:-2.5px;margin:14px 0 10px;color:#111}
+.h1 mark{background:#FF6600;color:#111;padding:0 12px;display:inline-block;transform:rotate(-1.5deg);border:3px solid #111;box-shadow:4px 4px 0 #111}
+.sub{font-size:15px;color:#4a443c;line-height:1.45;max-width:480px}
+.list{margin-top:16px;display:flex;flex-direction:column;gap:9px}
+.card{display:flex;align-items:center;gap:12px;background:#fff;border:2.5px solid #111;border-radius:14px;padding:9px 12px;box-shadow:4px 4px 0 #111}
+.card.hero{background:#111;color:#fff;box-shadow:5px 5px 0 #FF6600;border-color:#111}
+.rank{font-family:'Inter Tight',sans-serif;font-weight:900;font-size:24px;color:#FF6600;min-width:28px;text-align:center}
+.up{width:34px;height:42px;border:2px solid #111;border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:12px;font-weight:900;background:#FFFCF2;line-height:1}
+.card.hero .up{background:#fff;color:#111;border-color:#fff}
+.t{font-weight:800;font-size:14.5px;line-height:1.25;letter-spacing:-.2px}
+.t small{font-weight:500;color:#FF6600;font-size:12.5px}
+.meta{font-family:'JetBrains Mono',monospace;font-size:11px;opacity:.75;margin-top:3px}
+.pill{margin-left:auto;flex-shrink:0;font-family:'JetBrains Mono',monospace;font-size:10.5px;font-weight:800;padding:6px 10px;border-radius:20px;border:2px solid #FF6600;background:#FF6600;color:#111}
+.pill.ghost{background:transparent;border-color:#111;color:#111}
+.pill.black{background:#111;color:#fff;border-color:#111}
+.pill.cream{background:#FFE9C7;border-color:#111}
+.bottom{display:flex;align-items:center;gap:12px;margin-top:12px;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:800}
+.cta{background:#FF6600;border:2.5px solid #111;border-radius:20px;padding:8px 16px;box-shadow:3px 3px 0 #111}
+.divider{position:absolute;left:630px;top:-20px;bottom:-20px;width:66px;background:#111;transform:rotate(7deg);z-index:2;border-left:6px solid #fff;border-right:6px solid #fff}
+.right{background:#111;color:#fff;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;padding-left:50px}
+.right::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 40%,#222 0,#111 65%)}
+.arrow-bg{position:absolute;font-size:520px;line-height:1;color:#FF6600;opacity:.14;font-weight:900;right:-40px;bottom:-110px;transform:rotate(0deg);pointer-events:none}
+.speed{position:absolute;left:70px;right:40px;top:120px;bottom:120px;pointer-events:none;opacity:.35}
+.hero-obj{position:relative;z-index:3;width:470px;background:#1A1A1A;border:4px solid #fff;border-radius:20px;box-shadow:12px 12px 0 #FF6600, 24px 24px 0 rgba(255,102,0,.25);transform:rotate(-4deg)}
+.bar{display:flex;align-items:center;gap:8px;padding:12px 16px;border-bottom:2px solid #333;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:800;letter-spacing:1.5px;color:#FFD84D}
+.dots{display:flex;gap:6px;margin-right:8px}
+.dots i{width:12px;height:12px;border-radius:50%;display:block}
+.inner{padding:16px}
+.row{background:#2A2A2A;border:2px solid #3a3a3a;border-radius:12px;padding:12px 14px;margin-bottom:10px;display:flex;gap:12px;align-items:center}
+.row.top{background:#fff;color:#111;border-color:#fff}
+.aicon{width:34px;height:34px;border-radius:9px;background:#FF6600;display:flex;align-items:center;justify-content:center;font-weight:900;flex-shrink:0}
+.row.top .aicon{background:#111;color:#FF6600}
+.rt{font-weight:800;font-size:14px}
+.rs{font-family:'JetBrains Mono',monospace;font-size:11px;opacity:.7;margin-top:2px}
+.actions{display:flex;gap:10px;margin-top:4px}
+.btn1{background:#FF6600;color:#111;font-family:'JetBrains Mono',monospace;font-weight:800;font-size:12px;border-radius:20px;padding:10px 16px;border:none}
+.btn2{background:#fff;color:#111;font-family:'JetBrains Mono',monospace;font-weight:800;font-size:12px;border-radius:20px;padding:10px 16px;border:none}
+.badge{position:absolute;z-index:4;background:#fff;color:#111;border:3px solid #111;border-radius:12px;padding:8px 14px;font-family:'JetBrains Mono',monospace;font-weight:800;font-size:13px;box-shadow:5px 5px 0 #111}
+.b1{top:78px;right:44px;transform:rotate(3deg)}
+.b2{bottom:92px;left:64px;transform:rotate(-2deg)}
+.traj{position:absolute;inset:0;z-index:2;pointer-events:none}
+.urltag{position:absolute;bottom:22px;right:24px;background:#000;border:1px solid #333;border-radius:10px;padding:8px 14px;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:800;z-index:4}
+</style>
+</head>
+<body>
+<div class="viewport">
+<div class="topbar"><div class="ylogo">Y</div><div class="brand">Hacker News</div><div class="nav"><b>new</b><span>|</span><span>ask</span><span>|</span><span>show</span><span>|</span><span>jobs</span><span>|</span><span>past</span></div><div class="login">login</div><div class="submit">+ submit</div></div>
+<div class="main">
+<div class="left">
+<div class="live"><span class="dot"></span> LIVE &nbsp;·&nbsp; NOV 02 2026 &nbsp;·&nbsp; FRONT PAGE</div>
+<div class="h1">What hackers<br><mark>read now.</mark></div>
+<p class="sub">The 5 stories that matter today — ranked by points, stripped of noise. No feeds, no clutter.</p>
+<div class="list">
+<div class="card hero"><div class="rank">13</div><div class="up">▲<br>756</div><div><div class="t">Postgres 19 is late because so many more bugs are being found now <small>(rhaas.blogspot.com)</small></div><div class="meta">756 points by soheilpro 18h ago | hide | 452 comments</div></div><div class="pill">▲ TOP</div></div>
+<div class="card"><div class="rank">1</div><div class="up">▲<br>25</div><div><div class="t">Launch HN: Momentic (YC W24) – Agents that catch bugs <small>(momentic.ai)</small></div><div class="meta">25 points by wuweiweiwu 16m ago | hide | discuss</div></div><div class="pill ghost">LAUNCH</div></div>
+<div class="card"><div class="rank">2</div><div class="up">▲<br>53</div><div><div class="t">Ask HN: Who is hiring? (November 2026)</div><div class="meta">53 points by whoishiring 1h ago | hide | 42 comments</div></div><div class="pill black">ASK HN</div></div>
+<div class="card"><div class="rank">3</div><div class="up">▲<br>34</div><div><div class="t">Show HN: Warsaw in voxels – interactive 3D map <small>(p.migdal.pl)</small></div><div class="meta">34 points by stared 56m ago | hide | 7 comments</div></div><div class="pill cream">SHOW</div></div>
+<div class="card"><div class="rank">4</div><div class="up">▲<br>68</div><div><div class="t">Moving our warehouse off DuckDB <small>(posthog.com)</small></div><div class="meta">68 points by emschwartz 1h ago | hide | 38 comments</div></div><div class="pill">68 PTS</div></div>
+</div>
+<div class="bottom"><span class="cta">View all stories →</span><span>+ 25 more below the fold · past | comments</span></div>
+</div>
+<div class="divider"></div>
+<div class="right">
+<div class="arrow-bg">▲</div>
+<svg class="traj" viewBox="0 0 600 700" fill="none"><path d="M480 40 L420 140 L430 420 L130 560" stroke="#fff" stroke-width="4" stroke-dasharray="12 12" opacity=".9"/><polygon points="480,20 510,55 455,55" fill="#111" stroke="#fff" stroke-width="3"/></svg>
+<div class="badge b1">▲ +731 today 🚀</div>
+<div class="badge b2">● voxels_3D ■ interactive</div>
+<div class="hero-obj">
+<div class="bar"><div class="dots"><i style="background:#FF5F57"></i><i style="background:#FFBD2E"></i><i style="background:#28C840"></i></div>▲ UPVOTE_TRAJECTORY.LOG</div>
+<div class="inner">
+<div class="row top"><div class="aicon">▲</div><div><div class="rt">Postgres 19 is late…</div><div class="rs">▲ 756 pts &nbsp;|&nbsp; 💬 452 comments &nbsp;|&nbsp; #1 TODAY</div></div></div>
+<div class="row"><div class="aicon">▲</div><div><div class="rt">Supermarket freezers hit…</div><div class="rs">209 pts | 299 comments — theguardian.com</div></div></div>
+<div class="row"><div class="aicon">▲</div><div><div class="rt">Show HN: Linux System Call API</div><div class="rs">162 pts | 47 comments — syscall.sh</div></div></div>
+<div class="actions"><button class="btn1">▲ VOTE TO RANK</button><button class="btn2">💬 452 DISCUSS →</button></div>
+</div>
+</div>
+<div class="urltag"><span style="color:#FF6600">Y //</span> news.ycombinator.com</div>
+</div>
+</div>
+</div>
+</body>
+</html>

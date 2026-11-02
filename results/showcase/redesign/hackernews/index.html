@@ -1,0 +1,12 @@
+<!doctype html><html lang=ko><head><meta charset=utf-8><title>BrainSense redesign · https://news.ycombinator.com</title>
+<style>body{font-family:-apple-system,Pretendard,sans-serif;background:#0b0b0f;color:#eee;margin:0;padding:32px}h1{font-size:20px;font-weight:600}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:18px}.card{background:#15151b;border:1px solid #23232b;border-radius:14px;overflow:hidden}.card img{width:100%;display:block}
+.t{padding:10px 14px;font-weight:600;font-size:13px;color:#ffb38a}.m{padding:8px 14px;font-size:12.5px;color:#ccc}.d{padding:0 14px 12px;font-size:12.5px;color:#9a9aa6;line-height:1.5}
+h2{font-size:15px;margin:28px 0 8px}ul{font-size:13px;line-height:1.6;color:#ddd}.k{color:#8b8b96}.big{font-size:28px;font-weight:700;color:#7ee787}</style></head><body>
+<h1>뇌가 고친 첫 화면 — https://news.ycombinator.com</h1>
+<div class=big>ui_score 0.475 → 0.558 (+0.082)</div>
+<div class=row><div class=card><div class=t>BEFORE · 지금 사이트</div><a href='r0.png' target=_blank><img src='r0.png'></a><div class=m>ui_score <b>0.475</b> · 예쁨 상위 20% · 주목 상위 29% · 심사위원 0.28</div><div class=d>물체 형태(LO)·움직임(MT) 반응이 낮음: 뚜렷한 사물 실루엣이 없는 텍스트 위주 화면<br>인지 통제(dlPFC)가 동원됨: 구조를 해석하는 데 노력이 듦</div></div><div class=card><div class=t>AFTER · BrainSense 루프 r1</div><a href='r1.png' target=_blank><img src='r1.png'></a><div class=m>ui_score <b>0.558</b> · 예쁨 상위 72% · 주목 상위 46% · 심사위원 0.69</div><div class=d>물체 형태(LO)·움직임(MT) 반응이 낮음: 뚜렷한 사물 실루엣이 없는 텍스트 위주 화면<br>장소 영역(PPA)이 우세: 배경 풍경이 화면을 지배해 내용이 묻힘</div></div></div>
+<h2>뇌가 원본에서 읽은 것 → 지시</h2><ul><li>Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion.</li><li>Lower effort: fewer choices on the first screen, consistent grid, one navigation level, clear reading order.</li></ul>
+<h2>Muse가 실제로 바꾼 것 (지시 ↔ 변경)</h2><ul><li><span class=k>Add one dominant object silhouette or diagonal that implies motion</span><br>→ Built large orange hero with diagonal edge, tilted terminal window silhouette + giant upvote arrow and animated upward trajectory</li><li><span class=k>Lower effort: fewer choices, consistent grid, one navigation level, clear reading order</span><br>→ Cut 22 dense rows to 5 ranked cards in 2-col grid, single top nav, eyebrow-headline-list-CTA reading order</li></ul>
+<h2>라운드별</h2><ul><li>r0: ui 0.475 · 뇌 0.753 · 심사위원 0.28</li><li>r1: ui 0.558 · 뇌 0.412 · 심사위원 0.69</li><li>r2: ui 0.498 · 뇌 0.302 · 심사위원 0.72</li></ul>
+</body></html>
