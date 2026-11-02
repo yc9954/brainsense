@@ -85,6 +85,28 @@ def source_images(query: str, out_dir: Path, n: int = 4, width: int = 1000) -> l
     return out
 
 
+def photo_gate(path: Path, brief: str, issue: str) -> tuple[bool, str]:
+    """Muse (multimodal) looks at a sourced photo before the generator may use it: relevant to the brief,
+    fit for a commercial first screen, no watermark/text/clutter. Keeps the Commons noise out of the page."""
+    import base64
+    img = base64.b64encode(Path(path).read_bytes()).decode()
+    ext = "png" if str(path).lower().endswith(".png") else "jpeg"
+    prompt = (f"Brief: {brief}\nThe photo is meant to fix: {issue}\n"
+              "Rate 1-10 how usable this photo is as a hero/supporting image on that first screen (relevance to the brief, "
+              "looks like a modern commercial product/brand photo, no watermark or heavy text, no odd subject). "
+              "Reply ONLY with JSON: {\"score\": n, \"reason\": \"...\"}")
+    try:
+        r = _client().chat.completions.create(model=MODEL, temperature=0, max_tokens=2500,
+                                              messages=[{"role": "user", "content": [{"type": "text", "text": prompt},
+                                                                                      {"type": "image_url", "image_url": {"url": f"data:image/{ext};base64,{img}"}}]}])
+        m = re.search(r"\{.*\}", r.choices[0].message.content or "", re.S)
+        d = json.loads(m.group(0)) if m else {}
+        score = float(d.get("score", 0))
+        return score >= 7, f"{score:.0f}/10 {str(d.get('reason', ''))[:70]}"
+    except Exception as e:  # noqa: BLE001
+        return False, f"gate error {type(e).__name__}"
+
+
 def plan_queries(brief: str, issues: list[str]) -> list[str]:
     """Muse turns the brief + open issues into 2-3 English image-search queries (JSON list)."""
     msg = (f"Brief: {brief}\nOpen issues from the brain critique: {' | '.join(issues) or 'none'}\n"
@@ -224,12 +246,19 @@ def run_brief(key: str, cfg: dict, run_dir: Path, rounds: int, patience: int, st
         # source real photos when a visual issue persists (face / object / scene) or every other round while any issue is open
         wants_photo = [i for i in open_issues if re.search(r"얼굴|물체|장소|실루엣", i["text"]) and i["attempts"] >= 1] or (open_issues if r == 1 else [])
         if wants_photo and len(assets) < 8:
+            dropped = 0
             for q in plan_queries(brief, [i["text"] for i in wants_photo][:3]):
-                got = source_images(q, d / "assets", n=2)
-                sourced += got
-                assets += got
-            if sourced:
-                print(f"  r{r} sourced {len(sourced)} photo(s): " + "; ".join(f"{a['title'][:30]} ({a['license']})" for a in sourced))
+                for a in source_images(q, d / "assets", n=3):
+                    ok, why = photo_gate(d / a["path"], brief, wants_photo[0]["text"])
+                    a["gate"] = why
+                    if ok:
+                        sourced.append(a)
+                        assets.append(a)
+                    else:
+                        dropped += 1
+                        (d / a["path"]).unlink(missing_ok=True)
+            if sourced or dropped:
+                print(f"  r{r} sourced {len(sourced)} photo(s), gate dropped {dropped}: " + "; ".join(f"{a['title'][:28]} ({a['gate'][:5]})" for a in sourced))
         try:
             new_html, changes = revise(best["html"], brief, ledger, assets, best["judge"].get("reason", ""), r)
         except GenerationError as e:
