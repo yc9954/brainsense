@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1280">
+<title>팝업스토어 No.1 기업, 스위트스팟</title>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Noto+Sans+KR:wght@400;500;700;900&family=Inter:wght@700;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#000;color:#fff;font-family:'Noto Sans KR',sans-serif;display:flex;justify-content:center;min-height:100vh}
+.page{width:1280px;height:800px;position:relative;overflow:hidden;background:#000;display:flex;flex-direction:column;padding:22px 32px 0 32px}
+.bg-word{position:absolute;top:132px;left:50%;transform:translateX(-50%);font-family:'Archivo Black','Inter',sans-serif;font-size:208px;line-height:1;letter-spacing:-8px;white-space:nowrap;color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.14);pointer-events:none;user-select:none}
+.bg-word b{color:rgba(255,255,255,.07);-webkit-text-stroke:0}
+header{display:flex;align-items:center;justify-content:space-between;position:relative;z-index:5}
+.logo{font-family:'Inter',sans-serif;font-weight:900;font-size:28px;letter-spacing:-1.5px}
+.logo i{font-style:normal;color:#2E5BFF}
+.logo span.dot{color:#2E5BFF}
+.nav{display:flex;align-items:center;gap:22px;font-size:14px;font-weight:700}
+.nav .dots{letter-spacing:3px;opacity:.8}
+.pill-blue{background:#1F4BFF;color:#fff;border-radius:999px;padding:8px 18px;font-size:13px;font-weight:700}
+.pill-outline{border:1px solid rgba(255,255,255,.5);border-radius:999px;padding:7px 16px;font-size:13px}
+.subrow{display:flex;justify-content:space-between;margin-top:18px;font-size:13px;opacity:.9;position:relative;z-index:5}
+.hero{display:grid;grid-template-columns:580px 1fr;gap:24px;margin-top:18px;position:relative;z-index:5;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.06);border-radius:999px;padding:7px 14px;font-size:12.5px;font-weight:700;letter-spacing:-.2px}
+.eyebrow em{font-style:normal;background:#fff;color:#000;border-radius:999px;padding:2px 8px;font-size:11px;font-weight:900}
+h1{font-size:46px;line-height:1.15;letter-spacing:-1.8px;font-weight:900;margin:16px 0 12px 0}
+h1 span{color:#7CFF6B}
+.benefit{font-size:16px;line-height:1.6;color:#E8E8E8;font-weight:500}
+.benefit strong{color:#fff;background:linear-gradient(transparent 60%,rgba(31,75,255,.9) 60%);padding:0 2px}
+.cta-row{display:flex;align-items:center;gap:14px;margin-top:22px}
+.btn-green{background:linear-gradient(90deg,#26C99A 0%,#7CF25C 100%);color:#fff;font-weight:900;font-size:18px;border:0;border-radius:999px;padding:16px 38px;cursor:pointer;box-shadow:0 8px 30px rgba(80,255,140,.35)}
+.btn-sub{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);color:#fff;border-radius:999px;padding:14px 20px;font-size:13.5px;font-weight:700}
+.trust{margin-top:14px;font-size:12px;color:#BDBDBD}
+.stage{position:relative;height:570px;border-radius:28px;background:radial-gradient(600px 380px at 50% 20%,#1A2AFF33,transparent),linear-gradient(180deg,#111 0%,#080808 100%);border:1px solid #222;overflow:hidden}
+.beam{position:absolute;top:-40px;left:-60px;width:760px;height:110px;background:linear-gradient(90deg,transparent,#2E5BFF 30%,#4DFF9A 60%,transparent);transform:rotate(-18deg);opacity:.55;filter:blur(1px);animation:slide 3.2s ease-in-out infinite}
+@keyframes slide{0%,100%{transform:rotate(-18deg) translateX(-60px)}50%{transform:rotate(-18deg) translateX(80px)}}
+.store-wrap{position:absolute;top:58px;left:50%;transform:translateX(-50%);width:420px;text-align:center}
+.store-sign{background:#fff;color:#000;font-weight:900;font-size:22px;letter-spacing:-.5px;border-radius:12px 12px 0 0;padding:12px;position:relative}
+.store-sign small{display:block;font-size:11px;letter-spacing:3px;font-weight:700}
+.store-sign i{color:#1F4BFF;font-style:normal}
+.store-body{display:grid;grid-template-columns:1fr 110px;background:#F5F5F5;border-radius:0 0 14px 14px;overflow:hidden;height:210px}
+.store-inside{background:radial-gradient(200px 120px at 50% 70%,#FFD36B,#FF6B8A 60%,#1F4BFF);position:relative}
+.store-inside:after{content:'POP-UP OPEN';position:absolute;bottom:14px;left:50%;transform:translateX(-50%);background:#000;color:#fff;font-size:11px;font-weight:900;padding:6px 12px;border-radius:999px;letter-spacing:1px}
+.store-side{background:#1A1A1A;color:#fff;display:flex;flex-direction:column;justify-content:center;gap:8px;font-size:11px;font-weight:700}
+.store-side span.dot{width:36px;height:36px;background:#2E5BFF;border-radius:50%;margin:0 auto}
+.humans{position:absolute;bottom:18px;left:22px;right:22px;display:flex;align-items:flex-end;justify-content:space-between}
+.faces{display:flex}
+.face{width:92px;height:92px;border-radius:50%;border:4px solid #000;position:relative;overflow:hidden;flex-shrink:0}
+.f1{background:#FFDDB8}.f2{background:#F2B88E;margin-left:-18px}
+.hair{position:absolute;top:0;left:0;right:0;height:36px;background:#111;border-radius:50% 50% 20% 20%}
+.eyes{position:absolute;top:46px;left:0;right:0;display:flex;justify-content:center;gap:14px}
+.eye{width:18px;height:18px;background:#fff;border-radius:50%;position:relative}
+.pupil{position:absolute;width:9px;height:9px;background:#111;border-radius:50%;left:2px;top:5px;box-shadow:0 0 0 1px #111}
+.mouth{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);width:22px;height:10px;border:2.5px solid #111;border-top:0;border-radius:0 0 12px 12px}
+.speech{background:#fff;color:#111;border-radius:14px 14px 14px 2px;padding:10px 14px;font-size:13px;font-weight:900;line-height:1.4;max-width:280px;text-align:left}
+.speech small{display:block;font-weight:500;font-size:11px;color:#555}
+.badge{position:absolute;top:18px;right:18px;background:#fff;color:#000;font-weight:900;font-size:13px;border-radius:999px;padding:8px 14px}
+.badge2{position:absolute;top:58px;right:18px;background:#1F4BFF;color:#fff;font-weight:800;font-size:12px;border-radius:999px;padding:7px 12px}
+.gaze-arrow{position:absolute;bottom:118px;left:150px;font-size:22px;transform:rotate(25deg);opacity:.9}
+</style>
+</head>
+<body>
+<div class="page">
+<div class="bg-word">SWEET <b>●</b> SPOT</div>
+<header>
+<div class="logo">sweetsp<span class="dot">o</span>t</div>
+<div class="nav"><span>팝업스토어</span><span class="dots">•••</span><span class="pill-blue">AI 팝업 예산 계산기</span></div>
+<div class="pill-outline">팝가(Popga)</div>
+</header>
+<div class="subrow"><span>Popup Store</span><span>A to Z service</span></div>
+<div class="hero">
+<div>
+<div class="eyebrow"><em>No.1</em> 팝업스토어 No.1 기업, 스위트스팟</div>
+<h1>브랜드가 전할 최고의 경험<span>을 함께 만듭니다.</span></h1>
+<p class="benefit"><strong>누적 8,700건 기획·운영</strong> · 10년+ 전문가가 대행·대관·웨이팅까지 A to Z로 해결해드립니다.</p>
+<div class="cta-row"><button class="btn-green">팝업 문의하기 →</button><button class="btn-sub">AI 예산 계산기 팝가(Popga)</button></div>
+<div class="trust">K-POP 대형 엔터·IP사 협업 | 패션 · F&B · 뷰티 포트폴리오 바로가기 →</div>
+</div>
+<div class="stage">
+<div class="beam"></div>
+<div class="badge">✨ 누적 8,700건 완료</div>
+<div class="badge2">◉ 성수 · 홍대 · 강남 상권 지도</div>
+<div class="store-wrap">
+<div class="store-sign"><small>SWEETSPOT</small><i>●</i> POP-UP STORE</div>
+<div class="store-body"><div class="store-inside"></div><div class="store-side"><span class="dot"></span>OPEN<br>10:00-20:00</div></div>
+</div>
+<div class="gaze-arrow">👀 ↙</div>
+<div class="humans">
+<div class="faces">
+<div class="face f1"><div class="hair"></div><div class="eyes"><div class="eye"><div class="pupil"></div></div><div class="eye"><div class="pupil"></div></div></div><div class="mouth"></div></div>
+<div class="face f2"><div class="hair" style="height:28px;background:#3A2215"></div><div class="eyes"><div class="eye"><div class="pupil"></div></div><div class="eye"><div class="pupil"></div></div></div><div class="mouth"></div></div>
+</div>
+<div class="speech">기획 전문가가 답해드려요! <small>왼쪽 ↙ 팝업 문의하기로 상담받으세요</small></div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

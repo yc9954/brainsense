@@ -64,7 +64,21 @@ a{color:#ffb38a} .k{color:#8b8b96}</style></head><body><h1>BrainSense showcase �
         parts.append(f"<tr><td><a href='{r.name}/index.html'>{html.escape(r.name)}</a></td><td>{len(s['rows'])}</td>"
                      f"<td>{f('brain_loop_vs_oneshot')}</td><td>{f('brain_loop_vs_muse_loop')}</td>"
                      f"<td>{b.get('oneshot', float('nan')):.3f} / {b.get('muse_loop', float('nan')):.3f} / {b.get('brain_loop', float('nan')):.3f}</td></tr>")
-    parts.append("</table></body></html>")
+    parts.append("</table>")
+    rd = out_dir / "redesign"
+    cases = sorted((p for p in rd.iterdir() if (p / "report.json").exists()), key=lambda p: p.stat().st_mtime, reverse=True) if rd.exists() else []
+    if cases:
+        parts.append("<h1 style='margin-top:36px'>뇌가 고친 실제 사이트 (before → after)</h1><table><tr><th>site</th><th>ui_score before → after</th><th>뇌 점수</th><th>심사위원</th><th>첫 진단</th></tr>")
+        for c in cases:
+            r = json.loads((c / "report.json").read_text(encoding="utf-8"))
+            o = r["steps"][0]
+            b = next(s for s in r["steps"] if s["round"] == r["best_round"])
+            parts.append(f"<tr><td><a href='redesign/{c.name}/index.html'>{html.escape(r['source'])}</a></td>"
+                         f"<td>{o['ui_score']:.3f} → <b>{b['ui_score']:.3f}</b> ({b['ui_score'] - o['ui_score']:+.3f})</td>"
+                         f"<td>{o['brain_only']:.3f} → {b['brain_only']:.3f}</td><td>{o['judge'].get('judge_score', 0):.2f} → {b['judge'].get('judge_score', 0):.2f}</td>"
+                         f"<td class=k>{html.escape(o['critique']['diagnosis'][0][:90]) if o['critique']['diagnosis'] else ''}</td></tr>")
+        parts.append("</table>")
+    parts.append("</body></html>")
     out = out_dir / "index.html"
     out.write_text("\n".join(parts), encoding="utf-8")
     return out

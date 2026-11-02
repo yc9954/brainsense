@@ -1,0 +1,312 @@
+{
+ "source": "https://www.sweetspot.co.kr",
+ "brief": "Redesign the first screen of https://www.sweetspot.co.kr so it reads faster and feels more desirable, keeping brand and copy.",
+ "kind": "landing",
+ "steps": [
+  {
+   "round": 0,
+   "png": "results/showcase/redesign/sweetspot/r0.png",
+   "html": null,
+   "changes": [],
+   "ui_score": 0.6630018414135406,
+   "heads": {
+    "aesthetic": {
+     "score": 0.9808925986289978,
+     "percentile": 99.93297587131367,
+     "confidence": 0.9617851972579956,
+     "top": "▲ R_23d, ▲ R_IP1"
+    },
+    "attention": {
+     "score": 0.686810314655304,
+     "percentile": 81.91780821917808,
+     "confidence": 0.3736206293106079,
+     "top": "▲ 기본 시각 평균, ▲ 움직임·형태 평균"
+    }
+   },
+   "judge": {
+    "aesthetic": 0.556,
+    "clarity": 0.111,
+    "attention": 0.889,
+    "brief_fit": 0.222,
+    "judge_score": 0.444,
+    "reason": "The oversized distorted wordmark creates a strong single focal point but destroys legibility and provides no value proposition, failing the faster and more desirable brief."
+   },
+   "brain_only": 0.909,
+   "critique": {
+    "kind": "landing",
+    "ranking": [
+     [
+      "attention_dorsal",
+      1.2396133972130274
+     ],
+     [
+      "value_vmpfc",
+      0.9478058987732253
+     ],
+     [
+      "scene_place",
+      0.9453127054793288
+     ],
+     [
+      "control_dlpfc",
+      0.9393913714063248
+     ],
+     [
+      "visual_early",
+      -0.28351993924990526
+     ],
+     [
+      "default_mode",
+      -0.45201825269574325
+     ],
+     [
+      "language",
+      -0.5596410965489418
+     ],
+     [
+      "visual_motion",
+      -1.249840106742621
+     ],
+     [
+      "face_body",
+      -1.5271039776346937
+     ]
+    ],
+    "hook": {
+     "attention_early": 1.2495861703886133,
+     "attention_late": 1.2346270106252344,
+     "visual_early": -0.3276702371626556,
+     "visual_late": -0.26144479029353
+    },
+    "diagnosis": [
+     "얼굴 영역(FFA/STS)이 조용함: 사람·시선 단서가 없음",
+     "보상 회로(OFC/vmPFC)는 켜졌는데 끌림 헤드는 평범: 가치 신호가 있지만 무엇이 좋은지 읽히지 않음",
+     "물체 형태(LO)·움직임(MT) 반응이 낮음: 뚜렷한 사물 실루엣이 없는 텍스트 위주 화면"
+    ],
+    "directives": [
+     "Introduce a human cue: a portrait or illustrated face whose gaze points at the CTA/product (faces win attention fastest).",
+     "Name the value explicitly next to what the eye lands on: one benefit line + price/offer under the hero, nothing else competing.",
+     "Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion."
+    ],
+    "cited_areas": [
+     "▲ 우 후대상 기본모드 (23d) [aesthetic]",
+     "▲ 우 두정내구 주의 (IP1) [aesthetic]",
+     "▲ 1차 시각(V1–V4) 평균 [attention]",
+     "▲ 움직임·형태(MT/LO) 평균 [attention]"
+    ],
+    "prompt_block": "BRAIN CRITIQUE (TRIBE v2 predicted human cortex while looking at the last render; values are relative within this image):\n- most driven regions: 시각 주의(IPS/FEF) +1.24, 보상·가치(OFC/vmPFC) +0.95, 장소·배경(PPA/RSC) +0.95; least: 움직임·형태(MT/LO) -1.25, 얼굴·사람(FFA/STS) -1.53\n- first-2s hook vs later: attention +1.25 → +1.23, visual drive -0.33 → -0.26\n- areas the aesthetic head cites: ▲ 우 후대상 기본모드 (23d) [aesthetic]; ▲ 우 두정내구 주의 (IP1) [aesthetic]; ▲ 1차 시각(V1–V4) 평균 [attention]; ▲ 움직임·형태(MT/LO) 평균 [attention]\n- diagnosis: 얼굴 영역(FFA/STS)이 조용함: 사람·시선 단서가 없음 / 보상 회로(OFC/vmPFC)는 켜졌는데 끌림 헤드는 평범: 가치 신호가 있지만 무엇이 좋은지 읽히지 않음 / 물체 형태(LO)·움직임(MT) 반응이 낮음: 뚜렷한 사물 실루엣이 없는 텍스트 위주 화면\n- DO NEXT (highest priority first): (1) Introduce a human cue: a portrait or illustrated face whose gaze points at the CTA/product (faces win attention fastest). (2) Name the value explicitly next to what the eye lands on: one benefit line + price/offer under the hero, nothing else competing. (3) Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion."
+   }
+  },
+  {
+   "round": 1,
+   "png": "results/showcase/redesign/sweetspot/r1.png",
+   "html": "results/showcase/redesign/sweetspot/r1.html",
+   "changes": [
+    {
+     "directive": "Introduce a human cue: a portrait or illustrated face whose gaze points at the CTA/product",
+     "change": "Added two illustrated expert faces (SVG/CSS) on right stage with pupils looking down-left directly at 팝업 문의하기 CTA plus speech badge"
+    },
+    {
+     "directive": "Name the value explicitly next to what the eye lands on: one benefit line + price/offer under the hero",
+     "change": "Placed single benefit line 누적 8,700건 기획·운영 + A to Z offer directly under H1 above CTA, removed competing texts"
+    },
+    {
+     "directive": "Add one dominant object silhouette or diagonal that implies motion",
+     "change": "Built dominant 3D pop-up store box silhouette with glowing entrance and animated diagonal light beam behind it"
+    }
+   ],
+   "based_on": 0,
+   "ui_score": 0.7397761216958652,
+   "heads": {
+    "aesthetic": {
+     "score": 0.8131815195083618,
+     "percentile": 91.75603217158177,
+     "confidence": 0.6263630390167236,
+     "top": "▲ R_IP1, ▼ L_a24"
+    },
+    "attention": {
+     "score": 0.6230412721633911,
+     "percentile": 71.5068493150685,
+     "confidence": 0.24608254432678223,
+     "top": "▲ 움직임·형태 평균, ▲ 움직임·형태 최대"
+    }
+   },
+   "judge": {
+    "aesthetic": 0.778,
+    "clarity": 0.778,
+    "attention": 0.556,
+    "brief_fit": 0.778,
+    "judge_score": 0.722,
+    "reason": "Bold dark system with strong type and proof points reads premium and clear, but the right-side badges, mockup, and characters fragment the focal point."
+   },
+   "brain_only": 0.816,
+   "critique": {
+    "kind": "landing",
+    "ranking": [
+     [
+      "scene_place",
+      1.2000150608945364
+     ],
+     [
+      "value_vmpfc",
+      0.9818086050138127
+     ],
+     [
+      "attention_dorsal",
+      0.9228890359799763
+     ],
+     [
+      "control_dlpfc",
+      0.8160176098969566
+     ],
+     [
+      "visual_early",
+      -0.08371736744875118
+     ],
+     [
+      "default_mode",
+      -0.3602057346897851
+     ],
+     [
+      "language",
+      -0.48097809805567954
+     ],
+     [
+      "face_body",
+      -1.3868345890672407
+     ],
+     [
+      "visual_motion",
+      -1.6089945225238276
+     ]
+    ],
+    "hook": {
+     "attention_early": 0.9061824049335854,
+     "attention_late": 0.9312423515031717,
+     "visual_early": 0.1191853042673397,
+     "visual_late": -0.1851687033067966
+    },
+    "diagnosis": [
+     "물체 형태(LO)·움직임(MT) 반응이 낮음: 뚜렷한 사물 실루엣이 없는 텍스트 위주 화면",
+     "얼굴 영역(FFA/STS)이 조용함: 사람·시선 단서가 없음"
+    ],
+    "directives": [
+     "Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion.",
+     "Introduce a human cue: a portrait or illustrated face whose gaze points at the CTA/product (faces win attention fastest)."
+    ],
+    "cited_areas": [
+     "▲ 우 두정내구 주의 (IP1) [aesthetic]",
+     "▼ 좌 전대상 24 (a24) [aesthetic]",
+     "▲ 움직임·형태(MT/LO) 평균 [attention]",
+     "▲ 움직임·형태(MT/LO) 최대 [attention]"
+    ],
+    "prompt_block": "BRAIN CRITIQUE (TRIBE v2 predicted human cortex while looking at the last render; values are relative within this image):\n- most driven regions: 장소·배경(PPA/RSC) +1.20, 보상·가치(OFC/vmPFC) +0.98, 시각 주의(IPS/FEF) +0.92; least: 얼굴·사람(FFA/STS) -1.39, 움직임·형태(MT/LO) -1.61\n- first-2s hook vs later: attention +0.91 → +0.93, visual drive +0.12 → -0.19\n- areas the aesthetic head cites: ▲ 우 두정내구 주의 (IP1) [aesthetic]; ▼ 좌 전대상 24 (a24) [aesthetic]; ▲ 움직임·형태(MT/LO) 평균 [attention]; ▲ 움직임·형태(MT/LO) 최대 [attention]\n- diagnosis: 물체 형태(LO)·움직임(MT) 반응이 낮음: 뚜렷한 사물 실루엣이 없는 텍스트 위주 화면 / 얼굴 영역(FFA/STS)이 조용함: 사람·시선 단서가 없음\n- DO NEXT (highest priority first): (1) Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion. (2) Introduce a human cue: a portrait or illustrated face whose gaze points at the CTA/product (faces win attention fastest)."
+   }
+  },
+  {
+   "round": 2,
+   "png": "results/showcase/redesign/sweetspot/r2.png",
+   "html": "results/showcase/redesign/sweetspot/r2.html",
+   "changes": [
+    {
+     "directive": "Add one dominant object silhouette or a diagonal that implies motion",
+     "change": "Built oversized isometric POP-UP STORE building with glowing gradient storefront + thick diagonal neon motion beam slicing across hero card with animated shine and floating badges"
+    },
+    {
+     "directive": "Introduce a human cue: portrait or illustrated face whose gaze points at CTA/product",
+     "change": "Enlarged two expert/visitor faces to 110px with left-shifted pupils staring at left CTA plus dotted gaze-trail line and speech bubble pointing to inquiry button"
+    }
+   ],
+   "based_on": 1,
+   "ui_score": 0.5974356969274487,
+   "heads": {
+    "aesthetic": {
+     "score": 0.636835515499115,
+     "percentile": 74.32975871313673,
+     "confidence": 0.27367103099823,
+     "top": "▲ R_IP1, ▼ L_a24"
+    },
+    "attention": {
+     "score": 0.6085720062255859,
+     "percentile": 69.04109589041096,
+     "confidence": 0.21714401245117188,
+     "top": "▲ 움직임·형태 평균, ▲ 움직임·형태 최대"
+    }
+   },
+   "judge": {
+    "aesthetic": 0.556,
+    "clarity": 0.556,
+    "attention": 0.444,
+    "brief_fit": 0.667,
+    "judge_score": 0.556,
+    "reason": "Dark premium styling and proof points are strong but the headline, dual CTAs, badges, and cut-off illustration compete instead of driving one clear focal action."
+   },
+   "brain_only": 0.717,
+   "critique": {
+    "kind": "landing",
+    "ranking": [
+     [
+      "scene_place",
+      1.2015854499410208
+     ],
+     [
+      "value_vmpfc",
+      0.9991324708211146
+     ],
+     [
+      "attention_dorsal",
+      0.8000725583903684
+     ],
+     [
+      "control_dlpfc",
+      0.7850865138465765
+     ],
+     [
+      "visual_early",
+      -0.006346291400096561
+     ],
+     [
+      "default_mode",
+      -0.3545597603751869
+     ],
+     [
+      "language",
+      -0.3904697161688016
+     ],
+     [
+      "face_body",
+      -1.2313847439657313
+     ],
+     [
+      "visual_motion",
+      -1.8031164810892657
+     ]
+    ],
+    "hook": {
+     "attention_early": 0.796820869479923,
+     "attention_late": 0.8016984028455912,
+     "visual_early": 0.22678566570096884,
+     "visual_late": -0.12291226995062925
+    },
+    "diagnosis": [
+     "물체 형태(LO)·움직임(MT) 반응이 낮음: 뚜렷한 사물 실루엣이 없는 텍스트 위주 화면",
+     "보상 회로(OFC/vmPFC)는 켜졌는데 끌림 헤드는 평범: 가치 신호가 있지만 무엇이 좋은지 읽히지 않음",
+     "얼굴 영역(FFA/STS)이 조용함: 사람·시선 단서가 없음"
+    ],
+    "directives": [
+     "Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion.",
+     "Name the value explicitly next to what the eye lands on: one benefit line + price/offer under the hero, nothing else competing.",
+     "Introduce a human cue: a portrait or illustrated face whose gaze points at the CTA/product (faces win attention fastest)."
+    ],
+    "cited_areas": [
+     "▲ 우 두정내구 주의 (IP1) [aesthetic]",
+     "▼ 좌 전대상 24 (a24) [aesthetic]",
+     "▲ 움직임·형태(MT/LO) 평균 [attention]",
+     "▲ 움직임·형태(MT/LO) 최대 [attention]"
+    ],
+    "prompt_block": "BRAIN CRITIQUE (TRIBE v2 predicted human cortex while looking at the last render; values are relative within this image):\n- most driven regions: 장소·배경(PPA/RSC) +1.20, 보상·가치(OFC/vmPFC) +1.00, 시각 주의(IPS/FEF) +0.80; least: 얼굴·사람(FFA/STS) -1.23, 움직임·형태(MT/LO) -1.80\n- first-2s hook vs later: attention +0.80 → +0.80, visual drive +0.23 → -0.12\n- areas the aesthetic head cites: ▲ 우 두정내구 주의 (IP1) [aesthetic]; ▼ 좌 전대상 24 (a24) [aesthetic]; ▲ 움직임·형태(MT/LO) 평균 [attention]; ▲ 움직임·형태(MT/LO) 최대 [attention]\n- diagnosis: 물체 형태(LO)·움직임(MT) 반응이 낮음: 뚜렷한 사물 실루엣이 없는 텍스트 위주 화면 / 보상 회로(OFC/vmPFC)는 켜졌는데 끌림 헤드는 평범: 가치 신호가 있지만 무엇이 좋은지 읽히지 않음 / 얼굴 영역(FFA/STS)이 조용함: 사람·시선 단서가 없음\n- DO NEXT (highest priority first): (1) Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion. (2) Name the value explicitly next to what the eye lands on: one benefit line + price/offer under the hero, nothing else competing. (3) Introduce a human cue: a portrait or illustrated face whose gaze points at the CTA/product (faces win attention fastest)."
+   }
+  }
+ ],
+ "best_round": 1
+}
