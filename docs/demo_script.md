@@ -8,7 +8,8 @@ Caption: *An opinion the agent can justify — because it ran your view through 
 glasses → TRIBE v2 (Meta's brain foundation model, predicted fMRI for an average viewer) → ROI time series → calibrated heads (pretty / attention / appeal) → Muse Spark agent with tools → speech.
 Say explicitly: TRIBE is an *encoder*; heads are trained on real outcome data (AADB ratings, Snap watch-retention, Unsplash downloads/views). The LLM never sees raw brain vectors.
 
-## 0:50–1:30 Live demo, 3 items
+## 0:50–1:30 Live demo, 3 items (OpenMuse chat on the web build, or the phone with Mock Device Kit)
+Attach a photo with "+" (or pick a sample) and type "이거 어때?". The agent calls `brain_eval` by itself, the live 3D cortex card appears (hot spots moving at 1 Hz), then the brain speaks in first person.
 1. Item A: "별로야" + why ("주의 신호가 2초 뒤에 떨어져, 하위 30%").  Show the ROI strip + percentile bars on the phone UI.
 2. Item B: "꽤 좋아 보여" + compare with A ("A보다 보상 반응이 높아").
 3. "왜?" → the agent cites the numbers. "좋아" → record_feedback → personal head updates.

@@ -103,15 +103,16 @@ A: 오케이 별로로 저장했어 다음부터 네 취향 반영해서 더 잘
 Grounding works as designed: the number it quotes (0.53 / 상위 65% / 신뢰도 0.05) is the `appeal` head output, and it declines to opine when confidence is low. Note: Muse counts reasoning tokens against `max_tokens`; the loop uses 1024 and never stores an empty assistant turn.
 
 ## App UI (OpenMuse)
-The UI is built on [CopilotKit/OpenMuse](https://github.com/CopilotKit/openmuse) (React Native + Expo, MIT), cloned to `../openmuse`. Our additions: `apps/mobile/src/brainsense.tsx` (Look screen, BrainCard, RoiStrip), `apps/mobile/src/brainsense-api.ts` (FastAPI client + Korean ROI labels), a `look` section in `App.tsx` with a standalone shell (no CopilotKit key required), sample assets, and branding in `app.json`.
+The UI *is* [CopilotKit/OpenMuse](https://github.com/CopilotKit/openmuse) (React Native + Expo + Hono, MIT), cloned to `../openmuse` with its chat home, sidebar, thinking process, activity/ideas/goals/apps tabs untouched. BrainSense is not a tab: it is a server tool the agent reaches for mid-conversation plus a prompt that makes the agent speak as its own brain (see below).
 ```bash
-# 1. agent server (this repo)
+# 1. agent server (this repo): heads, TRIBE proxy, /assets/fsaverage5_pial.bin for the 3D cortex
 uv run uvicorn brainsense.agent.server:app --port 8000
-# 2. web UI
-pnpm --dir ../openmuse/apps/mobile web          # http://localhost:8081  (EXPO_PUBLIC_BRAINSENSE_URL to point elsewhere)
-# optional: full OpenMuse workspace (chat/mail/etc.) needs CPK_INTELLIGENCE_API_KEY in ../openmuse/.env
+# 2. OpenMuse server on the Meta Model API (no CopilotKit key needed: a local in-memory Intelligence stub + SSE runtime)
+cd ../openmuse && OPENAI_API_KEY=$BRAINSENSE_LLM_API_KEY CPK_INTELLIGENCE_API_KEY=dummy-local RICH_THREADS=false BRAINSENSE_URL=http://127.0.0.1:8000 pnpm dev
+# 3. web UI
+pnpm --dir ../openmuse/apps/mobile web          # http://localhost:8081
 ```
-Live-demo caveat: the deployed TRIBE endpoint shares the workspace's 10-GPU cap with batch extraction; pause batch jobs before a demo. Modal web endpoints 303-redirect after 150 s; the server follows them.
+Live-demo caveat: the deployed TRIBE endpoint shares the workspace's 10-GPU cap with batch extraction; pause batch jobs before a demo. Modal web endpoints 303-redirect after 150 s; the server follows them. A fresh container needs ~70 s to load the model; `BRAINSENSE_WARM=1 modal deploy` keeps one resident during a demo (~$2/h).
 
 ## Evaluation-driven UI loop (the harness)
 The heads double as an **evaluation metric for generated UI**. `brainsense/loop/` runs: Muse Spark writes a single-file page → headless Chrome renders 1280×800 → the screenshot goes through TRIBE + heads → `ui_score = 0.6·aesthetic + 0.4·attention` (percentiles, shrunk toward 0.5 by each head's confidence) → the per-region critique ("시각 주의 낮음 → focal element/contrast") is fed back to the next round.
@@ -129,15 +130,12 @@ UI repo: https://github.com/yc9954/openmuse-brainsense (private, branch `brainse
 
 ## OpenMuse integration (2026-11-03): the agent's own brain
 BrainSense is wired into OpenMuse's own agent loop, not a side tab:
-- **Server tool `brain_eval`** (`apps/server/src/engine/conversation.ts`): takes `brain_item_id` (what the user is looking at in the Look tab, passed through CopilotKit agent context) or `artifact_id` of an attached image; calls the BrainSense server; returns heads, percentiles, confidence, top cortical areas, the 1 Hz region series, cortex heatmap frames, and a Korean summary.
-- **Prompt augmentation** (`brainInstructions`): when the user asks how something looks or attaches an image, the agent calls the tool and then speaks *as its own brain*, first person, naming areas in plain words, quoting percentiles, witty and specific; never rating without the tool.
-- **Inline card** (`brain-tool-card.tsx` → `BrainCard`): the brain-frame player (real fsaverage5 cortex heatmaps rendered server-side with nilearn, lateral+medial, 1 Hz), head gauges, area chips, crowd-vs-you.
-- The Look tab stays as the capture surface; the chat home, sidebar, activity/ideas/goals/apps tabs are OpenMuse's originals.
+- **Server tool `brain_eval`** (`apps/server/src/engine/conversation.ts`): takes `artifact_id` of a photo/clip attached in chat (OpenMuse's file store now accepts images and video, sniffed by magic bytes) or `brain_item_id` from agent context; calls this server's `/analyze` + `/eval`; returns heads, percentiles, confidence, top cortical areas, the 1 Hz region series, the per-vertex cortex time series and a Korean summary. Muse Spark calls it on its own when the user asks "이거 어때?" / attaches an image.
+- **Prompt augmentation** (`brainInstructions`): the agent then speaks *as its own brain*, first person, naming areas in plain words, quoting percentiles, witty and specific; never rating without the tool. Real turn (sample photo): "내 좌측 안와전두피질이 상위 12%로 켜졌어, 조화로움과 아름다움에 보상 점수를 매기는 곳이라는 뜻이지. 근데 초기 시각피질이랑 움직임 영역은 딱 중간이라 눈을 확 잡아채진 않아. 갤러리에 걸면 예쁘다는 말은 듣는데, 멈춰서 갖고 싶게 만들진 못하는 컷이야."
+- **Live cortex card** (`brain-live.web.tsx`, three.js): the TRIBE v2 teaser look inside the chat: dark card, translucent head, the real fsaverage5 pial surface (20,484 vertices, `assets/fsaverage5_pial.bin`, 512 KB) with hot spots fading in and out second by second from TRIBE's own per-vertex predictions (`vertex_ts`, uint8-quantized per item, ~120 KB per 6 s clip). STIMULUS thumbnail on the left, MODEL PREDICTION on the right, 1 Hz timeline underneath. Native falls back to server-rendered nilearn frames.
+- **Local runtime without CopilotKit Intelligence** (`apps/server/src/local-intelligence.ts`, `agent.ts`): a placeholder `CPK_INTELLIGENCE_API_KEY` switches the runtime to SSE mode with the in-memory runner. Lesson: passing any `intelligence` object makes CopilotRuntime v2 auto-wire the Intelligence runner, which waits on a hosted websocket forever (chat never answers, nothing logged). A real key restores durable threads.
 
-**What still needs a key:** OpenMuse's CopilotRuntime v2 persists every run through CopilotKit Intelligence (`Failed to initialize thread` otherwise). `npx copilotkit@latest login && npx copilotkit@latest project select`, put the key in `../openmuse/.env` as `CPK_INTELLIGENCE_API_KEY`, remove `RICH_THREADS=false`. The Look tab works without it.
-
-## Full OpenMuse workspace on the Meta Model API
-`../openmuse/.env` is prepared for `AGENT_BACKEND=model` with `MODEL=muse-spark-1.3` and `OPENAI_BASE_URL=https://api.meta.ai/v1`, so OpenMuse's own chat, activity, ideas, goals and apps run on Muse Spark. Two values are yours: `OPENAI_API_KEY` (copy `BRAINSENSE_LLM_API_KEY`) and `CPK_INTELLIGENCE_API_KEY` (`npx copilotkit@latest login && npx copilotkit@latest project select`). Then `pnpm --dir ../openmuse dev` and the app shows the Look tab next to the OpenMuse sections. Without those keys the app runs the Look tab standalone.
+**Demo without glasses:** the Wearables Device Access Toolkit's Mock Device Kit simulates the glasses on the phone (iOS and Android): the CameraAccess sample app's debug sheet enables the mock device and the camera source picker streams the phone's front/back camera or a video file through the same SDK calls as real hardware. The OpenMuse chat path (attach a photo → `brain_eval`) is the second, hardware-free demo.
 
 ## Latency (measured on L40S, never-seen 6 s clip, `results/profile.json`)
 | variant | events | TRIBE predict | total |
