@@ -10,6 +10,8 @@ A grounded-opinion agent for Meta AI glasses. You look at something and ask "이
 
 **Where it lives:** inside [OpenMuse](https://github.com/CopilotKit/openmuse) (CopilotKit's open personal-agent app) running on Muse Spark. The brain is a tool the agent reaches for on its own mid-conversation when you attach a photo or ask "이거 어때?"; it answers *as its own brain* ("내 안와전두피질이 상위 12%로 켜졌어…") and shows a live 3D cortex, Meta's fsaverage5 surface with TRIBE's per-vertex predictions lighting up second by second, in the chat.
 
+**It reads and listens too.** TRIBE v2 is tri-modal, so the same brain reads a paragraph (Word events through the Llama pathway) and listens to a track (w2v-BERT pathway). Muse routes: a photo gets the visual heads, copy gets 사람다움 (trained on human-vs-ChatGPT answers) and 주목, music gets region-by-region comparison of two hooks. The signature demo is the agent rewriting its own copy through its brain: draft → read → "reward and scene networks are quiet" → rewrite → before/after percentiles.
+
 ## Meta tooling
 - **Meta Model API — Muse Spark 1.3** with tool calling (`brain_eval`, `compare`, `web_lookup`, `record_feedback`). Opinions are constrained to tool outputs by the system prompt; low confidence → "잘 모르겠어".
 - **TRIBE v2** (open weights, CC-BY-NC) as the perception prior, with its V-JEPA2 / DINOv2 / w2v-BERT / Llama-3.2-3B backbones.
