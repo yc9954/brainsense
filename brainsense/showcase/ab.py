@@ -98,7 +98,8 @@ def run_arm(arm: str, key: str, cfg: dict, out: Path, rounds: int, variants: int
     def one(r: int, v: int) -> dict | None:
         tag = f"{arm}_r{r}v{v}"
         t0 = time.time()
-        critique = {"oneshot": "", "muse_loop": _muse_critique(history), "brain_loop": _brain_critique(history)}[arm]
+        critique = (_muse_critique(history) if arm == "muse_loop"
+                    else _brain_critique(history) if arm == "brain_loop" else "")
         try:
             html = generate(brief, critique, v)
         except GenerationError as e:

@@ -1,0 +1,1272 @@
+{
+ "rounds": 1,
+ "variants": 1,
+ "kind": "ad",
+ "briefs": {
+  "serum": {
+   "brief": "비타민C 세럼 신제품 12초 피드 광고. 한 문장 헤드라인, 제품이 주인공, 런칭 30% 할인, '지금 구매' CTA. 20대 후반 여성.",
+   "kind": "ad",
+   "arms": {
+    "oneshot": {
+     "arm": "oneshot",
+     "best": "oneshot_r1v1",
+     "best_png": "results/showcase/ad-smoke/serum/oneshot_r1v1.png",
+     "best_mp4": "results/showcase/ad-smoke/serum/oneshot_r1v1.mp4",
+     "history": [
+      {
+       "arm": "oneshot",
+       "round": 1,
+       "variant": 1,
+       "tag": "oneshot_r1v1",
+       "mp4": "results/showcase/ad-smoke/serum/oneshot_r1v1.mp4",
+       "png": "results/showcase/ad-smoke/serum/oneshot_r1v1.png",
+       "critique_in": "",
+       "judge": {
+        "aesthetic": 0.7777777777777778,
+        "clarity": 0.6666666666666666,
+        "attention": 0.4444444444444444,
+        "brief_fit": 0.8888888888888888,
+        "judge_score": 0.6944444444444444,
+        "reason": "Three-frame hook-product-CTA flow nails the brief with polished glow aesthetic but splits focus across three competing heroes."
+       },
+       "select_score": 0.6944444444444444,
+       "seconds": 86.5
+      }
+     ]
+    },
+    "muse_loop": {
+     "arm": "muse_loop",
+     "best": "muse_loop_r1v1",
+     "best_png": "results/showcase/ad-smoke/serum/muse_loop_r1v1.png",
+     "best_mp4": "results/showcase/ad-smoke/serum/muse_loop_r1v1.mp4",
+     "history": [
+      {
+       "arm": "muse_loop",
+       "round": 1,
+       "variant": 1,
+       "tag": "muse_loop_r1v1",
+       "mp4": "results/showcase/ad-smoke/serum/muse_loop_r1v1.mp4",
+       "png": "results/showcase/ad-smoke/serum/muse_loop_r1v1.png",
+       "critique_in": "",
+       "judge": {
+        "aesthetic": 0.7777777777777778,
+        "clarity": 0.6666666666666666,
+        "attention": 0.4444444444444444,
+        "brief_fit": 0.8888888888888888,
+        "judge_score": 0.6944444444444444,
+        "reason": "Three-frame hook-product-offer system nails the brief but splits focus across three competing heroes, reducing single-screen impact."
+       },
+       "select_score": 0.6944444444444444,
+       "seconds": 93.0
+      }
+     ]
+    },
+    "brain_loop": {
+     "arm": "brain_loop",
+     "best": "brain_loop_r1v1",
+     "best_png": "results/showcase/ad-smoke/serum/brain_loop_r1v1.png",
+     "best_mp4": "results/showcase/ad-smoke/serum/brain_loop_r1v1.mp4",
+     "history": [
+      {
+       "arm": "brain_loop",
+       "round": 1,
+       "variant": 1,
+       "tag": "brain_loop_r1v1",
+       "mp4": "results/showcase/ad-smoke/serum/brain_loop_r1v1.mp4",
+       "png": "results/showcase/ad-smoke/serum/brain_loop_r1v1.png",
+       "critique_in": "",
+       "judge": {
+        "aesthetic": 0.7777777777777778,
+        "clarity": 0.6666666666666666,
+        "attention": 0.7777777777777778,
+        "brief_fit": 0.8888888888888888,
+        "judge_score": 0.7777777777777778,
+        "reason": "Warm cohesive glow system keeps the product as hero through hook-benefit-CTA arc, though the first frame prioritizes hook over immediate action clarity."
+       },
+       "brain": {
+        "item_id": "ad_ad-smoke_serum_brain_loop_r1v1",
+        "heads": {
+         "aesthetic": {
+          "score": 0.044299013912677765,
+          "percentile": 0.3351206434316354,
+          "confidence": 0.9114019721746445
+         },
+         "attention": {
+          "score": 0.5856333374977112,
+          "percentile": 64.93150684931507,
+          "confidence": 0.17126667499542236
+         },
+         "appeal": {
+          "score": 0.27796003222465515,
+          "percentile": 2.6373626373626373,
+          "confidence": 0.4440799355506897
+         },
+         "popularity": {
+          "score": 0.6608721613883972,
+          "percentile": 92.74725274725274,
+          "confidence": 0.32174432277679443
+         }
+        },
+        "roi_ts": {
+         "visual_early": [
+          0.0061,
+          0.0003,
+          0.0067,
+          0.0186,
+          0.0405,
+          0.0658,
+          0.0673,
+          0.0674,
+          0.0458,
+          0.0136,
+          -0.0387,
+          -0.0742
+         ],
+         "visual_motion": [
+          0.0255,
+          0.003,
+          0.0068,
+          0.0223,
+          0.0385,
+          0.0774,
+          0.0884,
+          0.1021,
+          0.096,
+          0.051,
+          -0.0586,
+          -0.1102
+         ],
+         "face_body": [
+          -0.0448,
+          -0.0452,
+          -0.047,
+          -0.0223,
+          -0.0239,
+          0.0017,
+          0.0327,
+          0.0482,
+          0.0377,
+          0.0491,
+          0.0825,
+          0.0607
+         ],
+         "scene_place": [
+          0.0529,
+          0.0462,
+          0.0434,
+          0.0547,
+          0.0643,
+          0.0898,
+          0.097,
+          0.0963,
+          0.0904,
+          0.0605,
+          0.0143,
+          0.0022
+         ],
+         "attention_dorsal": [
+          0.0221,
+          0.013,
+          0.0202,
+          0.0234,
+          0.0381,
+          0.0557,
+          0.0608,
+          0.0697,
+          0.0749,
+          0.0544,
+          0.0526,
+          0.0487
+         ],
+         "value_vmpfc": [
+          -0.0118,
+          -0.0086,
+          -0.0073,
+          -0.0082,
+          -0.0034,
+          0.0028,
+          0.0046,
+          0.0032,
+          0.0052,
+          -0.0011,
+          -0.0098,
+          -0.0121
+         ],
+         "language": [
+          -0.1166,
+          -0.1095,
+          -0.101,
+          -0.0843,
+          -0.0862,
+          -0.0819,
+          -0.0566,
+          -0.0462,
+          -0.0556,
+          -0.0164,
+          0.0589,
+          0.0691
+         ],
+         "default_mode": [
+          -0.0526,
+          -0.0641,
+          -0.0702,
+          -0.0788,
+          -0.0705,
+          -0.047,
+          -0.0256,
+          -0.021,
+          -0.0084,
+          -0.017,
+          -0.009,
+          -0.0389
+         ],
+         "control_dlpfc": [
+          -0.0222,
+          -0.027,
+          -0.0232,
+          -0.0302,
+          -0.0168,
+          -0.0035,
+          0.0036,
+          0.0054,
+          0.0102,
+          -0.001,
+          0.0095,
+          0.0015
+         ]
+        },
+        "hook_delta": -0.025,
+        "attention_peak_s": 9,
+        "visual_peak_s": 8,
+        "critique": {
+         "kind": "video",
+         "ranking": [
+          [
+           "scene_place",
+           1.0307972775119068
+          ],
+          [
+           "attention_dorsal",
+           0.742521636744625
+          ],
+          [
+           "visual_motion",
+           0.4332393629617904
+          ],
+          [
+           "visual_early",
+           0.23448429673771165
+          ],
+          [
+           "face_body",
+           0.08937693944566068
+          ],
+          [
+           "value_vmpfc",
+           -0.19485896420324533
+          ],
+          [
+           "control_dlpfc",
+           -0.27112920099817633
+          ],
+          [
+           "default_mode",
+           -0.932676551503362
+          ],
+          [
+           "language",
+           -1.1317547966969108
+          ]
+         ],
+         "hook": {
+          "attention_early": 0.22058760105049968,
+          "attention_late": 0.84690844388345,
+          "visual_early": -0.05766949166321051,
+          "visual_late": 0.29291505441789606
+         },
+         "diagnosis": [
+          "장소 영역(PPA)이 우세: 배경 풍경이 화면을 지배해 내용이 묻힘",
+          "주의 네트워크(IPS/FEF)가 바쁨: 시선을 끄는 후보가 여러 개 → 경쟁",
+          "보상·가치(OFC/vmPFC) 반응이 낮음: '갖고 싶다'는 신호가 없음",
+          "첫 2초 후킹이 약함 (+0.22 → +0.85)"
+         ],
+         "directives": [
+          "Simplify the environment: crop or blur the scene, put copy on a solid panel, let one subject own the frame.",
+          "Make a single focal point: one hero element 2–3× larger than anything else; demote secondary cards and badges.",
+          "Make the benefit concrete and desirable: show the outcome (before/after, real numbers, price or scarcity), warm highlight color on the offer, social proof near the CTA.",
+          "Front-load the hook: the single strongest visual must be visible immediately at the top-left/center, not after a scroll or animation."
+         ],
+         "cited_areas": [
+          "▲ 우 1차 청각 (A1) [aesthetic]",
+          "▲ 좌 후측 안와전두 보상 (pOFC) [aesthetic]",
+          "▲ 움직임·형태(MT/LO) 평균 [attention]",
+          "▲ 움직임·형태(MT/LO) 최대 [attention]"
+         ],
+         "prompt_block": "BRAIN CRITIQUE (TRIBE v2 predicted human cortex while looking at the last render; values are relative within this image):\n- most driven regions: 장소·배경(PPA/RSC) +1.03, 시각 주의(IPS/FEF) +0.74, 움직임·형태(MT/LO) +0.43; least: 기본모드(딴생각) -0.93, 언어(브로카/STG) -1.13\n- first-2s hook vs later: attention +0.22 → +0.85, visual drive -0.06 → +0.29\n- areas the aesthetic head cites: ▲ 우 1차 청각 (A1) [aesthetic]; ▲ 좌 후측 안와전두 보상 (pOFC) [aesthetic]; ▲ 움직임·형태(MT/LO) 평균 [attention]; ▲ 움직임·형태(MT/LO) 최대 [attention]\n- diagnosis: 장소 영역(PPA)이 우세: 배경 풍경이 화면을 지배해 내용이 묻힘 / 주의 네트워크(IPS/FEF)가 바쁨: 시선을 끄는 후보가 여러 개 → 경쟁 / 보상·가치(OFC/vmPFC) 반응이 낮음: '갖고 싶다'는 신호가 없음 / 첫 2초 후킹이 약함 (+0.22 → +0.85)\n- DO NEXT (highest priority first): (1) Simplify the environment: crop or blur the scene, put copy on a solid panel, let one subject own the frame. (2) Make a single focal point: one hero element 2–3× larger than anything else; demote secondary cards and badges. (3) Make the benefit concrete and desirable: show the outcome (before/after, real numbers, price or scarcity), warm highlight color on the offer, social proof near the CTA. (4) Front-load the hook: the single strongest visual must be visible immediately at the top-left/center, not after a scroll or animation."
+        }
+       },
+       "select_score": 0.599220336977324,
+       "seconds": 142.2
+      }
+     ]
+    }
+   },
+   "final": {
+    "oneshot": {
+     "tag": "oneshot_r1v1",
+     "png": "results/showcase/ad-smoke/serum/oneshot_r1v1.png",
+     "mp4": "results/showcase/ad-smoke/serum/oneshot_r1v1.mp4",
+     "brain": {
+      "item_id": "adfinal_ad-smoke_serum_oneshot",
+      "heads": {
+       "aesthetic": {
+        "score": 0.01049682404845953,
+        "percentile": 0.0,
+        "confidence": 0.9790063519030809
+       },
+       "attention": {
+        "score": 0.5793433785438538,
+        "percentile": 64.38356164383562,
+        "confidence": 0.15868675708770752
+       },
+       "appeal": {
+        "score": 0.9224365949630737,
+        "percentile": 100.0,
+        "confidence": 0.8448731899261475
+       },
+       "popularity": {
+        "score": 0.9792898893356323,
+        "percentile": 100.0,
+        "confidence": 0.9585797786712646
+       }
+      },
+      "roi_ts": {
+       "visual_early": [
+        -0.0903,
+        -0.0566,
+        -0.0255,
+        0.0254,
+        0.0691,
+        0.1209,
+        0.2004,
+        0.2389,
+        0.2557,
+        0.2562,
+        0.2124,
+        0.1529
+       ],
+       "visual_motion": [
+        0.0266,
+        0.0198,
+        0.0337,
+        0.0773,
+        0.0962,
+        0.1063,
+        0.1342,
+        0.1282,
+        0.0676,
+        0.008,
+        -0.0889,
+        -0.1443
+       ],
+       "face_body": [
+        -0.035,
+        -0.0208,
+        -0.0142,
+        0.027,
+        0.0291,
+        0.0362,
+        0.047,
+        0.039,
+        0.0056,
+        -0.0097,
+        -0.0158,
+        -0.039
+       ],
+       "scene_place": [
+        0.0367,
+        0.0403,
+        0.0486,
+        0.0859,
+        0.1088,
+        0.1388,
+        0.1861,
+        0.2178,
+        0.2349,
+        0.2275,
+        0.1807,
+        0.1526
+       ],
+       "attention_dorsal": [
+        0.0366,
+        0.0259,
+        0.0301,
+        0.0289,
+        0.0335,
+        0.0381,
+        0.0721,
+        0.0836,
+        0.0925,
+        0.102,
+        0.1401,
+        0.1375
+       ],
+       "value_vmpfc": [
+        -0.018,
+        -0.0134,
+        -0.0116,
+        -0.0114,
+        -0.0094,
+        -0.004,
+        0.0118,
+        0.0177,
+        0.0245,
+        0.0261,
+        0.0294,
+        0.0235
+       ],
+       "language": [
+        -0.1041,
+        -0.0889,
+        -0.0791,
+        -0.0657,
+        -0.0703,
+        -0.0672,
+        -0.0424,
+        -0.0401,
+        -0.0516,
+        -0.0341,
+        0.029,
+        0.0411
+       ],
+       "default_mode": [
+        -0.0583,
+        -0.0636,
+        -0.0728,
+        -0.0812,
+        -0.0849,
+        -0.0803,
+        -0.0535,
+        -0.0519,
+        -0.0453,
+        -0.0519,
+        -0.0246,
+        -0.0436
+       ],
+       "control_dlpfc": [
+        -0.02,
+        -0.0222,
+        -0.0213,
+        -0.0366,
+        -0.0351,
+        -0.0292,
+        0.0034,
+        0.0119,
+        0.0219,
+        0.032,
+        0.0791,
+        0.0794
+       ]
+      },
+      "hook_delta": -0.038,
+      "attention_peak_s": 11,
+      "visual_peak_s": 10,
+      "critique": {
+       "kind": "video",
+       "ranking": [
+        [
+         "scene_place",
+         1.2442079862991005
+        ],
+        [
+         "visual_early",
+         0.9586273671746434
+        ],
+        [
+         "attention_dorsal",
+         0.4445440735234649
+        ],
+        [
+         "visual_motion",
+         0.10455805570216957
+        ],
+        [
+         "value_vmpfc",
+         -0.2767569755151452
+        ],
+        [
+         "control_dlpfc",
+         -0.2785704888050398
+        ],
+        [
+         "face_body",
+         -0.2918377702416373
+        ],
+        [
+         "language",
+         -0.8862883370555138
+        ],
+        [
+         "default_mode",
+         -1.0184839110820423
+        ]
+       ],
+       "hook": {
+        "attention_early": 0.018941138805565944,
+        "attention_late": 0.5296646604670447,
+        "visual_early": -1.1802683861542196,
+        "visual_late": 1.386406517840416
+       },
+       "diagnosis": [
+        "1차 시각피질이 가장 세게 반응: 대비·질감 밀도가 높은데 미학 헤드는 낮음 → 어수선함",
+        "장소 영역(PPA)이 우세: 배경 풍경이 화면을 지배해 내용이 묻힘",
+        "첫 2초 후킹이 약함 (+0.02 → +0.53)"
+       ],
+       "directives": [
+        "Reduce visual noise: one background tone, max 2 accent colors, more whitespace, fewer borders/textures.",
+        "Simplify the environment: crop or blur the scene, put copy on a solid panel, let one subject own the frame.",
+        "Front-load the hook: the single strongest visual must be visible immediately at the top-left/center, not after a scroll or animation."
+       ],
+       "cited_areas": [
+        "▲ 우 1차 청각 (A1) [aesthetic]",
+        "▲ 좌 후측 안와전두 보상 (pOFC) [aesthetic]",
+        "▲ 1차 시각(V1–V4) 변화 [attention]",
+        "▲ 움직임·형태(MT/LO) 평균 [attention]"
+       ],
+       "prompt_block": "BRAIN CRITIQUE (TRIBE v2 predicted human cortex while looking at the last render; values are relative within this image):\n- most driven regions: 장소·배경(PPA/RSC) +1.24, 1차 시각(V1–V4) +0.96, 시각 주의(IPS/FEF) +0.44; least: 언어(브로카/STG) -0.89, 기본모드(딴생각) -1.02\n- first-2s hook vs later: attention +0.02 → +0.53, visual drive -1.18 → +1.39\n- areas the aesthetic head cites: ▲ 우 1차 청각 (A1) [aesthetic]; ▲ 좌 후측 안와전두 보상 (pOFC) [aesthetic]; ▲ 1차 시각(V1–V4) 변화 [attention]; ▲ 움직임·형태(MT/LO) 평균 [attention]\n- diagnosis: 1차 시각피질이 가장 세게 반응: 대비·질감 밀도가 높은데 미학 헤드는 낮음 → 어수선함 / 장소 영역(PPA)이 우세: 배경 풍경이 화면을 지배해 내용이 묻힘 / 첫 2초 후킹이 약함 (+0.02 → +0.53)\n- DO NEXT (highest priority first): (1) Reduce visual noise: one background tone, max 2 accent colors, more whitespace, fewer borders/textures. (2) Simplify the environment: crop or blur the scene, put copy on a solid panel, let one subject own the frame. (3) Front-load the hook: the single strongest visual must be visible immediately at the top-left/center, not after a scroll or animation."
+      }
+     },
+     "brain_ui_score": 0.322,
+     "heads": {
+      "aesthetic": {
+       "score": 0.01049682404845953,
+       "percentile": 0.0,
+       "confidence": 0.9790063519030809
+      },
+      "attention": {
+       "score": 0.5793433785438538,
+       "percentile": 64.38356164383562,
+       "confidence": 0.15868675708770752
+      },
+      "appeal": {
+       "score": 0.9224365949630737,
+       "percentile": 100.0,
+       "confidence": 0.8448731899261475
+      },
+      "popularity": {
+       "score": 0.9792898893356323,
+       "percentile": 100.0,
+       "confidence": 0.9585797786712646
+      }
+     },
+     "critique": {
+      "kind": "video",
+      "ranking": [
+       [
+        "scene_place",
+        1.2442079862991005
+       ],
+       [
+        "visual_early",
+        0.9586273671746434
+       ],
+       [
+        "attention_dorsal",
+        0.4445440735234649
+       ],
+       [
+        "visual_motion",
+        0.10455805570216957
+       ],
+       [
+        "value_vmpfc",
+        -0.2767569755151452
+       ],
+       [
+        "control_dlpfc",
+        -0.2785704888050398
+       ],
+       [
+        "face_body",
+        -0.2918377702416373
+       ],
+       [
+        "language",
+        -0.8862883370555138
+       ],
+       [
+        "default_mode",
+        -1.0184839110820423
+       ]
+      ],
+      "hook": {
+       "attention_early": 0.018941138805565944,
+       "attention_late": 0.5296646604670447,
+       "visual_early": -1.1802683861542196,
+       "visual_late": 1.386406517840416
+      },
+      "diagnosis": [
+       "1차 시각피질이 가장 세게 반응: 대비·질감 밀도가 높은데 미학 헤드는 낮음 → 어수선함",
+       "장소 영역(PPA)이 우세: 배경 풍경이 화면을 지배해 내용이 묻힘",
+       "첫 2초 후킹이 약함 (+0.02 → +0.53)"
+      ],
+      "directives": [
+       "Reduce visual noise: one background tone, max 2 accent colors, more whitespace, fewer borders/textures.",
+       "Simplify the environment: crop or blur the scene, put copy on a solid panel, let one subject own the frame.",
+       "Front-load the hook: the single strongest visual must be visible immediately at the top-left/center, not after a scroll or animation."
+      ],
+      "cited_areas": [
+       "▲ 우 1차 청각 (A1) [aesthetic]",
+       "▲ 좌 후측 안와전두 보상 (pOFC) [aesthetic]",
+       "▲ 1차 시각(V1–V4) 변화 [attention]",
+       "▲ 움직임·형태(MT/LO) 평균 [attention]"
+      ],
+      "prompt_block": "BRAIN CRITIQUE (TRIBE v2 predicted human cortex while looking at the last render; values are relative within this image):\n- most driven regions: 장소·배경(PPA/RSC) +1.24, 1차 시각(V1–V4) +0.96, 시각 주의(IPS/FEF) +0.44; least: 언어(브로카/STG) -0.89, 기본모드(딴생각) -1.02\n- first-2s hook vs later: attention +0.02 → +0.53, visual drive -1.18 → +1.39\n- areas the aesthetic head cites: ▲ 우 1차 청각 (A1) [aesthetic]; ▲ 좌 후측 안와전두 보상 (pOFC) [aesthetic]; ▲ 1차 시각(V1–V4) 변화 [attention]; ▲ 움직임·형태(MT/LO) 평균 [attention]\n- diagnosis: 1차 시각피질이 가장 세게 반응: 대비·질감 밀도가 높은데 미학 헤드는 낮음 → 어수선함 / 장소 영역(PPA)이 우세: 배경 풍경이 화면을 지배해 내용이 묻힘 / 첫 2초 후킹이 약함 (+0.02 → +0.53)\n- DO NEXT (highest priority first): (1) Reduce visual noise: one background tone, max 2 accent colors, more whitespace, fewer borders/textures. (2) Simplify the environment: crop or blur the scene, put copy on a solid panel, let one subject own the frame. (3) Front-load the hook: the single strongest visual must be visible immediately at the top-left/center, not after a scroll or animation."
+     }
+    },
+    "muse_loop": {
+     "tag": "muse_loop_r1v1",
+     "png": "results/showcase/ad-smoke/serum/muse_loop_r1v1.png",
+     "mp4": "results/showcase/ad-smoke/serum/muse_loop_r1v1.mp4",
+     "brain": {
+      "item_id": "adfinal_ad-smoke_serum_muse_loop",
+      "heads": {
+       "aesthetic": {
+        "score": 0.014969568699598312,
+        "percentile": 0.0,
+        "confidence": 0.9700608626008034
+       },
+       "attention": {
+        "score": 0.5190965533256531,
+        "percentile": 51.78082191780822,
+        "confidence": 0.03819310665130615
+       },
+       "appeal": {
+        "score": 0.6226080060005188,
+        "percentile": 92.52747252747253,
+        "confidence": 0.2452160120010376
+       },
+       "popularity": {
+        "score": 0.8718345165252686,
+        "percentile": 100.0,
+        "confidence": 0.7436690330505371
+       }
+      },
+      "roi_ts": {
+       "visual_early": [
+        0.0107,
+        0.0323,
+        0.0475,
+        0.0826,
+        0.0827,
+        0.0815,
+        0.0977,
+        0.1213,
+        0.1139,
+        0.1222,
+        0.0635,
+        0.015
+       ],
+       "visual_motion": [
+        -0.088,
+        -0.043,
+        -0.0359,
+        0.0102,
+        0.0041,
+        0.0109,
+        0.031,
+        0.0654,
+        0.049,
+        0.0495,
+        -0.0537,
+        -0.065
+       ],
+       "face_body": [
+        -0.0974,
+        -0.0694,
+        -0.0712,
+        -0.0458,
+        -0.0507,
+        -0.0479,
+        -0.0426,
+        -0.0543,
+        -0.1042,
+        -0.1316,
+        -0.1218,
+        -0.1107
+       ],
+       "scene_place": [
+        0.0482,
+        0.0597,
+        0.0725,
+        0.103,
+        0.1111,
+        0.1242,
+        0.1499,
+        0.177,
+        0.1848,
+        0.1908,
+        0.1299,
+        0.105
+       ],
+       "attention_dorsal": [
+        0.0134,
+        0.0014,
+        0.0004,
+        0.0024,
+        -0.0002,
+        0.0075,
+        0.0384,
+        0.066,
+        0.0922,
+        0.1145,
+        0.1555,
+        0.1222
+       ],
+       "value_vmpfc": [
+        -0.0006,
+        -0.0006,
+        -0.0015,
+        -0.0041,
+        -0.0074,
+        -0.0077,
+        0.0004,
+        0.0041,
+        0.0136,
+        0.0191,
+        0.0144,
+        0.0023
+       ],
+       "language": [
+        -0.1174,
+        -0.1122,
+        -0.115,
+        -0.1108,
+        -0.1214,
+        -0.1223,
+        -0.1027,
+        -0.1098,
+        -0.1345,
+        -0.1372,
+        -0.0558,
+        -0.0472
+       ],
+       "default_mode": [
+        -0.1071,
+        -0.108,
+        -0.1085,
+        -0.1036,
+        -0.1027,
+        -0.0997,
+        -0.078,
+        -0.0716,
+        -0.0603,
+        -0.0592,
+        -0.0333,
+        -0.0662
+       ],
+       "control_dlpfc": [
+        -0.0328,
+        -0.043,
+        -0.0419,
+        -0.0474,
+        -0.0467,
+        -0.0393,
+        -0.0105,
+        0.0015,
+        0.0191,
+        0.0323,
+        0.0816,
+        0.0412
+       ]
+      },
+      "hook_delta": -0.047,
+      "attention_peak_s": 11,
+      "visual_peak_s": 10,
+      "critique": {
+       "kind": "video",
+       "ranking": [
+        [
+         "scene_place",
+         1.5330576338070054
+        ],
+        [
+         "visual_early",
+         0.9356555054869973
+        ],
+        [
+         "attention_dorsal",
+         0.6730925741747856
+        ],
+        [
+         "value_vmpfc",
+         0.07926342509114105
+        ],
+        [
+         "visual_motion",
+         -0.020269567921847326
+        ],
+        [
+         "control_dlpfc",
+         -0.04109493261379569
+        ],
+        [
+         "face_body",
+         -0.9207624206065352
+        ],
+        [
+         "default_mode",
+         -0.9724174918522502
+        ],
+        [
+         "language",
+         -1.2665247255655012
+        ]
+       ],
+       "hook": {
+        "attention_early": 0.13724777384127176,
+        "attention_late": 0.7802615342414885,
+        "visual_early": 0.3099757986391962,
+        "visual_late": 1.0607914468565574
+       },
+       "diagnosis": [
+        "1차 시각피질이 가장 세게 반응: 대비·질감 밀도가 높은데 미학 헤드는 낮음 → 어수선함",
+        "장소 영역(PPA)이 우세: 배경 풍경이 화면을 지배해 내용이 묻힘",
+        "첫 2초 후킹이 약함 (+0.14 → +0.78)"
+       ],
+       "directives": [
+        "Reduce visual noise: one background tone, max 2 accent colors, more whitespace, fewer borders/textures.",
+        "Simplify the environment: crop or blur the scene, put copy on a solid panel, let one subject own the frame.",
+        "Front-load the hook: the single strongest visual must be visible immediately at the top-left/center, not after a scroll or animation."
+       ],
+       "cited_areas": [
+        "▲ 좌 후측 안와전두 보상 (pOFC) [aesthetic]",
+        "▼ 좌 31a [aesthetic]",
+        "▲ 움직임·형태(MT/LO) 평균 [attention]",
+        "▲ 움직임·형태(MT/LO) 최대 [attention]"
+       ],
+       "prompt_block": "BRAIN CRITIQUE (TRIBE v2 predicted human cortex while looking at the last render; values are relative within this image):\n- most driven regions: 장소·배경(PPA/RSC) +1.53, 1차 시각(V1–V4) +0.94, 시각 주의(IPS/FEF) +0.67; least: 기본모드(딴생각) -0.97, 언어(브로카/STG) -1.27\n- first-2s hook vs later: attention +0.14 → +0.78, visual drive +0.31 → +1.06\n- areas the aesthetic head cites: ▲ 좌 후측 안와전두 보상 (pOFC) [aesthetic]; ▼ 좌 31a [aesthetic]; ▲ 움직임·형태(MT/LO) 평균 [attention]; ▲ 움직임·형태(MT/LO) 최대 [attention]\n- diagnosis: 1차 시각피질이 가장 세게 반응: 대비·질감 밀도가 높은데 미학 헤드는 낮음 → 어수선함 / 장소 영역(PPA)이 우세: 배경 풍경이 화면을 지배해 내용이 묻힘 / 첫 2초 후킹이 약함 (+0.14 → +0.78)\n- DO NEXT (highest priority first): (1) Reduce visual noise: one background tone, max 2 accent colors, more whitespace, fewer borders/textures. (2) Simplify the environment: crop or blur the scene, put copy on a solid panel, let one subject own the frame. (3) Front-load the hook: the single strongest visual must be visible immediately at the top-left/center, not after a scroll or animation."
+      }
+     },
+     "brain_ui_score": 0.259,
+     "heads": {
+      "aesthetic": {
+       "score": 0.014969568699598312,
+       "percentile": 0.0,
+       "confidence": 0.9700608626008034
+      },
+      "attention": {
+       "score": 0.5190965533256531,
+       "percentile": 51.78082191780822,
+       "confidence": 0.03819310665130615
+      },
+      "appeal": {
+       "score": 0.6226080060005188,
+       "percentile": 92.52747252747253,
+       "confidence": 0.2452160120010376
+      },
+      "popularity": {
+       "score": 0.8718345165252686,
+       "percentile": 100.0,
+       "confidence": 0.7436690330505371
+      }
+     },
+     "critique": {
+      "kind": "video",
+      "ranking": [
+       [
+        "scene_place",
+        1.5330576338070054
+       ],
+       [
+        "visual_early",
+        0.9356555054869973
+       ],
+       [
+        "attention_dorsal",
+        0.6730925741747856
+       ],
+       [
+        "value_vmpfc",
+        0.07926342509114105
+       ],
+       [
+        "visual_motion",
+        -0.020269567921847326
+       ],
+       [
+        "control_dlpfc",
+        -0.04109493261379569
+       ],
+       [
+        "face_body",
+        -0.9207624206065352
+       ],
+       [
+        "default_mode",
+        -0.9724174918522502
+       ],
+       [
+        "language",
+        -1.2665247255655012
+       ]
+      ],
+      "hook": {
+       "attention_early": 0.13724777384127176,
+       "attention_late": 0.7802615342414885,
+       "visual_early": 0.3099757986391962,
+       "visual_late": 1.0607914468565574
+      },
+      "diagnosis": [
+       "1차 시각피질이 가장 세게 반응: 대비·질감 밀도가 높은데 미학 헤드는 낮음 → 어수선함",
+       "장소 영역(PPA)이 우세: 배경 풍경이 화면을 지배해 내용이 묻힘",
+       "첫 2초 후킹이 약함 (+0.14 → +0.78)"
+      ],
+      "directives": [
+       "Reduce visual noise: one background tone, max 2 accent colors, more whitespace, fewer borders/textures.",
+       "Simplify the environment: crop or blur the scene, put copy on a solid panel, let one subject own the frame.",
+       "Front-load the hook: the single strongest visual must be visible immediately at the top-left/center, not after a scroll or animation."
+      ],
+      "cited_areas": [
+       "▲ 좌 후측 안와전두 보상 (pOFC) [aesthetic]",
+       "▼ 좌 31a [aesthetic]",
+       "▲ 움직임·형태(MT/LO) 평균 [attention]",
+       "▲ 움직임·형태(MT/LO) 최대 [attention]"
+      ],
+      "prompt_block": "BRAIN CRITIQUE (TRIBE v2 predicted human cortex while looking at the last render; values are relative within this image):\n- most driven regions: 장소·배경(PPA/RSC) +1.53, 1차 시각(V1–V4) +0.94, 시각 주의(IPS/FEF) +0.67; least: 기본모드(딴생각) -0.97, 언어(브로카/STG) -1.27\n- first-2s hook vs later: attention +0.14 → +0.78, visual drive +0.31 → +1.06\n- areas the aesthetic head cites: ▲ 좌 후측 안와전두 보상 (pOFC) [aesthetic]; ▼ 좌 31a [aesthetic]; ▲ 움직임·형태(MT/LO) 평균 [attention]; ▲ 움직임·형태(MT/LO) 최대 [attention]\n- diagnosis: 1차 시각피질이 가장 세게 반응: 대비·질감 밀도가 높은데 미학 헤드는 낮음 → 어수선함 / 장소 영역(PPA)이 우세: 배경 풍경이 화면을 지배해 내용이 묻힘 / 첫 2초 후킹이 약함 (+0.14 → +0.78)\n- DO NEXT (highest priority first): (1) Reduce visual noise: one background tone, max 2 accent colors, more whitespace, fewer borders/textures. (2) Simplify the environment: crop or blur the scene, put copy on a solid panel, let one subject own the frame. (3) Front-load the hook: the single strongest visual must be visible immediately at the top-left/center, not after a scroll or animation."
+     }
+    },
+    "brain_loop": {
+     "tag": "brain_loop_r1v1",
+     "png": "results/showcase/ad-smoke/serum/brain_loop_r1v1.png",
+     "mp4": "results/showcase/ad-smoke/serum/brain_loop_r1v1.mp4",
+     "brain": {
+      "item_id": "adfinal_ad-smoke_serum_brain_loop",
+      "heads": {
+       "aesthetic": {
+        "score": 0.044299013912677765,
+        "percentile": 0.3351206434316354,
+        "confidence": 0.9114019721746445
+       },
+       "attention": {
+        "score": 0.5856333374977112,
+        "percentile": 64.93150684931507,
+        "confidence": 0.17126667499542236
+       },
+       "appeal": {
+        "score": 0.27796003222465515,
+        "percentile": 2.6373626373626373,
+        "confidence": 0.4440799355506897
+       },
+       "popularity": {
+        "score": 0.6608721613883972,
+        "percentile": 92.74725274725274,
+        "confidence": 0.32174432277679443
+       }
+      },
+      "roi_ts": {
+       "visual_early": [
+        0.0061,
+        0.0003,
+        0.0067,
+        0.0186,
+        0.0405,
+        0.0658,
+        0.0673,
+        0.0674,
+        0.0458,
+        0.0136,
+        -0.0387,
+        -0.0742
+       ],
+       "visual_motion": [
+        0.0255,
+        0.003,
+        0.0068,
+        0.0223,
+        0.0385,
+        0.0774,
+        0.0884,
+        0.1021,
+        0.096,
+        0.051,
+        -0.0586,
+        -0.1102
+       ],
+       "face_body": [
+        -0.0448,
+        -0.0452,
+        -0.047,
+        -0.0223,
+        -0.0239,
+        0.0017,
+        0.0327,
+        0.0482,
+        0.0377,
+        0.0491,
+        0.0825,
+        0.0607
+       ],
+       "scene_place": [
+        0.0529,
+        0.0462,
+        0.0434,
+        0.0547,
+        0.0643,
+        0.0898,
+        0.097,
+        0.0963,
+        0.0904,
+        0.0605,
+        0.0143,
+        0.0022
+       ],
+       "attention_dorsal": [
+        0.0221,
+        0.013,
+        0.0202,
+        0.0234,
+        0.0381,
+        0.0557,
+        0.0608,
+        0.0697,
+        0.0749,
+        0.0544,
+        0.0526,
+        0.0487
+       ],
+       "value_vmpfc": [
+        -0.0118,
+        -0.0086,
+        -0.0073,
+        -0.0082,
+        -0.0034,
+        0.0028,
+        0.0046,
+        0.0032,
+        0.0052,
+        -0.0011,
+        -0.0098,
+        -0.0121
+       ],
+       "language": [
+        -0.1166,
+        -0.1095,
+        -0.101,
+        -0.0843,
+        -0.0862,
+        -0.0819,
+        -0.0566,
+        -0.0462,
+        -0.0556,
+        -0.0164,
+        0.0589,
+        0.0691
+       ],
+       "default_mode": [
+        -0.0526,
+        -0.0641,
+        -0.0702,
+        -0.0788,
+        -0.0705,
+        -0.047,
+        -0.0256,
+        -0.021,
+        -0.0084,
+        -0.017,
+        -0.009,
+        -0.0389
+       ],
+       "control_dlpfc": [
+        -0.0222,
+        -0.027,
+        -0.0232,
+        -0.0302,
+        -0.0168,
+        -0.0035,
+        0.0036,
+        0.0054,
+        0.0102,
+        -0.001,
+        0.0095,
+        0.0015
+       ]
+      },
+      "hook_delta": -0.025,
+      "attention_peak_s": 9,
+      "visual_peak_s": 8,
+      "critique": {
+       "kind": "video",
+       "ranking": [
+        [
+         "scene_place",
+         1.0307972775119068
+        ],
+        [
+         "attention_dorsal",
+         0.742521636744625
+        ],
+        [
+         "visual_motion",
+         0.4332393629617904
+        ],
+        [
+         "visual_early",
+         0.23448429673771165
+        ],
+        [
+         "face_body",
+         0.08937693944566068
+        ],
+        [
+         "value_vmpfc",
+         -0.19485896420324533
+        ],
+        [
+         "control_dlpfc",
+         -0.27112920099817633
+        ],
+        [
+         "default_mode",
+         -0.932676551503362
+        ],
+        [
+         "language",
+         -1.1317547966969108
+        ]
+       ],
+       "hook": {
+        "attention_early": 0.22058760105049968,
+        "attention_late": 0.84690844388345,
+        "visual_early": -0.05766949166321051,
+        "visual_late": 0.29291505441789606
+       },
+       "diagnosis": [
+        "장소 영역(PPA)이 우세: 배경 풍경이 화면을 지배해 내용이 묻힘",
+        "주의 네트워크(IPS/FEF)가 바쁨: 시선을 끄는 후보가 여러 개 → 경쟁",
+        "보상·가치(OFC/vmPFC) 반응이 낮음: '갖고 싶다'는 신호가 없음",
+        "첫 2초 후킹이 약함 (+0.22 → +0.85)"
+       ],
+       "directives": [
+        "Simplify the environment: crop or blur the scene, put copy on a solid panel, let one subject own the frame.",
+        "Make a single focal point: one hero element 2–3× larger than anything else; demote secondary cards and badges.",
+        "Make the benefit concrete and desirable: show the outcome (before/after, real numbers, price or scarcity), warm highlight color on the offer, social proof near the CTA.",
+        "Front-load the hook: the single strongest visual must be visible immediately at the top-left/center, not after a scroll or animation."
+       ],
+       "cited_areas": [
+        "▲ 우 1차 청각 (A1) [aesthetic]",
+        "▲ 좌 후측 안와전두 보상 (pOFC) [aesthetic]",
+        "▲ 움직임·형태(MT/LO) 평균 [attention]",
+        "▲ 움직임·형태(MT/LO) 최대 [attention]"
+       ],
+       "prompt_block": "BRAIN CRITIQUE (TRIBE v2 predicted human cortex while looking at the last render; values are relative within this image):\n- most driven regions: 장소·배경(PPA/RSC) +1.03, 시각 주의(IPS/FEF) +0.74, 움직임·형태(MT/LO) +0.43; least: 기본모드(딴생각) -0.93, 언어(브로카/STG) -1.13\n- first-2s hook vs later: attention +0.22 → +0.85, visual drive -0.06 → +0.29\n- areas the aesthetic head cites: ▲ 우 1차 청각 (A1) [aesthetic]; ▲ 좌 후측 안와전두 보상 (pOFC) [aesthetic]; ▲ 움직임·형태(MT/LO) 평균 [attention]; ▲ 움직임·형태(MT/LO) 최대 [attention]\n- diagnosis: 장소 영역(PPA)이 우세: 배경 풍경이 화면을 지배해 내용이 묻힘 / 주의 네트워크(IPS/FEF)가 바쁨: 시선을 끄는 후보가 여러 개 → 경쟁 / 보상·가치(OFC/vmPFC) 반응이 낮음: '갖고 싶다'는 신호가 없음 / 첫 2초 후킹이 약함 (+0.22 → +0.85)\n- DO NEXT (highest priority first): (1) Simplify the environment: crop or blur the scene, put copy on a solid panel, let one subject own the frame. (2) Make a single focal point: one hero element 2–3× larger than anything else; demote secondary cards and badges. (3) Make the benefit concrete and desirable: show the outcome (before/after, real numbers, price or scarcity), warm highlight color on the offer, social proof near the CTA. (4) Front-load the hook: the single strongest visual must be visible immediately at the top-left/center, not after a scroll or animation."
+      }
+     },
+     "brain_ui_score": 0.326,
+     "heads": {
+      "aesthetic": {
+       "score": 0.044299013912677765,
+       "percentile": 0.3351206434316354,
+       "confidence": 0.9114019721746445
+      },
+      "attention": {
+       "score": 0.5856333374977112,
+       "percentile": 64.93150684931507,
+       "confidence": 0.17126667499542236
+      },
+      "appeal": {
+       "score": 0.27796003222465515,
+       "percentile": 2.6373626373626373,
+       "confidence": 0.4440799355506897
+      },
+      "popularity": {
+       "score": 0.6608721613883972,
+       "percentile": 92.74725274725274,
+       "confidence": 0.32174432277679443
+      }
+     },
+     "critique": {
+      "kind": "video",
+      "ranking": [
+       [
+        "scene_place",
+        1.0307972775119068
+       ],
+       [
+        "attention_dorsal",
+        0.742521636744625
+       ],
+       [
+        "visual_motion",
+        0.4332393629617904
+       ],
+       [
+        "visual_early",
+        0.23448429673771165
+       ],
+       [
+        "face_body",
+        0.08937693944566068
+       ],
+       [
+        "value_vmpfc",
+        -0.19485896420324533
+       ],
+       [
+        "control_dlpfc",
+        -0.27112920099817633
+       ],
+       [
+        "default_mode",
+        -0.932676551503362
+       ],
+       [
+        "language",
+        -1.1317547966969108
+       ]
+      ],
+      "hook": {
+       "attention_early": 0.22058760105049968,
+       "attention_late": 0.84690844388345,
+       "visual_early": -0.05766949166321051,
+       "visual_late": 0.29291505441789606
+      },
+      "diagnosis": [
+       "장소 영역(PPA)이 우세: 배경 풍경이 화면을 지배해 내용이 묻힘",
+       "주의 네트워크(IPS/FEF)가 바쁨: 시선을 끄는 후보가 여러 개 → 경쟁",
+       "보상·가치(OFC/vmPFC) 반응이 낮음: '갖고 싶다'는 신호가 없음",
+       "첫 2초 후킹이 약함 (+0.22 → +0.85)"
+      ],
+      "directives": [
+       "Simplify the environment: crop or blur the scene, put copy on a solid panel, let one subject own the frame.",
+       "Make a single focal point: one hero element 2–3× larger than anything else; demote secondary cards and badges.",
+       "Make the benefit concrete and desirable: show the outcome (before/after, real numbers, price or scarcity), warm highlight color on the offer, social proof near the CTA.",
+       "Front-load the hook: the single strongest visual must be visible immediately at the top-left/center, not after a scroll or animation."
+      ],
+      "cited_areas": [
+       "▲ 우 1차 청각 (A1) [aesthetic]",
+       "▲ 좌 후측 안와전두 보상 (pOFC) [aesthetic]",
+       "▲ 움직임·형태(MT/LO) 평균 [attention]",
+       "▲ 움직임·형태(MT/LO) 최대 [attention]"
+      ],
+      "prompt_block": "BRAIN CRITIQUE (TRIBE v2 predicted human cortex while looking at the last render; values are relative within this image):\n- most driven regions: 장소·배경(PPA/RSC) +1.03, 시각 주의(IPS/FEF) +0.74, 움직임·형태(MT/LO) +0.43; least: 기본모드(딴생각) -0.93, 언어(브로카/STG) -1.13\n- first-2s hook vs later: attention +0.22 → +0.85, visual drive -0.06 → +0.29\n- areas the aesthetic head cites: ▲ 우 1차 청각 (A1) [aesthetic]; ▲ 좌 후측 안와전두 보상 (pOFC) [aesthetic]; ▲ 움직임·형태(MT/LO) 평균 [attention]; ▲ 움직임·형태(MT/LO) 최대 [attention]\n- diagnosis: 장소 영역(PPA)이 우세: 배경 풍경이 화면을 지배해 내용이 묻힘 / 주의 네트워크(IPS/FEF)가 바쁨: 시선을 끄는 후보가 여러 개 → 경쟁 / 보상·가치(OFC/vmPFC) 반응이 낮음: '갖고 싶다'는 신호가 없음 / 첫 2초 후킹이 약함 (+0.22 → +0.85)\n- DO NEXT (highest priority first): (1) Simplify the environment: crop or blur the scene, put copy on a solid panel, let one subject own the frame. (2) Make a single focal point: one hero element 2–3× larger than anything else; demote secondary cards and badges. (3) Make the benefit concrete and desirable: show the outcome (before/after, real numbers, price or scarcity), warm highlight color on the offer, social proof near the CTA. (4) Front-load the hook: the single strongest visual must be visible immediately at the top-left/center, not after a scroll or animation."
+     }
+    }
+   },
+   "pairwise": {
+    "brain_loop_vs_oneshot": {
+     "p_first": 0.9,
+     "order_ab": 0.9,
+     "order_ba": 0.9,
+     "reason": "A keeps the serum as the single hero with a clear one-sentence morning hook and explicit 30% launch price plus Buy Now while B hides the product in the hook and closing frames. | swapped: B shows the product as hero within 3 seconds with a single relatable headline and clear focal point, while A opens with an abstract sphere and no product, hurting clarity and brief fit."
+    },
+    "brain_loop_vs_muse_loop": {
+     "p_first": 0.9,
+     "order_ab": 0.9,
+     "order_ba": 0.9,
+     "reason": "A wins with a clean hero-product visual, one clear morning-glow headline, and legible 30% launch price plus buy CTA that matches late-20s female taste versus B's loud sunburst that hides the product and splits focus | swapped: B keeps the serum as the single premium hero with one clear headline and soft glow aesthetic for late-20s women, while A hides the product and splits attention with loud clutter."
+    }
+   }
+  }
+ }
+}

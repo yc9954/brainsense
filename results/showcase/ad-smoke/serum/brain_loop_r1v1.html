@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Noto+Sans+KR:wght@400;500;700;900&family=Noto+Serif+KR:wght@800;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%}
+body{background:#0E0C09;display:flex;align-items:center;justify-content:center;min-height:100vh;font-family:'Noto Sans KR',sans-serif}
+.stage{width:1280px;height:720px;flex-shrink:0;position:relative;overflow:hidden;background:#FFF6E8;border-radius:18px;isolation:isolate;color:#1E1105}
+.bg-grain{position:absolute;inset:0;background:
+radial-gradient(900px 520px at 78% 48%, #FFD88A 0%, #FFC46B 18%, rgba(255,196,107,0) 62%),
+radial-gradient(700px 500px at 10% 10%, #FFFFFF 0%, rgba(255,255,255,0) 60%),
+linear-gradient(180deg,#FFFCF3 0%,#FFF3D9 55%,#FFE5B8 100%);z-index:0}
+.sun{position:absolute;right:78px;top:62px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle at 50% 38%, #FF8A2A 0%, #FF5A00 38%, #FF3D00 62%, #E83200 100%);box-shadow:0 30px 120px rgba(255,90,0,.45),0 0 0 28px rgba(255,122,0,.12),0 0 0 64px rgba(255,122,0,.07);z-index:1;animation-name:sunPulse;animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:ease-in-out}
+@keyframes sunPulse{0%{transform:scale(.88) translateY(18px)}50%{transform:scale(1.03) translateY(-10px)}100%{transform:scale(.88) translateY(18px)}}
+.ring{position:absolute;right:48px;top:32px;width:620px;height:620px;border-radius:50%;border:2px dashed rgba(180,70,0,.35);z-index:1;animation-name:spinSlow;animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:linear}
+@keyframes spinSlow{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}
+.watermark{position:absolute;left:-10px;bottom:-48px;font-family:'Italiana',serif;font-size:260px;letter-spacing:.02em;line-height:1;color:#1E1105;opacity:.06;z-index:1;white-space:nowrap;animation-name:waterDrift;animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:ease-in-out}
+@keyframes waterDrift{0%{transform:translateX(0)}50%{transform:translateX(-40px)}100%{transform:translateX(0)}}
+.topbar{position:absolute;left:64px;right:64px;top:28px;display:flex;align-items:center;justify-content:space-between;z-index:5}
+.brand{font-weight:900;letter-spacing:.22em;font-size:16px}
+.brand small{font-weight:500;letter-spacing:.08em;background:#1E1105;color:#FFF6E8;padding:6px 12px;border-radius:100px;margin-left:10px;font-size:13px}
+.live{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:700;letter-spacing:.12em}
+.live i{width:10px;height:10px;border-radius:50%;background:#FF3D00;display:block;animation-name:blink;animation-duration:12s;animation-iteration-count:infinite}
+@keyframes blink{0%,100%{opacity:1;transform:scale(1)}10%,20%,30%,40%{opacity:.25;transform:scale(.7)}50%,100%{opacity:1;transform:scale(1)}}
+.left{position:absolute;left:64px;top:120px;width:590px;z-index:4}
+.pill{display:inline-flex;align-items:center;gap:8px;background:#1E1105;color:#fff;font-size:14px;font-weight:700;letter-spacing:.08em;padding:9px 16px;border-radius:100px}
+.pill b{color:#FFB800}
+.scene{position:absolute;left:0;top:56px;width:590px}
+.hook{animation-name:hookPhase;animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:ease}
+.benefit{animation-name:benefitPhase;animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:ease}
+.offer{animation-name:offerPhase;animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:ease}
+@keyframes hookPhase{0%{opacity:0;transform:translateY(60px)}2.5%{opacity:1;transform:translateY(0)}26%{opacity:1;transform:translateY(0)}31%{opacity:0;transform:translateY(-46px)}31.6%{opacity:0;transform:translateY(60px)}100%{opacity:0;transform:translateY(60px)}}
+@keyframes benefitPhase{0%,32%{opacity:0;transform:translateY(60px)}36%{opacity:1;transform:translateY(0)}58%{opacity:1;transform:translateY(0)}63%{opacity:0;transform:translateY(-46px)}63.6%,100%{opacity:0;transform:translateY(60px)}}
+@keyframes offerPhase{0%,64%{opacity:0;transform:translateY(60px)}68.5%{opacity:1;transform:translateY(0)}93%{opacity:1;transform:translateY(0)}97.5%{opacity:0;transform:translateY(-30px)}100%{opacity:0;transform:translateY(60px)}}
+h1{font-family:'Noto Serif KR',serif;font-weight:900;font-size:70px;line-height:1.06;letter-spacing:-.03em;margin:18px 0 14px}
+h1 em{font-style:normal;color:#FF4D00;position:relative;display:inline-block}
+h1 em:after{content:"";position:absolute;left:0;right:0;bottom:8px;height:16px;background:#FFB800;z-index:-1;opacity:.7;border-radius:4px}
+.sub{font-size:20px;line-height:1.6;font-weight:500;color:#5A3E26}
+.sub strong{color:#1E1105}
+.benefit h2{font-family:'Noto Serif KR',serif;font-size:52px;line-height:1.15;letter-spacing:-.02em}
+.benefit h2 span{color:#FF4D00}
+.b-list{list-style:none;margin-top:20px;display:flex;flex-direction:column;gap:12px}
+.b-list li{display:flex;align-items:center;gap:14px;background:rgba(255,255,255,.82);border:1.5px solid #1E1105;border-radius:16px;padding:12px 16px;font-weight:800;font-size:18px;box-shadow:5px 5px 0 #1E1105}
+.b-list li i{width:42px;height:42px;flex-shrink:0;border-radius:50%;background:#FF4D00;color:#fff;display:flex;align-items:center;justify-content:center;font-style:normal;font-size:20px}
+.b-list li small{display:block;font-weight:500;font-size:13.5px;color:#7A5C3E}
+.offer-kicker{font-weight:900;letter-spacing:.18em;font-size:15px;color:#FF3D00}
+.offer h2{font-family:'Noto Serif KR',serif;font-size:62px;line-height:1.02;letter-spacing:-.03em;margin:8px 0}
+.price{display:flex;align-items:baseline;gap:14px;margin:10px 0 6px}
+.price s{font-size:22px;color:#9A7F60;font-weight:500}
+.price b{font-size:48px;font-weight:900;letter-spacing:-.03em}
+.price b span{font-size:26px}
+.free{font-size:15px;font-weight:700;background:#FFB800;border-radius:100px;padding:6px 14px;display:inline-block;border:1.5px solid #1E1105}
+.cta{margin-top:18px;display:flex;align-items:center;gap:16px}
+.btn{background:#1E1105;color:#fff;font-size:24px;font-weight:900;padding:18px 46px 18px 42px;border-radius:100px;border:0;letter-spacing:-.01em;display:flex;align-items:center;gap:12px;box-shadow:0 14px 30px rgba(30,17,5,.35);animation-name:ctaPop;animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:ease}
+@keyframes ctaPop{0%,64%{transform:scale(.9)}69%,88%{transform:scale(1)}92%{transform:scale(1.06)}94%,100%{transform:scale(1)}}
+.btn:after{content:"→";background:#FF4D00;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px}
+.timer{font-size:14px;font-weight:700;line-height:1.5;color:#6B4A2B}
+.progress-wrap{position:absolute;left:64px;bottom:36px;width:590px;z-index:5}
+.dots{display:flex;gap:8px;margin-bottom:10px;align-items:center;font-size:12px;font-weight:800;letter-spacing:.14em}
+.dot{height:8px;border-radius:100px;background:rgba(30,17,5,.18)}
+.d1{width:70px;animation-name:dotA;animation-duration:12s;animation-iteration-count:infinite}
+.d2{width:70px;animation-name:dotB;animation-duration:12s;animation-iteration-count:infinite}
+.d3{width:70px;animation-name:dotC;animation-duration:12s;animation-iteration-count:infinite}
+@keyframes dotA{0%,27%{background:#FF4D00}32%,100%{background:rgba(30,17,5,.18)}}
+@keyframes dotB{0%,32%{background:rgba(30,17,5,.18)}36%,58%{background:#FF4D00}63%,100%{background:rgba(30,17,5,.18)}}
+@keyframes dotC{0%,64%{background:rgba(30,17,5,.18)}69%,94%{background:#FF4D00}98%,100%{background:rgba(30,17,5,.18)}}
+.bar{height:6px;background:rgba(30,17,5,.15);border-radius:100px;overflow:hidden}
+.bar i{display:block;height:100%;background:#1E1105;transform-origin:left;animation-name:fill;animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:linear}
+@keyframes fill{0%{transform:scaleX(0)}100%{transform:scaleX(1)}}
+/* PRODUCT */
+.product-zone{position:absolute;right:56px;top:0;bottom:0;width:560px;z-index:3;display:flex;align-items:center;justify-content:center}
+.float{animation-name:floatB;animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:ease-in-out;position:relative}
+@keyframes floatB{0%{transform:translateY(14px) rotate(-1.2deg)}50%{transform:translateY(-16px) rotate(1.2deg)}100%{transform:translateY(14px) rotate(-1.2deg)}}
+.bottle{width:230px;position:relative;filter:drop-shadow(0 30px 40px rgba(120,40,0,.35))}
+.cap{width:92px;height:92px;margin:0 auto;background:linear-gradient(180deg,#3A2A1D,#120B05);border-radius:18px 18px 10px 10px;position:relative;z-index:2}
+.cap:after{content:"";position:absolute;left:12px;right:12px;top:18px;height:10px;background:rgba(255,255,255,.22);border-radius:100px}
+.neck{width:62px;height:28px;margin:-4px auto 0;background:linear-gradient(180deg,#D9D9D9,#8A8A8A);z-index:1;position:relative}
+.bbody{margin-top:-2px;height:360px;background:linear-gradient(180deg,rgba(255,255,255,.95) 0%,#FFF0D0 12%,#FFC76A 38%,#FF8A1F 68%,#E84E00 100%);border-radius:32px;border:3px solid #1E1105;position:relative;overflow:hidden}
+.bbody:before{content:"";position:absolute;left:18px;top:18px;bottom:18px;width:22px;background:linear-gradient(180deg,rgba(255,255,255,.95),rgba(255,255,255,.1));border-radius:100px}
+.shine{position:absolute;top:-10%;bottom:-10%;width:70px;background:linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,.9),rgba(255,255,255,0));transform:translateX(-200%) skewX(-14deg);animation-name:sweep;animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:ease}
+@keyframes sweep{0%,38%{transform:translateX(-220%) skewX(-14deg)}54%,100%{transform:translateX(420%) skewX(-14deg)}}
+.label{background:#FFFDF6;border:2.5px solid #1E1105;border-radius:18px;margin:78px 18px 0;padding:16px 12px;text-align:center;position:relative}
+.label strong{font-size:28px;letter-spacing:-.02em;line-height:1}
+.label strong span{color:#FF4D00}
+.label p{font-size:12px;letter-spacing:.22em;font-weight:800;margin:6px 0}
+.label .pct{font-size:44px;font-weight:900;line-height:1}
+.label small{font-size:12px;font-weight:500;color:#7A5C3E}
+.shadow{width:280px;height:34px;background:radial-gradient(ellipse at center,rgba(60,20,0,.45),rgba(60,20,0,0) 70%);margin:18px auto 0;animation-name:shP;animation-duration:12s;animation-iteration-count:infinite}
+@keyframes shP{0%{transform:scaleX(1);opacity:.9}50%{transform:scaleX(.82);opacity:.6}100%{transform:scaleX(1);opacity:.9}}
+.drop{position:absolute;left:50%;top:-46px;width:42px;height:56px;background:#FF4D00;border-radius:50% 50% 50% 50% / 60% 60% 40% 40%;border:3px solid #1E1105;transform:translateX(-50%) rotate(180deg);border-radius:50% 50% 22px 22px;z-index:3;animation-name:dropFall;animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:ease-in}
+.drop:before{content:"";position:absolute;left:8px;top:12px;width:10px;height:14px;background:#fff;border-radius:100px;opacity:.9}
+@keyframes dropFall{0%{opacity:0;transform:translate(-50%,-30px) scale(.6)}4%{opacity:1;transform:translate(-50%,0) scale(1)}18%{opacity:1;transform:translate(-50%,34px) scale(1)}22%,100%{opacity:0;transform:translate(-50%,90px) scale(.8)}}
+.badge30{position:absolute;right:18px;top:86px;width:168px;height:168px;background:#1E1105;color:#fff;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;transform:rotate(12deg);border:4px solid #FFB800;box-shadow:0 12px 30px rgba(0,0,0,.3);z-index:6;animation-name:badgePh;animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:ease}
+.badge30 b{font-size:50px;line-height:1;color:#FFB800}
+.badge30 span{font-size:14px;font-weight:800;letter-spacing:.1em}
+@keyframes badgePh{0%,64%{opacity:0;transform:rotate(12deg) scale(.4)}70%{opacity:1;transform:rotate(12deg) scale(1.12)}73%{transform:rotate(12deg) scale(1)}92%{opacity:1;transform:rotate(12deg) scale(1)}97%,100%{opacity:0;transform:rotate(12deg) scale(.6)}}
+.citrus{position:absolute;border-radius:50%;border:3px solid #1E1105;z-index:2;animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:linear}
+.c1{width:120px;height:120px;left:8px;bottom:140px;background:conic-gradient(#FFB800 0 36deg,#FF7A00 36deg 72deg,#FFB800 72deg 108deg,#FF7A00 108deg 144deg,#FFB800 144deg 180deg,#FF7A00 180deg 216deg,#FFB800 216deg 252deg,#FF7A00 252deg 288deg,#FFB800 288deg 324deg,#FF7A00 324deg 360deg);box-shadow:inset 0 0 0 12px #FFF6E8,inset 0 0 0 15px #1E1105;animation-name:citSpin;animation-duration:12s;animation-iteration-count:infinite}
+.c2{width:78px;height:78px;right:34px;bottom:72px;background:conic-gradient(#FFF 0 45deg,#FFD88A 45deg 90deg,#FFF 90deg 135deg,#FFD88A 135deg 180deg,#FFF 180deg 225deg,#FFD88A 225deg 270deg,#FFF 270deg 315deg,#FFD88A 315deg 360deg);box-shadow:inset 0 0 0 10px #FF6A00,inset 0 0 0 13px #1E1105;animation-name:citSpin;animation-duration:12s;animation-iteration-count:infinite}
+@keyframes citSpin{0%{transform:rotate(0) translateY(0)}50%{transform:rotate(180deg) translateY(-18px)}100%{transform:rotate(360deg) translateY(0)}}
+.bub{position:absolute;border-radius:50%;background:rgba(255,255,255,.9);border:2px solid rgba(30,17,5,.25);z-index:2;animation-name:rise;animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:linear}
+@keyframes rise{0%{transform:translateY(120px);opacity:0}12%{opacity:.95}78%{opacity:.7}88%,100%{transform:translateY(-520px);opacity:0}}
+.sp{position:absolute;font-weight:900;color:#FF4D00;z-index:4;animation-name:tw;animation-duration:12s;animation-iteration-count:infinite}
+@keyframes tw{0%,100%{opacity:0;transform:scale(.5) rotate(0)}8%{opacity:1;transform:scale(1.2) rotate(15deg)}16%,52%{opacity:0;transform:scale(.6)}60%{opacity:1;transform:scale(1.1)}68%,100%{opacity:0;transform:scale(.5)}}
+</style>
+</head>
+<body>
+<div class="stage">
+<div class="bg-grain"></div>
+<div class="sun"></div><div class="ring"></div>
+<div class="watermark">MORNING GLOW</div>
+<span class="bub" style="left:620px;bottom:60px;width:16px;height:16px;animation-delay:-1s"></span>
+<span class="bub" style="left:680px;bottom:40px;width:26px;height:26px;animation-delay:-4s"></span>
+<span class="bub" style="left:760px;bottom:80px;width:12px;height:12px;animation-delay:-7s"></span>
+<span class="bub" style="left:880px;bottom:50px;width:20px;height:20px;animation-delay:-9.5s"></span>
+<span class="sp" style="left:540px;top:180px;font-size:28px;animation-delay:0s">✦</span>
+<span class="sp" style="left:700px;top:120px;font-size:22px;animation-delay:-6s">✦</span>
+<span class="sp" style="left:1120px;top:220px;font-size:30px;animation-delay:-3s">✦</span>
+<div class="topbar"><div class="brand">VITA GLOW LAB <small>신제품 런칭</small></div><div class="live"><i></i> 12초 LIVE GLOW FILM</div></div>
+<div class="left">
+<div class="pill">🍊 <b>NEW</b> &nbsp;비타씨 브라이트닝 세럼 30ml</div>
+<div class="scene hook"><h1>출근 전 3초,<br>피부가 <em>빛나기 시작해요</em></h1><p class="sub">칙칙한 아침 피부 고민 끝. <strong>한 방울의 햇살</strong>을 바르는 느낌 그대로.</p></div>
+<div class="scene benefit"><h2><span>15% 순수 비타민C</span>가<br>칙칙함을 깨워요</h2><ul class="b-list"><li><i>✓</i><div>7일 광채·톤업 임상 완료<small>외부 임상기관 · 32명 · 2주 사용</small></div></li><li><i>◐</i><div>잡티 · 다크스팟 집중 케어<small>나이아신아마이드 + 비타민E 시너지</small></div></li><li><i>♡</i><div>민감 피부 저자극 테스트 완료<small>산뜻한 워터 텍스처 · 끈적임 제로</small></div></li></ul></div>
+<div class="scene offer"><div class="offer-kicker">LAUNCH SALE · 11.30까지</div><h2>런칭 기념<br>30% 할인</h2><div class="price"><s>32,000원</s><b>22,400<span>원</span></b></div><span class="free">오늘만 무료배송 + 샘플 3종 증정</span><div class="cta"><button class="btn">지금 구매</button><div class="timer">⏰ 남은 수량 87개<br>품절 전에 잡으세요!</div></div></div>
+</div>
+<div class="product-zone"><div class="float"><div class="drop"></div><div class="bottle"><div class="cap"></div><div class="neck"></div><div class="bbody"><div class="shine"></div><div class="label"><p>VITA GLOW LAB</p><strong>VITA <span>C</span></strong><div class="pct">15%</div><p>BRIGHTENING SERUM</p><small>30ml · 저자극 광채 세럼</small></div></div></div><div class="shadow"></div></div><div class="citrus c1"></div><div class="citrus c2"></div><div class="badge30"><span>LAUNCH</span><b>30%</b><span>SALE</span></div></div>
+<div class="progress-wrap"><div class="dots"><span class="dot d1"></span><span class="dot d2"></span><span class="dot d3"></span>&nbsp; HOOK · GLOW · SALE</div><div class="bar"><i></i></div></div>
+</div>
+</body>
+</html>

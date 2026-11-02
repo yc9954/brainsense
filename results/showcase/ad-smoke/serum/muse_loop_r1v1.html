@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Noto+Sans+KR:wght@400;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%;background:#0e0a06;display:flex;align-items:center;justify-content:center;font-family:"Noto Sans KR",sans-serif}
+.stage{width:1280px;height:720px;position:relative;overflow:hidden;background:#FFF8EC;flex-shrink:0;box-shadow:0 30px 120px rgba(0,0,0,.6)}
+/* ---------- BACKGROUNDS ---------- */
+.bg-cream{position:absolute;inset:0;background:#FFF8EC}
+.bg-orange{position:absolute;inset:0;background:radial-gradient(900px 600px at 70% 40%,#FF8A2A 0%,#FF5E00 52%,#D63E00 100%);animation:orangeBg 12s infinite}
+@keyframes orangeBg{0%,29%{opacity:1}33.3%,91.6%{opacity:0}95.8%,100%{opacity:1}}
+.bg-deep{position:absolute;inset:0;background:radial-gradient(1000px 600px at 50% 110%,#FF5E00 0%,#3A1A08 38%,#1A0D05 70%);animation:deepBg 12s infinite}
+@keyframes deepBg{0%,62%{opacity:0}66.6%,95.8%{opacity:1}100%{opacity:0}}
+/* rays */
+.rays{position:absolute;left:50%;top:52%;width:1400px;height:1400px;transform:translate(-50%,-50%);opacity:.22;animation:raysVis 12s infinite}
+@keyframes raysVis{0%,29%{opacity:.28}33.3%,91.6%{opacity:0}95.8%,100%{opacity:.28}}
+.rays-inner{width:100%;height:100%;background:repeating-conic-gradient(from 0deg,rgba(255,255,255,.9) 0 8deg,transparent 8deg 16deg);border-radius:50%;animation:raysSpin 12s infinite linear}
+@keyframes raysSpin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+/* grain dots */
+.dots{position:absolute;inset:0;opacity:.12;background-image:radial-gradient(#221003 1.6px,transparent 1.6px);background-size:26px 26px}
+/* ---------- TOP BAR + PROGRESS ---------- */
+.topbar{position:absolute;top:0;left:0;right:0;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 36px;z-index:20}
+.pill{display:flex;align-items:center;gap:10px;background:#221003;color:#fff;border-radius:999px;padding:10px 18px;font-size:15px;font-weight:800;letter-spacing:.06em}
+.pill b{background:#FFC42E;color:#221003;border-radius:999px;padding:3px 10px;font-family:"Archivo Black";font-size:13px}
+.timeline{display:flex;gap:10px;align-items:center;color:#221003;font-size:13px;font-weight:800;letter-spacing:.12em;background:rgba(255,255,255,.85);border-radius:999px;padding:10px 16px}
+.timeline i{width:8px;height:8px;border-radius:50%;background:#FF5E00;display:block;animation:dotBlink 12s infinite}
+@keyframes dotBlink{0%,29%{opacity:1;transform:scale(1)}33.3%,62%{opacity:.25;transform:scale(.8)}66.6%,100%{opacity:.25;transform:scale(.8)}}
+.progress{position:absolute;left:0;right:0;bottom:0;height:8px;background:rgba(0,0,0,.12);z-index:20}
+.progress span{display:block;height:100%;background:#FF5E00;transform-origin:left;animation:prog 12s infinite linear}
+@keyframes prog{0%{transform:scaleX(0)}100%{transform:scaleX(1)}}
+/* ---------- SCENES ---------- */
+.scene{position:absolute;inset:0;z-index:10}
+.s1{animation:s1Vis 12s infinite}
+@keyframes s1Vis{0%,29%{opacity:1}33.3%,91.6%{opacity:0}95.8%,100%{opacity:1}}
+.s2{animation:s2Vis 12s infinite}
+@keyframes s2Vis{0%,29%{opacity:0}33.3%,62%{opacity:1}66.6%,100%{opacity:0}}
+.s3{animation:s3Vis 12s infinite}
+@keyframes s3Vis{0%,62%{opacity:0}66.6%,95.8%{opacity:1}100%{opacity:0}}
+/* ---------- SCENE 1 HOOK ---------- */
+.s1-eyebrow{position:absolute;left:90px;top:112px;display:flex;gap:12px;align-items:center;animation:hookEyebrow 12s infinite}
+@keyframes hookEyebrow{0%{opacity:0;transform:translateY(30px)}2.5%{opacity:1;transform:translateY(0)}26%{opacity:1;transform:translateY(0)}31%{opacity:0;transform:translateY(-30px)}100%{opacity:0;transform:translateY(30px)}}
+.s1-eyebrow em{font-style:normal;background:#fff;color:#D63E00;font-weight:900;font-size:18px;border-radius:999px;padding:8px 16px}
+.s1-eyebrow span{color:#fff;font-weight:800;font-size:18px;letter-spacing:.18em}
+.s1-title{position:absolute;left:86px;top:175px;width:700px;color:#fff;font-weight:900;font-size:86px;line-height:.98;letter-spacing:-.04em;text-shadow:0 10px 30px rgba(120,20,0,.35);animation:hookTitle 12s infinite}
+@keyframes hookTitle{0%{opacity:0;transform:translateY(90px) scale(.92)}3.5%{opacity:1;transform:translateY(0) scale(1)}25%{opacity:1;transform:translateY(0) scale(1)}31%{opacity:0;transform:translateY(-70px) scale(1)}100%{opacity:0;transform:translateY(90px) scale(.92)}}
+.s1-title small{display:block;font-size:28px;font-weight:700;letter-spacing:-.02em;margin-top:18px;opacity:.95}
+.s1-title strong{background:#221003;border-radius:18px;padding:0 18px;display:inline-block;transform:rotate(-2deg)}
+.drop-big{position:absolute;right:190px;top:105px;width:360px;height:480px;animation:dropBig 12s infinite}
+@keyframes dropBig{0%{opacity:0;transform:translateY(120px) scale(.7)}4%{opacity:1;transform:translateY(0) scale(1)}10%{opacity:1;transform:translateY(-14px) scale(1.02)}14%{opacity:1;transform:translateY(0) scale(1)}25%{opacity:1;transform:translateY(-10px) scale(1)}31%{opacity:0;transform:translateY(-90px) scale(1.05)}100%{opacity:0;transform:translateY(120px) scale(.7)}}
+.drop-shape{width:300px;height:300px;margin:60px auto 0;background:linear-gradient(180deg,#FFF8D6 0%,#FFD66B 28%,#FF8A00 70%);border-radius:50% 50% 50% 50% / 58% 58% 42% 42%;position:relative;box-shadow:0 30px 80px rgba(90,10,0,.45),inset -20px -30px 60px rgba(180,40,0,.45),inset 20px 20px 40px rgba(255,255,255,.7)}
+.drop-shape:after{content:"";position:absolute;left:18px;top:0;width:46px;height:120px;background:#fff;border-radius:999px;opacity:.85;transform:rotate(-18deg)}
+.drop-tip{position:absolute;left:50%;top:-55px;width:110px;height:110px;background:linear-gradient(180deg,#FFEAA0,#FF8A00);transform:translateX(-50%) rotate(45deg);border-radius:18px 18px 90px 18px}
+.drop-label{position:absolute;left:50%;top:52%;transform:translate(-50%,-50%);background:#fff;border-radius:999px;padding:12px 20px;font-weight:900;font-size:22px;color:#221003;white-space:nowrap;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+.splash{position:absolute;right:90px;bottom:90px;display:flex;gap:14px;animation:splashIn 12s infinite}
+@keyframes splashIn{0%,5%{opacity:0;transform:translateY(30px)}8%,25%{opacity:1;transform:translateY(0)}31%,100%{opacity:0;transform:translateY(-20px)}}
+.splash span{background:#fff;color:#221003;font-weight:800;font-size:16px;border-radius:999px;padding:10px 18px}
+/* ---------- SCENE 2 PRODUCT ---------- */
+.s2-left{position:absolute;left:90px;top:132px;width:560px;animation:s2Left 12s infinite}
+@keyframes s2Left{0%,32%{opacity:0;transform:translateX(-80px)}36%{opacity:1;transform:translateX(0)}60%{opacity:1;transform:translateX(0)}65%,100%{opacity:0;transform:translateX(-60px)}}
+.s2-kicker{display:inline-block;background:#221003;color:#FFC42E;font-size:15px;font-weight:800;letter-spacing:.14em;border-radius:999px;padding:9px 16px}
+.s2-left h2{font-size:56px;line-height:1.02;letter-spacing:-.04em;font-weight:900;color:#221003;margin:18px 0 16px}
+.s2-left h2 em{font-style:normal;color:#FF5E00}
+.s2-left p{font-size:20px;line-height:1.6;color:#5A3D28;font-weight:700}
+.benefits{margin-top:22px;display:flex;flex-direction:column;gap:12px}
+.benefits div{display:flex;align-items:center;gap:12px;background:#fff;border:2px solid #221003;border-radius:18px;padding:12px 16px;font-weight:800;font-size:18px;color:#221003;box-shadow:6px 6px 0 #221003}
+.benefits i{width:36px;height:36px;border-radius:50%;background:#FF5E00;color:#fff;display:flex;align-items:center;justify-content:center;font-style:normal;font-size:19px;flex-shrink:0}
+.s2-product{position:absolute;right:140px;top:60px;width:420px;height:600px;animation:s2Prod 12s infinite}
+@keyframes s2Prod{0%,32%{opacity:0;transform:translateY(140px) scale(.9)}36.5%{opacity:1;transform:translateY(0) scale(1)}60%{opacity:1;transform:translateY(-16px) scale(1.02)}65%,100%{opacity:0;transform:translateY(-90px) scale(.96)}}
+.glow{position:absolute;left:50%;top:52%;width:380px;height:380px;transform:translate(-50%,-50%);background:radial-gradient(circle,#FFD66B 0%,#FF8A2A 45%,transparent 70%);opacity:.9;border-radius:50%}
+.bottle{position:absolute;left:50%;top:90px;transform:translateX(-50%);width:210px}
+.cap{width:92px;height:92px;margin:0 auto;background:linear-gradient(180deg,#FFFDF2,#E8D9B8);border:3px solid #221003;border-radius:18px 18px 10px 10px;position:relative;z-index:2}
+.cap:after{content:"";position:absolute;left:14px;top:12px;bottom:12px;width:14px;background:#fff;border-radius:99px;opacity:.9}
+.neck{width:62px;height:28px;margin:-4px auto 0;background:#221003;border-radius:0 0 8px 8px}
+.body{width:210px;height:300px;margin-top:-2px;background:linear-gradient(90deg,#7A2E00 0%,#C85A0A 18%,#F7A63A 45%,#FFE6A6 50%,#F7A63A 55%,#8A3400 100%);border:3px solid #221003;border-radius:28px;position:relative;overflow:hidden;box-shadow:0 30px 60px rgba(120,40,0,.35)}
+.shine{position:absolute;top:-20px;bottom:-20px;width:70px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.85),transparent);transform:translateX(-120px) skewX(-12deg);animation:shineMove 12s infinite}
+@keyframes shineMove{0%,38%{opacity:0;transform:translateX(-120px) skewX(-12deg)}45%{opacity:1;transform:translateX(240px) skewX(-12deg)}58%,100%{opacity:0;transform:translateX(240px) skewX(-12deg)}}
+.label{position:absolute;left:16px;right:16px;top:62px;background:#FFFDF4;border:2.5px solid #221003;border-radius:16px;padding:14px 10px;text-align:center}
+.label small{font-family:"Archivo Black";font-size:12px;letter-spacing:.18em;color:#FF5E00}
+.label strong{display:block;font-size:30px;font-weight:900;letter-spacing:-.04em;color:#221003;line-height:1}
+.label span{display:inline-block;margin-top:8px;background:#221003;color:#fff;font-size:13px;font-weight:800;border-radius:99px;padding:4px 10px}
+.shadow{position:absolute;left:50%;bottom:18px;width:240px;height:32px;transform:translateX(-50%);background:rgba(34,16,3,.22);border-radius:50%;animation:shadowPulse 12s infinite}
+@keyframes shadowPulse{0%,32%{opacity:0;transform:translateX(-50%) scale(.7)}36.5%,60%{opacity:1;transform:translateX(-50%) scale(1)}65%,100%{opacity:0;transform:translateX(-50%) scale(.7)}}
+.float-drop{position:absolute;background:#FF5E00;border:2.5px solid #221003;border-radius:50%;animation:floatDrop 12s infinite}
+@keyframes floatDrop{0%,32%{opacity:0;transform:translateY(30px)}38%,60%{opacity:1;transform:translateY(-18px)}65%,100%{opacity:0;transform:translateY(-40px)}}
+/* ---------- SCENE 3 OFFER ---------- */
+.s3-inner{position:absolute;inset:0;display:flex;align-items:center;justify-content:space-between;padding:90px 90px 60px}
+.s3-copy{width:660px}
+.s3-badge{display:inline-flex;align-items:center;gap:10px;background:#FFC42E;color:#221003;font-weight:900;font-size:18px;border-radius:999px;padding:10px 18px;animation:s3Badge 12s infinite}
+@keyframes s3Badge{0%,66%{opacity:0;transform:translateY(30px) scale(.9)}70%{opacity:1;transform:translateY(0) scale(1)}93%{opacity:1;transform:translateY(0) scale(1)}96%,100%{opacity:0;transform:translateY(-20px)}}
+.s3-copy h2{margin:18px 0 10px;color:#fff;font-size:92px;line-height:.95;letter-spacing:-.05em;font-weight:900;animation:s3Title 12s infinite}
+@keyframes s3Title{0%,66.5%{opacity:0;transform:translateY(70px)}71%{opacity:1;transform:translateY(0)}93%{opacity:1;transform:translateY(0)}96%,100%{opacity:0;transform:translateY(-30px)}}
+.s3-copy h2 em{font-style:normal;color:#FFC42E}
+.price{display:flex;align-items:end;gap:16px;margin:10px 0 8px;animation:s3Price 12s infinite}
+@keyframes s3Price{0%,69%{opacity:0;transform:translateY(30px)}73%{opacity:1;transform:translateY(0)}93%{opacity:1;transform:translateY(0)}96%,100%{opacity:0;transform:translateY(-20px)}}
+.price s{color:rgba(255,255,255,.6);font-size:26px;font-weight:700}
+.price strong{color:#fff;font-size:48px;font-weight:900}
+.price b{background:#FF5E00;color:#fff;border-radius:12px;padding:6px 12px;font-size:20px}
+.s3-copy p{color:#FFD9B8;font-size:19px;font-weight:700;animation:s3Price 12s infinite}
+.cta-zone{width:380px;text-align:center}
+.cta-bottle{width:150px;margin:0 auto;transform:scale(.9);animation:ctaBottle 12s infinite}
+@keyframes ctaBottle{0%,68%{opacity:0;transform:translateY(60px) scale(.8)}73%{opacity:1;transform:translateY(0) scale(1)}93%{opacity:1;transform:translateY(-8px) scale(1)}96%,100%{opacity:0;transform:translateY(-20px)}}
+.cta-btn{display:block;margin:18px auto 0;background:#fff;color:#221003;font-size:34px;font-weight:900;border-radius:999px;padding:20px 0;width:320px;text-align:center;box-shadow:0 12px 0 #FF5E00,0 20px 50px rgba(0,0,0,.4);animation:ctaBtn 12s infinite}
+@keyframes ctaBtn{0%,69%{opacity:0;transform:scale(.6)}73%{opacity:1;transform:scale(1.08)}75%{opacity:1;transform:scale(1)}78%{opacity:1;transform:scale(1.08)}80%{opacity:1;transform:scale(1)}83%{opacity:1;transform:scale(1.07)}85%,93%{opacity:1;transform:scale(1)}96%,100%{opacity:0;transform:scale(.85)}}
+.cta-note{margin-top:14px;color:#fff;font-size:15px;font-weight:700;letter-spacing:.04em;animation:s3Badge 12s infinite}
+.mini-body{height:170px!important;border-radius:20px!important}
+</style>
+</head>
+<body>
+<div class="stage">
+<div class="bg-cream"></div>
+<div class="bg-orange"></div>
+<div class="bg-deep"></div>
+<div class="rays"><div class="rays-inner"></div></div>
+<div class="dots"></div>
+
+<div class="topbar">
+<div class="pill"><b>NEW</b> VITA C 15% SERUM · 런칭</div>
+<div class="timeline"><i></i> 0–4 HOOK &nbsp;·&nbsp; 4–8 PRODUCT &nbsp;·&nbsp; 8–12 OFFER</div>
+</div>
+
+<!-- SCENE 1 HOOK -->
+<div class="scene s1">
+<div class="s1-eyebrow"><em>신제품 출시</em><span>FRESH VITAMIN C</span></div>
+<h1 class="s1-title">갓 짜낸 오렌지처럼,<br><strong>피부에 햇살을 채우다</strong><small>아침 세안 후 한 방울, 7일 톤업 광채 세럼</small></h1>
+<div class="drop-big">
+<div class="drop-tip"></div>
+<div class="drop-shape"><div class="drop-label">🍊 순수 비타민C 15%</div></div>
+</div>
+<div class="splash"><span>✔ 잡티 케어</span><span>✔ 미백 · 광채</span><span>✔ 산뜻한 워터타입</span></div>
+</div>
+
+<!-- SCENE 2 PRODUCT -->
+<div class="scene s2">
+<div class="s2-left">
+<span class="s2-kicker">WHY IT WORKS · 제품이 주인공</span>
+<h2>한 방울의 밀착력,<br><em>속부터 차오르는 빛</em></h2>
+<p>산소와 빛에 약한 비타민C를 신선하게 밀봉한 듀얼 캡. 아침에도 부담 없이 스며드는 산뜻한 마무리.</p>
+<div class="benefits">
+<div><i>✓</i> 15% 순수 비타민C + 비타민E · 잡티 집중 케어</div>
+<div><i>✓</i> 7일 사용 후 피부톤 · 광채 만족도 96%</div>
+<div><i>✓</i> 끈적임 제로 워터 텍스처, 메이크업 전에도 OK</div>
+</div>
+</div>
+<div class="s2-product">
+<div class="glow"></div>
+<div class="bottle">
+<div class="cap"></div><div class="neck"></div>
+<div class="body"><div class="shine"></div>
+<div class="label"><small>VITA C 15%</small><strong>BRIGHT SERUM</strong><span>30ml · 미백 기능성</span></div>
+</div>
+</div>
+<div class="shadow"></div>
+<div class="float-drop" style="left:20px;top:160px;width:28px;height:28px"></div>
+<div class="float-drop" style="right:30px;top:260px;width:20px;height:20px;background:#FFC42E"></div>
+<div class="float-drop" style="right:70px;top:120px;width:16px;height:16px;background:#fff"></div>
+</div>
+</div>
+
+<!-- SCENE 3 OFFER -->
+<div class="scene s3">
+<div class="s3-inner">
+<div class="s3-copy">
+<div class="s3-badge">✦ 런칭 기념 · 11.2 — 11.9 일주일만 ✦</div>
+<h2>런칭 <em>30%</em><br>할인 중</h2>
+<div class="price"><s>32,000원</s><strong>22,400원</strong><b>-30%</b></div>
+<p>지금 구매하면 미니 오렌지 파우치 + 무료배송까지. 첫 런칭, 가장 낮은 가격.</p>
+</div>
+<div class="cta-zone">
+<div class="cta-bottle"><div class="bottle" style="position:relative;left:auto;top:auto;transform:none;width:150px">
+<div class="cap" style="width:68px;height:68px"></div><div class="neck" style="width:48px;height:20px"></div>
+<div class="body mini-body"><div class="label" style="top:38px;padding:10px 6px"><small style="font-size:10px">VITA C 15%</small><strong style="font-size:20px">BRIGHT</strong></div></div>
+</div></div>
+<div class="cta-btn">지금 구매 →</div>
+<div class="cta-note">오늘 출발 · 품절 전 GET! 첫 구매 30% 쿠폰 자동적용</div>
+</div>
+</div>
+</div>
+
+<div class="progress"><span></span></div>
+</div>
+</body>
+</html>

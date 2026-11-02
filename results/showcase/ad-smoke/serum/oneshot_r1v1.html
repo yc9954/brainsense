@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1280">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Noto+Serif+KR:wght@700;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%}
+body{background:#0B0B0C;display:flex;align-items:center;justify-content:center;min-height:100vh;font-family:'Noto Sans KR',sans-serif}
+.stage{width:1280px;height:720px;position:relative;overflow:hidden;background:#FFF8ED;flex-shrink:0;color:#231203}
+.topbar{position:absolute;top:0;left:0;right:0;height:64px;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:0 44px;background:rgba(255,248,237,.92);border-bottom:1px solid rgba(35,18,3,.1)}
+.brand{font-weight:900;letter-spacing:.22em;font-size:18px}
+.brand small{font-weight:700;letter-spacing:.08em;background:#231203;color:#fff;font-size:11px;padding:4px 9px;border-radius:100px;margin-left:10px;vertical-align:middle}
+.top-right{font-size:13px;font-weight:700;letter-spacing:.04em;display:flex;gap:10px;align-items:center}
+.dot-live{width:9px;height:9px;border-radius:50%;background:#FF4D00}
+.scene{position:absolute;inset:0;opacity:0;animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:ease-in-out}
+.scene-hook{animation-name:showHook;background:radial-gradient(900px 520px at 78% 48%, #FFD9A8 0%, #FFEED3 38%, #FFF8ED 70%);z-index:3;display:flex;align-items:center;padding:84px 60px 70px 72px}
+.scene-product{animation-name:showProduct;background:linear-gradient(180deg,#FFFFFF 0%,#FFF4E2 100%);z-index:2;display:flex;align-items:center;padding:84px 72px 70px 72px}
+.scene-offer{animation-name:showOffer;background:radial-gradient(800px 500px at 50% 38%, #4A1E00 0%, #231002 55%, #120801 100%);z-index:1;display:flex;align-items:center;justify-content:center;color:#fff}
+@keyframes showHook{0%{opacity:1}26.5%{opacity:1}33.33%{opacity:0}92%{opacity:0}100%{opacity:1}}
+@keyframes showProduct{0%{opacity:0}30%{opacity:0}36%{opacity:1}60%{opacity:1}66.66%{opacity:0}100%{opacity:0}}
+@keyframes showOffer{0%{opacity:0}63%{opacity:0}69%{opacity:1}92%{opacity:1}100%{opacity:0}}
+.pill{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:900;letter-spacing:.12em;padding:10px 18px;border-radius:100px}
+.hook-left{width:660px}
+.hook-pill{background:#231203;color:#FFE9CF;animation-name:hookPillK;animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:ease-in-out}
+@keyframes hookPillK{0%{opacity:0;transform:translateY(30px)}4%{opacity:1;transform:translateY(0)}27%{opacity:1;transform:translateY(-6px)}32%,100%{opacity:0;transform:translateY(-30px)}}
+.hook-h1{font-family:'Noto Serif KR',serif;font-weight:900;font-size:92px;line-height:1.02;letter-spacing:-.03em;margin:22px 0 16px;animation-name:hookH1K;animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:ease-in-out}
+@keyframes hookH1K{0%{opacity:0;transform:translateY(90px) scale(.96)}5%{opacity:1;transform:translateY(0) scale(1)}27%{opacity:1;transform:translateY(-8px) scale(1)}33%,100%{opacity:0;transform:translateY(-50px) scale(1)}}
+.hook-h1 span{color:#FF4D00;position:relative;display:inline-block}
+.hook-h1 span::after{content:"";position:absolute;left:0;right:0;bottom:8px;height:18px;background:#FFD9A8;z-index:-1;border-radius:4px}
+.hook-sub{font-size:22px;font-weight:500;color:#6B4A2E;animation-name:hookSubK;animation-duration:12s;animation-iteration-count:infinite}
+@keyframes hookSubK{0%,6%{opacity:0;transform:translateY(30px)}10%{opacity:1;transform:translateY(0)}27%{opacity:1;transform:translateY(-4px)}32%,100%{opacity:0;transform:translateY(-20px)}}
+.hook-proof{margin-top:20px;display:inline-flex;align-items:center;gap:10px;background:#fff;border:1px solid rgba(35,18,3,.12);border-radius:14px;padding:12px 18px;font-size:16px;font-weight:700;box-shadow:0 12px 30px rgba(255,77,0,.12);animation-name:hookSubK;animation-duration:12s;animation-iteration-count:infinite}
+.stars{color:#FF4D00;letter-spacing:2px}
+.hook-right{flex:1;position:relative;height:560px;display:flex;align-items:center;justify-content:center}
+.mega-drop{width:380px;height:380px;border-radius:50%;background:radial-gradient(circle at 32% 28%, #fff 0%, #FFE9C2 12%, #FFB25E 34%, #FF6A00 62%, #C93D00 100%);box-shadow:0 40px 100px rgba(255,77,0,.45), inset -30px -30px 60px rgba(120,20,0,.35), inset 20px 20px 50px rgba(255,255,255,.6);position:relative;animation-name:dropK;animation-duration:12s;animation-iteration-count:infinite}
+@keyframes dropK{0%{opacity:0;transform:translateY(120px) scale(.7)}4%{opacity:1;transform:translateY(0) scale(1)}14%{opacity:1;transform:translateY(-18px) scale(1.03)}27%{opacity:1;transform:translateY(10px) scale(1)}33%,100%{opacity:0;transform:translateY(-80px) scale(1.05)}}
+.mega-drop::before{content:"";position:absolute;left:68px;top:62px;width:92px;height:132px;background:linear-gradient(180deg,rgba(255,255,255,.95),rgba(255,255,255,0));border-radius:100px;transform:rotate(-18deg);opacity:.9}
+.mega-drop::after{content:"VITA C 15%";position:absolute;left:50%;top:58%;transform:translate(-50%,-50%);font-weight:900;font-size:30px;letter-spacing:.06em;color:#fff;text-shadow:0 2px 12px rgba(120,20,0,.6)}
+.drop-ring{position:absolute;width:460px;height:460px;border:2px dashed rgba(255,77,0,.45);border-radius:50%;animation-name:ringK;animation-duration:12s;animation-iteration-count:infinite}
+@keyframes ringK{0%{opacity:0;transform:scale(.7) rotate(0deg)}5%{opacity:1;transform:scale(1) rotate(20deg)}27%{opacity:1;transform:scale(1.05) rotate(70deg)}33%,100%{opacity:0;transform:scale(1.1) rotate(90deg)}}
+.spark{position:absolute;font-size:34px;color:#FF4D00;animation-duration:12s;animation-iteration-count:infinite}
+.s1{left:70px;top:90px;animation-name:spark1K}
+.s2{right:70px;bottom:100px;font-size:26px;animation-name:spark2K}
+.s3{right:110px;top:110px;font-size:22px;animation-name:spark1K}
+@keyframes spark1K{0%,3%{opacity:0;transform:translateY(20px) scale(.5)}8%{opacity:1;transform:translateY(0) scale(1.2)}22%{opacity:1;transform:translateY(-14px) scale(1)}32%,100%{opacity:0;transform:translateY(-30px) scale(1)}}
+@keyframes spark2K{0%,5%{opacity:0;transform:translateY(20px) scale(.5)}10%{opacity:1;transform:translateY(0) scale(1.2)}24%{opacity:1;transform:translateY(-10px) scale(1)}32%,100%{opacity:0;transform:translateY(-30px)}}
+/* PRODUCT */
+.prod-visual{width:540px;height:560px;position:relative;display:flex;align-items:center;justify-content:center}
+.prod-glow{position:absolute;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,#FFC98A 0%,#FF8A2A 42%,rgba(255,138,42,0) 70%);animation-name:prodGlowK;animation-duration:12s;animation-iteration-count:infinite}
+@keyframes prodGlowK{0%,33%{opacity:0;transform:scale(.7)}40%{opacity:.95;transform:scale(1)}55%{opacity:1;transform:scale(1.08)}63%,100%{opacity:0;transform:scale(1.1)}}
+.citrus{position:absolute;border-radius:50%;background:radial-gradient(circle at 50% 50%, #FFD79A 0 18%, #FF8A1A 19% 34%, #FFF3DC 35% 42%, #FF8A1A 43% 100%);box-shadow:0 20px 40px rgba(0,0,0,.12)}
+.c1{width:150px;height:150px;left:18px;top:70px;animation-name:citrusK;animation-duration:12s;animation-iteration-count:infinite}
+.c2{width:110px;height:110px;right:20px;bottom:70px;animation-name:citrusK;animation-duration:12s;animation-iteration-count:infinite}
+@keyframes citrusK{0%,34%{opacity:0;transform:translateY(50px) rotate(-20deg)}42%{opacity:1;transform:translateY(0) rotate(0deg)}60%{opacity:1;transform:translateY(-12px) rotate(10deg)}66%,100%{opacity:0;transform:translateY(-30px)}}
+.bottle{position:relative;width:230px;animation-name:bottleK;animation-duration:12s;animation-iteration-count:infinite;filter:drop-shadow(0 30px 40px rgba(60,20,0,.35))}
+@keyframes bottleK{0%,33%{opacity:0;transform:translateY(120px) scale(.9)}39%{opacity:1;transform:translateY(0) scale(1)}55%{opacity:1;transform:translateY(-14px) scale(1.01)}63%,100%{opacity:0;transform:translateY(-40px) scale(1)}}
+.cap{width:96px;height:108px;background:linear-gradient(180deg,#333,#0D0D0D);border-radius:20px 20px 12px 12px;margin:0 auto;position:relative}
+.cap::after{content:"";position:absolute;left:12px;top:14px;bottom:14px;width:10px;background:rgba(255,255,255,.25);border-radius:10px}
+.neck{width:70px;height:22px;background:#E8DCC8;margin:0 auto}
+.glass{width:230px;height:310px;background:linear-gradient(180deg,#FFC46B 0%,#FF8614 38%,#E04E00 100%);border-radius:26px;position:relative;overflow:hidden;border:1px solid rgba(0,0,0,.15)}
+.glass::before{content:"";position:absolute;left:18px;top:16px;bottom:16px;width:28px;background:linear-gradient(180deg,rgba(255,255,255,.9),rgba(255,255,255,.05));border-radius:20px}
+.label{background:#FFFDF7;border-radius:16px;margin:62px 18px 0;padding:16px 12px;text-align:center}
+.label b{display:block;font-size:13px;letter-spacing:.24em}
+.label strong{display:block;font-size:34px;letter-spacing:-.02em;line-height:1;margin:4px 0}
+.label span{display:inline-block;margin-top:8px;font-size:12px;font-weight:700;background:#231203;color:#fff;padding:5px 12px;border-radius:100px}
+.prod-copy{flex:1}
+.eyebrow{font-size:14px;font-weight:900;letter-spacing:.18em;color:#FF4D00;animation-name:prodT1K;animation-duration:12s;animation-iteration-count:infinite}
+.prod-h2{font-family:'Noto Serif KR',serif;font-size:58px;line-height:1.1;letter-spacing:-.02em;margin:12px 0 22px;animation-name:prodT1K;animation-duration:12s;animation-iteration-count:infinite}
+@keyframes prodT1K{0%,35%{opacity:0;transform:translateY(40px)}40%{opacity:1;transform:translateY(0)}60%{opacity:1;transform:translateY(-6px)}66%,100%{opacity:0;transform:translateY(-20px)}}
+.bene{display:flex;gap:14px;align-items:center;background:#fff;border-radius:18px;padding:16px 18px;margin-bottom:12px;border:1px solid rgba(0,0,0,.08);box-shadow:0 10px 24px rgba(0,0,0,.06);animation-duration:12s;animation-iteration-count:infinite}
+.b1{animation-name:bene1K}.b2{animation-name:bene2K}.b3{animation-name:bene3K}
+@keyframes bene1K{0%,37%{opacity:0;transform:translateX(60px)}42%{opacity:1;transform:translateX(0)}60%{opacity:1;transform:translateX(0)}66%,100%{opacity:0;transform:translateX(-20px)}}
+@keyframes bene2K{0%,39%{opacity:0;transform:translateX(60px)}44%{opacity:1;transform:translateX(0)}60%{opacity:1;transform:translateX(0)}66%,100%{opacity:0;transform:translateX(-20px)}}
+@keyframes bene3K{0%,41%{opacity:0;transform:translateX(60px)}46%{opacity:1;transform:translateX(0)}60%{opacity:1;transform:translateX(0)}66%,100%{opacity:0;transform:translateX(-20px)}}
+.icon{width:44px;height:44px;border-radius:50%;background:#FFF0D9;color:#FF4D00;font-weight:900;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.bene p{font-size:17px;font-weight:700}.bene p small{display:block;font-weight:500;color:#7A5A3E;font-size:14px}
+/* OFFER */
+.offer-inner{text-align:center;width:900px;padding-top:30px}
+.offer-pill{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);color:#FFD9A8;animation-name:offerPillK;animation-duration:12s;animation-iteration-count:infinite}
+@keyframes offerPillK{0%,66%{opacity:0;transform:translateY(30px) scale(.9)}71%{opacity:1;transform:translateY(0) scale(1)}91%{opacity:1;transform:translateY(-4px) scale(1)}100%{opacity:0;transform:translateY(-10px)}}
+.offer-big{font-family:'Noto Serif KR',serif;font-size:88px;font-weight:900;line-height:1;margin:18px 0 6px;animation-name:offerBigK;animation-duration:12s;animation-iteration-count:infinite}
+.offer-big em{font-style:normal;color:#FF7A1A;font-size:112px}
+@keyframes offerBigK{0%,68%{opacity:0;transform:translateY(60px) scale(.92)}74%{opacity:1;transform:translateY(0) scale(1)}91%{opacity:1;transform:translateY(-6px) scale(1)}100%{opacity:0;transform:translateY(-16px)}}
+.offer-price{display:flex;align-items:center;justify-content:center;gap:16px;font-size:22px;font-weight:500;color:#D8BFA3;animation-name:offerBigK;animation-duration:12s;animation-iteration-count:infinite}
+.offer-price strong{font-size:38px;color:#fff;font-weight:900}
+.strike{text-decoration:line-through;opacity:.7}
+.cta{margin:26px auto 0;display:inline-flex;align-items:center;gap:12px;background:#FF4D00;color:#fff;font-size:26px;font-weight:900;padding:20px 64px;border-radius:100px;box-shadow:0 0 0 8px rgba(255,77,0,.25),0 20px 50px rgba(255,77,0,.55);animation-name:ctaK;animation-duration:12s;animation-iteration-count:infinite}
+@keyframes ctaK{0%,70%{opacity:0;transform:translateY(40px) scale(.85)}76%{opacity:1;transform:translateY(0) scale(1)}84%{opacity:1;transform:scale(1.06)}87%{opacity:1;transform:scale(1)}91%{opacity:1;transform:scale(1.04)}93%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(1)}}
+.offer-note{margin-top:18px;font-size:15px;font-weight:500;color:#FFD9A8;letter-spacing:.02em;animation-name:offerPillK;animation-duration:12s;animation-iteration-count:infinite}
+.progress-wrap{position:absolute;left:0;right:0;bottom:0;height:8px;background:rgba(0,0,0,.15);z-index:60}
+.progress{height:100%;background:linear-gradient(90deg,#FF4D00,#FFB800);transform-origin:left;animation-name:progK;animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:linear}
+@keyframes progK{0%{opacity:1;transform:scaleX(0)}99%{opacity:1;transform:scaleX(1)}100%{opacity:1;transform:scaleX(0)}}
+.time{position:absolute;right:44px;bottom:24px;z-index:60;font-size:12px;font-weight:700;letter-spacing:.14em;color:rgba(0,0,0,.55)}
+.scene-offer .time{color:rgba(255,255,255,.7)}
+</style>
+</head>
+<body>
+<div class="stage">
+<div class="topbar"><div class="brand">LUMIÈRE<small>NEW</small></div><div class="top-right"><span class="dot-live"></span> 비타C 세럼 • 15% 순수 비타민C</div></div>
+<!-- HOOK 0-4s -->
+<div class="scene scene-hook">
+<div class="hook-left">
+<div class="pill hook-pill">NEW • 순수 비타민C 15% 세럼</div>
+<h1 class="hook-h1">7일 만에 피부에<br><span>유리광</span>을 켜다</h1>
+<p class="hook-sub">칙칙·잡티·모공, 아침 한 방울로 산뜻하게</p>
+<div class="hook-proof"><span class="stars">★★★★★</span> 4.9점 • 먼저 써본 20대 312명</div>
+</div>
+<div class="hook-right">
+<div class="drop-ring"></div>
+<div class="mega-drop"></div>
+<div class="spark s1">✦</div><div class="spark s2">✦</div><div class="spark s3">＋</div>
+</div>
+</div>
+<!-- PRODUCT 4-8s -->
+<div class="scene scene-product">
+<div class="prod-visual">
+<div class="prod-glow"></div>
+<div class="citrus c1"></div><div class="citrus c2"></div>
+<div class="bottle"><div class="cap"></div><div class="neck"></div><div class="glass"><div class="label"><b>LUMIÈRE</b><strong>VITA C</strong><span>15% SERUM 30ml</span></div></div></div>
+</div>
+<div class="prod-copy">
+<div class="eyebrow">WHY IT WORKS • 주인공은 제품</div>
+<div class="prod-h2">광채는<br>성분에서 온다</div>
+<div class="bene b1"><div class="icon">C</div><p>15% 순수 비타민C + 비타민E<small>잡티·기미 흔적을 맑게 케어</small></p></div>
+<div class="bene b2"><div class="icon">◍</div><p>3초 산뜻 흡수, 끈적임 0%<small>아침 메이크업 전에도 가볍게</small></p></div>
+<div class="bene b3"><div class="icon">♡</div><p>민감 피부 저자극 테스트 완료<small>매일 아침·저녁 데일리 케어</small></p></div>
+</div>
+</div>
+<!-- OFFER 8-12s -->
+<div class="scene scene-offer">
+<div class="offer-inner">
+<div class="pill offer-pill">런칭 기념 • 단 7일 • 오늘 자정 종료</div>
+<div class="offer-big">지금 <em>30%</em> 할인 중</div>
+<div class="offer-price"><span class="strike">47,000원</span> → <strong>32,900원</strong> <span>무료배송</span></div>
+<div><div class="cta">지금 구매하기 →</div></div>
+<div class="offer-note">첫 구매 사은품 미니 세럼 증정 • 7일 사용 후 불만족 시 100% 환불</div>
+</div>
+</div>
+<div class="progress-wrap"><div class="progress"></div></div>
+<div class="time">12S LOOP • 1280×720</div>
+</div>
+</body>
+</html>
