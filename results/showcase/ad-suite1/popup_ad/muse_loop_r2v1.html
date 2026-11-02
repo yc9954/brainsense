@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Montserrat:wght@800;900&family=Noto+Sans+KR:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%}
+body{background:#080808;display:flex;align-items:center;justify-content:center;min-height:100vh;font-family:"Noto Sans KR",sans-serif}
+.stage{width:1280px;height:720px;position:relative;overflow:hidden;background:#FFF3E2;flex-shrink:0;box-shadow:0 30px 120px rgba(0,0,0,.6)}
+.scene{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden}
+/* ===== SCENE VISIBILITY - single focus, full-screen ===== */
+.hook{background:#FFF3E2;animation:hookShow 12s linear infinite;z-index:3}
+.product{background:#FFE7E2;animation:productShow 12s linear infinite;z-index:4}
+.cta{background:#170C06;animation:ctaShow 12s linear infinite;z-index:5}
+@keyframes hookShow{0%{opacity:1}26.5%{opacity:1}33.33%{opacity:0}92%{opacity:0}97%{opacity:1}100%{opacity:1}}
+@keyframes productShow{0%{opacity:0}30%{opacity:0}36%{opacity:1}60%{opacity:1}66.66%{opacity:0}100%{opacity:0}}
+@keyframes ctaShow{0%{opacity:0}63%{opacity:0}69%{opacity:1}94%{opacity:1}100%{opacity:0}}
+/* ===== HOOK ===== */
+.marquee{position:absolute;top:18px;left:0;white-space:nowrap;font-family:Montserrat,sans-serif;font-weight:900;font-size:30px;letter-spacing:.18em;color:#E9304A;opacity:.22;animation:marqueeMove 12s linear infinite}
+@keyframes marqueeMove{0%{opacity:.22;transform:translateX(0)}27%{opacity:.22;transform:translateX(-38%)}33.33%{opacity:0;transform:translateX(-42%)}100%{opacity:0;transform:translateX(-42%)}}
+.burst{position:absolute;width:780px;height:780px;background:#E9304A;border-radius:50%;top:50%;left:50%;margin:-390px 0 0 -390px;animation:burstPop 12s ease infinite}
+@keyframes burstPop{0%{opacity:1;transform:scale(.6)}4%{opacity:1;transform:scale(1)}24%{opacity:1;transform:scale(1)}31%{opacity:0;transform:scale(1.15)}100%{opacity:0;transform:scale(1.15)}}
+.burst-ring{position:absolute;width:860px;height:860px;border:3px dashed #1A0E06;border-radius:50%;top:50%;left:50%;margin:-430px 0 0 -430px;opacity:.18;animation:ringSpin 12s linear infinite}
+@keyframes ringSpin{0%{opacity:.18;transform:rotate(0)}27%{opacity:.18;transform:rotate(110deg)}33.33%{opacity:0;transform:rotate(120deg)}100%{opacity:0;transform:rotate(120deg)}}
+.pill{position:relative;background:#1A0E06;color:#FFF3E2;font-weight:900;font-size:26px;letter-spacing:.06em;padding:14px 30px;border-radius:100px;display:flex;gap:12px;align-items:center;animation:pillIn 12s ease infinite}
+.pill b{background:#E9304A;color:#fff;border-radius:100px;padding:4px 14px;font-size:24px}
+@keyframes pillIn{0%{opacity:0;transform:translateY(-50px)}3%{opacity:1;transform:translateY(0)}24%{opacity:1;transform:translateY(0)}31%{opacity:0;transform:translateY(-30px)}100%{opacity:0;transform:translateY(-30px)}}
+.berry-wrap{position:relative;width:380px;height:400px;margin:10px 0 0;animation:berryDrop 12s ease infinite}
+@keyframes berryDrop{0%{opacity:0;transform:translateY(-620px) scale(.8) rotate(-8deg)}4%{opacity:1;transform:translateY(0) scale(1) rotate(0)}7%{opacity:1;transform:translateY(18px) scale(1.02,.96)}9%{opacity:1;transform:translateY(0) scale(1)}24%{opacity:1;transform:translateY(0) scale(1)}31%{opacity:0;transform:translateY(120px) scale(1.08)}100%{opacity:0;transform:translateY(120px)}}
+.berry-top{width:360px;height:230px;margin:70px auto 0;background:linear-gradient(180deg,#FF6E8A 0%,#E9304A 52%,#C11E37 100%);border-radius:50%;position:relative;box-shadow:inset -22px -18px 0 rgba(120,0,20,.25)}
+.berry-bottom{width:360px;height:190px;margin:-70px auto 0;background:linear-gradient(180deg,#E9304A 0%,#C11E37 100%);clip-path:polygon(0 0,100% 0,50% 100%)}
+.leaf{position:absolute;top:38px;left:50%;width:110px;height:66px;background:#0E7A44;border-radius:6px 100% 6px 100%;box-shadow:inset -8px -8px 0 rgba(0,0,0,.2)}
+.l1{transform:translateX(-92%) rotate(-18deg)}
+.l2{transform:translateX(-50%) rotate(4deg);background:#12A35C;width:120px;top:28px}
+.l3{transform:translateX(-8%) rotate(28deg)}
+.stem{position:absolute;top:2px;left:50%;width:22px;height:58px;background:#0A4E2D;border-radius:12px;transform:translateX(-50%) rotate(8deg)}
+.seed{position:absolute;width:15px;height:21px;background:#FFEDB0;border-radius:50%;box-shadow:inset -2px -2px 0 rgba(180,90,0,.5)}
+.shine{position:absolute;left:58px;top:130px;width:52px;height:110px;background:rgba(255,255,255,.75);border-radius:50%;transform:rotate(-18deg);filter:blur(1px)}
+.berry-shadow{width:300px;height:34px;background:rgba(26,14,6,.22);border-radius:50%;margin:6px auto 0;filter:blur(6px);animation:shadowPulse 12s ease infinite}
+@keyframes shadowPulse{0%{opacity:0;transform:scale(.5)}4%{opacity:1;transform:scale(1)}9%{opacity:1;transform:scale(1)}24%{opacity:1;transform:scale(1)}31%{opacity:0;transform:scale(1.2)}100%{opacity:0;transform:scale(1.2)}}
+.hook-title{font-family:"Black Han Sans",sans-serif;font-size:112px;line-height:.95;color:#1A0E06;text-align:center;margin-top:-38px;position:relative;animation:titleUp 12s ease infinite}
+.hook-title span{background:#1A0E06;color:#FFF3E2;padding:0 22px;border-radius:14px}
+.hook-title em{font-style:normal;color:#E9304A}
+@keyframes titleUp{0%{opacity:0;transform:translateY(70px) scale(.92)}5%{opacity:1;transform:translateY(0) scale(1)}24%{opacity:1;transform:translateY(0) scale(1)}31%{opacity:0;transform:translateY(-40px)}100%{opacity:0;transform:translateY(-40px)}}
+.hook-sub{margin-top:12px;font-size:24px;font-weight:700;letter-spacing:.04em;color:#1A0E06;animation:subFade 12s ease infinite}
+.hook-sub strong{color:#E9304A}
+@keyframes subFade{0%{opacity:0;transform:translateY(20px)}6%{opacity:1;transform:translateY(0)}24%{opacity:1;transform:translateY(0)}31%{opacity:0;transform:translateY(-20px)}100%{opacity:0;transform:translateY(-20px)}}
+/* ===== PRODUCT ===== */
+.p-label{font-family:Montserrat,sans-serif;font-weight:900;letter-spacing:.32em;font-size:22px;color:#A91E36;animation:pLabel 12s ease infinite}
+@keyframes pLabel{0%{opacity:0;transform:translateY(20px)}35%{opacity:0;transform:translateY(20px)}38.5%{opacity:1;transform:translateY(0)}60%{opacity:1;transform:translateY(0)}66.66%{opacity:0;transform:translateY(-20px)}100%{opacity:0;transform:translateY(-20px)}}
+.p-title{font-family:"Black Han Sans",sans-serif;font-size:68px;color:#1E0F08;text-align:center;line-height:1.02;margin-top:8px;animation:pTitle 12s ease infinite}
+.p-title i{font-style:normal;background:#E9304A;color:#fff;padding:0 16px;border-radius:12px}
+@keyframes pTitle{0%{opacity:0;transform:translateY(40px) scale(.96)}36%{opacity:0;transform:translateY(40px) scale(.96)}40%{opacity:1;transform:translateY(0) scale(1)}60%{opacity:1;transform:translateY(0) scale(1)}66.66%{opacity:0;transform:translateY(-30px)}100%{opacity:0;transform:translateY(-30px)}}
+.cake-stage{position:relative;width:640px;height:300px;display:flex;align-items:flex-end;justify-content:center;margin-top:6px;animation:cakeUp 12s ease infinite}
+@keyframes cakeUp{0%{opacity:0;transform:translateY(160px) scale(.9)}37%{opacity:0;transform:translateY(160px) scale(.9)}42%{opacity:1;transform:translateY(0) scale(1)}60%{opacity:1;transform:translateY(0) scale(1)}66.66%{opacity:0;transform:translateY(-60px)}100%{opacity:0;transform:translateY(-60px)}}
+.plate{position:absolute;bottom:8px;width:560px;height:48px;background:#1E0F08;border-radius:50%}
+.cake{position:relative;width:380px;height:210px}
+.sponge{height:62px;background:linear-gradient(180deg,#FFD49A,#FFB86B);border:4px solid #1E0F08}
+.cream{height:42px;background:#FFFDF6;border-left:4px solid #1E0F08;border-right:4px solid #1E0F08;display:flex;justify-content:space-around;align-items:flex-start;padding-top:0}
+.cream i{width:34px;height:26px;background:#FFFDF6;border:4px solid #1E0F08;border-top:0;border-radius:0 0 20px 20px;display:block;margin-top:-4px}
+.top-cream{height:52px;background:#FFFDF6;border:4px solid #1E0F08;border-radius:18px 18px 0 0}
+.mini{position:absolute;top:-64px;width:92px;height:92px}
+.mini .mt{width:92px;height:58px;background:linear-gradient(180deg,#FF6E8A,#D61F3F);border:3px solid #1E0F08;border-radius:50%;position:relative}
+.mini .mb{width:92px;height:52px;background:#D61F3F;border:3px solid #1E0F08;border-top:0;clip-path:polygon(0 0,100% 0,50% 100%);margin-top:-14px}
+.mini .ml{position:absolute;top:-16px;left:50%;transform:translateX(-50%);width:56px;height:26px;background:#12A35C;border:3px solid #1E0F08;border-radius:4px 60% 4px 60%}
+.m1{left:28px;transform:rotate(-10deg)} .m2{left:142px;top:-78px;transform:scale(1.15)} .m3{left:258px;transform:rotate(10deg)}
+.cup{position:absolute;right:18px;bottom:22px;width:124px;height:150px;background:#fff;border:4px solid #1E0F08;border-radius:14px 14px 22px 22px;overflow:hidden}
+.cup .latte{position:absolute;bottom:0;width:100%;height:96px;background:linear-gradient(180deg,#FFB9C8,#FF6E8A)}
+.cup .foam{position:absolute;top:8px;left:10px;right:10px;height:34px;background:#fff;border:3px solid #1E0F08;border-radius:20px}
+.cup b{position:absolute;bottom:34px;width:100%;text-align:center;font-size:17px;color:#fff;text-shadow:0 2px 0 #1E0F08}
+.p-benefit{display:flex;gap:14px;margin-top:18px;animation:pBen 12s ease infinite}
+.p-benefit span{background:#1E0F08;color:#FFE7E2;font-weight:900;font-size:22px;padding:12px 22px;border-radius:100px}
+.p-benefit span:last-child{background:#E9304A;color:#fff}
+@keyframes pBen{0%{opacity:0;transform:translateY(30px)}39%{opacity:0;transform:translateY(30px)}44%{opacity:1;transform:translateY(0)}60%{opacity:1;transform:translateY(0)}66.66%{opacity:0;transform:translateY(-20px)}100%{opacity:0;transform:translateY(-20px)}}
+/* ===== CTA ===== */
+.cta-inner{display:flex;width:100%;height:100%;align-items:center;justify-content:center;gap:60px;padding:0 80px}
+.cta-left{flex:1}
+.cta-right{width:460px;background:#FFF7ED;border-radius:28px;padding:36px 36px 30px;color:#1E0F08;text-align:center;position:relative;animation:cardIn 12s ease infinite}
+@keyframes cardIn{0%{opacity:0;transform:translateY(80px) rotate(2deg)}68%{opacity:0;transform:translateY(80px) rotate(2deg)}73%{opacity:1;transform:translateY(0) rotate(0)}93%{opacity:1;transform:translateY(0) rotate(0)}98%{opacity:0;transform:translateY(-40px)}100%{opacity:0;transform:translateY(-40px)}}
+.date-big{font-family:"Black Han Sans",sans-serif;font-size:76px;line-height:1;color:#FFF3E2;animation:dateIn 12s ease infinite}
+.date-big em{font-style:normal;color:#FF4A67}
+@keyframes dateIn{0%{opacity:0;transform:translateX(-80px)}67%{opacity:0;transform:translateX(-80px)}71.5%{opacity:1;transform:translateX(0)}93%{opacity:1;transform:translateX(0)}98%{opacity:0;transform:translateX(-40px)}100%{opacity:0;transform:translateX(-40px)}}
+.place{margin-top:16px;font-size:28px;font-weight:900;color:#FFD9A0;animation:placeIn 12s ease infinite}
+.place small{display:block;font-size:20px;font-weight:400;color:#FFF3E2;opacity:.85;margin-top:8px}
+@keyframes placeIn{0%{opacity:0;transform:translateX(-60px)}68%{opacity:0;transform:translateX(-60px)}73%{opacity:1;transform:translateX(0)}93%{opacity:1;transform:translateX(0)}98%{opacity:0;transform:translateX(-30px)}100%{opacity:0;transform:translateX(-30px)}}
+.cta-kicker{display:inline-block;background:#E9304A;color:#fff;font-weight:900;font-size:22px;letter-spacing:.12em;padding:10px 22px;border-radius:100px;margin-bottom:16px}
+.cta-right h3{font-family:"Black Han Sans",sans-serif;font-size:38px;line-height:1.15}
+.cta-right p{margin-top:12px;font-size:20px;font-weight:700;color:#6B4A3A}
+.qr-row{display:flex;gap:14px;margin-top:18px;align-items:stretch;justify-content:center}
+.qr{width:120px;height:120px;background:#fff;border:4px solid #1E0F08;border-radius:14px;background-image:linear-gradient(#1E0F08 0 0);background-size:14px 14px;background-position:10px 10px;background-repeat:repeat;display:flex;align-items:center;justify-content:center;position:relative}
+.qr:after{content:"딸기";position:absolute;background:#E9304A;color:#fff;font-weight:900;font-size:20px;padding:4px 10px;border-radius:8px;border:3px solid #1E0F08}
+.btn{flex:1;background:#E9304A;color:#fff;border:4px solid #1E0F08;border-radius:18px;font-family:"Black Han Sans",sans-serif;font-size:34px;display:flex;align-items:center;justify-content:center;box-shadow:6px 6px 0 #1E0F08;animation:btnPulse 12s ease infinite}
+@keyframes btnPulse{0%,68%{opacity:0;transform:scale(.9)}73%{opacity:1;transform:scale(1)}80%{opacity:1;transform:scale(1.05)}84%{opacity:1;transform:scale(1)}88%{opacity:1;transform:scale(1.05)}92%{opacity:1;transform:scale(1)}98%,100%{opacity:0;transform:scale(1)}}
+.note{margin-top:14px;font-size:17px;font-weight:700;color:#A91E36}
+/* chrome */
+.chrome{position:absolute;left:0;right:0;bottom:0;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 36px;z-index:10}
+.brand{font-family:Montserrat,sans-serif;font-weight:900;font-size:20px;letter-spacing:.14em;color:inherit;mix-blend-mode:normal}
+.dots{display:flex;gap:10px;align-items:center}
+.dot{width:44px;height:10px;border-radius:100px;background:currentColor}
+.d1{animation:dot1 12s linear infinite} .d2{animation:dot2 12s linear infinite} .d3{animation:dot3 12s linear infinite}
+@keyframes dot1{0%{opacity:1;transform:scaleX(1.25)}27%{opacity:1;transform:scaleX(1.25)}33.33%,100%{opacity:.25;transform:scaleX(1)}}
+@keyframes dot2{0%,30%{opacity:.25;transform:scaleX(1)}36%,60%{opacity:1;transform:scaleX(1.25)}66.66%,100%{opacity:.25;transform:scaleX(1)}}
+@keyframes dot3{0%,63%{opacity:.25;transform:scaleX(1)}69%,94%{opacity:1;transform:scaleX(1.25)}100%{opacity:.25;transform:scaleX(1)}}
+.progress{position:absolute;top:0;left:0;height:8px;width:100%;background:#E9304A;transform-origin:left;animation:prog 12s linear infinite;z-index:20}
+@keyframes prog{0%{transform:scaleX(0)}100%{transform:scaleX(1)}}
+.spark{position:absolute;width:22px;height:22px;background:#fff;border-radius:50%;animation:sparkF 12s ease infinite}
+@keyframes sparkF{0%{opacity:0;transform:translateY(0) scale(.5)}5%{opacity:1;transform:translateY(-30px) scale(1)}20%{opacity:1;transform:translateY(-80px) scale(1)}30%,100%{opacity:0;transform:translateY(-120px)}}
+</style>
+</head>
+<body>
+<div class="stage">
+<div class="progress"></div>
+
+<!-- HOOK 0-4s : single giant strawberry -->
+<section class="scene hook">
+<div class="marquee">FRESH STRAWBERRY • SEONGSU POP-UP • ONLY 3 DAYS • FRESH STRAWBERRY • SEONGSU POP-UP • ONLY 3 DAYS •</div>
+<div class="burst"></div><div class="burst-ring"></div>
+<div class="pill"><b>3일 한정</b> 성수동 팝업스토어 OPEN</div>
+<div class="berry-wrap">
+<div class="leaf l1"></div><div class="leaf l3"></div><div class="leaf l2"></div><div class="stem"></div>
+<div class="berry-top">
+<span class="seed" style="left:58px;top:58px"></span><span class="seed" style="left:140px;top:44px"></span><span class="seed" style="left:222px;top:54px"></span><span class="seed" style="left:100px;top:112px"></span><span class="seed" style="left:180px;top:104px"></span><span class="seed" style="left:260px;top:112px"></span><span class="seed" style="left:140px;top:162px"></span><span class="seed" style="left:220px;top:162px"></span>
+<div class="shine"></div>
+</div>
+<div class="berry-bottom"></div>
+</div>
+<div class="berry-shadow"></div>
+<h1 class="hook-title"><span>딸기</span> 가 <em>쏟아진다!</em></h1>
+<p class="hook-sub">스윗스팟 × 로컬 로스터리 — <strong>12.12(금) – 12.14(일) 성수동</strong></p>
+</section>
+
+<!-- PRODUCT 4-8s : single dessert stack -->
+<section class="scene product">
+<div class="p-label">SEONGSU LIMITED — MENU 01</div>
+<h2 class="p-title">생딸기 쇼트케이크 <i>+ 딸기라떼</i></h2>
+<div class="cake-stage">
+<div class="plate"></div>
+<div class="cake">
+<div class="mini m1"><div class="ml"></div><div class="mt"></div><div class="mb"></div></div>
+<div class="mini m2"><div class="ml"></div><div class="mt"></div><div class="mb"></div></div>
+<div class="mini m3"><div class="ml"></div><div class="mt"></div><div class="mb"></div></div>
+<div class="top-cream"></div>
+<div class="sponge"></div>
+<div class="cream"><i></i><i></i><i></i><i></i><i></i></div>
+<div class="sponge"></div>
+</div>
+<div class="cup"><div class="foam"></div><div class="latte"></div><b>딸기라떼</b></div>
+</div>
+<div class="p-benefit"><span>당일 수확 생딸기 100%</span><span>로컬 로스팅 원두</span><span>현장 굿즈 증정</span></div>
+</section>
+
+<!-- OFFER + CTA 8-12s -->
+<section class="scene cta">
+<div class="cta-inner">
+<div class="cta-left">
+<div class="date-big">12.12 FRI<br><em>— 12.14 SUN</em></div>
+<div class="place">서울 성동구 연무장길 27 · 스윗스팟 성수 2층<small>11:00 – 20:00 · 3일간만 운영 · 당일 현장 웨이팅 가능</small></div>
+</div>
+<div class="cta-right">
+<div class="cta-kicker">사전예약 EVENT</div>
+<h3>예약하면<br>생딸기 토핑 2배!</h3>
+<p>선착순 300명 · 드립백 증정</p>
+<div class="qr-row"><div class="qr"></div><div class="btn">사전예약<br>하기 →</div></div>
+<div class="note">네이버 예약 ‘스윗스팟 성수팝업’ 검색</div>
+</div>
+</div>
+</section>
+
+<div class="chrome" style="color:#1A0E06"><div class="brand">SWEETSPOT × LOCAL ROASTERY</div><div class="dots" style="color:#1A0E06"><div class="dot d1" style="background:#E9304A"></div><div class="dot d2" style="background:#E9304A"></div><div class="dot d3" style="background:#E9304A"></div></div></div>
+</div>
+</body>
+</html>

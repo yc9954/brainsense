@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1280">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Jua&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<title>스윗스팟 x 로컬 로스터리 - 성수 팝업</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{background:#111;min-height:100vh;display:flex;align-items:center;justify-content:center;font-family:'Noto Sans KR',sans-serif}
+.stage{width:1280px;height:720px;position:relative;overflow:hidden;background:#FFF7E8;flex-shrink:0;border-radius:18px;box-shadow:0 30px 100px rgba(0,0,0,.6)}
+.halftone{position:absolute;inset:0;background-image:radial-gradient(#431407 1.6px,transparent 1.7px);background-size:22px 22px;opacity:.08;pointer-events:none}
+.stripes{position:absolute;top:0;left:0;right:0;height:18px;background:repeating-linear-gradient(90deg,#D61F41 0 36px,#FFF7E8 36px 52px,#431407 52px 58px,#FBBF24 58px 94px);border-bottom:4px solid #431407;animation:stripeShift 12s infinite linear}
+@keyframes stripeShift{0%{transform:translateX(0);opacity:1}100%{transform:translateX(-94px);opacity:1}}
+.topbar{position:absolute;top:18px;left:0;right:0;height:58px;display:flex;align-items:center;justify-content:space-between;padding:0 32px;background:#431407;color:#FFF7E8;z-index:20}
+.topbar .logo{font-family:'Black Han Sans';font-size:22px;letter-spacing:.5px}
+.topbar .logo em{font-style:normal;color:#FBBF24}
+.topbar .logo span{font-family:'Noto Sans KR';font-weight:900;background:#D61F41;border-radius:100px;padding:4px 14px;font-size:15px;margin-left:12px;vertical-align:middle}
+.topbar .datepill{font-weight:900;font-size:16px;background:#FFF7E8;color:#431407;border-radius:100px;padding:8px 18px;border:3px solid #FBBF24}
+.ticker{position:absolute;top:76px;left:0;right:0;height:44px;background:#D61F41;color:#fff;overflow:hidden;display:flex;align-items:center;border-bottom:4px solid #431407;z-index:20}
+.ticker-track{white-space:nowrap;font-family:'Black Han Sans';font-size:20px;letter-spacing:1px;display:flex;gap:0;animation:tickerMove 12s infinite linear}
+.ticker-track span{padding:0 18px}
+@keyframes tickerMove{0%{transform:translateX(0);opacity:1}100%{transform:translateX(-50%);opacity:1}}
+.scene{position:absolute;left:0;right:0;top:120px;bottom:64px;padding:28px 48px}
+.scene.hook{animation:hookShow 12s infinite ease}
+.scene.product{animation:productShow 12s infinite ease}
+.scene.offer{animation:offerShow 12s infinite ease}
+@keyframes hookShow{0%{opacity:1;visibility:visible;transform:translateX(0)}27%{opacity:1;visibility:visible;transform:translateX(0)}33.33%{opacity:0;visibility:hidden;transform:translateX(-60px)}91.66%{opacity:0;visibility:hidden;transform:translateX(60px)}100%{opacity:1;visibility:visible;transform:translateX(0)}}
+@keyframes productShow{0%,27%{opacity:0;visibility:hidden;transform:translateX(60px)}33.33%{opacity:1;visibility:visible;transform:translateX(0)}60%{opacity:1;visibility:visible;transform:translateX(0)}66.66%,100%{opacity:0;visibility:hidden;transform:translateX(-60px)}}
+@keyframes offerShow{0%,60%{opacity:0;visibility:hidden;transform:translateX(60px)}66.66%{opacity:1;visibility:visible;transform:translateX(0)}93%{opacity:1;visibility:visible;transform:translateX(0)}100%{opacity:0;visibility:hidden;transform:translateX(-60px)}}
+/* HOOK */
+.hook-grid{display:flex;gap:32px;align-items:center;height:100%}
+.hook-left{flex:1.1}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;background:#431407;color:#FFF7E8;font-weight:900;font-size:18px;padding:10px 18px;border-radius:100px;animation:hookEyebrow 12s infinite ease}
+@keyframes hookEyebrow{0%{transform:translateY(30px);opacity:0}3%{transform:translateY(0);opacity:1}27%{transform:translateY(0);opacity:1}33%,100%{transform:translateY(0);opacity:0}}
+.eyebrow i{width:12px;height:12px;background:#22C55E;border-radius:50%;display:inline-block;animation:dotBlink 12s infinite ease}
+@keyframes dotBlink{0%,8%{opacity:1;transform:scale(1)}12%,16%{opacity:.2;transform:scale(.7)}20%,100%{opacity:1;transform:scale(1)}}
+.hook-title{font-family:'Black Han Sans';font-size:118px;line-height:.95;color:#431407;margin:16px 0 12px;animation:hookTitle 12s infinite ease}
+@keyframes hookTitle{0%{transform:translateY(70px) rotate(-2deg);opacity:0}4%{transform:translateY(0) rotate(0);opacity:1}24%{transform:translateY(0) scale(1);opacity:1}28%{transform:translateY(-20px) scale(1.03);opacity:0}33%,100%{transform:translateY(0);opacity:0}}
+.hook-title .red{color:#D61F41;position:relative;display:inline-block}
+.hook-title .red:after{content:'';position:absolute;left:-6px;right:-6px;bottom:8px;height:22px;background:#FBBF24;z-index:-1;transform:rotate(-1.5deg);border:3px solid #431407;border-radius:4px}
+.hook-sub{font-size:22px;font-weight:700;color:#573314;line-height:1.5;animation:hookSub 12s infinite ease}
+@keyframes hookSub{0%,5%{transform:translateY(30px);opacity:0}9%{transform:translateY(0);opacity:1}26%{transform:translateY(0);opacity:1}30%,100%{transform:translateY(0);opacity:0}}
+.hook-sub b{color:#D61F41}
+.hook-right{flex:.9;position:relative;display:flex;align-items:center;justify-content:center}
+.plate{width:430px;height:430px;background:#fff;border:6px solid #431407;border-radius:50%;box-shadow:12px 12px 0 #431407;position:relative;display:flex;align-items:center;justify-content:center;animation:plateIn 12s infinite ease}
+@keyframes plateIn{0%{transform:scale(.5) rotate(-12deg);opacity:0}5%{transform:scale(1.05) rotate(3deg);opacity:1}9%{transform:scale(1) rotate(0);opacity:1}24%{transform:scale(1) rotate(0);opacity:1}29%,100%{transform:scale(1.2);opacity:0}}
+.cake{width:240px;height:200px;background:#fff;border:5px solid #431407;border-radius:22px 22px 18px 18px;position:relative;overflow:hidden;box-shadow:inset 0 -18px 0 #FFE4E6}
+.cake-top{position:absolute;top:0;left:0;right:0;height:64px;background:#D61F41;border-bottom:5px solid #431407;display:flex;align-items:center;justify-content:center;font-size:34px;letter-spacing:4px}
+.cake-cream{position:absolute;top:64px;left:0;right:0;height:28px;background:repeating-linear-gradient(180deg,#fff 0 12px,#FECDD3 12px 18px);border-bottom:4px solid #431407}
+.cake-face{position:absolute;bottom:18px;left:0;right:0;text-align:center;font-family:'Jua';font-size:24px;color:#431407}
+.big-berry{position:absolute;font-size:170px;filter:drop-shadow(6px 6px 0 #431407);animation:berryBounce 12s infinite ease}
+@keyframes berryBounce{0%{transform:scale(0) rotate(-30deg) translateY(80px);opacity:0}4%{transform:scale(1.2) rotate(10deg) translateY(0);opacity:1}8%{transform:scale(1) rotate(-6deg) translateY(-14px);opacity:1}13%{transform:scale(1.05) rotate(4deg) translateY(6px);opacity:1}18%{transform:scale(1) rotate(0) translateY(-10px);opacity:1}23%{transform:scale(1) translateY(0);opacity:1}28%,100%{transform:scale(1.3) translateY(-40px);opacity:0}}
+.mini{position:absolute;font-size:64px;filter:drop-shadow(4px 4px 0 #431407)}
+.m1{left:6px;top:20px;animation:mini1 12s infinite ease}
+.m2{right:8px;bottom:30px;animation:mini2 12s infinite ease}
+@keyframes mini1{0%,6%{transform:translateY(20px) rotate(0);opacity:0}10%{transform:translateY(0) rotate(-15deg);opacity:1}24%{transform:translateY(-18px) rotate(15deg);opacity:1}30%,100%{transform:translateY(0);opacity:0}}
+@keyframes mini2{0%,7%{transform:translateY(20px);opacity:0}11%{transform:translateY(0) rotate(15deg);opacity:1}24%{transform:translateY(-22px) rotate(-10deg);opacity:1}30%,100%{transform:translateY(0);opacity:0}}
+.burst{position:absolute;right:18px;top:6px;width:168px;height:168px;background:#FBBF24;border:5px solid #431407;border-radius:50%;display:flex;align-items:center;justify-content:center;text-align:center;font-family:'Black Han Sans';font-size:22px;line-height:1.2;color:#431407;animation:burstSpin 12s infinite ease}
+.burst:before{content:'';position:absolute;inset:-16px;background:inherit;border:5px solid #431407;clip-path:polygon(50% 0,61% 12%,76% 6%,79% 21%,94% 24%,88% 38%,100% 50%,88% 62%,94% 76%,79% 79%,76% 94%,61% 88%,50% 100%,39% 88%,24% 94%,21% 79%,6% 76%,12% 62%,0 50%,12% 38%,6% 24%,21% 21%,24% 6%,39% 12%);z-index:-1}
+@keyframes burstSpin{0%{transform:scale(0) rotate(-90deg);opacity:0}6%{transform:scale(1.1) rotate(10deg);opacity:1}9%{transform:scale(1) rotate(0);opacity:1}15%{transform:scale(1) rotate(12deg);opacity:1}24%{transform:scale(1) rotate(-8deg);opacity:1}28%,100%{transform:scale(0);opacity:0}}
+/* PRODUCT */
+.product-kicker{display:inline-block;background:#D61F41;color:#fff;font-weight:900;font-size:17px;padding:8px 18px;border-radius:100px;border:3px solid #431407;animation:prodKick 12s infinite ease}
+@keyframes prodKick{0%,32%{transform:translateY(20px);opacity:0}36%{transform:translateY(0);opacity:1}60%{transform:translateY(0);opacity:1}65%,100%{transform:translateY(0);opacity:0}}
+.product-title{font-family:'Black Han Sans';font-size:54px;color:#431407;margin:10px 0 16px;animation:prodTitle 12s infinite ease}
+.product-title span{background:#431407;color:#FBBF24;padding:0 14px;border-radius:10px}
+@keyframes prodTitle{0%,33%{transform:translateX(-40px);opacity:0}37%{transform:translateX(0);opacity:1}60%{transform:translateX(0);opacity:1}65%,100%{transform:translateX(0);opacity:0}}
+.cards{display:flex;gap:20px}
+.card{flex:1;background:#fff;border:5px solid #431407;border-radius:20px;box-shadow:8px 8px 0 #431407;padding:18px 18px 16px;position:relative;overflow:hidden}
+.card.c1{animation:card1 12s infinite ease}
+.card.c2{animation:card2 12s infinite ease}
+.card.c3{animation:card3 12s infinite ease;border-color:#D61F41;box-shadow:8px 8px 0 #D61F41}
+@keyframes card1{0%,36%{transform:translateY(90px) rotate(-2deg);opacity:0}40%{transform:translateY(0) rotate(0);opacity:1}60%{transform:translateY(0);opacity:1}65%,100%{transform:translateY(-30px);opacity:0}}
+@keyframes card2{0%,38%{transform:translateY(90px);opacity:0}42%{transform:translateY(0);opacity:1}60%{transform:translateY(0);opacity:1}65%,100%{transform:translateY(-30px);opacity:0}}
+@keyframes card3{0%,40%{transform:translateY(90px) rotate(2deg);opacity:0}44%{transform:translateY(0) rotate(0);opacity:1}60%{transform:translateY(0);opacity:1}65%,100%{transform:translateY(-30px);opacity:0}}
+.card .emoji{font-size:74px;line-height:1;background:#FFF1C9;border:4px solid #431407;border-radius:16px;text-align:center;padding:10px 0}
+.card.c2 .emoji{background:#FFE4E6}
+.card.c3 .emoji{background:#D61F41}
+.card h3{font-family:'Black Han Sans';font-size:24px;color:#431407;margin:12px 0 4px}
+.card p{font-size:15px;font-weight:500;color:#6B4A2E;line-height:1.5}
+.card .price{margin-top:10px;font-weight:900;font-size:20px;color:#D61F41}
+.card .price s{color:#9A7A5A;font-size:15px;margin-left:8px}
+.card .tag{position:absolute;top:12px;right:12px;background:#431407;color:#FBBF24;font-size:13px;font-weight:900;padding:5px 10px;border-radius:100px}
+.card.c3 .tag{background:#D61F41;color:#fff}
+.benefit{margin-top:16px;background:#431407;color:#FFF7E8;border-radius:14px;padding:12px 20px;display:flex;gap:18px;align-items:center;font-weight:700;font-size:18px;animation:benefitIn 12s infinite ease}
+@keyframes benefitIn{0%,43%{transform:translateY(30px);opacity:0}47%{transform:translateY(0);opacity:1}60%{transform:translateY(0);opacity:1}65%,100%{transform:translateY(0);opacity:0}}
+.benefit b{color:#FBBF24}
+/* OFFER */
+.offer-grid{display:flex;gap:28px;height:100%;align-items:stretch}
+.ticket{flex:1.15;background:#fff;border:5px solid #431407;border-radius:22px;box-shadow:10px 10px 0 #431407;display:flex;overflow:hidden;position:relative;animation:ticketIn 12s infinite ease}
+@keyframes ticketIn{0%,65%{transform:translateX(-80px) rotate(-1deg);opacity:0}70%{transform:translateX(0) rotate(0);opacity:1}92%{transform:translateX(0);opacity:1}96%,100%{transform:translateX(-40px);opacity:0}}
+.ticket-left{flex:1;padding:26px 28px}
+.ticket-left .d{font-family:'Black Han Sans';font-size:48px;line-height:1;color:#D61F41}
+.ticket-left .d small{font-size:22px;color:#431407}
+.ticket-right{width:200px;background:#D61F41;color:#fff;border-left:5px dashed #431407;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:18px}
+.ticket-right .big{font-family:'Black Han Sans';font-size:54px;line-height:1}
+.ticket h4{font-size:20px;font-weight:900;color:#431407;margin-top:12px}
+.ticket p{font-size:16px;font-weight:500;color:#5B4632;line-height:1.6;margin-top:6px}
+.ticket .line{margin-top:12px;background:#FFF1C9;border:3px solid #431407;border-radius:12px;padding:10px 14px;font-weight:900;font-size:16px;color:#431407}
+.cta-box{flex:.85;background:#431407;border:5px solid #431407;border-radius:22px;box-shadow:10px 10px 0 #D61F41;padding:28px 26px;color:#FFF7E8;text-align:center;position:relative;overflow:hidden;animation:ctaBox 12s infinite ease}
+@keyframes ctaBox{0%,67%{transform:translateY(60px) scale(.95);opacity:0}71%{transform:translateY(0) scale(1);opacity:1}92%{transform:translateY(0) scale(1);opacity:1}96%,100%{transform:translateY(-20px);opacity:0}}
+.cta-box .small{letter-spacing:2px;font-weight:900;color:#FBBF24;font-size:15px}
+.cta-box h2{font-family:'Black Han Sans';font-size:52px;line-height:1.05;margin:10px 0}
+.btn{display:block;margin:16px auto 10px;background:#FBBF24;color:#431407;font-family:'Black Han Sans';font-size:32px;padding:16px 0;width:100%;border-radius:100px;border:4px solid #fff;text-decoration:none;animation:btnPulse 12s infinite ease}
+@keyframes btnPulse{0%,70%{transform:scale(.9);opacity:0}74%{transform:scale(1.08);opacity:1}78%,88%{transform:scale(1);opacity:1}90%{transform:scale(1.06);opacity:1}92%{transform:scale(1);opacity:1}96%,100%{transform:scale(1);opacity:0}}
+.shine{position:absolute;top:0;bottom:0;width:80px;background:linear-gradient(100deg,transparent,rgba(255,255,255,.7),transparent);animation:shineMove 12s infinite ease}
+@keyframes shineMove{0%,75%{transform:translateX(-200px) skewX(-15deg);opacity:0}83%{transform:translateX(420px) skewX(-15deg);opacity:1}87%,100%{transform:translateX(420px);opacity:0}}
+.url{font-weight:700;font-size:17px;color:#fff}
+.url b{color:#FBBF24}
+.qr{display:flex;gap:12px;align-items:center;justify-content:center;margin-top:14px;background:rgba(255,255,255,.1);border-radius:14px;padding:10px}
+.qr-grid{width:72px;height:72px;background:#fff;border-radius:8px;display:grid;grid-template-columns:repeat(7,1fr);gap:1px;padding:6px}
+.qr-grid i{background:#431407;display:block}
+.qr-grid i:nth-child(even){background:#fff}
+.qr-grid i:nth-child(3n){background:#D61F41}
+.qr p{font-size:14px;text-align:left;line-height:1.5;font-weight:700}
+/* PROGRESS */
+.progress{position:absolute;left:0;right:0;bottom:0;height:64px;background:#FFF7E8;border-top:4px solid #431407;display:flex;align-items:center;padding:0 32px;gap:20px;z-index:20}
+.seg{flex:1;display:flex;align-items:center;gap:10px;font-weight:900;font-size:15px;color:#9A8A7A}
+.seg .num{width:30px;height:30px;border-radius:50%;background:#E7DCC8;color:#431407;display:flex;align-items:center;justify-content:center;font-size:15px;border:3px solid #431407}
+.seg.on1{animation:seg1 12s infinite ease}.seg.on2{animation:seg2 12s infinite ease}.seg.on3{animation:seg3 12s infinite ease}
+@keyframes seg1{0%,27%{opacity:1;transform:scale(1)}33%,100%{opacity:.45;transform:scale(.96)}}
+@keyframes seg2{0%,27%{opacity:.45;transform:scale(.96)}33%,60%{opacity:1;transform:scale(1)}66%,100%{opacity:.45;transform:scale(.96)}}
+@keyframes seg3{0%,60%{opacity:.45;transform:scale(.96)}66%,100%{opacity:1;transform:scale(1)}}
+.barwrap{position:absolute;top:-4px;left:0;right:0;height:8px;background:#E7DCC8}
+.bar{height:100%;background:#D61F41;transform-origin:left;animation:barFill 12s infinite linear}
+@keyframes barFill{0%{transform:scaleX(0);opacity:1}100%{transform:scaleX(1);opacity:1}}
+.pop{position:absolute;bottom:76px;right:36px;background:#22C55E;color:#fff;font-weight:900;font-size:14px;padding:8px 14px;border-radius:100px;border:3px solid #431407;z-index:21;animation:popHint 12s infinite ease}
+@keyframes popHint{0%,60%{transform:translateY(10px);opacity:0}66%{transform:translateY(0);opacity:1}90%{transform:translateY(0);opacity:1}94%,100%{transform:translateY(0);opacity:0}}
+</style>
+</head>
+<body>
+<div class="stage">
+<div class="halftone"></div>
+<div class="stripes"></div>
+<div class="topbar">
+<div class="logo">SWEET SPOT <em>×</em> LOCAL ROASTERY <span>성수 팝업</span></div>
+<div class="datepill">11.14 FRI — 11.16 SUN · 3 DAYS ONLY</div>
+</div>
+<div class="ticker"><div class="ticker-track"><span>🍓 성수동 3일 한정 🍓 겨울 딸기 첫 수확 🍓 당일 로스팅 원두 🍓 사전예약 시 타르트 증정 🍓 성수역 3분 🍓</span><span>🍓 성수동 3일 한정 🍓 겨울 딸기 첫 수확 🍓 당일 로스팅 원두 🍓 사전예약 시 타르트 증정 🍓 성수역 3분 🍓</span></div></div>
+
+<!-- 0-4s HOOK -->
+<section class="scene hook">
+<div class="hook-grid">
+<div class="hook-left">
+<div class="eyebrow"><i></i> 성수동 3일 한정 팝업 · 스윗스팟 × 로컬 로스터리</div>
+<div class="hook-title">딸기가<br><span class="red">폭발한다!</span></div>
+<div class="hook-sub">겨울 딸기 첫 수확 <b>12알 듬뿍</b> 생크림 케이크 +<br>당일 로스팅 싱글오리진 라떼를 성수에서 가장 먼저</div>
+</div>
+<div class="hook-right">
+<div class="plate"><div class="cake"><div class="cake-top">🍓🍓🍓</div><div class="cake-cream"></div><div class="cake-face">성수 한정 · 오늘만</div></div></div>
+<div class="big-berry">🍓</div>
+<div class="mini m1">🍓</div>
+<div class="mini m2">🥛</div>
+<div class="burst">3 DAYS<br>ONLY<br>11.14-16</div>
+</div>
+</div>
+</section>
+
+<!-- 4-8s PRODUCT -->
+<section class="scene product">
+<div class="product-kicker">오직 성수 팝업에서만 · 3종 한정 메뉴</div>
+<div class="product-title">달콤함은 <span>크게</span>, 가격은 착하게</div>
+<div class="cards">
+<div class="card c1"><div class="tag">BEST 1위</div><div class="emoji">🍰</div><h3>생딸기 생크림 케이크</h3><p>새벽 수확 딸기 12알, 우유 생크림 2배. 팝업 단독 홀케이크 컷.</p><div class="price">8,900원 <s>11,000원</s></div></div>
+<div class="card c2"><div class="tag">ROASTERY</div><div class="emoji">🥛</div><h3>딸기 우유 + 에스프레소 라떼</h3><p>로컬 로스터리 에티오피아 싱글오리진 샷. 딸기청 직접 제조.</p><div class="price">6,500원 <s>7,500원</s></div></div>
+<div class="card c3"><div class="tag">선착순 100명 무료</div><div class="emoji">🧁</div><h3>구운 딸기 타르트</h3><p>바삭한 아몬드 크림 + 카라멜라이징 딸기. 사전예약자 전원 증정.</p><div class="price">5,900원 → 0원</div></div>
+</div>
+<div class="benefit">🎁 팝업 혜택 <b>전 메뉴 10% 할인 + 스탬프 2배 + 인생샷 포토존</b> &nbsp;·&nbsp; 매일 11시 · 15시 타임세일 추가 1+1</div>
+</section>
+
+<!-- 8-12s OFFER -->
+<section class="scene offer">
+<div class="offer-grid">
+<div class="ticket">
+<div class="ticket-left">
+<div class="d">11.14 — 11.16 <small>FRI-SUN</small></div>
+<h4>📍 스윗스팟 성수점 · 서울 성동구 아차산로 78 (성수역 3번 출구 3분)</h4>
+<p>운영 11:00 - 20:00 (라스트오더 19:30) · 당일 현장 웨이팅 가능<br>사전예약 시 대기 없이 바로 입장 + 포장 박스 무료</p>
+<div class="line">✦ 사전예약 혜택: 구운 딸기 타르트 1개 + 아메리카노 쿠폰팩 100% 증정 ✦</div>
+</div>
+<div class="ticket-right"><div>ADMIT</div><div class="big">3<br>DAYS</div><div style="font-weight:900">NO.1114-SEONGSU</div></div>
+</div>
+<div class="cta-box">
+<div class="shine"></div>
+<div class="small">● 지금 예약하면 100% 당첨 ●</div>
+<h2>자리 없어지기<br>전에 예약!</h2>
+<a class="btn" href="#">사전예약하기</a>
+<div class="url">sweetspot.kr/seongsu · <b>잔여 37석</b></div>
+<div class="qr"><div class="qr-grid"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><p>QR 찍고 10초 만에 예약<br>친구 공유하면 딸기라떼 1+1<br>11.13 자정 마감!</p></div>
+</div>
+</div>
+</section>
+
+<div class="pop">⏰ 11.13 자정 사전예약 마감!</div>
+<div class="progress"><div class="barwrap"><div class="bar"></div></div>
+<div class="seg on1"><div class="num">1</div> HOOK · 딸기폭발 0-4s</div>
+<div class="seg on2"><div class="num">2</div> MENU · 한정 3종 4-8s</div>
+<div class="seg on3"><div class="num">3</div> 예약 · 11.14-16 성수 8-12s</div>
+</div>
+</div>
+</body>
+</html>

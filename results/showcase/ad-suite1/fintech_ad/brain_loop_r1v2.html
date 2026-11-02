@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&family=Noto+Sans+KR:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:100%;height:100%;background:#0a0a0a;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.stage{width:1280px;height:720px;position:relative;overflow:hidden;background:#FFF4DE;font-family:'Noto Sans KR',sans-serif;flex-shrink:0;border-radius:18px}
+.bg-cream{position:absolute;inset:0;background:#FFF4DE}
+.bg-diagonal{position:absolute;left:-200px;top:-220px;width:900px;height:1150px;background:#FF4D00;transform:rotate(18deg);animation:diagSlide 12s linear infinite}
+@keyframes diagSlide{0%{transform:rotate(18deg) translateX(0);opacity:1}20%{transform:rotate(18deg) translateX(26px);opacity:1}30.5%{transform:rotate(18deg) translateX(26px);opacity:1}33.33%{transform:rotate(18deg) translateX(0);opacity:1}62%{transform:rotate(18deg) translateX(26px);opacity:1}66.6%{transform:rotate(18deg) translateX(0);opacity:0}67%{transform:rotate(18deg) translateX(0);opacity:0}100%{transform:rotate(18deg) translateX(0);opacity:0}}
+.bg-diagonal-dark{position:absolute;inset:0;background:#14100C;opacity:0;animation:darkBg 12s linear infinite}
+@keyframes darkBg{0%{opacity:0}61%{opacity:0}66.66%{opacity:1}94%{opacity:1}100%{opacity:0}}
+.topbar{position:absolute;top:0;left:0;right:0;height:74px;display:flex;align-items:center;justify-content:space-between;padding:0 48px;z-index:20}
+.logo{display:flex;align-items:center;gap:12px;font-weight:900;font-size:24px;letter-spacing:-.5px;color:#14100C;animation:logoColor 12s linear infinite}
+@keyframes logoColor{0%{color:#14100C}60%{color:#14100C}66.66%{color:#fff}94%{color:#fff}100%{color:#14100C}}
+.logo-mark{width:42px;height:42px;background:#14100C;color:#fff;border-radius:12px;display:flex;align-items:center;justify-content:center;font-family:Montserrat;font-size:26px;animation:logoMark 12s linear infinite}
+@keyframes logoMark{0%{background:#14100C;color:#fff}60%{background:#14100C;color:#fff}66.66%{background:#FF4D00;color:#fff}94%{background:#FF4D00;color:#fff}100%{background:#14100C;color:#fff}}
+.timer-pill{font-family:Montserrat;font-size:15px;font-weight:800;letter-spacing:1.5px;border:2px solid currentColor;border-radius:100px;padding:8px 18px;opacity:.85}
+.scene{position:absolute;inset:0;padding:86px 48px 70px;z-index:5}
+.hook{animation:hookVis 12s linear infinite}
+@keyframes hookVis{0%{opacity:1;transform:translateX(0)}28%{opacity:1;transform:translateX(0)}32.5%{opacity:0;transform:translateX(-70px)}92%{opacity:0;transform:translateX(40px)}100%{opacity:1;transform:translateX(0)}}
+.product{animation:productVis 12s linear infinite}
+@keyframes productVis{0%{opacity:0;transform:translateX(70px)}29%{opacity:0;transform:translateX(70px)}33.33%{opacity:1;transform:translateX(0)}60%{opacity:1;transform:translateX(0)}65%{opacity:0;transform:translateX(-70px)}100%{opacity:0;transform:translateX(70px)}}
+.offer{animation:offerVis 12s linear infinite}
+@keyframes offerVis{0%{opacity:0}60%{opacity:0}66.66%{opacity:1}94%{opacity:1;transform:translateY(0)}100%{opacity:0;transform:translateY(0)}}
+.pill{display:inline-flex;align-items:center;gap:8px;background:#14100C;color:#fff;font-weight:700;font-size:18px;border-radius:100px;padding:10px 20px}
+.pill i{width:10px;height:10px;background:#00E676;border-radius:50%;display:block;animation:dotBlink 12s linear infinite}
+@keyframes dotBlink{0%{opacity:1;transform:scale(1)}6%{opacity:.3;transform:scale(.7)}12%{opacity:1;transform:scale(1.25)}18%{opacity:1;transform:scale(1)}100%{opacity:1;transform:scale(1)}}
+.hook h1{font-size:178px;line-height:.95;font-weight:900;letter-spacing:-8px;color:#14100C;margin:18px 0 0;animation:hookPop 12s cubic-bezier(.2,1.4,.3,1) infinite}
+.hook h1 span{color:#FF4D00}
+@keyframes hookPop{0%{opacity:0;transform:scale(.72) rotate(-2deg)}2.5%{opacity:1;transform:scale(1.06) rotate(0)}5%{opacity:1;transform:scale(1)}26%{opacity:1;transform:scale(1)}31%{opacity:0;transform:scale(1.04)}92%{opacity:0;transform:scale(.9)}100%{opacity:0;transform:scale(.72)}}
+.hook-sub{font-size:30px;font-weight:700;color:#14100C;margin-top:12px;animation:hookSub 12s linear infinite}
+@keyframes hookSub{0%{opacity:0;transform:translateY(24px)}3%{opacity:0;transform:translateY(24px)}6%{opacity:1;transform:translateY(0)}26%{opacity:1;transform:translateY(0)}31%{opacity:0;transform:translateY(-14px)}100%{opacity:0;transform:translateY(24px)}}
+.hook-micro{display:inline-block;margin-top:16px;background:#fff;border:2px solid #14100C;border-radius:14px;padding:10px 18px;font-weight:700;font-size:19px;animation:hookSub 12s linear infinite}
+.coin-big{position:absolute;right:430px;top:150px;width:168px;height:168px;background:radial-gradient(circle at 30% 30%,#FFD84D,#FF9A00 70%);border:6px solid #14100C;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:Montserrat;font-weight:900;font-size:84px;color:#14100C;box-shadow:8px 8px 0 #14100C;animation:coinSplit 12s ease-in-out infinite;z-index:6}
+.coin-small{position:absolute;width:74px;height:74px;border-radius:50%;border:4px solid #14100C;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:20px;box-shadow:5px 5px 0 #14100C}
+.cs1{right:390px;top:340px;background:#fff;color:#14100C;animation:coinSplit 12s ease-in-out infinite}
+.cs2{right:560px;top:330px;background:#14100C;color:#fff;animation:coinSplit 12s ease-in-out infinite}
+@keyframes coinSplit{0%{opacity:0;transform:scale(.4) translateY(60px) rotate(-20deg)}3%{opacity:1;transform:scale(1.1) translateY(0) rotate(0)}5.5%{opacity:1;transform:scale(1) translateY(-12px)}9%{opacity:1;transform:scale(1) translateY(10px)}13%{opacity:1;transform:scale(1) translateY(-8px)}18%{opacity:1;transform:scale(1) translateY(0)}27%{opacity:1;transform:scale(1) translateY(0)}32%{opacity:0;transform:scale(1.1) translateY(-30px)}100%{opacity:0;transform:scale(.4) translateY(60px)}}
+/* PERSON */
+.person{position:absolute;right:52px;top:118px;width:330px;height:480px;animation:personMove 12s linear infinite;z-index:7}
+@keyframes personMove{0%{opacity:1;transform:translateX(0) scale(1)}28%{opacity:1;transform:translateX(0) scale(1)}32.5%{opacity:0;transform:translateX(60px) scale(.96)}33.33%{opacity:0;transform:translateX(0) scale(.9)}37%{opacity:1;transform:translateX(0) scale(.82)}60%{opacity:1;transform:translateX(0) scale(.82)}65%{opacity:0;transform:translateX(40px)}66.66%{opacity:1;transform:translateX(0) scale(1)}93%{opacity:1;transform:translateX(0) scale(1)}100%{opacity:1;transform:translateX(0) scale(1)}}
+.hair-back{position:absolute;top:0;left:15px;width:300px;height:320px;background:#1E1310;border-radius:150px 150px 60px 60px}
+.face{position:absolute;top:48px;left:42px;width:246px;height:252px;background:#FFD6A8;border-radius:120px;border:5px solid #14100C;overflow:hidden}
+.eye{position:absolute;top:108px;width:56px;height:66px;background:#fff;border:4px solid #14100C;border-radius:50%;overflow:hidden}
+.eye.left{left:48px}.eye.right{right:48px}
+.pupil{position:absolute;top:22px;left:14px;width:24px;height:28px;background:#14100C;border-radius:50%;animation:pupilLook 12s linear infinite}
+.pupil::after{content:'';position:absolute;top:4px;left:4px;width:8px;height:8px;background:#fff;border-radius:50%}
+@keyframes pupilLook{0%{transform:translate(-12px,2px)}28%{transform:translate(-12px,2px)}36%{transform:translate(6px,-2px)}60%{transform:translate(6px,-2px)}70%{transform:translate(10px,10px)}93%{transform:translate(10px,10px)}100%{transform:translate(-12px,2px)}}
+.blush{position:absolute;top:168px;width:36px;height:14px;background:#FF8A7A;border-radius:10px;opacity:.9}
+.blush.l{left:28px}.blush.r{right:28px}
+.mouth{position:absolute;top:186px;left:50%;width:66px;height:32px;background:#7A1E1E;border:4px solid #14100C;border-radius:0 0 40px 40px;transform:translateX(-50%);overflow:hidden}
+.mouth::after{content:'';position:absolute;bottom:0;left:10px;right:10px;height:12px;background:#FF6B6B;border-radius:10px}
+.bangs{position:absolute;top:18px;left:15px;width:300px;height:110px;background:#1E1310;border-radius:40px 40px 0 0;transform:rotate(-6deg)}
+.bangs::after{content:'';position:absolute;top:58px;left:70px;width:0;height:0;border-left:28px solid transparent;border-right:28px solid transparent;border-top:44px solid #1E1310}
+.body{position:absolute;bottom:0;left:35px;width:260px;height:150px;background:#FFFDF5;border:5px solid #14100C;border-radius:36px 36px 22px 22px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:22px;color:#14100C}
+.body b{background:#00C389;color:#fff;border-radius:8px;padding:2px 10px;margin-right:8px}
+.arm{position:absolute;left:-24px;top:300px;width:90px;height:46px;background:#FFD6A8;border:4px solid #14100C;border-radius:30px;transform:rotate(-18deg)}
+/* PRODUCT */
+.prod-left{width:620px;padding-top:10px}
+.prod-kicker{font-family:Montserrat;font-size:18px;letter-spacing:3px;font-weight:800;color:#FF4D00}
+.prod-left h2{font-size:92px;line-height:.98;font-weight:900;letter-spacing:-3px;color:#14100C;margin:10px 0 18px}
+.prod-left h2 em{font-style:normal;background:#14100C;color:#fff;padding:0 16px;border-radius:14px;display:inline-block;transform:rotate(-1deg)}
+.benefit{display:flex;gap:12px;margin-top:6px}
+.bcard{background:#fff;border:3px solid #14100C;border-radius:18px;padding:16px 18px;flex:1;box-shadow:6px 6px 0 #14100C}
+.bcard strong{font-size:42px;font-family:Montserrat;display:block;line-height:1}
+.bcard span{font-size:19px;font-weight:700}
+.phone{position:absolute;right:110px;top:88px;width:340px;height:560px;background:#14100C;border-radius:48px;padding:14px;box-shadow:18px 18px 0 rgba(20,16,12,.18);animation:phoneRise 12s ease-in-out infinite}
+@keyframes phoneRise{0%{opacity:0;transform:translateY(120px) rotate(6deg)}32%{opacity:0;transform:translateY(120px) rotate(6deg)}36%{opacity:1;transform:translateY(0) rotate(-2deg)}42%{opacity:1;transform:translateY(-12px) rotate(-2deg)}52%{opacity:1;transform:translateY(8px) rotate(-2deg)}60%{opacity:1;transform:translateY(0) rotate(-2deg)}65%{opacity:0;transform:translateY(-40px) rotate(0)}100%{opacity:0;transform:translateY(120px)}}
+.screen{background:#fff;border-radius:34px;height:100%;padding:22px 20px;overflow:hidden;position:relative}
+.screen-top{display:flex;justify-content:space-between;align-items:center;font-weight:900;font-size:17px}
+.screen-top i{font-style:normal;background:#E8FDF2;color:#00A36C;border-radius:100px;padding:4px 12px;font-size:14px}
+.chart{margin:18px 0 10px;height:150px;display:flex;align-items:flex-end;gap:9px}
+.bar{flex:1;border-radius:8px 8px 4px 4px;background:#FFE0CC;transform-origin:bottom;animation:barGrow 12s linear infinite}
+.bar.up{background:#FF4D00}
+@keyframes barGrow{0%,32%{transform:scaleY(.2);opacity:0}38%{transform:scaleY(1);opacity:1}60%{transform:scaleY(1);opacity:1}65%{transform:scaleY(.2);opacity:0}100%{transform:scaleY(.2);opacity:0}}
+.stock-row{display:flex;justify-content:space-between;align-items:center;border:2px solid #14100C;border-radius:14px;padding:10px 14px;margin-top:10px;font-weight:700;font-size:16px}
+.stock-row.hot{background:#14100C;color:#fff}
+.stock-row.hot em{font-style:normal;color:#00E676}
+.proof{margin-top:14px;display:flex;gap:8px;font-size:14px;font-weight:700;color:#5A4E3E}
+/* OFFER */
+.offer-inner{display:flex;gap:40px;align-items:center;height:100%;padding-top:8px}
+.offer-left{flex:1;color:#fff}
+.offer-left h2{font-size:66px;line-height:1.02;font-weight:900;letter-spacing:-2px}
+.offer-left h2 span{color:#FFB18A}
+.offer-badge{display:inline-flex;background:#FF4D00;color:#fff;font-weight:900;font-size:20px;border-radius:100px;padding:10px 22px;margin-bottom:16px;animation:ctaPulse 12s linear infinite}
+@keyframes ctaPulse{0%,60%{transform:scale(.9);opacity:0}68%{transform:scale(1.08);opacity:1}72%{transform:scale(1)}80%{transform:scale(1.05)}86%{transform:scale(1)}92%{transform:scale(1.05)}100%{transform:scale(1);opacity:1}}
+.trust{display:flex;gap:10px;margin-top:22px}
+.trust div{border:1.5px solid rgba(255,255,255,.35);border-radius:12px;padding:10px 16px;font-size:16px;font-weight:700;color:#FFE9D6}
+.trust div b{color:#fff}
+.offer-right{width:420px;text-align:center}
+.cta{width:380px;height:112px;background:#FF4D00;color:#fff;border:none;border-radius:28px;font-family:'Noto Sans KR';font-weight:900;font-size:44px;letter-spacing:-1px;box-shadow:0 10px 0 #B72E00,0 18px 40px rgba(255,77,0,.5);animation:ctaPulse 12s linear infinite;cursor:pointer}
+.cta small{display:block;font-size:18px;font-weight:700;opacity:.9}
+.price-line{margin-top:16px;color:#fff;font-weight:700;font-size:22px}
+.price-line s{opacity:.55;margin-right:10px}
+.price-line strong{color:#FFD84D;font-size:28px}
+.shine{position:absolute;top:0;bottom:0;width:120px;background:linear-gradient(105deg,transparent,rgba(255,255,255,.55),transparent);filter:blur(1px);animation:shineMove 12s linear infinite;z-index:15;pointer-events:none}
+@keyframes shineMove{0%{left:-200px;opacity:0;transform:skewX(-18deg)}4%{left:500px;opacity:1;transform:skewX(-18deg)}8%{left:1300px;opacity:0;transform:skewX(-18deg)}36%{left:-200px;opacity:0}40%{left:600px;opacity:1}44%{left:1300px;opacity:0}70%{left:-200px;opacity:0}74%{left:700px;opacity:1}78%{left:1300px;opacity:0}100%{left:1300px;opacity:0}}
+.progress{position:absolute;left:48px;right:48px;bottom:26px;height:8px;background:rgba(20,16,12,.15);border-radius:100px;overflow:hidden;z-index:30;animation:progressBg 12s linear infinite}
+@keyframes progressBg{0%,60%{background:rgba(20,16,12,.15)}66.66%,94%{background:rgba(255,255,255,.25)}100%{background:rgba(20,16,12,.15)}}
+.progress i{display:block;height:100%;background:#14100C;border-radius:100px;transform-origin:left;animation:fillBar 12s linear infinite}
+@keyframes fillBar{0%{transform:scaleX(0);background:#14100C}33.33%{transform:scaleX(.333);background:#14100C}66.66%{transform:scaleX(.666);background:#FF4D00}100%{transform:scaleX(1);background:#FF4D00}}
+.scene-num{position:absolute;right:48px;bottom:16px;font-family:Montserrat;font-weight:800;font-size:14px;letter-spacing:2px;z-index:30;animation:logoColor 12s linear infinite}
+</style>
+</head>
+<body>
+<div class="stage">
+<div class="bg-cream"></div>
+<div class="bg-diagonal"></div>
+<div class="bg-diagonal-dark"></div>
+<div class="shine"></div>
+<div class="topbar"><div class="logo"><span class="logo-mark">M</span> 모이 MOI · 소수점 투자</div><div class="logo timer-pill">12 SEC LOOP ● 1,000원부터</div></div>
+
+<!-- HOOK 0-4s -->
+<section class="scene hook">
+<div class="pill"><i></i> 소수점 주식 투자 앱 · 모이</div>
+<h1>1,000<span>원</span>부터</h1>
+<div class="hook-sub">애플 · 테슬라 · 엔비디아 0.001주씩 사는 법</div><br>
+<div class="hook-micro">☕ 커피 한 잔보다 작게 · 오늘 바로 시작</div>
+<div class="coin-big">₩</div>
+<div class="coin-small cs1">0.01주</div>
+<div class="coin-small cs2">0.1주</div>
+</section>
+
+<!-- PRODUCT 4-8s -->
+<section class="scene product">
+<div class="prod-left">
+<div class="prod-kicker">3-MINUTE SIGN UP</div>
+<h2>3분이면<br><em>충분해요.</em></h2>
+<div class="benefit">
+<div class="bcard"><strong>01</strong><span>신분증 하나로<br>3분 가입</span></div>
+<div class="bcard"><strong>02</strong><span>자동 소수점<br>원화 주문</span></div>
+<div class="bcard"><strong>03</strong><span>실시간 분할<br>매수 알림</span></div>
+</div>
+<div class="proof">✓ NH투자증권 제휴 &nbsp; ✓ 예금자보호 &nbsp; ✓ ISMS 인증</div>
+</div>
+<div class="phone"><div class="screen">
+<div class="screen-top">내 포트폴리오 <i>▲ +12.4%</i></div>
+<div style="font-weight:900;font-size:34px;margin-top:10px">1,284,500원</div>
+<div style="font-size:14px;font-weight:700;opacity:.6">총 18개 종목 · 소수점 보유중</div>
+<div class="chart">
+<div class="bar" style="height:38%"></div><div class="bar" style="height:52%"></div><div class="bar" style="height:46%"></div><div class="bar up" style="height:68%"></div><div class="bar up" style="height:84%"></div><div class="bar up" style="height:100%"></div>
+</div>
+<div class="stock-row hot">테슬라 0.324주 <em>+8.2%</em></div>
+<div class="stock-row">애플 0.512주 <span>+3.1%</span></div>
+<div class="stock-row">엔비디아 0.108주 <span>+15.7%</span></div>
+</div></div>
+</section>
+
+<!-- OFFER + CTA 8-12s -->
+<section class="scene offer">
+<div class="offer-inner">
+<div class="offer-left">
+<div class="offer-badge">🎁 첫 투자 지원금 이벤트 중</div>
+<h2>지금 시작하면<br><span>첫 주식을</span> 드려요</h2>
+<div class="trust"><div><b>✓</b> ISMS 인증</div><div><b>✓</b> 예금자보호</div><div><b>✓</b> 24시간 고객센터</div></div>
+</div>
+<div class="offer-right">
+<button class="cta">지금 시작<small>3분 가입 · 1,000원부터 가능</small></button>
+<div class="price-line"><s>가입비 5,000원</s> <strong>지금 0원 + 주식 1주</strong></div>
+</div>
+</div>
+</section>
+
+<!-- shared human -->
+<div class="person">
+<div class="hair-back"></div>
+<div class="arm"></div>
+<div class="face"><div class="eye left"><div class="pupil"></div></div><div class="eye right"><div class="pupil"></div></div><div class="blush l"></div><div class="blush r"></div><div class="mouth"></div></div>
+<div class="bangs"></div>
+<div class="body"><b>지아</b> 1,000원으로 샀어요!</div>
+</div>
+
+<div class="progress"><i></i></div>
+<div class="scene-num">HOOK → PRODUCT → CTA</div>
+</div>
+</body>
+</html>

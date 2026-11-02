@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1280, height=720">
+<title>스윗스팟 x 로컬 로스터리 - 성수 팝업</title>
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%;background:#111}
+body{display:flex;align-items:center;justify-content:center;font-family:'Noto Sans KR',sans-serif}
+.stage{width:1280px;height:720px;position:relative;overflow:hidden;background:#FFFBF4;flex-shrink:0;display:flex;flex-direction:column}
+.top{height:76px;display:flex;align-items:center;justify-content:space-between;padding:0 48px;z-index:20}
+.logo{font-weight:900;font-size:22px;letter-spacing:.06em;color:#221310}
+.logo span{color:#E81E44}
+.badge-top{background:#E81E44;color:#fff;font-weight:900;font-size:18px;padding:10px 22px;border-radius:100px;letter-spacing:.02em}
+.scenes{position:relative;flex:1}
+.scene{position:absolute;inset:0;display:flex;align-items:center;padding:0 72px;opacity:0}
+.s1{z-index:3;animation:showHook 12s linear infinite}
+.s2{z-index:4;animation:showProduct 12s linear infinite}
+.s3{z-index:5;animation:showOffer 12s linear infinite}
+@keyframes showHook{0%,27%{opacity:1}32%,90%{opacity:0}94%,100%{opacity:1}}
+@keyframes showProduct{0%,30%{opacity:0}35%,60%{opacity:1}65%,100%{opacity:0}}
+@keyframes showOffer{0%,61%{opacity:0}67%,93%{opacity:1}97%,100%{opacity:0}}
+.left{width:620px}
+.kicker{display:inline-block;background:#221310;color:#fff;font-weight:900;font-size:22px;padding:10px 18px;border-radius:12px;animation:kickerNudge 12s linear infinite}
+@keyframes kickerNudge{0%,27%{opacity:1;transform:translateY(0)}8%{opacity:1;transform:translateY(-6px)}16%{opacity:1;transform:translateY(0)}28%,100%{opacity:1;transform:translateY(0)}}
+.h1{font-family:'Black Han Sans',sans-serif;font-size:132px;line-height:.95;color:#221310;margin:18px 0 8px;animation:titleNudge 12s linear infinite}
+@keyframes titleNudge{0%,27%{opacity:1;transform:translateX(0)}6%{opacity:1;transform:translateX(0) scale(1.015)}12%{opacity:1;transform:translateX(0)}28%,100%{opacity:1;transform:translateX(0)}}
+.h1 em{font-style:normal;color:#E81E44}
+.sub{font-size:28px;font-weight:700;color:#5A3A2E}
+.sub b{color:#E81E44}
+.right{width:488px;display:flex;justify-content:center;align-items:center;position:relative}
+.circle{width:460px;height:460px;background:#E81E44;border-radius:50%;position:absolute;animation:circleCalm 12s linear infinite}
+@keyframes circleCalm{0%{transform:scale(1)}10%{transform:scale(1.04)}20%{transform:scale(1)}32%,100%{transform:scale(1)}}
+.cake{position:relative;width:340px;height:300px;animation:berryFloat 12s linear infinite}
+@keyframes berryFloat{0%{transform:translateY(0) rotate(-2deg)}7%{transform:translateY(-18px) rotate(1deg)}14%{transform:translateY(0) rotate(-2deg)}22%{transform:translateY(-12px) rotate(0deg)}28%,100%{transform:translateY(0) rotate(-2deg)}}
+.plate{position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:360px;height:46px;background:#fff;border:6px solid #221310;border-radius:50%}
+.sponge{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);width:280px;height:150px;background:#FFD6DC;border:6px solid #221310;border-bottom:none;border-radius:18px 18px 0 0;overflow:hidden}
+.sponge:after{content:'';position:absolute;top:52px;left:0;right:0;height:32px;background:#fff;border-top:6px solid #221310;border-bottom:6px solid #221310}
+.creamtop{position:absolute;bottom:175px;left:50%;transform:translateX(-50%);width:280px;height:44px;background:#fff;border:6px solid #221310;border-radius:22px}
+.straw{position:absolute;bottom:205px;width:86px;height:86px;background:#E81E44;border:6px solid #221310;border-radius:50% 50% 50% 50% / 60% 60% 40% 40%;transform:rotate(-8deg)}
+.straw:before{content:'▲▲▲';position:absolute;top:-22px;left:50%;transform:translateX(-50%);font-size:22px;color:#1FA34A;letter-spacing:-4px}
+.straw:after{content:'•••';position:absolute;top:28px;left:50%;transform:translateX(-50%);color:#fff;font-size:18px;letter-spacing:4px}
+.st1{left:28px;animation:strawPop 12s linear infinite}
+.st2{left:127px;bottom:218px;width:96px;height:96px;animation:strawPop2 12s linear infinite}
+.st3{left:232px;animation:strawPop 12s linear infinite}
+@keyframes strawPop{0%,27%{opacity:1;transform:rotate(-8deg) scale(1)}10%{opacity:1;transform:rotate(-8deg) scale(1.1)}18%{opacity:1;transform:rotate(-8deg) scale(1)}28%,100%{opacity:1;transform:rotate(-8deg) scale(1)}}
+@keyframes strawPop2{0%,27%{opacity:1;transform:rotate(6deg) scale(1)}12%{opacity:1;transform:rotate(6deg) scale(1.12)}20%{opacity:1;transform:rotate(6deg) scale(1)}28%,100%{opacity:1;transform:rotate(6deg) scale(1)}}
+/* SCENE2 */
+.p-visual{width:540px;display:flex;align-items:flex-end;gap:24px}
+.cup{width:210px;height:250px;background:#221310;border-radius:28px 28px 36px 36px;position:relative;display:flex;align-items:center;justify-content:center;animation:cupIn 12s linear infinite}
+@keyframes cupIn{0%,30%{opacity:0;transform:translateY(60px)}35%,60%{opacity:1;transform:translateY(0)}65%,100%{opacity:0;transform:translateY(-30px)}}
+.cup:before{content:'LATTE';color:#FFFBF4;font-weight:900;font-size:28px;letter-spacing:.1em}
+.cup:after{content:'♨';position:absolute;top:-56px;left:50%;transform:translateX(-50%);font-size:48px;color:#221310;animation:steam 12s linear infinite}
+@keyframes steam{0%,30%{opacity:0;transform:translateX(-50%) translateY(10px)}38%,58%{opacity:1;transform:translateX(-50%) translateY(-8px)}65%,100%{opacity:0;transform:translateX(-50%) translateY(-12px)}}
+.mini{width:300px;background:#fff;border:6px solid #221310;border-radius:24px;padding:18px;text-align:center;animation:miniIn 12s linear infinite}
+@keyframes miniIn{0%,30%{opacity:0;transform:translateY(60px)}37%,60%{opacity:1;transform:translateY(0)}65%,100%{opacity:0;transform:translateY(-30px)}}
+.mini-big{font-size:96px;line-height:1}
+.mini-t{font-weight:900;font-size:22px;color:#221310;margin-top:6px}
+.mini-s{font-size:18px;font-weight:700;color:#E81E44}
+.p-copy{width:560px}
+.p-kicker{font-weight:900;font-size:22px;color:#E81E44;letter-spacing:.08em}
+.p-h{font-family:'Black Han Sans',sans-serif;font-size:78px;line-height:1.02;color:#221310;margin:10px 0 18px;animation:pTitle 12s linear infinite}
+@keyframes pTitle{0%,30%{opacity:0;transform:translateX(40px)}36%,60%{opacity:1;transform:translateX(0)}65%,100%{opacity:0;transform:translateX(-20px)}}
+.benefit{display:flex;gap:12px;margin-top:12px;animation:pTitle 12s linear infinite}
+.b{flex:1;background:#fff;border:4px solid #221310;border-radius:18px;padding:14px;text-align:center}
+.b strong{display:block;font-size:22px;color:#221310}
+.b span{font-size:17px;font-weight:700;color:#5A3A2E}
+/* SCENE3 */
+.s3{justify-content:center;padding:0}
+.card{width:1020px;height:480px;background:#221310;border-radius:32px;display:flex;align-items:center;padding:0 64px;gap:48px;animation:cardIn 12s linear infinite}
+@keyframes cardIn{0%,61%{opacity:0;transform:translateY(60px) scale(.98)}68%,93%{opacity:1;transform:translateY(0) scale(1)}97%,100%{opacity:0;transform:translateY(-20px) scale(1)}}
+.card-left{flex:1}
+.date{font-family:'Black Han Sans',sans-serif;font-size:74px;color:#fff;line-height:1}
+.date em{font-style:normal;color:#FF4A6A}
+.place{margin:14px 0;font-size:26px;font-weight:700;color:#FFE9D6}
+.place b{background:#FFFBF4;color:#221310;padding:2px 12px;border-radius:8px}
+.gift{font-size:22px;font-weight:900;color:#FFC9D4}
+.card-right{width:340px;text-align:center}
+.cta{background:#E81E44;color:#fff;font-weight:900;font-size:38px;border:none;border-radius:20px;padding:26px 0;width:100%;animation:ctaPulse 12s linear infinite}
+@keyframes ctaPulse{0%,61%{opacity:1;transform:scale(1)}72%{opacity:1;transform:scale(1.06)}78%{opacity:1;transform:scale(1)}84%{opacity:1;transform:scale(1.06)}90%,100%{opacity:1;transform:scale(1)}}
+.cta-sub{margin-top:12px;color:#fff;font-size:18px;font-weight:700;opacity:.9}
+.qr-note{margin-top:8px;display:inline-block;border:2px dashed #FFC9D4;color:#FFC9D4;font-size:15px;font-weight:700;padding:6px 14px;border-radius:100px}
+.bottom{height:58px;display:flex;align-items:center;gap:20px;padding:0 48px;border-top:3px solid #221310;z-index:20}
+.track{flex:1;height:10px;background:#E8D9CC;border-radius:100px;overflow:hidden}
+.fill{height:100%;width:100%;background:#E81E44;border-radius:100px;transform-origin:left center;animation:progress 12s linear infinite}
+@keyframes progress{0%{transform:scaleX(0)}100%{transform:scaleX(1)}}
+.time{font-weight:900;font-size:18px;color:#221310;white-space:nowrap}
+</style>
+</head>
+<body>
+<div class="stage">
+<div class="top"><div class="logo">SWEETSPOT <span>×</span> LOCAL ROASTERY</div><div class="badge-top">성수 3일 한정</div></div>
+<div class="scenes">
+<section class="scene s1">
+<div class="left"><div class="kicker">12.12 — 12.14 성수동 팝업</div><h1 class="h1">딸기<br><em>폭발!</em></h1><p class="sub">생딸기 쇼트케이크 <b>×</b> 갓 볶은 커피<br>3일 뒤 사라집니다 →</p></div>
+<div class="right"><div class="circle"></div><div class="cake"><div class="straw st1"></div><div class="straw st2"></div><div class="straw st3"></div><div class="creamtop"></div><div class="sponge"></div><div class="plate"></div></div></div>
+</section>
+<section class="scene s2">
+<div class="p-visual"><div class="cup"></div><div class="mini"><div class="mini-big">🍰</div><div class="mini-t">딸기 쇼트케이크</div><div class="mini-s">새벽수확 딸기 12알</div></div></div>
+<div class="p-copy"><div class="p-kicker">PRODUCT · 4—8초</div><h2 class="p-h">딸기 + 커피,<br>성수 조합 완성</h2><div class="benefit"><div class="b"><strong>당일딸기</strong><span>새벽 논산 직송</span></div><div class="b"><strong>당일로스팅</strong><span>싱글오리진 라떼</span></div><div class="b"><strong>한정굿즈</strong><span>첫 300명 증정</span></div></div></div>
+</section>
+<section class="scene s3">
+<div class="card"><div class="card-left"><div class="date">12.12 <em>FRI</em> — 12.14 <em>SUN</em></div><div class="place">성수동 스윗스팟 스토어 <b>성수역 3번출구 3분</b></div><div class="gift">★ 사전예약 시 딸기 3알 추가 + 로스터리 쿠폰 ★</div></div><div class="card-right"><button class="cta">사전예약 하기</button><div class="cta-sub">선착순 300명 · 마감임박</div><div class="qr-note">sweetspot.kr / 3일만 운영</div></div></div>
+</section>
+</div>
+<div class="bottom"><div class="track"><div class="fill"></div></div><div class="time">12초 LOOP · 12.12-12.14 성수</div></div>
+</div>
+</body>
+</html>

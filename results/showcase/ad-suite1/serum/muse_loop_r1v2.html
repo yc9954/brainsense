@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<title>LUMIERE Vita C 15% - Launch 30%</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Outfit:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{background:#000;height:100%}
+body{display:flex;align-items:center;justify-content:center;min-height:100vh;overflow:auto}
+.ad{width:1280px;height:720px;position:relative;overflow:hidden;background:#080B1C;color:#fff;font-family:'Noto Sans KR',sans-serif;flex-shrink:0;display:flex}
+.bg-base{position:absolute;inset:0;background:radial-gradient(900px 500px at 78% 50%, #2A2F6B 0%, #151A3A 38%, #080B1C 72%),linear-gradient(180deg,#0B0E22 0%,#080B1C 100%)}
+.bg-glow{position:absolute;left:590px;top:60px;width:600px;height:600px;background:radial-gradient(circle,#FFD93D 0%,#FF7A18 22%,#FF2E7A 45%,transparent 70%);opacity:.38;filter:blur(10px);animation:haloPulse 12s linear infinite}
+.bg-grid{position:absolute;inset:0;opacity:.14;background-image:linear-gradient(#ffffff22 1px,transparent 1px),linear-gradient(90deg,#ffffff22 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(700px 500px at 75% 50%,black 30%,transparent 75%);animation:gridDrift 12s linear infinite}
+.bigC{position:absolute;right:-30px;top:50%;transform:translateY(-50%);font-family:'Outfit',sans-serif;font-weight:900;font-size:640px;line-height:1;color:transparent;-webkit-text-stroke:2px #ffffff22;letter-spacing:-20px;animation:cDrift 12s linear infinite}
+.p{position:absolute;border-radius:999px;background:#FFD93D;opacity:.8;animation:particleUp 12s linear infinite}
+.p1{left:620px;top:600px;width:8px;height:8px;box-shadow:0 0 18px #FFD93D}
+.p2{left:1120px;top:560px;width:10px;height:10px;background:#FF7A18;box-shadow:0 0 18px #FF7A18}
+.p3{left:690px;top:520px;width:6px;height:6px;background:#fff}
+.p4{left:1180px;top:180px;width:7px;height:7px;background:#CBB8FF;box-shadow:0 0 14px #CBB8FF}
+.p5{left:640px;top:180px;width:5px;height:5px;background:#fff}
+.left{position:relative;width:640px;padding:36px 0 0 72px;display:flex;flex-direction:column;z-index:5}
+.topbar{display:flex;align-items:center;gap:14px}
+.logo{font-family:'Outfit',sans-serif;font-weight:900;letter-spacing:4px;font-size:22px}
+.logo span{color:#FFD93D}
+.live{display:flex;align-items:center;gap:8px;background:#ffffff14;border:1px solid #ffffff2E;border-radius:999px;padding:7px 14px;font-size:13px;font-weight:700;letter-spacing:.5px}
+.dot{width:8px;height:8px;border-radius:50%;background:#4DFF88;box-shadow:0 0 10px #4DFF88;animation:dotBlink 12s linear infinite}
+.text-stack{position:relative;margin-top:52px;width:520px;height:420px}
+.scene{position:absolute;left:0;top:0;width:520px;opacity:0;transform:translateY(36px)}
+.s1{animation:scene1 12s linear infinite}
+.s2{animation:scene2 12s linear infinite}
+.s3{animation:scene3 12s linear infinite}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:14px;font-weight:900;letter-spacing:2px;color:#0B0E22;background:#FFD93D;border-radius:999px;padding:9px 16px}
+.eyebrow.dark{background:#ffffff14;color:#FFD93D;border:1px solid #FFD93D55}
+.h1{margin-top:20px;font-size:64px;line-height:1.08;font-weight:900;letter-spacing:-1.5px}
+.h1 em{font-style:normal;color:#FFD93D;position:relative}
+.h1 em i{font-style:normal;color:#FF7A18}
+.sub{margin-top:16px;font-size:19px;line-height:1.6;color:#C8CCE0;font-weight:500}
+.sub b{color:#fff}
+.h2{margin-top:18px;font-size:58px;line-height:1.1;font-weight:900;letter-spacing:-1px}
+.h2 em{font-style:normal;color:#FFD93D}
+.benefit-box{margin-top:18px;background:#ffffff0F;border:1px solid #ffffff26;border-radius:18px;padding:16px 18px;display:flex;gap:14px;align-items:center}
+.benefit-num{font-family:'Outfit';font-weight:900;font-size:42px;color:#FFD93D;line-height:1}
+.benefit-txt{font-size:16px;line-height:1.5;color:#E8EAF2}
+.checks{margin-top:14px;display:flex;gap:10px}
+.check{font-size:13px;font-weight:700;background:#4DFF8818;border:1px solid #4DFF8844;color:#B8FFC8;border-radius:999px;padding:8px 12px}
+.offer-badge{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(90deg,#FFD93D,#FF7A18);color:#1A0E00;font-weight:900;font-size:15px;letter-spacing:1px;border-radius:999px;padding:10px 18px;animation:badgePop 12s linear infinite}
+.h3{margin-top:16px;font-size:60px;line-height:1.05;font-weight:900;letter-spacing:-1px}
+.h3 em{font-style:normal;color:#FFD93D}
+.price-row{margin-top:14px;display:flex;align-items:baseline;gap:12px}
+.old{font-size:22px;color:#8A90A8;text-decoration:line-through}
+.new{font-family:'Outfit';font-size:52px;font-weight:900;color:#fff}
+.off{background:#FF2E5A;color:#fff;font-weight:900;font-size:18px;border-radius:10px;padding:6px 10px}
+.cta{margin-top:18px;display:flex;align-items:center;gap:16px}
+.btn{display:flex;align-items:center;gap:12px;background:#FFD93D;color:#111;font-weight:900;font-size:24px;border-radius:999px;padding:18px 38px;border:0;box-shadow:0 12px 40px #FFD93D66;animation:ctaPulse 12s linear infinite}
+.btn small{font-family:'Outfit';font-weight:900}
+.cta-note{font-size:14px;color:#C8CCE0;line-height:1.5}
+.bottom{margin-top:auto;padding-bottom:28px}
+.progress{width:520px;height:4px;background:#ffffff1E;border-radius:99px;overflow:hidden}
+.fill{height:100%;width:100%;background:linear-gradient(90deg,#FFD93D,#FF7A18,#FF2E7A);transform-origin:left;animation:progressFill 12s linear infinite}
+.times{display:flex;gap:18px;margin-top:10px;font-size:12px;font-weight:700;letter-spacing:1px;color:#8A90A8}
+.times b{color:#fff}
+.right{position:relative;width:640px;z-index:4;display:flex;align-items:center;justify-content:center}
+.halo{position:absolute;width:460px;height:460px;border-radius:50%;background:radial-gradient(circle,#FFE45ECC 0%,#FF7A1888 28%,transparent 68%);filter:blur(8px);animation:haloPulse 12s linear infinite}
+.ring{position:absolute;width:500px;height:500px;border-radius:50%;border:1px dashed #ffffff3A;animation:ringSpin 12s linear infinite}
+.ring::after{content:'';position:absolute;left:50%;top:-9px;width:18px;height:18px;margin-left:-9px;border-radius:50%;background:#FFD93D;box-shadow:0 0 20px #FFD93D}
+.product{position:relative;animation:productHero 12s linear infinite;filter:drop-shadow(0 30px 60px #000000AA)}
+.b-cap{width:88px;height:112px;margin:0 auto;background:linear-gradient(180deg,#3A3F5E 0%,#14172B 60%,#0A0C18 100%);border-radius:16px 16px 8px 8px;border:1px solid #ffffff33;position:relative}
+.b-cap::after{content:'';position:absolute;left:14px;top:12px;bottom:12px;width:10px;background:linear-gradient(#ffffff55,transparent);border-radius:99px}
+.b-neck{width:58px;height:24px;margin:0 auto;background:linear-gradient(180deg,#F2F3F8,#B9BDD2);border:1px solid #ffffff66}
+.b-body{width:192px;height:308px;margin:0 auto;background:linear-gradient(180deg,#FFC65E 0%,#FF8A1E 32%,#B93A00 68%,#5E1500 100%);border-radius:30px;border:1px solid #ffffff66;position:relative;overflow:hidden;box-shadow:inset 0 2px 12px #ffffff88}
+.b-shine{position:absolute;left:18px;top:14px;bottom:14px;width:26px;background:linear-gradient(180deg,#ffffffEE,#ffffff00);border-radius:99px;opacity:.85}
+.b-sweep{position:absolute;top:-20%;bottom:-20%;left:0;width:70px;background:linear-gradient(100deg,transparent,#ffffffCC,transparent);transform:skewX(-18deg);animation:shineSweep 12s linear infinite}
+.b-label{position:absolute;left:14px;right:14px;top:92px;background:#FFFDF6;border-radius:16px;padding:14px 10px 12px;text-align:center}
+.b-label strong{font-family:'Outfit';font-size:20px;letter-spacing:.5px;color:#111;display:block}
+.b-label span{display:block;margin-top:4px;font-size:28px;font-weight:900;color:#111;letter-spacing:-.5px}
+.b-label span i{font-style:normal;color:#FF5A00}
+.b-label small{display:block;margin-top:6px;font-size:11px;font-weight:700;letter-spacing:1px;color:#6B6F86}
+.b-drop{position:absolute;right:-34px;top:58px;width:76px;height:76px;background:radial-gradient(circle at 35% 30%,#FFF8C8 0%,#FFD93D 28%,#FF7A18 68%,#B93A00 100%);border-radius:50% 50% 50% 50% / 60% 60% 40% 40%;border-radius:50%;box-shadow:0 0 40px #FFB300EE;animation:dropFloat 12s linear infinite}
+.b-drop::after{content:'C';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'Outfit';font-weight:900;font-size:36px;color:#4A1500}
+.shadow{width:240px;height:28px;margin:18px auto 0;background:radial-gradient(ellipse,#000000CC 0%,transparent 70%);border-radius:50%;animation:shadowPulse 12s linear infinite}
+.chip{position:absolute;font-size:14px;font-weight:900;background:#ffffffEE;color:#111;border-radius:999px;padding:10px 16px;box-shadow:0 8px 24px #00000066;animation:chipFloat 12s linear infinite}
+.c1{left:18px;top:150px}
+.c2{right:8px;top:360px;background:#111;color:#FFD93D;border:1px solid #FFD93D}
+.c3{left:36px;bottom:130px;background:#4DFF88;color:#06270F}
+@keyframes scene1{0%{opacity:1;transform:translateY(0)}27%{opacity:1;transform:translateY(0)}33.3%{opacity:0;transform:translateY(-28px)}91%{opacity:0;transform:translateY(36px)}96%{opacity:1;transform:translateY(0)}100%{opacity:1;transform:translateY(0)}}
+@keyframes scene2{0%,32%{opacity:0;transform:translateY(36px)}37%{opacity:1;transform:translateY(0)}59%{opacity:1;transform:translateY(0)}66.6%{opacity:0;transform:translateY(-28px)}100%{opacity:0;transform:translateY(36px)}}
+@keyframes scene3{0%,65%{opacity:0;transform:translateY(36px)}71%{opacity:1;transform:translateY(0)}92%{opacity:1;transform:translateY(0)}97%,100%{opacity:0;transform:translateY(-20px)}}
+@keyframes productHero{0%{transform:translateY(10px) scale(1)}20%{transform:translateY(-10px) scale(1)}33%{transform:translateY(0) scale(1.05)}50%{transform:translateY(-14px) scale(1.06)}66%{transform:translateY(0) scale(1.02)}85%{transform:translateY(-12px) scale(1.04)}100%{transform:translateY(10px) scale(1)}}
+@keyframes haloPulse{0%{opacity:.28;transform:scale(.92)}25%{opacity:.42;transform:scale(1.05)}50%{opacity:.5;transform:scale(1.1)}75%{opacity:.4;transform:scale(1.03)}100%{opacity:.28;transform:scale(.92)}}
+@keyframes ringSpin{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}
+@keyframes shineSweep{0%,28%{transform:translateX(-120px) skewX(-18deg);opacity:0}34%{opacity:1}45%,60%{transform:translateX(260px) skewX(-18deg);opacity:0}61%,100%{transform:translateX(-120px) skewX(-18deg);opacity:0}}
+@keyframes particleUp{0%{transform:translateY(0);opacity:0}8%{opacity:.9}30%{transform:translateY(-160px);opacity:.9}55%{transform:translateY(-320px);opacity:0}100%{transform:translateY(0);opacity:0}}
+@keyframes gridDrift{0%{transform:translateY(0);opacity:.14}50%{transform:translateY(-18px);opacity:.22}100%{transform:translateY(0);opacity:.14}}
+@keyframes cDrift{0%{transform:translateY(-50%) translateX(0);opacity:1}50%{transform:translateY(-50%) translateX(-24px);opacity:.9}100%{transform:translateY(-50%) translateX(0);opacity:1}}
+@keyframes progressFill{0%{transform:scaleX(0)}100%{transform:scaleX(1)}}
+@keyframes ctaPulse{0%,66%{transform:scale(1)}74%{transform:scale(1.06)}80%{transform:scale(1)}86%{transform:scale(1.06)}92%,100%{transform:scale(1)}}
+@keyframes badgePop{0%,65%{transform:scale(.8);opacity:0}71%{transform:scale(1.08);opacity:1}76%,100%{transform:scale(1);opacity:1}}
+@keyframes dropFloat{0%{transform:translateY(0) scale(1)}25%{transform:translateY(-18px) scale(1.08)}50%{transform:translateY(6px) scale(.96)}75%{transform:translateY(-14px) scale(1.05)}100%{transform:translateY(0) scale(1)}}
+@keyframes chipFloat{0%{transform:translateY(8px)}50%{transform:translateY(-12px)}100%{transform:translateY(8px)}}
+@keyframes shadowPulse{0%{transform:scaleX(1);opacity:.9}50%{transform:scaleX(.82);opacity:.6}100%{transform:scaleX(1);opacity:.9}}
+@keyframes dotBlink{0%,100%{opacity:1}50%{opacity:.3}}
+</style>
+</head>
+<body>
+<div class="ad" role="img" aria-label="비타민C 세럼 광고">
+<div class="bg-base"></div>
+<div class="bg-glow"></div>
+<div class="bg-grid"></div>
+<div class="bigC">C</div>
+<div class="p p1"></div><div class="p p2"></div><div class="p p3"></div><div class="p p4"></div><div class="p p5"></div>
+
+<div class="left">
+<div class="topbar">
+<div class="logo">LUMI<span>È</span>RE</div>
+<div class="live"><span class="dot"></span> NEW 비타C 런칭 · 오늘 자정 종료</div>
+</div>
+
+<div class="text-stack">
+<!-- 0-4s HOOK -->
+<div class="scene s1">
+<div class="eyebrow">★ NEW · 15% 퓨어 비타민C</div>
+<div class="h1">지친 피부에<br><em>아침 햇살 <i>한 방울.</i></em></div>
+<div class="sub">칙칙한 톤·늘어난 모공 고민이라면<br><b>단 7일, 광채로 깨우세요.</b></div>
+</div>
+<!-- 4-8s PRODUCT -->
+<div class="scene s2">
+<div class="eyebrow dark">WHY IT WORKS · 저자극 광채 포뮬러</div>
+<div class="h2">잡티는 옅게,<br><em>광채는 깊게.</em></div>
+<div class="benefit-box">
+<div class="benefit-num">15%</div>
+<div class="benefit-txt"><b>순수 비타민C + 비타민E + 히알루론산.</b><br>자극은 낮추고 흡수는 2배 빠르게.</div>
+</div>
+<div class="checks"><span class="check">✔ 7일 톤업 임상</span><span class="check">✔ 저자극 테스트 완료</span><span class="check">✔ 미백·주름 2중 기능성</span></div>
+</div>
+<!-- 8-12s OFFER + CTA -->
+<div class="scene s3">
+<div class="offer-badge">LAUNCH 30% OFF · 첫 런칭 기념</div>
+<div class="h3">오늘 자정까지<br><em>30% 할인</em></div>
+<div class="price-row"><span class="old">38,000원</span><span class="new">26,600원</span><span class="off">-30%</span></div>
+<div class="cta"><div class="btn">지금 구매 <small>→</small></div><div class="cta-note">무료배송 · 첫 구매<br><b style="color:#fff">미니 샘플 증정</b></div></div>
+</div>
+</div>
+
+<div class="bottom">
+<div class="progress"><div class="fill"></div></div>
+<div class="times"><span><b>00–04초</b> HOOK</span><span><b>04–08초</b> BENEFIT</span><span><b>08–12초</b> 30% + 구매</span></div>
+</div>
+</div>
+
+<div class="right">
+<div class="halo"></div>
+<div class="ring"></div>
+<div class="product">
+<div class="b-cap"></div>
+<div class="b-neck"></div>
+<div class="b-body">
+<div class="b-shine"></div>
+<div class="b-sweep"></div>
+<div class="b-label"><strong>VITA C SERUM</strong><span>15% <i>GLOW</i></span><small>PURE VITAMIN C · 30ml</small></div>
+</div>
+<div class="b-drop"></div>
+<div class="shadow"></div>
+</div>
+<div class="chip c1">✨ 7일 톤업</div>
+<div class="chip c2">● 잡티 · 기미 케어</div>
+<div class="chip c3">✔ 수분 광채 지속</div>
+</div>
+
+</div>
+</body>
+</html>

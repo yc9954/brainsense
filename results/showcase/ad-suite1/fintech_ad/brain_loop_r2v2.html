@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&family=Outfit:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0a0a0a;display:flex;align-items:center;justify-content:center;min-height:100vh;font-family:'Noto Sans KR',sans-serif}
+.stage{width:1280px;height:720px;position:relative;overflow:hidden;background:#FFFBEB;flex-shrink:0}
+.top{position:absolute;top:0;left:0;right:0;height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 48px;z-index:20}
+.logo{font-weight:900;font-size:24px;letter-spacing:-.5px;color:#101828;display:flex;align-items:center;gap:10px}
+.logo i{width:32px;height:32px;background:#101828;color:#FFFBEB;border-radius:10px;display:inline-flex;align-items:center;justify-content:center;font-style:normal;font-family:'Outfit';font-size:20px}
+.top-pill{font-size:15px;font-weight:700;background:#101828;color:#fff;padding:9px 18px;border-radius:100px;letter-spacing:-.3px}
+.scene{position:absolute;inset:0;padding:72px 48px 48px}
+/* VISIBILITY */
+.hook{background:#FFFBEB;z-index:3;animation-name:showHook;animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:linear;animation-fill-mode:both}
+.product{background:#FFFBEB;z-index:4;animation-name:showProduct;animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:linear;animation-fill-mode:both}
+.cta{background:#0C1A33;z-index:5;animation-name:showCTA;animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:linear;animation-fill-mode:both}
+@keyframes showHook{0%,31%{opacity:1;visibility:visible}33.3%,98%{opacity:0;visibility:hidden}100%{opacity:1;visibility:visible}}
+@keyframes showProduct{0%,31%{opacity:0;visibility:hidden}33.3%,64%{opacity:1;visibility:visible}66.6%,100%{opacity:0;visibility:hidden}}
+@keyframes showCTA{0%,64%{opacity:0;visibility:hidden}66.6%,98%{opacity:1;visibility:visible}100%{opacity:0;visibility:hidden}}
+/* HOOK */
+.hook-inner{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.kicker{font-size:22px;font-weight:700;letter-spacing:6px;color:#fff;background:#FF4A1F;padding:10px 26px;border-radius:100px;animation-name:hookKick;animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:ease-out;animation-fill-mode:both}
+.mega{font-family:'Outfit','Noto Sans KR';font-weight:900;font-size:208px;line-height:1;letter-spacing:-8px;color:#101828;margin:10px 0 0;animation-name:hookMega;animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:ease-out;animation-fill-mode:both}
+.mega em{font-style:normal;color:#FF4A1F}
+.bar{width:640px;height:22px;background:#101828;border-radius:100px;margin-top:6px;overflow:hidden;animation-name:hookMega;animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:ease-out;animation-fill-mode:both}
+.bar span{display:block;height:100%;width:100%;background:#FF4A1F;border-radius:100px;transform-origin:left;animation-name:barFill;animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:ease-out;animation-fill-mode:both}
+.hook-sub{margin-top:18px;font-size:32px;font-weight:700;color:#101828;letter-spacing:-1px;background:#fff;border:2px solid #101828;border-radius:16px;padding:12px 28px;box-shadow:6px 6px 0 #101828;animation-name:hookSub;animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:ease-out;animation-fill-mode:both}
+@keyframes hookKick{0%{opacity:0;transform:translateY(30px) scale(.9)}2.5%{opacity:1;transform:translateY(0) scale(1)}28%{opacity:1;transform:translateY(0) scale(1)}32%{opacity:0;transform:translateY(-30px) scale(.95)}33%,100%{opacity:0;transform:translateY(30px)}}
+@keyframes hookMega{0%{opacity:0;transform:translateY(70px) scale(.82)}3%{opacity:1;transform:translateY(0) scale(1.04)}5.5%{opacity:1;transform:translateY(0) scale(1)}28%{opacity:1;transform:translateY(0) scale(1)}32%{opacity:0;transform:translateY(-60px) scale(1.06)}33%,100%{opacity:0;transform:translateY(70px) scale(.82)}}
+@keyframes barFill{0%,3%{opacity:0;transform:scaleX(0)}9%,28%{opacity:1;transform:scaleX(1)}32%,100%{opacity:0;transform:scaleX(1)}}
+@keyframes hookSub{0%,5%{opacity:0;transform:translateY(24px)}8%,28%{opacity:1;transform:translateY(0)}32%,100%{opacity:0;transform:translateY(-20px)}}
+/* PRODUCT */
+.product-inner{height:100%;display:flex;align-items:center;gap:36px;justify-content:center}
+.copy-panel{background:#fff;border:3px solid #101828;border-radius:28px;padding:36px 38px;width:520px;box-shadow:10px 10px 0 #101828;animation-name:prodCopy;animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:ease-out;animation-fill-mode:both}
+.copy-panel small{font-size:19px;font-weight:900;letter-spacing:4px;color:#FF4A1F}
+.copy-panel h2{font-size:52px;line-height:1.08;letter-spacing:-2px;color:#101828;margin:10px 0 14px;font-weight:900}
+.copy-panel h2 span{background:#FF4A1F;color:#fff;padding:0 12px;border-radius:10px}
+.proof{background:#FFF1D6;border-radius:16px;padding:16px 18px;display:flex;align-items:center;justify-content:space-between;margin-top:6px}
+.proof b{font-family:'Outfit';font-size:34px;color:#101828}
+.proof b i{font-style:normal;font-size:20px;background:#0E9B6B;color:#fff;border-radius:8px;padding:2px 10px;margin-left:8px;vertical-align:middle}
+.proof p{font-size:17px;font-weight:700;color:#5b5b5b}
+.phone{width:400px;height:540px;background:#101828;border-radius:44px;padding:18px;box-shadow:0 30px 60px rgba(0,0,0,.25);animation-name:prodPhone;animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:ease-out;animation-fill-mode:both}
+.screen{background:#fff;border-radius:30px;height:100%;padding:26px 24px;overflow:hidden}
+.app-top{font-size:15px;font-weight:700;color:#888;display:flex;justify-content:space-between}
+.stock{margin-top:10px;display:flex;align-items:center;gap:14px}
+.avatar{width:58px;height:58px;border-radius:50%;background:#101828;color:#fff;font-weight:900;display:flex;align-items:center;justify-content:center;font-size:28px;font-family:'Outfit'}
+.stock h3{font-size:26px;font-weight:900;letter-spacing:-1px}
+.stock p{font-size:15px;color:#777;font-weight:700}
+.big-num{font-family:'Outfit';font-size:54px;font-weight:900;letter-spacing:-2px;margin-top:12px;color:#101828}
+.up{font-family:'Outfit';font-size:22px;font-weight:800;color:#0E9B6B;background:#DDF5E9;display:inline-block;padding:4px 14px;border-radius:100px;margin-top:4px}
+.chart{margin-top:14px}
+.chart svg{width:100%;height:130px}
+.line{fill:none;stroke:#0E9B6B;stroke-width:7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:600;animation-name:draw;animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:ease-out;animation-fill-mode:both}
+.buy{margin-top:14px;background:#FF4A1F;color:#fff;text-align:center;font-weight:900;font-size:22px;padding:14px;border-radius:16px}
+@keyframes prodCopy{0%,33%{opacity:0;transform:translateX(-70px)}37%,62%{opacity:1;transform:translateX(0)}66%,100%{opacity:0;transform:translateX(-40px)}}
+@keyframes prodPhone{0%,34%{opacity:0;transform:translateX(100px) rotate(3deg) scale(.94)}38.5%,62%{opacity:1;transform:translateX(0) rotate(0) scale(1)}66%,100%{opacity:0;transform:translateX(60px) scale(.96)}}
+@keyframes draw{0%,36%{stroke-dashoffset:600;opacity:0}38%{opacity:1}48%,62%{stroke-dashoffset:0;opacity:1}66%,100%{stroke-dashoffset:0;opacity:0}}
+/* CTA */
+.cta-inner{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.gift{display:inline-flex;align-items:center;gap:10px;background:#FFB800;color:#0C1A33;font-weight:900;font-size:22px;padding:10px 26px;border-radius:100px;letter-spacing:-.5px;animation-name:ctaGift;animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:ease-out;animation-fill-mode:both}
+.cta-inner h2{color:#fff;font-size:74px;letter-spacing:-3px;line-height:1.05;margin:16px 0 6px;font-weight:900;animation-name:ctaTitle;animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:ease-out;animation-fill-mode:both}
+.cta-inner h2 span{color:#FFB800}
+.cta-inner .desc{color:#B9C6DD;font-size:24px;font-weight:700;animation-name:ctaTitle;animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:ease-out;animation-fill-mode:both}
+.btn{margin-top:22px;background:#FF4A1F;color:#fff;font-size:48px;font-weight:900;letter-spacing:-1px;padding:18px 110px;border-radius:100px;border:6px solid #fff;box-shadow:0 0 0 8px rgba(255,74,31,.35),0 18px 50px rgba(255,74,31,.55);animation-name:ctaBtn;animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:ease-out;animation-fill-mode:both}
+.trust{margin-top:20px;display:flex;gap:12px;align-items:center;justify-content:center;animation-name:ctaTrust;animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:ease-out;animation-fill-mode:both}
+.trust span{color:#fff;font-size:17px;font-weight:700;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.35);padding:8px 18px;border-radius:100px}
+.social{display:flex;align-items:center;gap:12px;margin-top:12px;animation-name:ctaTrust;animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:ease-out;animation-fill-mode:both}
+.faces{display:flex}
+.faces i{width:36px;height:36px;border-radius:50%;border:3px solid #0C1A33;margin-left:-10px;font-style:normal;font-size:14px;font-weight:900;color:#fff;display:flex;align-items:center;justify-content:center}
+.social p{color:#FFD88A;font-size:18px;font-weight:700}
+@keyframes ctaGift{0%,66%{opacity:0;transform:translateY(20px) scale(.9)}70%,96%{opacity:1;transform:translateY(0) scale(1)}98%,100%{opacity:0;transform:translateY(-10px)}}
+@keyframes ctaTitle{0%,67%{opacity:0;transform:translateY(30px)}71%,96%{opacity:1;transform:translateY(0)}98%,100%{opacity:0}}
+@keyframes ctaBtn{0%,68%{opacity:0;transform:scale(.7)}72%{opacity:1;transform:scale(1.08)}74%{transform:scale(1)}80%{transform:scale(1.04)}84%{transform:scale(1)}90%{transform:scale(1.05)}94%,96%{opacity:1;transform:scale(1)}98%,100%{opacity:0;transform:scale(.9)}}
+@keyframes ctaTrust{0%,72%{opacity:0;transform:translateY(16px)}76%,96%{opacity:1;transform:translateY(0)}98%,100%{opacity:0}}
+.progress{position:absolute;bottom:0;left:0;right:0;height:10px;background:rgba(0,0,0,.15);z-index:30}
+.progress span{display:block;height:100%;background:#FF4A1F;transform-origin:left;animation-name:prog;animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:linear;animation-fill-mode:both}
+@keyframes prog{0%{transform:scaleX(0)}100%{transform:scaleX(1)}}
+</style>
+</head>
+<body>
+<div class="stage">
+<div class="top"><div class="logo"><i>●</i> 조각모이</div><div class="top-pill">3분 가입 · 본인인증만</div></div>
+<!-- HOOK 0-4s -->
+<div class="scene hook"><div class="hook-inner">
+<div class="kicker">소수점 주식 투자</div>
+<div class="mega">1,000<span>원</span><em>부터</em></div>
+<div class="bar"><span></span></div>
+<div class="hook-sub">삼성전자도 · 애플도 · 한 조각씩</div>
+</div></div>
+<!-- PRODUCT 4-8s -->
+<div class="scene product"><div class="product-inner">
+<div class="copy-panel"><small>WHY IT PAYS</small><h2>한 조각이<br><span>+12.4% 수익</span>으로</h2><div class="proof"><div><b>24,800원<i>▲ +3,200원</i></b><p>애플 0.083주 · 1,000원씩 모으기</p></div></div><p style="margin-top:12px;font-size:18px;font-weight:700;color:#101828">커피 한 잔 값으로 시작하는 내 주식</p></div>
+<div class="phone"><div class="screen"><div class="app-top"><span>내 포트폴리오</span><span>LIVE</span></div><div class="stock"><div class="avatar">A</div><div><h3>애플 AAPL</h3><p>0.083주 보유중</p></div></div><div class="big-num">24,800원</div><div class="up">▲ +12.4% 수익중</div><div class="chart"><svg viewBox="0 0 300 130"><path d="M10 110 L60 95 L110 100 L160 70 L210 55 L260 30 L290 15" class="line"/></svg></div><div class="buy">1,000원 추가 매수하기</div></div></div>
+</div></div>
+<!-- OFFER+CTA 8-12s -->
+<div class="scene cta"><div class="cta-inner">
+<div class="gift">🎁 신규 첫 주식 5,000원 증정 · 첫달 수수료 0원</div>
+<h2>3분 가입하고 <span>지금 시작</span></h2>
+<div class="desc">은행급 보안 · ISMS 인증 · 금융기관 제휴 보호</div>
+<div class="btn">지금 시작하기 →</div>
+<div class="trust"><span>★ 4.8 · 12만 리뷰</span><span>500만 다운로드</span><span>토스·카카오페이 입금 가능</span></div>
+<div class="social"><div class="faces"><i style="background:#FF4A1F">김</i><i style="background:#0E9B6B">박</i><i style="background:#6C5CFF">이</i><i style="background:#FFB800;color:#111">최</i></div><p>친구 12,400명이 어제 시작했어요</p></div>
+</div></div>
+<div class="progress"><span></span></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1280, height=720">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:100%;height:100%}
+body{background:#0B0B0C;display:flex;align-items:center;justify-content:center;min-height:100vh;font-family:'Noto Sans KR',sans-serif}
+.stage{width:1280px;height:720px;position:relative;overflow:hidden;background:#FFF6E5;flex-shrink:0;color:#141210}
+.scene{position:absolute;inset:0;opacity:0;pointer-events:none}
+.scene-hook{background:#FFF6E5;animation:hookScene 12s linear infinite;z-index:1}
+.scene-product{background:#131210;animation:productScene 12s linear infinite;z-index:2;color:#FFF6E5}
+.scene-offer{background:#FF4D00;animation:offerScene 12s linear infinite;z-index:3}
+@keyframes hookScene{0%{opacity:1}28%{opacity:1}33.33%{opacity:0}99%{opacity:0}100%{opacity:1}}
+@keyframes productScene{0%{opacity:0}28%{opacity:0}33.33%{opacity:1}60%{opacity:1}66.66%{opacity:0}100%{opacity:0}}
+@keyframes offerScene{0%{opacity:0}60%{opacity:0}66.66%{opacity:1}96%{opacity:1}99.9%{opacity:1}100%{opacity:0}}
+
+/* HUD */
+.hud{position:absolute;left:0;right:0;bottom:0;height:56px;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:0 40px;background:rgba(0,0,0,0)}
+.hud-brand{font-weight:900;font-size:18px;letter-spacing:-.02em;display:flex;align-items:center;gap:10px;color:#141210;background:#FFF6E5;padding:6px 14px 6px 8px;border:2px solid #141210;border-radius:100px}
+.hud-brand i{width:28px;height:28px;background:#FF4D00;border:2px solid #141210;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;color:#fff;font-style:normal;font-size:16px}
+.dots{display:flex;gap:8px;align-items:center;background:#141210;padding:10px 14px;border-radius:100px}
+.dot{width:28px;height:8px;border-radius:100px;background:rgba(255,246,229,.25)}
+.dot1{animation:dot1K 12s linear infinite}
+.dot2{animation:dot2K 12s linear infinite}
+.dot3{animation:dot3K 12s linear infinite}
+@keyframes dot1K{0%{opacity:1;transform:scale(1)}28%{opacity:1;transform:scale(1)}33.33%,99%{opacity:.3;transform:scale(.9)}100%{opacity:1;transform:scale(1)}}
+@keyframes dot2K{0%,28%{opacity:.3;transform:scale(.9)}33.33%{opacity:1;transform:scale(1)}60%{opacity:1;transform:scale(1)}66.66%,100%{opacity:.3;transform:scale(.9)}}
+@keyframes dot3K{0%,60%{opacity:.3;transform:scale(.9)}66.66%{opacity:1;transform:scale(1)}96%{opacity:1;transform:scale(1)}99.9%,100%{opacity:.3;transform:scale(.9)}}
+.progress{position:absolute;left:0;right:0;bottom:0;height:8px;background:rgba(0,0,0,.12);z-index:21}
+.progress-fill{width:100%;height:100%;background:#FF4D00;transform-origin:0 50%;animation:progressK 12s linear infinite}
+@keyframes progressK{0%{opacity:1;transform:scaleX(0)}100%{opacity:1;transform:scaleX(1)}}
+
+/* HOOK */
+.hook-dots{position:absolute;inset:0;background-image:radial-gradient(#141210 1.6px, transparent 1.7px);background-size:26px 26px;opacity:.08}
+.hook-water{position:absolute;left:50%;top:46%;font-family:'Black Han Sans',sans-serif;font-size:400px;line-height:1;color:transparent;-webkit-text-stroke:3px #141210;opacity:.12;transform:translate(-50%,-50%);white-space:nowrap;animation:hookWater 12s linear infinite}
+@keyframes hookWater{0%{opacity:0;transform:translate(-50%,-42%) scale(1.08)}4%{opacity:.14;transform:translate(-50%,-50%) scale(1)}26%{opacity:.14;transform:translate(-50%,-50%) scale(1.02)}30%,98%{opacity:0;transform:translate(-50%,-58%) scale(1.05)}99%,100%{opacity:0;transform:translate(-50%,-42%) scale(1.08)}}
+.hook-pillwrap{position:absolute;top:48px;left:0;right:0;text-align:center}
+.hook-pill{display:inline-block;background:#141210;color:#FFF6E5;font-weight:900;font-size:22px;letter-spacing:.02em;padding:12px 28px;border-radius:100px;animation:hookPill 12s linear infinite}
+@keyframes hookPill{0%{opacity:0;transform:translateY(30px)}3%{opacity:1;transform:translateY(0)}26%{opacity:1;transform:translateY(0)}30%,98%{opacity:0;transform:translateY(-30px)}99%,100%{opacity:0;transform:translateY(30px)}}
+.hook-h1{position:absolute;top:175px;left:0;right:0;text-align:center;font-family:'Black Han Sans',sans-serif;font-size:178px;line-height:1;letter-spacing:-.03em;animation:hookH1 12s linear infinite}
+@keyframes hookH1{0%{opacity:0;transform:translateY(110px) scale(.96)}3.5%{opacity:1;transform:translateY(0) scale(1)}25%{opacity:1;transform:translateY(0) scale(1)}30%,98%{opacity:0;transform:translateY(-70px) scale(1)}99%,100%{opacity:0;transform:translateY(110px) scale(.96)}}
+.hook-hlwrap{position:relative;display:inline-block;padding:0 18px}
+.hook-hlbg{position:absolute;left:0;right:0;top:14px;bottom:10px;background:#FF4D00;border:4px solid #141210;border-radius:18px;transform-origin:0 50%;animation:hookHlbg 12s linear infinite}
+@keyframes hookHlbg{0%{opacity:0;transform:scaleX(0)}4%{opacity:1;transform:scaleX(1)}25%{opacity:1;transform:scaleX(1)}30%,98%{opacity:0;transform:scaleX(1)}99%,100%{opacity:0;transform:scaleX(0)}}
+.hook-hltext{position:relative;color:#fff;-webkit-text-stroke:2px #141210;text-shadow:5px 5px 0 #141210}
+.hook-sub{position:absolute;top:390px;left:0;right:0;text-align:center;font-size:34px;font-weight:700;letter-spacing:-.02em;animation:hookSub 12s linear infinite}
+@keyframes hookSub{0%{opacity:0;transform:translateY(40px)}6%{opacity:1;transform:translateY(0)}25%{opacity:1;transform:translateY(0)}30%,98%{opacity:0;transform:translateY(-30px)}99%,100%{opacity:0;transform:translateY(40px)}}
+.hook-chips{position:absolute;top:470px;left:0;right:0;display:flex;justify-content:center;gap:18px}
+.chip{font-weight:900;font-size:20px;padding:14px 22px;border-radius:16px;border:3px solid #141210;background:#fff;box-shadow:6px 6px 0 #141210}
+.chip1{transform:rotate(-4deg);animation:chip1K 12s linear infinite}
+.chip2{background:#141210;color:#fff;box-shadow:6px 6px 0 #FF4D00;transform:rotate(2deg);animation:chip2K 12s linear infinite}
+.chip3{transform:rotate(-2deg);animation:chip3K 12s linear infinite}
+@keyframes chip1K{0%{opacity:0;transform:translateY(60px) rotate(-4deg)}8%{opacity:1;transform:translateY(0) rotate(-4deg)}25%{opacity:1;transform:translateY(0) rotate(-4deg)}30%,98%{opacity:0;transform:translateY(-40px) rotate(-4deg)}99%,100%{opacity:0;transform:translateY(60px) rotate(-4deg)}}
+@keyframes chip2K{0%{opacity:0;transform:translateY(60px) rotate(2deg)}11%{opacity:1;transform:translateY(0) rotate(2deg)}25%{opacity:1;transform:translateY(0) rotate(2deg)}30%,98%{opacity:0;transform:translateY(-40px) rotate(2deg)}99%,100%{opacity:0;transform:translateY(60px) rotate(2deg)}}
+@keyframes chip3K{0%{opacity:0;transform:translateY(60px) rotate(-2deg)}14%{opacity:1;transform:translateY(0) rotate(-2deg)}25%{opacity:1;transform:translateY(0) rotate(-2deg)}30%,98%{opacity:0;transform:translateY(-40px) rotate(-2deg)}99%,100%{opacity:0;transform:translateY(60px) rotate(-2deg)}}
+.hook-ticker{position:absolute;left:0;right:0;bottom:56px;background:#141210;color:#FFF6E5;overflow:hidden;border-top:3px solid #141210;border-bottom:3px solid #141210;padding:12px 0;font-weight:900;font-size:20px;letter-spacing:.02em}
+.hook-ticker-inner{white-space:nowrap;display:inline-block;animation:tickerK 12s linear infinite}
+@keyframes tickerK{0%{opacity:1;transform:translateX(0)}28%{opacity:1;transform:translateX(-28%)}30%,98%{opacity:0;transform:translateX(-32%)}99%,100%{opacity:0;transform:translateX(0)}}
+
+/* PRODUCT */
+.prod-left{position:absolute;left:80px;top:90px;width:620px}
+.prod-kicker{display:inline-block;font-weight:900;font-size:20px;background:#FF4D00;color:#fff;padding:10px 20px;border-radius:100px;animation:prodKick 12s linear infinite}
+@keyframes prodKick{0%,30%{opacity:0;transform:translateY(40px)}35%{opacity:1;transform:translateY(0)}57%{opacity:1;transform:translateY(0)}62%,100%{opacity:0;transform:translateY(-30px)}}
+.prod-title{margin-top:22px;font-family:'Black Han Sans',sans-serif;font-size:84px;line-height:1.05;letter-spacing:-.02em;animation:prodTitle 12s linear infinite}
+@keyframes prodTitle{0%,31%{opacity:0;transform:translateY(70px)}37%{opacity:1;transform:translateY(0)}57%{opacity:1;transform:translateY(0)}62%,100%{opacity:0;transform:translateY(-40px)}}
+.prod-title em{font-style:normal;color:#FF4D00}
+.steps{margin-top:28px;display:flex;gap:14px}
+.step{flex:1;background:#1E1D1B;border:1px solid rgba(255,246,229,.18);border-radius:20px;padding:18px 18px 16px;animation:stepA 12s linear infinite}
+.step.s2{animation-name:stepB}.step.s3{animation-name:stepC}
+.step b{display:block;font-size:15px;color:#FF8A3D;letter-spacing:.06em}
+.step strong{display:block;font-size:26px;margin-top:6px;letter-spacing:-.02em}
+.step span{display:block;font-size:16px;opacity:.7;margin-top:4px}
+@keyframes stepA{0%,36%{opacity:0;transform:translateY(50px)}41%{opacity:1;transform:translateY(0)}57%{opacity:1;transform:translateY(0)}62%,100%{opacity:0;transform:translateY(-30px)}}
+@keyframes stepB{0%,39%{opacity:0;transform:translateY(50px)}44%{opacity:1;transform:translateY(0)}57%{opacity:1;transform:translateY(0)}62%,100%{opacity:0;transform:translateY(-30px)}}
+@keyframes stepC{0%,42%{opacity:0;transform:translateY(50px)}47%{opacity:1;transform:translateY(0)}57%{opacity:1;transform:translateY(0)}62%,100%{opacity:0;transform:translateY(-30px)}}
+.trust{margin-top:18px;display:inline-flex;align-items:center;gap:12px;font-size:18px;font-weight:700;background:#FFF6E5;color:#141210;padding:12px 20px;border-radius:14px;animation:prodTrust 12s linear infinite}
+@keyframes prodTrust{0%,44%{opacity:0;transform:translateY(30px)}49%{opacity:1;transform:translateY(0)}57%{opacity:1;transform:translateY(0)}62%,100%{opacity:0;transform:translateY(-20px)}}
+.phone{position:absolute;right:110px;top:70px;width:340px;height:580px;background:#FFF6E5;border-radius:44px;border:6px solid #000;box-shadow:18px 18px 0 #FF4D00;overflow:hidden;animation:phoneK 12s linear infinite}
+@keyframes phoneK{0%,33%{opacity:0;transform:translateY(120px) rotate(3deg)}38.5%{opacity:1;transform:translateY(0) rotate(0deg)}57%{opacity:1;transform:translateY(0) rotate(0deg)}62%,100%{opacity:0;transform:translateY(-60px) rotate(-2deg)}}
+.phone-top{padding:22px 22px 14px;background:#141210;color:#fff;display:flex;justify-content:space-between;align-items:center}
+.phone-top small{font-size:13px;opacity:.7;font-weight:700}
+.phone-top strong{font-size:18px}
+.phone-bal{padding:20px 22px}
+.phone-bal small{font-size:14px;font-weight:700;color:#6B645A}
+.phone-bal div{font-family:'Black Han Sans',sans-serif;font-size:42px;letter-spacing:-.02em;color:#141210}
+.phone-bal div span{color:#00A36A;font-size:20px;font-family:'Noto Sans KR',sans-serif;font-weight:900}
+.prow{margin:0 16px 10px;background:#fff;border:2px solid #141210;border-radius:16px;padding:12px 14px;display:flex;align-items:center;gap:12px}
+.prow i{width:42px;height:42px;border-radius:12px;display:inline-flex;align-items:center;justify-content:center;font-style:normal;font-weight:900;color:#fff;font-size:20px}
+.prow b{font-size:17px;display:block;line-height:1}
+.prow small{font-size:14px;color:#6B645A;font-weight:700}
+.prow em{margin-left:auto;font-style:normal;font-weight:900;font-size:15px;background:#E8FFE F;background:#E6FFF2;border:1px solid #00A36A;color:#008A5A;padding:4px 10px;border-radius:100px}
+
+/* OFFER */
+.offer-bgline{position:absolute;inset:0;background-image:repeating-linear-gradient(-45deg, rgba(0,0,0,.08) 0 18px, transparent 18px 36px)}
+.offer-circle{position:absolute;left:50%;top:50%;width:760px;height:760px;background:#FFF6E5;border:5px solid #141210;border-radius:50%;transform:translate(-50%,-50%);animation:offerCircle 12s linear infinite}
+@keyframes offerCircle{0%,64%{opacity:0;transform:translate(-50%,-50%) scale(.7)}70%{opacity:1;transform:translate(-50%,-50%) scale(1)}92%,99.9%{opacity:1;transform:translate(-50%,-50%) scale(1)}100%{opacity:0;transform:translate(-50%,-50%) scale(.7)}}
+.offer-card{position:absolute;left:50%;top:50%;width:700px;text-align:center;transform:translate(-50%,-50%);animation:offerCard 12s linear infinite}
+@keyframes offerCard{0%,65%{opacity:0;transform:translate(-50%,-38%) scale(.92)}71%{opacity:1;transform:translate(-50%,-50%) scale(1)}92%,99.9%{opacity:1;transform:translate(-50%,-50%) scale(1)}100%{opacity:0;transform:translate(-50%,-38%) scale(.92)}}
+.offer-badge{display:inline-block;background:#141210;color:#FFE45E;font-weight:900;font-size:22px;padding:12px 26px;border-radius:100px;animation:offerBadge 12s linear infinite}
+@keyframes offerBadge{0%,66%{opacity:0;transform:translateY(30px) scale(.9)}71%{opacity:1;transform:translateY(0) scale(1)}92%,99.9%{opacity:1;transform:translateY(0) scale(1)}100%{opacity:0;transform:translateY(30px) scale(.9)}}
+.offer-title{font-family:'Black Han Sans',sans-serif;font-size:92px;line-height:1;margin-top:16px;letter-spacing:-.02em;color:#141210}
+.offer-title span{background:#141210;color:#fff;padding:0 18px;border-radius:14px;display:inline-block}
+.offer-sub{margin-top:14px;font-size:26px;font-weight:700;color:#141210}
+.cta-btn{margin:26px auto 0;width:440px;background:#141210;color:#fff;font-family:'Black Han Sans',sans-serif;font-size:52px;line-height:1;padding:26px 0 28px;border-radius:28px;box-shadow:0 10px 0 #fff, 0 10px 0 3px #141210;animation:ctaK 12s linear infinite}
+@keyframes ctaK{0%,70%{opacity:0;transform:scale(.8)}74%{opacity:1;transform:scale(1.06)}76%{opacity:1;transform:scale(1)}80%{opacity:1;transform:scale(1.05)}82%{opacity:1;transform:scale(1)}86%{opacity:1;transform:scale(1.05)}88%{opacity:1;transform:scale(1)}92%,99.9%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(.8)}}
+.cta-note{margin-top:18px;font-size:18px;font-weight:900;letter-spacing:-.01em;color:#141210;animation:offerNote 12s linear infinite}
+@keyframes offerNote{0%,73%{opacity:0;transform:translateY(20px)}77%{opacity:1;transform:translateY(0)}92%,99.9%{opacity:1;transform:translateY(0)}100%{opacity:0;transform:translateY(20px)}}
+.conf{position:absolute;top:-40px;font-weight:900;font-size:20px;padding:10px 16px;border-radius:12px;border:3px solid #141210;animation:confK 12s linear infinite}
+.conf.a{left:160px;background:#FFF6E5;transform:rotate(-10deg)}
+.conf.b{right:170px;background:#141210;color:#fff;transform:rotate(8deg)}
+.conf.c{left:50%;margin-left:-70px;background:#FFE45E;transform:rotate(-3deg)}
+@keyframes confK{0%,68%{opacity:0;transform:translateY(-60px)}75%{opacity:1;transform:translateY(120px)}90%,99.9%{opacity:1;transform:translateY(420px)}100%{opacity:0;transform:translateY(-60px)}}
+</style>
+</head>
+<body>
+<div class="stage">
+<div class="scene scene-hook">
+<div class="hook-dots"></div>
+<div class="hook-water">1,000</div>
+<div class="hook-pillwrap"><span class="hook-pill">소수점 주식 투자 앱 · 피스탁</span></div>
+<h1 class="hook-h1"><span class="hook-hlwrap"><span class="hook-hlbg"></span><span class="hook-hltext">1,000원</span></span>부터</h1>
+<p class="hook-sub">비싼 주식도 내 돈만큼 쪼개서 산다</p>
+<div class="hook-chips"><span class="chip chip1">삼성전자 0.32주 보유중</span><span class="chip chip2">애플 0.08주 매수완료</span><span class="chip chip3">테슬라 0.15주 수익중</span></div>
+<div class="hook-ticker"><div class="hook-ticker-inner">1,000원부터 시작하는 조각투자 · 삼성전자도 애플도 쪼개서 산다 · 3분 가입 · 은행급 보안 · 1,000원부터 시작하는 조각투자 · 삼성전자도 애플도 쪼개서 산다 ·&nbsp;</div></div>
+</div>
+
+<div class="scene scene-product">
+<div class="prod-left">
+<span class="prod-kicker">3분 가입 · 바로 투자</span>
+<div class="prod-title">3분이면<br><em>조각주주</em> 된다</div>
+<div class="steps">
+<div class="step s1"><b>STEP 1 · 30초</b><strong>본인인증</strong><span>휴대폰으로 끝</span></div>
+<div class="step s2"><b>STEP 2 · 1분</b><strong>계좌개설</strong><span>서류 없이 간편</span></div>
+<div class="step s3"><b>STEP 3 · 1분</b><strong>첫 조각구매</strong><span>1,000원부터</span></div>
+</div>
+<div class="trust">✔ 은행 제휴 안전계좌 · ISMS 보안인증 · 실시간 시세</div>
+</div>
+<div class="phone">
+<div class="phone-top"><small>피스탁 내 포트폴리오</small><strong>●●●</strong></div>
+<div class="phone-bal"><small>총 조각 자산</small><div>128,400원 <span>▲ +4.2%</span></div></div>
+<div class="prow"><i style="background:#FF4D00">삼</i><div><b>삼성전자</b><small>0.32주 보유</small></div><em>+2.4%</em></div>
+<div class="prow"><i style="background:#141210">A</i><div><b>애플</b><small>0.08주 보유</small></div><em>+1.1%</em></div>
+<div class="prow"><i style="background:#00A36A">T</i><div><b>테슬라</b><small>0.15주 보유</small></div><em>+5.8%</em></div>
+</div>
+</div>
+
+<div class="scene scene-offer">
+<div class="offer-bgline"></div>
+<div class="offer-circle"></div>
+<span class="conf a">0.12주 매수!</span>
+<span class="conf b">안전하게 보관중</span>
+<span class="conf c">★ 5,000원 지원</span>
+<div class="offer-card">
+<div class="offer-badge">첫 조각 구매 시 5,000원 지원금</div>
+<div class="offer-title">지금 <span>시작</span>하세요</div>
+<div class="offer-sub">3분 가입 · 1,000원부터 · 은행급 보안으로 안전하게</div>
+<div class="cta-btn">지금 시작 →</div>
+<div class="cta-note">피스탁 · 소수점 주식 투자 · 신뢰할 수 있는 제휴 증권사 운영</div>
+</div>
+</div>
+
+<div class="hud"><div class="hud-brand"><i>조</i> 피스탁 PIECE STOCK</div><div class="dots"><div class="dot dot1"></div><div class="dot dot2"></div><div class="dot dot3"></div></div></div>
+<div class="progress"><div class="progress-fill"></div></div>
+</div>
+</body>
+</html>

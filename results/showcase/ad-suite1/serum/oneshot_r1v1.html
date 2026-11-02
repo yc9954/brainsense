@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<title>VITAGLOW 비타민C 세럼 - 런칭 30%</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Playfair+Display:ital,wght@0,800;1,800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%}
+body{background:#0f0f0f;display:flex;align-items:center;justify-content:center;font-family:'Noto Sans KR',sans-serif;overflow:auto}
+.stage{width:1280px;height:720px;flex-shrink:0;position:relative;overflow:hidden;background:#FFF6E8;color:#161616;isolation:isolate}
+/* BACKGROUNDS */
+.bg-cream{position:absolute;inset:0;background:#FFF6E8;z-index:0}
+.burst{position:absolute;left:640px;top:-220px;width:820px;height:820px;border-radius:50%;background:radial-gradient(circle at 35% 35%, #FFB25A 0%, #FF6A00 38%, #FF4D00 62%, #E63E00 100%);z-index:1;opacity:.98;transform-origin:center;animation:burstZoom 12s infinite ease-in-out}
+.burst-ring{position:absolute;left:690px;top:-170px;width:720px;height:720px;border-radius:50%;border:3px dashed rgba(22,22,22,.22);z-index:1;animation:spinRing 12s infinite linear}
+.bg-word{position:absolute;left:-20px;top:430px;font-family:'Playfair Display',serif;font-style:italic;font-weight:800;font-size:250px;line-height:1;letter-spacing:-8px;color:transparent;-webkit-text-stroke:2px rgba(22,22,22,.14);z-index:1;white-space:nowrap;animation:bgWordMove 12s infinite ease-in-out}
+.dot-grid{position:absolute;left:60px;top:90px;width:180px;height:90px;background-image:radial-gradient(#161616 2.2px, transparent 2.3px);background-size:18px 18px;opacity:.14;z-index:1}
+/* HEADER */
+.topbar{position:absolute;left:0;right:0;top:0;height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 48px;z-index:20}
+.brand{display:flex;align-items:center;gap:12px;font-weight:900;font-size:22px;letter-spacing:.5px}
+.brand-mark{width:34px;height:34px;border-radius:50%;background:#FF4D00;display:flex;align-items:center;justify-content:center;color:#fff;font-size:18px;font-weight:900;border:2px solid #161616}
+.top-tag{font-size:14px;font-weight:700;letter-spacing:2px;background:#161616;color:#FFD600;padding:9px 18px;border-radius:100px}
+/* PRODUCT - HERO PERSISTENT */
+.product-wrap{position:absolute;left:810px;top:95px;width:380px;height:540px;z-index:10;animation:productMove 12s infinite ease-in-out}
+.product-glow{position:absolute;left:20px;top:40px;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle, rgba(255,255,255,.95) 0%, rgba(255,214,100,.65) 35%, rgba(255,77,0,0) 70%);animation:glowPulse 12s infinite ease-in-out}
+.product-shadow{position:absolute;left:90px;bottom:38px;width:200px;height:28px;background:rgba(22,22,22,.28);border-radius:50%;filter:blur(2px);animation:shadowPulse 12s infinite ease-in-out}
+.bottle{position:absolute;left:95px;top:35px;width:190px;height:430px}
+.cap{width:84px;height:92px;margin:0 auto;background:linear-gradient(90deg,#0a0a0a 0%, #2b2b2b 20%, #0a0a0a 40%, #3a3a3a 60%, #0a0a0a 80%, #000 100%);border-radius:12px 12px 6px 6px;border:2px solid #000;position:relative;z-index:3}
+.cap:after{content:"";position:absolute;left:12px;right:12px;top:14px;height:28px;border-radius:6px;background:rgba(255,255,255,.14)}
+.neck{width:56px;height:22px;margin:-2px auto 0;background:#E9E9E9;border:2px solid #161616;border-bottom:none;border-radius:4px 4px 0 0}
+.bbody{width:190px;height:318px;background:linear-gradient(180deg,#FFD08A 0%, #FF8A1E 28%, #FF5A00 62%, #D93E00 100%);border:3px solid #161616;border-radius:28px;position:relative;overflow:hidden;box-shadow:10px 14px 0 rgba(22,22,22,.9)}
+.bbody:before{content:"C";position:absolute;right:10px;top:10px;font-family:'Playfair Display',serif;font-weight:800;font-size:92px;color:rgba(255,255,255,.28);line-height:1}
+.label{position:absolute;left:14px;right:14px;top:78px;background:#FFFEF7;border:2px solid #161616;border-radius:16px;padding:14px 10px 12px;text-align:center}
+.label span{display:block;font-size:11px;font-weight:700;letter-spacing:3px;color:#FF4D00}
+.label strong{display:block;font-size:28px;font-weight:900;letter-spacing:-.5px;line-height:1;margin:4px 0 2px}
+.label em{display:block;font-style:normal;font-size:10px;font-weight:700;letter-spacing:1.5px}
+.label i{display:inline-block;margin-top:9px;font-style:normal;font-size:11px;font-weight:900;background:#161616;color:#FFD600;border-radius:100px;padding:4px 10px}
+.shine{position:absolute;top:-10px;bottom:-10px;left:-10px;width:56px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.85),transparent);transform:skewX(-14deg);animation:shineMove 12s infinite ease-in-out}
+.drop{position:absolute;border-radius:50% 50% 50% 0;background:#FF4D00;border:2px solid #161616}
+.drop.d1{left:38px;top:140px;width:30px;height:30px;animation:drop1 12s infinite ease-in-out}
+.drop.d2{left:310px;top:220px;width:22px;height:22px;background:#FFC700;animation:drop2 12s infinite ease-in-out}
+.drop.d3{left:60px;top:340px;width:16px;height:16px;background:#fff;animation:drop3 12s infinite ease-in-out}
+.citrus{position:absolute;border-radius:50%;border:3px solid #161616;display:flex;align-items:center;justify-content:center;z-index:2}
+.citrus.c1{left:680px;top:520px;width:132px;height:132px;background:conic-gradient(#FFD600 0 30deg,#FF8A00 30deg 60deg,#FFD600 60deg 90deg,#FF8A00 90deg 120deg,#FFD600 120deg 150deg,#FF8A00 150deg 180deg,#FFD600 180deg 210deg,#FF8A00 210deg 240deg,#FFD600 240deg 270deg,#FF8A00 270deg 300deg,#FFD600 300deg 330deg,#FF8A00 330deg 360deg);animation:citrus1 12s infinite ease-in-out}
+.citrus.c2{left:1120px;top:110px;width:84px;height:84px;background:conic-gradient(#fff 0 30deg,#FFB25A 30deg 60deg,#fff 60deg 90deg,#FFB25A 90deg 120deg,#fff 120deg 150deg,#FFB25A 150deg 180deg,#fff 180deg 210deg,#FFB25A 210deg 240deg,#fff 240deg 270deg,#FFB25A 270deg 300deg,#fff 300deg 330deg,#FFB25A 330deg 360deg);animation:citrus2 12s infinite ease-in-out}
+.citrus:after{content:"";width:62%;height:62%;background:#FFF6E8;border-radius:50%;border:3px solid #161616}
+/* SCENES */
+.scene{position:absolute;inset:0;z-index:15}
+.scene-hook{animation:hookScene 12s infinite ease-in-out}
+.scene-mid{animation:midScene 12s infinite ease-in-out}
+.scene-end{animation:endScene 12s infinite ease-in-out}
+.hook-inner{position:absolute;left:64px;top:130px;width:640px}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;background:#161616;color:#fff;font-size:15px;font-weight:700;letter-spacing:1px;padding:10px 18px;border-radius:100px;animation:hookBadge 12s infinite ease-in-out}
+.eyebrow b{background:#FF4D00;color:#fff;border-radius:100px;padding:3px 10px;font-size:13px}
+.hook-inner h1{margin-top:22px;font-size:74px;line-height:.98;font-weight:900;letter-spacing:-2px;animation:hookTitle 12s infinite ease-in-out}
+.hook-inner h1 span{color:#FF4D00;position:relative;display:inline-block}
+.hook-inner h1 span:after{content:"";position:absolute;left:0;right:0;bottom:6px;height:18px;background:#FFD600;z-index:-1}
+.hook-sub{margin-top:18px;font-size:22px;font-weight:500;color:#3a3a3a;animation:hookSub 12s infinite ease-in-out}
+.hook-sub strong{color:#161616;font-weight:900}
+.hook-meta{margin-top:26px;display:flex;gap:12px;align-items:center;animation:hookSub 12s infinite ease-in-out}
+.hook-meta .stars{background:#fff;border:2px solid #161616;border-radius:12px;padding:8px 14px;font-size:15px;font-weight:700}
+.mid-inner{position:absolute;left:64px;top:135px;width:600px}
+.mid-kicker{font-size:15px;font-weight:900;letter-spacing:3px;color:#FF4D00;animation:midKicker 12s infinite ease-in-out}
+.mid-inner h2{margin-top:8px;font-size:54px;line-height:1.02;font-weight:900;letter-spacing:-1.5px;animation:midTitle 12s infinite ease-in-out}
+.benefits{margin-top:24px;display:flex;flex-direction:column;gap:12px}
+.benefit{display:flex;align-items:center;gap:14px;background:#fff;border:2.5px solid #161616;border-radius:18px;padding:13px 16px;box-shadow:6px 6px 0 #161616;max-width:520px}
+.benefit .n{width:38px;height:38px;flex-shrink:0;border-radius:50%;background:#FF4D00;color:#fff;font-weight:900;display:flex;align-items:center;justify-content:center;font-size:18px;border:2px solid #161616}
+.benefit p{font-size:18px;font-weight:700;line-height:1.3}
+.benefit p small{display:block;font-size:14px;font-weight:500;color:#555}
+.b1{animation:ben1 12s infinite ease-in-out}
+.b2{animation:ben2 12s infinite ease-in-out}
+.b3{animation:ben3 12s infinite ease-in-out}
+.end-inner{position:absolute;left:64px;top:122px;width:640px}
+.end-badge{display:inline-flex;align-items:center;gap:12px;background:#161616;color:#FFD600;border-radius:16px;padding:10px 18px 10px 10px;font-weight:900;animation:badgePop 12s infinite ease-in-out}
+.end-badge .pct{background:#FF4D00;color:#fff;font-size:28px;padding:6px 14px;border-radius:12px;border:2px solid #FFD600}
+.end-badge small{font-size:15px;letter-spacing:1px;line-height:1.2;color:#fff}
+.end-inner h2{margin-top:16px;font-size:62px;line-height:1;font-weight:900;letter-spacing:-1.5px;animation:endTitle 12s infinite ease-in-out}
+.price-row{margin-top:14px;display:flex;align-items:end;gap:14px;animation:endPrice 12s infinite ease-in-out}
+.price-row s{font-size:24px;color:#8a8a8a;font-weight:500}
+.price-row .now{font-size:54px;font-weight:900}
+.price-row .now em{font-style:normal;font-size:30px}
+.price-row .d-day{background:#FF4D00;color:#fff;font-weight:900;font-size:16px;padding:8px 14px;border-radius:100px;border:2px solid #161616;margin-bottom:12px}
+.cta{margin-top:18px;display:flex;align-items:center;gap:16px;animation:ctaWrap 12s infinite ease-in-out}
+.cta-btn{background:#161616;color:#fff;font-size:28px;font-weight:900;padding:18px 54px;border-radius:100px;letter-spacing:-.5px;box-shadow:8px 8px 0 #FF4D00;border:3px solid #161616}
+.cta-note{font-size:15px;font-weight:700;line-height:1.4}
+.progress{position:absolute;left:0;right:0;bottom:0;height:10px;background:rgba(22,22,22,.12);z-index:30}
+.progress span{display:block;height:100%;background:#161616;transform-origin:left center;animation:progressFill 12s infinite linear}
+.time{position:absolute;right:48px;bottom:26px;font-size:13px;font-weight:700;letter-spacing:1px;z-index:30;background:#fff;border:2px solid #161616;border-radius:100px;padding:5px 12px}
+/* KEYFRAMES - ALL 12s, transform+opacity only */
+@keyframes burstZoom{0%{opacity:.95;transform:scale(.92) rotate(0deg)}18%{opacity:1;transform:scale(1) rotate(8deg)}33%{opacity:1;transform:scale(1.12) rotate(12deg)}55%{opacity:1;transform:scale(1.18) rotate(0deg)}66%{opacity:1;transform:scale(1.05) rotate(-6deg)}85%{opacity:.95;transform:scale(1) rotate(-3deg)}100%{opacity:.95;transform:scale(.92) rotate(0deg)}}
+@keyframes spinRing{0%{opacity:.8;transform:rotate(0deg) scale(.95)}50%{opacity:.9;transform:rotate(180deg) scale(1.05)}100%{opacity:.8;transform:rotate(360deg) scale(.95)}}
+@keyframes bgWordMove{0%{opacity:0;transform:translateX(80px)}3%{opacity:1;transform:translateX(0)}26%{opacity:1;transform:translateX(-20px)}32%{opacity:0;transform:translateX(-80px)}33%{opacity:0;transform:translateX(80px)}100%{opacity:0;transform:translateX(80px)}}
+@keyframes productMove{0%{opacity:1;transform:translate(0,0) scale(.92) rotate(-2deg)}10%{opacity:1;transform:translate(0,-12px) scale(.95) rotate(-2deg)}27%{opacity:1;transform:translate(-30px,0) scale(.96) rotate(-1deg)}36%{opacity:1;transform:translate(-70px,8px) scale(1.1) rotate(0deg)}54%{opacity:1;transform:translate(-70px,-12px) scale(1.13) rotate(0deg)}64%{opacity:1;transform:translate(-60px,0) scale(.92) rotate(1.5deg)}78%{opacity:1;transform:translate(-60px,-10px) scale(.95) rotate(1.5deg)}94%{opacity:1;transform:translate(-60px,0) scale(.95) rotate(1.5deg)}98%{opacity:1;transform:translate(0,0) scale(.92) rotate(-2deg)}100%{opacity:1;transform:translate(0,0) scale(.92) rotate(-2deg)}}
+@keyframes glowPulse{0%{opacity:.7;transform:scale(.9)}25%{opacity:.9;transform:scale(1)}50%{opacity:1;transform:scale(1.15)}75%{opacity:.85;transform:scale(1)}100%{opacity:.7;transform:scale(.9)}}
+@keyframes shadowPulse{0%{opacity:.7;transform:scaleX(.9)}50%{opacity:1;transform:scaleX(1.15)}100%{opacity:.7;transform:scaleX(.9)}}
+@keyframes shineMove{0%{opacity:0;transform:translateX(0) skewX(-14deg)}32%{opacity:0;transform:translateX(0) skewX(-14deg)}42%{opacity:1;transform:translateX(120px) skewX(-14deg)}52%{opacity:1;transform:translateX(240px) skewX(-14deg)}62%{opacity:0;transform:translateX(240px) skewX(-14deg)}100%{opacity:0;transform:translateX(0) skewX(-14deg)}}
+@keyframes hookScene{0%{opacity:0;transform:translateY(30px)}2%{opacity:1;transform:translateY(0)}26%{opacity:1;transform:translateY(0)}31.5%{opacity:0;transform:translateY(-50px)}100%{opacity:0;transform:translateY(-50px)}}
+@keyframes hookBadge{0%{opacity:0;transform:translateY(20px) scale(.95)}3%{opacity:1;transform:translateY(0) scale(1)}26%{opacity:1;transform:translateY(0) scale(1)}31%{opacity:0;transform:translateY(-20px) scale(1)}100%{opacity:0;transform:translateY(-20px) scale(1)}}
+@keyframes hookTitle{0%{opacity:0;transform:translateY(50px) scale(.98)}4%{opacity:1;transform:translateY(0) scale(1)}9%{opacity:1;transform:translateY(-6px) scale(1.01)}14%{opacity:1;transform:translateY(0) scale(1)}26%{opacity:1;transform:translateY(0) scale(1)}31%{opacity:0;transform:translateY(-30px) scale(1.02)}100%{opacity:0;transform:translateY(50px) scale(.98)}}
+@keyframes hookSub{0%{opacity:0;transform:translateY(30px)}6%{opacity:0;transform:translateY(30px)}9%{opacity:1;transform:translateY(0)}26%{opacity:1;transform:translateY(0)}31%{opacity:0;transform:translateY(-20px)}100%{opacity:0;transform:translateY(30px)}}
+@keyframes midScene{0%{opacity:0;transform:translateY(30px)}32%{opacity:0;transform:translateY(30px)}35.5%{opacity:1;transform:translateY(0)}59%{opacity:1;transform:translateY(0)}64.5%{opacity:0;transform:translateY(-40px)}100%{opacity:0;transform:translateY(-40px)}}
+@keyframes midKicker{0%{opacity:0;transform:translateX(-20px)}34%{opacity:0;transform:translateX(-20px)}37%{opacity:1;transform:translateX(0)}59%{opacity:1;transform:translateX(0)}64%{opacity:0;transform:translateX(0)}100%{opacity:0;transform:translateX(-20px)}}
+@keyframes midTitle{0%{opacity:0;transform:translateY(30px)}35%{opacity:0;transform:translateY(30px)}38.5%{opacity:1;transform:translateY(0)}59%{opacity:1;transform:translateY(0)}64%{opacity:0;transform:translateY(-20px)}100%{opacity:0;transform:translateY(30px)}}
+@keyframes ben1{0%{opacity:0;transform:translateX(-40px)}38%{opacity:0;transform:translateX(-40px)}41%{opacity:1;transform:translateX(0)}59%{opacity:1;transform:translateX(0)}64%{opacity:0;transform:translateX(0)}100%{opacity:0;transform:translateX(-40px)}}
+@keyframes ben2{0%{opacity:0;transform:translateX(-40px)}41%{opacity:0;transform:translateX(-40px)}44%{opacity:1;transform:translateX(0)}59%{opacity:1;transform:translateX(0)}64%{opacity:0;transform:translateX(0)}100%{opacity:0;transform:translateX(-40px)}}
+@keyframes ben3{0%{opacity:0;transform:translateX(-40px)}44%{opacity:0;transform:translateX(-40px)}47%{opacity:1;transform:translateX(0)}59%{opacity:1;transform:translateX(0)}64%{opacity:0;transform:translateX(0)}100%{opacity:0;transform:translateX(-40px)}}
+@keyframes endScene{0%{opacity:0;transform:translateY(30px)}65%{opacity:0;transform:translateY(30px)}69%{opacity:1;transform:translateY(0)}94%{opacity:1;transform:translateY(0)}98.5%{opacity:0;transform:translateY(-20px)}100%{opacity:0;transform:translateY(30px)}}
+@keyframes badgePop{0%{opacity:0;transform:scale(.6)}67%{opacity:0;transform:scale(.6)}71%{opacity:1;transform:scale(1.08)}73.5%{opacity:1;transform:scale(1)}94%{opacity:1;transform:scale(1)}98%{opacity:0;transform:scale(1)}100%{opacity:0;transform:scale(.6)}}
+@keyframes endTitle{0%{opacity:0;transform:translateY(30px)}69%{opacity:0;transform:translateY(30px)}72%{opacity:1;transform:translateY(0)}94%{opacity:1;transform:translateY(0)}98%{opacity:0;transform:translateY(-10px)}100%{opacity:0;transform:translateY(30px)}}
+@keyframes endPrice{0%{opacity:0;transform:translateY(20px)}72%{opacity:0;transform:translateY(20px)}75%{opacity:1;transform:translateY(0)}94%{opacity:1;transform:translateY(0)}98%{opacity:0;transform:translateY(-10px)}100%{opacity:0;transform:translateY(20px)}}
+@keyframes ctaWrap{0%{opacity:0;transform:translateY(20px) scale(.95)}74%{opacity:0;transform:translateY(20px) scale(.95)}77.5%{opacity:1;transform:translateY(0) scale(1)}81%{opacity:1;transform:translateY(0) scale(1.04)}84%{opacity:1;transform:translateY(0) scale(1)}88%{opacity:1;transform:translateY(0) scale(1.05)}91%{opacity:1;transform:translateY(0) scale(1)}94%{opacity:1;transform:translateY(0) scale(1.02)}98%{opacity:0;transform:translateY(-10px) scale(1)}100%{opacity:0;transform:translateY(20px) scale(.95)}}
+@keyframes citrus1{0%{opacity:.9;transform:rotate(0deg) translateY(0) scale(.9)}15%{opacity:1;transform:rotate(90deg) translateY(-16px) scale(1)}30%{opacity:.6;transform:rotate(120deg) translateY(0) scale(.95)}55%{opacity:.9;transform:rotate(200deg) translateY(-10px) scale(1.05)}75%{opacity:.7;transform:rotate(280deg) translateY(0) scale(.9)}100%{opacity:.9;transform:rotate(360deg) translateY(0) scale(.9)}}
+@keyframes citrus2{0%{opacity:0;transform:rotate(0deg) scale(.8)}10%{opacity:1;transform:rotate(60deg) scale(1)}30%{opacity:1;transform:rotate(120deg) scale(1)}60%{opacity:1;transform:rotate(240deg) scale(1.1)}90%{opacity:.9;transform:rotate(340deg) scale(1)}100%{opacity:0;transform:rotate(360deg) scale(.8)}}
+@keyframes drop1{0%{opacity:0;transform:translateY(20px) scale(.8)}5%{opacity:1;transform:translateY(0) scale(1)}18%{opacity:1;transform:translateY(-18px) scale(1)}30%{opacity:0;transform:translateY(-30px) scale(.9)}100%{opacity:0;transform:translateY(20px) scale(.8)}}
+@keyframes drop2{0%{opacity:0;transform:translateY(0)}35%{opacity:0;transform:translateY(10px)}42%{opacity:1;transform:translateY(-10px)}58%{opacity:1;transform:translateY(-22px)}64%{opacity:0;transform:translateY(-34px)}100%{opacity:0;transform:translateY(0)}}
+@keyframes drop3{0%{opacity:0;transform:translateY(0)}68%{opacity:0;transform:translateY(10px)}73%{opacity:1;transform:translateY(-8px)}90%{opacity:1;transform:translateY(-18px)}97%{opacity:0;transform:translateY(-28px)}100%{opacity:0;transform:translateY(0)}}
+@keyframes progressFill{0%{opacity:1;transform:scaleX(0)}100%{opacity:1;transform:scaleX(1)}}}
+</style>
+</head>
+<body>
+<div class="stage" role="img" aria-label="비타글로우 비타민C 세럼 런칭 30% 할인 광고">
+<div class="bg-cream"></div>
+<div class="burst"></div>
+<div class="burst-ring"></div>
+<div class="bg-word">GLOW • GLOW</div>
+<div class="dot-grid"></div>
+<div class="topbar"><div class="brand"><span class="brand-mark">V</span> VITAGLOW 비타글로우</div><div class="top-tag">NEW LAUNCH • 12초</div></div>
+<div class="citrus c1"></div>
+<div class="citrus c2"></div>
+<div class="product-wrap">
+<div class="product-glow"></div>
+<div class="product-shadow"></div>
+<div class="bottle"><div class="cap"></div><div class="neck"></div><div class="bbody"><div class="label"><span>VITAGLOW</span><strong>VITA C 15%</strong><em>BRIGHTENING SERUM</em><i>30ml • 저자극</i></div><div class="shine"></div></div></div>
+<div class="drop d1"></div><div class="drop d2"></div><div class="drop d3"></div>
+</div>
+<!-- 0-4s HOOK -->
+<section class="scene scene-hook"><div class="hook-inner"><div class="eyebrow"><b>NEW</b> 비타민C 세럼 신제품 출시</div><h1>칙칙한 피부<br>깨우는 <span>한 방울의 빛</span></h1><p class="hook-sub">아침 세안 후 <strong>3초, 7일 만에 달라지는 광채</strong>를 만나보세요</p><div class="hook-meta"><div class="stars">★★★★★ 4.9 | 20대 리뷰 2,314개</div></div></div></section>
+<!-- 4-8s PRODUCT/BENEFIT -->
+<section class="scene scene-mid"><div class="mid-inner"><div class="mid-kicker">15% PURE VITAMIN C • PRODUCT</div><h2>잡티는 옅게,<br>속광은 깊게</h2><div class="benefits"><div class="benefit b1"><span class="n">1</span><p>7일 잡티•기미 완화<small>순수 비타민C 15% + 나이아신아마이드</small></p></div><div class="benefit b2"><span class="n">2</span><p>모공은 조이고 결은 매끈하게<small>산뜻한 워터 텍스처, 끈적임 0%</small></p></div><div class="benefit b3"><span class="n">3</span><p>민감피부 저자극 테스트 완료<small>아침•저녁 데일리로 부담 없이</small></p></div></div></div></section>
+<!-- 8-12s OFFER + CTA -->
+<section class="scene scene-end"><div class="end-inner"><div class="end-badge"><span class="pct">30%</span><small>LAUNCH SALE<br>런칭 단 7일 특가</small></div><h2>지금 가장 빛날<br>피부로 갈아타세요</h2><div class="price-row"><s>55,000원</s><span class="now"><em>₩</em>38,500</span><span class="d-day">오늘 출발 • 무료배송</span></div><div class="cta"><div class="cta-btn">지금 구매 →</div><div class="cta-note">11월 10일까지<br>첫 구매 30% + 샘플 증정</div></div></div></section>
+<div class="progress"><span></span></div>
+<div class="time">00:12 LOOP</div>
+</div>
+</body>
+</html>

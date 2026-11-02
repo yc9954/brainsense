@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{background:#000}
+body{min-height:100vh;display:flex;align-items:center;justify-content:center;font-family:'Noto Sans KR',sans-serif}
+.stage{width:1280px;height:720px;position:relative;overflow:hidden;background:#070E24;flex-shrink:0;color:#fff}
+.bg{position:absolute;inset:-40px;background:
+radial-gradient(700px 420px at 18% 10%,rgba(77,240,255,.22),transparent 60%),
+radial-gradient(900px 600px at 85% 90%,rgba(214,255,63,.18),transparent 60%),
+linear-gradient(180deg,#0A1430 0%,#070E24 60%,#040814 100%);animation:bgPan 12s linear infinite}
+.bg:after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 58%,#D6FF3F 58.3%,#D6FF3F 71%,#0B1533 71.3%);opacity:.98}
+.grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.07) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(800px 500px at 36% 50%,#000 30%,transparent 75%);opacity:.55;animation:bgPan 12s linear infinite}
+@keyframes bgPan{0%{transform:translateX(0) scale(1)}25%{transform:translateX(-12px) scale(1.02)}50%{transform:translateX(0) scale(1)}75%{transform:translateX(12px) scale(1.02)}100%{transform:translateX(0) scale(1)}}
+.top{position:absolute;top:0;left:0;right:0;height:74px;display:flex;align-items:center;justify-content:space-between;padding:0 48px;z-index:10}
+.logo{display:flex;align-items:center;gap:12px;font-weight:900;font-size:22px;letter-spacing:-.5px}
+.mark{width:36px;height:36px;background:#D6FF3F;color:#0A1430;border-radius:10px;display:flex;align-items:center;justify-content:center;font-family:'Black Han Sans';font-size:22px;line-height:1}
+.live{font-size:13px;font-weight:700;letter-spacing:2px;color:#0A1430;background:#fff;border-radius:999px;padding:7px 14px;display:flex;align-items:center;gap:8px}
+.live i{width:9px;height:9px;border-radius:50%;background:#FF2E5A;display:block;animation:dotBlink 12s linear infinite}
+@keyframes dotBlink{0%,100%{opacity:1;transform:scale(1)}6%{opacity:.3;transform:scale(.8)}12%{opacity:1;transform:scale(1)}18%{opacity:.3;transform:scale(.8)}24%,100%{opacity:1;transform:scale(1)}}
+.scene{position:absolute;inset:0;padding:86px 48px 90px}
+.s-hook{animation:showHook 12s linear infinite;z-index:3}
+.s-product{animation:showProduct 12s linear infinite;z-index:3}
+.s-offer{animation:showOffer 12s linear infinite;z-index:4}
+@keyframes showHook{0%{opacity:0;visibility:hidden}1.5%{opacity:1;visibility:visible}28%{opacity:1;visibility:visible}32.5%{opacity:0;visibility:hidden}100%{opacity:0;visibility:hidden}}
+@keyframes showProduct{0%,33.3%{opacity:0;visibility:hidden}36%{opacity:1;visibility:visible}61%{opacity:1;visibility:visible}65.5%{opacity:0;visibility:hidden}100%{opacity:0;visibility:hidden}}
+@keyframes showOffer{0%,66.6%{opacity:0;visibility:hidden}69.5%{opacity:1;visibility:visible}97%{opacity:1;visibility:visible}100%{opacity:0;visibility:hidden}}
+.kicker{display:inline-flex;align-items:center;gap:10px;background:#D6FF3F;color:#0A1430;font-weight:900;font-size:17px;letter-spacing:-.3px;padding:10px 18px;border-radius:999px}
+.hook-title{font-family:'Black Han Sans';font-size:172px;line-height:.95;letter-spacing:-4px;margin-top:18px;animation:hookZoom 12s linear infinite}
+@keyframes hookZoom{0%{opacity:0;transform:scale(.78) translateY(40px)}2.5%{opacity:1;transform:scale(1.06) translateY(0)}5%{opacity:1;transform:scale(1) translateY(0)}27%{opacity:1;transform:scale(1) translateY(0)}32%{opacity:0;transform:scale(1.12) translateY(-18px)}100%{opacity:0;transform:scale(1.12) translateY(-18px)}}
+.hook-title .lime{color:#D6FF3F}
+.hook-sub{font-size:30px;font-weight:700;margin-top:10px;color:#E7ECFF;animation:hookSub 12s linear infinite}
+@keyframes hookSub{0%,2%{opacity:0;transform:translateY(18px)}5%,27%{opacity:1;transform:translateY(0)}32%,100%{opacity:0;transform:translateY(-10px)}}
+.coinrow{display:flex;gap:16px;margin-top:28px;animation:hookSub 12s linear infinite}
+.chip{background:rgba(255,255,255,.1);border:1.5px solid rgba(255,255,255,.28);backdrop-filter:blur(6px);border-radius:18px;padding:14px 18px;display:flex;align-items:center;gap:14px;min-width:240px}
+.chip b{font-size:22px}
+.chip span{font-size:14px;color:#C8D1F0;font-weight:500}
+.circle{width:56px;height:56px;border-radius:50%;background:#D6FF3F;color:#0A1430;font-weight:900;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;animation:coinSpin 12s linear infinite}
+.circle.c2{background:#4DF0FF}.circle.c3{background:#fff}
+@keyframes coinSpin{0%{opacity:0;transform:translateY(30px) rotate(-18deg)}4%{opacity:1;transform:translateY(0) rotate(0)}27%{opacity:1;transform:translateY(0) rotate(0)}32%,100%{opacity:0;transform:translateY(-14px) rotate(8deg)}}
+.bigcut{position:absolute;right:-30px;top:70px;width:520px;height:560px;animation:cutIn 12s linear infinite}
+@keyframes cutIn{0%{opacity:0;transform:translateX(120px) rotate(4deg)}3%{opacity:1;transform:translateX(0) rotate(0)}27%{opacity:1;transform:translateX(0) rotate(0)}32%,100%{opacity:0;transform:translateX(80px) rotate(2deg)}}
+.coinbig{position:absolute;right:40px;top:40px;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle at 30% 28%,#FFFAD1 0%,#D6FF3F 28%,#A9D91A 58%,#5A7A00 100%);box-shadow:0 30px 80px rgba(214,255,63,.35),inset 0 -18px 40px rgba(0,0,0,.35);display:flex;align-items:center;justify-content:center;flex-direction:column;color:#0A1430}
+.coinbig strong{font-family:'Black Han Sans';font-size:66px;line-height:1}
+.coinbig em{font-style:normal;font-weight:900;font-size:20px;letter-spacing:2px;background:#0A1430;color:#D6FF3F;padding:6px 14px;border-radius:999px;margin-top:12px}
+.crack{position:absolute;right:200px;top:20px;bottom:20px;width:14px;background:#070E24;transform:rotate(12deg);box-shadow:-6px 0 0 #fff,6px 0 0 #fff}
+.frag{position:absolute;background:#fff;border:3px solid #0A1430;border-radius:14px;font-weight:900;color:#0A1430;padding:10px 14px;font-size:18px}
+.f1{right:70px;top:30px;transform:rotate(-8deg)}.f2{right:380px;top:220px;transform:rotate(7deg);background:#4DF0FF}.f3{right:90px;bottom:20px;transform:rotate(-5deg);background:#D6FF3F}
+.prod-wrap{display:flex;gap:48px;align-items:center;height:100%}
+.prod-left{flex:1.1;animation:prodLeft 12s linear infinite}
+@keyframes prodLeft{0%,33.5%{opacity:0;transform:translateX(-50px)}36.5%,61%{opacity:1;transform:translateX(0)}65.5%,100%{opacity:0;transform:translateX(-30px)}}
+.prod-left h2{font-family:'Black Han Sans';font-size:72px;line-height:1.02;letter-spacing:-2px;margin:16px 0 18px}
+.prod-left h2 span{color:#D6FF3F}
+.benefits{display:flex;gap:12px;margin-top:8px}
+.benefit{flex:1;background:#fff;color:#0A1430;border-radius:18px;padding:18px 16px}
+.benefit strong{font-size:36px;font-family:'Black Han Sans';display:block}
+.benefit p{font-size:16px;font-weight:700;margin-top:2px;line-height:1.3}
+.benefit small{font-size:13px;color:#5A658A;font-weight:500}
+.phone{width:320px;height:554px;background:#fff;border-radius:44px;padding:14px;color:#0A1430;position:relative;box-shadow:0 30px 80px rgba(0,0,0,.5);animation:phoneUp 12s linear infinite;border:8px solid #151F3D}
+@keyframes phoneUp{0%,33.5%{opacity:0;transform:translateY(90px) rotate(3deg)}37%,61%{opacity:1;transform:translateY(0) rotate(0)}65.5%,100%{opacity:0;transform:translateY(-40px) rotate(-1deg)}}
+.notch{width:130px;height:24px;background:#151F3D;border-radius:999px;margin:2px auto 14px}
+.stock{background:#0A1430;color:#fff;border-radius:20px;padding:16px}
+.stock-top{display:flex;justify-content:space-between;align-items:center}
+.stock-top b{font-size:18px}.stock-top span{font-size:13px;background:#D6FF3F;color:#0A1430;font-weight:900;padding:4px 10px;border-radius:999px}
+.price{font-size:34px;font-weight:900;margin-top:8px}.price small{font-size:15px;color:#4DF0FF}
+.chart{margin-top:10px;background:#fff;border-radius:14px;padding:10px;overflow:hidden}
+.chart svg{display:block;width:100%;height:76px}
+.chartmask{transform-origin:left center;animation:chartGrow 12s linear infinite}
+@keyframes chartGrow{0%,38%{transform:scaleX(0);opacity:0}44%,61%{transform:scaleX(1);opacity:1}65%,100%{transform:scaleX(1);opacity:0}}
+.buybtn{margin-top:12px;background:#D6FF3F;text-align:center;font-weight:900;font-size:19px;padding:14px;border-radius:14px}
+.meta{display:flex;justify-content:space-between;margin-top:12px;font-size:13px;font-weight:700;color:#5A658A}
+.offer-center{text-align:center;max-width:900px;margin:6px auto 0;animation:offerPop 12s linear infinite}
+@keyframes offerPop{0%,66.8%{opacity:0;transform:translateY(40px) scale(.96)}70%,97%{opacity:1;transform:translateY(0) scale(1)}100%{opacity:0;transform:translateY(-16px) scale(1.02)}}
+.trust{display:flex;gap:10px;justify-content:center;margin-bottom:18px}
+.trust div{background:rgba(255,255,255,.12);border:1.5px solid rgba(255,255,255,.3);padding:10px 18px;border-radius:999px;font-size:16px;font-weight:700}
+.trust div i{font-style:normal;margin-right:6px}
+.offer-center h2{font-family:'Black Han Sans';font-size:74px;line-height:1;letter-spacing:-2px}
+.offer-center h2 span{color:#D6FF3F}
+.cta{margin:24px auto 0;background:#D6FF3F;color:#0A1430;font-weight:900;font-size:36px;border-radius:999px;padding:20px 20px 20px 44px;width:500px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 18px 50px rgba(214,255,63,.45);animation:ctaPulse 12s linear infinite}
+@keyframes ctaPulse{0%,69%{transform:scale(1)}73%{transform:scale(1.06)}77%{transform:scale(1)}81%{transform:scale(1.06)}85%,100%{transform:scale(1)}}
+.arrow{width:64px;height:64px;background:#0A1430;color:#D6FF3F;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:32px}
+.event{margin-top:14px;font-size:18px;font-weight:700;color:#fff}.event strong{color:#0A1430;background:#fff;padding:3px 10px;border-radius:8px;margin-right:8px}
+.bottom{position:absolute;left:0;right:0;bottom:0;height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 48px;font-size:12.5px;color:rgba(255,255,255,.72);z-index:10;border-top:1px solid rgba(255,255,255,.14)}
+.bar{position:absolute;left:0;bottom:0;height:5px;width:100%;background:rgba(255,255,255,.15);z-index:11}
+.bar i{display:block;height:100%;background:#D6FF3F;transform-origin:left center;animation:barFill 12s linear infinite}
+@keyframes barFill{0%{transform:scaleX(0)}100%{transform:scaleX(1)}}
+.dots{position:absolute;right:48px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:10px;z-index:10}
+.dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.25);animation:dotA 12s linear infinite}
+.dot:nth-child(2){animation-name:dotB}.dot:nth-child(3){animation-name:dotC}
+@keyframes dotA{0%,32.5%{background:#D6FF3F;transform:scale(1.5)}33%,100%{background:rgba(255,255,255,.25);transform:scale(1)}}
+@keyframes dotB{0%,33%{background:rgba(255,255,255,.25);transform:scale(1)}36%,61%{background:#D6FF3F;transform:scale(1.5)}65.5%,100%{background:rgba(255,255,255,.25);transform:scale(1)}}
+@keyframes dotC{0%,66.6%{background:rgba(255,255,255,.25);transform:scale(1)}70%,97%{background:#D6FF3F;transform:scale(1.5)}100%{background:rgba(255,255,255,.25);transform:scale(1)}}
+</style>
+</head>
+<body>
+<div class="stage">
+<div class="bg"></div><div class="grid"></div>
+<div class="top"><div class="logo"><div class="mark">P</div> 피스미 PIECE-MI</div><div class="live"><i></i> 소수점 실시간 체결 중</div></div>
+<!-- HOOK 0-4s -->
+<section class="scene s-hook">
+<div class="kicker">✦ 소수점 주식 투자 앱</div>
+<h1 class="hook-title"><span class="lime">1,000원부터</span> 시작</h1>
+<p class="hook-sub">애플 · 테슬라 · 엔비디아, 한 주 가격에 주저했다면</p>
+<div class="coinrow">
+<div class="chip"><div class="circle">0.12주</div><div><b>애플 담기</b><br><span>428,000원 → 1,000원부터</span></div></div>
+<div class="chip"><div class="circle c2">0.05주</div><div><b>테슬라 담기</b><br><span>1주 부담 없이 조각 매수</span></div></div>
+<div class="chip"><div class="circle c3">0.01주</div><div><b>엔비디아 담기</b><br><span>커피 한 잔보다 쉽게</span></div></div>
+</div>
+<div class="bigcut"><div class="coinbig"><strong>₩1,000</strong><em>PIECE STOCK</em></div><div class="crack"></div><div class="frag f1">SPLIT!</div><div class="frag f2">0.08주</div><div class="frag f3">÷ 100 조각</div></div>
+</section>
+<!-- PRODUCT 4-8s -->
+<section class="scene s-product">
+<div class="prod-wrap">
+<div class="prod-left">
+<div class="kicker">◉ 3분 가입 · 오늘 바로 매수</div>
+<h2>사고 싶은 만큼만<br><span>조각으로 사세요</span></h2>
+<div class="benefits">
+<div class="benefit"><strong>1천원</strong><p>최소 투자 금액</p><small>한 주도 쪼개서 구매</small></div>
+<div class="benefit"><strong>3분</strong><p>신분증 가입 완료</p><small>신한·토스 인증 지원</small></div>
+<div class="benefit"><strong>24시간</strong><p>미국장 실시간 체결</p><small>자동 분산·적립식</small></div>
+</div>
+</div>
+<div class="phone"><div class="notch"></div>
+<div class="stock"><div class="stock-top"><b>🍎 AAPL 애플</b><span>+2.84%</span></div><div class="price">0.125주 <small>· 32,500원 보유</small></div>
+<div class="chart"><svg viewBox="0 0 260 76"><polyline points="0,62 30,55 60,58 90,40 120,45 150,28 180,32 210,14 260,18" fill="none" stroke="#0A1430" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="210" cy="14" r="7" fill="#D6FF3F" stroke="#0A1430" stroke-width="3"/></svg><div class="chartmask"></div></div>
+<div class="buybtn">1,000원 매수하기</div></div>
+<div class="meta"><span>✔ 소수점 8자리까지</span><span>✔ 1,000원 자동투자</span></div>
+</div>
+</div>
+</section>
+<!-- OFFER 8-12s -->
+<section class="scene s-offer">
+<div class="offer-center">
+<div class="trust"><div><i>🛡️</i> 한국예탁결제원 보관</div><div><i>🔒</i> 은행급 256-bit 보안</div><div><i>★</i> 투자자 210만명 선택</div></div>
+<h2>3분 가입하고 <span>지금 시작</span></h2>
+<div class="cta">지금 시작 <span class="arrow">→</span></div>
+<p class="event"><strong>0원</strong> 첫 달 수수료 0원 · 신규 최대 5,000원 리워드</p>
+</div>
+</section>
+<div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+<div class="bottom"><span>피스미증권 · 예금자보호법 적용 외 · 투자 시 원금 손실 가능</span><span>0–4초 HOOK · 4–8초 PRODUCT · 8–12초 OFFER</span></div>
+<div class="bar"><i></i></div>
+</div>
+</body>
+</html>

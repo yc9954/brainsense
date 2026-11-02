@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%;background:#05060d;display:flex;align-items:center;justify-content:center;font-family:"Noto Sans KR",sans-serif}
+.stage{width:1280px;height:720px;position:relative;overflow:hidden;background:#0A0E22;border-radius:18px;flex-shrink:0;color:#fff;isolation:isolate}
+/* BG */
+.bg{position:absolute;inset:0;background:radial-gradient(900px 520px at 50% 42%,#2B235E 0%,#171941 32%,#0A0E22 68%),linear-gradient(180deg,#0D1230 0%,#0A0E22 60%,#070A1A 100%);animation:bgShift 12s ease-in-out infinite}
+@keyframes bgShift{0%,100%{transform:scale(1);filter:brightness(1)}50%{transform:scale(1.06);filter:brightness(1.18)}}
+.glow{position:absolute;left:50%;top:46%;width:640px;height:640px;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(255,138,61,.55) 0%,rgba(255,106,43,.28) 22%,rgba(255,80,180,.12) 42%,transparent 68%);filter:blur(10px);animation:glowPulse 12s ease-in-out infinite}
+@keyframes glowPulse{0%,100%{opacity:.75;transform:translate(-50%,-50%) scale(.92)}18%{opacity:1;transform:translate(-50%,-50%) scale(1.08)}35%,62%{opacity:.9;transform:translate(-50%,-50%) scale(1.02)}80%{opacity:1;transform:translate(-50%,-50%) scale(1.12)}}
+.grid{position:absolute;inset:0;background:linear-gradient(rgba(255,255,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.06) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(700px 500px at 50% 50%,black 30%,transparent 75%);opacity:.35}
+.pt{position:absolute;border-radius:50%;background:radial-gradient(circle at 30% 30%,#fff, #FFC46B 35%, #FF6A2B 70%);box-shadow:0 0 18px rgba(255,140,60,.9);opacity:0;animation:rise 12s linear infinite}
+.pt1{left:18%;width:14px;height:14px;animation-delay:-1s}
+.pt2{left:28%;width:8px;height:8px;animation-delay:-4.5s}
+.pt3{left:72%;width:12px;height:12px;animation-delay:-2.8s}
+.pt4{left:81%;width:7px;height:7px;animation-delay:-7s}
+.pt5{left:62%;width:9px;height:9px;animation-delay:-9.5s}
+.pt6{left:38%;width:6px;height:6px;animation-delay:-11s}
+@keyframes rise{0%{opacity:0;transform:translateY(380px) scale(.6)}8%{opacity:.95}45%{opacity:.8;transform:translateY(-20px) scale(1)}60%{opacity:0;transform:translateY(-120px) scale(1.1)}100%{opacity:0;transform:translateY(-120px)}}
+/* top bar */
+.top{position:absolute;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:28px 48px;z-index:10}
+.brand{font-weight:900;letter-spacing:.22em;font-size:18px}
+.brand small{font-weight:500;letter-spacing:.32em;font-size:11px;opacity:.7;margin-left:10px}
+.top-cta{font-size:14px;font-weight:700;border:1px solid rgba(255,255,255,.35);padding:10px 22px;border-radius:100px;letter-spacing:.05em;background:rgba(255,255,255,.06);backdrop-filter:blur(8px);animation:topCta 12s ease-in-out infinite}
+@keyframes topCta{0%,64%{opacity:.55;color:#fff}70%,94%{opacity:1;color:#0A0E22;background:#fff;border-color:#fff}97%,100%{opacity:.55;color:#fff;background:rgba(255,255,255,.06)}}
+/* bottle */
+.bottle-stage{position:absolute;left:50%;top:52%;width:0;height:0;z-index:5;animation:bottleMove 12s ease-in-out infinite}
+@keyframes bottleMove{0%{transform:translate(-50%,-46%) scale(.92)}15%{transform:translate(-50%,-48%) scale(.96)}33%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(-50%,-52%) scale(1.06)}66%{transform:translate(-50%,-50%) scale(1.04)}82%,90%{transform:translate(-50%,-48%) scale(1.02)}100%{transform:translate(-50%,-46%) scale(.92)}}
+.halo{position:absolute;left:50%;top:10px;width:360px;height:360px;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(255,170,80,.5),transparent 65%);filter:blur(5px);animation:glowPulse 12s ease-in-out infinite}
+.bottle{position:absolute;left:50%;top:-80px;transform:translateX(-50%);width:188px}
+.cap{width:74px;height:88px;margin:0 auto;background:linear-gradient(90deg,#0c0c12,#2a2a35 20%,#0c0c12 50%,#3a3a48 80%,#0c0c12);border-radius:12px 12px 6px 6px;box-shadow:inset 0 2px 6px rgba(255,255,255,.35)}
+.neck{width:52px;height:18px;margin:0 auto;background:linear-gradient(90deg,#c9c9d4,#fff,#c9c9d4)}
+.glass{position:relative;width:188px;height:280px;margin-top:-2px;background:linear-gradient(105deg,rgba(255,255,255,.55) 0%,rgba(255,210,150,.15) 12%,rgba(120,70,20,.15) 30%,rgba(60,25,5,.55) 55%,rgba(20,10,5,.85) 100%),linear-gradient(180deg,#FFB86B,#E86A1A 55%,#8A2E08);border-radius:28px;border:1px solid rgba(255,255,255,.5);box-shadow:0 30px 80px rgba(255,110,30,.35),inset 0 2px 12px rgba(255,255,255,.6);overflow:hidden}
+.liquid{position:absolute;inset:0;background:radial-gradient(120px 180px at 30% 20%,rgba(255,255,255,.7),transparent 60%)}
+.label{position:absolute;left:18px;right:18px;top:72px;background:#FFFBF5;border-radius:14px;padding:16px 10px 14px;text-align:center;color:#121212}
+.label span{font-size:13px;letter-spacing:.28em;font-weight:700}
+.label strong{display:block;font-size:52px;line-height:1;font-weight:900;letter-spacing:-.02em}
+.label em{display:block;font-style:normal;font-size:10px;letter-spacing:.18em;margin-top:6px;opacity:.7}
+.shine{position:absolute;top:0;bottom:0;left:-60%;width:55%;background:linear-gradient(105deg,transparent,rgba(255,255,255,.85),transparent);transform:skewX(-18deg);animation:sweep 12s ease-in-out infinite}
+@keyframes sweep{0%,30%{left:-70%;opacity:0}38%{opacity:1}48%,62%{left:120%;opacity:1}70%,100%{left:120%;opacity:0}}
+.shadow{position:absolute;left:50%;top:220px;width:220px;height:28px;transform:translateX(-50%);background:radial-gradient(ellipse,rgba(0,0,0,.6),transparent 70%);filter:blur(4px)}
+.drop{position:absolute;left:50%;top:-132px;width:34px;height:34px;transform:translateX(-50%);background:radial-gradient(circle at 35% 30%,#fff,#FFD9A0 40%,#FF7A1F 75%);border-radius:50% 50% 50% 50% / 60% 60% 40% 40%;clip-path:ellipse(50% 55% at 50% 55%);box-shadow:0 0 28px rgba(255,150,50,1);animation:dropF 12s ease-in-out infinite}
+.drop::after{content:"";position:absolute;top:-10px;left:50%;width:14px;height:18px;background:#FF9A3D;transform:translateX(-50%);clip-path:polygon(50% 0,100% 100%,0 100%);filter:blur(.3px)}
+@keyframes dropF{0%,28%{opacity:0;transform:translate(-50%,18px) scale(.6)}34%{opacity:1;transform:translate(-50%,0) scale(1)}42%{opacity:1;transform:translate(-50%,10px) scale(1)}50%,62%{opacity:0;transform:translate(-50%,56px) scale(.8)}100%{opacity:0}}
+.badge{position:absolute;left:88px;top:-66px;width:118px;height:118px;border-radius:50%;background:radial-gradient(circle at 30% 25%,#FFD27A,#FF6A2B 58%,#C22E00);display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:17px;font-weight:700;line-height:1.1;color:#fff;box-shadow:0 12px 40px rgba(255,106,43,.7),inset 0 2px 8px rgba(255,255,255,.7);border:2px solid rgba(255,255,255,.85);animation:badgePop 12s ease-in-out infinite}
+.badge b{font-size:38px;font-weight:900;line-height:1}
+@keyframes badgePop{0%,65%{opacity:0;transform:scale(.4) rotate(-18deg)}70%{opacity:1;transform:scale(1.12) rotate(6deg)}73%{transform:scale(1) rotate(0)}92%{opacity:1;transform:scale(1)}96%,100%{opacity:0;transform:scale(.85)}}
+/* scenes */
+.scene{position:absolute;left:0;right:0;text-align:center;z-index:6;pointer-events:none}
+.s-hook{top:78px;animation:hookA 12s ease-in-out infinite}
+@keyframes hookA{0%{opacity:0;transform:translateY(36px)}3%{opacity:1;transform:translateY(0)}26%{opacity:1;transform:translateY(0)}31%,100%{opacity:0;transform:translateY(-32px)}}
+.eyebrow{display:inline-block;font-size:15px;letter-spacing:.28em;font-weight:700;color:#FFC48A;border:1px solid rgba(255,180,110,.5);padding:9px 20px;border-radius:100px;background:rgba(255,120,40,.12)}
+.s-hook h1{margin-top:16px;font-size:78px;font-weight:900;letter-spacing:-.03em;line-height:1.02;text-shadow:0 6px 40px rgba(0,0,0,.6)}
+.s-hook h1 em{font-family:"Instrument Serif",serif;font-style:italic;font-weight:400;background:linear-gradient(90deg,#FFE9C6,#FF9A3D,#FFD27A);-webkit-background-clip:text;background-clip:text;color:transparent}
+.s-hook p{margin-top:10px;font-size:20px;opacity:.85;letter-spacing:.02em}
+.s-product{top:86px;animation:prodA 12s ease-in-out infinite}
+@keyframes prodA{0%,31%{opacity:0;transform:translateY(30px)}36%{opacity:1;transform:translateY(0)}59%{opacity:1;transform:translateY(0)}64%,100%{opacity:0;transform:translateY(-28px)}}
+.p-pill{display:inline-block;background:#fff;color:#111;font-weight:900;font-size:17px;padding:10px 22px;border-radius:100px;letter-spacing:.02em}
+.s-product h2{margin-top:14px;font-size:52px;font-weight:900;letter-spacing:-.02em}
+.s-product h2 span{color:#FFB86B}
+.p-sub{margin-top:10px;font-size:18px;color:rgba(255,255,255,.82)}
+.s-offer{bottom:58px;animation:offerA 12s ease-in-out infinite}
+@keyframes offerA{0%,65%{opacity:0;transform:translateY(40px) scale(.97)}71%{opacity:1;transform:translateY(0) scale(1)}93%{opacity:1;transform:translateY(0)}97%,100%{opacity:0;transform:translateY(12px)}}
+.offer-tag{font-size:14px;letter-spacing:.3em;font-weight:700;color:#FFC48A}
+.price{margin-top:8px;display:flex;gap:16px;align-items:baseline;justify-content:center}
+.price s{font-size:22px;opacity:.6}
+.price strong{font-size:46px;font-weight:900}
+.price strong i{font-style:normal;color:#FF7A1F;background:#fff;padding:2px 12px;border-radius:10px;font-size:28px;margin-left:8px;vertical-align:middle}
+.cta{display:inline-block;margin-top:14px;pointer-events:auto;text-decoration:none;background:linear-gradient(90deg,#FF8A2B,#FF3D6E);color:#fff;font-weight:900;font-size:32px;letter-spacing:.02em;padding:18px 92px;border-radius:100px;box-shadow:0 14px 50px rgba(255,80,40,.65),inset 0 2px 6px rgba(255,255,255,.6);animation:ctaP 12s ease-in-out infinite}
+@keyframes ctaP{0%,68%{transform:scale(1);filter:brightness(1)}74%{transform:scale(1.06);filter:brightness(1.15)}78%{transform:scale(1)}84%{transform:scale(1.05)}88%{transform:scale(1)}100%{transform:scale(1)}}
+.urg{margin-top:10px;font-size:15px;letter-spacing:.12em;opacity:.85}
+/* progress */
+.bar{position:absolute;left:48px;right:48px;bottom:28px;height:4px;background:rgba(255,255,255,.18);border-radius:100px;overflow:hidden;z-index:10}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,#FFB86B,#FF3D6E);transform-origin:left;animation:fill 12s linear infinite}
+@keyframes fill{0%{transform:scaleX(0)}100%{transform:scaleX(1)}}
+.steps{position:absolute;left:48px;right:48px;bottom:38px;display:flex;justify-content:space-between;font-size:11px;letter-spacing:.24em;opacity:.6;z-index:10}
+</style>
+</head>
+<body>
+<div class="stage">
+<div class="bg"></div><div class="grid"></div><div class="glow"></div>
+<div class="pt pt1"></div><div class="pt pt2"></div><div class="pt pt3"></div><div class="pt pt4"></div><div class="pt pt5"></div><div class="pt pt6"></div>
+<div class="top"><div class="brand">LUMIÈRE<span style="font-weight:400"> SEOUL</span><small>VITA C SERUM</small></div><div class="top-cta">지금 구매 →</div></div>
+<div class="bottle-stage">
+<div class="halo"></div><div class="drop"></div>
+<div class="bottle"><div class="cap"></div><div class="neck"></div><div class="glass"><div class="liquid"></div><div class="label"><span>VITA C</span><strong>15%</strong><em>BRIGHTENING SERUM</em></div><div class="shine"></div></div></div>
+<div class="shadow"></div>
+<div class="badge">런칭<b>30%</b></div>
+</div>
+<div class="scene s-hook"><div class="eyebrow">✦ 신제품 비타민C 세럼 출시</div><h1>지친 피부에 <em>빛을 깨우다</em></h1><p>7일 만에 만나는 투명한 광채 — 민낯이 달라져요</p></div>
+<div class="scene s-product"><div class="p-pill">15% 순수 비타민C + 히알루론산</div><h2>잡티부터 칙칙함까지 <span>한 병으로</span></h2><div class="p-sub">피부과 테스트 완료 · 저자극 광채 포뮬러 · 20대 후반 실사용 만족도 96%</div></div>
+<div class="scene s-offer"><div class="offer-tag">런칭 기념 단 3일 · 오늘 자정 종료</div><div class="price"><s>47,000원</s><strong>32,900원<i>30%</i></strong></div><a class="cta" href="#">지금 구매</a><div class="urg">무료배송 · 첫 구매 사은품 증정</div></div>
+<div class="steps"><span>01 HOOK</span><span>02 SERUM BENEFIT</span><span>03 30% OFFER</span></div>
+<div class="bar"><i></i></div>
+</div>
+</body>
+</html>

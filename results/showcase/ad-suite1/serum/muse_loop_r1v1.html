@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Noto+Serif+KR:wght@700;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#111;display:flex;align-items:center;justify-content:center;min-height:100vh}
+.stage{width:1280px;height:720px;position:relative;overflow:hidden;background:#FFF8E8;font-family:'Noto Sans KR',sans-serif;flex-shrink:0}
+.top{position:absolute;top:0;left:0;right:0;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 48px;z-index:20}
+.brand{font-weight:900;letter-spacing:4px;font-size:20px;color:#1A1A1A}
+.brand span{color:#FF6A00}
+.newpill{font-size:13px;font-weight:900;letter-spacing:2px;background:#1A1A1A;color:#fff;padding:8px 16px;border-radius:100px}
+.bg-glow{position:absolute;width:900px;height:900px;left:520px;top:-90px;background:radial-gradient(circle,#FFE27A 0%,#FFC93C 28%,#FF9A2B 48%,rgba(255,154,43,0) 70%);opacity:.85;z-index:1;animation:spinSlow 12s linear infinite}
+.citrus{position:absolute;right:48px;top:50%;width:560px;height:560px;transform:translateY(-50%);border-radius:50%;background:conic-gradient(from 0deg,#FFB800 0 12deg,#FFF3C4 12deg 24deg,#FFB800 24deg 36deg,#FFF3C4 36deg 48deg,#FFB800 48deg 60deg,#FFF3C4 60deg 72deg,#FFB800 72deg 84deg,#FFF3C4 84deg 96deg,#FFB800 96deg 108deg,#FFF3C4 108deg 120deg,#FFB800 120deg 132deg,#FFF3C4 132deg 144deg,#FFB800 144deg 156deg,#FFF3C4 156deg 168deg,#FFB800 168deg 180deg,#FFF3C4 180deg 192deg,#FFB800 192deg 204deg,#FFF3C4 204deg 216deg,#FFB800 216deg 228deg,#FFF3C4 228deg 240deg,#FFB800 240deg 252deg,#FFF3C4 252deg 264deg,#FFB800 264deg 276deg,#FFF3C4 276deg 288deg,#FFB800 288deg 300deg,#FFF3C4 300deg 312deg,#FFB800 312deg 324deg,#FFF3C4 324deg 336deg);border:18px solid #FF9E00;box-shadow:0 30px 80px rgba(255,122,0,.35),inset 0 0 0 12px #fff;z-index:2;animation:citrusSpin 12s linear infinite}
+.citrus:after{content:'';position:absolute;left:50%;top:50%;width:120px;height:120px;transform:translate(-50%,-50%);background:#fff;border-radius:50%;border:8px solid #FF9E00}
+.left{position:absolute;left:64px;top:88px;width:590px;bottom:90px;z-index:10}
+.phase{position:absolute;left:0;right:0;top:0;bottom:0;display:flex;flex-direction:column;justify-content:center}
+.phase-hook{animation:showHook 12s linear infinite}
+.phase-benefit{animation:showBenefit 12s linear infinite}
+.phase-offer{animation:showOffer 12s linear infinite}
+.kicker{display:inline-block;font-size:16px;font-weight:900;letter-spacing:3px;color:#fff;background:#FF6A00;padding:9px 18px;border-radius:100px;margin-bottom:20px;width:fit-content}
+h1{font-family:'Noto Serif KR',serif;font-size:68px;line-height:1.08;font-weight:900;color:#141414;letter-spacing:-1.5px}
+h1 em{font-style:normal;color:#FF6A00;position:relative}
+.sub{margin-top:18px;font-size:20px;line-height:1.6;color:#4A3F33;font-weight:500}
+.sub b{color:#111}
+.benefit-title{font-family:'Noto Serif KR',serif;font-size:56px;line-height:1.15;font-weight:900;color:#141414}
+.benefit-title em{font-style:normal;color:#FF6A00}
+.chips{margin-top:22px;display:flex;flex-direction:column;gap:12px}
+.chip{display:flex;align-items:center;gap:12px;background:#fff;border:2px solid #141414;border-radius:16px;padding:12px 18px;font-size:18px;font-weight:700;color:#141414;box-shadow:5px 5px 0 #141414;width:fit-content}
+.chip i{width:32px;height:32px;border-radius:50%;background:#FF6A00;color:#fff;display:flex;align-items:center;justify-content:center;font-style:normal;font-size:18px;flex-shrink:0}
+.offer-badge{font-size:15px;font-weight:900;letter-spacing:2.5px;color:#FF6A00}
+.offer-title{font-family:'Noto Serif KR',serif;font-size:64px;line-height:1.05;font-weight:900;color:#141414;margin-top:6px}
+.offer-title span{background:linear-gradient(transparent 55%,#FFD93D 55%,#FFD93D 95%,transparent 95%)}
+.price{display:flex;align-items:end;gap:14px;margin-top:16px}
+.price-old{font-size:24px;color:#8A7D6B;text-decoration:line-through;font-weight:700}
+.price-new{font-size:58px;font-weight:900;color:#141414;line-height:1}
+.price-off{font-size:26px;font-weight:900;background:#141414;color:#FFD93D;padding:6px 14px;border-radius:12px}
+.cta{margin-top:22px;width:380px;height:84px;background:#FF5A00;color:#fff;border:none;border-radius:100px;font-size:28px;font-weight:900;letter-spacing:1px;display:flex;align-items:center;justify-content:center;gap:12px;box-shadow:0 14px 30px rgba(255,90,0,.45),inset 0 2px 0 rgba(255,255,255,.4);cursor:pointer;animation:ctaPulse 12s linear infinite}
+.cta small{font-size:16px;font-weight:700;opacity:.9}
+.urgent{margin-top:12px;font-size:16px;font-weight:700;color:#B64B00}
+/* PRODUCT */
+.product-zone{position:absolute;right:90px;top:50%;width:480px;height:620px;transform:translateY(-50%);z-index:5}
+.bottle-float{position:absolute;left:50%;top:40px;transform:translateX(-50%);animation:bottleFloat 12s ease-in-out infinite}
+.bottle{width:230px;height:440px;position:relative;filter:drop-shadow(0 30px 30px rgba(80,40,0,.35))}
+.cap{width:92px;height:96px;background:linear-gradient(180deg,#2B2B2B,#000);margin:0 auto;border-radius:14px 14px 6px 6px;position:relative;z-index:3}
+.cap:after{content:'';position:absolute;left:12px;top:12px;bottom:12px;width:10px;background:rgba(255,255,255,.22);border-radius:10px}
+.neck{width:56px;height:28px;background:linear-gradient(90deg,#C9C9C9,#F5F5F5,#A8A8A8);margin:-2px auto 0}
+.glass{width:230px;height:320px;margin-top:-2px;background:linear-gradient(180deg,rgba(255,255,255,.9) 0%,#FFD98A 18%,#FF9E1A 55%,#E96D00 100%);border-radius:28px;border:3px solid rgba(0,0,0,.08);position:relative;overflow:hidden}
+.glass:before{content:'';position:absolute;left:18px;top:18px;bottom:18px;width:22px;background:linear-gradient(180deg,rgba(255,255,255,.95),rgba(255,255,255,.1));border-radius:20px}
+.shine{position:absolute;top:0;bottom:0;width:70px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.85),transparent);animation:shineMove 12s linear infinite}
+.label{position:absolute;left:16px;right:16px;top:88px;background:#FFFEF8;border-radius:16px;padding:16px 12px;text-align:center;border:2px solid #111}
+.label b{display:block;font-size:22px;letter-spacing:2px}
+.label strong{display:block;font-family:'Noto Serif KR',serif;font-size:42px;line-height:1;color:#FF5A00;margin:4px 0}
+.label span{display:block;font-size:12.5px;font-weight:700;letter-spacing:1px;color:#333}
+.dropper-stick{position:absolute;left:50%;top:0;width:14px;height:150px;background:rgba(0,0,0,.55);transform:translateX(-50%)}
+.shadow{position:absolute;left:50%;bottom:18px;width:300px;height:36px;background:radial-gradient(ellipse,rgba(0,0,0,.35),transparent 70%);transform:translateX(-50%);animation:shadowPulse 12s ease-in-out infinite}
+.drop{position:absolute;border-radius:50% 50% 50% 4px;background:linear-gradient(135deg,#FFD93D,#FF7A00);box-shadow:0 6px 14px rgba(255,122,0,.5);z-index:6}
+.d1{width:28px;height:28px;left:20px;top:160px;transform:rotate(45deg);animation:dropA 12s ease-in-out infinite}
+.d2{width:20px;height:20px;right:30px;top:120px;transform:rotate(45deg);animation:dropB 12s ease-in-out infinite}
+.d3{width:16px;height:16px;left:80px;bottom:140px;transform:rotate(45deg);animation:dropC 12s ease-in-out infinite}
+.spark{position:absolute;color:#fff;font-size:28px;text-shadow:0 0 12px #FF8A00;animation:sparkTwinkle 12s linear infinite}
+.bottom{position:absolute;left:0;right:0;bottom:0;height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 48px;z-index:20;font-size:13px;color:#7A6E5D;font-weight:500}
+.bar{position:absolute;left:0;bottom:0;height:6px;width:100%;background:rgba(0,0,0,.08)}
+.bar i{display:block;height:100%;background:#FF5A00;transform-origin:left;animation:progress 12s linear infinite}
+@keyframes showHook{0%{opacity:0;transform:translateY(50px)}2%{opacity:1;transform:translateY(0)}27%{opacity:1;transform:translateY(0)}32%,100%{opacity:0;transform:translateY(-50px)}}
+@keyframes showBenefit{0%,32%{opacity:0;transform:translateY(50px)}36%{opacity:1;transform:translateY(0)}60%{opacity:1;transform:translateY(0)}65%,100%{opacity:0;transform:translateY(-50px)}}
+@keyframes showOffer{0%,65%{opacity:0;transform:translateY(50px)}69%{opacity:1;transform:translateY(0)}96%{opacity:1;transform:translateY(0)}100%{opacity:0;transform:translateY(-30px)}}
+@keyframes bottleFloat{0%,100%{transform:translateX(-50%) translateY(0) rotate(-1.5deg)}50%{transform:translateX(-50%) translateY(-18px) rotate(1.5deg)}}
+@keyframes shadowPulse{0%,100%{transform:translateX(-50%) scale(1);opacity:.9}50%{transform:translateX(-50%) scale(.82);opacity:.6}}
+@keyframes citrusSpin{0%{transform:translateY(-50%) rotate(0)}100%{transform:translateY(-50%) rotate(360deg)}}
+@keyframes spinSlow{0%{transform:rotate(0) scale(1)}50%{transform:rotate(180deg) scale(1.08)}100%{transform:rotate(360deg) scale(1)}}
+@keyframes shineMove{0%,30%{transform:translateX(-80px) skewX(-15deg);opacity:0}38%{opacity:1}52%,100%{transform:translateX(320px) skewX(-15deg);opacity:0}}
+@keyframes dropA{0%,100%{transform:rotate(45deg) translate(0,0)}50%{transform:rotate(45deg) translate(-10px,-22px)}}
+@keyframes dropB{0%,100%{transform:rotate(45deg) translate(0,0)}50%{transform:rotate(45deg) translate(12px,-18px)}}
+@keyframes dropC{0%,100%{transform:rotate(45deg) translate(0,0);opacity:1}50%{transform:rotate(45deg) translate(0,-20px);opacity:.8}}
+@keyframes sparkTwinkle{0%,100%{opacity:.2;transform:scale(.8) rotate(0)}25%{opacity:1;transform:scale(1.2) rotate(20deg)}50%{opacity:.3;transform:scale(.9)}75%{opacity:1;transform:scale(1.15) rotate(-15deg)}}
+@keyframes ctaPulse{0%,66%{transform:scale(1)}72%{transform:scale(1.07)}77%{transform:scale(1)}83%{transform:scale(1.07)}89%,100%{transform:scale(1)}}
+@keyframes progress{0%{transform:scaleX(0)}100%{transform:scaleX(1)}}
+</style>
+</head>
+<body>
+<div class="stage">
+<div class="bg-glow"></div>
+<div class="citrus"></div>
+<div class="top"><div class="brand">LUMIÈRE <span>●</span> VITA C</div><div class="newpill">NEW LAUNCH</div></div>
+<div class="left">
+<div class="phase phase-hook">
+<div class="kicker">✦ 신제품 출시</div>
+<h1>칙칙한 아침,<br><em>한 방울로 깨우는 광채</em></h1>
+<p class="sub">15% 퓨어 비타민C 세럼이 <b>잠든 피부톤을 환하게</b> 깨워줍니다.</p>
+</div>
+<div class="phase phase-benefit">
+<div class="kicker" style="background:#141414">WHY IT WORKS</div>
+<div class="benefit-title">7일 만에 만나는<br><em>투명한 유리광 피부</em></div>
+<div class="chips">
+<div class="chip"><i>✓</i> 15% 순수 비타민C + 비타민E 잡티 케어</div>
+<div class="chip"><i>✓</i> 다크스팟·기미·칙칙함 3중 브라이트닝</div>
+<div class="chip"><i>✓</i> 민감피부 저자극 테스트 완료 · 산뜻 워터 텍스처</div>
+</div>
+</div>
+<div class="phase phase-offer">
+<div class="offer-badge">LAUNCHING EVENT · 오늘 단 하루</div>
+<div class="offer-title"><span>런칭 기념 30%</span> 할인</div>
+<div class="price"><div class="price-old">38,000원</div><div class="price-new">26,600원</div><div class="price-off">-30%</div></div>
+<div class="cta">지금 구매 <small>→ 무료배송</small></div>
+<div class="urgent">⏰ 런칭 재고 소진 시 조기 종료 · 첫 구매 쿠폰팩 증정</div>
+</div>
+</div>
+<div class="product-zone">
+<div class="drop d1"></div><div class="drop d2"></div><div class="drop d3"></div>
+<div class="spark" style="left:40px;top:80px">✦</div>
+<div class="spark" style="right:20px;top:280px;animation-delay:0s">✧</div>
+<div class="spark" style="left:120px;top:40px;font-size:20px">✦</div>
+<div class="bottle-float">
+<div class="bottle">
+<div class="cap"></div><div class="neck"></div>
+<div class="glass"><div class="dropper-stick"></div><div class="shine"></div>
+<div class="label"><b>VITA C 15%</b><strong>GLOW</strong><span>BRIGHTENING SERUM 30ml</span></div>
+</div>
+</div>
+</div>
+<div class="shadow"></div>
+</div>
+<div class="bottom"><div>* 21명 대상 7일 사용 만족도 조사 · 개인차 있음</div><div>12초 LOOP · LUMIERE SEOUL</div></div>
+<div class="bar"><i></i></div>
+</div>
+</body>
+</html>

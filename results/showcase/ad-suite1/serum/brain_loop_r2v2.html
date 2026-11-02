@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Noto+Sans+KR:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#111;display:flex;align-items:center;justify-content:center;min-height:100vh;font-family:'Noto Sans KR',sans-serif}
+.viewport{width:1280px;height:720px;overflow:hidden}
+.stage{width:1280px;height:720px;position:relative;background:#FFF3E2;overflow:hidden;display:flex}
+.bg-solid{position:absolute;inset:0;background:linear-gradient(180deg,#FFF8EC 0%,#FFF0D9 100%)}
+.spot{position:absolute;right:20px;top:-40px;width:640px;height:640px;background:#FF5A00;border-radius:50%;opacity:1;animation-name:spotIn;animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:ease-in-out}
+.spot2{position:absolute;right:110px;top:60px;width:460px;height:460px;background:#FFC53D;border-radius:50%;opacity:.9;animation-name:spot2In;animation-duration:12s;animation-iteration-count:infinite}
+@keyframes spotIn{0%{transform:scale(1)}4%{transform:scale(1.08)}9%{transform:scale(1)}55%{transform:scale(1.02)}75%{transform:scale(1.06)}100%{transform:scale(1)}}
+@keyframes spot2In{0%{transform:scale(1)}4%{transform:scale(1.05)}10%{transform:scale(1)}70%{transform:scale(1)}100%{transform:scale(1)}}
+.topbar{position:absolute;left:64px;right:64px;top:32px;display:flex;justify-content:space-between;align-items:center;z-index:10}
+.brand{font-family:Montserrat,sans-serif;font-weight:900;font-size:24px;letter-spacing:.08em;color:#1A120B}
+.brand span{color:#FF4D00}
+.live{display:flex;align-items:center;gap:10px;background:#1A120B;color:#fff;border-radius:100px;padding:10px 18px;font-size:15px;font-weight:700;letter-spacing:.02em;animation-name:badgePop;animation-duration:12s;animation-iteration-count:infinite}
+.live i{width:10px;height:10px;background:#3DFF7A;border-radius:50%;display:block;animation-name:dotBlink;animation-duration:12s;animation-iteration-count:infinite}
+@keyframes badgePop{0%{transform:scale(1)}2%{transform:scale(1.12)}5%{transform:scale(1)}100%{transform:scale(1)}}
+@keyframes dotBlink{0%{opacity:1;transform:scale(1)}3%{opacity:.3;transform:scale(.8)}6%{opacity:1;transform:scale(1.2)}9%{opacity:1;transform:scale(1)}100%{opacity:1;transform:scale(1)}}
+.copy-panel{position:absolute;left:64px;top:118px;width:600px;height:504px;background:#FFFFFF;border-radius:32px;box-shadow:0 24px 60px rgba(26,18,11,.14);z-index:5;overflow:hidden}
+.copy-panel::after{content:'';position:absolute;left:0;top:0;bottom:0;width:10px;background:#FF4D00}
+.scene{position:absolute;inset:0;padding:44px 46px 36px 48px;opacity:0;animation-duration:12s;animation-iteration-count:infinite}
+.scene-hook{animation-name:hookScene}
+.scene-benefit{animation-name:benefitScene}
+.scene-offer{animation-name:offerScene}
+@keyframes hookScene{0%{opacity:1}28%{opacity:1}32.5%{opacity:0}92%{opacity:0}96%{opacity:1}100%{opacity:1}}
+@keyframes benefitScene{0%{opacity:0}29%{opacity:0}33.5%{opacity:1}60%{opacity:1}64.5%{opacity:0}100%{opacity:0}}
+@keyframes offerScene{0%{opacity:0}60.5%{opacity:0}65%{opacity:1}96%{opacity:1}99.2%{opacity:0}100%{opacity:0}}
+.inner{animation-duration:12s;animation-iteration-count:infinite}
+.hook-inner{animation-name:hookInner}
+@keyframes hookInner{0%{transform:translateY(0);opacity:1}27%{transform:translateY(0);opacity:1}32%{transform:translateY(-46px);opacity:0}92%{transform:translateY(56px);opacity:0}96%{transform:translateY(0);opacity:1}100%{transform:translateY(0);opacity:1}}
+.bene-inner{animation-name:beneInner}
+@keyframes beneInner{0%{transform:translateY(56px);opacity:0}30%{transform:translateY(56px);opacity:0}36%{transform:translateY(0);opacity:1}60%{transform:translateY(0);opacity:1}64%{transform:translateY(-46px);opacity:0}100%{transform:translateY(56px);opacity:0}}
+.offer-inner{animation-name:offerInner}
+@keyframes offerInner{0%{transform:translateY(56px);opacity:0}62%{transform:translateY(56px);opacity:0}68%{transform:translateY(0);opacity:1}96%{transform:translateY(0);opacity:1}99%{transform:translateY(-20px);opacity:0}100%{transform:translateY(56px);opacity:0}}
+.eyebrow{display:inline-block;font-size:16px;font-weight:900;letter-spacing:.14em;color:#fff;background:#1A120B;border-radius:100px;padding:8px 16px;margin-bottom:18px}
+.eyebrow.orange{background:#FF4D00}
+h1{font-size:66px;line-height:1.04;font-weight:900;letter-spacing:-.04em;color:#1A120B}
+h1 em{font-style:normal;color:#FF4D00}
+h2{font-size:60px;line-height:1.02;font-weight:900;letter-spacing:-.04em;color:#1A120B}
+h2 em{font-style:normal;color:#FF4D00}
+.sub{margin-top:16px;font-size:20px;font-weight:500;color:#6B5D4F;line-height:1.5}
+.pills{display:flex;gap:10px;margin-top:22px}
+.pills span{background:#FFF0D9;border:2px solid #1A120B;border-radius:100px;padding:10px 18px;font-size:18px;font-weight:900;color:#1A120B}
+.price-row{display:flex;align-items:end;gap:14px;margin-top:10px}
+.old{font-size:24px;color:#A99A8A;text-decoration:line-through;font-weight:700}
+.new{font-family:Montserrat,sans-serif;font-size:66px;font-weight:900;color:#1A120B;line-height:1;letter-spacing:-.04em}
+.off{background:#FF4D00;color:#fff;font-family:Montserrat,sans-serif;font-weight:900;font-size:26px;border-radius:14px;padding:8px 14px;transform:rotate(-4deg);display:inline-block;animation-name:offPop;animation-duration:12s;animation-iteration-count:infinite}
+@keyframes offPop{0%{transform:rotate(-4deg) scale(1)}66%{transform:rotate(-4deg) scale(.6)}71%{transform:rotate(-4deg) scale(1.18)}75%{transform:rotate(-4deg) scale(1)}100%{transform:rotate(-4deg) scale(1)}}
+.cta{margin-top:20px;background:#1A120B;color:#fff;font-size:28px;font-weight:900;border-radius:18px;padding:20px 26px;display:flex;justify-content:space-between;align-items:center;animation-name:ctaPulse;animation-duration:12s;animation-iteration-count:infinite}
+.cta small{font-weight:500;font-size:16px;opacity:.7}
+.cta b{color:#FFC53D}
+@keyframes ctaPulse{0%{transform:scale(1)}70%{transform:scale(1)}74%{transform:scale(1.04)}78%{transform:scale(1)}83%{transform:scale(1.05)}87%{transform:scale(1)}91%{transform:scale(1.04)}95%{transform:scale(1)}100%{transform:scale(1)}}
+.note{margin-top:12px;font-size:15px;color:#6B5D4F;font-weight:500}
+/* PRODUCT */
+.product-zone{position:absolute;right:84px;top:80px;width:460px;height:560px;z-index:6;display:flex;align-items:center;justify-content:center}
+.ring{position:absolute;width:440px;height:440px;border:3px solid rgba(255,255,255,.9);border-radius:50%;animation-name:ringSpin;animation-duration:12s;animation-iteration-count:infinite}
+.ring::after{content:'VITA GLOW • PURE C • ';position:absolute;inset:-22px;font-family:Montserrat,sans-serif;font-weight:800;font-size:20px;letter-spacing:.32em;color:#fff}
+@keyframes ringSpin{0%{transform:rotate(-8deg) scale(1)}5%{transform:rotate(6deg) scale(1.06)}12%{transform:rotate(0deg) scale(1)}100%{transform:rotate(0deg) scale(1)}}
+.bottle-wrap{position:relative;animation-name:productMotion;animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:ease-in-out}
+@keyframes productMotion{0%{transform:translateY(0) scale(1) rotate(-1.5deg)}3.5%{transform:translateY(-18px) scale(1.07) rotate(1deg)}8%{transform:translateY(0) scale(1) rotate(0deg)}32%{transform:translateY(0) scale(1)}36%{transform:translateY(-14px) scale(1.03)}42%{transform:translateY(0) scale(1)}62%{transform:translateY(0) scale(1)}71%{transform:translateY(-10px) scale(1.06) rotate(-1deg)}78%{transform:translateY(0) scale(1.02)}100%{transform:translateY(0) scale(1) rotate(-1.5deg)}}
+.cap{width:112px;height:92px;background:#1A120B;border-radius:18px 18px 10px 10px;margin:0 auto;position:relative;z-index:3}
+.cap::after{content:'';position:absolute;left:18px;top:12px;bottom:12px;width:14px;background:rgba(255,255,255,.22);border-radius:10px}
+.bottle{width:240px;height:360px;background:linear-gradient(180deg,rgba(255,255,255,.95),rgba(255,255,255,.75));border-radius:28px;margin:-8px auto 0;position:relative;overflow:hidden;border:3px solid #1A120B;box-shadow:0 30px 60px rgba(26,18,11,.28)}
+.liquid{position:absolute;left:10px;right:10px;bottom:10px;top:86px;background:linear-gradient(180deg,#FFB422,#FF5A00);border-radius:18px}
+.label{position:absolute;left:22px;right:22px;top:148px;background:#fff;border-radius:16px;padding:16px 12px;text-align:center;border:2px solid #1A120B}
+.label strong{font-family:Montserrat,sans-serif;font-size:28px;font-weight:900;letter-spacing:-.02em;color:#1A120B;display:block;line-height:1}
+.label span{font-size:15px;font-weight:900;letter-spacing:.18em;color:#FF4D00}
+.label small{display:block;margin-top:6px;font-size:13px;font-weight:700;color:#6B5D4F}
+.highlight{position:absolute;left:26px;top:20px;bottom:20px;width:28px;background:linear-gradient(180deg,rgba(255,255,255,.9),rgba(255,255,255,0));border-radius:20px;opacity:.7}
+.shine{position:absolute;top:0;bottom:0;width:70px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.9),transparent);animation-name:shineMove;animation-duration:12s;animation-iteration-count:infinite}
+@keyframes shineMove{0%{transform:translateX(-80px) skewX(-16deg);opacity:0}2%{opacity:1}11%{transform:translateX(300px) skewX(-16deg);opacity:0}12%{opacity:0;transform:translateX(-80px) skewX(-16deg)}70%{transform:translateX(-80px) skewX(-16deg);opacity:0}72%{opacity:1}82%{transform:translateX(300px) skewX(-16deg);opacity:0}100%{transform:translateX(-80px) skewX(-16deg);opacity:0}}
+.shadow{width:260px;height:28px;background:rgba(26,18,11,.28);border-radius:50%;margin:18px auto 0;filter:blur(2px);animation-name:shadowPulse;animation-duration:12s;animation-iteration-count:infinite}
+@keyframes shadowPulse{0%{transform:scaleX(1);opacity:1}3.5%{transform:scaleX(.82);opacity:.7}8%{transform:scaleX(1);opacity:1}71%{transform:scaleX(.86);opacity:.75}78%{transform:scaleX(1);opacity:1}100%{transform:scaleX(1);opacity:1}}
+.drop{position:absolute;background:#fff;border:3px solid #1A120B;border-radius:50% 50% 50% 4px;animation-duration:12s;animation-iteration-count:infinite}
+.drop1{width:58px;height:58px;left:-38px;top:120px;background:#FFC53D;animation-name:drop1F}
+.drop2{width:36px;height:36px;right:-18px;top:200px;animation-name:drop2F}
+.drop3{width:22px;height:22px;right:40px;top:52px;background:#1A120B;border-color:#1A120B;animation-name:drop3F}
+@keyframes drop1F{0%{transform:translateY(0) rotate(-18deg) scale(1)}4%{transform:translateY(-22px) rotate(-18deg) scale(1.15)}10%{transform:translateY(0) rotate(-18deg) scale(1)}50%{transform:translateY(-10px) rotate(-18deg) scale(1)}55%{transform:translateY(0) rotate(-18deg) scale(1)}100%{transform:translateY(0) rotate(-18deg) scale(1)}}
+@keyframes drop2F{0%{transform:translateY(0) scale(1)}5%{transform:translateY(-18px) scale(1.2)}11%{transform:translateY(0) scale(1)}100%{transform:translateY(0) scale(1)}}
+@keyframes drop3F{0%{transform:translateY(0)}4%{transform:translateY(-26px)}9%{transform:translateY(0)}100%{transform:translateY(0)}}
+.timeline{position:absolute;left:64px;right:64px;bottom:28px;height:8px;background:rgba(26,18,11,.12);border-radius:100px;overflow:hidden;z-index:10}
+.fill{height:100%;background:#1A120B;border-radius:100px;transform-origin:left center;animation-name:fillBar;animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:linear}
+@keyframes fillBar{0%{transform:scaleX(0)}100%{transform:scaleX(1)}}
+.steps{position:absolute;left:64px;right:64px;bottom:44px;display:flex;gap:12px;z-index:10;font-size:13px;font-weight:900;letter-spacing:.12em;color:#8A7A68}
+.steps b{color:#1A120B}
+</style>
+</head>
+<body>
+<div class="viewport"><div class="stage">
+<div class="bg-solid"></div>
+<div class="spot"></div><div class="spot2"></div>
+<div class="topbar"><div class="brand">VITA<span>:DROP</span></div><div class="live"><i></i> 신제품 런칭 LIVE · 30% OFF</div></div>
+<div class="copy-panel">
+<div class="scene scene-hook"><div class="inner hook-inner"><div class="eyebrow">✦ 신제품 비타C 세럼 출시</div><h1>피부가 마시는<br><em>아침 햇살</em><br>한 방울.</h1><p class="sub">15% 퓨어 비타민C 브라이트닝 세럼 30ml<br>칙칙한 아침 피부에 바로 광채.</p></div></div>
+<div class="scene scene-benefit"><div class="inner bene-inner"><div class="eyebrow orange">WHY IT WORKS</div><h2>7일 만에<br><em>톤업 · 잡티 · 광채</em></h2><div class="pills"><span>✔ 15% 퓨어C</span><span>✔ 비타민E</span><span>✔ 저자극</span></div><p class="sub">민감피부 테스트 완료 · 매일 아침 2방울 루틴</p></div></div>
+<div class="scene scene-offer"><div class="inner offer-inner"><div class="eyebrow orange">런칭 단독 30% 할인 · 오늘만</div><div class="price-row"><div><div class="old">29,900원</div><div class="new">19,900원</div></div><div class="off">-30%</div></div><div class="cta"><span>지금 구매 <b>→</b></span><small>무료배송</small></div><div class="note">첫 구매 사은품 증정 · 품절 전 런칭가로 쟁이세요</div></div></div>
+</div>
+<div class="product-zone"><div class="ring"></div><div class="bottle-wrap"><div class="drop drop1"></div><div class="drop drop2"></div><div class="drop drop3"></div><div class="cap"></div><div class="bottle"><div class="liquid"></div><div class="highlight"></div><div class="shine"></div><div class="label"><span>VITA C 15%</span><strong>BRIGHT SERUM</strong><small>7-DAY GLOW · 30ml</small></div></div><div class="shadow"></div></div></div>
+<div class="steps"><span><b>01 HOOK</b> 햇살 한 방울</span><span><b>02 BENEFIT</b> 7일 톤업</span><span><b>03 OFFER</b> 30% + 지금 구매</span></div>
+<div class="timeline"><div class="fill"></div></div>
+</div></div>
+</body>
+</html>

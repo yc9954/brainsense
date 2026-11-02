@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500;700;900&family=Outfit:wght@800;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#000;min-height:100vh;display:flex;align-items:center;justify-content:center;font-family:'Noto Sans KR',sans-serif}
+.stage{width:1280px;height:720px;background:#FFF8EC;position:relative;overflow:hidden;display:flex;flex-shrink:0}
+.left{width:700px;height:100%;padding:38px 0 0 60px;position:relative;z-index:3}
+.topbar{display:flex;align-items:center;gap:14px}
+.logo{font-weight:900;font-size:24px;letter-spacing:-.5px;color:#0A1437}
+.logo b{background:#0A1437;color:#FFC93C;padding:3px 10px;border-radius:10px;margin-right:8px;font-family:'Outfit'}
+.pill3{background:#0A1437;color:#fff;font-size:15px;font-weight:700;padding:8px 16px;border-radius:100px}
+.pill3 i{font-style:normal;color:#00D9A6;margin-right:6px}
+.scene{position:absolute;left:60px;right:20px;top:128px}
+.hook{animation:hookShow 12s infinite}
+.product{animation:productShow 12s infinite}
+.offer{animation:offerShow 12s infinite}
+.eyebrow{display:inline-block;font-size:20px;font-weight:700;color:#fff;background:#FF4D5E;padding:8px 18px;border-radius:100px;margin-bottom:14px}
+.eyebrow.dark{background:#0A1437;color:#FFC93C}
+.eyebrow.green{background:#00A57A;color:#fff}
+.mega{font-family:'Outfit','Noto Sans KR';font-weight:900;font-size:152px;line-height:.95;letter-spacing:-6px;color:#0A1437;animation:megaPop 12s infinite}
+.mega span{color:#FF4D5E}
+.mega-sub{font-size:32px;font-weight:900;color:#0A1437;margin-top:6px;letter-spacing:-1px}
+.mega-sub em{font-style:normal;background:#FFC93C;padding:0 10px;border-radius:8px}
+.hook-desc{margin-top:14px;font-size:20px;font-weight:700;color:#4A5578}
+.coin-badge{position:absolute;right:24px;top:10px;width:148px;height:148px;background:radial-gradient(circle at 30% 30%,#FFE89A,#FFC93C 60%,#EAA500);border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;border:6px solid #0A1437;box-shadow:0 12px 0 #0A1437;animation:coinFloat 12s infinite}
+.coin-badge strong{font-family:'Outfit';font-size:52px;line-height:1;color:#0A1437}
+.coin-badge small{font-size:14px;font-weight:900;color:#0A1437}
+.p-title{font-size:62px;font-weight:900;line-height:1.05;letter-spacing:-2px;color:#0A1437}
+.p-title span{color:#FF4D5E}
+.bullets{margin-top:18px;display:flex;flex-direction:column;gap:10px}
+.bullets div{background:#0A1437;color:#fff;font-size:22px;font-weight:700;padding:12px 20px;border-radius:16px;width:440px}
+.bullets div b{color:#FFC93C}
+.bullets div:last-child{background:#fff;color:#0A1437;border:3px solid #0A1437}
+.o-title{font-size:56px;font-weight:900;line-height:1.05;letter-spacing:-2px;color:#0A1437}
+.o-title span{background:#0A1437;color:#FFC93C;padding:0 12px;border-radius:12px}
+.trust{margin:16px 0;display:flex;gap:10px}
+.trust span{font-size:15px;font-weight:700;color:#0A1437;background:#fff;border:2px solid #0A1437;border-radius:100px;padding:7px 14px}
+.cta-btn{display:flex;align-items:center;justify-content:space-between;background:#FF4D5E;color:#fff;border-radius:24px;padding:20px 28px;width:520px;box-shadow:0 10px 0 #0A1437;border:4px solid #0A1437;animation:ctaPulse 12s infinite}
+.cta-btn strong{font-size:48px;font-weight:900;letter-spacing:-1px}
+.cta-btn small{display:block;font-size:16px;font-weight:700;opacity:.95}
+.cta-arrow{font-size:52px;font-weight:900;background:#fff;color:#FF4D5E;width:84px;height:84px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.cta-sub{margin-top:12px;font-size:18px;font-weight:700;color:#4A5578}
+.footer{position:absolute;left:60px;bottom:44px;display:flex;align-items:center;gap:12px;font-size:14px;font-weight:700;color:#7A86A8}
+.dot{width:8px;height:8px;background:#00A57A;border-radius:50%}
+.progress{position:absolute;left:0;right:0;bottom:0;height:14px;background:#E8DDC6;z-index:10}
+.progress-fill{height:100%;background:#FF4D5E;transform-origin:left center;animation:progressFill 12s infinite}
+/* RIGHT */
+.right{width:580px;height:100%;background:#0A1437;position:relative;overflow:hidden;clip-path:polygon(78px 0,100% 0,100% 100%,0 100%);z-index:2}
+.diag{position:absolute;left:-30px;top:-40px;width:28px;height:900px;background:#FFC93C;transform:rotate(10deg)}
+.diag2{position:absolute;left:4px;top:-40px;width:10px;height:900px;background:#FF4D5E;transform:rotate(10deg)}
+.shine{position:absolute;top:-100px;width:140px;height:1000px;background:rgba(255,255,255,.22);animation:shineSweep 12s infinite}
+.hero-group{position:absolute;left:92px;top:28px;width:420px;height:640px;animation:heroHold 12s infinite}
+.hero-float{width:100%;height:100%;position:relative;animation:heroFloat 12s infinite}
+.head{position:absolute;left:92px;top:0;width:210px;height:225px;background:#FFD9B0;border-radius:105px 105px 72px 72px;border:5px solid #000;z-index:3;overflow:hidden}
+.hair{position:absolute;left:-5px;right:-5px;top:-5px;height:92px;background:#15152B;border-radius:20px 20px 40px 40px}
+.hair:after{content:'';position:absolute;left:32px;top:62px;width:146px;height:34px;background:#15152B;border-radius:0 0 40px 40px}
+.brow{position:absolute;top:108px;width:44px;height:10px;background:#15152B;border-radius:6px}
+.brow.l{left:28px}.brow.r{right:28px}
+.eye{position:absolute;top:128px;width:52px;height:58px;background:#fff;border-radius:50%;border:4px solid #000;overflow:hidden;animation:blink 12s infinite}
+.eye.l{left:30px}.eye.r{right:30px}
+.pupil{position:absolute;left:12px;top:16px;width:22px;height:22px;background:#0A1437;border-radius:50%;animation:gaze 12s infinite}
+.pupil:after{content:'';position:absolute;left:5px;top:5px;width:7px;height:7px;background:#fff;border-radius:50%}
+.nose{position:absolute;left:50%;top:172px;width:16px;height:12px;background:#E8A87C;border-radius:6px;transform:translateX(-50%)}
+.mouth{position:absolute;left:50%;top:188px;width:56px;height:26px;border:5px solid #000;border-top:none;border-radius:0 0 40px 40px;transform:translateX(-50%);background:#fff}
+.blush{position:absolute;top:168px;width:28px;height:14px;background:#FF9AA6;border-radius:50%;opacity:.8}
+.blush.l{left:10px}.blush.r{right:10px}
+.body{position:absolute;left:64px;top:208px;width:266px;height:170px;background:#FF4D5E;border:5px solid #000;border-radius:44px;z-index:2}
+.body:after{content:'모이 • MOI';position:absolute;left:50%;top:18px;transform:translateX(-50%);color:#fff;font-weight:900;font-size:22px;letter-spacing:1px}
+.phone{position:absolute;left:72px;top:172px;width:250px;height:452px;background:#0B1437;border:7px solid #000;border-radius:36px;z-index:4;overflow:hidden;box-shadow:18px 18px 0 rgba(0,0,0,.35)}
+.screen{background:#FFFDF6;height:100%;padding:16px 14px}
+.screen-top{font-size:13px;font-weight:900;color:#0A1437}
+.screen-top small{display:block;font-size:12px;color:#7A86A8;font-weight:700}
+.bigpct{font-family:'Outfit';font-size:38px;font-weight:900;color:#00A57A;margin:6px 0}
+.graph{display:flex;align-items:flex-end;gap:7px;height:118px;background:#0A1437;border-radius:14px;padding:12px 12px 10px;margin:8px 0}
+.bar{flex:1;border-radius:6px 6px 3px 3px;transform-origin:bottom center;animation:barGrow 12s infinite}
+.stock{background:#fff;border:2px solid #0A1437;border-radius:12px;padding:8px 10px;margin-top:8px;display:flex;justify-content:space-between;align-items:center}
+.stock b{font-size:14px}.stock span{font-size:13px;font-weight:900;color:#00A57A}
+.float-coin{position:absolute;background:radial-gradient(circle at 30% 30%,#FFE89A,#FFC93C 65%,#E09000);border:4px solid #000;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Outfit';font-weight:900;color:#000;animation:coinFloat 12s infinite}
+.fc1{right:32px;top:90px;width:88px;height:88px;font-size:36px}
+.fc2{left:18px;bottom:92px;width:72px;height:72px;font-size:28px}
+.up{position:absolute;left:26px;top:84px;background:#00D9A6;color:#00382B;font-weight:900;font-size:18px;padding:8px 14px;border-radius:100px;border:3px solid #000;animation:coinFloat 12s infinite}
+/* KEYFRAMES - ALL 12s */
+@keyframes hookShow{0%{opacity:1;transform:translateY(0) scale(1)}26%{opacity:1;transform:translateY(0) scale(1)}31.5%{opacity:0;transform:translateY(-36px) scale(.97)}95%{opacity:0;transform:translateY(36px) scale(.97)}98.5%,100%{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes productShow{0%,31.5%{opacity:0;transform:translateY(36px) scale(.97)}34.5%{opacity:1;transform:translateY(0) scale(1)}59%{opacity:1;transform:translateY(0) scale(1)}64%{opacity:0;transform:translateY(-36px) scale(.97)}100%{opacity:0;transform:translateY(36px) scale(.97)}}
+@keyframes offerShow{0%,64%{opacity:0;transform:translateY(36px) scale(.97)}67%{opacity:1;transform:translateY(0) scale(1)}95%{opacity:1;transform:translateY(0) scale(1)}98.5%{opacity:0;transform:translateY(-28px) scale(.98)}100%{opacity:0;transform:translateY(36px) scale(.97)}}
+@keyframes megaPop{0%,2%{transform:scale(.92)}4%{transform:scale(1.03)}6%,100%{transform:scale(1)}}
+@keyframes heroHold{0%,100%{opacity:1;transform:translateY(0) scale(1)}33%{opacity:1;transform:translateY(0) scale(1)}37%{opacity:1;transform:translateX(-10px) translateY(-6px) scale(1.02)}62%{opacity:1;transform:translateX(-10px) translateY(-6px) scale(1.02)}68%{opacity:1;transform:translateX(12px) translateY(8px) scale(1.04)}95%{opacity:1;transform:translateX(12px) translateY(8px) scale(1.04)}}
+@keyframes heroFloat{0%,100%{opacity:1;transform:translateY(0)}50%{opacity:1;transform:translateY(-12px)}}
+@keyframes coinFloat{0%,100%{opacity:1;transform:translateY(0) rotate(-7deg)}50%{opacity:1;transform:translateY(-16px) rotate(7deg)}}
+@keyframes gaze{0%,62%{transform:translate(-9px,1px)}68%,94%{transform:translate(-11px,13px)}100%{transform:translate(-9px,1px)}}
+@keyframes blink{0%,7.5%,9.5%,45.5%,71.5%{transform:scaleY(1)}8.5%,46.5%,72.5%{transform:scaleY(.07)}100%{transform:scaleY(1)}}
+@keyframes barGrow{0%,32%{opacity:.25;transform:scaleY(.15)}39%,60%{opacity:1;transform:scaleY(1)}64%,100%{opacity:.25;transform:scaleY(.15)}}
+@keyframes ctaPulse{0%,66%{opacity:1;transform:scale(1)}72%{opacity:1;transform:scale(1.06)}76%{opacity:1;transform:scale(1)}82%{opacity:1;transform:scale(1.07)}86%,100%{opacity:1;transform:scale(1)}}
+@keyframes shineSweep{0%{opacity:0;transform:translateX(-220px) skewX(-18deg)}4%{opacity:1;transform:translateX(-40px) skewX(-18deg)}10%{opacity:1;transform:translateX(900px) skewX(-18deg)}12%,100%{opacity:0;transform:translateX(900px) skewX(-18deg)}}
+@keyframes progressFill{0%{transform:scaleX(0)}100%{transform:scaleX(1)}}
+</style>
+</head>
+<body>
+<div class="stage">
+<div class="left">
+<div class="topbar"><div class="logo"><b>M</b>모이 조각투자</div><div class="pill3"><i>●</i>3분 가입 · 오늘 주문 가능</div></div>
+<div class="scene hook"><span class="eyebrow">테슬라 1주가 38만원? 쪼개 사자</span><div class="mega">1,000<span>원</span>부터</div><div class="mega-sub">애플 · 테슬라 <em>0.01주씩</em> 담기</div><div class="hook-desc">커피 한 잔 값으로 시작하는 미국주식 한 입</div><div class="coin-badge"><strong>₩</strong><small>소수점 투자</small></div></div>
+<div class="scene product"><span class="eyebrow dark">3분 가입 · 오늘부터 주주</span><div class="p-title">0.01주씩<br><span>매일 모으기</span></div><div class="bullets"><div><b>✓</b> 3분 비대면 가입 · 신분증 하나면 끝</div><div><b>✓</b> 실시간 소수점 주문 · 자동적립</div><div>✓ 지금 내 조각함이 자라는 중</div></div></div>
+<div class="scene offer"><span class="eyebrow green">첫 투자 응원 · 수수료 0원 이벤트</span><div class="o-title">지금 시작하면<br><span>+5,000원</span> 증정</div><div class="trust"><span>✓ 금융위 등록</span><span>✓ 예치금 별도보관</span><span>✓ ISMS-P 인증</span></div><div class="cta-btn"><div><small>100만명이 모으는 중 · 3분이면 충분</small><strong>지금 시작하기</strong></div><div class="cta-arrow">→</div></div><div class="cta-sub">안전하게, 소액으로, 매일 한 조각씩</div></div>
+<div class="footer"><span class="dot"></span>예치금 별도보관 · 원금손실 가능 · ISMS-P 인증 사업자</div>
+</div>
+<div class="right"><div class="diag"></div><div class="diag2"></div><div class="shine"></div><div class="up">▲ +12.4%</div><div class="hero-group"><div class="hero-float"><div class="head"><div class="hair"></div><div class="brow l"></div><div class="brow r"></div><div class="eye l"><div class="pupil"></div></div><div class="eye r"><div class="pupil"></div></div><div class="blush l"></div><div class="blush r"></div><div class="nose"></div><div class="mouth"></div></div><div class="body"></div><div class="phone"><div class="screen"><div class="screen-top">내 조각함<small>0.32주 보유 · 매일 모으는 중</small></div><div class="bigpct">+12.4%</div><div class="graph"><div class="bar" style="height:42px;background:#00D9A6"></div><div class="bar" style="height:62px;background:#00D9A6"></div><div class="bar" style="height:54px;background:#FFC93C"></div><div class="bar" style="height:82px;background:#00D9A6"></div><div class="bar" style="height:102px;background:#FF4D5E"></div></div><div class="stock"><b>AAPL 0.32주</b><span>+8.2%</span></div><div class="stock"><b>TSLA 0.11주</b><span>+14.1%</span></div></div></div><div class="float-coin fc1">₩</div><div class="float-coin fc2">₩</div></div></div></div>
+<div class="progress"><div class="progress-fill"></div></div>
+</div>
+</body>
+</html>

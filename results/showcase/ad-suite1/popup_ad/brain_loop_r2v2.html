@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%;background:#0e0e0e}
+body{display:flex;align-items:center;justify-content:center;font-family:'Noto Sans KR',sans-serif}
+.stage{width:1280px;height:720px;background:#FFFBF3;color:#211512;position:relative;overflow:hidden;flex-shrink:0}
+.top{height:74px;display:flex;align-items:center;justify-content:space-between;padding:0 48px;border-bottom:2px solid #211512}
+.brand{font-weight:900;font-size:22px;letter-spacing:-.5px}
+.brand span{color:#E0202E}
+.badge-top{font-weight:900;font-size:18px;background:#211512;color:#FFFBF3;padding:10px 22px;border-radius:100px;letter-spacing:.5px}
+.scene{position:absolute;left:0;right:0;top:74px;bottom:44px;padding:38px 64px;display:flex;align-items:center}
+.s1{justify-content:space-between;gap:20px;animation:sc1 12s linear infinite}
+.s2{justify-content:space-between;gap:40px;animation:sc2 12s linear infinite}
+.s3{padding:0;animation:sc3 12s linear infinite}
+@keyframes sc1{0%,26.5%{opacity:1;transform:translateY(0);visibility:visible}32.5%,91%{opacity:0;transform:translateY(-28px);visibility:hidden}97%,100%{opacity:1;transform:translateY(0);visibility:visible}}
+@keyframes sc2{0%,30%{opacity:0;transform:translateY(28px);visibility:hidden}35%,60%{opacity:1;transform:translateY(0);visibility:visible}65.5%,100%{opacity:0;transform:translateY(-28px);visibility:hidden}}
+@keyframes sc3{0%,63%{opacity:0;transform:translateY(28px);visibility:hidden}68%,92%{opacity:1;transform:translateY(0);visibility:visible}97%,100%{opacity:0;transform:translateY(28px);visibility:hidden}}
+.eyebrow{display:inline-block;font-weight:900;font-size:22px;letter-spacing:2px;background:#E0202E;color:#fff;padding:10px 20px;border-radius:100px;margin-bottom:22px}
+.h1{font-family:'Black Han Sans',sans-serif;font-size:126px;line-height:.98;letter-spacing:-2px}
+.h1 em{font-style:normal;color:#E0202E}
+.sub{margin-top:20px;font-size:29px;font-weight:700;letter-spacing:-.5px}
+.small{margin-top:14px;font-size:22px;font-weight:500;opacity:.75}
+.hero{width:500px;height:500px;position:relative;display:flex;align-items:center;justify-content:center}
+.berry{width:360px;height:360px;position:relative;animation:berry 12s linear infinite}
+@keyframes berry{0%,26%{transform:translateY(0) rotate(-4deg)}13%{transform:translateY(-18px) rotate(-1deg)}27%,100%{transform:translateY(0) rotate(-4deg)}}
+.berry-body{width:340px;height:320px;background:#E0202E;border-radius:48% 48% 50% 50% / 58% 58% 42% 42%;position:absolute;left:10px;top:54px}
+.seed{position:absolute;width:18px;height:26px;background:#FFFBF3;border-radius:50%;opacity:.95}
+.leaf{position:absolute;top:18px;left:50%;width:0;height:0}
+.leaf i{display:block;position:absolute;background:#211512}
+.stamp{position:absolute;right:18px;top:22px;width:150px;height:150px;background:#211512;color:#FFFBF3;border-radius:50%;display:flex;align-items:center;justify-content:center;text-align:center;font-weight:900;font-size:24px;line-height:1.2;animation:spin 12s linear infinite}
+@keyframes spin{0%{transform:rotate(-12deg)}26%{transform:rotate(10deg)}27%,100%{transform:rotate(-12deg)}}
+.card{background:#fff;border:3px solid #211512;border-radius:28px;padding:36px 38px;width:530px}
+.card-row{display:flex;gap:24px;align-items:center}
+.cup{width:150px;height:150px;background:#211512;border-radius:28px;position:relative;flex-shrink:0}
+.cup:after{content:"";position:absolute;left:38px;top:52px;width:74px;height:56px;background:#FFFBF3;border-radius:0 0 18px 18px}
+.cup:before{content:"";position:absolute;left:112px;top:60px;width:26px;height:36px;border:10px solid #FFFBF3;border-left:0;border-radius:0 20px 20px 0}
+.cake{width:150px;height:150px;background:#E0202E;border-radius:28px;position:relative;flex-shrink:0}
+.cake:after{content:"";position:absolute;left:30px;top:62px;right:30px;height:26px;background:#fff;border-radius:8px}
+.cake:before{content:"● ● ●";position:absolute;left:0;right:0;top:28px;text-align:center;color:#fff;font-size:22px;letter-spacing:6px}
+.card h3{font-size:28px;font-weight:900}
+.card p{font-size:22px;margin-top:6px;font-weight:500}
+.h2{font-family:'Black Han Sans',sans-serif;font-size:84px;line-height:1;letter-spacing:-1px}
+.h2 em{font-style:normal;color:#E0202E}
+.list{margin-top:24px;list-style:none;font-size:28px;font-weight:700;line-height:1.7}
+.tick{color:#E0202E;font-weight:900;margin-right:10px}
+.price{margin-top:18px;font-size:24px;font-weight:900;background:#211512;color:#fff;display:inline-block;padding:10px 20px;border-radius:12px}
+.s3-inner{width:100%;height:100%;background:#211512;color:#FFFBF3;display:flex;align-items:center;justify-content:space-between;padding:46px 64px}
+.s3-inner .eyebrow{background:#E0202E}
+.s3-date{font-size:30px;font-weight:900;letter-spacing:-.5px;margin-top:10px}
+.s3-place{font-size:26px;font-weight:500;margin-top:8px;opacity:.9}
+.cta{margin-top:28px;display:flex;gap:16px;align-items:center}
+.btn{background:#E0202E;color:#fff;font-weight:900;font-size:36px;padding:20px 62px;border-radius:100px;border:0;letter-spacing:-1px}
+.note{font-size:20px;opacity:.8;font-weight:500}
+.poster{width:380px;height:460px;background:#FFFBF3;color:#211512;border-radius:24px;padding:28px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.poster-mini{width:150px;height:140px;background:#E0202E;border-radius:48% 48% 50% 50% / 58% 58% 42% 42%;margin:0 auto}
+.bar{position:absolute;left:0;right:0;bottom:0;height:44px;background:#211512;color:#FFFBF3;display:flex;align-items:center;padding:0 48px;font-size:18px;font-weight:700;letter-spacing:1px}
+.track{position:absolute;left:0;top:0;height:6px;width:100%;background:#3a2a24}
+.fill{width:100%;height:100%;background:#E0202E;transform-origin:left center;animation:fill 12s linear infinite}
+@keyframes fill{0%{transform:scaleX(0)}100%{transform:scaleX(1)}}
+.reveal{animation:rv 12s linear infinite}
+@keyframes rv{0%,32%{opacity:0;transform:translateY(26px)}36%,60%{opacity:1;transform:translateY(0)}65%,100%{opacity:0;transform:translateY(0)}}
+</style>
+</head>
+<body>
+<div class="stage">
+<div class="top"><div class="brand">스윗스팟 <span>×</span> 로컬 로스터리</div><div class="badge-top">성수동 3일 한정 팝업</div></div>
+<section class="scene s1">
+<div>
+<div class="eyebrow">11.14 — 11.16 단 3일</div>
+<div class="h1"><em>딸기</em>가<br>쏟아진다</div>
+<div class="sub">스윗스팟 × 로컬 로스터리 성수 팝업</div>
+<div class="small">생딸기 디저트 + 갓 내린 싱글오리진 커피</div>
+</div>
+<div class="hero">
+<div class="berry">
+<div class="leaf"><i style="left:-90px;top:0;width:90px;height:34px;transform:rotate(-22deg);border-radius:0 40px 0 40px"></i><i style="left:-10px;top:-8px;width:90px;height:34px;transform:rotate(18deg);border-radius:40px 0 40px 0"></i><i style="left:-52px;top:-26px;width:34px;height:58px;transform:rotate(0);border-radius:20px"></i></div>
+<div class="berry-body"></div>
+<div class="seed" style="left:90px;top:140px"></div><div class="seed" style="left:170px;top:130px"></div><div class="seed" style="left:250px;top:140px"></div><div class="seed" style="left:130px;top:210px"></div><div class="seed" style="left:210px;top:205px"></div><div class="seed" style="left:170px;top:270px"></div>
+</div>
+<div class="stamp">3 DAYS<br>ONLY</div>
+</div>
+</section>
+<section class="scene s2">
+<div class="card reveal"><div class="card-row"><div class="cup"></div><div class="cake"></div></div><h3 style="margin-top:22px">딸기 파르페 + 딸기 라떼 세트</h3><p>팝업 한정 콤보 · 현장 제조</p></div>
+<div class="reveal">
+<div class="h2">생딸기 3종<br><em>+ 겨울 라떼</em></div>
+<ul class="list"><li><span class="tick">✓</span>당일 새벽 딸기 듬뿍</li><li><span class="tick">✓</span>성수 로스터리 원두</li><li><span class="tick">✓</span>현장에서 굽는 쿠키</li></ul>
+<div class="price">전 메뉴 4,900원부터</div>
+</div>
+</section>
+<section class="scene s3">
+<div class="s3-inner">
+<div>
+<div class="eyebrow">사전예약 혜택</div>
+<div class="h1" style="font-size:76px;color:#fff">예약하면<br>딸기라떼 무료</div>
+<div class="s3-date">11.14(금) – 11.16(일) 11:00 – 19:00</div>
+<div class="s3-place">성수동 연무장길 27 스윗스팟 성수점</div>
+<div class="cta"><div class="btn">사전예약하기</div><div class="note">선착순 300잔<br>예약화면 지참</div></div>
+</div>
+<div class="poster"><div style="font-weight:900;letter-spacing:2px">SWEET SPOT</div><div class="poster-mini" style="margin:18px 0"></div><div style="font-family:'Black Han Sans';font-size:44px;line-height:1">딸기 팝업<br>3 DAYS</div><div style="margin-top:12px;font-weight:700">11.14-11.16 성수동</div></div>
+</div>
+</section>
+<div class="bar"><div class="track"><div class="fill"></div></div><span>성수동 3일 한정 &nbsp;·&nbsp; 11.14 – 11.16 &nbsp;·&nbsp; 연무장길 27 &nbsp;·&nbsp; 사전예약 진행중</span></div>
+</div>
+</body>
+</html>

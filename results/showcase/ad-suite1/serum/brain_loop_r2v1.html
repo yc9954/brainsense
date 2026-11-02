@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&family=Poppins:wght@700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0e0c0a;display:flex;align-items:center;justify-content:center;min-height:100vh;font-family:'Noto Sans KR',sans-serif}
+.stage{width:1280px;height:720px;background:#FFF7EB;position:relative;overflow:hidden;display:flex;flex-shrink:0}
+.left{width:640px;height:100%;padding:42px 0 0 64px;position:relative;z-index:5;display:flex;flex-direction:column}
+.toprow{display:flex;align-items:center;gap:14px;animation:topIn 12s infinite}
+@keyframes topIn{0%{opacity:0;transform:translateY(-18px)}2%{opacity:1;transform:translateY(0)}28%{opacity:1;transform:translateY(0)}33.3%{opacity:0;transform:translateY(-10px)}92%{opacity:0}100%{opacity:0;transform:translateY(-18px)}}
+.brand{font-family:Poppins;font-weight:800;letter-spacing:3px;font-size:22px;color:#231206}
+.newbadge{background:#231206;color:#fff;font-weight:900;font-size:16px;padding:7px 16px;border-radius:100px;letter-spacing:1px}
+.copy{position:absolute;left:64px;top:110px;width:540px}
+.hook{animation:hookVis 12s infinite}
+@keyframes hookVis{0%{opacity:0;transform:translateX(-60px) scale(.96)}1.5%{opacity:1;transform:translateX(0) scale(1)}27%{opacity:1;transform:translateX(0) scale(1)}32%{opacity:0;transform:translateX(-40px) scale(.98)}92%{opacity:0;transform:translateX(-60px)}100%{opacity:0;transform:translateX(-60px)}}
+.mid{animation:midVis 12s infinite}
+@keyframes midVis{0%{opacity:0;transform:translateX(60px)}33.3%{opacity:0;transform:translateX(60px)}36%{opacity:1;transform:translateX(0)}60%{opacity:1;transform:translateX(0)}65%{opacity:0;transform:translateX(-40px)}100%{opacity:0;transform:translateX(60px)}}
+.offer{animation:offerVis 12s infinite}
+@keyframes offerVis{0%{opacity:0;transform:translateY(50px) scale(.97)}66.6%{opacity:0;transform:translateY(50px) scale(.97)}69.5%{opacity:1;transform:translateY(0) scale(1)}94%{opacity:1;transform:translateY(0) scale(1)}98.5%{opacity:0;transform:translateY(-20px)}100%{opacity:0;transform:translateY(50px)}}
+.kicker{font-size:20px;font-weight:700;color:#FF5A00;letter-spacing:-.3px;margin-bottom:12px}
+h1{font-size:86px;line-height:.98;font-weight:900;letter-spacing:-3.5px;color:#1E1106}
+h1 .hl{position:relative;display:inline-block;color:#fff;z-index:1;padding:0 12px}
+h1 .hl::before{content:'';position:absolute;inset:6px -2px;background:#FF5A00;border-radius:14px;z-index:-1;transform:rotate(-1.5deg)}
+.sub{margin-top:18px;font-size:22px;font-weight:700;color:#6B4A32}
+.desc{font-size:18px;color:#8A6E56;margin-top:8px;font-weight:400}
+.benefit-title{font-size:62px;font-weight:900;line-height:1.02;letter-spacing:-2.5px;color:#1E1106}
+.benefit-title span{color:#FF5A00}
+.checks{margin-top:22px;display:flex;flex-direction:column;gap:12px}
+.check{display:flex;align-items:center;gap:12px;background:#fff;border:2px solid #1E1106;border-radius:16px;padding:12px 18px;font-size:20px;font-weight:900;color:#1E1106;width:440px;box-shadow:5px 5px 0 #1E1106;animation:checkPop 12s infinite}
+.check:nth-child(2){animation-name:checkPop2}
+.check:nth-child(3){animation-name:checkPop3}
+@keyframes checkPop{0%,34%{opacity:0;transform:translateX(40px)}38%,60%{opacity:1;transform:translateX(0)}65%,100%{opacity:0}}
+@keyframes checkPop2{0%,37%{opacity:0;transform:translateX(40px)}41%,60%{opacity:1;transform:translateX(0)}65%,100%{opacity:0}}
+@keyframes checkPop3{0%,40%{opacity:0;transform:translateX(40px)}44%,60%{opacity:1;transform:translateX(0)}65%,100%{opacity:0}}
+.dot{width:30px;height:30px;border-radius:50%;background:#FF5A00;color:#fff;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.offer-badge{display:inline-flex;align-items:center;gap:10px;background:#FF5A00;color:#fff;font-weight:900;font-size:20px;padding:10px 20px;border-radius:100px;animation:badgePulse 12s infinite}
+@keyframes badgePulse{0%,67%{opacity:0;transform:scale(.7)}70%,94%{opacity:1;transform:scale(1)}95%,100%{opacity:0}}
+.offer-title{font-size:78px;font-weight:900;letter-spacing:-3px;line-height:1;color:#1E1106;margin-top:14px}
+.offer-title b{font-size:110px;color:#FF5A00;letter-spacing:-4px}
+.price{margin-top:12px;display:flex;align-items:baseline;gap:14px}
+.old{font-size:26px;color:#A68A72;text-decoration:line-through;font-weight:700}
+.newp{font-size:44px;font-weight:900;color:#1E1106}
+.cta{margin-top:18px;width:420px;height:86px;background:#1E1106;color:#fff;border-radius:100px;display:flex;align-items:center;justify-content:center;font-size:32px;font-weight:900;letter-spacing:-1px;position:relative;overflow:hidden;box-shadow:0 12px 30px rgba(255,90,0,.35);animation:ctaIn 12s infinite}
+@keyframes ctaIn{0%,68%{opacity:0;transform:translateY(20px) scale(.9)}72%,94%{opacity:1;transform:translateY(0) scale(1)}95%,100%{opacity:0}}
+.cta::after{content:'';position:absolute;top:0;left:-80px;width:60px;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.6),transparent);transform:skewX(-20deg);animation:ctaShine 12s infinite}
+@keyframes ctaShine{0%,72%{left:-80px;opacity:0}80%{left:460px;opacity:1}88%{left:460px;opacity:0}100%{left:460px;opacity:0}}
+.cta small{font-size:18px;font-weight:700;background:#FF5A00;border-radius:100px;padding:4px 12px;margin-left:12px}
+.freeship{margin-top:12px;font-size:17px;font-weight:700;color:#6B4A32}
+.right{width:640px;height:100%;position:relative;display:flex;align-items:center;justify-content:center;background:#FFF7EB}
+.circle{position:absolute;width:520px;height:520px;background:#FF5A00;border-radius:50%;right:60px;top:100px;animation:circleGrow 12s infinite}
+@keyframes circleGrow{0%{transform:scale(1.15);opacity:1}8%{transform:scale(1);opacity:1}33.3%{transform:scale(1)}50%{transform:scale(1.06)}66.6%{transform:scale(1)}100%{transform:scale(1.15)}}
+.circle2{position:absolute;width:520px;height:520px;border:3px solid #1E1106;border-radius:50%;right:84px;top:76px;opacity:.15}
+.bottle-float{position:relative;z-index:3;animation:floatB 12s infinite}
+@keyframes floatB{0%{transform:translateY(18px) scale(.98)}4%{transform:translateY(0) scale(1.02)}10%{transform:translateY(-14px) scale(1)}50%{transform:translateY(-18px) scale(1)}66%{transform:translateY(-8px) scale(1.04)}78%{transform:translateY(-12px) scale(1.05)}100%{transform:translateY(18px) scale(.98)}}
+.bottle{width:260px;filter:drop-shadow(0 30px 30px rgba(30,17,6,.28))}
+.cap{width:104px;height:92px;margin:0 auto;background:linear-gradient(90deg,#1E1106 0 12px,#352013 12px 20px,#1E1106 20px 32px,#352013 32px 40px,#1E1106 40px 52px,#352013 52px 60px,#1E1106 60px 72px,#352013 72px 80px,#1E1106 80px 104px);border-radius:14px 14px 6px 6px;position:relative;z-index:2}
+.dropper-top{width:56px;height:28px;background:#1E1106;margin:0 auto;border-radius:6px 6px 0 0}
+.neck{width:84px;height:34px;background:linear-gradient(180deg,#FFE9C8,#FFD9A0);margin:0 auto;border:3px solid #1E1106;border-top:0;border-bottom:0}
+.body{width:260px;height:360px;background:linear-gradient(180deg,rgba(255,255,255,.9),rgba(255,240,210,.35) 30%,rgba(255,180,80,.15));border:4px solid #1E1106;border-radius:32px;position:relative;overflow:hidden;background-color:#FFFDF6}
+.liquid{position:absolute;left:10px;right:10px;bottom:10px;height:270px;background:linear-gradient(180deg,#FFC53D 0%,#FF7A00 55%,#FF4D00 100%);border-radius:20px;animation:liquidW 12s infinite}
+@keyframes liquidW{0%{transform:translateY(14px)}5%{transform:translateY(0)}50%{transform:translateY(-6px)}100%{transform:translateY(14px)}}
+.label{position:absolute;left:22px;right:22px;top:92px;background:#fff;border:3px solid #1E1106;border-radius:16px;padding:14px 10px;text-align:center}
+.label b{font-family:Poppins;font-size:52px;line-height:1;color:#1E1106;display:block}
+.label span{font-size:14px;font-weight:900;letter-spacing:1.5px;background:#1E1106;color:#fff;padding:4px 10px;border-radius:100px;display:inline-block;margin-top:6px}
+.label em{font-style:normal;font-size:13px;font-weight:700;color:#FF5A00;display:block;margin-top:6px;letter-spacing:-.3px}
+.shine{position:absolute;top:0;bottom:0;width:46px;background:linear-gradient(180deg,rgba(255,255,255,.95),rgba(255,255,255,.1));left:36px;border-radius:100px;opacity:.9;animation:shineMove 12s infinite}
+@keyframes shineMove{0%{transform:translateX(-10px);opacity:.4}3%{transform:translateX(180px);opacity:1}7%{transform:translateX(20px);opacity:.9}50%{transform:translateX(30px)}70%{transform:translateX(170px);opacity:1}78%{transform:translateX(20px)}100%{transform:translateX(-10px);opacity:.4}}
+.drop{position:absolute;left:50%;top:-10px;width:36px;height:48px;background:#FF5A00;border:3px solid #1E1106;border-radius:50% 50% 50% 50% / 60% 60% 40% 40%;border-top-left-radius:0;transform:rotate(45deg);z-index:4;animation:dropFall 12s infinite}
+@keyframes dropFall{0%{opacity:0;transform:rotate(45deg) translate(0,-40px) scale(.6)}1%{opacity:1;transform:rotate(45deg) translate(0,-30px) scale(1)}7%{opacity:1;transform:rotate(45deg) translate(-10px,120px) scale(1)}9%{opacity:0;transform:rotate(45deg) translate(-10px,150px) scale(.8)}33%{opacity:0;transform:rotate(45deg) translate(0,-40px)}34%{opacity:1;transform:rotate(45deg) translate(0,-30px)}40%{opacity:1;transform:rotate(45deg) translate(-10px,120px)}42%,100%{opacity:0;transform:rotate(45deg) translate(-10px,150px)}}
+.ring{position:absolute;left:50%;bottom:44px;width:140px;height:28px;border:4px solid #1E1106;border-radius:50%;transform:translateX(-50%) scale(.4);z-index:2;animation:ringX 12s infinite}
+@keyframes ringX{0%{opacity:0;transform:translateX(-50%) scale(.3)}7%{opacity:0;transform:translateX(-50%) scale(.4)}9%{opacity:1;transform:translateX(-50%) scale(1.1)}13%{opacity:0;transform:translateX(-50%) scale(1.5)}34%{opacity:0;transform:translateX(-50%) scale(.3)}40%{opacity:0}42%{opacity:1;transform:translateX(-50%) scale(1.1)}46%{opacity:0;transform:translateX(-50%) scale(1.5)}100%{opacity:0}}
+.spark{position:absolute;font-size:44px;color:#fff;z-index:4;animation:sparkT 12s infinite}
+.s1{left:66px;top:150px}
+.s2{right:68px;top:220px;font-size:32px}
+.s3{right:120px;bottom:130px}
+@keyframes sparkT{0%{opacity:0;transform:scale(.3) rotate(0)}2%{opacity:1;transform:scale(1.3) rotate(20deg)}6%{opacity:0;transform:scale(.6)}34%{opacity:0;transform:scale(.3)}38%{opacity:1;transform:scale(1.2)}42%{opacity:0}68%{opacity:0;transform:scale(.3)}72%{opacity:1;transform:scale(1.4)}76%,100%{opacity:0;transform:scale(.6)}}
+.sticker{position:absolute;right:96px;top:98px;width:132px;height:132px;background:#1E1106;color:#fff;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:900;z-index:5;transform:rotate(12deg);animation:stickR 12s infinite}
+@keyframes stickR{0%{opacity:0;transform:rotate(12deg) scale(0)}3%{opacity:1;transform:rotate(12deg) scale(1.15)}6%{transform:rotate(12deg) scale(1)}60%{opacity:1;transform:rotate(12deg) scale(1)}65%,100%{opacity:0;transform:rotate(12deg) scale(0)}}
+.sticker b{font-size:38px;line-height:1;color:#FFC53D}
+.sticker span{font-size:15px}
+.sticker2{position:absolute;right:90px;bottom:90px;background:#fff;border:3px solid #1E1106;border-radius:100px;padding:10px 20px;font-weight:900;font-size:19px;color:#1E1106;z-index:5;box-shadow:4px 4px 0 #1E1106;animation:stick2 12s infinite}
+@keyframes stick2{0%,33%{opacity:0;transform:translateY(20px)}37%,60%{opacity:1;transform:translateY(0)}65%,100%{opacity:0}}
+.bottombar{position:absolute;left:0;right:0;bottom:0;height:56px;background:#1E1106;display:flex;align-items:center;padding:0 32px;gap:18px;z-index:10}
+.track{flex:1;height:10px;background:rgba(255,255,255,.2);border-radius:100px;overflow:hidden}
+.fill{height:100%;width:0;background:#FF7A00;border-radius:100px;animation:fill12 12s infinite}
+@keyframes fill12{0%{width:0}100%{width:100%}}
+.t{font-family:Poppins;font-size:14px;font-weight:700;color:#fff;letter-spacing:1px;white-space:nowrap}
+.t b{color:#FFB300}
+</style>
+</head>
+<body>
+<div class="stage">
+<div class="left">
+<div class="toprow"><div class="brand">GLOWLAB</div><div class="newbadge">NEW 런칭</div></div>
+<div class="copy hook"><div class="kicker">15% 순수 비타민C 세럼 신제품</div><h1>일주일 만에<br><span class="hl">피부가 빛난다</span></h1><div class="sub">잡티는 옅게, 톤은 투명하게.</div><div class="desc">민감 피부도 매일 쓰는 저자극 브라이트닝</div></div>
+<div class="copy mid"><div class="benefit-title">잡티는 <span>옅게</span><br>톤은 <span>밝게</span></div><div class="checks"><div class="check"><div class="dot">✓</div>15% 순수 비타민C + 비타민E</div><div class="check"><div class="dot">✓</div>7일 톤업 · 다크스팟 케어</div><div class="check"><div class="dot">✓</div>저자극 · 끈적임 제로 워터 텍스처</div></div></div>
+<div class="copy offer"><div class="offer-badge">✦ 런칭 단독 30% 할인 ✦</div><div class="offer-title"><b>30%</b> SALE</div><div class="price"><span class="old">29,900원</span><span class="newp">20,930원 ~</span></div><div class="cta">지금 구매 <small>클릭 →</small></div><div class="freeship">오늘만 무료배송 + 첫구매 샘플 3종 증정</div></div>
+</div>
+<div class="right">
+<div class="circle"></div><div class="circle2"></div>
+<div class="spark s1">✦</div><div class="spark s2">✦</div><div class="spark s3">✦</div>
+<div class="sticker"><span>LAUNCH</span><b>-30%</b><span>오늘만</span></div>
+<div class="bottle-float"><div class="drop"></div><div class="bottle"><div class="dropper-top"></div><div class="cap"></div><div class="neck"></div><div class="body"><div class="liquid"></div><div class="shine"></div><div class="label"><b>C15%</b><span>VITAMIN SERUM</span><em>글로우랩 브라이트닝 세럼 20ml</em></div></div></div><div class="ring"></div></div>
+<div class="sticker2">★ 4.9점 후기 2,314개</div>
+</div>
+<div class="bottombar"><div class="t"><b>● REC</b> 12SEC LOOP</div><div class="track"><div class="fill"></div></div><div class="t">HOOK 0-4s &nbsp; PRODUCT 4-8s &nbsp; OFFER 8-12s</div></div>
+</div>
+</body>
+</html>

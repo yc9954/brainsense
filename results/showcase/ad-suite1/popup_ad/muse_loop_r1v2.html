@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@400;500;700;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%}
+body{background:#0E0B09;display:flex;align-items:center;justify-content:center;min-height:100vh;font-family:"Noto Sans KR",sans-serif;overflow:hidden}
+.stage{width:1280px;height:720px;flex-shrink:0;position:relative;overflow:hidden;background:#FFF7EC;border-radius:18px;isolation:isolate}
+.scene{position:absolute;inset:0;opacity:0;animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:linear;display:flex}
+.s1{background:#E8324A;animation-name:s1Show}
+.s2{background:#FFF7EC;animation-name:s2Show}
+.s3{background:#23130E;animation-name:s3Show}
+@keyframes s1Show{0%{opacity:0}2%{opacity:0}3.5%{opacity:1}29%{opacity:1}33.33%{opacity:0}100%{opacity:0}}
+@keyframes s2Show{0%,33.33%{opacity:0}35%{opacity:1}61.5%{opacity:1}66.66%{opacity:0}100%{opacity:0}}
+@keyframes s3Show{0%,66.66%{opacity:0}68.2%{opacity:1}97.5%{opacity:1}99.2%{opacity:0}100%{opacity:0}}
+
+/* COMMON */
+.eyebrow{font-size:18px;letter-spacing:.28em;font-weight:900}
+h1,h2{font-family:"Black Han Sans","Noto Sans KR",sans-serif;line-height:.95;letter-spacing:-.02em}
+
+/* SCENE 1 */
+.s1{justify-content:center;align-items:center;color:#FFF7EC}
+.s1-blob{position:absolute;width:860px;height:860px;left:50%;top:50%;background:#FFF7EC;border-radius:50%;opacity:.14;animation-name:blobPulse;animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:linear}
+@keyframes blobPulse{0%,33.33%{opacity:.12;transform:translate(-50%,-50%) scale(.85)}8%{opacity:.18;transform:translate(-50%,-50%) scale(1.05)}28%{opacity:.12;transform:translate(-50%,-50%) scale(1)}33.34%,100%{opacity:0;transform:translate(-50%,-50%) scale(1)}}
+.s1-inner{position:relative;text-align:center;width:100%;z-index:2}
+.s1-top{font-size:19px;letter-spacing:.32em;font-weight:900;background:#23130E;color:#FFF7EC;display:inline-block;padding:12px 26px;border-radius:100px;animation-name:k1Top;animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:ease-out}
+@keyframes k1Top{0%,1%{opacity:0;transform:translateY(20px)}5%,28%{opacity:1;transform:translateY(0)}32%,100%{opacity:0;transform:translateY(-20px)}}
+.berry{font-size:250px;line-height:1;margin:6px 0 0;filter:drop-shadow(0 28px 0 rgba(35,19,14,.22)) drop-shadow(0 10px 24px rgba(0,0,0,.25));animation-name:k1Berry;animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:ease-out}
+@keyframes k1Berry{0%{opacity:0;transform:translateY(-420px) rotate(-18deg) scale(1.15)}3%{opacity:0;transform:translateY(-420px) rotate(-18deg) scale(1.15)}7.5%{opacity:1;transform:translateY(0) rotate(6deg) scale(1)}10%{transform:translateY(14px) rotate(-3deg) scale(1.02)}12.5%{transform:translateY(0) rotate(0) scale(1)}26%{opacity:1;transform:translateY(0) scale(1)}32%{opacity:0;transform:translateY(90px) scale(.9)}100%{opacity:0;transform:translateY(90px)}}
+.s1 h1{font-size:136px;color:#FFF7EC;text-shadow:0 6px 0 #23130E;animation-name:k1Title;animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:ease-out}
+@keyframes k1Title{0%,4%{opacity:0;transform:translateY(90px) scale(.92)}9%,26%{opacity:1;transform:translateY(0) scale(1)}32%,100%{opacity:0;transform:translateY(-50px)}}
+.s1 h1 em{font-style:normal;color:#FFC93C;text-shadow:0 6px 0 #23130E}
+.s1-sub{margin-top:14px;font-size:26px;font-weight:700;animation-name:k1Sub;animation-duration:12s;animation-iteration-count:infinite}
+@keyframes k1Sub{0%,6%{opacity:0;transform:translateY(20px)}10%,26%{opacity:1;transform:translateY(0)}32%,100%{opacity:0}}
+.date-pill{margin:20px auto 0;display:inline-flex;gap:14px;align-items:center;background:#FFF7EC;color:#23130E;border-radius:100px;padding:12px 10px 12px 28px;font-weight:900;font-size:28px;animation-name:k1Sub;animation-duration:12s;animation-iteration-count:infinite}
+.date-pill b{background:#23130E;color:#FFC93C;border-radius:100px;padding:8px 20px;font-size:22px;letter-spacing:.08em}
+.s1 .drops{position:absolute;inset:0;pointer-events:none;font-size:44px}
+.drops span{position:absolute;animation-name:dropFall;animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:linear;opacity:0}
+.drops span:nth-child(1){left:120px;top:0}.drops span:nth-child(2){left:1080px;top:0}.drops span:nth-child(3){left:180px;top:0;font-size:30px}.drops span:nth-child(4){left:1020px;top:0;font-size:30px}
+@keyframes dropFall{0%,1%{opacity:0;transform:translateY(-80px) rotate(0)}5%{opacity:1}18%{opacity:1;transform:translateY(560px) rotate(40deg)}28%{opacity:0;transform:translateY(700px)}100%{opacity:0}}
+
+/* SCENE 2 */
+.s2{align-items:center;justify-content:center;gap:56px;padding:48px 70px}
+.arch{width:460px;height:600px;background:#3A2015;border-radius:240px 240px 28px 28px;position:relative;flex-shrink:0;display:flex;align-items:flex-end;justify-content:center;overflow:hidden;box-shadow:14px 14px 0 #E8324A;animation-name:k2Arch;animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:ease-out}
+@keyframes k2Arch{0%,33.33%{opacity:0;transform:translateY(120px)}38%,60%{opacity:1;transform:translateY(0)}66.66%,100%{opacity:0;transform:translateY(-80px)}}
+.arch-inner{position:absolute;inset:18px;border:2px dashed rgba(255,247,236,.5);border-radius:220px 220px 18px 18px}
+.cake{position:relative;width:300px;margin-bottom:54px;animation-name:cakeBob;animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:ease-in-out}
+@keyframes cakeBob{0%,33%{transform:translateY(10px)}42%,58%{transform:translateY(-10px)}66%,100%{transform:translateY(10px)}}
+.plate{height:22px;background:#FFF7EC;border-radius:100px;margin-top:-6px;box-shadow:0 10px 20px rgba(0,0,0,.35)}
+.sponge{height:96px;background:linear-gradient(#FFD9A0,#FFB86B);border-radius:12px;border:4px solid #FFF7EC;border-bottom:0}
+.cream{height:42px;background:#fff;border-left:4px solid #fff;border-right:4px solid #fff;position:relative;overflow:hidden}
+.cream:after{content:"";position:absolute;left:0;right:0;bottom:-14px;height:28px;background:radial-gradient(circle at 20px -6px, #fff 18px, transparent 19px);background-size:40px 28px;background-repeat:repeat-x}
+.straws{display:flex;justify-content:center;gap:16px;margin-bottom:-18px;z-index:2;position:relative}
+.straws i{width:72px;height:72px;background:radial-gradient(circle at 30% 30%, #FF7A90, #E8324A 60%, #9E162B);border-radius:50% 50% 50% 50%/45% 45% 55% 55%;position:relative;border:3px solid #fff;display:block}
+.straws i:before{content:"";position:absolute;top:-14px;left:50%;transform:translateX(-50%);width:34px;height:20px;background:#2FA44F;clip-path:polygon(50% 0,0 100%,100% 100%);border-radius:4px}
+.drip{position:absolute;top:90px;left:40px;right:40px;text-align:center;color:#FFD0D9;font-family:"Instrument Serif",serif;font-style:italic;font-size:24px}
+.s2-copy{flex:1;animation-name:k2Copy;animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:ease-out}
+@keyframes k2Copy{0%,34%{opacity:0;transform:translateX(80px)}39%,60%{opacity:1;transform:translateX(0)}66.66%,100%{opacity:0}}
+.s2-copy .eyebrow{color:#E8324A}
+.s2-copy h2{font-size:72px;color:#23130E;margin:10px 0 18px}
+.s2-copy h2 span{color:#E8324A}
+.menu{list-style:none;display:grid;gap:12px}
+.menu li{background:#23130E;color:#FFF7EC;border-radius:18px;padding:14px 18px;display:flex;align-items:center;gap:16px;animation-name:k2Item;animation-duration:12s;animation-iteration-count:infinite}
+.menu li:nth-child(1){animation-delay:0s}.menu li:nth-child(2){animation-delay:0s}.menu li:nth-child(3){animation-delay:0s}
+@keyframes k2Item{0%,36%{opacity:0;transform:translateY(24px)}42%,60%{opacity:1;transform:translateY(0)}66%,100%{opacity:0}}
+.menu li:nth-child(2){background:#E8324A}.menu li:nth-child(3){background:#fff;color:#23130E;border:3px solid #23130E}
+.num{width:48px;height:48px;border-radius:50%;background:#FFC93C;color:#23130E;font-weight:900;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.menu strong{font-size:22px;display:block}.menu small{font-size:16px;opacity:.85}
+.price{margin-left:auto;font-weight:900;font-size:20px;white-space:nowrap}
+.limit{margin-top:14px;display:inline-block;background:#FFC93C;border-radius:10px;padding:8px 16px;font-weight:900;font-size:18px;color:#23130E;transform:rotate(-1.5deg)}
+
+/* SCENE 3 */
+.s3{align-items:center;justify-content:center;gap:48px;padding:50px 64px;color:#FFF7EC}
+.s3-left{flex:1.05;animation-name:k3Left;animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:ease-out}
+@keyframes k3Left{0%,66.66%{opacity:0;transform:translateY(60px)}71%,94%{opacity:1;transform:translateY(0)}99%,100%{opacity:0}}
+.s3-left .eyebrow{color:#FFC93C}
+.s3-left h2{font-size:78px;margin:12px 0 16px}.s3-left h2 span{color:#FF6B85}
+.offer-box{background:#FFF7EC;color:#23130E;border-radius:20px;padding:18px 22px;display:flex;gap:18px;align-items:center}
+.offer-box .big{font-family:"Black Han Sans";font-size:44px;line-height:1;color:#E8324A;white-space:nowrap}
+.offer-box p{font-size:19px;font-weight:700;line-height:1.5}
+.place{margin-top:16px;font-size:20px;font-weight:500;line-height:1.6;opacity:.95}
+.place b{color:#FFC93C}
+.ticket{width:420px;background:#FFF7EC;color:#23130E;border-radius:26px;overflow:hidden;flex-shrink:0;transform:rotate(2deg);box-shadow:0 24px 60px rgba(0,0,0,.45);animation-name:k3Ticket;animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:ease-out}
+@keyframes k3Ticket{0%,67%{opacity:0;transform:rotate(8deg) translateY(120px)}72%,94%{opacity:1;transform:rotate(2deg) translateY(0)}99%,100%{opacity:0}}
+.ticket-top{background:#E8324A;color:#fff;text-align:center;padding:18px;font-weight:900;letter-spacing:.2em;font-size:18px}
+.ticket-mid{padding:26px 28px;text-align:center;border-bottom:3px dashed #23130E33}
+.ticket-mid strong{font-family:"Black Han Sans";font-size:38px;display:block;line-height:1.1}
+.ticket-mid small{font-size:17px;font-weight:700}
+.cta{display:block;margin:22px 24px;background:#23130E;color:#FFC93C;text-align:center;font-size:30px;font-weight:900;padding:20px;border-radius:16px;text-decoration:none;animation-name:ctaPulse;animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:ease-in-out}
+@keyframes ctaPulse{0%,68%{transform:scale(1)}76%{transform:scale(1.06)}81%{transform:scale(1)}86%{transform:scale(1.07)}91%,100%{transform:scale(1)}}
+.ticket small.note{display:block;text-align:center;padding:0 0 20px;font-size:15px;font-weight:500;opacity:.7}
+
+/* HUD */
+.hud{position:absolute;left:0;right:0;bottom:0;height:54px;display:flex;align-items:center;gap:18px;padding:0 28px;background:rgba(0,0,0,.55);color:#fff;font-size:15px;font-weight:700;letter-spacing:.12em;z-index:5}
+.hud i.dot{width:10px;height:10px;border-radius:50%;background:#FF3B3B;animation-name:blink;animation-duration:12s;animation-iteration-count:infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
+.bar{flex:1;height:8px;background:rgba(255,255,255,.25);border-radius:100px;overflow:hidden}
+.bar b{display:block;height:100%;background:#FFC93C;border-radius:100px;transform-origin:left;animation-name:barGrow;animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:linear}
+@keyframes barGrow{0%{transform:scaleX(0)}100%{transform:scaleX(1)}}
+.tag{position:absolute;top:22px;right:26px;z-index:5;background:rgba(0,0,0,.55);color:#fff;font-size:14px;font-weight:700;letter-spacing:.18em;padding:8px 16px;border-radius:100px;animation-name:blink;animation-duration:12s;animation-iteration-count:infinite}
+</style>
+</head>
+<body>
+<div class="stage" role="img" aria-label="성수동 3일 한정 스윗스팟 팝업스토어 광고">
+<div class="tag">SEONGSU 3 DAYS ONLY</div>
+
+<!-- 0-4s HOOK -->
+<section class="scene s1">
+<div class="s1-blob"></div>
+<div class="drops"><span>🍓</span><span>🍓</span><span>✦</span><span>✦</span></div>
+<div class="s1-inner">
+<div class="s1-top">SWEETSPOT × LOCAL ROASTERY · SEONGSU POP-UP</div>
+<div class="berry">🍓</div>
+<h1>딸기가 <em>쏟아진다!</em></h1>
+<div class="s1-sub">성수동 3일 한정 · 딸기 디저트 + 갓 내린 커피</div><br>
+<div class="date-pill">3.14 FRI — 3.16 SUN <b>단 3일!</b></div>
+</div>
+</section>
+
+<!-- 4-8s PRODUCT -->
+<section class="scene s2">
+<div class="arch"><div class="arch-inner"></div><div class="drip">fresh strawberry!</div>
+<div class="cake"><div class="straws"><i></i><i></i><i></i></div><div class="cream"></div><div class="sponge"></div><div class="plate"></div></div>
+</div>
+<div class="s2-copy">
+<div class="eyebrow">ONLY HERE — 팝업 한정 메뉴</div>
+<h2>갓 딴 딸기 <span>× 당일 로스팅</span></h2>
+<ul class="menu">
+<li><span class="num">1</span><div><strong>딸기 생크림 케이크</strong><small>생딸기 12알 · 성수 한정</small></div><span class="price">8,500원</span></li>
+<li><span class="num">2</span><div><strong>딸기 우유 라떼 HOT/ICE</strong><small>로스터리 우유 블렌드</small></div><span class="price">6,000원</span></li>
+<li><span class="num">3</span><div><strong>딸기 드립 세트</strong><small>에티오피아 + 딸기 파이</small></div><span class="price">9,900원</span></li>
+</ul>
+<div class="limit">⏰ 매일 14시 · 생케이크 50개 한정 판매</div>
+</div>
+</section>
+
+<!-- 8-12s OFFER + CTA -->
+<section class="scene s3">
+<div class="s3-left">
+<div class="eyebrow">EARLY BIRD — 사전예약 혜택</div>
+<h2>예약하면<br><span>미니 타르트가 공짜!</span></h2>
+<div class="offer-box"><div class="big">100%<br>증정</div><p>사전예약 전원 딸기 미니타르트 증정<br>+ 대기 없이 바로 입장 + 한정 스티커팩</p></div>
+<p class="place"><b>3.14 — 3.16 · 11:00-20:00</b><br>서울 성동구 연무장길 45 스윗스팟 성수 (성수역 3번 출구 5분)</p>
+</div>
+<div class="ticket">
+<div class="ticket-top">★ SWEETSPOT ADMIT ONE ★</div>
+<div class="ticket-mid"><strong>지금 사전예약 하기</strong><small>네이버예약 · QR로 10초 입장 확정</small></div>
+<a class="cta" href="#">사전예약 GO →</a>
+<small class="note">소진 시 조기 마감 · 당일 현장 대기 60분 예상</small>
+</div>
+</section>
+
+<div class="hud"><i class="dot"></i> ON AIR <div class="bar"><b></b></div> 00:12 LOOP · ① HOOK ② MENU ③ RESERVE</div>
+</div>
+</body>
+</html>
