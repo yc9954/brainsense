@@ -36,7 +36,8 @@ image = (
     .pip_install("tribev2[plotting] @ git+https://github.com/facebookresearch/tribev2.git",
                  "mne>=1.8", "nibabel", "nilearn", "einops", "fastapi[standard]", "av>=12")
     .run_commands("python -m spacy download en_core_web_sm || true")
-    .env({"HF_HOME": f"{CACHE}/hf", "SUBJECTS_DIR": f"{CACHE}/subjects",
+    .env({"HF_HOME": f"{CACHE}/hf", "SUBJECTS_DIR": f"{CACHE}/subjects", "NILEARN_DATA": f"{CACHE}/nilearn",
+          "MPLBACKEND": "Agg",
           "MNE_DATASETS_SAMPLE_PATH": f"{CACHE}/mne_data",   # tribev2 atlas helper pulls MNE sample data
           "TOKENIZERS_PARALLELISM": "false"})
     .add_local_python_source("brainsense")
@@ -109,7 +110,7 @@ class Tribe:
     @modal.method()
     def predict(self, video_bytes: bytes, filename: str = "clip.mp4", item_id: str | None = None,
                 with_raw_embed: bool = True, save_vertices: bool = True,
-                transcribe: bool = True, bf16: bool = False) -> dict:
+                transcribe: bool = True, bf16: bool = False, render_brain: bool = False) -> dict:
         """transcribe=False skips WhisperX + spaCy + Llama (use for clips with no speech: product
         shots, stills). bf16=True wraps the whole predict pass in torch.autocast(bfloat16)."""
         import contextlib
@@ -158,6 +159,16 @@ class Tribe:
         area_feats, area_names = area_features(preds, self.areas)
         timing["roi_s"] = time.time() - t
 
+        frames: list[str] = []
+        if render_brain:
+            t = time.time()
+            try:
+                from brainsense.tribe.brainplot import render_frames
+                frames = render_frames(preds)
+            except Exception as e:  # rendering is cosmetic; never fail the prediction
+                print(f"[tribe] brain render failed: {type(e).__name__}: {e}")
+            timing["render_s"] = time.time() - t
+
         raw = None
         if with_raw_embed:
             t = time.time()
@@ -176,6 +187,7 @@ class Tribe:
         return {"item_id": item_id, "n_timesteps": int(preds.shape[0]), "n_vertices": int(preds.shape[1]),
                 "roi_feats": feats.tolist(), "roi_feat_names": names,
                 "roi_area_feats": area_feats.tolist(), "roi_area_names": area_names,
+                "brain_frames": frames,
                 "roi_ts": {g: [round(float(v), 4) for v in x] for g, x in ts.items()},
                 "raw_embed": raw, "timing": {k: round(v, 2) for k, v in timing.items()},
                 "load_s": round(self.load_s, 1)}
@@ -187,7 +199,8 @@ class Tribe:
         import base64
         return self.predict.local(base64.b64decode(body["video_b64"]), body.get("filename", "clip.mp4"),
                                   body.get("item_id"), body.get("with_raw_embed", False),
-                                  transcribe=body.get("transcribe", False), bf16=body.get("bf16", True))
+                                  transcribe=body.get("transcribe", False), bf16=body.get("bf16", True),
+                                  render_brain=body.get("render_brain", True))
 
 
 @app.local_entrypoint()

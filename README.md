@@ -127,6 +127,15 @@ Each score costs one TRIBE call (~14 s warm). The metric is honest about its lim
 
 UI repo: https://github.com/yc9954/openmuse-brainsense (private, branch `brainsense-ui`; upstream CopilotKit/openmuse kept as `upstream`).
 
+## OpenMuse integration (2026-11-03): the agent's own brain
+BrainSense is wired into OpenMuse's own agent loop, not a side tab:
+- **Server tool `brain_eval`** (`apps/server/src/engine/conversation.ts`): takes `brain_item_id` (what the user is looking at in the Look tab, passed through CopilotKit agent context) or `artifact_id` of an attached image; calls the BrainSense server; returns heads, percentiles, confidence, top cortical areas, the 1 Hz region series, cortex heatmap frames, and a Korean summary.
+- **Prompt augmentation** (`brainInstructions`): when the user asks how something looks or attaches an image, the agent calls the tool and then speaks *as its own brain*, first person, naming areas in plain words, quoting percentiles, witty and specific; never rating without the tool.
+- **Inline card** (`brain-tool-card.tsx` → `BrainCard`): the brain-frame player (real fsaverage5 cortex heatmaps rendered server-side with nilearn, lateral+medial, 1 Hz), head gauges, area chips, crowd-vs-you.
+- The Look tab stays as the capture surface; the chat home, sidebar, activity/ideas/goals/apps tabs are OpenMuse's originals.
+
+**What still needs a key:** OpenMuse's CopilotRuntime v2 persists every run through CopilotKit Intelligence (`Failed to initialize thread` otherwise). `npx copilotkit@latest login && npx copilotkit@latest project select`, put the key in `../openmuse/.env` as `CPK_INTELLIGENCE_API_KEY`, remove `RICH_THREADS=false`. The Look tab works without it.
+
 ## Full OpenMuse workspace on the Meta Model API
 `../openmuse/.env` is prepared for `AGENT_BACKEND=model` with `MODEL=muse-spark-1.3` and `OPENAI_BASE_URL=https://api.meta.ai/v1`, so OpenMuse's own chat, activity, ideas, goals and apps run on Muse Spark. Two values are yours: `OPENAI_API_KEY` (copy `BRAINSENSE_LLM_API_KEY`) and `CPK_INTELLIGENCE_API_KEY` (`npx copilotkit@latest login && npx copilotkit@latest project select`). Then `pnpm --dir ../openmuse dev` and the app shows the Look tab next to the OpenMuse sections. Without those keys the app runs the Look tab standalone.
 

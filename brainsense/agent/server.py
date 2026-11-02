@@ -102,7 +102,10 @@ def analyze(inp: AnalyzeIn) -> dict[str, Any]:
     _ROI_DIR.mkdir(parents=True, exist_ok=True)
     import json as _json
     (_ROI_DIR / f"{inp.item_id}.json").write_text(_json.dumps(roi_ts[inp.item_id]))
-    return {"item_id": inp.item_id, "timing": res.get("timing"), "roi_ts": roi_ts[inp.item_id]}
+    if res.get("brain_frames"):
+        (_ROI_DIR / f"{inp.item_id}.frames.json").write_text(_json.dumps(res["brain_frames"]))
+    return {"item_id": inp.item_id, "timing": res.get("timing"), "roi_ts": roi_ts[inp.item_id],
+            "brain_frames": res.get("brain_frames") or []}
 
 
 @app.post("/agent")
@@ -125,6 +128,10 @@ def eval_item(item_id: str) -> dict[str, Any]:
         raise HTTPException(404, f"no features for {item_id}")
     out = registry.call("brain_eval", item_id=item_id)
     out["roi_ts"] = roi_ts.get(item_id, {})
+    f = _ROI_DIR / f"{item_id}.frames.json"
+    if f.exists():
+        import json as _json
+        out["brain_frames"] = _json.loads(f.read_text())
     return out
 
 
