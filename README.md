@@ -142,6 +142,14 @@ BrainSense is wired into OpenMuse's own agent loop, not a side tab:
 
 **Demo without glasses:** the Wearables Device Access Toolkit's Mock Device Kit simulates the glasses on the phone (iOS and Android): the CameraAccess sample app's debug sheet enables the mock device and the camera source picker streams the phone's front/back camera or a video file through the same SDK calls as real hardware. The OpenMuse chat path (attach a photo → `brain_eval`) is the second, hardware-free demo.
 
+## Text and audio through the same brain (2026-11-03)
+TRIBE v2 is tri-modal, so the agent's brain can *read* and *listen*, not just look:
+- **Text** — `POST /analyze_text {text}`: the words become TRIBE `Word` events at a reading pace (160 wpm; the reference demo gets the same timing from TTS + transcription), the model's own event pipeline adds sentence context, and the Llama-3.2-3B pathway drives the prediction. Output is the usual cortex time series, 360-area features and the live 3D card, now with the paragraph as the stimulus.
+- **Audio** — attach an mp3/wav; it enters as an `Audio` event (w2v-BERT pathway). `GET /compare?item_id=A&against=B` puts two clips side by side head by head with their 1 Hz series, so the agent can say *where and when* one hook pulls ahead (auditory + reward regions) instead of guessing.
+- **Routing** — `brain_eval(kind=image|video|audio|text, heads=[...])`: Muse Spark decides what to read and which heads to ask for (a photo → 예쁨/주목/끌림; copy → 사람다움/주목; a track → 후킹/주목). `/eval` defaults the heads by stimulus kind; nothing runs every head on everything.
+- **Writing through the brain** — when asked to make copy read like a human, the agent drafts, runs `brain_eval(kind=text)`, reads which regions stay quiet (social/emotional/memory areas silent → add a lived detail or a feeling; only language areas high → cut generic connectives), rewrites, and shows before → after percentiles.
+- **사람다움 head** — trained on HC3 (human vs ChatGPT answers to the same questions), 1,200 texts cut to the same first-70-word window so length cannot leak the label, split by question (`scripts/prepare_hc3.py`, `scripts/run_text_head.sh`). It measures "reads like a person wrote it", not quality, and the README will carry its holdout AUROC once the extraction has run. A 후킹 head for music has no labeled set yet; audio is compared region by region.
+
 ## Latency (measured on L40S, never-seen 6 s clip, `results/profile.json`)
 | variant | events | TRIBE predict | total |
 |---|---|---|---|
