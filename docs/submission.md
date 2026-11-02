@@ -19,11 +19,12 @@ A grounded-opinion agent for Meta AI glasses. You look at something and ask "이
 
 ## What's measured (not claimed)
 - **Latency:** 43 s → **14 s** per fresh 6 s clip on L40S by skipping transcription on speech-free clips and bf16 autocast; fusion model alone is 2.4 s; backbone extraction is the remaining cost.
-- **Ablation (brain features vs. raw V-JEPA2 embedding), linear heads, 10 seeds:** AADB aesthetics AUROC 0.72 (TRIBE 54-d) vs 0.69 (raw 1408-d) vs **0.71 (raw PCA-54)**. The brain prior does **not** buy accuracy once dimensionality is matched; what it buys is **interpretability**: the agent explains with "시각 주의가 2초 뒤 떨어져" rather than "embedding dim 731". Popularity and watch-retention labels are not learnable from either feature set at 150–300 items, and the heads are calibrated to say so.
+- **Ablation (brain features vs. raw V-JEPA2 embedding), linear heads, 5-fold on AADB:** 9-region pooled TRIBE features 0.669, raw V-JEPA2 1408-d 0.728, raw PCA-54 0.722, **360 HCP-MMP1 area means → PCA-54 0.753**. Pooling into 9 regions lost signal; at matched dimensionality the brain features are on par with or slightly above the raw embedding, and they come with named cortical areas. The shipped aesthetic head (2,500 AADB images, area features) scores holdout AUROC 0.721, ECE 0.041. Attention 0.65, appeal 0.58 and popularity 0.59 on their own labels: weak, and the heads are calibrated to say so.
+- **Evaluation-driven UI loop:** Muse Spark writes pages, headless Chrome renders them, the brain heads and a Muse multimodal judge score them, the critique feeds the next round. Last run (2 rounds × 3 variants): round 2 best 0.654 vs round 1 best 0.603.
 - **Live transcript** with real Muse Spark and real TRIBE features is in the README.
 
 ## Built during the hackathon
-Everything in this repo: Modal service, ROI pooling, heads + calibration + ablation harness, agent + server, data pipelines for three datasets (947 items extracted), iOS skeleton, docs.
+Everything in this repo and the OpenMuse fork: Modal TRIBE service with per-vertex output, ROI and 360-area pooling, heads + calibration + ablation harness, agent + server, data pipelines for three datasets (4,587 items extracted through TRIBE), the OpenMuse integration (brain_eval tool, brain persona, photo attachments, live 3D cortex card), the UI evaluation loop, iOS skeleton, docs.
 
 ## Limits
 TRIBE v2 is an *encoder* trained on passive viewing (no decisions), predicts an average subject, and is CC-BY-NC. Image inputs are stills, so its temporal module adds nothing there. Our outcome datasets are small; the aesthetic head is the only one with signal today.
