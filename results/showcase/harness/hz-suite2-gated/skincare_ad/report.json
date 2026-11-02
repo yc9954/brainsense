@@ -1,0 +1,255 @@
+{
+ "brief": "비타민C 세럼 신제품 인스타그램 피드 광고(정사각형 느낌의 1280x800 첫 화면). 한 문장 헤드라인, 제품이 주인공, 런칭 30% 할인 배지, '지금 구매' CTA.",
+ "kind": "ad",
+ "baseline": {
+  "round": 0,
+  "accepted": true,
+  "ui_score": 0.6797774250490787,
+  "brain_only": 0.6,
+  "judge": 0.806,
+  "changes": [],
+  "sourced": [],
+  "diagnosis": [
+   "물체 형태(LO)·움직임(MT) 반응이 낮음: 뚜렷한 사물 실루엣이 없는 텍스트 위주 화면",
+   "장소 영역(PPA)이 우세: 배경 풍경이 화면을 지배해 내용이 묻힘",
+   "주의 반응이 첫 2초 이후 꺼짐 (+0.40 → +0.19): 첫인상 뒤에 볼 게 없음"
+  ]
+ },
+ "best_round": 0,
+ "best": {
+  "round": 0,
+  "ui_score": 0.6797774250490787,
+  "heads": {
+   "aesthetic": {
+    "score": 0.5385976433753967,
+    "percentile": 59.651474530831095,
+    "confidence": 0.07719528675079346,
+    "top": "▼ L_a24, ▲ L_31a"
+   },
+   "attention": {
+    "score": 0.5550366640090942,
+    "percentile": 60.273972602739725,
+    "confidence": 0.11007332801818848,
+    "top": "▲ 움직임·형태 평균, ▲ 움직임·형태 최대"
+   }
+  },
+  "judge": {
+   "aesthetic": 0.778,
+   "clarity": 0.889,
+   "attention": 0.667,
+   "brief_fit": 0.889,
+   "judge_score": 0.806,
+   "reason": "Strong polished Instagram concept with clear headline and CTA, but dense left-side info slightly weakens single focal impact."
+  },
+  "brain_only": 0.6,
+  "critique": {
+   "kind": "ad",
+   "ranking": [
+    [
+     "scene_place",
+     1.2935831245439988
+    ],
+    [
+     "value_vmpfc",
+     0.692669197597128
+    ],
+    [
+     "control_dlpfc",
+     0.35232624421280856
+    ],
+    [
+     "attention_dorsal",
+     0.26232035908495854
+    ],
+    [
+     "visual_early",
+     0.03953611280640253
+    ],
+    [
+     "face_body",
+     -0.0641149793962237
+    ],
+    [
+     "language",
+     -0.32311150598860866
+    ],
+    [
+     "default_mode",
+     -0.357749339332271
+    ],
+    [
+     "visual_motion",
+     -1.8954592135281938
+    ]
+   ],
+   "hook": {
+    "attention_early": 0.39719798286255315,
+    "attention_late": 0.19488154719616124,
+    "visual_early": 0.7380657519035947,
+    "visual_late": -0.30972870674219355
+   },
+   "diagnosis": [
+    "물체 형태(LO)·움직임(MT) 반응이 낮음: 뚜렷한 사물 실루엣이 없는 텍스트 위주 화면",
+    "장소 영역(PPA)이 우세: 배경 풍경이 화면을 지배해 내용이 묻힘",
+    "주의 반응이 첫 2초 이후 꺼짐 (+0.40 → +0.19): 첫인상 뒤에 볼 게 없음"
+   ],
+   "directives": [
+    "Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion.",
+    "Simplify the environment: crop or blur the scene, put copy on a solid panel, let one subject own the frame.",
+    "Add a second discovery after the hero (a detail reveal, micro-illustration, or a strong secondary block) so interest holds past 2 s."
+   ],
+   "cited_areas": [
+    "▼ 좌 전대상 24 (a24) [aesthetic]",
+    "▲ 좌 31a [aesthetic]",
+    "▲ 움직임·형태(MT/LO) 평균 [attention]",
+    "▲ 움직임·형태(MT/LO) 최대 [attention]"
+   ],
+   "groups": [
+    "visual_motion",
+    "scene_place",
+    ""
+   ],
+   "prompt_block": "BRAIN CRITIQUE (TRIBE v2 predicted human cortex while looking at the last render; values are relative within this image):\n- most driven regions: 장소·배경(PPA/RSC) +1.29, 보상·가치(OFC/vmPFC) +0.69, 인지 통제(dlPFC) +0.35; least: 기본모드(딴생각) -0.36, 움직임·형태(MT/LO) -1.90\n- first-2s hook vs later: attention +0.40 → +0.19, visual drive +0.74 → -0.31\n- areas the aesthetic head cites: ▼ 좌 전대상 24 (a24) [aesthetic]; ▲ 좌 31a [aesthetic]; ▲ 움직임·형태(MT/LO) 평균 [attention]; ▲ 움직임·형태(MT/LO) 최대 [attention]\n- diagnosis: 물체 형태(LO)·움직임(MT) 반응이 낮음: 뚜렷한 사물 실루엣이 없는 텍스트 위주 화면 / 장소 영역(PPA)이 우세: 배경 풍경이 화면을 지배해 내용이 묻힘 / 주의 반응이 첫 2초 이후 꺼짐 (+0.40 → +0.19): 첫인상 뒤에 볼 게 없음\n- DO NEXT (highest priority first): (1) Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion. (2) Simplify the environment: crop or blur the scene, put copy on a solid panel, let one subject own the frame. (3) Add a second discovery after the hero (a detail reveal, micro-illustration, or a strong secondary block) so interest holds past 2 s."
+  }
+ },
+ "rounds": [
+  {
+   "round": 0,
+   "accepted": true,
+   "ui_score": 0.6797774250490787,
+   "brain_only": 0.6,
+   "judge": 0.806,
+   "changes": [],
+   "sourced": [],
+   "diagnosis": [
+    "물체 형태(LO)·움직임(MT) 반응이 낮음: 뚜렷한 사물 실루엣이 없는 텍스트 위주 화면",
+    "장소 영역(PPA)이 우세: 배경 풍경이 화면을 지배해 내용이 묻힘",
+    "주의 반응이 첫 2초 이후 꺼짐 (+0.40 → +0.19): 첫인상 뒤에 볼 게 없음"
+   ]
+  },
+  {
+   "round": 1,
+   "accepted": false,
+   "ui_score": 0.6247177174083984,
+   "brain_only": 0.499,
+   "judge": 0.75,
+   "changes": [
+    {
+     "issue": "물체형태lo움직임mt반응이낮음",
+     "change": "Bottle enlarged to 310px dominant silhouette + bold -14deg orange motion slash with speed lines, splash blob and dripping droplets behind product"
+    },
+    {
+     "issue": "장소영역ppa이우세",
+     "change": "Removed dot patterns and radial washes; flat solid backgrounds, copy on solid white panel, insta-visual flattened to solid cream with single diagonal"
+    },
+    {
+     "issue": "주의반응이첫초이후꺼짐",
+     "change": "Added interactive second discovery: 3-tab Glow Lab switcher + hover dropper zoom + hidden extra-coupon reveal; decluttered left info to single CTA focus"
+    }
+   ],
+   "sourced": [],
+   "diagnosis": [
+    "장소 영역(PPA)이 우세: 배경 풍경이 화면을 지배해 내용이 묻힘",
+    "물체 형태(LO)·움직임(MT) 반응이 낮음: 뚜렷한 사물 실루엣이 없는 텍스트 위주 화면",
+    "1차 시각피질이 가장 세게 반응: 대비·질감 밀도가 높은데 미학 헤드는 낮음 → 어수선함"
+   ]
+  },
+  {
+   "round": 2,
+   "accepted": false,
+   "ui_score": 0.6327742948164548,
+   "brain_only": 0.527,
+   "judge": 0.75,
+   "changes": [
+    {
+     "issue": "물체형태·움직임 반응이 낮음",
+     "change": "Bottle enlarged to 330px tilted -10deg silhouette on solid halo + double -14deg diagonal slash with speed lines, falling droplets and auto shine sweep for motion"
+    },
+    {
+     "issue": "장소영역이 우세",
+     "change": "Removed all dot patterns and radial washes; flat solid body, flat cream stage, flat orange hero with single solid cream halo; copy moved onto solid white panel"
+    },
+    {
+     "issue": "첫 2초 이후 주의 꺼짐",
+     "change": "Added second discovery: hover loupe magnifier on bottle + expandable texture detail reveal and animated 7-day glow dots instead of tab switcher"
+    }
+   ],
+   "sourced": [],
+   "diagnosis": [
+    "장소 영역(PPA)이 우세: 배경 풍경이 화면을 지배해 내용이 묻힘",
+    "물체 형태(LO)·움직임(MT) 반응이 낮음: 뚜렷한 사물 실루엣이 없는 텍스트 위주 화면"
+   ]
+  },
+  {
+   "round": 3,
+   "accepted": false,
+   "ui_score": 0.5892161659619932,
+   "brain_only": 0.484,
+   "judge": 0.694,
+   "changes": [
+    {
+     "issue": "물체형태LO·움직임MT 반응이 낮음",
+     "change": "병 260→360px 대형 실루엣으로 확대·-9도 틸트 + 화면 가로지르는 -14도 솔리드 오렌지 모션 슬래시와 스피드선 3개로 운동감 부여"
+    },
+    {
+     "issue": "장소영역PPA이 우세",
+     "change": "배경 도트·방사형 그라데이션·글로우 전부 제거, body·무대·비주얼 모두 플랫 솔리드 컬러와 단일 사선 블록으로 단순화"
+    },
+    {
+     "issue": "주의반응이 첫초이후꺼짐",
+     "change": "탭 대신 7일 글로우 슬라이더 실험실 + 병 클릭 물방울 인터랙션 + 2.2초 지연 등장 보너스 스티커로 두 번째 발견 설계, 좌측 정보량 축소"
+    }
+   ],
+   "sourced": [],
+   "diagnosis": [
+    "물체 형태(LO)·움직임(MT) 반응이 낮음: 뚜렷한 사물 실루엣이 없는 텍스트 위주 화면",
+    "장소 영역(PPA)이 우세: 배경 풍경이 화면을 지배해 내용이 묻힘"
+   ]
+  }
+ ],
+ "ledger": [
+  {
+   "id": "물체형태lo움직임mt반응이낮음",
+   "text": "물체 형태(LO)·움직임(MT) 반응이 낮음: 뚜렷한 사물 실루엣이 없는 텍스트 위주 화면",
+   "directive": "Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion.",
+   "group": "visual_motion",
+   "z_opened": -1.8954592135281938,
+   "opened": 0,
+   "resolved": null,
+   "attempts": 3,
+   "tried": [
+    "r1: Bottle enlarged to 310px dominant silhouette + bold -14deg orange motion slash with speed ",
+    "r3: 병 260→360px 대형 실루엣으로 확대·-9도 틸트 + 화면 가로지르는 -14도 솔리드 오렌지 모션 슬래시와 스피드선 3개로 운동감 부여"
+   ]
+  },
+  {
+   "id": "장소영역ppa이우세",
+   "text": "장소 영역(PPA)이 우세: 배경 풍경이 화면을 지배해 내용이 묻힘",
+   "directive": "Simplify the environment: crop or blur the scene, put copy on a solid panel, let one subject own the frame.",
+   "group": "scene_place",
+   "z_opened": 1.2935831245439988,
+   "opened": 0,
+   "resolved": null,
+   "attempts": 3,
+   "tried": [
+    "r1: Removed dot patterns and radial washes; flat solid backgrounds, copy on solid white panel,",
+    "r3: 배경 도트·방사형 그라데이션·글로우 전부 제거, body·무대·비주얼 모두 플랫 솔리드 컬러와 단일 사선 블록으로 단순화"
+   ]
+  },
+  {
+   "id": "주의반응이첫초이후꺼짐",
+   "text": "주의 반응이 첫 2초 이후 꺼짐 (+0.40 → +0.19): 첫인상 뒤에 볼 게 없음",
+   "directive": "Add a second discovery after the hero (a detail reveal, micro-illustration, or a strong secondary block) so interest holds past 2 s.",
+   "group": "",
+   "z_opened": null,
+   "opened": 0,
+   "resolved": null,
+   "attempts": 3,
+   "tried": [
+    "r1: Added interactive second discovery: 3-tab Glow Lab switcher + hover dropper zoom + hidden ",
+    "r3: 탭 대신 7일 글로우 슬라이더 실험실 + 병 클릭 물방울 인터랙션 + 2.2초 지연 등장 보너스 스티커로 두 번째 발견 설계, 좌측 정보량 축소"
+   ]
+  }
+ ],
+ "assets": []
+}

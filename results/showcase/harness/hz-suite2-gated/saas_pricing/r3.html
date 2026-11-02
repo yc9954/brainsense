@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>밋로그 Meetlog — 요금제 | 회의 끝나면 정리도 끝</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&family=Noto+Serif+KR:wght@700;900&family=Inter:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+--cream:#FFFBEB;
+--paper:#FFFDF4;
+--ink:#131512;
+--muted:#4E5249;
+--line:#E7DDBE;
+--deep:#101F17;
+--lime:#D9FF3D;
+--lime2:#C4EE00;
+--accent:#0E7A4F;
+}
+html,body{height:100%}
+body{
+font-family:"Noto Sans KR",system-ui,sans-serif;
+font-size:16px;line-height:1.6;color:var(--ink);
+background:var(--cream);
+min-height:100vh;
+-webkit-font-smoothing:antialiased;
+}
+.page{max-width:1280px;margin:0 auto;padding:0 32px 18px}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+header{height:68px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:10px;font-weight:900;font-size:19px;letter-spacing:-.02em}
+.mark{width:32px;height:32px;border-radius:10px;background:var(--deep);display:grid;place-items:center;color:var(--lime);font-weight:900;position:relative;overflow:hidden}
+.mark::after{content:"";position:absolute;inset:auto -6px -8px -6px;height:14px;background:var(--lime);transform:rotate(-8deg);opacity:.9}
+.mark span{position:relative;z-index:1;font-size:18px}
+.brand small{font-weight:700;font-size:12px;background:var(--deep);color:var(--lime);border-radius:99px;padding:2px 8px;margin-left:2px}
+nav{display:flex;gap:28px;font-size:16px;font-weight:500;color:#2B2E29}
+nav a.on{font-weight:800;border-bottom:3px solid #8AA800}
+.hact{display:flex;gap:10px;align-items:center}
+.btn-ghost{border:1.5px solid var(--ink);background:#fff;border-radius:99px;padding:9px 18px;font-weight:700;font-size:15px;cursor:pointer}
+.btn-dark{background:var(--ink);color:#fff;border:1.5px solid var(--ink);border-radius:99px;padding:9px 18px;font-weight:800;font-size:15px;cursor:pointer}
+/* hero */
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:20px;align-items:stretch;padding:16px 0 10px}
+.hero-left{background:#fff;border:1.7px solid var(--ink);border-radius:20px;padding:18px 22px 16px;box-shadow:5px 5px 0 #131512}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--cream);border:1px solid var(--line);border-radius:99px;padding:6px 12px;font-size:13.5px;font-weight:800}
+.dot{width:8px;height:8px;border-radius:50%;background:#1DB262;box-shadow:0 0 0 4px #1DB26222}
+.eyebrow em{font-style:normal;background:#fff;border:1px solid #111;border-radius:99px;padding:1px 8px}
+h1{font-family:"Noto Serif KR",serif;font-weight:900;font-size:44px;line-height:1.08;letter-spacing:-.04em;margin:10px 0 8px}
+h1 .hl{position:relative;white-space:nowrap}
+h1 .hl i{font-style:normal;position:relative;z-index:1}
+h1 .hl::before{content:"";position:absolute;left:-4px;right:-4px;bottom:6px;height:18px;background:var(--lime);z-index:0;transform:rotate(-1deg);border-radius:4px;border:1px solid #111}
+.sub{color:var(--muted);font-size:17px;line-height:1.6;max-width:520px}
+.sub strong{color:var(--ink)}
+.rating{display:flex;align-items:center;gap:10px;margin-top:10px;font-size:14.5px;font-weight:700}
+.avatars{display:flex}
+.avatars span{width:28px;height:28px;border-radius:50%;border:2px solid #fff;margin-left:-8px;display:grid;place-items:center;font-size:14px;font-weight:800}
+.avatars span:first-child{margin-left:0}
+.stars{color:#111;letter-spacing:2px}
+.hero-right{display:flex;flex-direction:column;justify-content:center;gap:12px}
+.toggle{align-self:flex-end;display:flex;background:#fff;border:1.5px solid var(--ink);border-radius:99px;padding:4px;gap:4px;box-shadow:3px 3px 0 #111}
+.toggle button{border:0;background:transparent;border-radius:99px;padding:8px 18px;font-weight:800;font-size:15px;cursor:pointer;color:#555}
+.toggle button[aria-pressed="true"]{background:var(--ink);color:var(--lime)}
+.toggle .save{font-size:12px;background:#FF5C28;color:#fff;border-radius:99px;padding:2px 7px;margin-left:6px;vertical-align:middle}
+.assure{display:flex;gap:10px;align-items:center;background:var(--deep);color:#FFF8D6;border-radius:14px;padding:12px 14px;font-size:14px;border:1.5px solid #111;box-shadow:4px 4px 0 rgba(19,21,18,.25)}
+.assure b{color:var(--lime)}
+.shield{flex:0 0 36px;width:36px;height:36px;border-radius:10px;background:var(--lime);display:grid;place-items:center}
+/* single value offer bar - eye lands here */
+.offer-bar{margin:4px 0 30px;background:#111;color:#fff;border:1.5px solid #111;border-radius:14px;box-shadow:4px 4px 0 #111, inset 0 0 0 1px #2A352E;display:flex;align-items:center;gap:14px;padding:11px 12px 11px 14px;position:relative;overflow:hidden}
+.offer-bar::before{content:"";position:absolute;left:0;top:0;bottom:0;width:8px;background:var(--lime)}
+.offer-pill{flex:0 0 auto;background:var(--lime);color:#111;font-weight:900;font-size:13px;border-radius:99px;padding:5px 11px;margin-left:6px}
+.offer-main{font-size:16.5px;font-weight:800;letter-spacing:-.01em;white-space:nowrap}
+.offer-main strong{color:var(--lime)}
+.offer-sub{font-size:14px;color:#CBD8B8;font-weight:500;white-space:nowrap}
+.offer-cta{margin-left:auto;background:#fff;color:#111;font-weight:900;font-size:15px;border-radius:10px;padding:9px 16px;border:0;cursor:pointer;white-space:nowrap}
+.offer-cta:hover{background:var(--lime)}
+/* pricing with dominant diagonal + object */
+.grid-wrap{position:relative}
+.motion-beam{position:absolute;top:34%;left:-28px;right:-28px;height:104px;background:var(--lime);border:1.7px solid #111;border-radius:16px;transform:rotate(-3deg);z-index:0;box-shadow:5px 5px 0 #111;overflow:hidden;pointer-events:none}
+.motion-beam::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(-55deg, transparent 0 20px, rgba(16,31,23,.14) 20px 22px)}
+.motion-beam::after{content:"● REC 00:12:34  ──▶  요약중  ──▶  완료  ● REC 00:12:34  ──▶  요약중  ──▶  완료  ● REC 00:12:34  ──▶  요약중";position:absolute;top:50%;left:16px;right:0;transform:translateY(-50%);font-family:Inter,sans-serif;font-weight:900;font-size:18px;letter-spacing:.04em;color:#111;opacity:.18;white-space:nowrap}
+.grid{display:grid;grid-template-columns:1fr 1.08fr 1fr;gap:18px;align-items:stretch;position:relative;z-index:1}
+.card{background:var(--paper);border:1.7px solid var(--ink);border-radius:22px;padding:22px 22px 18px;position:relative;box-shadow:5px 5px 0 #131512;display:flex;flex-direction:column}
+.card.pro{background:linear-gradient(180deg,#1B4530 0%, var(--deep) 42%), var(--deep);color:#F5FFD0;border-color:#111;box-shadow:0 24px 60px rgba(16,31,23,.38), 5px 5px 0 #111;transform:translateY(-6px)}
+.card.pro::after{content:"";position:absolute;inset:-1px;border:2px solid var(--lime);border-radius:22px;pointer-events:none;opacity:.9}
+.best{position:absolute;top:0;left:50%;transform:translate(-50%,-50%);background:var(--lime);color:#111;font-weight:900;font-size:13px;border:1.5px solid #111;border-radius:99px;padding:6px 14px;box-shadow:2px 2px 0 #111;white-space:nowrap;z-index:4}
+/* dominant object silhouette : recorder puck + motion streaks */
+.pro-object{position:absolute;top:-42px;right:18px;z-index:5;display:flex;align-items:center;pointer-events:none}
+.streaks{display:flex;flex-direction:column;gap:5px;margin-right:-8px}
+.streaks i{display:block;height:8px;border-radius:99px;background:#111;border:1.5px solid #111}
+.streaks i:nth-child(1){width:54px;background:var(--lime)}
+.streaks i:nth-child(2){width:38px;background:#fff;margin-left:16px}
+.streaks i:nth-child(3){width:48px;background:var(--lime);margin-left:6px}
+.puck{width:78px;height:78px;border-radius:50%;background:#111;border:3px solid var(--lime);box-shadow:3px 3px 0 #111, 0 0 0 6px #111;display:grid;place-items:center;position:relative;transform:rotate(8deg)}
+.puck::before{content:"";position:absolute;inset:8px;border:1.5px dashed #5A6B5E;border-radius:50%}
+.rec-dot{width:12px;height:12px;border-radius:50%;background:#FF3B30;box-shadow:0 0 0 4px #FF3B302E;animation:blink 1.2s infinite}
+@keyframes blink{50%{opacity:.35}}
+.puck b{position:absolute;bottom:10px;font-family:Inter,sans-serif;font-size:9px;letter-spacing:.12em;color:var(--lime)}
+.done-chip{margin-left:10px;background:#fff;color:#111;border:1.5px solid #111;border-radius:12px;padding:7px 10px;font-size:13px;font-weight:900;box-shadow:3px 3px 0 #111;transform:rotate(3deg);line-height:1.3}
+.done-chip small{display:block;font-size:11.5px;font-weight:700;color:#0E7A4F}
+.pname{font-size:15px;font-weight:800;letter-spacing:.06em}
+.pname span{opacity:.7;font-weight:500}
+.pro .pname{color:var(--lime)}
+.pdesc{font-size:16px;margin:2px 0 10px}
+.pro .pdesc{color:#fff}
+.price{display:flex;align-items:baseline;gap:6px;margin:4px 0}
+.price strong{font-family:Inter,"Noto Sans KR",sans-serif;font-size:42px;font-weight:900;letter-spacing:-.05em;line-height:1}
+.price small{font-size:16px;font-weight:700}
+.per{font-size:13.5px;opacity:.75;margin-bottom:12px}
+.pro .per{color:#D8E8B8}
+.cta{border-radius:14px;padding:13px;font-weight:900;font-size:16px;cursor:pointer;border:1.7px solid #111;width:100%}
+.cta.light{background:#fff}
+.cta.light:hover{background:#111;color:var(--lime)}
+.cta.lime{background:var(--lime);box-shadow:0 6px 0 #7A9B00}
+.cta.lime:hover{background:var(--lime2)}
+.cta.darkline{background:transparent;color:#111}
+.micro{font-size:13.5px;text-align:center;margin:8px 0 12px;font-weight:700}
+.pro .micro{color:var(--lime)}
+ul{list-style:none;display:grid;gap:9px;font-size:15.5px;line-height:1.5;border-top:1px dashed #CFC59E;padding-top:12px}
+.pro ul{border-color:#2E4A3A}
+li{display:flex;gap:9px;align-items:flex-start}
+.tick{flex:0 0 22px;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-size:13px;font-weight:900;margin-top:2px}
+.light-tick{background:#0E7A4F;color:#fff}
+.lime-tick{background:var(--lime);color:#111}
+li.dim{opacity:.62}
+.pro li{color:#EDF5D6}
+.pro li strong{color:#fff}
+.trust{margin-top:16px;background:#fff;border:1.5px solid var(--ink);border-radius:16px;box-shadow:4px 4px 0 #111;display:flex;align-items:center;justify-content:space-between;padding:12px 18px;gap:18px}
+.logos{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.logos label{font-size:12.5px;font-weight:800;letter-spacing:.08em;color:#6B6E65}
+.logo{font-weight:900;font-size:15px;letter-spacing:-.02em;border:1px solid #E2DCC3;background:#FFFEF7;border-radius:9px;padding:5px 11px;color:#2A2D28}
+.logo i{font-style:normal;color:#0E7A4F}
+.guar{display:flex;align-items:center;gap:12px;font-size:14.5px}
+.guar b{font-size:15px}
+.badges{display:flex;gap:6px}
+.badges span{font-size:12px;font-weight:800;border:1px solid #111;border-radius:99px;padding:3px 9px;background:var(--cream)}
+.foot{display:flex;justify-content:space-between;margin-top:10px;font-size:13.5px;color:#6B6E65;font-weight:500}
+a:focus-visible,button:focus-visible{outline:3px solid #0E7A4F;outline-offset:2px}
+@media(max-width:1020px){
+.hero{grid-template-columns:1fr}.toggle{align-self:flex-start}
+.grid{grid-template-columns:1fr}.card.pro{transform:none}
+.motion-beam{display:none}.pro-object{top:-30px}
+.trust{flex-direction:column;align-items:flex-start}
+h1{font-size:36px}.offer-bar{flex-wrap:wrap}.offer-cta{margin-left:0}
+nav{display:none}
+}
+</style>
+</head>
+<body>
+<div class="page">
+<header>
+<div class="brand"><div class="mark"><span>●</span></div>밋로그 <small>MEETLOG AI</small></div>
+<nav aria-label="주요 메뉴">
+<a href="#" class="on">요금제</a><a href="#">기능</a><a href="#">고객사례</a><a href="#">보안</a><a href="#">도움말</a>
+</nav>
+<div class="hact"><a class="btn-ghost" href="#">로그인</a><a class="btn-dark" href="#">무료로 시작 →</a></div>
+</header>
+
+<section class="hero">
+<div class="hero-left">
+<div class="eyebrow"><span class="dot"></span> 요금제 PRICING <em>한국어 특화 AI</em></div>
+<h1>회의 끝나면,<br><span class="hl"><i>정리도 끝나있다.</i></span></h1>
+<p class="sub">녹음하면 <strong>AI가 요약·할 일·공유까지 3분</strong> 만에 끝냅니다. 팀 규모대로 고르세요. 신용카드 등록 없이 시작합니다.</p>
+<div class="rating"><div class="avatars" aria-hidden="true"><span style="background:#FFD84D">🐯</span><span style="background:#B8F36B">🐸</span><span style="background:#FFB3C7">🦊</span><span style="background:#111;color:#D9FF3D">+9</span></div><span class="stars">★★★★★</span> <span>4.9/5 · 12,400개 팀이 매일 기록 중</span></div>
+</div>
+<div class="hero-right">
+<div class="toggle" role="group" aria-label="결제 주기 선택">
+<button id="bM" aria-pressed="true" onclick="setBill('m')">월간 결제</button>
+<button id="bY" aria-pressed="false" onclick="setBill('y')">연간 결제 <span class="save">−20%</span></button>
+</div>
+<div class="assure"><div class="shield" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2 20 5v6c0 5-3.4 8.7-8 11-4.6-2.3-8-6-8-11V5l8-3Z" fill="#101F17"/><path d="m8.5 12 2.4 2.4L15.5 9.5" stroke="#D9FF3D" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><b>30일 100% 환불 보장</b><br><span style="opacity:.8">이유 묻지 않습니다. 클릭 한 번으로 환불·데이터 삭제까지.</span></div></div>
+</div>
+</section>
+
+<div class="offer-bar" aria-label="추천 요금제 요약">
+<span class="offer-pill">PRO 추천</span>
+<span class="offer-main">1시간 회의 → 3분 요약 · <strong>Pro 월 12,000원</strong></span>
+<span class="offer-sub">14일 무료체험 · 카드 등록 없음</span>
+<button class="offer-cta" onclick="document.getElementById('proCta').focus()">Pro 무료로 시작 →</button>
+</div>
+
+<main class="grid-wrap" aria-label="요금제 선택">
+<div class="motion-beam" aria-hidden="true"></div>
+<div class="grid">
+<article class="card">
+<div class="pname">FREE <span>· 가볍게 시작</span></div>
+<p class="pdesc">개인 메모용으로 충분해요.</p>
+<div class="price"><strong>₩0</strong><small> / 영원히 무료</small></div>
+<div class="per">신용카드 등록 없음 · 1분 만에 시작</div>
+<button class="cta light">무료로 시작하기</button>
+<div class="micro">월 300분 · 핵심 요약 맛보기</div>
+<ul>
+<li><span class="tick light-tick">✓</span><span><strong>월 300분</strong> 음성 기록·업로드</span></li>
+<li><span class="tick light-tick">✓</span><span>AI 요약 월 10회 · 화자 구분 3인</span></li>
+<li><span class="tick light-tick">✓</span><span>한국어·영어 실시간 자막</span></li>
+<li><span class="tick light-tick">✓</span><span>회의 링크 공유 (7일 보관)</span></li>
+<li class="dim"><span class="tick" style="border:1.5px solid #999">–</span><span>Notion·Slack 연동 / 번역·아카이브 제외</span></li>
+</ul>
+</article>
+
+<article class="card pro" aria-label="Pro 요금제 추천">
+<div class="best">★ 가장 많이 선택 · 14일 무료체험</div>
+<div class="pro-object" aria-hidden="true">
+<div class="streaks"><i></i><i></i><i></i></div>
+<div class="puck"><span class="rec-dot"></span><b>MEETLOG</b></div>
+<div class="done-chip">요약 완료 ✓<small>할 일 5 · 3분 컷</small></div>
+</div>
+<div class="pname">PRO <span style="color:#B9CBA8">· 하루 400원의 비서</span></div>
+<p class="pdesc">회의 많은 실무자·프리랜서의 정답.</p>
+<div class="price"><strong id="proPrice">₩12,000</strong><small> / 월·인</small></div>
+<div class="per" id="proPer">월간 결제 · VAT 포함 · 언제든 해지 가능</div>
+<button class="cta lime" id="proCta">14일 무료로 Pro 써보기 →</button>
+<div class="micro" id="proMicro">지금 시작하면 첫 14일 + 월 1,500분 제공</div>
+<ul>
+<li><span class="tick lime-tick">✓</span><span><strong>월 1,500분</strong> + 초과 분당 8원</span></li>
+<li><span class="tick lime-tick">✓</span><span><strong>무제한 AI 요약</strong> · 할 일·결정사항 자동 추출</span></li>
+<li><span class="tick lime-tick">✓</span><span>실시간 자막 + <strong>31개 언어 번역</strong></span></li>
+<li><span class="tick lime-tick">✓</span><span>Notion·Slack·드라이브 <strong>자동 연동</strong></span></li>
+<li><span class="tick lime-tick">✓</span><span>무제한 검색 아카이브 · 화자 20인 분리</span></li>
+</ul>
+</article>
+
+<article class="card">
+<div class="pname">TEAM <span>· 보안과 협업이 필요할 때</span></div>
+<p class="pdesc">3인 이상 팀·조직용 올인원.</p>
+<div class="price"><strong id="teamPrice">₩24,000</strong><small> / 월·인</small></div>
+<div class="per" id="teamPer">월간 결제 · 3인부터 · VAT 포함</div>
+<button class="cta darkline">팀 도입 상담받기</button>
+<div class="micro">SSO·감사로그 포함 · 도입 교육 지원</div>
+<ul>
+<li><span class="tick light-tick">✓</span><span><strong>Pro 모든 기능</strong> + 팀 분당 풀링</span></li>
+<li><span class="tick light-tick">✓</span><span>SSO/SAML · 감사로그 · 보존 정책</span></li>
+<li><span class="tick light-tick">✓</span><span>워크스페이스·권한·통합 청구 관리</span></li>
+<li><span class="tick light-tick">✓</span><span>전담 CSM + 온보딩 교육 1회</span></li>
+<li><span class="tick light-tick">✓</span><span>API·웹훅 · ISMS / SOC2 준수</span></li>
+</ul>
+</article>
+</div>
+</main>
+
+<section class="trust" aria-label="신뢰 요소">
+<div class="logos"><label>도입팀</label><span class="logo">Toss<i>●</i></span><span class="logo">당근</span><span class="logo">무신사</span><span class="logo">쏘카</span><span class="logo">야놀자</span><span class="logo">+ 12,400팀</span></div>
+<div class="guar"><div class="badges"><span>ISMS</span><span>SOC2</span><span>ISO 27001</span></div><div><b>해지해도 기록은 30일간 보관</b> · 암호화 저장 · 국내 리전 보관</div></div>
+</section>
+<div class="foot"><span>모든 요금 VAT 포함 · 월간은 매월, 연간은 연 1회 청구 · 언제든 해지 가능</span><span>문의: pricing@meetlog.ai · 1544-0000 (평일 9–18시)</span></div>
+</div>
+<script>
+function setBill(t){
+const m=t==='m';
+document.getElementById('bM').setAttribute('aria-pressed',m);
+document.getElementById('bY').setAttribute('aria-pressed',!m);
+document.getElementById('proPrice').textContent=m?'₩12,000':'₩9,600';
+document.getElementById('teamPrice').textContent=m?'₩24,000':'₩19,200';
+document.getElementById('proPer').textContent=m?'월간 결제 · VAT 포함 · 언제든 해지 가능':'연간 결제 · 월 환산 · 2개월 무료 · VAT 포함';
+document.getElementById('teamPer').textContent=m?'월간 결제 · 3인부터 · VAT 포함':'연간 결제 · 월 환산 · 2개월 무료 · VAT 포함';
+document.getElementById('proMicro').textContent=m?'지금 시작하면 첫 14일 + 월 1,500분 제공':'연간 결제 시 월 2,400원 절약 · 14일 무료체험 동일';
+}
+</script>
+</body>
+</html>

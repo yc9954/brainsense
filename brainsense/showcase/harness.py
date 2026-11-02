@@ -89,6 +89,8 @@ def photo_gate(path: Path, brief: str, issue: str) -> tuple[bool, str]:
     """Muse (multimodal) looks at a sourced photo before the generator may use it: relevant to the brief,
     fit for a commercial first screen, no watermark/text/clutter. Keeps the Commons noise out of the page."""
     import base64
+    if not Path(path).exists():
+        return False, "missing file"
     img = base64.b64encode(Path(path).read_bytes()).decode()
     ext = "png" if str(path).lower().endswith(".png") else "jpeg"
     prompt = (f"Brief: {brief}\nThe photo is meant to fix: {issue}\n"
@@ -239,6 +241,7 @@ def run_brief(key: str, cfg: dict, run_dir: Path, rounds: int, patience: int, st
     ledger: list[dict] = []
     update_ledger(ledger, s0["critique"], 0)
     assets: list[dict] = []
+    rejected: set[str] = set()
     stale = 0
     for r in range(1, rounds + 1):
         open_issues = [i for i in ledger if i["resolved"] is None]
@@ -247,8 +250,12 @@ def run_brief(key: str, cfg: dict, run_dir: Path, rounds: int, patience: int, st
         wants_photo = [i for i in open_issues if re.search(r"얼굴|물체|장소|실루엣", i["text"]) and i["attempts"] >= 1] or (open_issues if r == 1 else [])
         if wants_photo and len(assets) < 8:
             dropped = 0
+            seen_paths = {a["path"] for a in assets} | rejected
             for q in plan_queries(brief, [i["text"] for i in wants_photo][:3]):
                 for a in source_images(q, d / "assets", n=3):
+                    if a["path"] in seen_paths:
+                        continue
+                    seen_paths.add(a["path"])
                     ok, why = photo_gate(d / a["path"], brief, wants_photo[0]["text"])
                     a["gate"] = why
                     if ok:
@@ -256,6 +263,7 @@ def run_brief(key: str, cfg: dict, run_dir: Path, rounds: int, patience: int, st
                         assets.append(a)
                     else:
                         dropped += 1
+                        rejected.add(a["path"])
                         (d / a["path"]).unlink(missing_ok=True)
             if sourced or dropped:
                 print(f"  r{r} sourced {len(sourced)} photo(s), gate dropped {dropped}: " + "; ".join(f"{a['title'][:28]} ({a['gate'][:5]})" for a in sourced))
