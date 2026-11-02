@@ -1,0 +1,373 @@
+{
+ "brief": "서울 성수동 3일 한정 팝업스토어 '스윗스팟 x 로컬 로스터리' 랜딩 첫 화면. 날짜·장소·사전예약 CTA. 20대 후반 여성 타깃, 감각적이지만 정보가 바로 읽혀야 함.",
+ "kind": "landing",
+ "baseline": {
+  "round": 0,
+  "accepted": true,
+  "ui_score": 0.6458704572245536,
+  "brain_only": 0.585,
+  "judge": 0.75,
+  "changes": [],
+  "sourced": [],
+  "diagnosis": [
+   "물체 형태(LO)·움직임(MT) 반응이 낮음: 뚜렷한 사물 실루엣이 없는 텍스트 위주 화면",
+   "보상 회로(OFC/vmPFC)는 켜졌는데 끌림 헤드는 평범: 가치 신호가 있지만 무엇이 좋은지 읽히지 않음",
+   "장소 영역(PPA)이 우세: 배경 풍경이 화면을 지배해 내용이 묻힘",
+   "주의 반응이 첫 2초 이후 꺼짐 (+0.62 → +0.47): 첫인상 뒤에 볼 게 없음"
+  ]
+ },
+ "best_round": 5,
+ "best": {
+  "round": 5,
+  "ui_score": 0.693157335829648,
+  "heads": {
+   "aesthetic": {
+    "score": 0.5756810307502747,
+    "percentile": 65.8176943699732,
+    "confidence": 0.15136206150054932,
+    "top": "▼ L_a24, ▲ L_31a"
+   },
+   "attention": {
+    "score": 0.5608855485916138,
+    "percentile": 61.64383561643836,
+    "confidence": 0.12177109718322754,
+    "top": "▲ 움직임·형태 평균, ▲ 기본 시각 평균"
+   }
+  },
+  "judge": {
+   "aesthetic": 0.778,
+   "clarity": 0.889,
+   "attention": 0.667,
+   "brief_fit": 0.889,
+   "judge_score": 0.806,
+   "reason": "Warm cohesive palette and polished illustration deliver clear date, place, and reservation CTA for the target, though left headline and right cup slightly compete for focus."
+  },
+  "brain_only": 0.637,
+  "critique": {
+   "kind": "landing",
+   "ranking": [
+    [
+     "scene_place",
+     1.234288222243145
+    ],
+    [
+     "value_vmpfc",
+     0.6163960164362082
+    ],
+    [
+     "attention_dorsal",
+     0.4964288323468972
+    ],
+    [
+     "control_dlpfc",
+     0.2724084783842038
+    ],
+    [
+     "face_body",
+     0.1591741464631703
+    ],
+    [
+     "visual_early",
+     -0.30263830453369334
+    ],
+    [
+     "language",
+     -0.4749381122946173
+    ],
+    [
+     "default_mode",
+     -0.5771550497584693
+    ],
+    [
+     "visual_motion",
+     -1.4239642292868468
+    ]
+   ],
+   "hook": {
+    "attention_early": 0.6589354005903263,
+    "attention_late": 0.4151755482251826,
+    "visual_early": 0.4900020189135411,
+    "visual_late": -0.6989584662573106
+   },
+   "diagnosis": [
+    "물체 형태(LO)·움직임(MT) 반응이 낮음: 뚜렷한 사물 실루엣이 없는 텍스트 위주 화면",
+    "주의 반응이 첫 2초 이후 꺼짐 (+0.66 → +0.42): 첫인상 뒤에 볼 게 없음"
+   ],
+   "directives": [
+    "Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion.",
+    "Add a second discovery after the hero (a detail reveal, micro-illustration, or a strong secondary block) so interest holds past 2 s."
+   ],
+   "cited_areas": [
+    "▼ 좌 전대상 24 (a24) [aesthetic]",
+    "▲ 좌 31a [aesthetic]",
+    "▲ 움직임·형태(MT/LO) 평균 [attention]",
+    "▲ 1차 시각(V1–V4) 평균 [attention]"
+   ],
+   "groups": [
+    "visual_motion",
+    ""
+   ],
+   "prompt_block": "BRAIN CRITIQUE (TRIBE v2 predicted human cortex while looking at the last render; values are relative within this image):\n- most driven regions: 장소·배경(PPA/RSC) +1.23, 보상·가치(OFC/vmPFC) +0.62, 시각 주의(IPS/FEF) +0.50; least: 기본모드(딴생각) -0.58, 움직임·형태(MT/LO) -1.42\n- first-2s hook vs later: attention +0.66 → +0.42, visual drive +0.49 → -0.70\n- areas the aesthetic head cites: ▼ 좌 전대상 24 (a24) [aesthetic]; ▲ 좌 31a [aesthetic]; ▲ 움직임·형태(MT/LO) 평균 [attention]; ▲ 1차 시각(V1–V4) 평균 [attention]\n- diagnosis: 물체 형태(LO)·움직임(MT) 반응이 낮음: 뚜렷한 사물 실루엣이 없는 텍스트 위주 화면 / 주의 반응이 첫 2초 이후 꺼짐 (+0.66 → +0.42): 첫인상 뒤에 볼 게 없음\n- DO NEXT (highest priority first): (1) Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion. (2) Add a second discovery after the hero (a detail reveal, micro-illustration, or a strong secondary block) so interest holds past 2 s."
+  }
+ },
+ "rounds": [
+  {
+   "round": 0,
+   "accepted": true,
+   "ui_score": 0.6458704572245536,
+   "brain_only": 0.585,
+   "judge": 0.75,
+   "changes": [],
+   "sourced": [],
+   "diagnosis": [
+    "물체 형태(LO)·움직임(MT) 반응이 낮음: 뚜렷한 사물 실루엣이 없는 텍스트 위주 화면",
+    "보상 회로(OFC/vmPFC)는 켜졌는데 끌림 헤드는 평범: 가치 신호가 있지만 무엇이 좋은지 읽히지 않음",
+    "장소 영역(PPA)이 우세: 배경 풍경이 화면을 지배해 내용이 묻힘",
+    "주의 반응이 첫 2초 이후 꺼짐 (+0.62 → +0.47): 첫인상 뒤에 볼 게 없음"
+   ]
+  },
+  {
+   "round": 1,
+   "accepted": false,
+   "ui_score": 0.5352157795550258,
+   "brain_only": 0.382,
+   "judge": 0.694,
+   "changes": [
+    {
+     "issue": "물체형태lo움직임mt반응이낮음",
+     "change": "컵 실루엣 1.3배 확대·굵은 외곽선으로 단일 포컬화 + 아치 상단 -6도 사선 리본과 스피드선 애니메이션으로 운동감 부여, 기존 스핀·스티커 3종 제거"
+    },
+    {
+     "issue": "보상회로ofcvmpfc는켜졌는데끌림헤드는평범",
+     "change": "시선이 닿는 컵 바로 밑에 단일 혜택라인(6,800→4,800원 쿠폰가+리유저블컵)으로 통합, 경쟁하던 가격택·필·티켓 스티커 삭제"
+    },
+    {
+     "issue": "장소영역ppa이우세",
+     "change": "도트 배경·그라데이션 아치 제거하고 크림 솔리드+화이트 카피패널+딥브라운 솔리드 아치로 단순화, 카피는 흰 패널 위에만 배치"
+    },
+    {
+     "issue": "주의반응이첫초이후꺼짐",
+     "change": "히어로 직후 다크 일자별 한정 스트립(11.14/15/16 리빌 블록) 추가해 2초 이후 두 번째 발견 제공"
+    },
+    {
+     "issue": "단일 포컬 약함(디자이너 리뷰)",
+     "change": "정보카드 2종→1줄 바 통합, 얼굴 스택·마퀴 문구 축소, CTA를 사전예약 1개로 집중"
+    }
+   ],
+   "sourced": [],
+   "diagnosis": [
+    "물체 형태(LO)·움직임(MT) 반응이 낮음: 뚜렷한 사물 실루엣이 없는 텍스트 위주 화면",
+    "장소 영역(PPA)이 우세: 배경 풍경이 화면을 지배해 내용이 묻힘",
+    "보상 회로(OFC/vmPFC)는 켜졌는데 끌림 헤드는 평범: 가치 신호가 있지만 무엇이 좋은지 읽히지 않음"
+   ]
+  },
+  {
+   "round": 2,
+   "accepted": false,
+   "ui_score": 0.6345773405228403,
+   "brain_only": 0.476,
+   "judge": 0.806,
+   "changes": [
+    {
+     "issue": "물체형태lo움직임mt반응이낮음",
+     "change": "컵을 아치 밖으로 돌출시킨 단일 초대형 실루엣(320px·8px 외곽선)으로 키우고 스핀·스티커 3종 삭제, 대신 아치를 가로지르는 -8도 오렌지 사선 슬래시+스피드선 3종 애니메이션으로 운동 방향 부여"
+    },
+    {
+     "issue": "보상회로ofcvmpfc는켜졌는데끌림헤드는평범",
+     "change": "경쟁하던 가격택·선착순필·티켓 스티커 전부 삭제하고 컵 바로 밑에 단일 혜택바(4,800원 쿠폰가+리유저블컵)만 배치, 좌측 마이크로는 입장 혜택으로 분리"
+    },
+    {
+     "issue": "장소영역ppa이우세",
+     "change": "도트 배경·그라데이션 아치 제거, 크림 솔리드 배경+화이트 카피패널+딥브라운 솔리드 아치로 단순화, 정보카드 2종을 단일 한줄 바로 통합"
+    },
+    {
+     "issue": "주의반응이첫초이후꺼짐",
+     "change": "일자 스트립 대신 히어로 직후 예약 3스텝+실물 티켓 목업(바코드·단면 일러스트) 상세 리빌 블록 추가해 두 번째 발견 제공"
+    }
+   ],
+   "sourced": [],
+   "diagnosis": [
+    "물체 형태(LO)·움직임(MT) 반응이 낮음: 뚜렷한 사물 실루엣이 없는 텍스트 위주 화면",
+    "장소 영역(PPA)이 우세: 배경 풍경이 화면을 지배해 내용이 묻힘",
+    "보상 회로(OFC/vmPFC)는 켜졌는데 끌림 헤드는 평범: 가치 신호가 있지만 무엇이 좋은지 읽히지 않음"
+   ]
+  },
+  {
+   "round": 3,
+   "accepted": true,
+   "ui_score": 0.6610025461093467,
+   "brain_only": 0.546,
+   "judge": 0.806,
+   "changes": [
+    {
+     "issue": "물체형태·움직임 반응 낮음",
+     "change": "스티커·스핀·가격택 전부 삭제하고 컵을 340px 단일 초대형으로 확대·앞으로 -5도 기울여 아치 상단 돌출, 뒤에 반투명 에코 실루엣 2개로 전진 모션 표현"
+    },
+    {
+     "issue": "끌림 헤드 평범",
+     "change": "경쟁 혜택 요소 제거하고 시선이 닿는 컵 바로 밑에 단일 혜택바(4,800원 쿠폰가+리유저블컵)만 겹쳐 배치, 좌측은 무료입장 안내로 분리"
+    },
+    {
+     "issue": "장소영역 우세",
+     "change": "도트·그라데이션 제거, 크림 솔리드 배경+화이트 카피 패널+딥브라운 솔리드 아치로 단순화해 카피는 패널 위에만 배치"
+    },
+    {
+     "issue": "2초 이후 주의 꺼짐",
+     "change": "마퀴 아래 다크 단면 도해 리빌 블록(라떼 레이어·크루아상·포토존)과 스크롤 큐를 추가해 두 번째 발견 제공"
+    }
+   ],
+   "sourced": [],
+   "diagnosis": [
+    "물체 형태(LO)·움직임(MT) 반응이 낮음: 뚜렷한 사물 실루엣이 없는 텍스트 위주 화면",
+    "장소 영역(PPA)이 우세: 배경 풍경이 화면을 지배해 내용이 묻힘",
+    "보상 회로(OFC/vmPFC)는 켜졌는데 끌림 헤드는 평범: 가치 신호가 있지만 무엇이 좋은지 읽히지 않음",
+    "주의 반응이 첫 2초 이후 꺼짐 (+0.56 → +0.40): 첫인상 뒤에 볼 게 없음"
+   ]
+  },
+  {
+   "round": 4,
+   "accepted": false,
+   "ui_score": 0.6440942137293771,
+   "brain_only": 0.5,
+   "judge": 0.806,
+   "changes": [
+    {
+     "issue": "물체형태LO·움직임MT 반응이낮음",
+     "change": "아치+사선슬래시 확대를 버리고 초대형 티켓 프레임(노치+천공+바코드)을 단일 오브제로 교체, 스팀·떨어지는 딸기·대각선 샤인 스윕으로 운동감 부여"
+    },
+    {
+     "issue": "보상회로OFC/vmPFC 끌림헤드 평범",
+     "change": "하단 혜택바 삭제하고 컵에 끈으로 매단 행택형 가격택(4,800원+리유저블컵)으로 눈길 옆에 단일 배치, 마퀴의 2,000원 경쟁가격 삭제"
+    },
+    {
+     "issue": "장소영역PPA 우세",
+     "change": "620px 딥브라운 아치 풍경을 버리고 크림 바탕 위 화이트 히어로 카드+컴팩트 티켓(520px)으로 크롭, 카피 전면 솔리드 패널화"
+    },
+    {
+     "issue": "주의반응 첫초이후꺼짐",
+     "change": "정적 3카드 대신 컵 단면 레이어 도감(SVG 파도+호버 하이라이트)과 일자별 리빌 탭을 갖춘 인터랙티브 두번째 발견 블록으로 교체"
+    }
+   ],
+   "sourced": [],
+   "diagnosis": [
+    "물체 형태(LO)·움직임(MT) 반응이 낮음: 뚜렷한 사물 실루엣이 없는 텍스트 위주 화면",
+    "장소 영역(PPA)이 우세: 배경 풍경이 화면을 지배해 내용이 묻힘",
+    "보상 회로(OFC/vmPFC)는 켜졌는데 끌림 헤드는 평범: 가치 신호가 있지만 무엇이 좋은지 읽히지 않음"
+   ]
+  },
+  {
+   "round": 5,
+   "accepted": true,
+   "ui_score": 0.693157335829648,
+   "brain_only": 0.637,
+   "judge": 0.806,
+   "changes": [
+    {
+     "issue": "물체형태lo움직임mt반응이낮음",
+     "change": "아치 삭제하고 단일 컵+자이언트 딸기 실루엣+ -12도 사선 무빙밴드+회전 뱃지로 교체, 샤인스윕·스피드선으로 운동감 부여"
+    },
+    {
+     "issue": "보상회로ofcvmpfc는켜졌는데끌림헤드는평범",
+     "change": "첫화면 가격을 히어로오퍼 1곳(4,800원+리유저블컵)으로 통일, 별점·2,348명·마퀴쿠폰가 삭제해 경쟁신호 제거"
+    },
+    {
+     "issue": "장소영역ppa이우세",
+     "change": "딥브라운 대형 아치 풍경 제거, 화이트 스테이지+단일 피치원 단일배경으로 축소해 컵이 프레임 독점"
+    },
+    {
+     "issue": "주의반응이첫초이후꺼짐",
+     "change": "히어로 직후 요일탭(금/토/일) 자동순환+레이어 게이지 애니메이션 상세 리빌 블록으로 두번째 발견 추가"
+    }
+   ],
+   "sourced": [],
+   "diagnosis": [
+    "물체 형태(LO)·움직임(MT) 반응이 낮음: 뚜렷한 사물 실루엣이 없는 텍스트 위주 화면",
+    "주의 반응이 첫 2초 이후 꺼짐 (+0.66 → +0.42): 첫인상 뒤에 볼 게 없음"
+   ]
+  },
+  {
+   "round": 6,
+   "accepted": false,
+   "ui_score": 0.6676396576031454,
+   "brain_only": 0.607,
+   "judge": 0.778,
+   "changes": [
+    {
+     "issue": "주의반응이첫초이후꺼짐",
+     "change": "탭 자동순환+게이지(실패작) 제거하고 히어로 내부 1.7-2.5초 지연 팝업 재료칩 3개 + 호버로 열리는 돋보기 단면 핫스팟 상세블록으로 교체해 두번째 발견을 스크롤 없이 예약"
+    }
+   ],
+   "sourced": [],
+   "diagnosis": [
+    "물체 형태(LO)·움직임(MT) 반응이 낮음: 뚜렷한 사물 실루엣이 없는 텍스트 위주 화면",
+    "장소 영역(PPA)이 우세: 배경 풍경이 화면을 지배해 내용이 묻힘",
+    "주의 반응이 첫 2초 이후 꺼짐 (+0.59 → +0.36): 첫인상 뒤에 볼 게 없음"
+   ]
+  }
+ ],
+ "ledger": [
+  {
+   "id": "물체형태lo움직임mt반응이낮음",
+   "text": "물체 형태(LO)·움직임(MT) 반응이 낮음: 뚜렷한 사물 실루엣이 없는 텍스트 위주 화면",
+   "directive": "Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion.",
+   "group": "visual_motion",
+   "z_opened": -1.9049127681563862,
+   "opened": 0,
+   "resolved": 5,
+   "attempts": 5,
+   "tried": [
+    "r1: 컵 실루엣 1.3배 확대·굵은 외곽선으로 단일 포컬화 + 아치 상단 -6도 사선 리본과 스피드선 애니메이션으로 운동감 부여, 기존 스핀·스티커 3종 제거",
+    "r2: 컵을 아치 밖으로 돌출시킨 단일 초대형 실루엣(320px·8px 외곽선)으로 키우고 스핀·스티커 3종 삭제, 대신 아치를 가로지르는 -8도 오렌지 사선 슬래시+스",
+    "r4: 아치+사선슬래시 확대를 버리고 초대형 티켓 프레임(노치+천공+바코드)을 단일 오브제로 교체, 스팀·떨어지는 딸기·대각선 샤인 스윕으로 운동감 부여",
+    "r5: 아치 삭제하고 단일 컵+자이언트 딸기 실루엣+ -12도 사선 무빙밴드+회전 뱃지로 교체, 샤인스윕·스피드선으로 운동감 부여"
+   ]
+  },
+  {
+   "id": "보상회로ofcvmpfc는켜졌는데끌림헤드는평범",
+   "text": "보상 회로(OFC/vmPFC)는 켜졌는데 끌림 헤드는 평범: 가치 신호가 있지만 무엇이 좋은지 읽히지 않음",
+   "directive": "Name the value explicitly next to what the eye lands on: one benefit line + price/offer under the hero, nothing else competing.",
+   "group": "value_vmpfc",
+   "z_opened": 0.7385576833133288,
+   "opened": 0,
+   "resolved": 5,
+   "attempts": 5,
+   "tried": [
+    "r1: 시선이 닿는 컵 바로 밑에 단일 혜택라인(6,800→4,800원 쿠폰가+리유저블컵)으로 통합, 경쟁하던 가격택·필·티켓 스티커 삭제",
+    "r2: 경쟁하던 가격택·선착순필·티켓 스티커 전부 삭제하고 컵 바로 밑에 단일 혜택바(4,800원 쿠폰가+리유저블컵)만 배치, 좌측 마이크로는 입장 혜택으로 분리",
+    "r5: 첫화면 가격을 히어로오퍼 1곳(4,800원+리유저블컵)으로 통일, 별점·2,348명·마퀴쿠폰가 삭제해 경쟁신호 제거"
+   ]
+  },
+  {
+   "id": "장소영역ppa이우세",
+   "text": "장소 영역(PPA)이 우세: 배경 풍경이 화면을 지배해 내용이 묻힘",
+   "directive": "Simplify the environment: crop or blur the scene, put copy on a solid panel, let one subject own the frame.",
+   "group": "scene_place",
+   "z_opened": 1.1114863029912903,
+   "opened": 0,
+   "resolved": 5,
+   "attempts": 5,
+   "tried": [
+    "r1: 도트 배경·그라데이션 아치 제거하고 크림 솔리드+화이트 카피패널+딥브라운 솔리드 아치로 단순화, 카피는 흰 패널 위에만 배치",
+    "r2: 도트 배경·그라데이션 아치 제거, 크림 솔리드 배경+화이트 카피패널+딥브라운 솔리드 아치로 단순화, 정보카드 2종을 단일 한줄 바로 통합",
+    "r5: 딥브라운 대형 아치 풍경 제거, 화이트 스테이지+단일 피치원 단일배경으로 축소해 컵이 프레임 독점"
+   ]
+  },
+  {
+   "id": "주의반응이첫초이후꺼짐",
+   "text": "주의 반응이 첫 2초 이후 꺼짐 (+0.62 → +0.47): 첫인상 뒤에 볼 게 없음",
+   "directive": "Add a second discovery after the hero (a detail reveal, micro-illustration, or a strong secondary block) so interest holds past 2 s.",
+   "group": "",
+   "z_opened": null,
+   "opened": 0,
+   "resolved": null,
+   "attempts": 6,
+   "tried": [
+    "r1: 히어로 직후 다크 일자별 한정 스트립(11.14/15/16 리빌 블록) 추가해 2초 이후 두 번째 발견 제공",
+    "r2: 일자 스트립 대신 히어로 직후 예약 3스텝+실물 티켓 목업(바코드·단면 일러스트) 상세 리빌 블록 추가해 두 번째 발견 제공",
+    "r5: 히어로 직후 요일탭(금/토/일) 자동순환+레이어 게이지 애니메이션 상세 리빌 블록으로 두번째 발견 추가",
+    "r6: 탭 자동순환+게이지(실패작) 제거하고 히어로 내부 1.7-2.5초 지연 팝업 재료칩 3개 + 호버로 열리는 돋보기 단면 핫스팟 상세블록으로 교체해 두번째 발견을 "
+   ]
+  }
+ ],
+ "assets": []
+}

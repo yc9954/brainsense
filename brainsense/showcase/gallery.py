@@ -46,7 +46,7 @@ h1{{font-weight:600;font-size:22px}} h2{{font-size:16px;font-weight:600;margin:4
 def build_index(out_dir: Path) -> Path:
     """results/showcase/index.html: one page linking every run's gallery with its headline numbers."""
     from .report import summarize
-    runs = sorted((p for p in out_dir.iterdir() if (p / "summary.json").exists()), key=lambda p: p.stat().st_mtime, reverse=True)
+    runs = sorted((p for p in out_dir.iterdir() if (p / "summary.json").exists() and p.name not in ("harness", "redesign")), key=lambda p: p.stat().st_mtime, reverse=True)
     parts = ["""<!doctype html><html lang=ko><head><meta charset=utf-8><title>BrainSense showcase runs</title>
 <style>body{font-family:-apple-system,Pretendard,sans-serif;background:#0b0b0f;color:#eee;margin:0;padding:32px}
 h1{font-weight:600;font-size:22px} table{border-collapse:collapse;font-size:13px;margin-top:16px} td,th{padding:8px 12px;border-bottom:1px solid #23232b;text-align:left}
@@ -65,6 +65,18 @@ a{color:#ffb38a} .k{color:#8b8b96}</style></head><body><h1>BrainSense showcase �
                      f"<td>{f('brain_loop_vs_oneshot')}</td><td>{f('brain_loop_vs_muse_loop')}</td>"
                      f"<td>{b.get('oneshot', float('nan')):.3f} / {b.get('muse_loop', float('nan')):.3f} / {b.get('brain_loop', float('nan')):.3f}</td></tr>")
     parts.append("</table>")
+    hz = out_dir / "harness"
+    hruns = sorted((p for p in hz.iterdir() if (p / "summary.json").exists()), key=lambda p: p.stat().st_mtime, reverse=True) if hz.exists() else []
+    if hruns:
+        parts.append("<h1 style='margin-top:36px'>같은 브리프, 제로부터 — Muse 한 번 vs BrainSense 하네스 (문제 장부 + 사진 소싱 + 개선될 때만 채택)</h1>"
+                     "<table><tr><th>run / brief</th><th>ui_score Muse 한 번 → 하네스</th><th>rounds kept</th><th>issues fixed</th><th>photos</th></tr>")
+        for r in hruns:
+            summ = json.loads((r / "summary.json").read_text(encoding="utf-8"))
+            for key, v in summ.items():
+                parts.append(f"<tr><td><a href='harness/{r.name}/{key}/index.html'>{html.escape(r.name)} / {html.escape(key)}</a></td>"
+                             f"<td>{v['baseline_ui']:.3f} → <b>{v['best_ui']:.3f}</b> ({v['best_ui'] - v['baseline_ui']:+.3f})</td><td>r{v['best_round']}</td>"
+                             f"<td>{v['issues_fixed']}/{v['issues']}</td><td>{v['photos']}</td></tr>")
+        parts.append("</table>")
     rd = out_dir / "redesign"
     cases = sorted((p for p in rd.iterdir() if (p / "report.json").exists()), key=lambda p: p.stat().st_mtime, reverse=True) if rd.exists() else []
     if cases:

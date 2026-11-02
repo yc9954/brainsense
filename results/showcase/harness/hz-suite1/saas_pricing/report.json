@@ -1,0 +1,230 @@
+{
+ "brief": "AI 회의록 SaaS의 가격 페이지 첫 화면. Free / Pro(월 12,000원) / Team 3단, Pro 강조, 신뢰 요소(고객 로고 자리, 환불 보장) 포함.",
+ "kind": "app",
+ "baseline": {
+  "round": 0,
+  "accepted": true,
+  "ui_score": 0.6169449143397099,
+  "brain_only": 0.479,
+  "judge": 0.75,
+  "changes": [],
+  "sourced": [],
+  "diagnosis": [
+   "물체 형태(LO)·움직임(MT) 반응이 낮음: 뚜렷한 사물 실루엣이 없는 텍스트 위주 화면",
+   "장소 영역(PPA)이 우세: 배경 풍경이 화면을 지배해 내용이 묻힘"
+  ]
+ },
+ "best_round": 0,
+ "best": {
+  "round": 0,
+  "ui_score": 0.6169449143397099,
+  "heads": {
+   "aesthetic": {
+    "score": 0.4376116394996643,
+    "percentile": 44.3029490616622,
+    "confidence": 0.12477672100067139,
+    "top": "▲ L_pOFC, ▼ L_a24"
+   },
+   "attention": {
+    "score": 0.5165678262710571,
+    "percentile": 51.50684931506849,
+    "confidence": 0.03313565254211426,
+    "top": "▲ 움직임·형태 평균, ▲ 움직임·형태 최대"
+   }
+  },
+  "judge": {
+   "aesthetic": 0.778,
+   "clarity": 0.778,
+   "attention": 0.889,
+   "brief_fit": 0.556,
+   "judge_score": 0.75,
+   "reason": "Strong Pro highlight and polished dark-lime system, but missing customer logos and refund guarantee weakens brief fit."
+  },
+  "brain_only": 0.479,
+  "critique": {
+   "kind": "app",
+   "ranking": [
+    [
+     "scene_place",
+     1.3051367529932278
+    ],
+    [
+     "value_vmpfc",
+     0.8702164752233027
+    ],
+    [
+     "visual_early",
+     0.689549475356216
+    ],
+    [
+     "control_dlpfc",
+     0.44037111317998107
+    ],
+    [
+     "attention_dorsal",
+     0.3999409512247059
+    ],
+    [
+     "language",
+     -0.2953225033199821
+    ],
+    [
+     "default_mode",
+     -0.5045781951136022
+    ],
+    [
+     "face_body",
+     -0.8911176096232403
+    ],
+    [
+     "visual_motion",
+     -2.014196459920609
+    ]
+   ],
+   "hook": {
+    "attention_early": 0.3782879774578641,
+    "attention_late": 0.41076743810812694,
+    "visual_early": 1.0420869544976101,
+    "visual_late": 0.5132807357855189
+   },
+   "diagnosis": [
+    "물체 형태(LO)·움직임(MT) 반응이 낮음: 뚜렷한 사물 실루엣이 없는 텍스트 위주 화면",
+    "장소 영역(PPA)이 우세: 배경 풍경이 화면을 지배해 내용이 묻힘"
+   ],
+   "directives": [
+    "Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion.",
+    "Simplify the environment: crop or blur the scene, put copy on a solid panel, let one subject own the frame."
+   ],
+   "cited_areas": [
+    "▲ 좌 후측 안와전두 보상 (pOFC) [aesthetic]",
+    "▼ 좌 전대상 24 (a24) [aesthetic]",
+    "▲ 움직임·형태(MT/LO) 평균 [attention]",
+    "▲ 움직임·형태(MT/LO) 최대 [attention]"
+   ],
+   "groups": [
+    "visual_motion",
+    "scene_place"
+   ],
+   "prompt_block": "BRAIN CRITIQUE (TRIBE v2 predicted human cortex while looking at the last render; values are relative within this image):\n- most driven regions: 장소·배경(PPA/RSC) +1.31, 보상·가치(OFC/vmPFC) +0.87, 1차 시각(V1–V4) +0.69; least: 얼굴·사람(FFA/STS) -0.89, 움직임·형태(MT/LO) -2.01\n- first-2s hook vs later: attention +0.38 → +0.41, visual drive +1.04 → +0.51\n- areas the aesthetic head cites: ▲ 좌 후측 안와전두 보상 (pOFC) [aesthetic]; ▼ 좌 전대상 24 (a24) [aesthetic]; ▲ 움직임·형태(MT/LO) 평균 [attention]; ▲ 움직임·형태(MT/LO) 최대 [attention]\n- diagnosis: 물체 형태(LO)·움직임(MT) 반응이 낮음: 뚜렷한 사물 실루엣이 없는 텍스트 위주 화면 / 장소 영역(PPA)이 우세: 배경 풍경이 화면을 지배해 내용이 묻힘\n- DO NEXT (highest priority first): (1) Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion. (2) Simplify the environment: crop or blur the scene, put copy on a solid panel, let one subject own the frame."
+  }
+ },
+ "rounds": [
+  {
+   "round": 0,
+   "accepted": true,
+   "ui_score": 0.6169449143397099,
+   "brain_only": 0.479,
+   "judge": 0.75,
+   "changes": [],
+   "sourced": [],
+   "diagnosis": [
+    "물체 형태(LO)·움직임(MT) 반응이 낮음: 뚜렷한 사물 실루엣이 없는 텍스트 위주 화면",
+    "장소 영역(PPA)이 우세: 배경 풍경이 화면을 지배해 내용이 묻힘"
+   ]
+  },
+  {
+   "round": 1,
+   "accepted": false,
+   "ui_score": 0.5443864095583142,
+   "brain_only": 0.503,
+   "judge": 0.583,
+   "changes": [
+    {
+     "issue": "물체형태lo움직임mt반응이낮음",
+     "change": "Pro 카드 양옆에 실시간 파형·액션아이템 실루엣 오브젝트 2개와 대각 모션빔+사선 하이라이터 추가"
+    },
+    {
+     "issue": "장소영역ppa이우세",
+     "change": "배경 그리드/그라데이션 단일 글로우로 축소하고 히어로+요금제를 솔리드 패널 위에 올려 전경 분리"
+    }
+   ],
+   "sourced": [],
+   "diagnosis": [
+    "물체 형태(LO)·움직임(MT) 반응이 낮음: 뚜렷한 사물 실루엣이 없는 텍스트 위주 화면",
+    "장소 영역(PPA)이 우세: 배경 풍경이 화면을 지배해 내용이 묻힘"
+   ]
+  },
+  {
+   "round": 2,
+   "accepted": false,
+   "ui_score": 0.576032649024866,
+   "brain_only": 0.428,
+   "judge": 0.694,
+   "changes": [
+    {
+     "issue": "물체형태lo움직임mt반응이낮음",
+     "change": "양옆 분산 오브젝트 제거하고 중앙 단일 도미넌트 녹음 디바이스 필(REC+파형+타이머+액션칩)과 단일 대각 모션빔, Pro카드 상단 디바이스 프레임으로 교체"
+    },
+    {
+     "issue": "장소영역ppa이우세",
+     "change": "그리드·3중 글로우 제거 후 단색 배경+솔리드 스테이지 패널에 카피 격리, 배경은 단일 희미 글로우만 유지"
+    },
+    {
+     "issue": "신뢰요소약함(리뷰지적)",
+     "change": "고객로고 솔리드 흰색 뱃지화·별점 추가 및 100% 환불 원형 씰로 보장 강조"
+    }
+   ],
+   "sourced": [],
+   "diagnosis": [
+    "물체 형태(LO)·움직임(MT) 반응이 낮음: 뚜렷한 사물 실루엣이 없는 텍스트 위주 화면",
+    "장소 영역(PPA)이 우세: 배경 풍경이 화면을 지배해 내용이 묻힘",
+    "1차 시각피질이 가장 세게 반응: 대비·질감 밀도가 높은데 미학 헤드는 낮음 → 어수선함"
+   ]
+  },
+  {
+   "round": 3,
+   "accepted": false,
+   "ui_score": 0.5795590576743551,
+   "brain_only": 0.479,
+   "judge": 0.667,
+   "changes": [
+    {
+     "issue": "물체형태lo움직임mt반응이낮음",
+     "change": "필( Pill) 대신 직사각형 디바이스 프레임(REC+타이머+파형바+액션자막) 단일 도미넌트 오브젝트와 단일 대각 라임 슬래시+모션 꼬리로 교체"
+    },
+    {
+     "issue": "장소영역ppa이우세",
+     "change": "그리드·3중 글로우 완전 제거, 단색 배경+솔리드 스테이지 패널에 카피 격리, 배경은 플랫 단일색만 유지"
+    }
+   ],
+   "sourced": [],
+   "diagnosis": [
+    "물체 형태(LO)·움직임(MT) 반응이 낮음: 뚜렷한 사물 실루엣이 없는 텍스트 위주 화면",
+    "장소 영역(PPA)이 우세: 배경 풍경이 화면을 지배해 내용이 묻힘"
+   ]
+  }
+ ],
+ "ledger": [
+  {
+   "id": "물체형태lo움직임mt반응이낮음",
+   "text": "물체 형태(LO)·움직임(MT) 반응이 낮음: 뚜렷한 사물 실루엣이 없는 텍스트 위주 화면",
+   "directive": "Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion.",
+   "group": "visual_motion",
+   "z_opened": -2.014196459920609,
+   "opened": 0,
+   "resolved": null,
+   "attempts": 3,
+   "tried": [
+    "r1: Pro 카드 양옆에 실시간 파형·액션아이템 실루엣 오브젝트 2개와 대각 모션빔+사선 하이라이터 추가",
+    "r2: 양옆 분산 오브젝트 제거하고 중앙 단일 도미넌트 녹음 디바이스 필(REC+파형+타이머+액션칩)과 단일 대각 모션빔, Pro카드 상단 디바이스 프레임으로 교체",
+    "r3: 필( Pill) 대신 직사각형 디바이스 프레임(REC+타이머+파형바+액션자막) 단일 도미넌트 오브젝트와 단일 대각 라임 슬래시+모션 꼬리로 교체"
+   ]
+  },
+  {
+   "id": "장소영역ppa이우세",
+   "text": "장소 영역(PPA)이 우세: 배경 풍경이 화면을 지배해 내용이 묻힘",
+   "directive": "Simplify the environment: crop or blur the scene, put copy on a solid panel, let one subject own the frame.",
+   "group": "scene_place",
+   "z_opened": 1.3051367529932278,
+   "opened": 0,
+   "resolved": null,
+   "attempts": 3,
+   "tried": [
+    "r1: 배경 그리드/그라데이션 단일 글로우로 축소하고 히어로+요금제를 솔리드 패널 위에 올려 전경 분리",
+    "r2: 그리드·3중 글로우 제거 후 단색 배경+솔리드 스테이지 패널에 카피 격리, 배경은 단일 희미 글로우만 유지",
+    "r3: 그리드·3중 글로우 완전 제거, 단색 배경+솔리드 스테이지 패널에 카피 격리, 배경은 플랫 단일색만 유지"
+   ]
+  }
+ ],
+ "assets": []
+}

@@ -1,0 +1,351 @@
+{
+ "brief": "주식 소수점 투자 앱의 첫 온보딩 화면(웹 미리보기 1280x800). 핵심 가치 한 줄, 1,000원부터 시작 가능 강조, '3분 만에 시작' CTA, 신뢰·안전 신호.",
+ "kind": "app",
+ "baseline": {
+  "round": 0,
+  "accepted": true,
+  "ui_score": 0.6591942957618714,
+  "brain_only": 0.573,
+  "judge": 0.778,
+  "changes": [],
+  "sourced": [],
+  "diagnosis": [
+   "물체 형태(LO)·움직임(MT) 반응이 낮음: 뚜렷한 사물 실루엣이 없는 텍스트 위주 화면",
+   "장소 영역(PPA)이 우세: 배경 풍경이 화면을 지배해 내용이 묻힘"
+  ]
+ },
+ "best_round": 0,
+ "best": {
+  "round": 0,
+  "ui_score": 0.6591942957618714,
+  "heads": {
+   "aesthetic": {
+    "score": 0.5334925651550293,
+    "percentile": 58.9142091152815,
+    "confidence": 0.0669851303100586,
+    "top": "▼ L_a24, ▼ R_23d"
+   },
+   "attention": {
+    "score": 0.5375661253929138,
+    "percentile": 55.61643835616439,
+    "confidence": 0.07513225078582764,
+    "top": "▲ 움직임·형태 평균, ▲ 움직임·형태 최대"
+   }
+  },
+  "judge": {
+   "aesthetic": 0.778,
+   "clarity": 0.889,
+   "attention": 0.556,
+   "brief_fit": 0.889,
+   "judge_score": 0.778,
+   "reason": "Delivers all brief requirements with polished type and trust signals, but the crowded phone plus floating cards weakens single-focus hierarchy."
+  },
+  "brain_only": 0.573,
+  "critique": {
+   "kind": "app",
+   "ranking": [
+    [
+     "scene_place",
+     1.3913904723036874
+    ],
+    [
+     "value_vmpfc",
+     0.6922544992786853
+    ],
+    [
+     "visual_early",
+     0.37622349746661327
+    ],
+    [
+     "attention_dorsal",
+     0.2949513885575445
+    ],
+    [
+     "control_dlpfc",
+     0.274388565821515
+    ],
+    [
+     "face_body",
+     -0.23503088791273882
+    ],
+    [
+     "language",
+     -0.3801946246087564
+    ],
+    [
+     "default_mode",
+     -0.5312334535150681
+    ],
+    [
+     "visual_motion",
+     -1.8827494573914814
+    ]
+   ],
+   "hook": {
+    "attention_early": 0.3546814926955349,
+    "attention_late": 0.26508633648854935,
+    "visual_early": 1.031051483405647,
+    "visual_late": 0.048809504497096465
+   },
+   "diagnosis": [
+    "물체 형태(LO)·움직임(MT) 반응이 낮음: 뚜렷한 사물 실루엣이 없는 텍스트 위주 화면",
+    "장소 영역(PPA)이 우세: 배경 풍경이 화면을 지배해 내용이 묻힘"
+   ],
+   "directives": [
+    "Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion.",
+    "Simplify the environment: crop or blur the scene, put copy on a solid panel, let one subject own the frame."
+   ],
+   "cited_areas": [
+    "▼ 좌 전대상 24 (a24) [aesthetic]",
+    "▼ 우 후대상 기본모드 (23d) [aesthetic]",
+    "▲ 움직임·형태(MT/LO) 평균 [attention]",
+    "▲ 움직임·형태(MT/LO) 최대 [attention]"
+   ],
+   "groups": [
+    "visual_motion",
+    "scene_place"
+   ],
+   "prompt_block": "BRAIN CRITIQUE (TRIBE v2 predicted human cortex while looking at the last render; values are relative within this image):\n- most driven regions: 장소·배경(PPA/RSC) +1.39, 보상·가치(OFC/vmPFC) +0.69, 1차 시각(V1–V4) +0.38; least: 기본모드(딴생각) -0.53, 움직임·형태(MT/LO) -1.88\n- first-2s hook vs later: attention +0.35 → +0.27, visual drive +1.03 → +0.05\n- areas the aesthetic head cites: ▼ 좌 전대상 24 (a24) [aesthetic]; ▼ 우 후대상 기본모드 (23d) [aesthetic]; ▲ 움직임·형태(MT/LO) 평균 [attention]; ▲ 움직임·형태(MT/LO) 최대 [attention]\n- diagnosis: 물체 형태(LO)·움직임(MT) 반응이 낮음: 뚜렷한 사물 실루엣이 없는 텍스트 위주 화면 / 장소 영역(PPA)이 우세: 배경 풍경이 화면을 지배해 내용이 묻힘\n- DO NEXT (highest priority first): (1) Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion. (2) Simplify the environment: crop or blur the scene, put copy on a solid panel, let one subject own the frame."
+  }
+ },
+ "rounds": [
+  {
+   "round": 0,
+   "accepted": true,
+   "ui_score": 0.6591942957618714,
+   "brain_only": 0.573,
+   "judge": 0.778,
+   "changes": [],
+   "sourced": [],
+   "diagnosis": [
+    "물체 형태(LO)·움직임(MT) 반응이 낮음: 뚜렷한 사물 실루엣이 없는 텍스트 위주 화면",
+    "장소 영역(PPA)이 우세: 배경 풍경이 화면을 지배해 내용이 묻힘"
+   ]
+  },
+  {
+   "round": 1,
+   "accepted": false,
+   "ui_score": 0.6421557698699925,
+   "brain_only": 0.485,
+   "judge": 0.806,
+   "changes": [
+    {
+     "issue": "물체형태LO·움직임MT 반응이 낮음",
+     "change": "Removed side cards + second float, enlarged single phone to 360px dominant silhouette with diagonal lime motion tape and scrolling ticker for implied motion"
+    },
+    {
+     "issue": "장소영역PPA이 우세",
+     "change": "Simplified stage to solid navy panel with blurred photo crop inside phone only, copy on solid cream panel, one subject owns frame"
+    }
+   ],
+   "sourced": [
+    {
+     "path": "assets/smiling-young-woman-while-dancing-jpg.jpg",
+     "title": "Smiling young woman while dancing.jpg",
+     "license": "CC BY-SA 4.0",
+     "author": "Basile Morin",
+     "source": "https://commons.wikimedia.org/wiki/File:Smiling_young_woman_while_dancing.jpg",
+     "query": "smiling young woman looking sideways portrait",
+     "w": 1000,
+     "h": 667
+    },
+    {
+     "path": "assets/smiling-young-woman-with-flowers-jpg.jpg",
+     "title": "Smiling young woman with flowers.jpg",
+     "license": "CC BY-SA 2.0",
+     "author": "Harsha K R",
+     "source": "https://commons.wikimedia.org/wiki/File:Smiling_young_woman_with_flowers.jpg",
+     "query": "smiling young woman looking sideways portrait",
+     "w": 1000,
+     "h": 1500
+    },
+    {
+     "path": "assets/hand-holding-smartphone-jpg.jpg",
+     "title": "Hand holding Smartphone.jpg",
+     "license": "CC BY-SA 4.0",
+     "author": "Mictlancihuatl",
+     "source": "https://commons.wikimedia.org/wiki/File:Hand_holding_Smartphone.jpg",
+     "query": "hand holding smartphone isolated white background",
+     "w": 1000,
+     "h": 1333
+    },
+    {
+     "path": "assets/business-and-technology-concept-hand-hol.jpg",
+     "title": "Business and technology concept hand holding smartphone and search bar (52917310",
+     "license": "CC BY 2.0",
+     "author": "Jernej Furman from Slovenia",
+     "source": "https://commons.wikimedia.org/wiki/File:Business_and_technology_concept_hand_holding_smartphone_and_search_bar_(52917310335).jpg",
+     "query": "hand holding smartphone isolated white background",
+     "w": 1000,
+     "h": 695
+    },
+    {
+     "path": "assets/efta00002222-storage-room-with-stacked-c.jpg",
+     "title": "EFTA00002222 - Storage room with stacked crates a white table and two ATVs in th",
+     "license": "Public domain",
+     "author": "Federal Bureau of Investigation",
+     "source": "https://commons.wikimedia.org/wiki/File:EFTA00002222_-_Storage_room_with_stacked_crates_a_white_table_and_two_ATVs_in_the_background_under_fluorescent_lighting.jpg",
+     "query": "stack of coins white background",
+     "w": 1000,
+     "h": 667
+    },
+    {
+     "path": "assets/solidus-basiliscus-et-marcus-avers-jpg.jpg",
+     "title": "Solidus Basiliscus et Marcus (avers).jpg",
+     "license": "CC BY-SA 3.0",
+     "author": "Courtesy by Spectrum Group International/Stack’s Bowers Gall",
+     "source": "https://commons.wikimedia.org/wiki/File:Solidus_Basiliscus_et_Marcus_(avers).jpg",
+     "query": "stack of coins white background",
+     "w": 1000,
+     "h": 1002
+    }
+   ],
+   "diagnosis": [
+    "물체 형태(LO)·움직임(MT) 반응이 낮음: 뚜렷한 사물 실루엣이 없는 텍스트 위주 화면",
+    "장소 영역(PPA)이 우세: 배경 풍경이 화면을 지배해 내용이 묻힘",
+    "보상 회로(OFC/vmPFC)는 켜졌는데 끌림 헤드는 평범: 가치 신호가 있지만 무엇이 좋은지 읽히지 않음"
+   ]
+  },
+  {
+   "round": 2,
+   "accepted": false,
+   "ui_score": 0.612382800744496,
+   "brain_only": 0.45,
+   "judge": 0.778,
+   "changes": [
+    {
+     "issue": "물체형태lo움직임mt반응이낮음",
+     "change": "Single 360px tilted phone silhouette on coral diagonal motion band with 1000원 coin + motion trail dots replacing side cards and second float"
+    },
+    {
+     "issue": "장소영역ppa이우세",
+     "change": "Replaced full navy dotted environment with solid white stage + one navy diagonal wedge, real photos cropped to tiny banner and avatar so phone owns frame"
+    }
+   ],
+   "sourced": [],
+   "diagnosis": [
+    "물체 형태(LO)·움직임(MT) 반응이 낮음: 뚜렷한 사물 실루엣이 없는 텍스트 위주 화면",
+    "장소 영역(PPA)이 우세: 배경 풍경이 화면을 지배해 내용이 묻힘",
+    "보상 회로(OFC/vmPFC)는 켜졌는데 끌림 헤드는 평범: 가치 신호가 있지만 무엇이 좋은지 읽히지 않음",
+    "주의 반응이 첫 2초 이후 꺼짐 (+0.38 → +0.22): 첫인상 뒤에 볼 게 없음"
+   ]
+  },
+  {
+   "round": 3,
+   "accepted": false,
+   "ui_score": 0.5784251052732418,
+   "brain_only": 0.461,
+   "judge": 0.694,
+   "changes": [
+    {
+     "issue": "물체형태lo움직임mt반응이낮음",
+     "change": "Removed tilted phone+side cards+dual floats; one upright 340px dominant phone + 150px 1000원 coin on coral diagonal motion ticker with trail dots"
+    },
+    {
+     "issue": "장소영역ppa이우세",
+     "change": "Replaced navy dotted environment with solid white panel, cropped real hand-smartphone photo inside phone screen only, single proof chip"
+    }
+   ],
+   "sourced": [],
+   "diagnosis": [
+    "물체 형태(LO)·움직임(MT) 반응이 낮음: 뚜렷한 사물 실루엣이 없는 텍스트 위주 화면",
+    "장소 영역(PPA)이 우세: 배경 풍경이 화면을 지배해 내용이 묻힘",
+    "주의 반응이 첫 2초 이후 꺼짐 (+0.40 → +0.24): 첫인상 뒤에 볼 게 없음"
+   ]
+  }
+ ],
+ "ledger": [
+  {
+   "id": "물체형태lo움직임mt반응이낮음",
+   "text": "물체 형태(LO)·움직임(MT) 반응이 낮음: 뚜렷한 사물 실루엣이 없는 텍스트 위주 화면",
+   "directive": "Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion.",
+   "group": "visual_motion",
+   "z_opened": -1.8827494573914814,
+   "opened": 0,
+   "resolved": null,
+   "attempts": 3,
+   "tried": [
+    "r1: Removed side cards + second float, enlarged single phone to 360px dominant silhouette with",
+    "r2: Single 360px tilted phone silhouette on coral diagonal motion band with 1000원 coin + motio",
+    "r3: Removed tilted phone+side cards+dual floats; one upright 340px dominant phone + 150px 1000"
+   ]
+  },
+  {
+   "id": "장소영역ppa이우세",
+   "text": "장소 영역(PPA)이 우세: 배경 풍경이 화면을 지배해 내용이 묻힘",
+   "directive": "Simplify the environment: crop or blur the scene, put copy on a solid panel, let one subject own the frame.",
+   "group": "scene_place",
+   "z_opened": 1.3913904723036874,
+   "opened": 0,
+   "resolved": null,
+   "attempts": 3,
+   "tried": [
+    "r1: Simplified stage to solid navy panel with blurred photo crop inside phone only, copy on so",
+    "r2: Replaced full navy dotted environment with solid white stage + one navy diagonal wedge, re",
+    "r3: Replaced navy dotted environment with solid white panel, cropped real hand-smartphone phot"
+   ]
+  }
+ ],
+ "assets": [
+  {
+   "path": "assets/smiling-young-woman-while-dancing-jpg.jpg",
+   "title": "Smiling young woman while dancing.jpg",
+   "license": "CC BY-SA 4.0",
+   "author": "Basile Morin",
+   "source": "https://commons.wikimedia.org/wiki/File:Smiling_young_woman_while_dancing.jpg",
+   "query": "smiling young woman looking sideways portrait",
+   "w": 1000,
+   "h": 667
+  },
+  {
+   "path": "assets/smiling-young-woman-with-flowers-jpg.jpg",
+   "title": "Smiling young woman with flowers.jpg",
+   "license": "CC BY-SA 2.0",
+   "author": "Harsha K R",
+   "source": "https://commons.wikimedia.org/wiki/File:Smiling_young_woman_with_flowers.jpg",
+   "query": "smiling young woman looking sideways portrait",
+   "w": 1000,
+   "h": 1500
+  },
+  {
+   "path": "assets/hand-holding-smartphone-jpg.jpg",
+   "title": "Hand holding Smartphone.jpg",
+   "license": "CC BY-SA 4.0",
+   "author": "Mictlancihuatl",
+   "source": "https://commons.wikimedia.org/wiki/File:Hand_holding_Smartphone.jpg",
+   "query": "hand holding smartphone isolated white background",
+   "w": 1000,
+   "h": 1333
+  },
+  {
+   "path": "assets/business-and-technology-concept-hand-hol.jpg",
+   "title": "Business and technology concept hand holding smartphone and search bar (52917310",
+   "license": "CC BY 2.0",
+   "author": "Jernej Furman from Slovenia",
+   "source": "https://commons.wikimedia.org/wiki/File:Business_and_technology_concept_hand_holding_smartphone_and_search_bar_(52917310335).jpg",
+   "query": "hand holding smartphone isolated white background",
+   "w": 1000,
+   "h": 695
+  },
+  {
+   "path": "assets/efta00002222-storage-room-with-stacked-c.jpg",
+   "title": "EFTA00002222 - Storage room with stacked crates a white table and two ATVs in th",
+   "license": "Public domain",
+   "author": "Federal Bureau of Investigation",
+   "source": "https://commons.wikimedia.org/wiki/File:EFTA00002222_-_Storage_room_with_stacked_crates_a_white_table_and_two_ATVs_in_the_background_under_fluorescent_lighting.jpg",
+   "query": "stack of coins white background",
+   "w": 1000,
+   "h": 667
+  },
+  {
+   "path": "assets/solidus-basiliscus-et-marcus-avers-jpg.jpg",
+   "title": "Solidus Basiliscus et Marcus (avers).jpg",
+   "license": "CC BY-SA 3.0",
+   "author": "Courtesy by Spectrum Group International/Stack’s Bowers Gall",
+   "source": "https://commons.wikimedia.org/wiki/File:Solidus_Basiliscus_et_Marcus_(avers).jpg",
+   "query": "stack of coins white background",
+   "w": 1000,
+   "h": 1002
+  }
+ ]
+}

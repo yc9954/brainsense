@@ -1,0 +1,42 @@
+{
+ "popup": {
+  "baseline_ui": 0.6458704572245536,
+  "best_ui": 0.693157335829648,
+  "best_round": 5,
+  "issues_fixed": 3,
+  "issues": 4,
+  "photos": 0
+ },
+ "skincare_ad": {
+  "baseline_ui": 0.644623747517532,
+  "best_ui": 0.644623747517532,
+  "best_round": 0,
+  "issues_fixed": 0,
+  "issues": 2,
+  "photos": 6
+ },
+ "saas_pricing": {
+  "baseline_ui": 0.6169449143397099,
+  "best_ui": 0.6169449143397099,
+  "best_round": 0,
+  "issues_fixed": 0,
+  "issues": 2,
+  "photos": 0
+ },
+ "festival_poster": {
+  "baseline_ui": 0.5854439620439322,
+  "best_ui": 0.6720809520817541,
+  "best_round": 1,
+  "issues_fixed": 1,
+  "issues": 4,
+  "photos": 12
+ },
+ "fintech_onboarding": {
+  "baseline_ui": 0.6591942957618714,
+  "best_ui": 0.6591942957618714,
+  "best_round": 0,
+  "issues_fixed": 0,
+  "issues": 2,
+  "photos": 6
+ }
+}

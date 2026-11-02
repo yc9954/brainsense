@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MIDNIGHT BRASS — 11월 서울 재즈 페스티벌</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+KR:wght@400;500;700;900&family=Playfair+Display:ital,wght@0,800;1,800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--night:#070A1A;--paper:#FFF6E8;--muted:#B9BED8;--brass:#FFC15D;--brass2:#FF8A3D;--neon:#FF3D7F;--violet:#7B5CFF;--line:rgba(255,255,255,.13);--panel:#0D1330}
+body{background:#040613;color:var(--paper);font-family:"Noto Sans KR",system-ui,sans-serif;font-size:16px;line-height:1.6;display:flex;justify-content:center;-webkit-font-smoothing:antialiased}
+.page{width:100%;max-width:1280px;min-height:800px;background:linear-gradient(180deg,#090D26 0%,#060818 100%);position:relative;overflow:hidden;display:flex;flex-direction:column;border-left:1px solid rgba(255,255,255,.08);border-right:1px solid rgba(255,255,255,.08)}
+.page::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.35;background-image:radial-gradient(1.5px 1.5px at 12% 10%,#fff,transparent),radial-gradient(1px 1px at 92% 14%,#fff,transparent),radial-gradient(1px 1px at 55% 6%,#fff,transparent)}
+.marquee{background:linear-gradient(90deg,#FF3D7F,#FF8A3D,#FFC15D);color:#1A0C00;font-weight:900;font-size:13px;letter-spacing:.18em;overflow:hidden;white-space:nowrap;padding:8px 0;position:relative;z-index:3}
+.marquee span{display:inline-block;padding-left:100%;animation:mq 20s linear infinite}
+@keyframes mq{to{transform:translateX(-100%)}}
+header{position:relative;z-index:3;display:flex;align-items:center;justify-content:space-between;padding:14px 32px;border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:12px}
+.mark{width:36px;height:36px;border-radius:50%;background:conic-gradient(from 20deg,#FFC15D,#FF3D7F,#7B5CFF,#FF8A3D,#FFC15D);display:grid;place-items:center}
+.mark span{width:26px;height:26px;border-radius:50%;background:#070A1A;display:grid;place-items:center;font-size:16px}
+.brand b{font-family:"Bebas Neue";font-size:22px;letter-spacing:.12em;line-height:1}
+.brand b i{color:var(--brass);font-style:normal}
+.brand small{display:block;font-size:11px;letter-spacing:.28em;color:var(--muted);font-weight:700;margin-top:2px}
+nav{display:flex;gap:24px;font-size:14px;font-weight:700;color:#D8DCF0}
+nav a{color:inherit;text-decoration:none;opacity:.75}
+.top-note{font-size:12.5px;font-weight:900;letter-spacing:.14em;color:#FFD0E2;border:1px solid rgba(255,61,127,.5);padding:8px 14px;border-radius:100px;background:rgba(255,61,127,.12);display:flex;align-items:center;gap:8px}
+.top-note i{width:8px;height:8px;border-radius:50%;background:#FF3D7F;box-shadow:0 0 10px #FF3D7F;display:inline-block;animation:blink 1.2s infinite}
+@keyframes blink{50%{opacity:.3}}
+.hero{position:relative;z-index:2;display:grid;grid-template-columns:430px 1fr;gap:0;align-items:stretch;padding:18px 28px 0}
+.left{padding:10px 22px 10px 8px}
+.eyebrow{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.pill{background:linear-gradient(90deg,var(--brass),var(--brass2));color:#1A0E00;font-weight:900;font-size:12.5px;padding:7px 12px;border-radius:6px;letter-spacing:.04em}
+.eyebrow p{font-size:14px;color:var(--muted)}
+.eyebrow p strong{color:#fff}
+h1{font-family:"Bebas Neue";line-height:.88}
+h1 .r1{display:block;font-size:64px;color:#fff;text-shadow:0 0 18px rgba(255,61,127,.55)}
+h1 .r2{display:block;font-size:64px;color:transparent;-webkit-text-stroke:2px var(--brass)}
+.sub{margin:8px 0 12px}
+.sub .serif{font-family:"Playfair Display",serif;font-style:italic;font-weight:800;font-size:20px;color:#FFE9C2}
+.sub .meta{font-size:13.5px;color:var(--muted);display:block;margin-top:2px}
+.sub .meta strong{color:#fff}
+.lineup{list-style:none;border-top:1px solid var(--line);margin-top:6px}
+.lineup li{display:grid;grid-template-columns:28px 1fr auto;gap:8px;align-items:center;padding:7.5px 0;border-bottom:1px solid var(--line)}
+.num{font-family:"Bebas Neue";font-size:17px;color:var(--brass)}
+.names b{display:block;font-size:15px;line-height:1.35}
+.names b em{font-style:normal;font-weight:400;color:var(--muted);font-size:12px;margin-left:5px}
+.names span{font-size:11px;letter-spacing:.12em;font-weight:700;color:#FFB9D3}
+.time{font-size:11.5px;font-weight:700;color:#fff;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);padding:5px 10px;border-radius:100px;white-space:nowrap}
+.time.head{background:var(--neon);border-color:var(--neon);box-shadow:0 0 12px rgba(255,61,127,.6)}
+.left-hint{font-size:13px;color:#8E94B3;margin-top:10px}
+.left-hint strong{color:#FFD88A}
+/* RIGHT STAGE - THE single focal */
+.stage{position:relative;display:flex;justify-content:center;align-items:flex-start;min-height:520px;overflow:visible}
+.slash{position:absolute;left:-4%;right:-4%;top:42%;height:86px;background:linear-gradient(90deg,transparent 2%,rgba(255,61,127,.95) 32%,rgba(255,193,93,.95) 68%,transparent 98%);transform:rotate(-12deg);opacity:.28;filter:blur(2px);pointer-events:none}
+.slash.s2{top:52%;height:20px;opacity:.45;filter:blur(1px)}
+.halo{position:absolute;width:560px;height:560px;left:50%;top:46%;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(255,138,61,.42) 0%,rgba(255,61,127,.22) 38%,transparent 68%);pointer-events:none}
+.face-card{position:relative;width:430px;height:500px;border-radius:26px;overflow:hidden;border:2px solid rgba(255,193,93,.85);box-shadow:0 0 0 7px rgba(255,61,127,.18),0 0 80px rgba(255,138,61,.45),0 30px 80px rgba(0,0,0,.65);transform:rotate(1.6deg);background:#0B102C;flex-shrink:0}
+.face-card>img.portrait{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 18%;filter:contrast(1.08) saturate(1.05)}
+.face-card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,10,26,.05) 40%,rgba(7,10,26,.15) 62%,rgba(7,10,26,.88) 100%),linear-gradient(90deg,rgba(255,61,127,.18),transparent 45%,rgba(255,193,93,.22));pointer-events:none}
+.live-face{position:absolute;left:14px;top:14px;z-index:3;background:rgba(7,10,26,.88);backdrop-filter:blur(6px);border:1px solid rgba(255,193,93,.7);color:#fff;font-size:13px;font-weight:900;padding:8px 12px;border-radius:12px;display:flex;align-items:center;gap:8px}
+.live-face i{font-style:normal;background:var(--neon);width:24px;height:24px;border-radius:50%;display:grid;place-items:center;font-size:13px}
+.trumpet-obj{position:absolute;z-index:2;left:-88px;right:-40px;bottom:96px;width:620px;max-width:none;transform:rotate(-16deg);filter:drop-shadow(0 12px 24px rgba(0,0,0,.6)) drop-shadow(0 0 22px rgba(255,193,93,.75));pointer-events:none}
+.gaze-arrow{position:absolute;z-index:4;left:-142px;top:118px;width:150px;pointer-events:none;filter:drop-shadow(0 4px 12px rgba(255,61,127,.8))}
+.gaze-tag{position:absolute;z-index:4;left:-168px;top:72px;background:var(--neon);color:#fff;font-weight:900;font-size:13px;padding:9px 13px;border-radius:100px;box-shadow:0 0 18px rgba(255,61,127,.8);white-space:nowrap;animation:float 2.6s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-7px)}}
+.venue-chip{position:absolute;z-index:3;left:14px;right:14px;bottom:14px;background:#FFF6E8;color:#11132A;border-radius:14px;padding:10px 12px;display:flex;gap:12px;align-items:center;box-shadow:0 16px 40px rgba(0,0,0,.5)}
+.venue-chip .date{background:#11132A;color:var(--brass);border-radius:10px;text-align:center;padding:7px 10px;line-height:1;min-width:64px}
+.venue-chip .date b{font-family:"Bebas Neue";font-size:26px;display:block;letter-spacing:.04em}
+.venue-chip .date span{font-size:10px;letter-spacing:.16em;font-weight:900}
+.venue-chip p{font-size:13px;line-height:1.45}
+.side-proof{position:absolute;right:8px;top:24px;z-index:3;display:flex;flex-direction:column;gap:10px}
+.side-proof div{background:rgba(255,246,232,.96);color:#13152E;border-radius:12px;padding:8px 11px;font-size:12.5px;font-weight:900;line-height:1.3;box-shadow:0 10px 24px rgba(0,0,0,.4);text-align:center}
+.side-proof div small{display:block;font-weight:700;color:#6B6F8E;font-size:11px}
+/* VALUE STRIP - single benefit under hero */
+.value-strip{position:relative;z-index:3;margin:6px 28px 0;background:linear-gradient(90deg,rgba(255,193,93,.22),rgba(255,61,127,.18));border:1.6px solid rgba(255,193,93,.65);border-radius:18px;padding:14px 18px;display:flex;align-items:center;gap:18px;box-shadow:0 18px 50px rgba(0,0,0,.45)}
+.value-strip .benefit small{display:block;font-size:12px;letter-spacing:.1em;font-weight:900;color:#FFD88A}
+.value-strip .benefit strong{font-size:22px;font-weight:900;line-height:1.2}
+.value-strip .benefit strong s{font-size:14px;color:#9AA0C0;font-weight:500;margin-left:8px}
+.value-strip .benefit p{font-size:14px;color:#FFE9C2;margin-top:2px}
+.value-strip .benefit p b{color:#fff;background:var(--neon);padding:1px 8px;border-radius:100px;font-size:12.5px;margin-right:6px}
+.btn-big{margin-left:auto;background:linear-gradient(180deg,#FFE6A8 0%,#FFC15D 35%,#FF8A3D 100%);color:#220F00;font-weight:900;font-size:17px;text-decoration:none;padding:16px 26px;border-radius:13px;display:inline-flex;align-items:center;gap:8px;box-shadow:0 8px 30px rgba(255,138,61,.55), inset 0 1px 0 #fff;white-space:nowrap;position:relative}
+.btn-big::after{content:"";position:absolute;inset:-5px;border:1.5px solid rgba(255,193,93,.8);border-radius:16px;animation:pulse 1.8s infinite}
+@keyframes pulse{100%{opacity:0;transform:scale(1.06)}}
+.dday{position:absolute;margin-top:-38px;margin-left:-4px;background:#0A0A14;color:#fff;font-size:12px;font-weight:900;padding:4px 10px;border-radius:100px;border:1px solid var(--brass);white-space:nowrap}
+.info-bar{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr 1fr auto;border-top:1px solid var(--line);background:rgba(6,8,22,.94);margin-top:14px}
+.info-bar div{padding:11px 24px;border-right:1px solid var(--line);font-size:13.5px;color:var(--muted)}
+.info-bar div strong{display:block;color:#fff;font-size:14.5px}
+.info-bar a{margin:10px 16px;align-self:center;border:1px solid rgba(255,255,255,.3);color:#fff;padding:9px 16px;border-radius:100px;text-decoration:none;font-weight:700;font-size:13.5px}
+.credit{font-size:11px;color:#7A80A0;text-align:center;padding:7px 16px;background:#040613;border-top:1px solid rgba(255,255,255,.08)}
+a:focus-visible{outline:3px solid #fff;outline-offset:3px}
+@media(max-width:980px){.hero{grid-template-columns:1fr}.stage{min-height:auto;padding-bottom:20px}.gaze-tag,.gaze-arrow{display:none}nav{display:none}.value-strip{flex-direction:column;align-items:flex-start}.btn-big{margin-left:0}h1 .r1,h1 .r2{font-size:54px}.face-card{width:100%;max-width:430px;height:480px}.trumpet-obj{width:520px;left:-40px}}
+</style>
+</head>
+<body>
+<div class="page">
+<div class="marquee" aria-hidden="true"><span>MIDNIGHT BRASS FEST 2026 • NOV 20—22 • BLUESQUARE SEOUL • EARLY BIRD 35% OFF UNTIL 10.31 • MIDNIGHT BRASS FEST 2026 •</span></div>
+<header>
+<div class="brand"><div class="mark"><span>🎺</span></div><div><b>MIDNIGHT <i>BRASS</i></b><small>SEOUL JAZZ FEST VOL.11</small></div></div>
+<nav aria-label="메뉴"><a href="#">라인업</a><a href="#">타임테이블</a><a href="#">장소안내</a></nav>
+<div class="top-note"><i></i> EARLY BIRD · 10.31 마감</div>
+</header>
+<main>
+<div class="hero">
+<section class="left" aria-label="페스티벌 소개">
+<div class="eyebrow"><span class="pill">11.20 FRI — 11.22 SUN · 3 NIGHTS</span></div>
+<h1><span class="r1">MIDNIGHT</span><span class="r2">BRASS ★</span></h1>
+<div class="sub"><span class="serif">Warm brass, neon night.</span><span class="meta"><strong>제11회 서울 미드나잇 브라스 재즈 페스티벌</strong> · 전석 지정석</span></div>
+<ol class="lineup">
+<li><span class="num">01</span><div class="names"><b>나윤선 Youn Sun Nah <em>Voice &amp; Quartet</em></b><span>HEADLINER · MODERN JAZZ</span></div><span class="time head">11.20 20:00</span></li>
+<li><span class="num">02</span><div class="names"><b>Tigran Hamasyan Trio <em>피아노 트리오 내한</em></b><span>PIANO TRIO · ECM NIGHT</span></div><span class="time">11.21 19:00</span></li>
+<li><span class="num">03</span><div class="names"><b>웅산 &amp; Blues Quartet <em>스페셜 블루스 셋</em></b><span>BLUES &amp; SOUL</span></div><span class="time">11.21 21:30</span></li>
+<li><span class="num">04</span><div class="names"><b>H ZETTRIO <em>초고속 피아노 트리오</em></b><span>HYPER JAZZ</span></div><span class="time">11.22 18:00</span></li>
+<li><span class="num">05</span><div class="names"><b>선우정아 × 김오키 <em>미드나잇 크로스오버</em></b><span>FINALE · CROSSOVER</span></div><span class="time">11.22 20:30</span></li>
+</ol>
+<p class="left-hint">👁 오른쪽 연주자가 보는 곳 — <strong>아래 노란 예매 버튼</strong>이 오늘 최저가입니다</p>
+</section>
+<section class="stage" aria-label="메인 비주얼">
+<div class="slash" aria-hidden="true"></div><div class="slash s2" aria-hidden="true"></div>
+<div class="halo" aria-hidden="true"></div>
+<div class="gaze-tag" aria-hidden="true">◀ 이 가격으로 예매하기 · 시선 이동</div>
+<svg class="gaze-arrow" viewBox="0 0 150 90" aria-hidden="true"><defs><marker id="ah" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#FF3D7F"/></marker></defs><path d="M142 18 C 100 22, 60 38, 12 68" fill="none" stroke="#FF3D7F" stroke-width="5" stroke-linecap="round" marker-end="url(#ah)"/><circle cx="142" cy="18" r="6" fill="#FFC15D" stroke="#fff" stroke-width="2"/></svg>
+<div class="face-card">
+<img class="portrait" src="assets/willie-smith-gottlieb-07921-jpg.jpg" alt="색소폰을 든 재즈 연주자 윌리 스미스의 흑백 초상, 왼쪽 예매 버튼을 바라보는 듯한 구도">
+<div class="live-face"><i>◀</i> HEADLINER · LIVE FACE</div>
+<img class="trumpet-obj" src="assets/trumpet-1-png.png" alt="">
+<div class="venue-chip"><div class="date"><b>20-22</b><span>NOV 2026</span></div><p><strong>블루스퀘어 마스터카드홀</strong><br>서울 용산구 · 6호선 한강진역 3분</p></div>
+</div>
+<div class="side-proof" aria-label="공연 정보"><div>⭐ 4.9<small>작년 만족도 2,314명</small></div><div>🎟 214매<small>얼리버드 잔여</small></div></div>
+</section>
+</div>
+<div class="value-strip" id="ticket">
+<div class="benefit"><small>EARLY BIRD · 10.31까지 · 1인 2매 한정</small><strong>₩99,000 <s>₩143,000</s></strong><p><b>D-18</b> 지금 예매하면 <strong>44,000원 아낍니다</strong> — 오늘이 가장 저렴합니다</p></div>
+<div style="position:relative"><span class="dday">D-18 🔥 마감 임박</span><a class="btn-big" href="#">얼리버드 예매하기 🎟</a></div>
+</div>
+</main>
+<footer class="info-bar">
+<div>📅 <strong>2026.11.20(금) — 11.22(일)</strong>3일간 · 100분 공연</div>
+<div>📍 <strong>블루스퀘어 마스터카드홀, 서울</strong>실내+야외 문라이트 무대</div>
+<div>🎷 <strong>5팀 라인업 · 전석 지정석</strong>나윤선 · Tigran · 웅산 외</div>
+<a href="#">타임테이블 PDF ↓</a>
+</footer>
+<div class="credit">사진: William P. Gottlieb (Public domain) · Trumpet PNG: PJ (CC BY-SA 3.0)</div>
+</div>
+</body>
+</html>

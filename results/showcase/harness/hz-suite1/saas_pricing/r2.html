@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>밋노트 MeetNote — 요금제 | 회의는 짧게, 기록은 완벽하게</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+--bg:#0B0C1E;
+--stage:#16183A;
+--stage2:#1C1F45;
+--line:rgba(255,255,255,.13);
+--lime:#D9FF3D;
+--ink:#12132A;
+--txt:#F1F2FF;
+--mut:#BEC3DE;
+--mut2:#9AA0C3;
+}
+body{font-family:'Noto Sans KR','Plus Jakarta Sans',system-ui,sans-serif;background:var(--bg);color:var(--txt);font-size:17px;line-height:1.6;min-height:100vh;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;background:radial-gradient(700px 380px at 50% -80px, rgba(217,255,61,.10), transparent 65%)}
+.wrap{max-width:1280px;margin:0 auto;padding:0 28px;position:relative;z-index:1}
+nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:900;font-size:21px;letter-spacing:-.5px}
+.logo-mark{width:34px;height:34px;border-radius:10px;background:var(--lime);display:grid;place-items:center;font-size:19px}
+.logo small{font-family:'Plus Jakarta Sans';font-weight:800;font-size:11px;background:rgba(255,255,255,.08);border:1px solid var(--line);padding:3px 8px;border-radius:100px;color:var(--mut)}
+.nav-links{display:flex;gap:28px;font-size:16px;color:var(--mut);font-weight:500}
+.nav-links a{color:inherit;text-decoration:none}
+.nav-links a.on{color:#fff;font-weight:700}
+.nav-cta{display:flex;gap:8px;align-items:center}
+.btn-ghost{color:#fff;text-decoration:none;font-weight:700;font-size:16px;padding:10px 14px}
+.btn-lime{background:var(--lime);color:var(--ink);font-weight:800;text-decoration:none;padding:10px 19px;border-radius:100px;font-size:16px}
+/* STAGE = solid panel that isolates foreground */
+.stage{background:linear-gradient(180deg,var(--stage2),var(--stage));border:1px solid var(--line);border-radius:26px;padding:18px 28px 20px;position:relative;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.45)}
+.stage::before{content:"";position:absolute;top:-70px;left:-15%;width:130%;height:170px;background:linear-gradient(100deg,transparent 32%,rgba(217,255,61,.22) 48%,rgba(217,255,61,.22) 52%,transparent 68%);transform:rotate(-6deg);pointer-events:none}
+.stage::after{content:"";position:absolute;inset:0;border-radius:26px;pointer-events:none;box-shadow:inset 0 1px 0 rgba(255,255,255,.12)}
+.hero{text-align:center;position:relative;z-index:2;padding-top:6px}
+.badge{display:inline-flex;align-items:center;gap:8px;background:rgba(217,255,61,.12);border:1px solid rgba(217,255,61,.4);color:var(--lime);font-size:14px;font-weight:700;padding:6px 14px;border-radius:100px}
+.badge i{width:8px;height:8px;background:var(--lime);border-radius:50%;box-shadow:0 0 10px var(--lime);animation:blink 1.6s infinite}
+@keyframes blink{50%{opacity:.35}}
+h1{font-size:38px;line-height:1.2;letter-spacing:-1.2px;font-weight:900;margin:10px 0 6px}
+h1 span{color:var(--lime)}
+.hero p{color:var(--mut);font-size:16.5px;max-width:640px;margin:0 auto}
+.hero p strong{color:#fff}
+/* DOMINANT OBJECT: single recorder device */
+.recorder-zone{position:relative;display:flex;justify-content:center;margin:14px 0 6px;z-index:2}
+.motion-beam{position:absolute;top:50%;left:50%;width:760px;height:46px;transform:translate(-50%,-50%) rotate(-6deg);background:linear-gradient(90deg,transparent,rgba(217,255,61,.35) 20%,rgba(217,255,61,.55) 50%,rgba(217,255,61,.35) 80%,transparent);filter:blur(1px);border-radius:100px;pointer-events:none;overflow:hidden}
+.motion-beam::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(115deg,transparent 0 14px,rgba(0,0,0,.22) 14px 16px);animation:slide 1.8s linear infinite}
+@keyframes slide{to{transform:translateX(32px)}}
+.recorder{position:relative;display:flex;align-items:center;gap:14px;background:#0A0B1D;border:1px solid rgba(217,255,61,.55);border-radius:100px;padding:10px 18px 10px 14px;box-shadow:0 12px 32px rgba(0,0,0,.5),0 0 0 6px rgba(217,255,61,.10);min-width:560px}
+.rec-dot{display:flex;align-items:center;gap:7px;background:#FF3B3B;color:#fff;font-size:13px;font-weight:800;padding:7px 12px;border-radius:100px}
+.rec-dot em{width:9px;height:9px;background:#fff;border-radius:50%;animation:blink 1.1s infinite;font-style:normal}
+.wave{display:flex;align-items:center;gap:3px;height:32px}
+.wave b{width:4px;border-radius:4px;background:var(--lime);display:block;animation:eq 1s ease-in-out infinite}
+.wave b:nth-child(1){height:10px}.wave b:nth-child(2){height:22px;animation-delay:.1s}.wave b:nth-child(3){height:14px;animation-delay:.2s}.wave b:nth-child(4){height:28px;animation-delay:.05s}.wave b:nth-child(5){height:18px;animation-delay:.3s}.wave b:nth-child(6){height:26px;animation-delay:.15s}.wave b:nth-child(7){height:12px;animation-delay:.25s}.wave b:nth-child(8){height:20px;animation-delay:.35s}.wave b:nth-child(9){height:16px;animation-delay:.12s}.wave b:nth-child(10){height:24px;animation-delay:.22s}.wave b:nth-child(11){height:10px;animation-delay:.28s}.wave b:nth-child(12){height:18px;animation-delay:.08s}
+@keyframes eq{50%{transform:scaleY(.4);opacity:.7}}
+.timer{font-family:'Plus Jakarta Sans';font-weight:800;font-size:17px;letter-spacing:.5px}
+.rec-chip{margin-left:auto;background:var(--lime);color:var(--ink);font-size:13.5px;font-weight:800;padding:7px 12px;border-radius:100px;white-space:nowrap}
+.float-chip{position:absolute;top:-16px;font-size:13px;font-weight:800;padding:6px 11px;border-radius:100px;box-shadow:0 8px 20px rgba(0,0,0,.4);white-space:nowrap}
+.float-l{left:8%;background:#fff;color:#11132A;transform:rotate(-6deg)}
+.float-r{right:8%;background:#11132A;color:var(--lime);border:1px solid rgba(217,255,61,.5);transform:rotate(5deg)}
+/* toggle */
+.toggle-row{display:flex;align-items:center;justify-content:center;gap:12px;margin:10px 0 14px;position:relative;z-index:2}
+.toggle-label{font-size:16px;font-weight:700;color:var(--mut2)}
+.toggle-label.active{color:#fff}
+.switch{width:58px;height:30px;background:#2A2E5A;border-radius:100px;position:relative;cursor:pointer;border:1px solid var(--line)}
+.switch::after{content:"";position:absolute;top:3px;left:4px;width:22px;height:22px;background:var(--lime);border-radius:50%;transition:.25s}
+.switch.year::after{left:30px}
+.switch:focus-visible{outline:3px solid var(--lime);outline-offset:2px}
+.save{font-size:13px;font-weight:800;background:var(--lime);color:var(--ink);padding:3px 9px;border-radius:100px}
+/* PRICING */
+.pricing{display:grid;grid-template-columns:1fr 1.14fr 1fr;gap:16px;align-items:stretch;position:relative;z-index:2}
+.card{background:rgba(11,12,30,.72);border:1px solid var(--line);border-radius:20px;padding:20px 22px 18px;position:relative;display:flex;flex-direction:column;backdrop-filter:blur(4px)}
+.card.pro{background:var(--lime);border-color:var(--lime);color:var(--ink);transform:translateY(-8px);box-shadow:0 22px 55px rgba(217,255,61,.28),0 12px 30px rgba(0,0,0,.45);border-radius:22px;overflow:hidden}
+.device-bar{display:flex;align-items:center;gap:6px;margin:-20px -22px 12px;padding:10px 16px;background:rgba(0,0,0,.14);border-bottom:1px solid rgba(0,0,0,.12)}
+.device-bar i{width:10px;height:10px;border-radius:50%;display:block}
+.device-bar i:nth-child(1){background:#FF5F57}.device-bar i:nth-child(2){background:#FFBD2E}.device-bar i:nth-child(3){background:#28C840}
+.device-bar span{margin-left:6px;font-size:12.5px;font-weight:700;opacity:.7;font-family:'Plus Jakarta Sans'}
+.pro-flag{position:absolute;top:38px;right:-36px;background:var(--ink);color:var(--lime);font-size:12.5px;font-weight:800;padding:6px 38px;transform:rotate(32deg);letter-spacing:.2px;white-space:nowrap}
+.plan-name{font-size:14px;font-weight:800;letter-spacing:.6px;opacity:.75}
+.plan-desc{font-size:16px;margin-top:2px;line-height:1.5}
+.price-row{display:flex;align-items:baseline;gap:6px;margin:10px 0 2px}
+.price{font-family:'Plus Jakarta Sans','Noto Sans KR';font-size:38px;font-weight:800;letter-spacing:-1.2px;line-height:1}
+.won{font-size:17px;font-weight:800}
+.per{font-size:14.5px;opacity:.7;font-weight:500}
+.sub{font-size:14px;opacity:.7;min-height:21px}
+.cta{margin:12px 0 14px;display:block;text-align:center;text-decoration:none;font-weight:800;font-size:16px;padding:13px;border-radius:13px;transition:.2s}
+.cta-dark{background:var(--ink);color:var(--lime)}
+.cta-dark:hover{transform:translateY(-1px)}
+.cta-line{border:1.5px solid rgba(255,255,255,.25);color:#fff}
+.cta-line:hover{background:rgba(255,255,255,.08)}
+ul{list-style:none;display:flex;flex-direction:column;gap:8px;font-size:15.5px}
+ul li{display:flex;gap:9px;align-items:flex-start;line-height:1.5}
+.tick{flex:0 0 20px;width:20px;height:20px;border-radius:50%;display:grid;place-items:center;font-size:12px;font-weight:900;margin-top:2px}
+.card:not(.pro) .tick{background:rgba(217,255,61,.15);color:var(--lime);border:1px solid rgba(217,255,61,.3)}
+.card.pro .tick{background:var(--ink);color:var(--lime)}
+li.dim{opacity:.55}
+.pro-meta{display:flex;align-items:center;gap:8px;margin-top:12px;background:rgba(0,0,0,.08);border:1px dashed rgba(0,0,0,.28);border-radius:11px;padding:8px 11px;font-size:13.5px;font-weight:700}
+/* TRUST solid */
+.trust{margin-top:14px;background:#E9EEF5;color:#12132A;border-radius:18px;padding:11px 18px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.logos{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.logos span.lbl{font-size:13px;color:#5A6080;font-weight:800;white-space:nowrap}
+.logo-pill{font-weight:900;font-size:14.5px;background:#12132A;color:#fff;padding:6px 12px;border-radius:100px;letter-spacing:-.2px;white-space:nowrap}
+.logo-pill.light{background:#fff;color:#12132A;border:1.5px solid #12132A}
+.stars{font-size:13px;font-weight:800;color:#12132A;white-space:nowrap}
+.stars em{color:#FF8A00;font-style:normal}
+.guarantee{display:flex;align-items:center;gap:12px}
+.seal{width:62px;height:62px;flex:0 0 62px;border-radius:50%;background:var(--ink);color:var(--lime);display:grid;place-items:center;text-align:center;font-size:11px;font-weight:900;line-height:1.25;border:3px solid var(--lime);transform:rotate(-10deg);box-shadow:0 6px 16px rgba(0,0,0,.25)}
+.guarantee b{font-size:15.5px;color:#12132A}
+.guarantee small{display:block;font-size:13.5px;color:#5A6080;font-weight:500}
+.link{color:#12132A;font-weight:800;font-size:14px;text-decoration:underline;text-underline-offset:3px;white-space:nowrap}
+@media(max-width:1020px){h1{font-size:32px}.nav-links{display:none}.pricing{grid-template-columns:1fr;max-width:520px;margin:0 auto}.card.pro{transform:none}.recorder{min-width:0;width:100%}.float-chip{display:none}.trust{flex-direction:column;text-align:center}.motion-beam{width:100%}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav aria-label="주 메뉴">
+<div class="logo"><div class="logo-mark">🎙️</div>밋노트 <small>MEETNOTE 3.0</small></div>
+<div class="nav-links"><a href="#">기능</a><a href="#" class="on">요금제</a><a href="#">고객 후기</a><a href="#">보안</a><a href="#">고객지원</a></div>
+<div class="nav-cta"><a class="btn-ghost" href="#">로그인</a><a class="btn-lime" href="#">무료로 시작 →</a></div>
+</nav>
+
+<div class="stage">
+<header class="hero">
+<div class="badge"><i></i> ✨ 신규 · GPT-5 기반 3.0 요약 엔진 출시</div>
+<h1>회의는 짧게, <span>기록은 완벽하게.</span></h1>
+<p>평균 <strong>주당 4.2시간</strong> 절약 · 녹음부터 요약·공유까지 5분 컷 · <strong>카드 등록 없이</strong> 시작</p>
+</header>
+
+<div class="recorder-zone" aria-hidden="false">
+<div class="motion-beam"></div>
+<div class="float-chip float-l">✓ 액션아이템 3개 추출</div>
+<div class="recorder" role="img" aria-label="실시간 회의 녹음 중: 12분 47초, 요약 생성 중">
+<div class="rec-dot"><em></em>REC</div>
+<div class="wave" aria-hidden="true"><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b></div>
+<div class="timer">00:12:47</div>
+<div class="rec-chip">⚡ 요약 생성 중… 98%</div>
+</div>
+<div class="float-chip float-r">★ 평점 4.9 · 2,300 리뷰</div>
+</div>
+
+<div class="toggle-row" role="group" aria-label="결제 주기 선택">
+<span class="toggle-label active" id="lblM">월간 결제</span>
+<div class="switch year" id="switch" role="switch" aria-checked="true" tabindex="0" aria-label="연간 결제 전환"></div>
+<span class="toggle-label" id="lblY">연간 결제</span>
+<span class="save">연간 −20% + 2개월 무료</span>
+</div>
+
+<main class="pricing">
+<section class="card" aria-label="Free 요금제">
+<div class="plan-name">FREE · 무료</div>
+<div class="plan-desc"><strong>가볍게 시작하는 팀</strong>을 위한 첫 회의록</div>
+<div class="price-row"><span class="price">0</span><span class="won">원</span><span class="per">/ 영원히 무료</span></div>
+<div class="sub">신용카드 등록 없이 · 1분 만에 시작</div>
+<a href="#" class="cta cta-line">무료로 시작하기</a>
+<ul>
+<li><span class="tick">✓</span>월 300분 음성 기록 &amp; 자동 변환</li>
+<li><span class="tick">✓</span>AI 핵심 요약 (회의 후 5분 이내)</li>
+<li><span class="tick">✓</span>화자 구분 최대 4인 · 키워드 검색</li>
+<li><span class="tick">✓</span>Zoom · Meet · Teams 봇 초대</li>
+<li><span class="tick">✓</span><span class="dim">Notion · Slack 연동 (Pro 제공)</span></li>
+</ul>
+</section>
+
+<section class="card pro" aria-label="Pro 요금제 - 추천">
+<div class="device-bar"><i></i><i></i><i></i><span>meetnote.live ● 요약중</span></div>
+<div class="pro-flag">🔥 4,820팀 선택</div>
+<div class="plan-name">PRO · 프로 ★ 가장 인기</div>
+<div class="plan-desc"><strong>회의가 많은 프로</strong>를 위한 완벽 자동화</div>
+<div class="price-row"><span class="price" id="proPrice">9,600</span><span class="won">원</span><span class="per">/ 월 · 연간 결제, VAT 포함</span></div>
+<div class="sub" id="proSub">매월 2,000분 제공 · 월간 결제 시 12,000원</div>
+<a href="#" class="cta cta-dark">14일 무료로 Pro 체험하기 →</a>
+<ul>
+<li><span class="tick">✓</span><b>무제한 AI 요약 + 액션아이템 자동 추출</b></li>
+<li><span class="tick">✓</span>화자 구분 무제한 · 98.2% 한국어 인식률</li>
+<li><span class="tick">✓</span>Notion · Slack · Drive 자동 공유</li>
+<li><span class="tick">✓</span>용어사전 · 맞춤 템플릿 30종</li>
+<li><span class="tick">✓</span>무제한 보관 · 링크 외부 공유</li>
+</ul>
+<div class="pro-meta">⏱️ 주당 4.2시간 절약 · ⭐ 4.9/5.0 (2,300개 리뷰)</div>
+</section>
+
+<section class="card" aria-label="Team 요금제">
+<div class="plan-name">TEAM · 팀</div>
+<div class="plan-desc"><strong>보안이 중요한 조직</strong>을 위한 협업팩</div>
+<div class="price-row"><span class="price">29,000</span><span class="won">원</span><span class="per">/ 인 · 월, VAT 포함</span></div>
+<div class="sub">10인 이상 · 연간 계약 맞춤 견적</div>
+<a href="#" class="cta cta-line">도입 상담 받기</a>
+<ul>
+<li><span class="tick">✓</span>Pro 모든 기능 + 팀 워크스페이스</li>
+<li><span class="tick">✓</span>SSO/SAML · 감사 로그 · 권한 관리</li>
+<li><span class="tick">✓</span>중앙 결제 · 부서별 대시보드</li>
+<li><span class="tick">✓</span>국내 서버 저장 (ISMS-P · ISO 27001)</li>
+<li><span class="tick">✓</span>전담 CSM · 온보딩 교육 지원</li>
+</ul>
+</section>
+</main>
+</div>
+
+<footer class="trust" aria-label="신뢰 요소">
+<div class="logos"><span class="lbl">도입 기업 12,400+ →</span><span class="logo-pill">TOSS</span><span class="logo-pill light">당근</span><span class="logo-pill">SSG.COM</span><span class="logo-pill light">우아한형제들</span><span class="logo-pill">MUSINSA</span><span class="stars"><em>★★★★★</em> 4.9</span></div>
+<div class="guarantee">
+<div class="seal">100%<br>환불보장</div>
+<div><b>14일 무조건 100% 환불 보장</b><small>이유 묻지 않아요 · 1클릭 해지 · 약정 없음</small></div>
+<a class="link" href="#">플랜 비교표 보기 ›</a>
+</div>
+</footer>
+</div>
+<script>
+const sw=document.getElementById('switch');
+const proPrice=document.getElementById('proPrice');
+const proSub=document.getElementById('proSub');
+const lblM=document.getElementById('lblM');
+const lblY=document.getElementById('lblY');
+let yearly=true;
+function render(){
+if(yearly){sw.classList.add('year');sw.setAttribute('aria-checked','true');proPrice.textContent='9,600';proSub.textContent='매월 2,000분 제공 · 월간 결제 시 12,000원';lblY.classList.add('active');lblM.classList.remove('active');}
+else{sw.classList.remove('year');sw.setAttribute('aria-checked','false');proPrice.textContent='12,000';proSub.textContent='매월 2,000분 제공 · 언제든 해지 가능';lblM.classList.add('active');lblY.classList.remove('active');}
+}
+sw.addEventListener('click',()=>{yearly=!yearly;render();});
+sw.addEventListener('keydown',e=>{if(e.key===' '||e.key==='Enter'){e.preventDefault();yearly=!yearly;render();}});
+render();
+</script>
+</body>
+</html>

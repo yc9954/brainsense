@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MOJOO 모주 — 1,000원부터 시작하는 소수점 투자</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+--cream:#FFFBF0;--ink:#131938;--navy:#19224E;--deep:#0C1130;
+--coral:#FF4A2B;--lime:#DAF34A;--line:#E9DFC9;--muted:#5B6285;
+}
+body{font-family:"Noto Sans KR","Archivo",system-ui,sans-serif;background:var(--cream);color:var(--ink);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.page{max-width:1280px;min-height:800px;margin:0 auto;padding:22px 36px 0;display:flex;flex-direction:column}
+a{color:inherit}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:6px 0 14px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:900;font-size:22px;letter-spacing:-.5px}
+.logo-mark{width:36px;height:36px;border-radius:11px;background:var(--ink);color:var(--lime);display:grid;place-items:center;font-family:Archivo;font-weight:900;font-size:20px;position:relative}
+.logo-mark:after{content:"";position:absolute;right:-3px;top:-3px;width:12px;height:12px;background:var(--coral);border-radius:50%;border:2.5px solid var(--cream)}
+.logo small{font-size:11px;font-weight:700;background:var(--ink);color:#fff;border-radius:99px;padding:2px 8px;margin-left:2px}
+.menu{display:flex;gap:26px;font-size:15px;font-weight:500;color:#2E355C}
+.nav-right{display:flex;align-items:center;gap:12px}
+.login{font-size:15px;font-weight:700;text-decoration:none}
+.btn{display:inline-flex;align-items:center;gap:8px;border-radius:999px;font-weight:800;text-decoration:none;cursor:pointer;border:0}
+.btn-small{background:var(--ink);color:#fff;padding:10px 18px;font-size:15px}
+.btn-small:hover{background:#000}
+.hero{display:grid;grid-template-columns:560px 1fr;gap:28px;align-items:stretch;flex:1}
+.left{padding:22px 8px 0 8px}
+.steps{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:700;color:var(--muted);margin-bottom:16px}
+.steps .dot{width:28px;height:28px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;font-size:13px}
+.steps .bar{width:56px;height:2px;background:var(--line);border-radius:2px;position:relative;overflow:hidden}
+.steps .bar i{position:absolute;inset:0;background:var(--ink);width:33%}
+.badge{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1.5px solid var(--ink);border-radius:999px;padding:7px 14px 7px 10px;font-size:14px;font-weight:700;box-shadow:3px 3px 0 var(--ink)}
+.pulse{width:10px;height:10px;border-radius:50%;background:var(--coral);box-shadow:0 0 0 4px #FFD9CE;animation:p 1.8s infinite}
+@keyframes p{50%{box-shadow:0 0 0 7px #FFE9E1}}
+h1{font-size:58px;line-height:1.07;letter-spacing:-1.8px;font-weight:900;margin:18px 0 14px;word-break:keep-all}
+h1 .hl{position:relative;display:inline-block;white-space:nowrap;z-index:0}
+h1 .hl:before{content:"";position:absolute;left:-4px;right:-4px;bottom:6px;height:20px;background:var(--lime);z-index:-1;border-radius:4px;transform:rotate(-1deg)}
+h1 .coral{color:var(--coral)}
+.sub{font-size:17px;color:#343A61;line-height:1.65;word-break:keep-all;max-width:500px}
+.sub strong{color:var(--ink)}
+.amount-box{margin:20px 0 18px;background:#fff;border:1.5px solid var(--ink);border-radius:18px;padding:14px 16px;box-shadow:5px 5px 0 var(--ink);max-width:500px}
+.amount-box p{font-size:14px;font-weight:700;margin-bottom:10px}
+.amount-box p span{color:var(--coral)}
+.pills{display:flex;gap:8px}
+.pill{flex:1;border:1.5px solid #D8D2BE;background:#FFFEFB;border-radius:12px;padding:9px 0;font-weight:800;font-size:16px;cursor:pointer;transition:.15s}
+.pill.active{background:var(--ink);color:var(--lime);border-color:var(--ink)}
+.cta-row{display:flex;align-items:center;gap:16px;margin-top:4px}
+.btn-big{background:var(--ink);color:#fff;padding:17px 28px;font-size:18px;border-radius:16px;box-shadow:0 10px 24px rgba(19,25,56,.28);position:relative}
+.btn-big:hover{background:#000;transform:translateY(-1px)}
+.btn-big .mini{position:absolute;top:-12px;right:-10px;background:var(--coral);color:#fff;font-size:12px;padding:4px 10px;border-radius:999px;border:2px solid #fff;transform:rotate(6deg)}
+.link{font-weight:800;font-size:16px;text-decoration:underline;text-underline-offset:4px}
+.micro{font-size:14px;color:var(--muted);margin-top:10px}
+.social{display:flex;align-items:center;gap:12px;margin-top:18px}
+.faces{display:flex}
+.faces span{width:34px;height:34px;border-radius:50%;border:2.5px solid var(--cream);margin-left:-10px;display:grid;place-items:center;font-size:14px;font-weight:900;color:#fff}
+.faces span:first-child{margin-left:0}
+.stars{color:#E69A00;font-size:15px;letter-spacing:2px}
+.social b{font-size:15px}
+/* RIGHT — simplified solid stage, one dominant object + diagonal motion */
+.right{position:relative}
+.stage{position:relative;height:100%;min-height:590px;background:#FFFFFF;border-radius:28px;border:1.5px solid var(--ink);overflow:hidden;box-shadow:8px 8px 0 var(--ink)}
+.diagonal{position:absolute;top:72px;left:-8%;width:116%;height:108px;background:var(--coral);border-top:2.5px solid var(--ink);border-bottom:2.5px solid var(--ink);transform:rotate(-9deg);display:flex;align-items:center;overflow:hidden;white-space:nowrap;z-index:0}
+.diagonal span{font-family:Archivo;font-weight:900;color:#fff;font-size:22px;letter-spacing:.5px;padding:0 6px}
+.diagonal span em{font-style:normal;background:#fff;color:var(--coral);border-radius:99px;padding:1px 12px;margin:0 8px;font-size:19px}
+.diagonal2{position:absolute;top:196px;left:-8%;width:116%;height:18px;background:var(--lime);border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);transform:rotate(-9deg);z-index:0}
+.stage-top{display:flex;justify-content:space-between;align-items:center;position:relative;z-index:3;padding:20px 24px 0;color:var(--ink)}
+.live{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:800;background:var(--ink);color:#fff;padding:7px 13px;border-radius:999px}
+.live i{width:8px;height:8px;background:#3DFF88;border-radius:50%;animation:p 1.5s infinite}
+.price{font-family:Archivo;font-size:13px;font-weight:700;color:var(--muted)}
+.hero-object{position:relative;z-index:2;display:flex;justify-content:center;padding:18px 0 18px;margin-top:6px}
+.phone{width:340px;background:#fff;border-radius:38px;padding:14px 14px 14px;box-shadow:0 28px 60px rgba(12,17,48,.28);border:10px solid #0C1130;position:relative}
+.notch{width:110px;height:20px;background:#0C1130;border-radius:0 0 14px 14px;margin:-14px auto 10px}
+.photo-crop{border-radius:18px;overflow:hidden;border:1.5px solid #0C1130;position:relative;height:168px;background:#eee}
+.photo-crop img{width:100%;height:100%;object-fit:cover;display:block}
+.photo-crop:after{content:"내 손안의 미국 주식";position:absolute;left:10px;bottom:10px;background:rgba(12,17,48,.88);color:#fff;font-size:12px;font-weight:800;padding:5px 10px;border-radius:999px}
+.ph-head{display:flex;justify-content:space-between;align-items:center;margin:12px 2px 0}
+.ph-head b{font-size:16px}
+.ph-head span{font-size:12px;background:#EEF2FF;color:#2E3AA8;font-weight:800;padding:4px 9px;border-radius:999px}
+.balance{margin:10px 0 8px;background:var(--ink);color:#fff;border-radius:16px;padding:13px 14px 12px}
+.balance small{font-size:12px;opacity:.7}
+.balance .num{font-family:Archivo;font-size:27px;font-weight:800}
+.balance .up{font-size:13px;background:var(--lime);color:var(--ink);font-weight:800;border-radius:999px;padding:2px 8px;margin-left:6px}
+.stock{display:flex;align-items:center;gap:10px;padding:10px 4px}
+.ticker{width:38px;height:38px;border-radius:12px;display:grid;place-items:center;font-weight:900;color:#fff;font-size:16px;background:#000;flex-shrink:0}
+.stock-info{flex:1;line-height:1.3}
+.stock-info b{font-size:14px;display:block}
+.stock-info small{font-size:12px;color:#6B7194}
+.buy{background:var(--coral);color:#fff;border:0;font-weight:800;font-size:13px;padding:9px 14px;border-radius:10px;cursor:pointer}
+.calc{background:#F6F3E9;border:1.5px dashed #CFC5A6;border-radius:12px;padding:10px 12px;margin-top:6px;font-size:13.5px;font-weight:700;line-height:1.5}
+.calc big{font-size:19px;font-weight:900;color:var(--coral)}
+/* dominant coin silhouette on diagonal */
+.coin{position:absolute;right:38px;top:52px;width:150px;height:150px;border-radius:50%;background:radial-gradient(circle at 30% 28%, #FFF6B8 0%, #FFD84D 32%, #F5A800 62%, #C97A00 100%);border:4px solid var(--ink);box-shadow:0 14px 28px rgba(217,58,31,.35), inset 0 0 0 7px rgba(255,255,255,.55);display:grid;place-items:center;text-align:center;z-index:4;transform:rotate(8deg)}
+.coin b{font-family:Archivo;font-size:30px;line-height:1;letter-spacing:-1px}
+.coin small{font-size:13px;font-weight:900;background:var(--ink);color:var(--lime);border-radius:99px;padding:2px 9px;margin-top:4px;display:inline-block}
+.trail{position:absolute;right:188px;top:118px;display:flex;gap:8px;z-index:4;transform:rotate(-9deg)}
+.trail i{width:14px;height:14px;border-radius:50%;background:var(--ink)}
+.trail i:nth-child(1){opacity:.18;width:10px;height:10px;margin-top:2px}
+.trail i:nth-child(2){opacity:.45}
+.trail i:nth-child(3){opacity:.9}
+/* single proof chip */
+.chip{position:absolute;left:24px;bottom:44px;background:#fff;border:1.5px solid var(--ink);border-radius:16px;padding:11px 14px;box-shadow:5px 5px 0 var(--ink);z-index:4;display:flex;gap:10px;align-items:center;max-width:250px}
+.check{width:30px;height:30px;background:#18C066;color:#fff;border-radius:50%;display:grid;place-items:center;font-weight:900;flex-shrink:0}
+.chip b{font-size:14px}
+.chip small{font-size:12.5px;color:#4A5078}
+.trust{margin-top:14px;background:#fff;border:1.5px solid var(--ink);border-radius:16px;display:grid;grid-template-columns:repeat(4,1fr);overflow:hidden}
+.trust div{padding:13px 18px;display:flex;gap:10px;align-items:center;font-size:14px;font-weight:700;line-height:1.4}
+.trust div+div{border-left:1px dashed #D8D2BE}
+.icon{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;font-size:18px;flex-shrink:0}
+.foot{display:flex;justify-content:space-between;gap:12px;padding:10px 4px 12px;font-size:12px;color:#8A90B3}
+@media(max-width:1020px){.hero{grid-template-columns:1fr}h1{font-size:44px}.stage{min-height:640px}.trust{grid-template-columns:1fr 1fr}.menu{display:none}.coin{right:16px}.chip{left:12px}}
+:focus-visible{outline:3px solid var(--coral);outline-offset:2px}
+</style>
+</head>
+<body>
+<div class="page">
+<header class="nav" aria-label="상단 메뉴">
+<div class="logo"><span class="logo-mark">M</span> MOJOO <small>모주</small></div>
+<nav class="menu" aria-label="주 메뉴">
+<span>소수점 투자란?</span><span>수수료 0원 이벤트</span><span>모으기 챌린지</span><span>고객 후기</span>
+</nav>
+<div class="nav-right"><a class="login" href="#">로그인</a><a class="btn btn-small" href="#">앱 다운로드</a></div>
+</header>
+<main class="hero">
+<section class="left">
+<div class="steps" aria-label="온보딩 단계"><span class="dot">1</span> 관심 종목 담기 <span class="bar"><i></i></span> <span style="opacity:.6">2 취향 설정</span> <span style="opacity:.4">· 3 첫 매수</span></div>
+<div class="badge"><span class="pulse"></span> 11월 한정 · 첫 3개월 수수료 0원 + 5천원 투자지원금</div>
+<h1>비싼 우량주,<br><span class="hl">1,000원부터</span> <span class="coral">내 몫</span>으로.</h1>
+<p class="sub">애플 한 주 31만원이 부담되나요? <strong>모주에서는 0.001주 단위로 쪼개서 실시간으로</strong> 살 수 있어요. 커피 한 잔 값으로 시작해 매주 자동으로 모아보세요.</p>
+<div class="amount-box">
+<p>얼마로 시작해볼까요? <span id="labelAmt">1,000원 선택 중</span></p>
+<div class="pills" role="group" aria-label="시작 금액 선택">
+<button class="pill active" data-amt="1000">1,000원</button>
+<button class="pill" data-amt="5000">5,000원</button>
+<button class="pill" data-amt="10000">1만원</button>
+<button class="pill" data-amt="30000">3만원</button>
+</div>
+</div>
+<div class="cta-row">
+<a class="btn btn-big" href="#" aria-label="3분 만에 시작하기">3분 만에 시작하기 <span aria-hidden="true">→</span> <span class="mini">신분증만 OK</span></a>
+<a class="link" href="#">수수료 먼저 보기</a>
+</div>
+<p class="micro">가입비·유지비 0원 · 언제든 출금 가능 · 원화 자동 환전</p>
+<div class="social">
+<div class="faces" aria-hidden="true">
+<span style="background:#FF6B4A">김</span><span style="background:#2E3AA8">박</span><span style="background:#18A957">이</span><span style="background:#141A33">최</span><span style="background:#fff;color:#141A33;border:2.5px solid #141A33">+</span>
+</div>
+<div><div class="stars" aria-label="평점 4.9점">★★★★★ <b style="color:#141A33">4.9</b></div><b>120만 명이 매주 모으는 중</b></div>
+</div>
+</section>
+<section class="right" aria-label="앱 미리보기">
+<div class="stage">
+<div class="diagonal" aria-hidden="true"><span>1,000원부터 <em>소수점 투자</em> 1,000원부터 <em>소수점 투자</em> 1,000원부터</span></div>
+<div class="diagonal2" aria-hidden="true"></div>
+<div class="stage-top"><span class="live"><i></i> 실시간 소수점 체결 중</span><span class="price">USD/KRW 1,382.4 ▲</span></div>
+<div class="hero-object">
+<div class="trail" aria-hidden="true"><i></i><i></i><i></i></div>
+<div class="coin" aria-hidden="true"><div><b>1,000</b><br><small>원 COIN</small></div></div>
+<div class="phone">
+<div class="notch"></div>
+<div class="photo-crop"><img src="assets/hand-holding-smartphone-jpg.jpg" alt="손으로 들고 있는 스마트폰으로 주식을 확인하는 모습"></div>
+<div class="ph-head"><b>내 조각함 🍎</b><span>수익률 +18.4%</span></div>
+<div class="balance"><small>총 조각 자산</small><div><span class="num">284,500원</span><span class="up">▲ +12,300</span></div></div>
+<div class="stock"><span class="ticker"></span><div class="stock-info"><b>애플 AAPL</b><small>1주 312,400원 → 쪼개기 가능</small></div><button class="buy">사기</button></div>
+<div class="calc">💡 <span id="calcAmt">1,000원</span>이면 애플 <big id="calcShare">0.0032주</big>의 주인이 돼요. 오늘부터 주주!</div>
+</div>
+<div class="chip"><span class="check">✓</span><div><b>주문 체결 완료!</b><br><small>애플 <span id="floatShare">0.0032주</span> · <span id="floatAmt">1,000원</span></small></div></div>
+</div>
+</div>
+</section>
+</main>
+<div class="trust" aria-label="신뢰 신호">
+<div><span class="icon" style="background:#E8F5E9">🛡️</span> 고객 자산 한국예탁결제원 별도 보관</div>
+<div><span class="icon" style="background:#FFF0E8">🔒</span> ISMS-P · 256-bit 보안 인증</div>
+<div><span class="icon" style="background:#EEF2FF">📜</span> 금융위 혁신금융서비스 지정</div>
+<div><span class="icon" style="background:#FFF9C4">💬</span> 24시간 상담 · 투자자 보호 공시</div>
+</div>
+<div class="foot"><span>모주증권 준법감시인 심사필 · 원금 손실 가능 / 예금자보호법 미적용 · 사진: Hand holding Smartphone · CC BY-SA 4.0 · Mictlancihuatl</span><span>© 2026 MOJOO Securities</span></div>
+</div>
+<script>
+const pills=[...document.querySelectorAll('.pill')];
+const price=312400;
+function fmt(n){return n.toLocaleString('ko-KR')+'원'}
+pills.forEach(b=>b.addEventListener('click',()=>{
+pills.forEach(x=>x.classList.remove('active'));b.classList.add('active');
+const amt=+b.dataset.amt;const share=(amt/price).toFixed(4);
+document.getElementById('labelAmt').textContent=fmt(amt)+' 선택 중';
+document.getElementById('calcAmt').textContent=fmt(amt);
+document.getElementById('calcShare').textContent=share+'주';
+document.getElementById('floatAmt').textContent=fmt(amt);
+document.getElementById('floatShare').textContent=share+'주';
+}))
+</script>
+</body>
+</html>

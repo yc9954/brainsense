@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VITA:LAB — 15% 비타민C 광채 세럼 | 런칭 30%</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,900&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --cream:#FFF7E8;
+  --paper:#FFFEFB;
+  --ink:#1D1206;
+  --muted:#6B5B49;
+  --orange:#FF4D00;
+  --deep:#C93300;
+  --yellow:#FFC700;
+  --lime:#E9FF3D;
+}
+html,body{height:100%}
+body{
+  font-family:'Noto Sans KR',system-ui,sans-serif;
+  background:var(--cream);
+  color:var(--ink);
+  font-size:17px;line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+.page{max-width:1280px;margin:0 auto;min-height:100vh;display:flex;flex-direction:column;padding:0 32px}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:18px 0;gap:16px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:-.02em;font-size:22px}
+.logo-mark{width:36px;height:36px;border-radius:12px;background:var(--ink);color:var(--lime);display:grid;place-items:center;font-family:'Fraunces',serif;font-size:22px}
+.nav{display:flex;gap:22px;font-size:15px;font-weight:500;color:var(--muted)}
+.nav b{color:var(--ink)}
+.live{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:700;background:var(--paper);border:1.5px solid var(--ink);border-radius:999px;padding:7px 14px 7px 12px;box-shadow:3px 3px 0 var(--ink);white-space:nowrap}
+.dot{width:10px;height:10px;border-radius:50%;background:#00C24A;box-shadow:0 0 0 4px #00C24A22;animation:blink 1.4s infinite}
+@keyframes blink{50%{opacity:.35}}
+.hero{flex:1;display:grid;grid-template-columns:1.02fr .98fr;gap:32px;align-items:center;padding:6px 0 20px}
+/* LEFT SOLID PANEL */
+.copy-card{background:var(--paper);border:2px solid var(--ink);border-radius:26px;padding:32px 32px 26px;box-shadow:8px 8px 0 var(--ink)}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:#fff;border-radius:999px;padding:8px 16px 8px 8px;font-size:14px;font-weight:700}
+.eyebrow em{font-style:normal;background:var(--lime);color:var(--ink);border-radius:999px;padding:4px 12px;font-size:13px;font-weight:900}
+h1{font-size:52px;line-height:1.14;letter-spacing:-.04em;font-weight:900;margin:18px 0 12px;word-break:keep-all}
+h1 .hl{position:relative;white-space:nowrap}
+h1 .hl>span{position:relative;z-index:1}
+h1 .hl::after{content:"";position:absolute;left:-4px;right:-4px;bottom:7px;height:18px;background:var(--lime);z-index:0;transform:rotate(-1deg);border-radius:4px}
+.sub{color:#3E3225;font-size:18px;max-width:520px;word-break:keep-all}
+.sub strong{color:var(--ink)}
+.rating-line{margin:16px 0 4px;font-size:16px;font-weight:700;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.rating-line .stars{color:var(--deep);letter-spacing:2px;font-size:18px}
+.rating-line span:last-child{color:var(--muted);font-weight:500;font-size:15px}
+.price-box{display:flex;align-items:center;gap:14px;margin:12px 0 18px}
+.price-now{font-family:'Fraunces',serif;font-size:52px;font-weight:900;letter-spacing:-.04em;line-height:1}
+.price-old{font-size:20px;color:#9A8873;text-decoration:line-through;font-weight:500}
+.price-off{background:var(--orange);color:#fff;font-weight:900;font-size:15px;border-radius:10px;padding:6px 11px;border:2px solid var(--ink)}
+.cta-row{display:flex;flex-direction:column;gap:10px;margin-top:4px}
+.btn-primary{display:flex;align-items:center;justify-content:center;gap:10px;background:var(--orange);color:#fff;border:2px solid var(--ink);border-radius:18px;padding:19px 22px;font-size:21px;font-weight:900;letter-spacing:-.02em;text-decoration:none;box-shadow:6px 6px 0 var(--ink);transition:.18s}
+.btn-primary:hover{background:var(--ink);color:var(--lime);transform:translate(-2px,-2px);box-shadow:8px 8px 0 var(--orange)}
+.btn-primary small{font-weight:700;font-size:14px;background:#ffffff2E;border-radius:999px;padding:4px 10px}
+.sub-link{text-align:center;font-size:15px;font-weight:500;color:var(--muted);text-decoration:underline;text-underline-offset:4px}
+.meta-single{margin-top:16px;padding-top:14px;border-top:1.5px dashed #C9B89E;font-size:14px;font-weight:500;color:#4A3E30;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.meta-single b{color:var(--ink)}
+.timer-inline{font-variant-numeric:tabular-nums;font-weight:800;color:var(--deep)}
+/* RIGHT */
+.insta-wrap{position:relative;display:flex;justify-content:center}
+.insta-card{width:480px;background:#fff;border:2px solid var(--ink);border-radius:28px;overflow:hidden;box-shadow:12px 12px 0 var(--ink);position:relative}
+.insta-head{display:flex;align-items:center;gap:12px;padding:14px 18px}
+.avatar{width:42px;height:42px;border-radius:50%;background:var(--ink);color:var(--lime);display:grid;place-items:center;font-weight:900;font-size:20px;border:2px solid var(--ink)}
+.insta-head strong{display:block;font-size:15px;line-height:1.2}
+.insta-head span{display:block;font-size:13px;color:#7A6E5E;font-weight:500}
+.follow{margin-left:auto;font-size:13px;font-weight:900;border:1.5px solid var(--ink);border-radius:999px;padding:6px 14px;background:var(--paper)}
+.ad-photo{position:relative;aspect-ratio:1/1;overflow:hidden;background:#0F0B06;display:block}
+.ad-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 28%;display:block}
+.ad-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(to top, rgba(15,8,2,.42) 0%, transparent 38%, transparent 62%, rgba(15,8,2,.18) 100%);pointer-events:none}
+/* single diagonal motion ribbon */
+.slash{position:absolute;left:-30px;right:-30px;top:58%;z-index:3;background:var(--lime);border-top:2.5px solid var(--ink);border-bottom:2.5px solid var(--ink);transform:rotate(-9deg);display:flex;align-items:center;justify-content:center;gap:12px;padding:10px 40px;font-weight:900;font-size:17px;letter-spacing:-.02em;box-shadow:0 6px 0 rgba(0,0,0,.35)}
+.slash .arrow{font-family:'Fraunces',serif;font-size:20px}
+.slash small{font-size:13px;font-weight:700;background:var(--ink);color:var(--lime);border-radius:999px;padding:3px 10px;white-space:nowrap}
+/* speed lines implying drop motion */
+.speed{position:absolute;left:22px;top:22px;z-index:3;display:flex;flex-direction:column;gap:8px}
+.speed i{display:block;height:4px;border-radius:999px;background:#fff;box-shadow:0 1px 0 rgba(0,0,0,.4)}
+.speed i:nth-child(1){width:92px;opacity:.95}
+.speed i:nth-child(2){width:64px;opacity:.75}
+.speed i:nth-child(3){width:38px;opacity:.55}
+.photo-tag{position:absolute;top:16px;left:16px;z-index:3;background:#FFFEFACC;border:1.5px solid var(--ink);border-radius:999px;padding:6px 14px;font-size:13px;font-weight:800}
+/* solid bottom label panel */
+.photo-label{position:absolute;left:0;right:0;bottom:0;z-index:4;background:var(--paper);border-top:2.5px solid var(--ink);display:flex;align-items:center;gap:14px;padding:12px 16px}
+.photo-label .mini{width:48px;height:48px;border-radius:14px;background:var(--ink);color:var(--lime);display:grid;place-items:center;font-family:'Fraunces',serif;font-weight:900;font-size:22px;border:2px solid var(--ink);flex-shrink:0}
+.photo-label strong{display:block;font-size:15px;line-height:1.3}
+.photo-label span{display:block;font-size:13px;color:var(--muted);font-weight:500}
+.photo-label .p{margin-left:auto;text-align:right}
+.photo-label .p b{font-family:'Fraunces',serif;font-size:22px}
+.photo-label .p s{font-size:13px;color:#9A8873;display:block;line-height:1}
+/* single 30% badge */
+.badge30{position:absolute;top:-28px;right:-14px;width:136px;height:136px;z-index:10;filter:drop-shadow(5px 5px 0 var(--ink))}
+.badge30 .core{position:absolute;inset:0;background:var(--orange);border:3px solid var(--ink);border-radius:50%;display:grid;place-items:center;text-align:center;line-height:1;color:#fff;transform:rotate(8deg)}
+.badge30 .core strong{font-family:'Fraunces',serif;font-size:40px;line-height:1;display:block}
+.badge30 .core span{font-size:11px;font-weight:900;letter-spacing:.1em}
+.insta-actions{display:flex;align-items:center;gap:14px;padding:14px 18px 6px;font-size:22px}
+.insta-actions small{margin-left:auto;font-size:13px;font-weight:700;color:#7A6E5E;background:#F5EEE0;border-radius:999px;padding:5px 12px}
+.likes{padding:2px 18px 14px;font-size:15px;color:#2E251B}
+.likes b{font-weight:900;color:var(--ink)}
+.buy-strip{padding:0 16px 18px}
+.buy-now{display:block;text-align:center;text-decoration:none;font-weight:900;border-radius:14px;padding:15px;font-size:17px;background:var(--ink);color:#fff;border:2px solid var(--ink);box-shadow:4px 4px 0 var(--orange)}
+.buy-now:hover{background:var(--orange);box-shadow:4px 4px 0 var(--ink)}
+.footer-line{background:var(--ink);color:#FFF3D6;font-size:13px;font-weight:500;margin:0 -32px;padding:10px 32px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.footer-line a{color:var(--lime)}
+@media(max-width:980px){
+  .page{padding:0 18px}.hero{grid-template-columns:1fr;gap:22px}h1{font-size:38px}.insta-card{width:100%;max-width:480px}.nav{display:none}.footer-line{margin:0 -18px}
+}
+:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="topbar">
+    <div class="logo"><span class="logo-mark">V</span> VITA:LAB</div>
+    <nav class="nav" aria-label="메뉴"><span><b>15% 순수 비타민C</b> · 저자극 광채 세럼</span><span>리뷰 12,482</span></nav>
+    <div class="live"><span class="dot"></span> 런칭 LIVE · 오늘만 30% <span style="background:var(--ink);color:#fff;border-radius:999px;padding:2px 10px">Sponsored</span></div>
+  </header>
+
+  <main class="hero">
+    <section class="copy-card" aria-label="제품 소개">
+      <span class="eyebrow"><em>NEW LAUNCH</em> 순수 비타민C 15% 세럼</span>
+      <h1>아침 세 방울로 깨우는 <span class="hl"><span>투명한 광채.</span></span></h1>
+      <p class="sub"><strong>비타랩 씨 브라이트 세럼 30ml.</strong> 칙칙한 톤과 잡티가 고민이라면, 산뜻하게 스며드는 고농축 비타민C로 매일 아침 투명도를 깨우세요.</p>
+      <div class="rating-line" aria-label="평점 4.9점"><span class="stars">★★★★★</span> <b>4.9</b> <span>리뷰 12,482 · 재구매율 78%</span></div>
+      <div class="price-box">
+        <div class="price-now">26,600원</div>
+        <div class="price-old">38,000원</div>
+        <div class="price-off">-30%</div>
+      </div>
+      <div class="cta-row">
+        <a class="btn-primary" href="#" aria-label="지금 구매하기">지금 구매하기 <small>무료배송 →</small></a>
+        <a class="sub-link" href="#">전성분 · 피부 테스트 결과 보기</a>
+      </div>
+      <div class="meta-single">🚚 오늘출발 무료배송 · 30일 환불보장 &nbsp;·&nbsp; ⏰ 특가 종료까지 <span class="timer-inline" id="t">05 : 47 : 22</span></div>
+    </section>
+
+    <section class="insta-wrap" aria-label="인스타그램 광고 미리보기">
+      <div style="position:relative">
+        <div class="badge30" aria-label="런칭 30퍼센트 할인">
+          <div class="core"><div><span>LAUNCH</span><strong>-30%</strong><span>TODAY ONLY</span></div></div>
+        </div>
+        <article class="insta-card">
+          <div class="insta-head">
+            <div class="avatar">C</div>
+            <div><strong>vitalab.kr</strong><span>스폰서 광고</span></div>
+            <div class="follow">팔로잉</div>
+          </div>
+          <div class="ad-photo">
+            <img src="assets/woman-applying-serum-on-her-face-closeup.jpg" alt="얼굴에 비타민C 세럼을 떨어뜨려 바르는 클로즈업 장면" width="1000" height="1000">
+            <div class="speed" aria-hidden="true"><i></i><i></i><i></i></div>
+            <div class="photo-tag">✦ 15% PURE VIT-C · 30ml</div>
+            <div class="slash" aria-hidden="true"><small>모닝 루틴</small> 3방울 톡 — 스며든다 <span class="arrow">→</span></div>
+            <div class="photo-label">
+              <div class="mini">C</div>
+              <div><strong>VITA:LAB 씨 브라이트 세럼</strong><span>비타민E + 히알루론산 · 저자극</span></div>
+              <div class="p"><b>26,600원</b><s>38,000원</s></div>
+            </div>
+          </div>
+          <div class="insta-actions">❤️ 💬 ✈️ <small>◉ ● ○ ○</small></div>
+          <p class="likes"><b>좋아요 24,816개</b> — vitalab.kr 아침 광채 3방울 루틴 🍋 #비타민C세럼 #런칭30%</p>
+          <div class="buy-strip"><a class="buy-now" href="#">지금 구매 — 26,600원 🛒</a></div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer-line"><span>VEGAN · NO FRAGRANCE · DERMATOLOGIST TESTED</span><span>Photo: Woman applying serum closeup · CC BY 2.0 · Shixart1985</span></footer>
+</div>
+<script>
+let s=5*3600+47*60+22;
+const el=document.getElementById('t');
+setInterval(()=>{s=Math.max(0,s-1);const h=String(Math.floor(s/3600)).padStart(2,'0'),m=String(Math.floor(s%3600/60)).padStart(2,'0'),ss=String(s%60).padStart(2,'0');el.textContent=`${h} : ${m} : ${ss}`;},1000);
+</script>
+</body>
+</html>
