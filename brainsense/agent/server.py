@@ -21,6 +21,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
 from .loop import Agent
+from .engram import EngramStore
 from .service import HEADS_BY_KIND, FeatureCache, build_registry
 
 load_dotenv()  # .env in the project root (never committed)
@@ -66,6 +67,8 @@ def _store_result(item_id: str, res: dict[str, Any], **meta: Any) -> dict[str, A
     if res.get("vertex_ts"):
         (_ROI_DIR / f"{item_id}.vertices.json").write_text(_json.dumps(res["vertex_ts"]))
     _save_meta(item_id, **meta)
+    _remember(item_id, meta.get("kind", "image"), np.asarray(res.get("roi_area_feats") or [], dtype=np.float32),
+              roi_ts[item_id], meta.get("stimulus_text"))
     return {"item_id": item_id, "timing": res.get("timing"), "roi_ts": roi_ts[item_id],
             "brain_frames": res.get("brain_frames") or [], "vertex_ts": res.get("vertex_ts"), **meta}
 if _ROI_DIR.exists():
@@ -74,6 +77,63 @@ if _ROI_DIR.exists():
         roi_ts[_f.stem] = _json.loads(_f.read_text())
 registry = build_registry(HEADS_DIR, cache, PERSONAL_STORE)
 agents: dict[str, Agent] = {}          # one conversation per session id
+
+# ---- L2 engram store: every percept as a brain state + what happened to it ----------------------
+ENGRAMS = EngramStore(os.environ.get("BRAINSENSE_ENGRAM_DB", "state/engrams.sqlite"))
+
+
+def _pca_key(cortex360: np.ndarray) -> np.ndarray | None:
+    """Shared similarity key: the aesthetic head's StandardScaler → PCA-54 (same space every head's
+    PCA was fit in). Falls back to None when the head is not a PCA head."""
+    try:
+        from .service import CROWD_HEADS  # noqa: F401
+        from ..heads.head import Head
+        global _PCA_HEAD
+        if "_PCA_HEAD" not in globals():
+            _PCA_HEAD = Head.load(HEADS_DIR / "aesthetic") if (HEADS_DIR / "aesthetic").exists() else None
+        h = _PCA_HEAD
+        if h is None or not h.cfg.pca_dim:
+            return None
+        sc = h.model.steps[0][1]; pca = h.model.steps[1][1]
+        return pca.transform(sc.transform(np.asarray(cortex360, np.float32)[None, :360]))[0].astype(np.float32)
+    except Exception:
+        return None
+
+
+def _remember(item_id: str, kind: str, area: np.ndarray | None, roi: dict[str, list[float]] | None,
+              stimulus_ref: str | None = None, owner: str = "local-user") -> None:
+    if area is None or len(area) < 360:
+        return
+    c = np.asarray(area, np.float32)[:360]
+    ENGRAMS.upsert(item_id, kind, c, _pca_key(c), owner=owner, stimulus_ref=stimulus_ref, roi_ts=roi)
+
+
+def _migrate_engrams() -> int:
+    """Everything already analyzed in this workspace becomes an engram (idempotent, startup)."""
+    n = 0
+    for item_id in cache.ids():
+        if ENGRAMS.has(item_id):
+            continue
+        try:
+            area = cache.get_area(item_id)
+        except KeyError:
+            continue
+        meta = _load_meta(item_id)
+        _remember(item_id, meta.get("kind", "image"), area, roi_ts.get(item_id), meta.get("stimulus_text"))
+        n += 1
+    # historical 👍/👎 from the personal store become outcomes
+    if PERSONAL_STORE.exists():
+        import json as _json
+        st = _json.loads(PERSONAL_STORE.read_text())
+        have = {r["engram_id"] for r in ENGRAMS.db.execute("SELECT engram_id FROM outcomes WHERE kind='liked'").fetchall()} if False else set(
+            x[0] for x in ENGRAMS.db.execute("SELECT engram_id FROM outcomes WHERE kind='liked'").fetchall())
+        for item_id, y in zip(st.get("ids", []), st.get("y", [])):
+            if item_id not in have and ENGRAMS.has(item_id):
+                ENGRAMS.add_outcome(item_id, "liked", float(y))
+    return n
+
+
+_migrated = _migrate_engrams()
 
 
 class AnalyzeIn(BaseModel):
@@ -174,7 +234,65 @@ def ask(inp: AskIn) -> dict[str, Any]:
 
 @app.post("/agent/feedback")
 def feedback(inp: FeedbackIn) -> dict[str, Any]:
-    return registry.call("record_feedback", item_id=inp.item_id, liked=inp.liked)
+    out = registry.call("record_feedback", item_id=inp.item_id, liked=inp.liked)
+    if ENGRAMS.has(inp.item_id):
+        ENGRAMS.add_outcome(inp.item_id, "liked", 1.0 if inp.liked else 0.0)
+    out["engram_outcomes"] = ENGRAMS.count()["outcomes"]
+    return out
+
+
+class OutcomeIn(BaseModel):
+    item_id: str
+    kind: str = "liked"          # liked | chosen_over | rejected | dwell_s | sold | replies
+    value: float = 1.0
+    against: str | None = None
+
+
+@app.post("/outcome")
+def outcome(inp: OutcomeIn) -> dict[str, Any]:
+    """Any real-world consequence of a percept, not only 👍/👎 (chosen_over B, sold, replies...)."""
+    if not ENGRAMS.has(inp.item_id):
+        raise HTTPException(404, f"no engram for {inp.item_id}")
+    oid = ENGRAMS.add_outcome(inp.item_id, inp.kind, inp.value, inp.against)
+    if inp.kind in ("liked", "chosen_over", "rejected") and inp.item_id in cache.ids():
+        registry.call("record_feedback", item_id=inp.item_id, liked=bool(inp.value if inp.kind == "liked" else inp.kind == "chosen_over"))
+    return {"stored": oid, **ENGRAMS.count()}
+
+
+@app.get("/recall/{item_id}")
+def recall(item_id: str, k: int = 5, kinds: str | None = None, with_outcomes: bool = False) -> dict[str, Any]:
+    """Nearest engrams in cortex space: what did this brain see before that felt like this?"""
+    e = ENGRAMS.get(item_id)
+    if e is None:
+        raise HTTPException(404, f"no engram for {item_id}")
+    key = e["pca"] if e["pca"] is not None else e["cortex"]
+    hits = ENGRAMS.recall(key, k=k, exclude=item_id, kinds=[x for x in (kinds or "").split(",") if x] or None,
+                          with_outcomes_only=with_outcomes)
+    return {"item_id": item_id, "kind": e["kind"],
+            "recalled": [{"item_id": h.id, "kind": h.kind, "similarity": round(h.similarity, 3), "stimulus_ref": h.stimulus_ref,
+                          "note": h.note, "outcomes": h.outcomes,
+                          "age_days": round((__import__("time").time() - h.created_at) / 86400, 1)} for h in hits],
+            "memory": ENGRAMS.count()}
+
+
+@app.get("/rules")
+def rules(owner: str = "local-user") -> dict[str, Any]:
+    return {"owner": owner, "rules": ENGRAMS.rules(owner), "memory": ENGRAMS.count(owner),
+            "consolidations": ENGRAMS.consolidations(owner)[-3:]}
+
+
+class NoteIn(BaseModel):
+    item_id: str
+    note: str
+
+
+@app.post("/note")
+def note(inp: NoteIn) -> dict[str, Any]:
+    """The one sentence the voice said about a percept, kept with the engram for later recall."""
+    if not ENGRAMS.has(inp.item_id):
+        raise HTTPException(404, f"no engram for {inp.item_id}")
+    ENGRAMS.set_note(inp.item_id, inp.note)
+    return {"ok": True}
 
 
 def text_critique(series: dict[str, list[float]], heads: dict[str, Any]) -> dict[str, Any]:
@@ -285,5 +403,5 @@ def items() -> dict[str, Any]:
 
 @app.get("/health")
 def health() -> dict[str, Any]:
-    return {"ok": True, "heads": sorted(p.name for p in HEADS_DIR.glob("*") if (p / "head.joblib").exists()),
+    return {"ok": True, "memory": ENGRAMS.count(), "heads": sorted(p.name for p in HEADS_DIR.glob("*") if (p / "head.joblib").exists()),
             "cached_items": len(cache.ids())}
