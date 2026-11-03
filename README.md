@@ -75,7 +75,7 @@ Same brief, same Muse Spark, same budget. Only the feedback differs: the left co
 <td><img src="results/showcase/studio/living5/r0.png" alt="Photoreal studio, round 0: an empty room"></td>
 <td><img src="results/showcase/studio/living5/best_hero.png" alt="Photoreal studio, best round: furnished living room chosen by the brain score"></td>
 </tr>
-<tr><td colspan="2" align="center"><sub>The same loop with a photoreal Blender studio (Poly Haven assets): the agent places furniture, textures and light from a JSON spec, renders, reads the cortex, and keeps the round the brain liked most.</sub></td></tr>
+<tr><td colspan="2" align="center"><sub>The same loop in a photoreal Blender studio (Cycles, Poly Haven CC0 assets): the planner's first pass placed nothing; eight rounds later, scored by the cortex and a judge (0.316 → 0.485), it keeps the round the brain liked most (<a href="results/showcase/studio/living5/timelapse.gif">timelapse</a>).</sub></td></tr>
 </table>
 
 Caveat we keep next to every win rate: on static pages, against Muse's *own* self-critique loop, the brain loop loses by Muse's own judge (which that loop optimises directly). Against "ask once" it wins on pages, and on video it wins against both. Full tables and the blind human-vote page are in the showcase section below.
