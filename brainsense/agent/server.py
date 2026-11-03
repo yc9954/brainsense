@@ -215,6 +215,20 @@ def _tribe_call(payload: dict[str, Any]) -> dict[str, Any]:
     return r.json()
 
 
+def _audio_to_wav_b64(audio_b64: str, ext: str) -> str:
+    """Any audio container → mono 16 kHz 16-bit PCM wav (ffmpeg), the shape the service was validated on."""
+    import base64
+    import subprocess
+    import tempfile
+    with tempfile.TemporaryDirectory() as td:
+        src = Path(td) / f"in.{ext}"
+        dst = Path(td) / "out.wav"
+        src.write_bytes(base64.b64decode(audio_b64))
+        subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-i", str(src), "-ac", "1", "-ar", "16000",
+                        "-sample_fmt", "s16", str(dst)], check=True)
+        return base64.b64encode(dst.read_bytes()).decode()
+
+
 def _image_to_still_b64(image_b64: str, seconds: int = 6) -> str:
     """Photos (jpg/png/webp) become a silent 6 s clip, exactly like the training stills."""
     import base64
@@ -243,10 +257,22 @@ def analyze(inp: AnalyzeIn) -> dict[str, Any]:
     kind = "audio" if ext in AUDIO_EXT else "image" if ext in IMAGE_EXT else "video"
     if kind == "image":
         inp.video_b64, inp.filename = _image_to_still_b64(inp.video_b64), inp.filename.rsplit(".", 1)[0] + ".mp4"
-    res = _tribe_call({"video_b64": inp.video_b64, "filename": inp.filename,
-                       "item_id": inp.item_id, "with_raw_embed": False,
-                       "transcribe": inp.transcribe, "bf16": True, "render_brain": inp.render_frames})
-    return _store_result(inp.item_id, res, kind=kind)
+    elif kind == "audio" and ext != "wav":
+        # Normalize every container (m4a/aac/mp3/ogg) to the shape validated on 2026-11-03: mono 16 kHz PCM wav.
+        inp.video_b64, inp.filename = _audio_to_wav_b64(inp.video_b64, ext), inp.filename.rsplit(".", 1)[0] + ".wav"
+    payload = {"video_b64": inp.video_b64, "filename": inp.filename, "item_id": inp.item_id, "with_raw_embed": False,
+               "transcribe": inp.transcribe, "bf16": True, "render_brain": inp.render_frames}
+    try:
+        res = _tribe_call(payload)
+    except httpx.HTTPStatusError:
+        if not inp.transcribe:
+            raise
+        # Transcription (WhisperX + spaCy + Llama on speech) is the fragile stage; the cortex still
+        # hears the clip without it. Degrade rather than fail, and say so in the response.
+        res = _tribe_call({**payload, "transcribe": False})
+        res["transcribed"] = False
+        res["note"] = "transcription failed on the TRIBE service; analyzed as sound only"
+    return _store_result(inp.item_id, res, kind=kind, **({"note": res["note"]} if res.get("note") else {}))
 
 
 @app.post("/analyze_text")
