@@ -1,9 +1,10 @@
 .venv/
 __pycache__/
-data/
+/data/
 features/cache/
 results/latency.json
-heads/
+/heads/
+/heads_*/
 *.npy
 .env
 state/
