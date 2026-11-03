@@ -84,6 +84,12 @@ a{color:#ffb38a} .k{color:#8b8b96}</style></head><body><h1>BrainSense showcase �
         h0, hb = r["history"][0], r["best"]
         extra.append(f"<tr><td><a href='interior/{c.name}/index.html'>Blender interior · {html.escape(c.name)}</a></td><td>{h0['ui_score']:.3f} → <b>{hb['ui_score']:.3f}</b> ({hb['ui_score'] - h0['ui_score']:+.3f})</td>"
                      f"<td>{h0['brain_only']:.3f} → {hb['brain_only']:.3f}</td><td>{(h0['judge'] or 0):.2f} → {hb['judge'].get('judge_score', 0):.2f}</td><td class=k>best r{r['best_round']} of {len(r['history']) - 1}</td></tr>")
+    studio = out_dir / "studio"
+    for c in (sorted((p for p in studio.iterdir() if (p / "report.json").exists()), key=lambda p: p.stat().st_mtime, reverse=True) if studio.exists() else []):
+        r = json.loads((c / "report.json").read_text(encoding="utf-8"))
+        h0, hb = r["history"][0], r["best"]
+        extra.append(f"<tr><td><a href='studio/{c.name}/index.html'>Photoreal Blender interior · {html.escape(c.name)}</a></td><td>{h0['ui_score']:.3f} → <b>{hb['ui_score']:.3f}</b> ({hb['ui_score'] - h0['ui_score']:+.3f})</td>"
+                     f"<td>{h0['brain_only']:.3f} → {hb['brain_only']:.3f}</td><td>{h0['judge']['judge_score']:.2f} → {hb['judge']['judge_score']:.2f}</td><td class=k>real CC0 furniture, HDRI daylight · best r{r['best_round']} of {len(r['history']) - 1}</td></tr>")
     shop = out_dir / "shop"
     for c in (sorted((p for p in shop.iterdir() if (p / "items.json").exists()), key=lambda p: p.stat().st_mtime, reverse=True) if shop.exists() else []):
         items = [i for i in json.loads((c / "items.json").read_text(encoding="utf-8")) if i.get("heads")]

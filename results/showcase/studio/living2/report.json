@@ -1,0 +1,534 @@
+{
+ "brief": "A photoreal living-room corner for a furniture catalogue hero shot: warm, calm, inviting, one clear focal composition (sofa + coffee table), natural daylight through a window plus one warm practical light, Scandinavian/Japandi taste, no clutter.",
+ "best_round": 3,
+ "best": {
+  "round": 3,
+  "spec": {
+   "room": {
+    "w": 5.0,
+    "d": 5.0,
+    "h": 2.8,
+    "floor_tex": "oak_veneer_01",
+    "wall_tex": "beige_wall_001",
+    "wall_color": "#E9E1D3",
+    "ceiling_color": "#F5F3EE",
+    "baseboard": true,
+    "floor_scale": 1.0,
+    "wall_scale": 1.0
+   },
+   "window": {
+    "wall": "left",
+    "x": 0.4,
+    "z": 1.6,
+    "w": 1.8,
+    "h": 1.4,
+    "frame_color": "#FFFFFF",
+    "curtain_color": null,
+    "sill": true
+   },
+   "world": {
+    "hdri": "kloofendal_48d_partly_cloudy_puresky",
+    "strength": 1.0,
+    "rotation_deg": 90
+   },
+   "sun": {
+    "strength": 4.5,
+    "elevation_deg": 38,
+    "azimuth_deg": 255,
+    "kelvin": 4800
+   },
+   "lights": [
+    {
+     "type": "area",
+     "pos": [
+      1.9,
+      1.1,
+      1.45
+     ],
+     "size": 0.4,
+     "power": 100,
+     "kelvin": 3000
+    }
+   ],
+   "practical": {
+    "lamp_object_id": "floor_lamp",
+    "power": 80,
+    "kelvin": 3000
+   },
+   "objects": [
+    {
+     "asset": "sofa_02",
+     "pos": [
+      0.2,
+      1.93
+     ],
+     "rot_deg": 0,
+     "scale": 1.0
+    },
+    {
+     "asset": "modern_coffee_table_01",
+     "pos": [
+      0.2,
+      0.3
+     ],
+     "rot_deg": 0,
+     "scale": 1.0
+    },
+    {
+     "asset": "potted_plant_01",
+     "pos": [
+      -1.9,
+      1.85
+     ],
+     "rot_deg": 0,
+     "scale": 1.0
+    }
+   ],
+   "rug": {
+    "x": 0.2,
+    "y": 0.9,
+    "w": 2.8,
+    "d": 2.0,
+    "color": "#D9CFC0"
+   },
+   "floor_lamp": {
+    "x": 1.9,
+    "y": 1.1,
+    "height": 1.6,
+    "shade_color": "#F5E8D5",
+    "kelvin": 3000,
+    "power": 80
+   },
+   "art": {
+    "wall": "back",
+    "x": 0.2,
+    "z": 1.8,
+    "w": 1.2,
+    "h": 0.8,
+    "color": "#CFC5B5",
+    "frame_color": "#3A2E26"
+   },
+   "camera": {
+    "pos": [
+     0.2,
+     -2.6,
+     1.2
+    ],
+    "look_at": [
+     0.2,
+     1.5,
+     0.7
+    ],
+    "lens_mm": 35,
+    "fstop": 5.6,
+    "focus_object": "sofa_02"
+   },
+   "render": {
+    "samples": 64,
+    "w": 1280,
+    "h": 800,
+    "exposure": 0.4,
+    "look": "medium"
+   }
+  },
+  "placed": [
+   {
+    "asset": "sofa_02",
+    "min": [
+     -0.7,
+     1.52
+    ],
+    "max": [
+     1.1,
+     2.34
+    ],
+    "top": 0.71
+   },
+   {
+    "asset": "modern_coffee_table_01",
+    "min": [
+     -0.1,
+     -0.3
+    ],
+    "max": [
+     0.5,
+     0.9
+    ],
+    "top": 0.39
+   },
+   {
+    "asset": "potted_plant_01",
+    "min": [
+     -2.19,
+     1.53
+    ],
+    "max": [
+     -1.61,
+     2.17
+    ],
+    "top": 1.35
+   }
+  ],
+  "ui_score": 0.4482,
+  "brain_only": 0.616,
+  "judge": {
+   "realism": 0.222,
+   "composition": 0.333,
+   "light": 0.222,
+   "desirability": 0.222,
+   "artifacts": 0.556,
+   "judge_score": 0.311,
+   "fix": "Replace the dark Victorian leather sofa with a light oatmeal linen Japandi sofa and add a visible window off-camera left to motivate soft directional daylight, dimming the floor lamp to a warm 2700K glow instead of blown-out white."
+  },
+  "qa": {
+   "blown_pct": 1.4,
+   "black_pct": 0.0,
+   "mean_lum": 142.4
+  },
+  "heads": {
+   "aesthetic": {
+    "score": 0.6380123496055603,
+    "percentile": 74.53083109919572,
+    "confidence": 0.2760246992111206,
+    "top": "▼ L_31a, ▼ L_pOFC"
+   },
+   "attention": {
+    "score": 0.5523039102554321,
+    "percentile": 60.0,
+    "confidence": 0.10460782051086426,
+    "top": "▲ 기본 시각 평균, ▲ 움직임·형태 평균"
+   }
+  },
+  "critique": {
+   "kind": "poster",
+   "ranking": [
+    [
+     "scene_place",
+     1.5700079833457845
+    ],
+    [
+     "value_vmpfc",
+     0.8874628869399679
+    ],
+    [
+     "attention_dorsal",
+     0.6623243174823042
+    ],
+    [
+     "control_dlpfc",
+     0.47564692030699157
+    ],
+    [
+     "default_mode",
+     -0.10352204962284796
+    ],
+    [
+     "visual_early",
+     -0.3915118030541093
+    ],
+    [
+     "language",
+     -0.7477935892208619
+    ],
+    [
+     "face_body",
+     -1.0267777998738166
+    ],
+    [
+     "visual_motion",
+     -1.325836866303413
+    ]
+   ],
+   "hook": {
+    "attention_early": 0.7739555248383958,
+    "attention_late": 0.6065087138042585,
+    "visual_early": 0.20266640483957446,
+    "visual_late": -0.6886009070009511
+   },
+   "diagnosis": [
+    "Reward circuit (OFC/vmPFC) is on but the appeal head is average: value is felt but what is good isn't legible",
+    "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+    "Face areas (FFA/STS) are silent: no human or gaze cue",
+    "Attention drops after the first 2 s (+0.77 → +0.61): nothing to look at after the first impression"
+   ],
+   "directives": [
+    "Name the value explicitly next to what the eye lands on: one benefit line + price/offer under the hero, nothing else competing.",
+    "Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion.",
+    "Introduce a human cue: a portrait or illustrated face whose gaze points at the CTA/product (faces win attention fastest).",
+    "Add a second discovery after the hero (a detail reveal, micro-illustration, or a strong secondary block) so interest holds past 2 s."
+   ],
+   "cited_areas": [
+    "▼ L 31a [aesthetic]",
+    "▼ L reward value, liking (pOFC) [aesthetic]",
+    "▲ early vision (V1–V4) mean [attention]",
+    "▲ object shape & motion (MT/LO) mean [attention]"
+   ],
+   "groups": [
+    "value_vmpfc",
+    "visual_motion",
+    "face_body",
+    ""
+   ],
+   "prompt_block": "BRAIN CRITIQUE (TRIBE v2 predicted human cortex while looking at the last render; values are relative within this image):\n- most driven regions: places & scenes (PPA/RSC) +1.57, reward & value (OFC/vmPFC) +0.89, visual attention (IPS/FEF) +0.66; least: faces & people (FFA/STS) -1.03, object shape & motion (MT/LO) -1.33\n- first-2s hook vs later: attention +0.77 → +0.61, visual drive +0.20 → -0.69\n- areas the aesthetic head cites: ▼ L 31a [aesthetic]; ▼ L reward value, liking (pOFC) [aesthetic]; ▲ early vision (V1–V4) mean [attention]; ▲ object shape & motion (MT/LO) mean [attention]\n- diagnosis: Reward circuit (OFC/vmPFC) is on but the appeal head is average: value is felt but what is good isn't legible / Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette / Face areas (FFA/STS) are silent: no human or gaze cue / Attention drops after the first 2 s (+0.77 → +0.61): nothing to look at after the first impression\n- DO NEXT (highest priority first): (1) Name the value explicitly next to what the eye lands on: one benefit line + price/offer under the hero, nothing else competing. (2) Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion. (3) Introduce a human cue: a portrait or illustrated face whose gaze points at the CTA/product (faces win attention fastest). (4) Add a second discovery after the hero (a detail reveal, micro-illustration, or a strong secondary block) so interest holds past 2 s."
+  }
+ },
+ "history": [
+  {
+   "round": 0,
+   "accepted": true,
+   "ui_score": 0.3247,
+   "brain_only": 0.477,
+   "judge": {
+    "realism": 0.222,
+    "composition": 0.111,
+    "light": 0.222,
+    "desirability": 0.111,
+    "artifacts": 0.333,
+    "judge_score": 0.2,
+    "fix": "Move camera to the opposite side at ~120cm height facing the front of the sofa so the sofa cushions + coffee table form the hero focal group instead of shooting the back of the sofa blocking the room."
+   },
+   "qa": {
+    "blown_pct": 1.1,
+    "black_pct": 0.0,
+    "mean_lum": 121.0
+   },
+   "why": "first plan",
+   "notes": [
+    "dropped unknown/unavailable asset side_table_tall_01"
+   ],
+   "objects": [
+    "sofa_03",
+    "modern_coffee_table_02",
+    "ArmChair_01",
+    "potted_plant_01",
+    "potted_plant_02"
+   ],
+   "diagnosis": [
+    "Place areas (PPA/RSC) dominate: the background scene swallows the message",
+    "Face areas (FFA/STS) are silent: no human or gaze cue"
+   ]
+  },
+  {
+   "round": 1,
+   "accepted": true,
+   "ui_score": 0.4186,
+   "brain_only": 0.523,
+   "judge": {
+    "realism": 0.333,
+    "composition": 0.333,
+    "light": 0.222,
+    "desirability": 0.222,
+    "artifacts": 0.556,
+    "judge_score": 0.333,
+    "fix": "Replace the heavy ornate dark-brown carved leather sofa with a low-profile light oatmeal linen 3-seat Japandi sofa on slim wood legs"
+   },
+   "qa": {
+    "blown_pct": 0.6,
+    "black_pct": 0.4,
+    "mean_lum": 118.9
+   },
+   "why": "Flipped sofa to face camera, lowered camera to 120cm with tighter 35mm hero framing, and removed armchair plus second plant to leave sofa+coffee table as the single clutter-free focal group.",
+   "notes": [],
+   "objects": [
+    "sofa_03",
+    "modern_coffee_table_02",
+    "potted_plant_01"
+   ],
+   "diagnosis": [
+    "Face areas (FFA/STS) are silent: no human or gaze cue",
+    "Reward/value areas (OFC/vmPFC) are low: no 'I want this' signal"
+   ]
+  },
+  {
+   "round": 2,
+   "accepted": true,
+   "ui_score": 0.4383,
+   "brain_only": 0.594,
+   "judge": {
+    "realism": 0.333,
+    "composition": 0.333,
+    "light": 0.222,
+    "desirability": 0.222,
+    "artifacts": 0.444,
+    "judge_score": 0.311,
+    "fix": "Remove the half-cropped armchair on the left edge, raise camera to ~120cm eye level, and reframe so sofa + coffee table are centered with the wall art fully in frame"
+   },
+   "qa": {
+    "blown_pct": 0.6,
+    "black_pct": 0.1,
+    "mean_lum": 139.6
+   },
+   "why": "Replaced heavy sofa_03 with low-profile sofa_02 plus lighter rectangular table and added angled armchair for lived-in second discovery while warming sunlight for calm Japandi desirability.",
+   "notes": [],
+   "objects": [
+    "sofa_02",
+    "modern_coffee_table_01",
+    "potted_plant_01",
+    "modern_arm_chair_01"
+   ],
+   "diagnosis": [
+    "Reward circuit (OFC/vmPFC) is on but the appeal head is average: value is felt but what is good isn't legible",
+    "Face areas (FFA/STS) are silent: no human or gaze cue"
+   ]
+  },
+  {
+   "round": 3,
+   "accepted": true,
+   "ui_score": 0.4482,
+   "brain_only": 0.616,
+   "judge": {
+    "realism": 0.222,
+    "composition": 0.333,
+    "light": 0.222,
+    "desirability": 0.222,
+    "artifacts": 0.556,
+    "judge_score": 0.311,
+    "fix": "Replace the dark Victorian leather sofa with a light oatmeal linen Japandi sofa and add a visible window off-camera left to motivate soft directional daylight, dimming the floor lamp to a warm 2700K glow instead of blown-out white."
+   },
+   "qa": {
+    "blown_pct": 1.4,
+    "black_pct": 0.0,
+    "mean_lum": 142.4
+   },
+   "why": "Removed cropped armchair for single focal group, centered 120cm camera on sofa-table-art axis, and extended rug under sofa to anchor composition.",
+   "notes": [],
+   "objects": [
+    "sofa_02",
+    "modern_coffee_table_01",
+    "potted_plant_01"
+   ],
+   "diagnosis": [
+    "Reward circuit (OFC/vmPFC) is on but the appeal head is average: value is felt but what is good isn't legible",
+    "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette"
+   ]
+  },
+  {
+   "round": 4,
+   "accepted": false,
+   "ui_score": 0.3748,
+   "brain_only": 0.453,
+   "judge": {
+    "realism": 0.222,
+    "composition": 0.333,
+    "light": 0.333,
+    "desirability": 0.222,
+    "artifacts": 0.444,
+    "judge_score": 0.311,
+    "fix": "Dress the sterile set: add real art to blank frame, cushions + throw on sofa, books/tray on coffee table, and replace paper-thin white plane with a rug with thickness and pile texture"
+   },
+   "qa": {
+    "blown_pct": 0.7,
+    "black_pct": 0.1,
+    "mean_lum": 135.0
+   },
+   "why": "Dimmed practical to 2700K/40W with sheer curtain and softer daylight for warm Japandi glow, angled camera for diagonal focal composition, and pulled rug/table under sofa for one clear silhouette.",
+   "notes": [],
+   "objects": [
+    "sofa_02",
+    "modern_coffee_table_01",
+    "potted_plant_01"
+   ],
+   "diagnosis": [
+    "Place areas (PPA/RSC) dominate: the background scene swallows the message",
+    "Face areas (FFA/STS) are silent: no human or gaze cue"
+   ]
+  },
+  {
+   "round": 5,
+   "accepted": false,
+   "ui_score": 0.4107,
+   "brain_only": 0.559,
+   "judge": {
+    "realism": 0.222,
+    "composition": 0.333,
+    "light": 0.222,
+    "desirability": 0.222,
+    "artifacts": 0.444,
+    "judge_score": 0.289,
+    "fix": "Add a visible window off-camera left casting soft directional daylight with window shadows and dim the floor lamp to a warm 2700K glow to stop the blow-out"
+   },
+   "qa": {
+    "blown_pct": 1.1,
+    "black_pct": 0.1,
+    "mean_lum": 133.9
+   },
+   "why": "Lightened to oatmeal Japandi palette with hinoki floor, moved left window forward for soft directional daylight patch, warmed practical/area to 2700K at 60-80W without curtain, and added tall side table as second discovery while keeping single sofa-table focal group.",
+   "notes": [
+    "dropped unknown/unavailable asset side_table_tall_01"
+   ],
+   "objects": [
+    "sofa_02",
+    "modern_coffee_table_01",
+    "potted_plant_01"
+   ],
+   "diagnosis": [
+    "Reward circuit (OFC/vmPFC) is on but the appeal head is average: value is felt but what is good isn't legible",
+    "Face areas (FFA/STS) are silent: no human or gaze cue"
+   ]
+  },
+  {
+   "round": 6,
+   "accepted": false,
+   "ui_score": 0.4179,
+   "brain_only": 0.549,
+   "judge": {
+    "realism": 0.333,
+    "composition": 0.333,
+    "light": 0.222,
+    "desirability": 0.222,
+    "artifacts": 0.444,
+    "judge_score": 0.311,
+    "fix": "Add real window daylight from off-frame left with soft shadows and fully style the set: finished art in frame, cushions/throw on sofa, and textured rug to kill blank voids"
+   },
+   "qa": {
+    "blown_pct": 1.2,
+    "black_pct": 0.1,
+    "mean_lum": 132.2
+   },
+   "why": "Warmed practical to 2700K/60W, added side table as second discovery, shifted camera off-axis for diagonal hero silhouette, and warmed sun to 4300K for calm Japandi daylight.",
+   "notes": [],
+   "objects": [
+    "sofa_02",
+    "modern_coffee_table_01",
+    "potted_plant_01",
+    "side_table_01"
+   ],
+   "diagnosis": [
+    "Reward circuit (OFC/vmPFC) is on but the appeal head is average: value is felt but what is good isn't legible",
+    "Face areas (FFA/STS) are silent: no human or gaze cue"
+   ]
+  },
+  {
+   "round": 7,
+   "accepted": false,
+   "ui_score": 0.4182,
+   "brain_only": 0.603,
+   "judge": {
+    "realism": 0.222,
+    "composition": 0.333,
+    "light": 0.222,
+    "desirability": 0.222,
+    "artifacts": 0.333,
+    "judge_score": 0.267,
+    "fix": "Raise camera to 120-140cm eye-level and pull back so coffee table no longer blocks sofa, add soft window daylight from off-camera left, and fill the blank white frame with real Japandi art to kill the void"
+   },
+   "qa": {
+    "blown_pct": 1.0,
+    "black_pct": 0.0,
+    "mean_lum": 130.9
+   },
+   "why": "Swapped to round table for dominant silhouette, added lantern as second discovery, widened centered lens to include window daylight, and softened warm practical to 2850K/50W with lower ambient to keep Japandi focal legibility.",
+   "notes": [],
+   "objects": [
+    "sofa_02",
+    "coffee_table_round_01",
+    "potted_plant_01",
+    "wooden_lantern_01"
+   ],
+   "diagnosis": [
+    "Reward circuit (OFC/vmPFC) is on but the appeal head is average: value is felt but what is good isn't legible",
+    "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette"
+   ]
+  }
+ ]
+}

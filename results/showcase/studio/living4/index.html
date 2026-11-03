@@ -1,0 +1,162 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><title>NeuroMuse · photoreal interior</title>
+<style>body{font-family:-apple-system,Pretendard,sans-serif;background:#0b0b0f;color:#eee;margin:0;padding:32px}h1{font-size:20px;font-weight:600}h2{font-size:15px;margin:26px 0 8px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:18px}.card{background:#15151b;border:1px solid #23232b;border-radius:14px;overflow:hidden}.card img{width:100%;display:block}
+.t{padding:10px 14px;font-weight:600;font-size:13px;color:#ffb38a}.m{padding:8px 14px 12px;font-size:12.5px;color:#ccc;line-height:1.5}table{border-collapse:collapse;font-size:12.5px}td,th{padding:6px 10px;border-bottom:1px solid #23232b;text-align:left;vertical-align:top}
+.k{color:#8b8b96}.big{font-size:26px;font-weight:700;color:#7ee787}.hero img{width:100%;border-radius:14px;margin-top:10px}</style></head><body>
+<h1>A brain + a judge steering a photoreal Blender interior (real CC0 furniture, PBR, HDRI daylight)</h1>
+<div class=k style="font-size:13px">A photoreal living-room corner for a furniture catalogue hero shot: warm, calm, inviting, one clear focal composition (sofa + coffee table), natural daylight through a window plus one warm practical light, Scandinavian/Japandi taste, no clutter.</div>
+<div class=big>score 0.461 → 0.488 (+0.027) · best round r4</div>
+<div class=hero><img src='best_hero.png'></div>
+<div class=row style="margin-top:18px"><div class=card><div class=t>FIRST PLAN · r0</div><img src='r0.png'><div class=m>brain 0.671 · judge 0.29 · Reward circuit (OFC/vmPFC) is on but the appeal head is average: value is felt but what is good isn&#x27;t legible / Face areas (FFA/STS) are silent: no human or gaze cue</div></div>
+<div class=card><div class=t>BEST · r4</div><img src='r4.png'><div class=m>brain 0.648 · judge 0.36 · Reward circuit (OFC/vmPFC) is on but the appeal head is average: value is felt but what is good isn&#x27;t legible / Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette</div></div></div>
+<h2>Per round</h2><table><tr><th>r</th><th>render</th><th>score</th><th>brain</th><th>judge</th><th>kept</th><th>why / objects</th></tr><tr><td>r0</td><td><img src='r0.png' style='width:200px;border-radius:6px'></td><td>0.461</td><td>0.671</td><td>0.29<br><span class=k>real 0.22 · light 0.22 · art 0.44</span></td><td>✓</td><td class=k>first plan<br>sofa_02, modern_coffee_table_01, ArmChair_01, potted_plant_01, side_table_01, Ottoman_01</td></tr><tr><td>r1</td><td><img src='r1.png' style='width:200px;border-radius:6px'></td><td>0.404</td><td>0.491</td><td>0.33<br><span class=k>real 0.33 · light 0.22 · art 0.56</span></td><td>·</td><td class=k>Removed cropped ottoman and floor-lamp clutter, pulled camera to eye-height, boosted side sun for daylight patches, and placed single warm table-lamp light on side table to make sofa+table the clear hero.<br>sofa_02, modern_coffee_table_01, ArmChair_01, potted_plant_01, side_table_01</td></tr><tr><td>r2</td><td><img src='r2.png' style='width:200px;border-radius:6px'></td><td>0.389</td><td>0.511</td><td>0.29<br><span class=k>real 0.33 · light 0.22 · art 0.44</span></td><td>·</td><td class=k>Pulled camera to standing eye-height, removed cropped ottoman to clarify sofa focal point, moved warm light to side table as practical, strengthened side sun and added warm art tone.<br>sofa_02, modern_coffee_table_01, ArmChair_01, potted_plant_01, side_table_01</td></tr><tr><td>r3</td><td><img src='r3.png' style='width:200px;border-radius:6px'></td><td>0.422</td><td>0.502</td><td>0.36<br><span class=k>real 0.33 · light 0.22 · art 0.56</span></td><td>·</td><td class=k>Removed cropped ottoman and floor-lamp to leave sofa+table as single hero, converted clutter light to one warm table-lamp glow on side table, re-angled armchair for diagonal lead-in, and set back eye-height camera with stronger side sun for calm Japandi daylight.<br>sofa_02, modern_coffee_table_01, ArmChair_01, potted_plant_01, side_table_01</td></tr><tr><td>r4</td><td><img src='r4.png' style='width:200px;border-radius:6px'></td><td>0.488</td><td>0.648</td><td>0.36<br><span class=k>real 0.33 · light 0.22 · art 0.56</span></td><td>✓</td><td class=k>Removed cropped foreground ottoman, pulled camera back to standing eye-height, strengthened side sun for daylight patches and added warm side-table practical to leave sofa+table as single legible hero.<br>sofa_02, modern_coffee_table_01, ArmChair_01, potted_plant_01, side_table_01</td></tr><tr><td>r5</td><td><img src='r5.png' style='width:200px;border-radius:6px'></td><td>0.476</td><td>0.623</td><td>0.36<br><span class=k>real 0.33 · light 0.22 · art 0.56</span></td><td>·</td><td class=k>Removed cropped foreground armchair to leave sofa+table as single hero, boosted side-table lamp to a visible warm practical, and tuned left-window sun for directional daylight with soft shadows.<br>sofa_02, modern_coffee_table_01, potted_plant_01, side_table_01</td></tr><tr><td>r6</td><td><img src='r6.png' style='width:200px;border-radius:6px'></td><td>0.482</td><td>0.635</td><td>0.36<br><span class=k>real 0.22 · light 0.22 · art 0.56</span></td><td>·</td><td class=k>Removed cropped foreground armchair and floor-lamp clutter to leave sofa+table hero, boosted side-table warm lamp and tuned left sun for directional daylight, reframed camera to center composition.<br>sofa_02, modern_coffee_table_01, potted_plant_01, side_table_01</td></tr><tr><td>r7</td><td><img src='r7.png' style='width:200px;border-radius:6px'></td><td>0.422</td><td>0.639</td><td>0.24<br><span class=k>real 0.22 · light 0.11 · art 0.44</span></td><td>·</td><td class=k>Removed cropped foreground armchair to leave sofa+table hero, tucked floor-lamp to back corner and boosted side-table lamp glow with stronger left sun and tighter camera for calm directional daylight.<br>sofa_02, modern_coffee_table_01, potted_plant_01, side_table_01</td></tr><tr><td>r8</td><td><img src='r8.png' style='width:200px;border-radius:6px'></td><td>0.480</td><td>0.632</td><td>0.36<br><span class=k>real 0.33 · light 0.22 · art 0.56</span></td><td>·</td><td class=k>Removed cropped foreground armchair and floor-lamp clutter to leave sofa+table hero, added sheer curtain and boosted warm side-table lamp with stronger left sun for soft daylight patches.<br>sofa_02, modern_coffee_table_01, potted_plant_01, side_table_01</td></tr></table>
+<h2>Best spec</h2><pre class=k style="font-size:11px;white-space:pre-wrap">{
+ &quot;room&quot;: {
+  &quot;w&quot;: 4.5,
+  &quot;d&quot;: 4.0,
+  &quot;h&quot;: 2.7,
+  &quot;floor_tex&quot;: &quot;herringbone_parquet&quot;,
+  &quot;wall_tex&quot;: &quot;beige_wall_001&quot;,
+  &quot;wall_color&quot;: &quot;#E9E1D6&quot;,
+  &quot;ceiling_color&quot;: &quot;#F7F5F0&quot;,
+  &quot;baseboard&quot;: true
+ },
+ &quot;window&quot;: {
+  &quot;wall&quot;: &quot;left&quot;,
+  &quot;x&quot;: 0.3,
+  &quot;z&quot;: 1.6,
+  &quot;w&quot;: 1.8,
+  &quot;h&quot;: 1.3,
+  &quot;frame_color&quot;: &quot;#FFFFFF&quot;,
+  &quot;curtain_color&quot;: null,
+  &quot;sill&quot;: true
+ },
+ &quot;world&quot;: {
+  &quot;hdri&quot;: &quot;kloofendal_48d_partly_cloudy_puresky&quot;,
+  &quot;strength&quot;: 1.0,
+  &quot;rotation_deg&quot;: 0
+ },
+ &quot;sun&quot;: {
+  &quot;strength&quot;: 6.5,
+  &quot;elevation_deg&quot;: 32,
+  &quot;azimuth_deg&quot;: 265,
+  &quot;kelvin&quot;: 5500
+ },
+ &quot;lights&quot;: [
+  {
+   &quot;type&quot;: &quot;area&quot;,
+   &quot;pos&quot;: [
+    1.0,
+    0.0,
+    1.8
+   ],
+   &quot;size&quot;: 0.6,
+   &quot;power&quot;: 100,
+   &quot;kelvin&quot;: 3000
+  },
+  {
+   &quot;type&quot;: &quot;point&quot;,
+   &quot;pos&quot;: [
+    -1.35,
+    1.5,
+    0.9
+   ],
+   &quot;size&quot;: 0.15,
+   &quot;power&quot;: 25,
+   &quot;kelvin&quot;: 2700
+  }
+ ],
+ &quot;objects&quot;: [
+  {
+   &quot;asset&quot;: &quot;sofa_02&quot;,
+   &quot;pos&quot;: [
+    0.0,
+    1.49
+   ],
+   &quot;rot_deg&quot;: 0,
+   &quot;scale&quot;: 1
+  },
+  {
+   &quot;asset&quot;: &quot;modern_coffee_table_01&quot;,
+   &quot;pos&quot;: [
+    0.0,
+    0.15
+   ],
+   &quot;rot_deg&quot;: 0,
+   &quot;scale&quot;: 1
+  },
+  {
+   &quot;asset&quot;: &quot;ArmChair_01&quot;,
+   &quot;pos&quot;: [
+    -1.5,
+    0.0
+   ],
+   &quot;rot_deg&quot;: -40,
+   &quot;scale&quot;: 1
+  },
+  {
+   &quot;asset&quot;: &quot;potted_plant_01&quot;,
+   &quot;pos&quot;: [
+    1.6,
+    1.45
+   ],
+   &quot;rot_deg&quot;: 0,
+   &quot;scale&quot;: 1
+  },
+  {
+   &quot;asset&quot;: &quot;side_table_01&quot;,
+   &quot;pos&quot;: [
+    -1.35,
+    1.5
+   ],
+   &quot;rot_deg&quot;: 0,
+   &quot;scale&quot;: 1
+  }
+ ],
+ &quot;rug&quot;: {
+  &quot;x&quot;: 0,
+  &quot;y&quot;: 0.15,
+  &quot;w&quot;: 2.4,
+  &quot;d&quot;: 1.7,
+  &quot;color&quot;: &quot;#CFC8BB&quot;
+ },
+ &quot;floor_lamp&quot;: {
+  &quot;x&quot;: -1.85,
+  &quot;y&quot;: 0.9,
+  &quot;height&quot;: 1.6,
+  &quot;shade_color&quot;: &quot;#EDE3D3&quot;,
+  &quot;kelvin&quot;: 2700,
+  &quot;power&quot;: 60
+ },
+ &quot;art&quot;: {
+  &quot;wall&quot;: &quot;back&quot;,
+  &quot;x&quot;: 0,
+  &quot;z&quot;: 1.7,
+  &quot;w&quot;: 1.2,
+  &quot;h&quot;: 0.8,
+  &quot;tex&quot;: &quot;fabric_pattern_07&quot;,
+  &quot;frame_color&quot;: &quot;#3A3632&quot;
+ },
+ &quot;camera&quot;: {
+  &quot;pos&quot;: [
+   0,
+   -2.4,
+   1.6
+  ],
+  &quot;look_at&quot;: [
+   0,
+   1.3,
+   0.55
+  ],
+  &quot;lens_mm&quot;: 35,
+  &quot;fstop&quot;: 4.0,
+  &quot;focus_object&quot;: &quot;sofa_02&quot;
+ },
+ &quot;render&quot;: {
+  &quot;samples&quot;: 96,
+  &quot;w&quot;: 1280,
+  &quot;h&quot;: 800,
+  &quot;exposure&quot;: 0.4
+ }
+}</pre>
+<p class=k>Assets: Poly Haven (CC0). Renderer: Blender Blender Cycles, OIDN denoise, AgX.</p></body></html>
