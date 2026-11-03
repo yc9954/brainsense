@@ -201,6 +201,12 @@ TRIBE v2 is tri-modal, so the agent's brain can *read* and *listen*, not just lo
 
 Findings: the ~30 s is backbone feature extraction (V-JEPA2 ViT-g + DINOv2 + w2v-BERT at 2 Hz, fp32); the fusion model itself is 2.4 s. bf16 autocast gives 2.7× with ROI features unchanged to the 2nd decimal (tribev2's `.numpy()` needs the fusion output cast back to fp32, handled in `modal_app.py`). Skipping transcription is exact for clips without speech (same features) and removes WhisperX/Llama entirely. The live path (`Tribe.http`) therefore defaults to `transcribe=False, bf16=True`; batch extraction for datasets with speech keeps transcription on. Remaining floor (~10 s for 4 s) is per-call extractor setup; next candidates are keeping the backbones resident across calls and reducing the 2 Hz sampling for the live path.
 
+## Assets and licenses
+- **Head bust in the live cortex card** (`assets/fsaverage_head.bin`): Meta's `head.glb` from the TRIBE v2 demo site (aidemos.atmeta.com), re-expressed in fsaverage5 surface RAS and centred on the brain. That site's terms are *research demo, no commercial use*; this project is a non-commercial hackathon entry (Indie track) and uses it under those terms only. A freely redistributable alternative, the MNE fsaverage outer-skin surface (`assets/fsaverage_head_mne.bin`, BSD-3), is kept in the repo; switch the filename in `brain-live.web.tsx` for any commercial use.
+- **Cortex mesh** (`assets/fsaverage5_pial.bin`): FreeSurfer fsaverage5 pial surface via nilearn (FreeSurfer license).
+- **TRIBE v2** weights: CC-BY-NC 4.0 (Meta). **Llama-3.2-3B** text pathway: Llama 3.2 Community License (served from the `unsloth` mirror of the same weights until the gated repo is approved).
+- Datasets: AADB (research), Unsplash Lite, SnapUGC, HC3 (CC-BY-SA 4.0).
+
 ## Honesty notes for the write-up
 - TRIBE's output is a deterministic function of its backbone embeddings; the only claims we make are sample-efficiency (ablation) and interpretability (ROI explanations). The ablation is reported whichever way it comes out.
 - TRIBE was trained on passive viewing; value-region predictions are weak by construction. The heads are what make the opinions, the brain is the prior.
