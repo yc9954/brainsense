@@ -6,8 +6,8 @@
 
 Meta Global AI Developer Hackathon 2026 · Indie track · built on **Meta Model API (Muse Spark 1.3)** · **TRIBE v2** (open weights) · **OpenMuse / CopilotKit** · **Modal** · the **Wearables Device Access Toolkit** glasses flow
 
-<img src="docs/img/glasses-mode.png" alt="Glasses mode: the landscape first-person frame of the Meta glasses, looking at a pop-up store, with the Meta AI orb and quick asks" width="100%">
-<sub>Glasses mode: a landscape first-person frame like the Meta glasses (the phone turns sideways and stands in for them). Point at a store, ask, hear the answer.</sub>
+<img src="docs/img/glasses-answer.png" alt="Glasses mode: the landscape first-person frame of the Meta glasses looking at a pop-up kiosk; the brain answers in captions: early visual cortex, reach in the top 4%, then asks for a thumbs up or down" width="100%">
+<sub>Glasses mode: a landscape first-person frame like the Meta glasses (the phone turns sideways and stands in for them). "What do you think?" of a mall pop-up: the answer names the region that fired, quotes the percentile, admits the other signals are faint, and asks to learn your taste.</sub>
 
 <table>
 <tr>
