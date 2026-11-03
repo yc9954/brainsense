@@ -45,7 +45,7 @@ def card(rec: dict) -> str:
     right = col("After · brain in the loop, round " + br["best"].split("_r")[1][0], br, True, "")
     foot = (f"Percentiles against 1,200 human and machine texts (Human-likeness head, holdout AUROC 0.88) and against rated photos (attention). "
             f"Blind pairwise judge: P(after is better) = {pj:.2f}.")
-    return f'<!doctype html><meta charset="utf-8"><style>{CSS}</style><div class="card"><div class="k">{html.escape(cfg["reader"])}</div><h1>{html.escape(cfg["task"].split(" (")[0].capitalize())}</h1><div class="cols">{left}{right}</div><div class="foot">{foot}</div></div>'
+    return f'<!doctype html><meta charset="utf-8"><style>{CSS}</style><div class="card"><div class="k">{html.escape(cfg["reader"])}</div><h1>{html.escape((lambda t: t[0].upper() + t[1:])(cfg["task"].split(" (")[0]))}</h1><div class="cols">{left}{right}</div><div class="foot">{foot}</div></div>'
 
 
 def main(run: Path) -> None:
