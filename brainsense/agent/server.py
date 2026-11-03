@@ -344,11 +344,12 @@ def _reflex(item_id: str, heads: dict[str, Any], owner: str = "local-user") -> d
     liked_then = (last["kind"] == "liked" and last["value"] >= 0.5) or last["kind"] == "chosen_over"
     rules_ = [r for r in ENGRAMS.rules(owner) if r["confidence"] >= 0.3]
     rule = rules_[0] if rules_ else None
-    verdict = "좋아할" if personal["score"] >= 0.5 else "별로일"
-    when = f"{round((__import__('time').time() - hit.created_at) / 86400)}일 전" if hit.created_at else "전에"
-    sentence = (f"{when} 네가 {'좋아' if liked_then else '별로'}라고 했던 것과 내 피질엔 거의 같은 패턴이야"
-                f"(유사도 {hit.similarity:.2f}). 네 취향 모델은 {int(personal['score'] * 100)}%로 {verdict} 쪽."
-                + (f" 규칙대로야: {rule['text'][:80]}" if rule else ""))
+    verdict = "like it" if personal["score"] >= 0.5 else "pass on it"
+    days = round((__import__("time").time() - hit.created_at) / 86400) if hit.created_at else None
+    when = "today" if not days else f"{days} day{'s' if days > 1 else ''} ago"
+    sentence = (f"Nearly the same cortical pattern as the one you {'liked' if liked_then else 'passed on'} {when} "
+                f"(similarity {hit.similarity:.2f}); your taste model says {int(personal['score'] * 100)}% you will {verdict}."
+                + (f" It follows your rule: {rule['text'][:110]}" if rule else ""))
     return {"reflex": True, "sentence": sentence, "precedent": {"item_id": hit.id, "similarity": round(hit.similarity, 3),
                                                                "outcome": last, "note": hit.note},
             "personal_score": round(float(personal["score"]), 3), "rule": rule["text"] if rule else None}
@@ -460,28 +461,28 @@ def text_critique(series: dict[str, list[float]], heads: dict[str, Any]) -> dict
     diag: list[str] = []
     todo: list[str] = []
     if lo("value_vmpfc"):
-        diag.append("보상·가치 회로가 조용함: 읽는 사람에게 이 글이 왜 중요한지, 어떤 감정을 건드리는지가 없음")
-        todo.append("첫 두 문장 안에 독자의 이해관계나 감정을 하나 박아라 (잃는 것, 바라는 것, 놀라운 것)")
+        diag.append("Reward and value circuits stay quiet: the reader is never told why this matters to them or what to feel")
+        todo.append("Put one stake or feeling for the reader in the first two sentences (what they lose, want, or did not expect)")
     if lo("face_body") and lo("scene_place"):
-        diag.append("사람·장면 영역이 둘 다 꺼져 있음: 구체적인 인물·장소·감각이 없는 추상적인 글")
-        todo.append("실명이든 가명이든 한 사람, 한 장소, 한 감각(냄새·소리·촉감)을 넣어라")
+        diag.append("Both the people and the scene regions are off: abstract writing with no person, place or sense in it")
+        todo.append("Add one person, one place and one sense (a smell, a sound, a texture)")
     elif lo("face_body"):
-        diag.append("사람 영역이 조용함: 글에 사람이 등장하지 않음")
-        todo.append("누가 겪은 일인지 한 사람을 등장시켜라")
+        diag.append("The people region is quiet: nobody appears in the text")
+        todo.append("Put one person in it and say what happened to them")
     elif lo("scene_place"):
-        diag.append("장면 영역이 조용함: 어디서 벌어지는 일인지 그림이 안 그려짐")
-        todo.append("장소나 상황을 한 줄로 그려라")
+        diag.append("The scene region is quiet: the reader cannot picture where this happens")
+        todo.append("Sketch the place or situation in one line")
     if lo("default_mode"):
-        diag.append("이야기·상상 네트워크(디폴트 모드)가 조용함: 설명은 되는데 이야기가 없음")
-        todo.append("시간 순서가 있는 작은 에피소드 하나로 바꿔라 (그때 → 그래서 → 결국)")
+        diag.append("The story and imagination network (default mode) is quiet: it explains but never tells a story")
+        todo.append("Turn it into one small episode with a time order (then, so, in the end)")
     if hi("language") and all(lo(g) for g in ("value_vmpfc", "default_mode")):
-        diag.append("언어 영역만 균일하게 높음: 문장은 매끈한데 아무 데도 닿지 않는 기계적 문체의 전형")
-        todo.append("접속사·나열·'또한/뿐만 아니라'류를 걷어내고 문장 길이를 들쭉날쭉하게 만들어라")
+        diag.append("Only the language regions run high: smooth sentences that touch nothing, the signature of machine prose")
+        todo.append("Cut the connectives and lists (Additionally, Furthermore, not only) and vary the sentence length")
     if hi("control_dlpfc") or hi("attention_dorsal"):
-        diag.append("집중·통제 영역이 높음: 읽는 데 힘이 드는 문장(길이, 밀도, 전문용어)")
-        todo.append("긴 문장을 둘로 쪼개고 전문용어 하나당 비유 하나를 붙여라")
+        diag.append("Focus and control regions run high: the sentences take effort to read (length, density, jargon)")
+        todo.append("Split the long sentences and give every technical term one plain comparison")
     if hi("default_mode") and hi("value_vmpfc"):
-        diag.append("이야기 몰입과 보상 반응이 함께 높음: 사람이 쓴 글의 전형적 패턴")
+        diag.append("Story immersion and reward both run high: the typical pattern of writing by a person")
     ranked = sorted(rel.items(), key=lambda kv: -kv[1])
     out = {"kind": "text", "ranking": [g for g, _ in ranked], "relative_z": {g: round(v, 2) for g, v in rel.items()},
            "diagnosis": diag[:4], "directives": todo[:3]}

@@ -27,19 +27,58 @@ from ..tribe.rois import ROI_GROUPS
 from .engram import EngramStore
 
 AREA_GROUP = {a: g for g, areas in ROI_GROUPS.items() for a in areas}
-GROUP_KO = {"visual_early": "기본 시각", "visual_motion": "움직임·형태", "face_body": "얼굴·사람", "scene_place": "장소·배경",
-            "attention_dorsal": "시각 주의", "value_vmpfc": "보상·가치", "language": "언어", "default_mode": "이야기·상상",
-            "control_dlpfc": "집중·통제"}
+GROUP_KO = {"visual_early": "early visual", "visual_motion": "motion and shape", "face_body": "face and body",
+            "scene_place": "scene and place", "attention_dorsal": "visual attention", "value_vmpfc": "reward and value",
+            "language": "language", "default_mode": "story and imagination", "control_dlpfc": "focus and control"}
+
+
+# Everyday names for HCP-MMP1 areas that fall outside the nine groups and the showcase's table.
+PLAIN = {"PoI1": "posterior insula (bodily feeling)", "PoI2": "posterior insula (bodily feeling)", "Ig": "insula",
+         "MI": "middle insula", "AVI": "anterior insula (gut reaction)", "AAIC": "anterior insula (gut reaction)",
+         "FOP1": "frontal operculum (taste and effort)", "FOP2": "frontal operculum (taste and effort)",
+         "FOP3": "frontal operculum", "FOP4": "frontal operculum", "FOP5": "frontal operculum",
+         "PFop": "parietal operculum (touch and body)", "OP1": "parietal operculum (touch)", "OP4": "parietal operculum (touch)",
+         "OP2-3": "parietal operculum (balance)", "LBelt": "auditory belt (sound texture)", "MBelt": "auditory belt (sound texture)",
+         "PBelt": "auditory belt (sound texture)", "A1": "primary auditory cortex", "RI": "auditory area RI",
+         "52": "insular area 52", "PI": "parainsular (sound and body)", "TA2": "auditory association area",
+         "STV": "superior temporal visual (social motion)", "PGi": "angular gyrus (meaning and self)", "PGs": "angular gyrus (meaning and self)",
+         "PGp": "angular gyrus", "PFm": "supramarginal (attention to tools and words)", "PF": "supramarginal", "PFt": "supramarginal",
+         "7PC": "superior parietal (reaching)", "7AL": "superior parietal", "7Am": "superior parietal", "7PL": "superior parietal",
+         "5m": "paracentral (body)", "5L": "paracentral (body)", "5mv": "paracentral (body)", "6ma": "premotor (planning)",
+         "6mp": "premotor (planning)", "6d": "premotor", "6v": "premotor (mouth and hand)", "6r": "premotor", "6a": "premotor",
+         "SCEF": "supplementary eye field (looking)", "a32pr": "anterior cingulate (effort and conflict)", "p32pr": "anterior cingulate (effort)",
+         "p24": "anterior cingulate", "d32": "dorsal cingulate (effort)", "8BL": "medial prefrontal (self)", "9p": "dorsolateral prefrontal",
+         "9a": "dorsolateral prefrontal", "10pp": "frontal pole (imagining)", "47l": "inferior frontal (meaning)", "47m": "orbital frontal (value)",
+         "47s": "orbital frontal (value)", "a47r": "inferior frontal (meaning)", "p47r": "inferior frontal (meaning)",
+         "TGd": "temporal pole (people and stories)", "TGv": "temporal pole (people and stories)", "TF": "fusiform (objects)",
+         "PeEc": "perirhinal (familiarity)", "EC": "entorhinal (memory)", "PreS": "presubiculum (memory)", "H": "hippocampus (memory)",
+         "ProS": "prostriate (peripheral vision)", "DVT": "dorsal visual transitional", "V6": "visual area V6 (motion in depth)",
+         "V6A": "visual area V6A", "V7": "visual area V7 (attention)", "IPS1": "intraparietal (attention)", "V3CD": "visual area V3CD",
+         "V8": "visual area V8 (colour)", "VMV1": "ventromedial visual (scenes)", "MIP": "medial intraparietal (reaching)",
+         "LIPd": "lateral intraparietal (eye targeting)", "PHT": "posterior temporal (motion and words)", "TE2a": "inferior temporal (objects)",
+         "TE2p": "inferior temporal (objects)", "TPOJ2": "temporo-parietal junction (other minds)", "TPOJ3": "temporo-parietal junction (other minds)",
+         "STSvp": "superior temporal sulcus (voices and faces)", "s6-8": "superior frontal", "i6-8": "superior frontal",
+         "8Ad": "frontal eye region", "8C": "dorsolateral prefrontal (control)", "IFSa": "inferior frontal sulcus (control)"}
 
 
 def _label(area: str, group_ko: str) -> str:
     """Plain-words label for an HCP-MMP1 area code; the showcase's area_label knows the long tail."""
     if group_ko:
         return group_ko
+    code = area.split("_", 1)[-1]
+    if code in PLAIN:
+        side = "left" if area.startswith("L_") else "right" if area.startswith("R_") else ""
+        return f"{side} {PLAIN[code]}".strip()
     try:
         from ..showcase.skills import area_label
-        lab = area_label(area) or area_label(area.split("_", 1)[-1])
-        return lab.strip() or area
+        lab = area_label(area, lang="en") or area_label(area.split("_", 1)[-1], lang="en")
+        lab = lab.strip()
+        # area_label returns "R PoI2 (PoI2)"-style text when it has no plain name; soften that
+        code = area.split("_", 1)[-1]
+        if lab.replace("L ", "").replace("R ", "").strip() in (code, f"{code} ({code})"):
+            side = "left" if area.startswith("L_") else "right" if area.startswith("R_") else ""
+            return f"the {side} cortical area {code}".strip()
+        return lab
     except Exception:
         return area
 
@@ -109,9 +148,11 @@ def phrase_rules(rules: list[dict[str, Any]], owner: str) -> list[str]:
     """One falsifiable sentence per rule. Uses the Meta Model API when configured, else a template."""
     template = []
     for r in rules:
-        side = "더 켜질 때" if r["direction"] == "higher" else "더 조용할 때"
-        template.append(f"{_label(r['area'], r['group_ko'])} 영역({r['area']})이 {side} 네가 좋아할 확률이 높다 "
-                        f"(효과 크기 d={r['d']}, 좋아 {r['n_liked']}개 vs 별로 {r['n_disliked']}개).")
+        side = "more active" if r["direction"] == "higher" else "quieter"
+        lab = _label(r['area'], r['group_ko'])
+        subject = lab if lab.startswith("the ") else f"the {lab}"
+        template.append(f"When {subject} is {side}, you tend to like it "
+                        f"(effect size d={r['d']}, {r['n_liked']} liked vs {r['n_disliked']} disliked).")
     if os.environ.get("BRAINSENSE_LLM_MOCK") == "1" or not os.environ.get("BRAINSENSE_LLM_API_KEY"):
         return template
     try:
@@ -119,9 +160,9 @@ def phrase_rules(rules: list[dict[str, Any]], owner: str) -> list[str]:
         client = OpenAI(base_url=os.environ["BRAINSENSE_LLM_BASE_URL"], api_key=os.environ["BRAINSENSE_LLM_API_KEY"])
         prompt = ("You are the sleep pass of an agent whose memory is predicted human brain states. Below are statistically "
                   "stable contrasts between things the user liked and disliked, as cortical areas. Rewrite EACH as one "
-                  "falsifiable Korean sentence about the user's taste in plain words (what kind of images/text/sound), "
-                  "keeping the area code in parentheses and the effect size. Return a JSON list of strings, same order, "
-                  "nothing else.\n" + json.dumps(rules, ensure_ascii=False))
+                  "falsifiable English sentence about the user's taste in everyday words (what kind of images, text or "
+                  "sound), naming the brain region in plain language only (no area codes, no abbreviations), and keeping "
+                  "the effect size. No jargon. Return a JSON list of strings, same order, nothing else.\n" + json.dumps(rules, ensure_ascii=False))
         res = client.chat.completions.create(model=os.environ["BRAINSENSE_LLM_MODEL"],
                                              messages=[{"role": "user", "content": prompt}], max_tokens=1200)
         txt = res.choices[0].message.content or ""
