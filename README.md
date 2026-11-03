@@ -6,16 +6,19 @@
 
 Meta Global AI Developer Hackathon 2026 · Indie track · built on **Meta Model API (Muse Spark 1.3)** · **TRIBE v2** (open weights) · **OpenMuse / CopilotKit** · **Modal** · the **Wearables Device Access Toolkit** glasses flow
 
+<img src="docs/img/glasses-mode.png" alt="Glasses mode: the landscape first-person frame of the Meta glasses, looking at a pop-up store, with the Meta AI orb and quick asks" width="100%">
+<sub>Glasses mode: a landscape first-person frame like the Meta glasses (the phone turns sideways and stands in for them). Point at a store, ask, hear the answer.</sub>
+
 <table>
 <tr>
 <td width="34%"><img src="docs/img/app-home.png" alt="Home: an opinion it can justify"></td>
-<td width="33%"><img src="docs/img/glasses-mode.png" alt="Glasses mode: camera point of view with spoken captions"></td>
 <td width="33%"><img src="docs/img/card-bars.png" alt="The brain card: live cortex and calibrated head scores"></td>
+<td width="33%"><img src="docs/img/app-lab.png" alt="Lab: real stimuli, your brain, memory written live"></td>
 </tr>
 <tr>
 <td align="center"><sub>Chat home</sub></td>
-<td align="center"><sub>Glasses mode (phone as Ray-Ban Meta)</sub></td>
 <td align="center"><sub>The brain card: cortex, then numbers</sub></td>
+<td align="center"><sub>Lab: pop-up store, menu board, bakery case, shop window, shelf, poster wall</sub></td>
 </tr>
 </table>
 
