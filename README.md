@@ -83,6 +83,25 @@ Same brief, same Muse Spark, same budget. Only the feedback differs: the left co
 
 Caveat we keep next to every win rate: on static pages, against Muse's *own* self-critique loop, the brain loop loses by Muse's own judge (which that loop optimises directly). Against "ask once" it wins on pages, and on video it wins against both. Full tables and the blind human-vote page are in the showcase section below.
 
+## Writing and voice through the same brain
+
+A reader's cortex, predicted by TRIBE v2 while *reading*, feeds a Human-likeness head (calibrated on 1,200 human and ChatGPT answers, holdout AUROC 0.88) and a critique in plain English: which networks the text engages and what a writer would change. Same five tasks, same Muse Spark: the draft a chatbot writes, Muse asked once to "make it sound like a person", and a brain-in-the-loop rewrite that reads the cortex back between rounds. A blind pairwise judge (Muse, both orders) picks the finalist.
+
+<table>
+<tr><td><img src="docs/img/text-support.png" alt="Customer-support reply: chatbot draft vs brain-in-the-loop rewrite, with Human-likeness and attention percentiles and the cortex critique"></td></tr>
+<tr><td><img src="docs/img/text-founder.png" alt="LinkedIn founder post: chatbot draft vs brain-in-the-loop rewrite"></td></tr>
+</table>
+
+| task | Human-likeness pct: draft → one-shot → brain | Attention pct: draft → brain | judge P(brain > one-shot) | judge P(brain > draft) |
+|---|---|---|---|---|
+| customer-support reply | 26 → 4 → **31** | 75 → 86 | **0.83** | **0.90** |
+| founder's LinkedIn post | 4 → 5 → **13** | 90 → 93 | **0.88** | **0.90** |
+| pop-up Instagram caption | 51 → 37 → **76** | 35 → 54 | 0.12 | 0.10 |
+| cold email | 8 → 4 → **14** | 86 → 77 | 0.10 | 0.12 |
+| dating-app bio | 98 → 98 → 99 | 70 → 65 | 0.05 | 0.05 |
+
+What this shows, and what it does not. The diagnosis is the strong part: a chatbot's cold email or founder post lands in the bottom 10% of the Human-likeness head, and the critique says why in words a writer can act on ("only the language regions run high: smooth sentences that touch nothing"). The loop is the weak part when it chases the head alone: on three of five tasks the head rose while the blind judge preferred the plain rewrite, because a text can score "human" by sounding hesitant and casual. So in the product the brain is the critic and never the only judge; the agent reads the diagnosis, rewrites once, and shows both scores. Voice goes through the same brain: the draft and the rewrite were read aloud by a system voice and sent through the audio pathway (16 kHz wav → wav2vec-BERT → cortex); the attention head moved with the text in three of five tasks (founder post 85 → 92), and stayed flat or fell in two. Full run: `results/showcase/text/en-text1`.
+
 ## Architecture
 
 <img src="docs/architecture.svg" alt="Architecture: inputs → Meta open models (V-JEPA2, DINOv2, Llama 3.2, wav2vec-BERT → TRIBE v2 → predicted cortex) → calibrated heads, Engram memory, Muse Spark agent → spoken opinion, numbers, taste, design loops" width="100%">

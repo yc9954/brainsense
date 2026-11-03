@@ -1,0 +1,617 @@
+{
+ "key": "dating_bio",
+ "cfg": {
+  "reader": "people browsing a dating app",
+  "task": "a dating-app bio (under 70 words) for a 31-year-old pastry chef who climbs on weekends, collects old film cameras and cannot cook rice properly"
+ },
+ "source": {
+  "text": "31-year-old pastry chef by day, climber on weekends. I can make a perfect croissant but cannot cook rice to save my life. I collect old film cameras — you’ve been warned, you’ll end up on grainy 35mm. Seeking a belay partner who’ll also help taste-test desserts.",
+  "humanlike_pct": 98.2,
+  "humanlike_conf": 0.997,
+  "attention_pct": 69.9,
+  "select_score": 0.9804,
+  "critique": {
+   "kind": "text",
+   "ranking": [
+    "face_body",
+    "language",
+    "visual_early",
+    "visual_motion",
+    "control_dlpfc",
+    "attention_dorsal",
+    "default_mode",
+    "scene_place",
+    "value_vmpfc"
+   ],
+   "relative_z": {
+    "visual_early": 0.23,
+    "visual_motion": -0.1,
+    "face_body": 1.71,
+    "scene_place": -1.1,
+    "attention_dorsal": -0.44,
+    "value_vmpfc": -1.12,
+    "language": 1.71,
+    "default_mode": -0.6,
+    "control_dlpfc": -0.29
+   },
+   "diagnosis": [
+    "Reward and value circuits stay quiet: the reader is never told why this matters to them or what to feel",
+    "The scene region is quiet: the reader cannot picture where this happens"
+   ],
+   "directives": [
+    "Put one stake or feeling for the reader in the first two sentences (what they lose, want, or did not expect)",
+    "Sketch the place or situation in one line"
+   ],
+   "humanlike_percentile": 98.19587628865979
+  },
+  "top_features": [
+   {
+    "name": "L_V3A",
+    "contribution": 7.5804
+   },
+   {
+    "name": "L_OP1",
+    "contribution": 7.5465
+   },
+   {
+    "name": "R_MT",
+    "contribution": -6.4119
+   }
+  ]
+ },
+ "oneshot": {
+  "text": "31, pastry chef by day, usually hanging off a wall on weekends. I can make a perfect croissant but somehow always mess up rice. I collect old film cameras so fair warning — you will end up on grainy 35mm. Looking for a belay partner who will help taste-test desserts with me.",
+  "humanlike_pct": 97.6,
+  "humanlike_conf": 0.994,
+  "attention_pct": 57.3,
+  "select_score": 0.9727,
+  "critique": {
+   "kind": "text",
+   "ranking": [
+    "face_body",
+    "language",
+    "visual_early",
+    "visual_motion",
+    "control_dlpfc",
+    "attention_dorsal",
+    "default_mode",
+    "value_vmpfc",
+    "scene_place"
+   ],
+   "relative_z": {
+    "visual_early": 0.08,
+    "visual_motion": 0.07,
+    "face_body": 1.78,
+    "scene_place": -1.25,
+    "attention_dorsal": -0.38,
+    "value_vmpfc": -1.23,
+    "language": 1.53,
+    "default_mode": -0.52,
+    "control_dlpfc": -0.07
+   },
+   "diagnosis": [
+    "Reward and value circuits stay quiet: the reader is never told why this matters to them or what to feel",
+    "The scene region is quiet: the reader cannot picture where this happens"
+   ],
+   "directives": [
+    "Put one stake or feeling for the reader in the first two sentences (what they lose, want, or did not expect)",
+    "Sketch the place or situation in one line"
+   ],
+   "humanlike_percentile": 97.55154639175258
+  },
+  "top_features": [
+   {
+    "name": "R_MT",
+    "contribution": -7.302
+   },
+   {
+    "name": "L_MT",
+    "contribution": -6.212
+   },
+   {
+    "name": "L_V3A",
+    "contribution": 6.1004
+   }
+  ]
+ },
+ "brain_loop": {
+  "history": [
+   {
+    "tag": "brain_loop_r1v1",
+    "round": 1,
+    "variant": 1,
+    "text": "I'm 31 and a pastry chef by day. Weekends you'll find me on a rock wall somewhere. I own way too many old film cameras so fair warning: if we date you're becoming grainy 35mm art. I make a killer croissant, somehow still burn rice every time. Looking for someone to belay me and be my official dessert taste-tester.",
+    "critique_in": "",
+    "humanlike_pct": 96.4,
+    "humanlike_conf": 0.987,
+    "attention_pct": 80.0,
+    "select_score": 0.9578,
+    "critique": {
+     "kind": "text",
+     "ranking": [
+      "language",
+      "face_body",
+      "visual_early",
+      "control_dlpfc",
+      "visual_motion",
+      "attention_dorsal",
+      "default_mode",
+      "value_vmpfc",
+      "scene_place"
+     ],
+     "relative_z": {
+      "visual_early": 0.19,
+      "visual_motion": -0.27,
+      "face_body": 1.58,
+      "scene_place": -1.43,
+      "attention_dorsal": -0.28,
+      "value_vmpfc": -1.04,
+      "language": 1.72,
+      "default_mode": -0.51,
+      "control_dlpfc": 0.05
+     },
+     "diagnosis": [
+      "Reward and value circuits stay quiet: the reader is never told why this matters to them or what to feel",
+      "The scene region is quiet: the reader cannot picture where this happens"
+     ],
+     "directives": [
+      "Put one stake or feeling for the reader in the first two sentences (what they lose, want, or did not expect)",
+      "Sketch the place or situation in one line"
+     ],
+     "humanlike_percentile": 96.3917525773196
+    },
+    "top_features": [
+     {
+      "name": "L_24dd",
+      "contribution": -7.9084
+     },
+     {
+      "name": "L_6mp",
+      "contribution": -6.3617
+     },
+     {
+      "name": "L_OP1",
+      "contribution": 6.2441
+     }
+    ]
+   },
+   {
+    "tag": "brain_loop_r1v2",
+    "round": 1,
+    "variant": 2,
+    "text": "my toxic traits / selling points, as a 31-year-old pastry chef by day:\ncon: I make a perfect croissant but literally cannot cook rice, and I collect old film cameras so you've been warned — you'll end up on grainy 35mm\npro: I'm usually climbing on weekends and looking for a belay partner who will also taste-test desserts with me",
+    "critique_in": "",
+    "humanlike_pct": 95.5,
+    "humanlike_conf": 0.982,
+    "attention_pct": 39.2,
+    "select_score": 0.9469,
+    "critique": {
+     "kind": "text",
+     "ranking": [
+      "language",
+      "face_body",
+      "control_dlpfc",
+      "visual_early",
+      "attention_dorsal",
+      "visual_motion",
+      "default_mode",
+      "value_vmpfc",
+      "scene_place"
+     ],
+     "relative_z": {
+      "visual_early": -0.1,
+      "visual_motion": -0.52,
+      "face_body": 1.51,
+      "scene_place": -1.45,
+      "attention_dorsal": -0.25,
+      "value_vmpfc": -0.55,
+      "language": 1.91,
+      "default_mode": -0.54,
+      "control_dlpfc": -0.0
+     },
+     "diagnosis": [
+      "The scene region is quiet: the reader cannot picture where this happens"
+     ],
+     "directives": [
+      "Sketch the place or situation in one line"
+     ],
+     "humanlike_percentile": 95.4896907216495
+    },
+    "top_features": [
+     {
+      "name": "L_a10p",
+      "contribution": 4.5388
+     },
+     {
+      "name": "R_25",
+      "contribution": -4.0566
+     },
+     {
+      "name": "L_EC",
+      "contribution": -3.9488
+     }
+    ]
+   },
+   {
+    "tag": "brain_loop_r2v1",
+    "round": 2,
+    "variant": 1,
+    "text": "Fair warning: dating me means free pastries for life. I'm 31, pastry chef by day covered in flour, climber on weekends chalked up on some sunny crag. I nail the perfect croissant but somehow ruin rice every time. I collect old film cameras so you'll 100% end up on grainy 35mm. Need a belay partner to taste-test desserts with me?",
+    "critique_in": "A model of a reader's brain read your previous rounds. BEST so far: Human-likeness top 4% (percentile 96 vs 1,200 human and machine texts), attention percentile 80.\nIts text:\nI'm 31 and a pastry chef by day. Weekends you'll find me on a rock wall somewhere. I own way too many old film cameras so fair warning: if we date you're becoming grainy 35mm art. I make a killer croissant, somehow still burn rice every time. Looking for someone to belay me and be my official dessert taste-tester.\n\nWhat the reader's cortex says is missing in the best one: Reward and value circuits stay quiet: the reader is never told why this matters to them or what to feel / The scene region is quiet: the reader cannot picture where this happens\nDo this next: Put one stake or feeling for the reader in the first two sentences (what they lose, want, or did not expect) / Sketch the place or situation in one line\nThe WORST round (Human-likeness percentile 96) started: my toxic traits / selling points, as a 31-year-old pastry chef by day:\ncon: I make a perfect croissant but literally cannot cook rice, and I collect old film ca...\nRewrite again from the best one. Keep every fact, keep the length limit.",
+    "humanlike_pct": 95.5,
+    "humanlike_conf": 0.982,
+    "attention_pct": 39.5,
+    "select_score": 0.9468,
+    "critique": {
+     "kind": "text",
+     "ranking": [
+      "language",
+      "face_body",
+      "visual_early",
+      "control_dlpfc",
+      "attention_dorsal",
+      "visual_motion",
+      "value_vmpfc",
+      "default_mode",
+      "scene_place"
+     ],
+     "relative_z": {
+      "visual_early": 0.15,
+      "visual_motion": -0.23,
+      "face_body": 1.44,
+      "scene_place": -1.52,
+      "attention_dorsal": -0.06,
+      "value_vmpfc": -0.79,
+      "language": 1.78,
+      "default_mode": -0.85,
+      "control_dlpfc": 0.08
+     },
+     "diagnosis": [
+      "Reward and value circuits stay quiet: the reader is never told why this matters to them or what to feel",
+      "The scene region is quiet: the reader cannot picture where this happens",
+      "The story and imagination network (default mode) is quiet: it explains but never tells a story",
+      "Only the language regions run high: smooth sentences that touch nothing, the signature of machine prose"
+     ],
+     "directives": [
+      "Put one stake or feeling for the reader in the first two sentences (what they lose, want, or did not expect)",
+      "Sketch the place or situation in one line",
+      "Turn it into one small episode with a time order (then, so, in the end)"
+     ],
+     "humanlike_percentile": 95.4896907216495
+    },
+    "top_features": [
+     {
+      "name": "L_24dd",
+      "contribution": -6.5201
+     },
+     {
+      "name": "L_OP1",
+      "contribution": 5.7691
+     },
+     {
+      "name": "L_6mp",
+      "contribution": -5.3845
+     }
+    ]
+   },
+   {
+    "tag": "brain_loop_r2v2",
+    "round": 2,
+    "variant": 2,
+    "text": "If you date me you'll never skip dessert again. I'm 31, a pastry chef by day usually covered in flour till noon, then up on a rock wall all weekend. I make a killer croissant but somehow can't cook rice. I collect old film cameras so you'll end up on grainy 35mm. Need a belay partner to taste-test desserts with me.",
+    "critique_in": "A model of a reader's brain read your previous rounds. BEST so far: Human-likeness top 4% (percentile 96 vs 1,200 human and machine texts), attention percentile 80.\nIts text:\nI'm 31 and a pastry chef by day. Weekends you'll find me on a rock wall somewhere. I own way too many old film cameras so fair warning: if we date you're becoming grainy 35mm art. I make a killer croissant, somehow still burn rice every time. Looking for someone to belay me and be my official dessert taste-tester.\n\nWhat the reader's cortex says is missing in the best one: Reward and value circuits stay quiet: the reader is never told why this matters to them or what to feel / The scene region is quiet: the reader cannot picture where this happens\nDo this next: Put one stake or feeling for the reader in the first two sentences (what they lose, want, or did not expect) / Sketch the place or situation in one line\nThe WORST round (Human-likeness percentile 96) started: my toxic traits / selling points, as a 31-year-old pastry chef by day:\ncon: I make a perfect croissant but literally cannot cook rice, and I collect old film ca...\nRewrite again from the best one. Keep every fact, keep the length limit.",
+    "humanlike_pct": 72.8,
+    "humanlike_conf": 0.587,
+    "attention_pct": 70.7,
+    "select_score": 0.6338,
+    "critique": {
+     "kind": "text",
+     "ranking": [
+      "language",
+      "face_body",
+      "visual_early",
+      "control_dlpfc",
+      "attention_dorsal",
+      "visual_motion",
+      "value_vmpfc",
+      "default_mode",
+      "scene_place"
+     ],
+     "relative_z": {
+      "visual_early": 0.1,
+      "visual_motion": -0.53,
+      "face_body": 1.55,
+      "scene_place": -1.33,
+      "attention_dorsal": -0.17,
+      "value_vmpfc": -0.6,
+      "language": 1.83,
+      "default_mode": -0.88,
+      "control_dlpfc": 0.03
+     },
+     "diagnosis": [
+      "The scene region is quiet: the reader cannot picture where this happens",
+      "The story and imagination network (default mode) is quiet: it explains but never tells a story"
+     ],
+     "directives": [
+      "Sketch the place or situation in one line",
+      "Turn it into one small episode with a time order (then, so, in the end)"
+     ],
+     "humanlike_percentile": 72.80927835051546
+    },
+    "top_features": [
+     {
+      "name": "R_25",
+      "contribution": -6.433
+     },
+     {
+      "name": "L_EC",
+      "contribution": -6.4019
+     },
+     {
+      "name": "L_Pir",
+      "contribution": 4.4295
+     }
+    ]
+   },
+   {
+    "tag": "brain_loop_r3v1",
+    "round": 3,
+    "variant": 1,
+    "text": "Looking for someone who doesn't mind chalk on my hands and flour on my shirt? I'm 31, a pastry chef by day in a steamy little bakery nailing perfect croissants but somehow I still can't cook rice. Weekends I'm climbing",
+    "critique_in": "A model of a reader's brain read your previous rounds. BEST so far: Human-likeness top 4% (percentile 96 vs 1,200 human and machine texts), attention percentile 80.\nIts text:\nI'm 31 and a pastry chef by day. Weekends you'll find me on a rock wall somewhere. I own way too many old film cameras so fair warning: if we date you're becoming grainy 35mm art. I make a killer croissant, somehow still burn rice every time. Looking for someone to belay me and be my official dessert taste-tester.\n\nWhat the reader's cortex says is missing in the best one: Reward and value circuits stay quiet: the reader is never told why this matters to them or what to feel / The scene region is quiet: the reader cannot picture where this happens\nDo this next: Put one stake or feeling for the reader in the first two sentences (what they lose, want, or did not expect) / Sketch the place or situation in one line\nThe WORST round (Human-likeness percentile 73) started: If you date me you'll never skip dessert again. I'm 31, a pastry chef by day usually covered in flour till noon, then up on a rock wall all weekend. I make a ki...\nRewrite again from the best one. Keep every fact, keep the length limit.",
+    "humanlike_pct": 98.8,
+    "humanlike_conf": 0.998,
+    "attention_pct": 65.2,
+    "select_score": 0.9874,
+    "critique": {
+     "kind": "text",
+     "ranking": [
+      "language",
+      "face_body",
+      "control_dlpfc",
+      "attention_dorsal",
+      "visual_early",
+      "visual_motion",
+      "default_mode",
+      "value_vmpfc",
+      "scene_place"
+     ],
+     "relative_z": {
+      "visual_early": 0.02,
+      "visual_motion": -0.18,
+      "face_body": 1.41,
+      "scene_place": -1.24,
+      "attention_dorsal": 0.08,
+      "value_vmpfc": -1.21,
+      "language": 1.77,
+      "default_mode": -0.88,
+      "control_dlpfc": 0.22
+     },
+     "diagnosis": [
+      "Reward and value circuits stay quiet: the reader is never told why this matters to them or what to feel",
+      "The scene region is quiet: the reader cannot picture where this happens",
+      "The story and imagination network (default mode) is quiet: it explains but never tells a story",
+      "Only the language regions run high: smooth sentences that touch nothing, the signature of machine prose"
+     ],
+     "directives": [
+      "Put one stake or feeling for the reader in the first two sentences (what they lose, want, or did not expect)",
+      "Sketch the place or situation in one line",
+      "Turn it into one small episode with a time order (then, so, in the end)"
+     ],
+     "humanlike_percentile": 98.84020618556701
+    },
+    "top_features": [
+     {
+      "name": "L_24dd",
+      "contribution": -6.4556
+     },
+     {
+      "name": "L_V3A",
+      "contribution": 6.4257
+     },
+     {
+      "name": "R_MT",
+      "contribution": -6.234
+     }
+    ]
+   },
+   {
+    "tag": "brain_loop_r3v2",
+    "round": 3,
+    "variant": 2,
+    "text": "You'll end up with flour in your hair and chalk on your jeans if we click. I'm 31, pastry chef by day — mornings in a hot tiny bakery kitchen, weekends climbing on a cliff somewhere. I hoard old film cameras so you're gonna be grainy 35mm. Perfect croissant, yes. Rice? I destroy it every time. Be my belay partner and dessert taste-tester?",
+    "critique_in": "A model of a reader's brain read your previous rounds. BEST so far: Human-likeness top 4% (percentile 96 vs 1,200 human and machine texts), attention percentile 80.\nIts text:\nI'm 31 and a pastry chef by day. Weekends you'll find me on a rock wall somewhere. I own way too many old film cameras so fair warning: if we date you're becoming grainy 35mm art. I make a killer croissant, somehow still burn rice every time. Looking for someone to belay me and be my official dessert taste-tester.\n\nWhat the reader's cortex says is missing in the best one: Reward and value circuits stay quiet: the reader is never told why this matters to them or what to feel / The scene region is quiet: the reader cannot picture where this happens\nDo this next: Put one stake or feeling for the reader in the first two sentences (what they lose, want, or did not expect) / Sketch the place or situation in one line\nThe WORST round (Human-likeness percentile 73) started: If you date me you'll never skip dessert again. I'm 31, a pastry chef by day usually covered in flour till noon, then up on a rock wall all weekend. I make a ki...\nRewrite again from the best one. Keep every fact, keep the length limit.",
+    "humanlike_pct": 96.4,
+    "humanlike_conf": 0.988,
+    "attention_pct": 78.1,
+    "select_score": 0.9585,
+    "critique": {
+     "kind": "text",
+     "ranking": [
+      "language",
+      "face_body",
+      "control_dlpfc",
+      "visual_early",
+      "attention_dorsal",
+      "visual_motion",
+      "default_mode",
+      "value_vmpfc",
+      "scene_place"
+     ],
+     "relative_z": {
+      "visual_early": -0.01,
+      "visual_motion": -0.25,
+      "face_body": 1.57,
+      "scene_place": -1.47,
+      "attention_dorsal": -0.22,
+      "value_vmpfc": -1.0,
+      "language": 1.74,
+      "default_mode": -0.47,
+      "control_dlpfc": 0.11
+     },
+     "diagnosis": [
+      "Reward and value circuits stay quiet: the reader is never told why this matters to them or what to feel",
+      "The scene region is quiet: the reader cannot picture where this happens"
+     ],
+     "directives": [
+      "Put one stake or feeling for the reader in the first two sentences (what they lose, want, or did not expect)",
+      "Sketch the place or situation in one line"
+     ],
+     "humanlike_percentile": 96.3917525773196
+    },
+    "top_features": [
+     {
+      "name": "L_24dd",
+      "contribution": -6.5873
+     },
+     {
+      "name": "L_EC",
+      "contribution": -5.6391
+     },
+     {
+      "name": "L_10d",
+      "contribution": -5.0741
+     }
+    ]
+   }
+  ],
+  "best": "brain_loop_r3v1",
+  "text": "Looking for someone who doesn't mind chalk on my hands and flour on my shirt? I'm 31, a pastry chef by day in a steamy little bakery nailing perfect croissants but somehow I still can't cook rice. Weekends I'm climbing",
+  "humanlike_pct": 98.8,
+  "humanlike_conf": 0.998,
+  "attention_pct": 65.2,
+  "select_score": 0.9874,
+  "critique": {
+   "kind": "text",
+   "ranking": [
+    "language",
+    "face_body",
+    "control_dlpfc",
+    "attention_dorsal",
+    "visual_early",
+    "visual_motion",
+    "default_mode",
+    "value_vmpfc",
+    "scene_place"
+   ],
+   "relative_z": {
+    "visual_early": 0.02,
+    "visual_motion": -0.18,
+    "face_body": 1.41,
+    "scene_place": -1.24,
+    "attention_dorsal": 0.08,
+    "value_vmpfc": -1.21,
+    "language": 1.77,
+    "default_mode": -0.88,
+    "control_dlpfc": 0.22
+   },
+   "diagnosis": [
+    "Reward and value circuits stay quiet: the reader is never told why this matters to them or what to feel",
+    "The scene region is quiet: the reader cannot picture where this happens",
+    "The story and imagination network (default mode) is quiet: it explains but never tells a story",
+    "Only the language regions run high: smooth sentences that touch nothing, the signature of machine prose"
+   ],
+   "directives": [
+    "Put one stake or feeling for the reader in the first two sentences (what they lose, want, or did not expect)",
+    "Sketch the place or situation in one line",
+    "Turn it into one small episode with a time order (then, so, in the end)"
+   ],
+   "humanlike_percentile": 98.84020618556701
+  }
+ },
+ "pairwise": {
+  "brain_vs_oneshot": {
+   "p_first": 0.05,
+   "order_ab": 0.05,
+   "order_ba": 0.05,
+   "reason": "B includes all three quirks with specific playful details and a clear invitation while A feels unfinished and omits the cameras. | swapped: A is complete, specific and playful with a clear call to action while B cuts off mid-sentence."
+  },
+  "brain_vs_source": {
+   "p_first": 0.05,
+   "order_ab": 0.05,
+   "order_ba": 0.05,
+   "reason": "B covers all three quirks with concrete playful details while A feels truncated and omits the cameras entirely. | swapped: A is complete and specific with natural humor while B is cut off mid-sentence and omits the film cameras."
+  },
+  "oneshot_vs_source": {
+   "p_first": 0.85,
+   "order_ab": 0.9,
+   "order_ba": 0.8,
+   "reason": "Version A sounds more natural and playful with specific vivid phrasing instead of clichés and formal wording. | swapped: B uses casual conversational phrasing that sounds human and flirty for dating while A feels stiffer and more resume-like"
+  }
+ },
+ "audio": {
+  "source": {
+   "file": "results/showcase/text/en-text1/dating_bio/source.wav",
+   "seconds": 17,
+   "heads": {
+    "attention": {
+     "percentile": 41.9,
+     "confidence": 0.059
+    },
+    "appeal": {
+     "percentile": 100.0,
+     "confidence": 0.713
+    }
+   },
+   "relative_z": {
+    "visual_early": -0.22,
+    "visual_motion": -0.44,
+    "face_body": 1.32,
+    "scene_place": -1.38,
+    "attention_dorsal": 0.4,
+    "value_vmpfc": -0.68,
+    "language": 1.81,
+    "default_mode": -1.07,
+    "control_dlpfc": 0.25
+   },
+   "ranking": [
+    "language",
+    "face_body",
+    "attention_dorsal",
+    "control_dlpfc",
+    "visual_early",
+    "visual_motion",
+    "value_vmpfc",
+    "default_mode",
+    "scene_place"
+   ]
+  },
+  "brain_loop": {
+   "file": "results/showcase/text/en-text1/dating_bio/brain_loop.wav",
+   "seconds": 13,
+   "heads": {
+    "attention": {
+     "percentile": 64.4,
+     "confidence": 0.158
+    },
+    "appeal": {
+     "percentile": 98.4,
+     "confidence": 0.398
+    }
+   },
+   "relative_z": {
+    "visual_early": -0.42,
+    "visual_motion": -0.92,
+    "face_body": 1.16,
+    "scene_place": -1.27,
+    "attention_dorsal": 0.5,
+    "value_vmpfc": -0.41,
+    "language": 1.89,
+    "default_mode": -0.93,
+    "control_dlpfc": 0.4
+   },
+   "ranking": [
+    "language",
+    "face_body",
+    "attention_dorsal",
+    "control_dlpfc",
+    "value_vmpfc",
+    "visual_early",
+    "visual_motion",
+    "default_mode",
+    "scene_place"
+   ]
+  }
+ },
+ "seconds": 310.6
+}

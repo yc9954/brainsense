@@ -1,0 +1,34 @@
+<!doctype html><meta charset="utf-8"><style>
+body{margin:0;background:#000;color:#fff;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif}
+.card{width:1180px;padding:28px 32px;box-sizing:border-box;background:#000}
+.k{color:#9AA0A6;font-size:12px;letter-spacing:2px;text-transform:uppercase}
+h1{font-size:22px;font-weight:600;margin:6px 0 18px;letter-spacing:-.3px}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.col{border:1px solid #2A2D31;border-radius:18px;padding:18px 20px;background:#0E0F11;display:flex;flex-direction:column;gap:12px}
+.col.win{border-color:#C0504D}
+.t{font-size:15.5px;line-height:1.5;white-space:pre-wrap;flex:1}
+.bars{display:flex;flex-direction:column;gap:7px;margin-top:4px}
+.row{display:grid;grid-template-columns:150px 1fr 54px;align-items:center;gap:10px;font-size:12.5px;color:#9AA0A6}
+.bar{height:9px;background:#2A2D31;border-radius:5px;overflow:hidden}.bar i{display:block;height:100%}
+.w i{background:#fff}.r i{background:#C0504D}
+.v{color:#fff;text-align:right;font-variant-numeric:tabular-nums}
+.foot{margin-top:16px;color:#9AA0A6;font-size:12.5px;line-height:1.5}
+.diag{color:#9AA0A6;font-size:12.5px;line-height:1.45;border-top:1px solid #2A2D31;padding-top:10px}
+</style><div class="card"><div class="k">a customer whose order arrived nine days late</div><h1>A customer-support reply</h1><div class="cols"><div class="col"><div class="k">Before · the draft, as a chatbot wrote it</div><div class="t">Dear Customer,
+
+We are truly sorry your order arrived nine days late. During that time we were moving to a new warehouse, which slowed packing and shipping far beyond our normal standards. That is entirely on us.
+
+We have issued a 20% refund to your original payment method. It should appear within 3-5 business days.
+
+Thank you for your patience, and we are grateful for your support.
+
+Sincerely,
+Maya, Customer Support</div><div class="bars"><div class="row"><span>Human-likeness</span><span class="bar w"><i style="width:26%"></i></span><span class="v">26%</span></div><div class="row"><span>Attention</span><span class="bar w"><i style="width:75%"></i></span><span class="v">75%</span></div></div><div class="diag">What the reader's cortex said: Reward and value circuits stay quiet: the reader is never told why this matters to them or what to feel / The scene region is quiet: the reader cannot picture where this happens</div></div><div class="col win"><div class="k">After · brain in the loop, round 1</div><div class="t">Hi, I&#x27;m really sorry — your order arriving nine days late is not okay.
+
+We&#x27;ve been moving to a new warehouse, and packing and shipping got way slower than our normal standards in the middle of it. That&#x27;s completely on us.
+
+I&#x27;ve just put a 20% refund back to your original payment method — you&#x27;ll see it in 3-5 business days.
+
+Thank you for your patience, we&#x27;re so grateful you stuck with us.
+
+Maya, Customer Support</div><div class="bars"><div class="row"><span>Human-likeness</span><span class="bar r"><i style="width:31%"></i></span><span class="v">31%</span></div><div class="row"><span>Attention</span><span class="bar r"><i style="width:86%"></i></span><span class="v">86%</span></div></div></div></div><div class="foot">Percentiles against 1,200 human and machine texts (Human-likeness head, holdout AUROC 0.88) and against rated photos (attention). Blind pairwise judge: P(after is better) = 0.90.</div></div>

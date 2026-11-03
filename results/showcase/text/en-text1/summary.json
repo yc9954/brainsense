@@ -1,0 +1,197 @@
+{
+ "run": "en-text1",
+ "rounds": 3,
+ "variants": 2,
+ "briefs": [
+  {
+   "key": "popup_caption",
+   "humanlike_pct": {
+    "source": 50.8,
+    "oneshot": 37.1,
+    "brain_loop": 75.9
+   },
+   "attention_pct": {
+    "source": 35.3,
+    "oneshot": 60.0,
+    "brain_loop": 54.2
+   },
+   "p_brain_over_oneshot": 0.125,
+   "p_brain_over_source": 0.1,
+   "p_oneshot_over_source": 0.875,
+   "audio": {
+    "source": {
+     "attention": {
+      "percentile": 27.1,
+      "confidence": 0.198
+     },
+     "appeal": {
+      "percentile": 84.0,
+      "confidence": 0.136
+     }
+    },
+    "brain_loop": {
+     "attention": {
+      "percentile": 35.1,
+      "confidence": 0.114
+     },
+     "appeal": {
+      "percentile": 0.0,
+      "confidence": 0.99
+     }
+    }
+   }
+  },
+  {
+   "key": "cold_email",
+   "humanlike_pct": {
+    "source": 7.6,
+    "oneshot": 4.4,
+    "brain_loop": 13.5
+   },
+   "attention_pct": {
+    "source": 86.3,
+    "oneshot": 80.3,
+    "brain_loop": 76.7
+   },
+   "p_brain_over_oneshot": 0.1,
+   "p_brain_over_source": 0.125,
+   "p_oneshot_over_source": 0.8,
+   "audio": {
+    "source": {
+     "attention": {
+      "percentile": 61.6,
+      "confidence": 0.119
+     },
+     "appeal": {
+      "percentile": 0.0,
+      "confidence": 0.737
+     }
+    },
+    "brain_loop": {
+     "attention": {
+      "percentile": 23.8,
+      "confidence": 0.239
+     },
+     "appeal": {
+      "percentile": 96.5,
+      "confidence": 0.305
+     }
+    }
+   }
+  },
+  {
+   "key": "support_reply",
+   "humanlike_pct": {
+    "source": 26.5,
+    "oneshot": 3.7,
+    "brain_loop": 31.1
+   },
+   "attention_pct": {
+    "source": 75.1,
+    "oneshot": 80.5,
+    "brain_loop": 85.8
+   },
+   "p_brain_over_oneshot": 0.835,
+   "p_brain_over_source": 0.9,
+   "p_oneshot_over_source": 0.7,
+   "audio": {
+    "source": {
+     "attention": {
+      "percentile": 64.4,
+      "confidence": 0.163
+     },
+     "appeal": {
+      "percentile": 9.6,
+      "confidence": 0.324
+     }
+    },
+    "brain_loop": {
+     "attention": {
+      "percentile": 64.4,
+      "confidence": 0.157
+     },
+     "appeal": {
+      "percentile": 0.1,
+      "confidence": 0.711
+     }
+    }
+   }
+  },
+  {
+   "key": "dating_bio",
+   "humanlike_pct": {
+    "source": 98.2,
+    "oneshot": 97.6,
+    "brain_loop": 98.8
+   },
+   "attention_pct": {
+    "source": 69.9,
+    "oneshot": 57.3,
+    "brain_loop": 65.2
+   },
+   "p_brain_over_oneshot": 0.05,
+   "p_brain_over_source": 0.05,
+   "p_oneshot_over_source": 0.85,
+   "audio": {
+    "source": {
+     "attention": {
+      "percentile": 41.9,
+      "confidence": 0.059
+     },
+     "appeal": {
+      "percentile": 100.0,
+      "confidence": 0.713
+     }
+    },
+    "brain_loop": {
+     "attention": {
+      "percentile": 64.4,
+      "confidence": 0.158
+     },
+     "appeal": {
+      "percentile": 98.4,
+      "confidence": 0.398
+     }
+    }
+   }
+  },
+  {
+   "key": "founder_post",
+   "humanlike_pct": {
+    "source": 3.6,
+    "oneshot": 5.0,
+    "brain_loop": 12.5
+   },
+   "attention_pct": {
+    "source": 90.1,
+    "oneshot": 90.7,
+    "brain_loop": 92.6
+   },
+   "p_brain_over_oneshot": 0.875,
+   "p_brain_over_source": 0.9,
+   "p_oneshot_over_source": 0.8,
+   "audio": {
+    "source": {
+     "attention": {
+      "percentile": 84.9,
+      "confidence": 0.416
+     },
+     "appeal": {
+      "percentile": 0.2,
+      "confidence": 0.637
+     }
+    },
+    "brain_loop": {
+     "attention": {
+      "percentile": 92.1,
+      "confidence": 0.543
+     },
+     "appeal": {
+      "percentile": 0.0,
+      "confidence": 0.961
+     }
+    }
+   }
+  }
+ ]
+}

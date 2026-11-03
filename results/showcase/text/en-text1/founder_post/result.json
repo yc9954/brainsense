@@ -1,0 +1,605 @@
+{
+ "key": "founder_post",
+ "cfg": {
+  "reader": "LinkedIn",
+  "task": "a LinkedIn post (under 130 words) from a solo founder whose meeting-notes app just passed 1,000 paying users after 14 months, with one lesson she learned the hard way"
+ },
+ "source": {
+  "text": "14 months ago, I launched my meeting-notes app from my kitchen table.\n\nToday, we just passed 1,000 paying users.\n\nI'm a solo founder, so every bug, support ticket, and win has my name on it.\n\nThe lesson I learned the hard way? I spent 6 months building features nobody asked for.\n\nGrowth only started when I stopped guessing and sat in on 50+ customer calls.\n\nPeople didn't want a smarter app. They wanted 10 minutes back after every meeting.\n\nBuild less. Listen more.\n\nThank you to the first 1,000 who trusted me. On to the next 10k.\n\n#SaaS #SoloFounder",
+  "humanlike_pct": 3.6,
+  "humanlike_conf": 0.937,
+  "attention_pct": 90.1,
+  "select_score": 0.0653,
+  "critique": {
+   "kind": "text",
+   "ranking": [
+    "language",
+    "face_body",
+    "control_dlpfc",
+    "attention_dorsal",
+    "default_mode",
+    "visual_early",
+    "value_vmpfc",
+    "scene_place",
+    "visual_motion"
+   ],
+   "relative_z": {
+    "visual_early": -0.24,
+    "visual_motion": -1.62,
+    "face_body": 0.85,
+    "scene_place": -1.11,
+    "attention_dorsal": 0.16,
+    "value_vmpfc": -0.3,
+    "language": 2.01,
+    "default_mode": -0.19,
+    "control_dlpfc": 0.43
+   },
+   "diagnosis": [
+    "The scene region is quiet: the reader cannot picture where this happens"
+   ],
+   "directives": [
+    "Sketch the place or situation in one line"
+   ],
+   "humanlike_percentile": 3.608247422680412
+  },
+  "top_features": [
+   {
+    "name": "L_a24",
+    "contribution": 4.3447
+   },
+   {
+    "name": "R_d23ab",
+    "contribution": -3.921
+   },
+   {
+    "name": "R_10r",
+    "contribution": 3.831
+   }
+  ]
+ },
+ "oneshot": {
+  "text": "14 months ago I launched my meeting-notes app from my kitchen table.\n\nToday we just passed 1,000 paying users.\n\nI'm a solo founder, so every bug, support ticket, and win has my name on it.\n\nThe lesson I learned the hard way? I spent 6 months building features nobody asked for.\n\nGrowth only started when I stopped guessing and sat in on 50+ customer calls.\n\nTurns out people didn't want a smarter app. They just wanted 10 minutes back after every meeting.\n\nBuild less. Listen more.\n\nThank you to the first 1,000 who trusted me. On to the next 10k.\n\n#SaaS #SoloFounder",
+  "humanlike_pct": 5.0,
+  "humanlike_conf": 0.922,
+  "attention_pct": 90.7,
+  "select_score": 0.0853,
+  "critique": {
+   "kind": "text",
+   "ranking": [
+    "language",
+    "face_body",
+    "control_dlpfc",
+    "attention_dorsal",
+    "default_mode",
+    "visual_early",
+    "value_vmpfc",
+    "scene_place",
+    "visual_motion"
+   ],
+   "relative_z": {
+    "visual_early": -0.19,
+    "visual_motion": -1.52,
+    "face_body": 0.88,
+    "scene_place": -1.16,
+    "attention_dorsal": 0.17,
+    "value_vmpfc": -0.46,
+    "language": 2.02,
+    "default_mode": -0.17,
+    "control_dlpfc": 0.44
+   },
+   "diagnosis": [
+    "The scene region is quiet: the reader cannot picture where this happens"
+   ],
+   "directives": [
+    "Sketch the place or situation in one line"
+   ],
+   "humanlike_percentile": 5.025773195876289
+  },
+  "top_features": [
+   {
+    "name": "L_OP1",
+    "contribution": 4.4618
+   },
+   {
+    "name": "L_EC",
+    "contribution": -4.0304
+   },
+   {
+    "name": "L_a24",
+    "contribution": 4.0277
+   }
+  ]
+ },
+ "brain_loop": {
+  "history": [
+   {
+    "tag": "brain_loop_r1v1",
+    "round": 1,
+    "variant": 1,
+    "text": "14 months ago I was launching this meeting-notes app from my kitchen table, doing everything myself.\n\nThis morning we hit 1,000 paying users.\n\nAs a solo founder, literally every bug, support ticket, and win lands on me — which is why this one stung:\n\nI wasted 6 months shipping features nobody asked for.\n\nNothing moved until I stopped guessing and just listened in on 50+ customer calls. Turns out no one wanted a 'smarter' app. They just wanted 10 minutes back after every meeting.\n\nSo: build less. listen more.\n\nHuge thank you to the first 1,000 who trusted me with that. On to the next 10k.\n\n#SaaS #SoloFounder",
+    "critique_in": "",
+    "humanlike_pct": 7.7,
+    "humanlike_conf": 0.874,
+    "attention_pct": 91.2,
+    "select_score": 0.1305,
+    "critique": {
+     "kind": "text",
+     "ranking": [
+      "language",
+      "face_body",
+      "control_dlpfc",
+      "attention_dorsal",
+      "default_mode",
+      "visual_early",
+      "value_vmpfc",
+      "visual_motion",
+      "scene_place"
+     ],
+     "relative_z": {
+      "visual_early": -0.2,
+      "visual_motion": -1.23,
+      "face_body": 1.01,
+      "scene_place": -1.28,
+      "attention_dorsal": 0.08,
+      "value_vmpfc": -0.65,
+      "language": 2.05,
+      "default_mode": -0.16,
+      "control_dlpfc": 0.38
+     },
+     "diagnosis": [
+      "Reward and value circuits stay quiet: the reader is never told why this matters to them or what to feel",
+      "The scene region is quiet: the reader cannot picture where this happens"
+     ],
+     "directives": [
+      "Put one stake or feeling for the reader in the first two sentences (what they lose, want, or did not expect)",
+      "Sketch the place or situation in one line"
+     ],
+     "humanlike_percentile": 7.731958762886598
+    },
+    "top_features": [
+     {
+      "name": "L_OP1",
+      "contribution": 4.8218
+     },
+     {
+      "name": "L_a24",
+      "contribution": 4.7524
+     },
+     {
+      "name": "L_EC",
+      "contribution": -4.5438
+     }
+    ]
+   },
+   {
+    "tag": "brain_loop_r1v2",
+    "round": 1,
+    "variant": 2,
+    "text": "1,000 paying users.\n\n14 months ago, I launched my meeting-notes app from my kitchen table.\n\nI'm a solo founder, so if you've sent a bug report or support ticket — that was me. Every win has my name on it too.\n\nHard lesson: I burned 6 months building features nobody asked for.\n\nNothing grew until I stopped guessing and sat in on 50+ customer calls.\n\nThey didn't want a smarter app. They just wanted 10 minutes back after every meeting.\n\nBuild less. Listen more.\n\nThank you to the first 1,000 who trusted me. On to the next 10k.\n\n#SaaS #SoloFounder",
+    "critique_in": "",
+    "humanlike_pct": 12.5,
+    "humanlike_conf": 0.805,
+    "attention_pct": 92.6,
+    "select_score": 0.1981,
+    "critique": {
+     "kind": "text",
+     "ranking": [
+      "language",
+      "face_body",
+      "control_dlpfc",
+      "default_mode",
+      "attention_dorsal",
+      "visual_early",
+      "value_vmpfc",
+      "scene_place",
+      "visual_motion"
+     ],
+     "relative_z": {
+      "visual_early": -0.18,
+      "visual_motion": -1.52,
+      "face_body": 1.11,
+      "scene_place": -1.08,
+      "attention_dorsal": -0.14,
+      "value_vmpfc": -0.54,
+      "language": 1.96,
+      "default_mode": 0.11,
+      "control_dlpfc": 0.29
+     },
+     "diagnosis": [
+      "The scene region is quiet: the reader cannot picture where this happens"
+     ],
+     "directives": [
+      "Sketch the place or situation in one line"
+     ],
+     "humanlike_percentile": 12.5
+    },
+    "top_features": [
+     {
+      "name": "L_OP1",
+      "contribution": 6.0782
+     },
+     {
+      "name": "R_d23ab",
+      "contribution": -4.3927
+     },
+     {
+      "name": "L_EC",
+      "contribution": -4.1941
+     }
+    ]
+   },
+   {
+    "tag": "brain_loop_r2v1",
+    "round": 2,
+    "variant": 1,
+    "text": "Still at my kitchen table — same chipped mug, laptop wedged next to the toaster — just refreshed to see 1,000 paying users.\n\n14 months ago I launched my meeting-notes app from right here.\n\nI'm a solo founder, so every bug, support ticket, and win has my name on it.\n\nThe lesson I learned the hard way? I spent 6 months building features nobody asked for.\n\nGrowth only started when I stopped guessing and sat in on 50+ customer calls.\n\nPeople didn't want a smarter app. They wanted 10 minutes back after every meeting.\n\nBuild less. Listen more.\n\nThank you to the first 1,000 who trusted me. On to the next 10k.\n\n#SaaS #SoloFounder",
+    "critique_in": "A model of a reader's brain read your previous rounds. BEST so far: Human-likeness top 88% (percentile 12 vs 1,200 human and machine texts), attention percentile 93.\nIts text:\n1,000 paying users.\n\n14 months ago, I launched my meeting-notes app from my kitchen table.\n\nI'm a solo founder, so if you've sent a bug report or support ticket — that was me. Every win has my name on it too.\n\nHard lesson: I burned 6 months building features nobody asked for.\n\nNothing grew until I stopped guessing and sat in on 50+ customer calls.\n\nThey didn't want a smarter app. They just wanted 10 minutes back after every meeting.\n\nBuild less. Listen more.\n\nThank you to the first 1,000 who trusted me. On to the next 10k.\n\n#SaaS #SoloFounder\n\nWhat the reader's cortex says is missing in the best one: The scene region is quiet: the reader cannot picture where this happens\nDo this next: Sketch the place or situation in one line\nThe WORST round (Human-likeness percentile 8) started: 14 months ago I was launching this meeting-notes app from my kitchen table, doing everything myself.\n\nThis morning we hit 1,000 paying users.\n\nAs a solo founder...\nRewrite again from the best one. Keep every fact, keep the length limit.",
+    "humanlike_pct": 0.5,
+    "humanlike_conf": 0.987,
+    "attention_pct": 93.2,
+    "select_score": 0.0115,
+    "critique": {
+     "kind": "text",
+     "ranking": [
+      "language",
+      "face_body",
+      "attention_dorsal",
+      "control_dlpfc",
+      "visual_early",
+      "default_mode",
+      "value_vmpfc",
+      "scene_place",
+      "visual_motion"
+     ],
+     "relative_z": {
+      "visual_early": -0.09,
+      "visual_motion": -1.32,
+      "face_body": 0.82,
+      "scene_place": -1.11,
+      "attention_dorsal": 0.42,
+      "value_vmpfc": -0.7,
+      "language": 2.07,
+      "default_mode": -0.5,
+      "control_dlpfc": 0.41
+     },
+     "diagnosis": [
+      "Reward and value circuits stay quiet: the reader is never told why this matters to them or what to feel",
+      "The scene region is quiet: the reader cannot picture where this happens"
+     ],
+     "directives": [
+      "Put one stake or feeling for the reader in the first two sentences (what they lose, want, or did not expect)",
+      "Sketch the place or situation in one line"
+     ],
+     "humanlike_percentile": 0.5154639175257731
+    },
+    "top_features": [
+     {
+      "name": "L_a24",
+      "contribution": 4.4044
+     },
+     {
+      "name": "L_EC",
+      "contribution": -4.1697
+     },
+     {
+      "name": "R_25",
+      "contribution": -3.968
+     }
+    ]
+   },
+   {
+    "tag": "brain_loop_r2v2",
+    "round": 2,
+    "variant": 2,
+    "text": "Still sitting at the same kitchen table where I launched this thing 14 months ago — chipped mug to my left, laundry humming behind me.\n\nWe just crossed 1,000 paying users for my meeting-notes app.\n\nI'm a solo founder, so every bug, support ticket, and win still has my name on it.\n\nHard lesson I learned: I wasted 6 months building features nobody asked for.\n\nNothing moved until I stopped guessing and sat in on 50+ customer calls.\n\nTurns out people didn't want a smarter app. They just wanted 10 minutes back after every meeting.\n\nBuild less. Listen more.\n\nThank you to the first 1,000 who trusted me. On to the next 10k.\n\n#SaaS #SoloFounder",
+    "critique_in": "A model of a reader's brain read your previous rounds. BEST so far: Human-likeness top 88% (percentile 12 vs 1,200 human and machine texts), attention percentile 93.\nIts text:\n1,000 paying users.\n\n14 months ago, I launched my meeting-notes app from my kitchen table.\n\nI'm a solo founder, so if you've sent a bug report or support ticket — that was me. Every win has my name on it too.\n\nHard lesson: I burned 6 months building features nobody asked for.\n\nNothing grew until I stopped guessing and sat in on 50+ customer calls.\n\nThey didn't want a smarter app. They just wanted 10 minutes back after every meeting.\n\nBuild less. Listen more.\n\nThank you to the first 1,000 who trusted me. On to the next 10k.\n\n#SaaS #SoloFounder\n\nWhat the reader's cortex says is missing in the best one: The scene region is quiet: the reader cannot picture where this happens\nDo this next: Sketch the place or situation in one line\nThe WORST round (Human-likeness percentile 8) started: 14 months ago I was launching this meeting-notes app from my kitchen table, doing everything myself.\n\nThis morning we hit 1,000 paying users.\n\nAs a solo founder...\nRewrite again from the best one. Keep every fact, keep the length limit.",
+    "humanlike_pct": 1.2,
+    "humanlike_conf": 0.982,
+    "attention_pct": 90.7,
+    "select_score": 0.0205,
+    "critique": {
+     "kind": "text",
+     "ranking": [
+      "language",
+      "face_body",
+      "attention_dorsal",
+      "control_dlpfc",
+      "visual_early",
+      "value_vmpfc",
+      "default_mode",
+      "visual_motion",
+      "scene_place"
+     ],
+     "relative_z": {
+      "visual_early": -0.15,
+      "visual_motion": -1.1,
+      "face_body": 0.68,
+      "scene_place": -1.23,
+      "attention_dorsal": 0.57,
+      "value_vmpfc": -0.63,
+      "language": 2.04,
+      "default_mode": -0.76,
+      "control_dlpfc": 0.57
+     },
+     "diagnosis": [
+      "Reward and value circuits stay quiet: the reader is never told why this matters to them or what to feel",
+      "The scene region is quiet: the reader cannot picture where this happens",
+      "The story and imagination network (default mode) is quiet: it explains but never tells a story",
+      "Only the language regions run high: smooth sentences that touch nothing, the signature of machine prose"
+     ],
+     "directives": [
+      "Put one stake or feeling for the reader in the first two sentences (what they lose, want, or did not expect)",
+      "Sketch the place or situation in one line",
+      "Turn it into one small episode with a time order (then, so, in the end)"
+     ],
+     "humanlike_percentile": 1.1597938144329898
+    },
+    "top_features": [
+     {
+      "name": "L_a24",
+      "contribution": 4.0857
+     },
+     {
+      "name": "L_OP1",
+      "contribution": 3.2346
+     },
+     {
+      "name": "L_EC",
+      "contribution": -3.0869
+     }
+    ]
+   },
+   {
+    "tag": "brain_loop_r3v1",
+    "round": 3,
+    "variant": 1,
+    "text": "Just hit 1,000 paying users today, typing this with my support inbox still open in the next tab.\n\n14 months ago, I launched my meeting-notes app from my kitchen table.\n\nI'm a solo founder, so if you sent a bug report or support ticket — that was me. Every win has my name on it too.\n\nHard lesson: I burned 6 months building features nobody asked for.\n\nNothing grew until I stopped guessing and sat in on 50+ customer calls.\n\nThey didn't want a smarter app. They just wanted 10 minutes back after every meeting.\n\nBuild less. Listen more.\n\nThank you to the first 1,000 who trusted me. On to the next 10k.\n\n#SaaS #SoloFounder",
+    "critique_in": "A model of a reader's brain read your previous rounds. BEST so far: Human-likeness top 88% (percentile 12 vs 1,200 human and machine texts), attention percentile 93.\nIts text:\n1,000 paying users.\n\n14 months ago, I launched my meeting-notes app from my kitchen table.\n\nI'm a solo founder, so if you've sent a bug report or support ticket — that was me. Every win has my name on it too.\n\nHard lesson: I burned 6 months building features nobody asked for.\n\nNothing grew until I stopped guessing and sat in on 50+ customer calls.\n\nThey didn't want a smarter app. They just wanted 10 minutes back after every meeting.\n\nBuild less. Listen more.\n\nThank you to the first 1,000 who trusted me. On to the next 10k.\n\n#SaaS #SoloFounder\n\nWhat the reader's cortex says is missing in the best one: The scene region is quiet: the reader cannot picture where this happens\nDo this next: Sketch the place or situation in one line\nThe WORST round (Human-likeness percentile 0) started: Still at my kitchen table — same chipped mug, laptop wedged next to the toaster — just refreshed to see 1,000 paying users.\n\n14 months ago I launched my meeting...\nRewrite again from the best one. Keep every fact, keep the length limit.",
+    "humanlike_pct": 0.8,
+    "humanlike_conf": 0.984,
+    "attention_pct": 92.9,
+    "select_score": 0.0154,
+    "critique": {
+     "kind": "text",
+     "ranking": [
+      "language",
+      "face_body",
+      "control_dlpfc",
+      "attention_dorsal",
+      "default_mode",
+      "visual_early",
+      "value_vmpfc",
+      "scene_place",
+      "visual_motion"
+     ],
+     "relative_z": {
+      "visual_early": -0.03,
+      "visual_motion": -1.38,
+      "face_body": 0.94,
+      "scene_place": -1.21,
+      "attention_dorsal": 0.07,
+      "value_vmpfc": -0.9,
+      "language": 1.92,
+      "default_mode": 0.04,
+      "control_dlpfc": 0.54
+     },
+     "diagnosis": [
+      "Reward and value circuits stay quiet: the reader is never told why this matters to them or what to feel",
+      "The scene region is quiet: the reader cannot picture where this happens"
+     ],
+     "directives": [
+      "Put one stake or feeling for the reader in the first two sentences (what they lose, want, or did not expect)",
+      "Sketch the place or situation in one line"
+     ],
+     "humanlike_percentile": 0.7731958762886598
+    },
+    "top_features": [
+     {
+      "name": "L_OP1",
+      "contribution": 5.8428
+     },
+     {
+      "name": "L_a24",
+      "contribution": 5.745
+     },
+     {
+      "name": "L_24dd",
+      "contribution": -5.0697
+     }
+    ]
+   },
+   {
+    "tag": "brain_loop_r3v2",
+    "round": 3,
+    "variant": 2,
+    "text": "Writing this with laundry humming behind me between customer calls — today we just passed 1,000 paying users.\n\n14 months ago, I launched my meeting-notes app from my kitchen table.\n\nI'm a solo founder, so if you've sent a bug report or support ticket — that was me. Every win has my name on it too.\n\nHard lesson: I burned 6 months building features nobody asked for.\n\nNothing grew until I stopped guessing and sat in on 50+ customer calls.\n\nThey didn't want a smarter app. They just wanted 10 minutes back after every meeting.\n\nBuild less. Listen more.\n\nThank you to the first 1,000 who trusted me. On to the next 10k.\n\n#SaaS #SoloFounder",
+    "critique_in": "A model of a reader's brain read your previous rounds. BEST so far: Human-likeness top 88% (percentile 12 vs 1,200 human and machine texts), attention percentile 93.\nIts text:\n1,000 paying users.\n\n14 months ago, I launched my meeting-notes app from my kitchen table.\n\nI'm a solo founder, so if you've sent a bug report or support ticket — that was me. Every win has my name on it too.\n\nHard lesson: I burned 6 months building features nobody asked for.\n\nNothing grew until I stopped guessing and sat in on 50+ customer calls.\n\nThey didn't want a smarter app. They just wanted 10 minutes back after every meeting.\n\nBuild less. Listen more.\n\nThank you to the first 1,000 who trusted me. On to the next 10k.\n\n#SaaS #SoloFounder\n\nWhat the reader's cortex says is missing in the best one: The scene region is quiet: the reader cannot picture where this happens\nDo this next: Sketch the place or situation in one line\nThe WORST round (Human-likeness percentile 0) started: Still at my kitchen table — same chipped mug, laptop wedged next to the toaster — just refreshed to see 1,000 paying users.\n\n14 months ago I launched my meeting...\nRewrite again from the best one. Keep every fact, keep the length limit.",
+    "humanlike_pct": 2.8,
+    "humanlike_conf": 0.946,
+    "attention_pct": 91.2,
+    "select_score": 0.0538,
+    "critique": {
+     "kind": "text",
+     "ranking": [
+      "language",
+      "face_body",
+      "control_dlpfc",
+      "attention_dorsal",
+      "visual_early",
+      "default_mode",
+      "value_vmpfc",
+      "scene_place",
+      "visual_motion"
+     ],
+     "relative_z": {
+      "visual_early": -0.1,
+      "visual_motion": -1.35,
+      "face_body": 0.83,
+      "scene_place": -1.31,
+      "attention_dorsal": 0.35,
+      "value_vmpfc": -0.64,
+      "language": 1.97,
+      "default_mode": -0.28,
+      "control_dlpfc": 0.54
+     },
+     "diagnosis": [
+      "Reward and value circuits stay quiet: the reader is never told why this matters to them or what to feel",
+      "The scene region is quiet: the reader cannot picture where this happens"
+     ],
+     "directives": [
+      "Put one stake or feeling for the reader in the first two sentences (what they lose, want, or did not expect)",
+      "Sketch the place or situation in one line"
+     ],
+     "humanlike_percentile": 2.8350515463917527
+    },
+    "top_features": [
+     {
+      "name": "L_OP1",
+      "contribution": 4.4553
+     },
+     {
+      "name": "R_25",
+      "contribution": -4.1496
+     },
+     {
+      "name": "L_a24",
+      "contribution": 3.9713
+     }
+    ]
+   }
+  ],
+  "best": "brain_loop_r1v2",
+  "text": "1,000 paying users.\n\n14 months ago, I launched my meeting-notes app from my kitchen table.\n\nI'm a solo founder, so if you've sent a bug report or support ticket — that was me. Every win has my name on it too.\n\nHard lesson: I burned 6 months building features nobody asked for.\n\nNothing grew until I stopped guessing and sat in on 50+ customer calls.\n\nThey didn't want a smarter app. They just wanted 10 minutes back after every meeting.\n\nBuild less. Listen more.\n\nThank you to the first 1,000 who trusted me. On to the next 10k.\n\n#SaaS #SoloFounder",
+  "humanlike_pct": 12.5,
+  "humanlike_conf": 0.805,
+  "attention_pct": 92.6,
+  "select_score": 0.1981,
+  "critique": {
+   "kind": "text",
+   "ranking": [
+    "language",
+    "face_body",
+    "control_dlpfc",
+    "default_mode",
+    "attention_dorsal",
+    "visual_early",
+    "value_vmpfc",
+    "scene_place",
+    "visual_motion"
+   ],
+   "relative_z": {
+    "visual_early": -0.18,
+    "visual_motion": -1.52,
+    "face_body": 1.11,
+    "scene_place": -1.08,
+    "attention_dorsal": -0.14,
+    "value_vmpfc": -0.54,
+    "language": 1.96,
+    "default_mode": 0.11,
+    "control_dlpfc": 0.29
+   },
+   "diagnosis": [
+    "The scene region is quiet: the reader cannot picture where this happens"
+   ],
+   "directives": [
+    "Sketch the place or situation in one line"
+   ],
+   "humanlike_percentile": 12.5
+  }
+ },
+ "pairwise": {
+  "brain_vs_oneshot": {
+   "p_first": 0.875,
+   "order_ab": 0.85,
+   "order_ba": 0.9,
+   "reason": "A has a punchier hook and more conversational, direct voice that feels human and LinkedIn-native. | swapped: B opens with a stronger hook and uses direct, conversational second-person language that feels more human and LinkedIn-native."
+  },
+  "brain_vs_source": {
+   "p_first": 0.9,
+   "order_ab": 0.9,
+   "order_ba": 0.9,
+   "reason": "A opens with a stronger hook and sounds more human with direct address and consistent I-voice versus B's corporate we. | swapped: B opens with a scroll-stopping hook, speaks directly to the reader with vivid human phrasing, and avoids A's we-for-solo-founder slip."
+  },
+  "oneshot_vs_source": {
+   "p_first": 0.8,
+   "order_ab": 0.85,
+   "order_ba": 0.75,
+   "reason": "Version A sounds more human with Turns out and just and punchier comma-free openings that fit LinkedIn voice better. | swapped: Version B sounds more human and LinkedIn-native with conversational fillers like Turns out and just."
+  }
+ },
+ "audio": {
+  "source": {
+   "file": "results/showcase/text/en-text1/founder_post/source.wav",
+   "seconds": 35,
+   "heads": {
+    "attention": {
+     "percentile": 84.9,
+     "confidence": 0.416
+    },
+    "appeal": {
+     "percentile": 0.2,
+     "confidence": 0.637
+    }
+   },
+   "relative_z": {
+    "visual_early": -0.13,
+    "visual_motion": -2.16,
+    "face_body": 0.08,
+    "scene_place": -0.66,
+    "attention_dorsal": 0.8,
+    "value_vmpfc": 0.06,
+    "language": 1.58,
+    "default_mode": -0.35,
+    "control_dlpfc": 0.79
+   },
+   "ranking": [
+    "language",
+    "attention_dorsal",
+    "control_dlpfc",
+    "face_body",
+    "value_vmpfc",
+    "visual_early",
+    "default_mode",
+    "scene_place",
+    "visual_motion"
+   ]
+  },
+  "brain_loop": {
+   "file": "results/showcase/text/en-text1/founder_post/brain_loop.wav",
+   "seconds": 35,
+   "heads": {
+    "attention": {
+     "percentile": 92.1,
+     "confidence": 0.543
+    },
+    "appeal": {
+     "percentile": 0.0,
+     "confidence": 0.961
+    }
+   },
+   "relative_z": {
+    "visual_early": -0.25,
+    "visual_motion": -1.95,
+    "face_body": -0.5,
+    "scene_place": -0.29,
+    "attention_dorsal": 1.23,
+    "value_vmpfc": 0.79,
+    "language": 1.08,
+    "default_mode": -0.93,
+    "control_dlpfc": 0.8
+   },
+   "ranking": [
+    "attention_dorsal",
+    "language",
+    "control_dlpfc",
+    "value_vmpfc",
+    "visual_early",
+    "scene_place",
+    "face_body",
+    "default_mode",
+    "visual_motion"
+   ]
+  }
+ },
+ "seconds": 355.9
+}

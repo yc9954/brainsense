@@ -1,0 +1,610 @@
+{
+ "key": "cold_email",
+ "cfg": {
+  "reader": "a busy head of marketing at a mid-size direct-to-consumer brand",
+  "task": "a cold email (under 120 words) from a small creative studio that designs pop-up stores, asking for a 15-minute call next week; mention one past project (a 9-day sneaker pop-up that drew 11,000 visitors)"
+ },
+ "source": {
+  "text": "Subject: quick pop-up idea for [Brand]?\n\nHi [First Name],\n\nI'll keep this brief — I know inboxes are brutal.\n\nWe're Atelier North, a small studio that designs pop-ups for DTC brands.\n\nLast fall we did a 9-day sneaker pop-up that drew 11,000 visitors, with lines around the block on day 1.\n\nAre you testing IRL retail at [Brand] next quarter?\n\nWould you be open to a 15-minute call next week to share the playbook? I'm free Tue/Thu AM.\n\nThanks,\nMaya",
+  "humanlike_pct": 7.6,
+  "humanlike_conf": 0.881,
+  "attention_pct": 86.3,
+  "select_score": 0.1265,
+  "critique": {
+   "kind": "text",
+   "ranking": [
+    "face_body",
+    "language",
+    "default_mode",
+    "control_dlpfc",
+    "attention_dorsal",
+    "visual_early",
+    "visual_motion",
+    "value_vmpfc",
+    "scene_place"
+   ],
+   "relative_z": {
+    "visual_early": -0.71,
+    "visual_motion": -0.73,
+    "face_body": 1.77,
+    "scene_place": -1.1,
+    "attention_dorsal": -0.5,
+    "value_vmpfc": -0.81,
+    "language": 1.6,
+    "default_mode": 0.4,
+    "control_dlpfc": 0.09
+   },
+   "diagnosis": [
+    "Reward and value circuits stay quiet: the reader is never told why this matters to them or what to feel",
+    "The scene region is quiet: the reader cannot picture where this happens"
+   ],
+   "directives": [
+    "Put one stake or feeling for the reader in the first two sentences (what they lose, want, or did not expect)",
+    "Sketch the place or situation in one line"
+   ],
+   "humanlike_percentile": 7.603092783505154
+  },
+  "top_features": [
+   {
+    "name": "L_a24",
+    "contribution": 7.6372
+   },
+   {
+    "name": "L_PoI2",
+    "contribution": 6.5639
+   },
+   {
+    "name": "R_25",
+    "contribution": -6.2742
+   }
+  ]
+ },
+ "oneshot": {
+  "text": "Subject: quick pop-up idea for [Brand]?\n\nHi [First Name],\n\nI'll keep this short — guessing your inbox is brutal.\n\nWe're Atelier North, a small studio that only designs pop-ups for DTC brands.\n\nLast fall we did a 9-day sneaker pop-up that drew 11,000 visitors — line around the block on day 1.\n\nIs [Brand] testing IRL retail next quarter?\n\nWould you be open to a 15-minute call next week to share the playbook? Free Tue/Thu AM on my end.\n\nThanks,\nMaya",
+  "humanlike_pct": 4.4,
+  "humanlike_conf": 0.925,
+  "attention_pct": 80.3,
+  "select_score": 0.0781,
+  "critique": {
+   "kind": "text",
+   "ranking": [
+    "face_body",
+    "language",
+    "control_dlpfc",
+    "default_mode",
+    "attention_dorsal",
+    "visual_early",
+    "value_vmpfc",
+    "visual_motion",
+    "scene_place"
+   ],
+   "relative_z": {
+    "visual_early": -0.66,
+    "visual_motion": -0.81,
+    "face_body": 1.74,
+    "scene_place": -1.18,
+    "attention_dorsal": -0.32,
+    "value_vmpfc": -0.76,
+    "language": 1.66,
+    "default_mode": 0.12,
+    "control_dlpfc": 0.21
+   },
+   "diagnosis": [
+    "Reward and value circuits stay quiet: the reader is never told why this matters to them or what to feel",
+    "The scene region is quiet: the reader cannot picture where this happens"
+   ],
+   "directives": [
+    "Put one stake or feeling for the reader in the first two sentences (what they lose, want, or did not expect)",
+    "Sketch the place or situation in one line"
+   ],
+   "humanlike_percentile": 4.381443298969072
+  },
+  "top_features": [
+   {
+    "name": "L_a24",
+    "contribution": 7.0416
+   },
+   {
+    "name": "R_25",
+    "contribution": -6.2494
+   },
+   {
+    "name": "L_EC",
+    "contribution": -5.5026
+   }
+  ]
+ },
+ "brain_loop": {
+  "history": [
+   {
+    "tag": "brain_loop_r1v1",
+    "round": 1,
+    "variant": 1,
+    "text": "Subject: quick pop-up idea for [Brand]?\n\nHi [First Name],\n\nI'll make this quick — I know your inbox is slammed.\n\nI'm Maya with Atelier North, we're a small studio that designs pop-ups just for DTC brands.\n\nLast fall we did a 9-day sneaker pop-up that brought in 11,000 visitors — lines around the block on day 1.\n\nAre you guys testing IRL retail at [Brand] next quarter?\n\nHappy to share the playbook on a 15-minute call next week if it's useful? I have Tue/Thu AM open.\n\nThanks,\nMaya",
+    "critique_in": "",
+    "humanlike_pct": 3.4,
+    "humanlike_conf": 0.939,
+    "attention_pct": 81.9,
+    "select_score": 0.0619,
+    "critique": {
+     "kind": "text",
+     "ranking": [
+      "face_body",
+      "language",
+      "default_mode",
+      "control_dlpfc",
+      "attention_dorsal",
+      "visual_motion",
+      "visual_early",
+      "value_vmpfc",
+      "scene_place"
+     ],
+     "relative_z": {
+      "visual_early": -0.64,
+      "visual_motion": -0.49,
+      "face_body": 1.81,
+      "scene_place": -1.27,
+      "attention_dorsal": -0.33,
+      "value_vmpfc": -1.03,
+      "language": 1.46,
+      "default_mode": 0.31,
+      "control_dlpfc": 0.18
+     },
+     "diagnosis": [
+      "Reward and value circuits stay quiet: the reader is never told why this matters to them or what to feel",
+      "The scene region is quiet: the reader cannot picture where this happens"
+     ],
+     "directives": [
+      "Put one stake or feeling for the reader in the first two sentences (what they lose, want, or did not expect)",
+      "Sketch the place or situation in one line"
+     ],
+     "humanlike_percentile": 3.350515463917526
+    },
+    "top_features": [
+     {
+      "name": "L_a24",
+      "contribution": 7.1801
+     },
+     {
+      "name": "R_25",
+      "contribution": -6.2612
+     },
+     {
+      "name": "L_EC",
+      "contribution": -6.0401
+     }
+    ]
+   },
+   {
+    "tag": "brain_loop_r1v2",
+    "round": 1,
+    "variant": 2,
+    "text": "Subject: quick pop-up idea for [Brand]?\n\nHi [First Name],\n\nNot sure if [Brand] is testing IRL retail next quarter, but quick thought:\n\nWe're Atelier North, a small studio that designs pop-ups for DTC brands. Last fall we did a 9-day sneaker pop-up that drew 11,000 visitors — lines around the block on day 1.\n\nHappy to share the playbook on what worked if helpful.\n\nOpen to a 15-minute call next week? I'm free Tue/Thu AM.\n\nThanks,\nMaya",
+    "critique_in": "",
+    "humanlike_pct": 1.4,
+    "humanlike_conf": 0.975,
+    "attention_pct": 69.0,
+    "select_score": 0.0261,
+    "critique": {
+     "kind": "text",
+     "ranking": [
+      "face_body",
+      "language",
+      "default_mode",
+      "visual_motion",
+      "control_dlpfc",
+      "visual_early",
+      "attention_dorsal",
+      "scene_place",
+      "value_vmpfc"
+     ],
+     "relative_z": {
+      "visual_early": -0.51,
+      "visual_motion": -0.04,
+      "face_body": 1.99,
+      "scene_place": -0.92,
+      "attention_dorsal": -0.58,
+      "value_vmpfc": -1.26,
+      "language": 1.4,
+      "default_mode": 0.14,
+      "control_dlpfc": -0.23
+     },
+     "diagnosis": [
+      "Reward and value circuits stay quiet: the reader is never told why this matters to them or what to feel",
+      "The scene region is quiet: the reader cannot picture where this happens"
+     ],
+     "directives": [
+      "Put one stake or feeling for the reader in the first two sentences (what they lose, want, or did not expect)",
+      "Sketch the place or situation in one line"
+     ],
+     "humanlike_percentile": 1.4175257731958764
+    },
+    "top_features": [
+     {
+      "name": "L_a24",
+      "contribution": 8.1534
+     },
+     {
+      "name": "L_EC",
+      "contribution": -7.2211
+     },
+     {
+      "name": "R_25",
+      "contribution": -6.9402
+     }
+    ]
+   },
+   {
+    "tag": "brain_loop_r2v1",
+    "round": 2,
+    "variant": 1,
+    "text": "Subject: quick pop-up idea for [Brand]?\n\nHi [First Name],\n\nI'll keep this brief — guessing your inbox is brutal with Q4 coming.\n\nThe DTC teams I talk to are so over paying more for ads that convert less, which is why I'm reaching out.\n\nI'm Maya with Atelier North, we're a small studio that designs pop-ups for DTC brands. Last fall we turned a tiny SoHo storefront into a 9-day sneaker pop-up that drew 11,000 visitors, lines around the block on day 1 with try-ons spilling onto the sidewalk.\n\nAre you testing IRL retail at [Brand] next quarter?\n\nOpen to a 15-minute call next week to share the playbook? I'm free Tue/Thu AM.\n\nThanks,\nMaya",
+    "critique_in": "A model of a reader's brain read your previous rounds. BEST so far: Human-likeness top 97% (percentile 3 vs 1,200 human and machine texts), attention percentile 82.\nIts text:\nSubject: quick pop-up idea for [Brand]?\n\nHi [First Name],\n\nI'll make this quick — I know your inbox is slammed.\n\nI'm Maya with Atelier North, we're a small studio that designs pop-ups just for DTC brands.\n\nLast fall we did a 9-day sneaker pop-up that brought in 11,000 visitors — lines around the block on day 1.\n\nAre you guys testing IRL retail at [Brand] next quarter?\n\nHappy to share the playbook on a 15-minute call next week if it's useful? I have Tue/Thu AM open.\n\nThanks,\nMaya\n\nWhat the reader's cortex says is missing in the best one: Reward and value circuits stay quiet: the reader is never told why this matters to them or what to feel / The scene region is quiet: the reader cannot picture where this happens\nDo this next: Put one stake or feeling for the reader in the first two sentences (what they lose, want, or did not expect) / Sketch the place or situation in one line\nThe WORST round (Human-likeness percentile 1) started: Subject: quick pop-up idea for [Brand]?\n\nHi [First Name],\n\nNot sure if [Brand] is testing IRL retail next quarter, but quick thought:\n\nWe're Atelier North, a sm...\nRewrite again from the best one. Keep every fact, keep the length limit.",
+    "humanlike_pct": 2.8,
+    "humanlike_conf": 0.947,
+    "attention_pct": 57.0,
+    "select_score": 0.0533,
+    "critique": {
+     "kind": "text",
+     "ranking": [
+      "face_body",
+      "language",
+      "control_dlpfc",
+      "default_mode",
+      "attention_dorsal",
+      "visual_motion",
+      "visual_early",
+      "scene_place",
+      "value_vmpfc"
+     ],
+     "relative_z": {
+      "visual_early": -0.51,
+      "visual_motion": -0.22,
+      "face_body": 1.8,
+      "scene_place": -1.19,
+      "attention_dorsal": -0.19,
+      "value_vmpfc": -1.29,
+      "language": 1.52,
+      "default_mode": -0.05,
+      "control_dlpfc": 0.12
+     },
+     "diagnosis": [
+      "Reward and value circuits stay quiet: the reader is never told why this matters to them or what to feel",
+      "The scene region is quiet: the reader cannot picture where this happens"
+     ],
+     "directives": [
+      "Put one stake or feeling for the reader in the first two sentences (what they lose, want, or did not expect)",
+      "Sketch the place or situation in one line"
+     ],
+     "humanlike_percentile": 2.8350515463917527
+    },
+    "top_features": [
+     {
+      "name": "L_a24",
+      "contribution": 5.6054
+     },
+     {
+      "name": "L_MT",
+      "contribution": -5.5695
+     },
+     {
+      "name": "R_MT",
+      "contribution": -4.8265
+     }
+    ]
+   },
+   {
+    "tag": "brain_loop_r2v2",
+    "round": 2,
+    "variant": 2,
+    "text": "Subject: quick pop-up idea for [Brand]?\n\nHi [First Name],\n\nBet half your ad spend disappears into a scroll — IRL is where people actually remember you.\n\nI'm Maya with Atelier North, we're a small studio that designs pop-ups just for DTC brands.\n\nLast fall we turned a bare SoHo storefront into a 9-day sneaker pop-up that drew 11,000 visitors, lines around the block on day 1.\n\nAre you guys testing IRL retail at [Brand] next quarter?\n\nOpen to a 15-minute call next week to walk through the playbook? I'm free Tue/Thu AM.\n\nThanks,\nMaya",
+    "critique_in": "A model of a reader's brain read your previous rounds. BEST so far: Human-likeness top 97% (percentile 3 vs 1,200 human and machine texts), attention percentile 82.\nIts text:\nSubject: quick pop-up idea for [Brand]?\n\nHi [First Name],\n\nI'll make this quick — I know your inbox is slammed.\n\nI'm Maya with Atelier North, we're a small studio that designs pop-ups just for DTC brands.\n\nLast fall we did a 9-day sneaker pop-up that brought in 11,000 visitors — lines around the block on day 1.\n\nAre you guys testing IRL retail at [Brand] next quarter?\n\nHappy to share the playbook on a 15-minute call next week if it's useful? I have Tue/Thu AM open.\n\nThanks,\nMaya\n\nWhat the reader's cortex says is missing in the best one: Reward and value circuits stay quiet: the reader is never told why this matters to them or what to feel / The scene region is quiet: the reader cannot picture where this happens\nDo this next: Put one stake or feeling for the reader in the first two sentences (what they lose, want, or did not expect) / Sketch the place or situation in one line\nThe WORST round (Human-likeness percentile 1) started: Subject: quick pop-up idea for [Brand]?\n\nHi [First Name],\n\nNot sure if [Brand] is testing IRL retail next quarter, but quick thought:\n\nWe're Atelier North, a sm...\nRewrite again from the best one. Keep every fact, keep the length limit.",
+    "humanlike_pct": 0.8,
+    "humanlike_conf": 0.985,
+    "attention_pct": 81.9,
+    "select_score": 0.0152,
+    "critique": {
+     "kind": "text",
+     "ranking": [
+      "face_body",
+      "language",
+      "default_mode",
+      "control_dlpfc",
+      "attention_dorsal",
+      "visual_early",
+      "scene_place",
+      "visual_motion",
+      "value_vmpfc"
+     ],
+     "relative_z": {
+      "visual_early": -0.57,
+      "visual_motion": -0.94,
+      "face_body": 1.92,
+      "scene_place": -0.71,
+      "attention_dorsal": -0.48,
+      "value_vmpfc": -1.0,
+      "language": 1.52,
+      "default_mode": 0.26,
+      "control_dlpfc": -0.01
+     },
+     "diagnosis": [
+      "Reward and value circuits stay quiet: the reader is never told why this matters to them or what to feel",
+      "The scene region is quiet: the reader cannot picture where this happens"
+     ],
+     "directives": [
+      "Put one stake or feeling for the reader in the first two sentences (what they lose, want, or did not expect)",
+      "Sketch the place or situation in one line"
+     ],
+     "humanlike_percentile": 0.7731958762886598
+    },
+    "top_features": [
+     {
+      "name": "R_25",
+      "contribution": -7.0305
+     },
+     {
+      "name": "L_EC",
+      "contribution": -6.7137
+     },
+     {
+      "name": "L_a24",
+      "contribution": 6.4592
+     }
+    ]
+   },
+   {
+    "tag": "brain_loop_r3v1",
+    "round": 3,
+    "variant": 1,
+    "text": "Subject: quick pop-up idea for [Brand]?\n\nHi [First Name],\n\nI'll keep this brief — I know inboxes are brutal.\n\nMost DTC brands we talk to are tired of paying for clicks nobody remembers.\n\nWe're Atelier North, a small studio that designs pop-ups for DTC brands. Picture a tight, loud SoHo corner shop crammed with sneakers and kids trying everything on.\n\nLast fall we did a 9-day sneaker pop-up that drew 11,000 visitors, with lines around the block on day 1.\n\nAre you testing IRL retail at [Brand] next quarter?\n\nOpen to a 15-minute call next week to share the playbook? I'm free Tue/Thu AM.\n\nThanks,\nMaya",
+    "critique_in": "A model of a reader's brain read your previous rounds. BEST so far: Human-likeness top 97% (percentile 3 vs 1,200 human and machine texts), attention percentile 82.\nIts text:\nSubject: quick pop-up idea for [Brand]?\n\nHi [First Name],\n\nI'll make this quick — I know your inbox is slammed.\n\nI'm Maya with Atelier North, we're a small studio that designs pop-ups just for DTC brands.\n\nLast fall we did a 9-day sneaker pop-up that brought in 11,000 visitors — lines around the block on day 1.\n\nAre you guys testing IRL retail at [Brand] next quarter?\n\nHappy to share the playbook on a 15-minute call next week if it's useful? I have Tue/Thu AM open.\n\nThanks,\nMaya\n\nWhat the reader's cortex says is missing in the best one: Reward and value circuits stay quiet: the reader is never told why this matters to them or what to feel / The scene region is quiet: the reader cannot picture where this happens\nDo this next: Put one stake or feeling for the reader in the first two sentences (what they lose, want, or did not expect) / Sketch the place or situation in one line\nThe WORST round (Human-likeness percentile 1) started: Subject: quick pop-up idea for [Brand]?\n\nHi [First Name],\n\nBet half your ad spend disappears into a scroll — IRL is where people actually remember you.\n\nI'm May...\nRewrite again from the best one. Keep every fact, keep the length limit.",
+    "humanlike_pct": 2.6,
+    "humanlike_conf": 0.955,
+    "attention_pct": 64.4,
+    "select_score": 0.0471,
+    "critique": {
+     "kind": "text",
+     "ranking": [
+      "face_body",
+      "language",
+      "visual_motion",
+      "control_dlpfc",
+      "attention_dorsal",
+      "default_mode",
+      "visual_early",
+      "scene_place",
+      "value_vmpfc"
+     ],
+     "relative_z": {
+      "visual_early": -0.56,
+      "visual_motion": -0.12,
+      "face_body": 1.98,
+      "scene_place": -1.05,
+      "attention_dorsal": -0.24,
+      "value_vmpfc": -1.09,
+      "language": 1.52,
+      "default_mode": -0.25,
+      "control_dlpfc": -0.18
+     },
+     "diagnosis": [
+      "Reward and value circuits stay quiet: the reader is never told why this matters to them or what to feel",
+      "The scene region is quiet: the reader cannot picture where this happens"
+     ],
+     "directives": [
+      "Put one stake or feeling for the reader in the first two sentences (what they lose, want, or did not expect)",
+      "Sketch the place or situation in one line"
+     ],
+     "humanlike_percentile": 2.5773195876288657
+    },
+    "top_features": [
+     {
+      "name": "L_EC",
+      "contribution": -6.0176
+     },
+     {
+      "name": "R_25",
+      "contribution": -5.615
+     },
+     {
+      "name": "L_MT",
+      "contribution": -5.2581
+     }
+    ]
+   },
+   {
+    "tag": "brain_loop_r3v2",
+    "round": 3,
+    "variant": 2,
+    "text": "Subject: quick pop-up idea for [Brand]?\n\nHi [First Name],\n\nI'll keep this short — know you're slammed.\n\nMost DTC marketers I talk to tell me they worry about staying forgettable if it's online-only, and that's exactly what we help with.\n\nI'm Maya with Atelier North, we're a small studio that designs pop-ups just for DTC brands.\n\nLast fall we did a 9-day sneaker pop-up that brought in 11,000 visitors — lines around the block on day 1, full try-on chaos inside in the best way.\n\nAre you guys testing IRL retail at [Brand] next quarter?\n\nHappy to share the playbook on a 15-minute call next week if useful? I have Tue/Thu AM open.\n\nThanks,\nMaya",
+    "critique_in": "A model of a reader's brain read your previous rounds. BEST so far: Human-likeness top 97% (percentile 3 vs 1,200 human and machine texts), attention percentile 82.\nIts text:\nSubject: quick pop-up idea for [Brand]?\n\nHi [First Name],\n\nI'll make this quick — I know your inbox is slammed.\n\nI'm Maya with Atelier North, we're a small studio that designs pop-ups just for DTC brands.\n\nLast fall we did a 9-day sneaker pop-up that brought in 11,000 visitors — lines around the block on day 1.\n\nAre you guys testing IRL retail at [Brand] next quarter?\n\nHappy to share the playbook on a 15-minute call next week if it's useful? I have Tue/Thu AM open.\n\nThanks,\nMaya\n\nWhat the reader's cortex says is missing in the best one: Reward and value circuits stay quiet: the reader is never told why this matters to them or what to feel / The scene region is quiet: the reader cannot picture where this happens\nDo this next: Put one stake or feeling for the reader in the first two sentences (what they lose, want, or did not expect) / Sketch the place or situation in one line\nThe WORST round (Human-likeness percentile 1) started: Subject: quick pop-up idea for [Brand]?\n\nHi [First Name],\n\nBet half your ad spend disappears into a scroll — IRL is where people actually remember you.\n\nI'm May...\nRewrite again from the best one. Keep every fact, keep the length limit.",
+    "humanlike_pct": 13.5,
+    "humanlike_conf": 0.794,
+    "attention_pct": 76.7,
+    "select_score": 0.2104,
+    "critique": {
+     "kind": "text",
+     "ranking": [
+      "face_body",
+      "language",
+      "control_dlpfc",
+      "default_mode",
+      "attention_dorsal",
+      "visual_motion",
+      "visual_early",
+      "value_vmpfc",
+      "scene_place"
+     ],
+     "relative_z": {
+      "visual_early": -0.42,
+      "visual_motion": -0.27,
+      "face_body": 1.77,
+      "scene_place": -1.27,
+      "attention_dorsal": -0.26,
+      "value_vmpfc": -1.13,
+      "language": 1.63,
+      "default_mode": -0.08,
+      "control_dlpfc": 0.03
+     },
+     "diagnosis": [
+      "Reward and value circuits stay quiet: the reader is never told why this matters to them or what to feel",
+      "The scene region is quiet: the reader cannot picture where this happens"
+     ],
+     "directives": [
+      "Put one stake or feeling for the reader in the first two sentences (what they lose, want, or did not expect)",
+      "Sketch the place or situation in one line"
+     ],
+     "humanlike_percentile": 13.530927835051546
+    },
+    "top_features": [
+     {
+      "name": "L_a24",
+      "contribution": 5.9171
+     },
+     {
+      "name": "L_EC",
+      "contribution": -5.1861
+     },
+     {
+      "name": "L_MT",
+      "contribution": -4.8712
+     }
+    ]
+   }
+  ],
+  "best": "brain_loop_r3v2",
+  "text": "Subject: quick pop-up idea for [Brand]?\n\nHi [First Name],\n\nI'll keep this short — know you're slammed.\n\nMost DTC marketers I talk to tell me they worry about staying forgettable if it's online-only, and that's exactly what we help with.\n\nI'm Maya with Atelier North, we're a small studio that designs pop-ups just for DTC brands.\n\nLast fall we did a 9-day sneaker pop-up that brought in 11,000 visitors — lines around the block on day 1, full try-on chaos inside in the best way.\n\nAre you guys testing IRL retail at [Brand] next quarter?\n\nHappy to share the playbook on a 15-minute call next week if useful? I have Tue/Thu AM open.\n\nThanks,\nMaya",
+  "humanlike_pct": 13.5,
+  "humanlike_conf": 0.794,
+  "attention_pct": 76.7,
+  "select_score": 0.2104,
+  "critique": {
+   "kind": "text",
+   "ranking": [
+    "face_body",
+    "language",
+    "control_dlpfc",
+    "default_mode",
+    "attention_dorsal",
+    "visual_motion",
+    "visual_early",
+    "value_vmpfc",
+    "scene_place"
+   ],
+   "relative_z": {
+    "visual_early": -0.42,
+    "visual_motion": -0.27,
+    "face_body": 1.77,
+    "scene_place": -1.27,
+    "attention_dorsal": -0.26,
+    "value_vmpfc": -1.13,
+    "language": 1.63,
+    "default_mode": -0.08,
+    "control_dlpfc": 0.03
+   },
+   "diagnosis": [
+    "Reward and value circuits stay quiet: the reader is never told why this matters to them or what to feel",
+    "The scene region is quiet: the reader cannot picture where this happens"
+   ],
+   "directives": [
+    "Put one stake or feeling for the reader in the first two sentences (what they lose, want, or did not expect)",
+    "Sketch the place or situation in one line"
+   ],
+   "humanlike_percentile": 13.530927835051546
+  }
+ },
+ "pairwise": {
+  "brain_vs_oneshot": {
+   "p_first": 0.1,
+   "order_ab": 0.1,
+   "order_ba": 0.1,
+   "reason": "B is direct, concrete and respects a busy reader's time, while A relies on generic sales filler. | swapped: Version A is direct and respectful with concrete proof and a clear ask, while B's generic pain-point opener feels templated and salesy."
+  },
+  "brain_vs_source": {
+   "p_first": 0.125,
+   "order_ab": 0.15,
+   "order_ba": 0.1,
+   "reason": "B is tighter, skips generic pain-point filler, and respects a busy reader with direct proof and a clear ask. | swapped: A is concise and specific with a clear ask while B adds generic sales filler that feels templated"
+  },
+  "oneshot_vs_source": {
+   "p_first": 0.8,
+   "order_ab": 0.85,
+   "order_ba": 0.75,
+   "reason": "A feels more human and specific with only, guessing, and punchy fragments that respect a busy reader's time. | swapped: B feels more human and specific with 'only', singular 'line', and casual fragments while staying clear and direct."
+  }
+ },
+ "audio": {
+  "source": {
+   "file": "results/showcase/text/en-text1/cold_email/source.wav",
+   "seconds": 30,
+   "heads": {
+    "attention": {
+     "percentile": 61.6,
+     "confidence": 0.119
+    },
+    "appeal": {
+     "percentile": 0.0,
+     "confidence": 0.737
+    }
+   },
+   "relative_z": {
+    "visual_early": -0.85,
+    "visual_motion": -1.61,
+    "face_body": 1.22,
+    "scene_place": -0.99,
+    "attention_dorsal": 0.33,
+    "value_vmpfc": -0.26,
+    "language": 1.66,
+    "default_mode": -0.02,
+    "control_dlpfc": 0.52
+   },
+   "ranking": [
+    "language",
+    "face_body",
+    "control_dlpfc",
+    "attention_dorsal",
+    "default_mode",
+    "value_vmpfc",
+    "visual_early",
+    "scene_place",
+    "visual_motion"
+   ]
+  },
+  "brain_loop": {
+   "file": "results/showcase/text/en-text1/cold_email/brain_loop.wav",
+   "seconds": 42,
+   "heads": {
+    "attention": {
+     "percentile": 23.8,
+     "confidence": 0.239
+    },
+    "appeal": {
+     "percentile": 96.5,
+     "confidence": 0.305
+    }
+   },
+   "relative_z": {
+    "visual_early": -0.35,
+    "visual_motion": -1.3,
+    "face_body": 0.96,
+    "scene_place": -1.34,
+    "attention_dorsal": 0.46,
+    "value_vmpfc": -0.42,
+    "language": 1.91,
+    "default_mode": -0.44,
+    "control_dlpfc": 0.51
+   },
+   "ranking": [
+    "language",
+    "face_body",
+    "control_dlpfc",
+    "attention_dorsal",
+    "visual_early",
+    "value_vmpfc",
+    "default_mode",
+    "visual_motion",
+    "scene_place"
+   ]
+  }
+ },
+ "seconds": 386.6
+}

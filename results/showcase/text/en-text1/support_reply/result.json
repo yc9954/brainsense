@@ -1,0 +1,612 @@
+{
+ "key": "support_reply",
+ "cfg": {
+  "reader": "a customer whose order arrived nine days late",
+  "task": "a customer-support reply (under 110 words) that apologises, explains the delay honestly (a warehouse move), gives a 20% refund without being asked, and does not ask the customer to do anything"
+ },
+ "source": {
+  "text": "Dear Customer,\n\nWe are truly sorry your order arrived nine days late. During that time we were moving to a new warehouse, which slowed packing and shipping far beyond our normal standards. That is entirely on us.\n\nWe have issued a 20% refund to your original payment method. It should appear within 3-5 business days.\n\nThank you for your patience, and we are grateful for your support.\n\nSincerely,\nMaya, Customer Support",
+  "humanlike_pct": 26.5,
+  "humanlike_conf": 0.58,
+  "attention_pct": 75.1,
+  "select_score": 0.3639,
+  "critique": {
+   "kind": "text",
+   "ranking": [
+    "language",
+    "face_body",
+    "control_dlpfc",
+    "default_mode",
+    "attention_dorsal",
+    "visual_early",
+    "value_vmpfc",
+    "visual_motion",
+    "scene_place"
+   ],
+   "relative_z": {
+    "visual_early": -0.39,
+    "visual_motion": -0.84,
+    "face_body": 1.39,
+    "scene_place": -1.48,
+    "attention_dorsal": -0.29,
+    "value_vmpfc": -0.81,
+    "language": 1.75,
+    "default_mode": 0.32,
+    "control_dlpfc": 0.35
+   },
+   "diagnosis": [
+    "Reward and value circuits stay quiet: the reader is never told why this matters to them or what to feel",
+    "The scene region is quiet: the reader cannot picture where this happens"
+   ],
+   "directives": [
+    "Put one stake or feeling for the reader in the first two sentences (what they lose, want, or did not expect)",
+    "Sketch the place or situation in one line"
+   ],
+   "humanlike_percentile": 26.54639175257732
+  },
+  "top_features": [
+   {
+    "name": "L_a24",
+    "contribution": 7.2891
+   },
+   {
+    "name": "L_a10p",
+    "contribution": -6.2594
+   },
+   {
+    "name": "L_10d",
+    "contribution": -5.4224
+   }
+  ]
+ },
+ "oneshot": {
+  "text": "Hi there,\n\nI'm so sorry your order showed up nine days late — that's not okay, and I completely understand how frustrating that must have been.\n\nWe were moving to a new warehouse at the time, and honestly packing and shipping got way slower than our normal standards during the switch. That's entirely on us.\n\nI've gone ahead and issued a 20% refund back to your original payment method. It should show up within 3-5 business days.\n\nThank you so much for your patience, we really appreciate your support.\n\nMaya, Customer Support",
+  "humanlike_pct": 3.7,
+  "humanlike_conf": 0.933,
+  "attention_pct": 80.5,
+  "select_score": 0.0684,
+  "critique": {
+   "kind": "text",
+   "ranking": [
+    "language",
+    "face_body",
+    "control_dlpfc",
+    "default_mode",
+    "attention_dorsal",
+    "visual_early",
+    "value_vmpfc",
+    "visual_motion",
+    "scene_place"
+   ],
+   "relative_z": {
+    "visual_early": -0.49,
+    "visual_motion": -1.08,
+    "face_body": 0.98,
+    "scene_place": -1.51,
+    "attention_dorsal": 0.14,
+    "value_vmpfc": -0.93,
+    "language": 1.6,
+    "default_mode": 0.44,
+    "control_dlpfc": 0.85
+   },
+   "diagnosis": [
+    "Reward and value circuits stay quiet: the reader is never told why this matters to them or what to feel",
+    "The scene region is quiet: the reader cannot picture where this happens",
+    "Focus and control regions run high: the sentences take effort to read (length, density, jargon)"
+   ],
+   "directives": [
+    "Put one stake or feeling for the reader in the first two sentences (what they lose, want, or did not expect)",
+    "Sketch the place or situation in one line",
+    "Split the long sentences and give every technical term one plain comparison"
+   ],
+   "humanlike_percentile": 3.7371134020618557
+  },
+  "top_features": [
+   {
+    "name": "L_a24",
+    "contribution": 10.2765
+   },
+   {
+    "name": "L_a10p",
+    "contribution": -7.0246
+   },
+   {
+    "name": "L_24dd",
+    "contribution": -6.3571
+   }
+  ]
+ },
+ "brain_loop": {
+  "history": [
+   {
+    "tag": "brain_loop_r1v1",
+    "round": 1,
+    "variant": 1,
+    "text": "Hi, I'm really sorry — your order arriving nine days late is not okay.\n\nWe've been moving to a new warehouse, and packing and shipping got way slower than our normal standards in the middle of it. That's completely on us.\n\nI've just put a 20% refund back to your original payment method — you'll see it in 3-5 business days.\n\nThank you for your patience, we're so grateful you stuck with us.\n\nMaya, Customer Support",
+    "critique_in": "",
+    "humanlike_pct": 31.1,
+    "humanlike_conf": 0.507,
+    "attention_pct": 85.8,
+    "select_score": 0.404,
+    "critique": {
+     "kind": "text",
+     "ranking": [
+      "language",
+      "face_body",
+      "default_mode",
+      "control_dlpfc",
+      "attention_dorsal",
+      "visual_early",
+      "value_vmpfc",
+      "visual_motion",
+      "scene_place"
+     ],
+     "relative_z": {
+      "visual_early": -0.47,
+      "visual_motion": -1.02,
+      "face_body": 1.36,
+      "scene_place": -1.34,
+      "attention_dorsal": -0.24,
+      "value_vmpfc": -0.93,
+      "language": 1.64,
+      "default_mode": 0.5,
+      "control_dlpfc": 0.49
+     },
+     "diagnosis": [
+      "Reward and value circuits stay quiet: the reader is never told why this matters to them or what to feel",
+      "The scene region is quiet: the reader cannot picture where this happens"
+     ],
+     "directives": [
+      "Put one stake or feeling for the reader in the first two sentences (what they lose, want, or did not expect)",
+      "Sketch the place or situation in one line"
+     ],
+     "humanlike_percentile": 31.056701030927837
+    },
+    "top_features": [
+     {
+      "name": "L_a24",
+      "contribution": 10.3042
+     },
+     {
+      "name": "L_a10p",
+      "contribution": -7.4135
+     },
+     {
+      "name": "L_10d",
+      "contribution": -6.9537
+     }
+    ]
+   },
+   {
+    "tag": "brain_loop_r1v2",
+    "round": 1,
+    "variant": 2,
+    "text": "Hi, I'm Maya from Customer Support, and I'm really sorry your order showed up nine days late.\n\nWe're in the middle of moving to a new warehouse, so packing and shipping has been way slower than our normal standards. That's completely our fault.\n\nI've put a 20% refund back to your original payment method — it should show up within 3-5 business days.\n\nThank you so much for your patience through the mess. We're really grateful for your support.\n\nMaya",
+    "critique_in": "",
+    "humanlike_pct": 2.8,
+    "humanlike_conf": 0.947,
+    "attention_pct": 80.3,
+    "select_score": 0.0532,
+    "critique": {
+     "kind": "text",
+     "ranking": [
+      "language",
+      "face_body",
+      "control_dlpfc",
+      "default_mode",
+      "attention_dorsal",
+      "visual_early",
+      "visual_motion",
+      "value_vmpfc",
+      "scene_place"
+     ],
+     "relative_z": {
+      "visual_early": -0.43,
+      "visual_motion": -0.66,
+      "face_body": 1.39,
+      "scene_place": -1.42,
+      "attention_dorsal": -0.21,
+      "value_vmpfc": -1.24,
+      "language": 1.51,
+      "default_mode": 0.52,
+      "control_dlpfc": 0.53
+     },
+     "diagnosis": [
+      "Reward and value circuits stay quiet: the reader is never told why this matters to them or what to feel",
+      "The scene region is quiet: the reader cannot picture where this happens"
+     ],
+     "directives": [
+      "Put one stake or feeling for the reader in the first two sentences (what they lose, want, or did not expect)",
+      "Sketch the place or situation in one line"
+     ],
+     "humanlike_percentile": 2.8350515463917527
+    },
+    "top_features": [
+     {
+      "name": "L_a24",
+      "contribution": 11.4598
+     },
+     {
+      "name": "L_24dd",
+      "contribution": -7.0676
+     },
+     {
+      "name": "L_23c",
+      "contribution": 6.7107
+     }
+    ]
+   },
+   {
+    "tag": "brain_loop_r2v1",
+    "round": 2,
+    "variant": 1,
+    "text": "Hi, I'm so sorry — waiting nine extra days when you were counting on that package is awful, and that's not okay.\n\nPicture our little warehouse last week with half the shelves bare and boxes everywhere — we were in the middle of moving to a new warehouse, so packing and shipping got way slower than our normal standards. That's completely on us.\n\nI've put a 20% refund back to your original payment method, you should see it in 3-5 business days.\n\nThank you for your patience, we're so grateful you stuck with us.\n\nMaya, Customer Support",
+    "critique_in": "A model of a reader's brain read your previous rounds. BEST so far: Human-likeness top 69% (percentile 31 vs 1,200 human and machine texts), attention percentile 86.\nIts text:\nHi, I'm really sorry — your order arriving nine days late is not okay.\n\nWe've been moving to a new warehouse, and packing and shipping got way slower than our normal standards in the middle of it. That's completely on us.\n\nI've just put a 20% refund back to your original payment method — you'll see it in 3-5 business days.\n\nThank you for your patience, we're so grateful you stuck with us.\n\nMaya, Customer Support\n\nWhat the reader's cortex says is missing in the best one: Reward and value circuits stay quiet: the reader is never told why this matters to them or what to feel / The scene region is quiet: the reader cannot picture where this happens\nDo this next: Put one stake or feeling for the reader in the first two sentences (what they lose, want, or did not expect) / Sketch the place or situation in one line\nThe WORST round (Human-likeness percentile 3) started: Hi, I'm Maya from Customer Support, and I'm really sorry your order showed up nine days late.\n\nWe're in the middle of moving to a new warehouse, so packing and ...\nRewrite again from the best one. Keep every fact, keep the length limit.",
+    "humanlike_pct": 6.7,
+    "humanlike_conf": 0.896,
+    "attention_pct": 82.2,
+    "select_score": 0.1119,
+    "critique": {
+     "kind": "text",
+     "ranking": [
+      "language",
+      "face_body",
+      "control_dlpfc",
+      "default_mode",
+      "attention_dorsal",
+      "visual_early",
+      "value_vmpfc",
+      "visual_motion",
+      "scene_place"
+     ],
+     "relative_z": {
+      "visual_early": -0.58,
+      "visual_motion": -1.12,
+      "face_body": 1.32,
+      "scene_place": -1.2,
+      "attention_dorsal": -0.11,
+      "value_vmpfc": -0.85,
+      "language": 1.78,
+      "default_mode": 0.29,
+      "control_dlpfc": 0.48
+     },
+     "diagnosis": [
+      "Reward and value circuits stay quiet: the reader is never told why this matters to them or what to feel",
+      "The scene region is quiet: the reader cannot picture where this happens"
+     ],
+     "directives": [
+      "Put one stake or feeling for the reader in the first two sentences (what they lose, want, or did not expect)",
+      "Sketch the place or situation in one line"
+     ],
+     "humanlike_percentile": 6.701030927835052
+    },
+    "top_features": [
+     {
+      "name": "L_a24",
+      "contribution": 8.1276
+     },
+     {
+      "name": "L_a10p",
+      "contribution": -4.7718
+     },
+     {
+      "name": "L_EC",
+      "contribution": -4.6757
+     }
+    ]
+   },
+   {
+    "tag": "brain_loop_r2v2",
+    "round": 2,
+    "variant": 2,
+    "text": "You waited nine extra days for your order, and I know how annoying that is when you're counting on it to show up.\n\nI'm really sorry — we're in the middle of moving to a new warehouse, with our crew packing and shipping off folding tables between half-built shelves, so everything went out way slower than our normal standards. That's entirely on us.\n\nI've issued a 20% refund to your original payment method, it should appear within 3-5 business days.\n\nThank you for your patience, we're so grateful for your support.\n\nMaya, Customer Support",
+    "critique_in": "A model of a reader's brain read your previous rounds. BEST so far: Human-likeness top 69% (percentile 31 vs 1,200 human and machine texts), attention percentile 86.\nIts text:\nHi, I'm really sorry — your order arriving nine days late is not okay.\n\nWe've been moving to a new warehouse, and packing and shipping got way slower than our normal standards in the middle of it. That's completely on us.\n\nI've just put a 20% refund back to your original payment method — you'll see it in 3-5 business days.\n\nThank you for your patience, we're so grateful you stuck with us.\n\nMaya, Customer Support\n\nWhat the reader's cortex says is missing in the best one: Reward and value circuits stay quiet: the reader is never told why this matters to them or what to feel / The scene region is quiet: the reader cannot picture where this happens\nDo this next: Put one stake or feeling for the reader in the first two sentences (what they lose, want, or did not expect) / Sketch the place or situation in one line\nThe WORST round (Human-likeness percentile 3) started: Hi, I'm Maya from Customer Support, and I'm really sorry your order showed up nine days late.\n\nWe're in the middle of moving to a new warehouse, so packing and ...\nRewrite again from the best one. Keep every fact, keep the length limit.",
+    "humanlike_pct": 2.8,
+    "humanlike_conf": 0.949,
+    "attention_pct": 73.4,
+    "select_score": 0.0522,
+    "critique": {
+     "kind": "text",
+     "ranking": [
+      "language",
+      "face_body",
+      "default_mode",
+      "control_dlpfc",
+      "attention_dorsal",
+      "visual_early",
+      "value_vmpfc",
+      "visual_motion",
+      "scene_place"
+     ],
+     "relative_z": {
+      "visual_early": -0.62,
+      "visual_motion": -0.91,
+      "face_body": 1.44,
+      "scene_place": -1.25,
+      "attention_dorsal": -0.27,
+      "value_vmpfc": -0.86,
+      "language": 1.76,
+      "default_mode": 0.39,
+      "control_dlpfc": 0.33
+     },
+     "diagnosis": [
+      "Reward and value circuits stay quiet: the reader is never told why this matters to them or what to feel",
+      "The scene region is quiet: the reader cannot picture where this happens"
+     ],
+     "directives": [
+      "Put one stake or feeling for the reader in the first two sentences (what they lose, want, or did not expect)",
+      "Sketch the place or situation in one line"
+     ],
+     "humanlike_percentile": 2.8350515463917527
+    },
+    "top_features": [
+     {
+      "name": "L_a24",
+      "contribution": 8.1866
+     },
+     {
+      "name": "L_a10p",
+      "contribution": -5.9521
+     },
+     {
+      "name": "L_EC",
+      "contribution": -5.6606
+     }
+    ]
+   },
+   {
+    "tag": "brain_loop_r3v1",
+    "round": 3,
+    "variant": 1,
+    "text": "Hi, I'm really sorry your order arrived nine days late — I know that's frustrating when you're waiting on something you needed days ago.\n\nWe're right in the middle of moving out of our old warehouse, boxes everywhere and half our packing tables taken apart, so packing and shipping got way slower than our normal standards. That's completely on us.\n\nI've put a 20% refund back to your original payment method — it should show in 3-5 business days.\n\nThank you for your patience, we're so grateful you stuck with us.\n\nMaya, Customer Support",
+    "critique_in": "A model of a reader's brain read your previous rounds. BEST so far: Human-likeness top 69% (percentile 31 vs 1,200 human and machine texts), attention percentile 86.\nIts text:\nHi, I'm really sorry — your order arriving nine days late is not okay.\n\nWe've been moving to a new warehouse, and packing and shipping got way slower than our normal standards in the middle of it. That's completely on us.\n\nI've just put a 20% refund back to your original payment method — you'll see it in 3-5 business days.\n\nThank you for your patience, we're so grateful you stuck with us.\n\nMaya, Customer Support\n\nWhat the reader's cortex says is missing in the best one: Reward and value circuits stay quiet: the reader is never told why this matters to them or what to feel / The scene region is quiet: the reader cannot picture where this happens\nDo this next: Put one stake or feeling for the reader in the first two sentences (what they lose, want, or did not expect) / Sketch the place or situation in one line\nThe WORST round (Human-likeness percentile 3) started: You waited nine extra days for your order, and I know how annoying that is when you're counting on it to show up.\n\nI'm really sorry — we're in the middle of mov...\nRewrite again from the best one. Keep every fact, keep the length limit.",
+    "humanlike_pct": 15.5,
+    "humanlike_conf": 0.767,
+    "attention_pct": 81.9,
+    "select_score": 0.2351,
+    "critique": {
+     "kind": "text",
+     "ranking": [
+      "language",
+      "face_body",
+      "default_mode",
+      "control_dlpfc",
+      "attention_dorsal",
+      "visual_early",
+      "value_vmpfc",
+      "visual_motion",
+      "scene_place"
+     ],
+     "relative_z": {
+      "visual_early": -0.61,
+      "visual_motion": -1.08,
+      "face_body": 1.33,
+      "scene_place": -1.19,
+      "attention_dorsal": -0.18,
+      "value_vmpfc": -0.95,
+      "language": 1.69,
+      "default_mode": 0.53,
+      "control_dlpfc": 0.47
+     },
+     "diagnosis": [
+      "Reward and value circuits stay quiet: the reader is never told why this matters to them or what to feel",
+      "The scene region is quiet: the reader cannot picture where this happens"
+     ],
+     "directives": [
+      "Put one stake or feeling for the reader in the first two sentences (what they lose, want, or did not expect)",
+      "Sketch the place or situation in one line"
+     ],
+     "humanlike_percentile": 15.463917525773196
+    },
+    "top_features": [
+     {
+      "name": "L_a24",
+      "contribution": 9.9465
+     },
+     {
+      "name": "L_a10p",
+      "contribution": -6.1878
+     },
+     {
+      "name": "L_EC",
+      "contribution": -6.0043
+     }
+    ]
+   },
+   {
+    "tag": "brain_loop_r3v2",
+    "round": 3,
+    "variant": 2,
+    "text": "Hi there, I'm so sorry your order turned up nine days late — I hate that you were stuck waiting for something you were counting on.\n\nWe've been in the middle of moving to a new warehouse, with boxes everywhere and half our shelves down, so packing and shipping ran way beyond our normal standards. That's entirely on us.\n\nI've issued a 20% refund to your original payment method. It should appear within 3-5 business days.\n\nThank you for your patience, and we're really grateful for your support.\n\nMaya, Customer Support",
+    "critique_in": "A model of a reader's brain read your previous rounds. BEST so far: Human-likeness top 69% (percentile 31 vs 1,200 human and machine texts), attention percentile 86.\nIts text:\nHi, I'm really sorry — your order arriving nine days late is not okay.\n\nWe've been moving to a new warehouse, and packing and shipping got way slower than our normal standards in the middle of it. That's completely on us.\n\nI've just put a 20% refund back to your original payment method — you'll see it in 3-5 business days.\n\nThank you for your patience, we're so grateful you stuck with us.\n\nMaya, Customer Support\n\nWhat the reader's cortex says is missing in the best one: Reward and value circuits stay quiet: the reader is never told why this matters to them or what to feel / The scene region is quiet: the reader cannot picture where this happens\nDo this next: Put one stake or feeling for the reader in the first two sentences (what they lose, want, or did not expect) / Sketch the place or situation in one line\nThe WORST round (Human-likeness percentile 3) started: You waited nine extra days for your order, and I know how annoying that is when you're counting on it to show up.\n\nI'm really sorry — we're in the middle of mov...\nRewrite again from the best one. Keep every fact, keep the length limit.",
+    "humanlike_pct": 22.2,
+    "humanlike_conf": 0.673,
+    "attention_pct": 82.5,
+    "select_score": 0.3126,
+    "critique": {
+     "kind": "text",
+     "ranking": [
+      "language",
+      "face_body",
+      "control_dlpfc",
+      "default_mode",
+      "attention_dorsal",
+      "visual_early",
+      "value_vmpfc",
+      "visual_motion",
+      "scene_place"
+     ],
+     "relative_z": {
+      "visual_early": -0.61,
+      "visual_motion": -1.11,
+      "face_body": 1.22,
+      "scene_place": -1.3,
+      "attention_dorsal": -0.12,
+      "value_vmpfc": -0.89,
+      "language": 1.65,
+      "default_mode": 0.57,
+      "control_dlpfc": 0.58
+     },
+     "diagnosis": [
+      "Reward and value circuits stay quiet: the reader is never told why this matters to them or what to feel",
+      "The scene region is quiet: the reader cannot picture where this happens"
+     ],
+     "directives": [
+      "Put one stake or feeling for the reader in the first two sentences (what they lose, want, or did not expect)",
+      "Sketch the place or situation in one line"
+     ],
+     "humanlike_percentile": 22.164948453608247
+    },
+    "top_features": [
+     {
+      "name": "L_a24",
+      "contribution": 10.3018
+     },
+     {
+      "name": "L_a10p",
+      "contribution": -6.6047
+     },
+     {
+      "name": "L_10d",
+      "contribution": -6.124
+     }
+    ]
+   }
+  ],
+  "best": "brain_loop_r1v1",
+  "text": "Hi, I'm really sorry — your order arriving nine days late is not okay.\n\nWe've been moving to a new warehouse, and packing and shipping got way slower than our normal standards in the middle of it. That's completely on us.\n\nI've just put a 20% refund back to your original payment method — you'll see it in 3-5 business days.\n\nThank you for your patience, we're so grateful you stuck with us.\n\nMaya, Customer Support",
+  "humanlike_pct": 31.1,
+  "humanlike_conf": 0.507,
+  "attention_pct": 85.8,
+  "select_score": 0.404,
+  "critique": {
+   "kind": "text",
+   "ranking": [
+    "language",
+    "face_body",
+    "default_mode",
+    "control_dlpfc",
+    "attention_dorsal",
+    "visual_early",
+    "value_vmpfc",
+    "visual_motion",
+    "scene_place"
+   ],
+   "relative_z": {
+    "visual_early": -0.47,
+    "visual_motion": -1.02,
+    "face_body": 1.36,
+    "scene_place": -1.34,
+    "attention_dorsal": -0.24,
+    "value_vmpfc": -0.93,
+    "language": 1.64,
+    "default_mode": 0.5,
+    "control_dlpfc": 0.49
+   },
+   "diagnosis": [
+    "Reward and value circuits stay quiet: the reader is never told why this matters to them or what to feel",
+    "The scene region is quiet: the reader cannot picture where this happens"
+   ],
+   "directives": [
+    "Put one stake or feeling for the reader in the first two sentences (what they lose, want, or did not expect)",
+    "Sketch the place or situation in one line"
+   ],
+   "humanlike_percentile": 31.056701030927837
+  }
+ },
+ "pairwise": {
+  "brain_vs_oneshot": {
+   "p_first": 0.835,
+   "order_ab": 0.85,
+   "order_ba": 0.82,
+   "reason": "A is more direct and natural while B relies on generic template empathy phrases. | swapped: B is tighter and more conversational without generic empathy filler, making the apology and refund feel more genuine."
+  },
+  "brain_vs_source": {
+   "p_first": 0.9,
+   "order_ab": 0.9,
+   "order_ba": 0.9,
+   "reason": "A uses warm first-person conversational language that feels human while B reads like a formal generic template. | swapped: B uses first-person, conversational ownership while A feels formal and templated."
+  },
+  "oneshot_vs_source": {
+   "p_first": 0.7,
+   "order_ab": 0.9,
+   "order_ba": 0.5,
+   "reason": "Version A sounds human with first-person empathy and natural phrasing while staying clear and specific. | swapped: "
+  }
+ },
+ "audio": {
+  "source": {
+   "file": "results/showcase/text/en-text1/support_reply/source.wav",
+   "seconds": 25,
+   "heads": {
+    "attention": {
+     "percentile": 64.4,
+     "confidence": 0.163
+    },
+    "appeal": {
+     "percentile": 9.6,
+     "confidence": 0.324
+    }
+   },
+   "relative_z": {
+    "visual_early": -0.64,
+    "visual_motion": -1.49,
+    "face_body": 1.0,
+    "scene_place": -1.27,
+    "attention_dorsal": 0.14,
+    "value_vmpfc": -0.14,
+    "language": 1.86,
+    "default_mode": 0.01,
+    "control_dlpfc": 0.54
+   },
+   "ranking": [
+    "language",
+    "face_body",
+    "control_dlpfc",
+    "attention_dorsal",
+    "default_mode",
+    "value_vmpfc",
+    "visual_early",
+    "scene_place",
+    "visual_motion"
+   ]
+  },
+  "brain_loop": {
+   "file": "results/showcase/text/en-text1/support_reply/brain_loop.wav",
+   "seconds": 25,
+   "heads": {
+    "attention": {
+     "percentile": 64.4,
+     "confidence": 0.157
+    },
+    "appeal": {
+     "percentile": 0.1,
+     "confidence": 0.711
+    }
+   },
+   "relative_z": {
+    "visual_early": -0.64,
+    "visual_motion": -1.72,
+    "face_body": 0.83,
+    "scene_place": -1.08,
+    "attention_dorsal": 0.24,
+    "value_vmpfc": -0.3,
+    "language": 1.75,
+    "default_mode": 0.17,
+    "control_dlpfc": 0.74
+   },
+   "ranking": [
+    "language",
+    "face_body",
+    "control_dlpfc",
+    "attention_dorsal",
+    "default_mode",
+    "value_vmpfc",
+    "visual_early",
+    "scene_place",
+    "visual_motion"
+   ]
+  }
+ },
+ "seconds": 399.3
+}
