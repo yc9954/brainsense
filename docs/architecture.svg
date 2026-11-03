@@ -1,23 +1,23 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="620" viewBox="0 0 1240 620" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="620" viewBox="0 0 1320 620" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
   <defs>
     <marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="none" stroke="#fff" stroke-width="1.2"/></marker>
   </defs>
-  <rect width="1240" height="620" fill="#000"/>
+  <rect width="1320" height="620" fill="#000"/>
   <!-- column titles -->
   <text x="40" y="38" fill="#9AA0A6" font-size="12" letter-spacing="2">INPUT</text>
   <text x="250" y="38" fill="#9AA0A6" font-size="12" letter-spacing="2">META OPEN MODELS · TRIBE v2</text>
   <text x="700" y="38" fill="#C0504D" font-size="12" letter-spacing="2">THIS PROJECT · NEUROMUSE</text>
-  <text x="1030" y="38" fill="#9AA0A6" font-size="12" letter-spacing="2">OUTPUT</text>
+  <text x="1070" y="38" fill="#9AA0A6" font-size="12" letter-spacing="2">OUTPUT</text>
 
   <!-- inputs -->
   <g stroke="#fff" stroke-width="1" fill="none">
     <rect x="40" y="60" width="160" height="236" rx="16"/>
   </g>
   <g fill="#fff" font-size="14" font-weight="600" text-anchor="middle">
-    <rect x="52" y="72" width="136" height="48" rx="12" fill="none" stroke="#fff"/><text x="120" y="92">Glasses clip</text><text x="120" y="109" font-size="10" font-weight="400" fill="#9AA0A6">6 s, phone or Ray-Ban Meta</text>
-    <rect x="52" y="128" width="136" height="48" rx="12" fill="none" stroke="#fff"/><text x="120" y="148">Photo · video</text><text x="120" y="165" font-size="10" font-weight="400" fill="#9AA0A6">attached in chat</text>
-    <rect x="52" y="184" width="136" height="48" rx="12" fill="none" stroke="#fff"/><text x="120" y="204">Text</text><text x="120" y="221" font-size="10" font-weight="400" fill="#9AA0A6">copy, posts, captions</text>
-    <rect x="52" y="240" width="136" height="48" rx="12" fill="none" stroke="#fff"/><text x="120" y="260">Audio</text><text x="120" y="277" font-size="10" font-weight="400" fill="#9AA0A6">speech, music</text>
+    <rect x="46" y="72" width="148" height="48" rx="12" fill="none" stroke="#fff"/><text x="120" y="92">Glasses clip</text><text x="120" y="109" font-size="10" font-weight="400" fill="#9AA0A6">6 s, phone or Ray-Ban Meta</text>
+    <rect x="46" y="128" width="148" height="48" rx="12" fill="none" stroke="#fff"/><text x="120" y="148">Photo · video</text><text x="120" y="165" font-size="10" font-weight="400" fill="#9AA0A6">attached in chat</text>
+    <rect x="46" y="184" width="148" height="48" rx="12" fill="none" stroke="#fff"/><text x="120" y="204">Text</text><text x="120" y="221" font-size="10" font-weight="400" fill="#9AA0A6">copy, posts, captions</text>
+    <rect x="46" y="240" width="148" height="48" rx="12" fill="none" stroke="#fff"/><text x="120" y="260">Audio</text><text x="120" y="277" font-size="10" font-weight="400" fill="#9AA0A6">speech, music</text>
   </g>
 
   <!-- encoders -->
@@ -28,7 +28,7 @@
     <rect x="250" y="240" width="140" height="48" rx="12" fill="#4A4F55" stroke="#fff"/><text x="320" y="269">wav2vec-BERT</text>
   </g>
   <g stroke="#fff" stroke-width="1" marker-end="url(#a)">
-    <line x1="188" y1="96" x2="248" y2="96"/><line x1="188" y1="152" x2="248" y2="152"/><line x1="188" y1="208" x2="248" y2="208"/><line x1="188" y1="264" x2="248" y2="264"/>
+    <line x1="196" y1="96" x2="248" y2="96"/><line x1="196" y1="152" x2="248" y2="152"/><line x1="196" y1="208" x2="248" y2="208"/><line x1="196" y1="264" x2="248" y2="264"/>
   </g>
 
   <!-- transformer + subject -->
@@ -44,50 +44,50 @@
   </g>
 
   <!-- this project panel -->
-  <rect x="700" y="60" width="300" height="500" rx="18" fill="#120B0A" stroke="#C0504D"/>
+  <rect x="700" y="60" width="340" height="500" rx="18" fill="#120B0A" stroke="#C0504D"/>
   <!-- predicted cortex -->
-  <rect x="716" y="76" width="268" height="60" rx="12" fill="#0E0F11" stroke="#fff"/>
-  <text x="850" y="100" fill="#fff" font-size="14" font-weight="600" text-anchor="middle">Predicted cortex</text>
-  <text x="850" y="118" fill="#9AA0A6" font-size="11" text-anchor="middle">20,484 vertices · 1 Hz · live 3D card</text>
+  <rect x="716" y="76" width="308" height="60" rx="12" fill="#0E0F11" stroke="#fff"/>
+  <text x="870" y="100" fill="#fff" font-size="14" font-weight="600" text-anchor="middle">Predicted cortex</text>
+  <text x="870" y="118" fill="#9AA0A6" font-size="11" text-anchor="middle">20,484 vertices · 1 Hz · live 3D card</text>
   <line x1="670" y1="106" x2="714" y2="106" stroke="#fff" marker-end="url(#a)"/>
   <!-- heads -->
-  <rect x="716" y="152" width="268" height="118" rx="12" fill="#2A1614" stroke="#C0504D"/>
-  <text x="850" y="176" fill="#fff" font-size="14" font-weight="600" text-anchor="middle">Calibrated heads</text>
-  <text x="850" y="194" fill="#9AA0A6" font-size="11" text-anchor="middle">360 area means → PCA-54 → logistic, with confidence</text>
-  <text x="850" y="216" fill="#fff" font-size="12" text-anchor="middle">Aesthetic appeal · Attention capture · Desirability</text>
-  <text x="850" y="234" fill="#fff" font-size="12" text-anchor="middle">Reach · Human-likeness · Hook</text>
-  <text x="850" y="254" fill="#9AA0A6" font-size="11" text-anchor="middle">trained on AADB · SnapUGC · Unsplash · HC3</text>
-  <line x1="850" y1="136" x2="850" y2="150" stroke="#fff" marker-end="url(#a)"/>
+  <rect x="716" y="152" width="308" height="128" rx="12" fill="#2A1614" stroke="#C0504D"/>
+  <text x="870" y="176" fill="#fff" font-size="14" font-weight="600" text-anchor="middle">Calibrated heads</text>
+  <text x="870" y="194" fill="#9AA0A6" font-size="11" text-anchor="middle">360 area means → PCA-54 → logistic, with confidence</text>
+  <text x="870" y="216" fill="#fff" font-size="12" text-anchor="middle">Aesthetic appeal · Attention capture</text>
+  <text x="870" y="234" fill="#fff" font-size="12" text-anchor="middle">Desirability · Reach · Human-likeness · Hook</text>
+  <text x="870" y="264" fill="#9AA0A6" font-size="11" text-anchor="middle">trained on AADB · SnapUGC · Unsplash · HC3</text>
+  <line x1="870" y1="136" x2="870" y2="150" stroke="#fff" marker-end="url(#a)"/>
   <!-- memory -->
-  <rect x="716" y="286" width="268" height="100" rx="12" fill="#2A1614" stroke="#C0504D"/>
-  <text x="850" y="310" fill="#fff" font-size="14" font-weight="600" text-anchor="middle">Engram memory</text>
-  <text x="850" y="328" fill="#9AA0A6" font-size="11" text-anchor="middle">every percept as a brain state · like/dislike outcomes</text>
-  <text x="850" y="346" fill="#fff" font-size="12" text-anchor="middle">sleep → personal head + rules in plain English</text>
-  <text x="850" y="364" fill="#fff" font-size="12" text-anchor="middle">recall precedents · one-line reflex</text>
-  <line x1="850" y1="270" x2="850" y2="284" stroke="#fff" marker-end="url(#a)"/>
+  <rect x="716" y="296" width="308" height="100" rx="12" fill="#2A1614" stroke="#C0504D"/>
+  <text x="870" y="320" fill="#fff" font-size="14" font-weight="600" text-anchor="middle">Engram memory</text>
+  <text x="870" y="338" fill="#9AA0A6" font-size="11" text-anchor="middle">every percept as a brain state · like/dislike outcomes</text>
+  <text x="870" y="356" fill="#fff" font-size="12" text-anchor="middle">sleep → personal head + rules in plain English</text>
+  <text x="870" y="374" fill="#fff" font-size="12" text-anchor="middle">recall precedents · one-line reflex</text>
+  <line x1="870" y1="280" x2="870" y2="294" stroke="#fff" marker-end="url(#a)"/>
   <!-- agent -->
-  <rect x="716" y="402" width="268" height="142" rx="12" fill="#0E0F11" stroke="#fff"/>
-  <text x="850" y="426" fill="#fff" font-size="14" font-weight="600" text-anchor="middle">Muse Spark agent</text>
-  <text x="850" y="444" fill="#9AA0A6" font-size="11" text-anchor="middle">Meta Model API · tool calling · OpenMuse runtime</text>
-  <text x="850" y="466" fill="#fff" font-size="12" text-anchor="middle">brain_eval · look_at · brain_recall · brain_rules</text>
-  <text x="850" y="484" fill="#fff" font-size="12" text-anchor="middle">skills (read_brain, humanize-copy, …)</text>
-  <text x="850" y="506" fill="#9AA0A6" font-size="11" text-anchor="middle">speaks only from head outputs, in the first person</text>
-  <text x="850" y="524" fill="#9AA0A6" font-size="11" text-anchor="middle">raw brain vectors never reach the LLM</text>
-  <line x1="850" y1="386" x2="850" y2="400" stroke="#fff" marker-end="url(#a)"/>
+  <rect x="716" y="412" width="308" height="132" rx="12" fill="#0E0F11" stroke="#fff"/>
+  <text x="870" y="436" fill="#fff" font-size="14" font-weight="600" text-anchor="middle">Muse Spark agent</text>
+  <text x="870" y="454" fill="#9AA0A6" font-size="11" text-anchor="middle">Meta Model API · tool calling · OpenMuse runtime</text>
+  <text x="870" y="474" fill="#fff" font-size="12" text-anchor="middle">brain_eval · look_at · brain_recall · brain_rules</text>
+  <text x="870" y="492" fill="#fff" font-size="12" text-anchor="middle">skills (read_brain, humanize-copy, …)</text>
+  <text x="870" y="514" fill="#9AA0A6" font-size="11" text-anchor="middle">speaks only from head outputs, in the first person</text>
+  <text x="870" y="532" fill="#9AA0A6" font-size="11" text-anchor="middle">raw brain vectors never reach the LLM</text>
+  <line x1="870" y1="396" x2="870" y2="410" stroke="#fff" marker-end="url(#a)"/>
 
   <!-- outputs -->
   <g font-size="14" font-weight="600" fill="#fff" text-anchor="middle">
-    <rect x="1030" y="76" width="180" height="70" rx="12" fill="none" stroke="#fff"/><text x="1120" y="102">Spoken opinion</text><text x="1120" y="122" font-size="11" font-weight="400" fill="#9AA0A6">glasses captions, chat, voice</text>
-    <rect x="1030" y="166" width="180" height="70" rx="12" fill="none" stroke="#fff"/><text x="1120" y="192">Why, in numbers</text><text x="1120" y="212" font-size="11" font-weight="400" fill="#9AA0A6">percentiles · regions · confidence</text>
-    <rect x="1030" y="256" width="180" height="70" rx="12" fill="none" stroke="#fff"/><text x="1120" y="282">Taste you can read</text><text x="1120" y="302" font-size="11" font-weight="400" fill="#9AA0A6">rules · learning curve · reflex</text>
-    <rect x="1030" y="346" width="180" height="86" rx="12" fill="#2A1614" stroke="#C0504D"/><text x="1120" y="372">Design loops</text><text x="1120" y="392" font-size="11" font-weight="400" fill="#9AA0A6">pages · ad clips · live sites</text><text x="1120" y="408" font-size="11" font-weight="400" fill="#9AA0A6">Blender rooms · a curated shop</text>
+    <rect x="1070" y="76" width="200" height="70" rx="12" fill="none" stroke="#fff"/><text x="1170" y="102">Spoken opinion</text><text x="1170" y="122" font-size="11" font-weight="400" fill="#9AA0A6">glasses captions, chat, voice</text>
+    <rect x="1070" y="166" width="200" height="70" rx="12" fill="none" stroke="#fff"/><text x="1170" y="192">Why, in numbers</text><text x="1170" y="212" font-size="11" font-weight="400" fill="#9AA0A6">percentiles · regions · confidence</text>
+    <rect x="1070" y="256" width="200" height="70" rx="12" fill="none" stroke="#fff"/><text x="1170" y="282">Taste you can read</text><text x="1170" y="302" font-size="11" font-weight="400" fill="#9AA0A6">rules · learning curve · reflex</text>
+    <rect x="1070" y="346" width="200" height="86" rx="12" fill="#2A1614" stroke="#C0504D"/><text x="1170" y="372">Design loops</text><text x="1170" y="392" font-size="11" font-weight="400" fill="#9AA0A6">pages · ad clips · live sites</text><text x="1170" y="408" font-size="11" font-weight="400" fill="#9AA0A6">Blender rooms · a curated shop</text>
   </g>
   <g stroke="#fff" stroke-width="1" marker-end="url(#a)">
-    <line x1="1000" y1="111" x2="1028" y2="111"/><line x1="1000" y1="201" x2="1028" y2="201"/><line x1="1000" y1="291" x2="1028" y2="291"/><line x1="1000" y1="389" x2="1028" y2="389"/>
+    <line x1="1040" y1="111" x2="1068" y2="111"/><line x1="1040" y1="201" x2="1068" y2="201"/><line x1="1040" y1="291" x2="1068" y2="291"/><line x1="1040" y1="389" x2="1068" y2="389"/>
   </g>
   <!-- the loop back: design loops feed screenshots back in -->
-  <path d="M1120 432 L1120 590 L120 590 L120 300" fill="none" stroke="#C0504D" stroke-width="1" stroke-dasharray="4 4" marker-end="url(#a)"/>
-  <text x="620" y="582" fill="#C0504D" font-size="11" text-anchor="middle">the same brain score that judges also steers: renders go back in as input, round after round</text>
+  <path d="M1170 432 L1170 590 L120 590 L120 300" fill="none" stroke="#C0504D" stroke-width="1" stroke-dasharray="4 4" marker-end="url(#a)"/>
+  <text x="645" y="582" fill="#C0504D" font-size="11" text-anchor="middle">the same brain score that judges also steers: renders go back in as input, round after round</text>
 
   <!-- legend -->
   <text x="40" y="330" fill="#9AA0A6" font-size="11">grey: Meta open models · red: built during the hackathon</text>

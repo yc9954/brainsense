@@ -2,10 +2,10 @@
 
 ## Flow
 1. User says "Hey Meta, open BrainSense" (or taps the capture button). App starts a camera stream at MEDIUM 504×896 / 15 fps.
-2. On the spoken question ("이거 어때?"), the app keeps the **last 6 s** of frames (ring buffer) + the question text from on-device ASR (`mwdat-speech`) and encodes an H.264 MP4 (`AVAssetWriter`).
+2. On the spoken question ("What do you think?"), the app keeps the **last 6 s** of frames (ring buffer) + the question text from on-device ASR (`mwdat-speech`) and encodes an H.264 MP4 (`AVAssetWriter`).
 3. POST to the Modal endpoint (`Tribe.http`): `{"video_b64", "filename", "item_id"}`. The service returns ROI features + 1 Hz ROI time series + timing.
 4. The app calls the agent service (`brainsense.agent.loop.Agent.ask`) which runs Muse Spark with tools; the reply (2–3 sentences, Korean) goes to `AVSpeechSynthesizer`, routed to the glasses over A2DP.
-5. If the user answers "좋아 / 별로", the app sends `record_feedback` → personal head refits.
+5. If the user answers "Like / Dislike", the app sends `record_feedback` → personal head refits.
 
 ## Latency budget (target ≤ 8 s from question to first spoken word)
 | stage | budget | note |

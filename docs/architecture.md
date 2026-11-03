@@ -14,7 +14,7 @@ can verbalize.
 
 BrainSense remembers in **brain states**. Every photo, clip, track or paragraph the agent has ever
 looked at is stored as the human cortex TRIBE v2 predicts for it (360 cortical areas at 1 Hz), together
-with what happened afterwards (the user said 좋아/별로, picked A over B, the popup sold, the copy got
+with what happened afterwards (the user said Like / Dislike, picked A over B, the popup sold, the copy got
 replies). The agent learns by fitting small organs — *heads* — on those states, not by retraining the
 LLM and not by accumulating prose. The LLM (Muse Spark) is the **voice and the router**, never the
 memory. Three things fall out of that which a text-memory agent cannot do:
@@ -38,7 +38,7 @@ memory. Three things fall out of that which a text-memory agent cannot do:
                                  ▼
                  ┌──────────────────────────────────────────────────────────────┐
                  │ L1  ORGANS   calibrated heads on area features              │  exists
-                 │     crowd: 예쁨 주목 끌림 인기 사람다움   personal: your taste   │
+                 │     crowd: Aesthetic appeal, Attention capture, Desirability, Reach, Human-likeness   personal: your taste   │
                  └───────────────┬──────────────────────────────────────────────┘
                                  ▼
                  ┌──────────────────────────────────────────────────────────────┐
@@ -166,7 +166,7 @@ Hermes Agent (NousResearch, MIT) was the reference implementation for the *inspe
 | step | hours | deliverable |
 |---|---|---|
 | A. Engram store + migration of every cached item/outcome into it; `/recall`, `/rules` endpoints; `brain_recall`/`brain_rules` tools + prompt rule ("cite a precedent when one is within radius") | 3 | the agent says "like the X you rejected" with real ids |
-| B. `/sleep`: surprise-weighted refit, area-contrast rule mining, Muse phrasing, `USER_TASTE.md`, consolidation report | 2 | a learning curve chart (AUROC vs feedbacks) for the README and the 실험 tab |
+| B. `/sleep`: surprise-weighted refit, area-contrast rule mining, Muse phrasing, `USER_TASTE.md`, consolidation report | 2 | a learning curve chart (AUROC vs feedbacks) for the README and the Lab tab |
 | C. Reflex path in `/eval` + voice-mode use | 1 | sub-5 s spoken answers that quote a precedent |
 | D. Demo script: 8 feedbacks live → sleep → rules appear → next photo answered by reflex | 1 | video segment |
 
