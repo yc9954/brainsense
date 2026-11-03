@@ -1,14 +1,134 @@
-# BrainSense — a grounded-opinion agent for Meta glasses
+<div align="center">
 
-**Pitch:** "이거 어때?" → the glasses look → **TRIBE v2** predicts how an average brain responds → small **calibrated heads** turn that into *pretty / attention-grabbing / appealing* with percentiles and confidence → a **Muse Spark** agent speaks an opinion it can justify with numbers, and learns *your* taste from 👍/👎.
+# NeuroMuse
 
-Meta stack: Wearables Device Access Toolkit (glasses) · TRIBE v2 (open weights, brain encoder) · Meta Model API `muse-spark-1.3` (agent, tool calling) · optional SAM 3.1 (isolate the product in view).
+**An AI that looks before it speaks.** A model of the human brain (Meta TRIBE v2) sits in front of the language model, so every opinion about a photo, a clip, a line of copy or a sound comes with the brain regions and numbers behind it, and the agent learns your taste as rules you can read.
 
+Meta Global AI Developer Hackathon 2026 · Indie track · built on **Meta Model API (Muse Spark 1.3)** · **TRIBE v2** (open weights) · **OpenMuse / CopilotKit** · **Modal** · the **Wearables Device Access Toolkit** glasses flow
+
+<table>
+<tr>
+<td width="34%"><img src="docs/img/app-home.png" alt="Home: an opinion it can justify"></td>
+<td width="33%"><img src="docs/img/glasses-mode.png" alt="Glasses mode: camera point of view with spoken captions"></td>
+<td width="33%"><img src="docs/img/card-bars.png" alt="The brain card: live cortex and calibrated head scores"></td>
+</tr>
+<tr>
+<td align="center"><sub>Chat home</sub></td>
+<td align="center"><sub>Glasses mode (phone as Ray-Ban Meta)</sub></td>
+<td align="center"><sub>The brain card: cortex, then numbers</sub></td>
+</tr>
+</table>
+
+</div>
+
+## Why
+
+Ask any assistant "what do you think of this photo?" and it says "looks great". It never looked, and it cannot say why. People who make visual decisions for a living, popup-store owners, marketers, creators, want an opinion that can say *why*, admit when it does not know, and learn what *they* like. NeuroMuse answers from a predicted human cortex instead of improvising: the response is a measurement first, words second.
+
+## What it feels like
+
+<table>
+<tr>
+<td width="25%"><img src="docs/img/cortex-profile.png" alt="Live cortex inside the head, lateral"></td>
+<td width="25%"><img src="docs/img/card-analysis.png" alt="Analysis: per-head drivers and per-second brain response"></td>
+<td width="25%"><img src="docs/img/lab-memory.png" alt="Lab: learning curve and learned rules"></td>
+<td width="25%"><img src="docs/img/about-numbers.png" alt="About: measured numbers"></td>
+</tr>
+<tr>
+<td><b>The brain lights up first.</b> TRIBE v2's per-vertex prediction plays on the fsaverage5 cortex inside a bust, second by second, red where the cortex responds.</td>
+<td><b>Then the numbers.</b> Four calibrated heads with crowd score, confidence and percentile, the regions that drove each one, and the 1 Hz response per region.</td>
+<td><b>It learns you.</b> Like / dislike → sleep → rules in plain English, a crowd-vs-you learning curve, and a one-line reflex on anything it has seen before.</td>
+<td><b>Honest about itself.</b> Every score carries a confidence, and the About tab shows the AUROCs and the latency we actually measured.</td>
+</tr>
+</table>
+
+In the chat the agent speaks as its own brain, in the first person: *"My early visual cortex lit up in the top 12%, which means the colour contrast is doing real work. But my reward circuit stayed quiet: pleasing to look at, not something I'd want to own."* Ask "why?" and it cites percentiles and regions in everyday words; raw area codes never reach the user, and raw brain vectors never reach the LLM.
+
+## Plain AI vs a brain in the loop
+
+Same brief, same Muse Spark, same budget. Only the feedback differs: the left column asked the model once; the right column let the predicted cortex critique each round.
+
+<table>
+<tr><th width="50%">Muse Spark, one shot</th><th width="50%">Brain in the loop</th></tr>
+<tr>
+<td><img src="results/showcase/en-suite1/skincare_ad/oneshot_r1v1.png" alt="Skincare ad, one shot"></td>
+<td><img src="results/showcase/en-suite1/skincare_ad/brain_loop_r3v1.png" alt="Skincare ad, brain loop round 3"></td>
+</tr>
+<tr><td colspan="2" align="center"><sub>Skincare ad page. Blind pairwise verdict P(brain better) = 0.90; the human vote picked the brain one too.</sub></td></tr>
+<tr>
+<td><img src="results/showcase/en-ad-suite1/popup_ad/oneshot_r1v1.png" alt="12 s popup ad clip, one shot (contact sheet)"></td>
+<td><img src="results/showcase/en-ad-suite1/popup_ad/brain_loop_r2v1.png" alt="12 s popup ad clip, brain loop (contact sheet)"></td>
+</tr>
+<tr><td colspan="2" align="center"><sub>12-second ad clip, frames at 1 / 5 / 9 s. On video the brain loop wins every pairwise verdict (P ≥ 0.85): the critique reads the cortex <em>time course</em> (hook, hold, call to action) that a screenshot judge never sees.</sub></td></tr>
+<tr>
+<td><img src="results/showcase/redesign/en-craigslist/r0.png" alt="craigslist.org/about/sites, live page"></td>
+<td><img src="results/showcase/redesign/en-craigslist/r1.png" alt="craigslist.org/about/sites, brain-guided redesign"></td>
+</tr>
+<tr><td colspan="2" align="center"><sub>A live site, brand and copy kept. The brain asked for an object silhouette and something to hold attention after two seconds; ui_score 0.473 → 0.594.</sub></td></tr>
+<tr>
+<td colspan="2"><img src="results/showcase/interior/room3/before_after.png" alt="Blender interior, before (Muse baseline) and after (brain-steered round 4)"></td>
+</tr>
+<tr><td colspan="2" align="center"><sub>Not only pages: a parametric Blender room, re-rendered each round from the cortex critique, 0.257 → 0.470 in six rounds (<a href="results/showcase/interior/room3/timelapse.gif">timelapse</a>).</sub></td></tr>
+<tr>
+<td><img src="results/showcase/studio/living3/r0.png" alt="Photoreal studio, round 0: an empty room"></td>
+<td><img src="results/showcase/studio/living3/best_hero.png" alt="Photoreal studio, best round: furnished living room chosen by the brain score"></td>
+</tr>
+<tr><td colspan="2" align="center"><sub>The same loop with a photoreal Blender studio (Poly Haven assets): the agent places furniture, textures and light from a JSON spec, renders, reads the cortex, and keeps the round the brain liked most.</sub></td></tr>
+</table>
+
+Caveat we keep next to every win rate: on static pages, against Muse's *own* self-critique loop, the brain loop loses by Muse's own judge (which that loop optimises directly). Against "ask once" it wins on pages, and on video it wins against both. Full tables and the blind human-vote page are in the showcase section below.
+
+## Architecture
+
+<img src="docs/architecture.svg" alt="Architecture: inputs → Meta open models (V-JEPA2, DINOv2, Llama 3.2, wav2vec-BERT → TRIBE v2 → predicted cortex) → calibrated heads, Engram memory, Muse Spark agent → spoken opinion, numbers, taste, design loops" width="100%">
+
+What is different about it:
+
+1. **The brain comes before the language model.** Video, audio and text are embedded by V-JEPA2, DINOv2, wav2vec-BERT and Llama 3.2; TRIBE v2 predicts the 1 Hz response of 20,484 cortical vertices. That is Meta's open model. Everything downstream is ours.
+2. **Heads, not vibes.** 360 cortical-area means → PCA-54 → logistic heads calibrated on real outcomes (AADB ratings, SnapUGC watch retention, Unsplash downloads and views, HC3 human-vs-model text), each with a temperature-scaled confidence the agent must respect. Pooling the cortex into 9 regions lost accuracy; per-area features recovered it (0.67 → 0.75 AUROC).
+3. **The LLM only ever sees head outputs.** Muse Spark gets percentiles, confidence and named regions through tools (`brain_eval`, `look_at`, `brain_recall`, `brain_rules`, skills) and is told to say "I'm not sure" below 0.3 confidence. It cannot rate without a measurement.
+4. **One signal judges and steers.** The same brain score that rates a photo is the reward of a design loop: landing pages, 12-second ads, live-site redesigns, a Blender room, a curated shop. Renders go back in as input, round after round.
+5. **Memory in brain-state space.** Every percept is stored as a cortex state with its outcome; sleep refits a personal head, mines area-contrast rules with bootstrap CIs and writes them as falsifiable English sentences; recall cites precedents above 0.9 similarity; a reflex answers in one line without a reasoning pass.
+6. **It already behaves like glasses.** A phone (or the Mock Device Kit path) keeps a rolling 6-second clip; "What do you think?" uploads it, `look_at` sees what it is, `brain_eval` measures it, the answer comes back as spoken captions. 14 s per clip on a Modal L40S.
+
+## Numbers we measured
+
+| what | result |
+|---|---|
+| AADB aesthetics, 2,500 photos, 5-fold AUROC | 9 regions pooled 0.669 · raw V-JEPA2 0.728 · raw PCA-54 0.722 · **360 areas → PCA-54 0.753** |
+| Shipped heads, holdout AUROC | aesthetic appeal 0.72 · attention capture 0.65 · desirability 0.58 · reach 0.59 · human-likeness (text) **0.88** |
+| Latency, one never-seen 6 s clip, L40S | 43 s → **14 s** (no transcription for silent clips + bf16); 4 s per cached clip |
+| Brain loop vs one-shot, blind pairwise Muse judge | pages 3/5 wins + 1 tie (P 0.64) · 12 s ad clips **3/3** (P 0.89) |
+| Brain-guided redesign of live sites | 3 of 4 improved (ui_score +0.08 to +0.14); the fourth kept the live page |
+| Personal head after 12 synthetic outcomes | LOO AUROC 0.56 vs crowd 0.67, i.e. no personal signal yet at n = 12 (reported as is) |
+
+What the brain buys is explanation more than accuracy: at matched width the cortex features land beside the raw embedding, and every call names the areas behind it. TRIBE v2 predicts an average viewer and was trained on passive viewing, so value-region predictions are weak by construction; that is why the heads, not the brain, make the opinion.
+
+## Use cases
+
+<table>
+<tr>
+<td width="25%"><b>In a store, through the glasses.</b> Point at a shelf, ask "what do you think?", hear a grounded answer with the region that fired.</td>
+<td width="25%"><b>Copy that reads human.</b> Paste a paragraph; the Human-likeness head (0.88 AUROC) and a rewrite loop turn "Our popup store offers a unique experience…" into something a person would write, with before → after percentiles.</td>
+<td width="25%"><b>Ads and pages that hold attention.</b> Brain-in-the-loop generation and live-site redesign, with the 1 Hz attention course as the critique.</td>
+<td width="25%"><b>Your own taste, on record.</b> Like and dislike in the Lab; read the rules it learned, watch your head overtake the crowd head, reset any time.</td>
+</tr>
+</table>
+
+## Run it
+
+```bash
+uv run uvicorn brainsense.agent.server:app --port 8000                         # heads, TRIBE proxy, memory, /assets
+cd ../openmuse && OPENAI_API_KEY=$BRAINSENSE_LLM_API_KEY CPK_INTELLIGENCE_API_KEY=dummy-local RICH_THREADS=false BRAINSENSE_URL=http://127.0.0.1:8000 pnpm dev
+pnpm --dir ../openmuse/apps/mobile web                                          # http://localhost:8081
+node ../openmuse/scripts/lan-https.mjs                                         # phone: https://<laptop-ip>:8443 → glasses mode with the live camera
 ```
-glasses/phone ─clip(≤6s)─▶ Modal: TRIBE v2 ─▶ ROI time series (9 groups × 1 Hz)
-                                              └▶ 54-d pooled features ─▶ heads: aesthetic · attention · appeal · personal
-                                                                             └▶ Muse Spark agent (tools: brain_eval, compare, web_lookup, record_feedback) ─▶ TTS
-```
+
+The app is a fork of [CopilotKit/OpenMuse](https://github.com/CopilotKit/openmuse): [yc9954/openmuse-brainsense](https://github.com/yc9954/openmuse-brainsense), branch `brainsense-ui`. The TRIBE service runs on Modal (`modal deploy brainsense/tribe/modal_app.py`). Everything below is the working log: measurements, decisions, what failed and why.
+
+---
+
+# Details
 
 ## Status (2026-10-27)
 | piece | state |
