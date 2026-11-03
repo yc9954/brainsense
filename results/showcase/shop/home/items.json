@@ -1,0 +1,2388 @@
+[
+ {
+  "id": "shop_acb8da58823a",
+  "name": "ARTSCAPE Etched Glass 24\" x 36\" Window Film, 24-by-36-Inch",
+  "brand": "",
+  "price": 12.99,
+  "list_price": "",
+  "about": "Make sure this fits by entering your model number. | The visual effect of textured glass and stained glass | Creates privacy / Provides UV protection | No adhesives / Applies easily | Patterns repeat to cover any size window | Made in USA",
+  "specs": "ProductDimensions:72x36x0inches|ItemWeight:11.2ounces|ShippingWeight:12.2ounces(Viewshippingratesandpolicies)|Manufacturer:Artscape|ASIN:B000Q3PRYA|DomesticShipping:ItemcanbeshippedwithinU.S.|InternationalShipping:ThisitemcanbeshippedtoselectcountriesoutsideoftheU.S.LearnMore|ShippingAdvisory:Thisitemmustbeshippedseparatelyfromotheritemsinyourorder.Additionalshippingchargeswillnotapply.|Itemmodelnumber:01-0121",
+  "category": "Home & Kitchen | Home Décor | Window Treatments | Window Stickers & Films | Window Films",
+  "image": "shop_acb8da58823a.jpg",
+  "url": "https://images-na.ssl-images-amazon.com/images/I/51iAe3LF7FL.jpg",
+  "heads": {
+   "aesthetic": {
+    "score": 0.6036008596420288,
+    "percentile": 69.16890080428955,
+    "confidence": 0.20720171928405762,
+    "top": [
+     "L reward value, liking (pOFC)",
+     "R mind-wandering (23d)"
+    ]
+   },
+   "attention": {
+    "score": 0.5686673521995544,
+    "percentile": 63.013698630136986,
+    "confidence": 0.1373347043991089,
+    "top": [
+     "early vision (V1–V4) mean",
+     "object shape & motion (MT/LO) mean"
+    ]
+   },
+   "appeal": {
+    "score": 0.5556168556213379,
+    "percentile": 79.45054945054945,
+    "confidence": 0.11123371124267578,
+    "top": [
+     "language (Broca/STG) std",
+     "object shape & motion (MT/LO) slope"
+    ]
+   },
+   "popularity": {
+    "score": 0.4953771233558655,
+    "percentile": 50.43956043956044,
+    "confidence": 0.009245753288269043,
+    "top": [
+     "object shape & motion (MT/LO) slope",
+     "visual attention (IPS/FEF) slope"
+    ]
+   }
+  },
+  "diagnosis": [
+   "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+   "Attention drops after the first 2 s (+0.56 → +0.23): nothing to look at after the first impression"
+  ],
+  "crowd_score": 0.5990240521924636,
+  "rational": {
+   "value_for_money": 4,
+   "quality_risk": 2,
+   "catches": [
+    "Title says 24x36-inch but ProductDimensions says 72x36 — verify actual size before ordering",
+    "No-adhesive static cling requires wet application and can bubble/peel, and repeat pattern will show seams on larger windows"
+   ],
+   "who_for": "Renters or homeowners wanting cheap, removable privacy and UV filtering without replacing glass.",
+   "verdict": "buy",
+   "crowd_vs_reason": "The crowd's middling appeal matches the facts because this is a utilitarian privacy film that reason values for function, not for standout looks."
+  }
+ },
+ {
+  "id": "shop_b121e13df0f8",
+  "name": "Flash Furniture 25''W x 45''L Trapezoid Red HP Laminate Activity Table - Height Adjustable Short Legs",
+  "brand": "",
+  "price": 117.26,
+  "list_price": "",
+  "about": "Collaborative Trapezoid Activity Table | Table can be used alone or grouped together for cooperative learning | Recommended Grade Level: Preschool | Recommended Seating Capacity: 3 Children | Scratch and Stain Resistant Surface",
+  "specs": "ASIN:B00777W7GE|ShippingWeight:39pounds(Viewshippingratesandpolicies)|DateFirstAvailable:March26,2012",
+  "category": "Home & Kitchen | Furniture | Kids' Furniture | Tables & Chairs | Tables",
+  "image": "shop_b121e13df0f8.jpg",
+  "url": "https://images-na.ssl-images-amazon.com/images/I/31WxfYlS8XL.jpg",
+  "heads": {
+   "aesthetic": {
+    "score": 0.6333906650543213,
+    "percentile": 73.86058981233245,
+    "confidence": 0.2667813301086426,
+    "top": [
+     "L reward value, liking (pOFC)",
+     "L 10pp"
+    ]
+   },
+   "attention": {
+    "score": 0.5811179876327515,
+    "percentile": 64.38356164383562,
+    "confidence": 0.16223597526550293,
+    "top": [
+     "early vision (V1–V4) mean",
+     "early vision (V1–V4) late"
+    ]
+   },
+   "appeal": {
+    "score": 0.523820161819458,
+    "percentile": 69.78021978021978,
+    "confidence": 0.047640323638916016,
+    "top": [
+     "language (Broca/STG) std",
+     "faces & people (FFA/STS) max"
+    ]
+   },
+   "popularity": {
+    "score": 0.43871647119522095,
+    "percentile": 32.08791208791209,
+    "confidence": 0.1225670576095581,
+    "top": [
+     "visual attention (IPS/FEF) max",
+     "faces & people (FFA/STS) slope"
+    ]
+   }
+  },
+  "diagnosis": [
+   "No clear bottleneck: keep the structure, refine typography rhythm, spacing and color temperature"
+  ],
+  "crowd_score": 0.6241126346887592,
+  "rational": {
+   "value_for_money": 3,
+   "quality_risk": 3,
+   "catches": [
+    "Brand listed as unknown despite Flash Furniture in title, so warranty and support are unclear",
+    "Listing dates to March 2012 with no height-adjustment range, top thickness, or frame details",
+    "Preschool-only, seats just 3 - you will need multiples and it has no use beyond early-childhood classrooms"
+   ],
+   "who_for": "Preschool, daycare, or kindergarten classrooms needing groupable activity tables",
+   "verdict": "wait",
+   "crowd_vs_reason": "Yes, the lukewarm aesthetic scores match the facts of a plain utilitarian classroom table that is valued for function, not looks."
+  }
+ },
+ {
+  "id": "shop_20fa5049b921",
+  "name": "Industro Stainless Steel Hose Clamps",
+  "brand": "",
+  "price": 34.27,
+  "list_price": "",
+  "about": "Make sure this fits by entering your model number. | Rectangular perforations help to hold strong and connect easily. Color: Silver. | Tub makes for easy storage. Product Dimension: 2\"D x 0. 6\"H x 2\"W | Size: 1-3/4\", Size range: 3/4\" to 1-3/4\", Finish: Stainless Steel. | AISI 300 series stainless steel material. | Corrosion resistant. : 1 year.",
+  "specs": "ProductDimensions:2x0.6x2inches|ItemWeight:1.37pounds|ShippingWeight:1.37pounds(Viewshippingratesandpolicies)|Manufacturer:IndustroIntl|ASIN:B07M9BPMTK|Itemmodelnumber:193",
+  "category": "Home & Kitchen | Home Décor | Kids' Room Décor",
+  "image": "shop_20fa5049b921.jpg",
+  "url": "https://images-na.ssl-images-amazon.com/images/I/41y%2BKv5LLzL.jpg",
+  "heads": {
+   "aesthetic": {
+    "score": 0.7650001645088196,
+    "percentile": 88.06970509383379,
+    "confidence": 0.5300003290176392,
+    "top": [
+     "R mind-wandering (23d)",
+     "L 10pp"
+    ]
+   },
+   "attention": {
+    "score": 0.5549103021621704,
+    "percentile": 60.273972602739725,
+    "confidence": 0.10982060432434082,
+    "top": [
+     "early vision (V1–V4) mean",
+     "object shape & motion (MT/LO) mean"
+    ]
+   },
+   "appeal": {
+    "score": 0.4620962142944336,
+    "percentile": 43.51648351648352,
+    "confidence": 0.07580757141113281,
+    "top": [
+     "language (Broca/STG) std",
+     "faces & people (FFA/STS) max"
+    ]
+   },
+   "popularity": {
+    "score": 0.45293760299682617,
+    "percentile": 36.59340659340659,
+    "confidence": 0.09412479400634766,
+    "top": [
+     "visual attention (IPS/FEF) max",
+     "language (Broca/STG) std"
+    ]
+   }
+  },
+  "diagnosis": [
+   "Reward/value areas (OFC/vmPFC) are low: no 'I want this' signal",
+   "Attention drops after the first 2 s (+1.09 → +0.86): nothing to look at after the first impression"
+  ],
+  "crowd_score": 0.6975445169230793,
+  "rational": {
+   "value_for_money": 2,
+   "quality_risk": 4,
+   "catches": [
+    "No clamp count listed despite $34.27 tub price - impossible to judge unit cost",
+    "Conflicting size info: 2x0.6x2 inches vs 3/4\" to 1-3/4\" range vs 1-3/4\" size",
+    "Rectangular perforations are weaker and strip easier than solid-band clamps"
+   ],
+   "who_for": "Only for light-duty indoor/plumbing users who can confirm count and exact sizing with seller first",
+   "verdict": "skip",
+   "crowd_vs_reason": "The top-12% aesthetic gut reaction overrates a high-priced, vague-spec commodity clamp."
+  }
+ },
+ {
+  "id": "shop_f83b829af261",
+  "name": "Jay Franco Disney Frozen 2 Forest Spirit Twin/Full Comforter & Sham Set, Mutli",
+  "brand": "",
+  "price": 36.37,
+  "list_price": "",
+  "about": "Make sure this fits by entering your model number. | 100% Polyester | PERFECT FIT & FUN DESIGN - Reversible twin/full sized comforter measures 72 inch x 86 inches and sham measures 24 inch x 20 inches. Add a touch of decorative enchantment to your room with our fashionable and super soft Disney Frozen 2 comforter. Colorful and magical design features your child’s favorite Disney sisters, Elsa and Anna. | HIGH QUALITY & EASY CARE - Keep your little one as cozy as can be! Frozen 2 comforter is super soft and great for all seasons. 100% brushed microfiber polyester allows for a comfortable night's sleep. Fade resistant and machine washable. To clean, machine wash cold. To dry, air/tumble dry on low. | GREAT GIFT – This Disney Frozen 2 comforter will make any child smile and will transform any bedroom, guest room, kids room, RV, or vacation home. Great gift for school or home. It rolls up fo",
+  "specs": "PackageDimensions:16.9x11.5x6.7inches|ItemWeight:4.23pounds|ShippingWeight:4.23pounds(Viewshippingratesandpolicies)|Manufacturer:JayFrancoandSons,Inc.|ASIN:B07V5JT7XP|Itemmodelnumber:JF40350EPCD",
+  "category": "Home & Kitchen | Bedding | Kids' Bedding | Comforters & Sets | Comforter Sets",
+  "image": "shop_f83b829af261.jpg",
+  "url": "https://images-na.ssl-images-amazon.com/images/I/41uqfIm8fZL.jpg",
+  "heads": {
+   "aesthetic": {
+    "score": 0.5142453908920288,
+    "percentile": 56.501340482573724,
+    "confidence": 0.028490781784057617,
+    "top": [
+     "R mind-wandering (23d)",
+     "L 31a"
+    ]
+   },
+   "attention": {
+    "score": 0.48174458742141724,
+    "percentile": 45.20547945205479,
+    "confidence": 0.03651082515716553,
+    "top": [
+     "object shape & motion (MT/LO) mean",
+     "cognitive control (dlPFC) max"
+    ]
+   },
+   "appeal": {
+    "score": 0.5225242972373962,
+    "percentile": 68.57142857142857,
+    "confidence": 0.04504859447479248,
+    "top": [
+     "faces & people (FFA/STS) max",
+     "object shape & motion (MT/LO) max"
+    ]
+   },
+   "popularity": {
+    "score": 0.4880983233451843,
+    "percentile": 47.8021978021978,
+    "confidence": 0.023803353309631348,
+    "top": [
+     "faces & people (FFA/STS) max",
+     "object shape & motion (MT/LO) slope"
+    ]
+   }
+  },
+  "diagnosis": [
+   "Place areas (PPA/RSC) dominate: the background scene swallows the message",
+   "Attention drops after the first 2 s (+0.27 → +0.09): nothing to look at after the first impression"
+  ],
+  "crowd_score": 0.5101205613679325,
+  "rational": {
+   "value_for_money": 4,
+   "quality_risk": 3,
+   "catches": [
+    "100% polyester brushed microfiber - soft and washable but less breathable and thinner than cotton, marketed as 'all seasons'",
+    "72 x 86 inches is essentially Twin size, will look short/narrow on a true Full bed",
+    "Only 1 sham included and listing is sloppy/truncated, brand listed as unknown despite Jay Franco manufacturer"
+   ],
+   "who_for": "parents of a young Frozen 2 fan needing cheap, machine-washable twin bedding for kids room / guest / RV",
+   "verdict": "buy",
+   "crowd_vs_reason": "Yes, the middling crowd scores match the facts: it's average, functional licensed kids bedding, not premium quality or standout design."
+  }
+ },
+ {
+  "id": "shop_35f3d4d54c1a",
+  "name": "Disney's Alice in Wonderland, \"The Hatter's Mad\" Woven Tapestry Throw Blanket, 48\" x 60\", Multi Color",
+  "brand": "",
+  "price": 35.0,
+  "list_price": "",
+  "about": "Make sure this fits by entering your model number. | Features the mad hatter from the live-action film on a fun green background | Detailed, woven throw blanket; Decorative fringes around all edges | Measures 48\"W x 60\"L | Machine wash cold separately using delicate cycle and mild detergent. Do not bleach. Machine dry separately on gentle cycle. Remove promptly. Do not iron.",
+  "specs": "ProductDimensions:60x48x0.1inches|ItemWeight:1.63pounds|ShippingWeight:1.64pounds(Viewshippingratesandpolicies)|Manufacturer:TheNorthwestCompany|ASIN:B07DR4ZNLF|Itemmodelnumber:1AWL/05100/0005/RET",
+  "category": "Home & Kitchen | Bedding | Kids' Bedding | Blankets & Throws | Throws",
+  "image": "shop_35f3d4d54c1a.jpg",
+  "url": "https://images-na.ssl-images-amazon.com/images/I/61cQuMg%2BzRL.jpg",
+  "heads": {
+   "aesthetic": {
+    "score": 0.7226415276527405,
+    "percentile": 84.58445040214477,
+    "confidence": 0.44528305530548096,
+    "top": [
+     "L 10pp",
+     "R sound (predicted even for stills) (A1)"
+    ]
+   },
+   "attention": {
+    "score": 0.4562520384788513,
+    "percentile": 38.35616438356164,
+    "confidence": 0.08749592304229736,
+    "top": [
+     "object shape & motion (MT/LO) max",
+     "object shape & motion (MT/LO) mean"
+    ]
+   },
+   "appeal": {
+    "score": 0.4470336437225342,
+    "percentile": 36.59340659340659,
+    "confidence": 0.10593271255493164,
+    "top": [
+     "faces & people (FFA/STS) max",
+     "reward & value (OFC/vmPFC) std"
+    ]
+   },
+   "popularity": {
+    "score": 0.48375120759010315,
+    "percentile": 47.03296703296703,
+    "confidence": 0.0324975848197937,
+    "top": [
+     "visual attention (IPS/FEF) slope",
+     "faces & people (FFA/STS) max"
+    ]
+   }
+  },
+  "diagnosis": [
+   "Reward/value areas (OFC/vmPFC) are low: no 'I want this' signal",
+   "Weak hook in the first 2 s (-0.05 → +0.24)"
+  ],
+  "crowd_score": 0.6246277129069152,
+  "rational": {
+   "value_for_money": 3,
+   "quality_risk": 3,
+   "catches": [
+    "Only 1.63 lbs for 48x60 - thin woven tapestry for decor, not warmth",
+    "High-maintenance care: wash/dry separately on delicate, no bleach or iron",
+    "Niche live-action Mad Hatter graphic - dated license and generic listing filler suggests old stock"
+   ],
+   "who_for": "Die-hard live-action Alice / Mad Hatter fans wanting a decorative throw, not anyone seeking a cozy everyday blanket.",
+   "verdict": "wait",
+   "crowd_vs_reason": "The crowd overrates the striking photo (top 15% aesthetic) versus the thin, fussy-care, niche-print reality."
+  }
+ },
+ {
+  "id": "shop_222cb8aa929d",
+  "name": "RoomMates Curious George Peel and Stick Giant Wall Decal - RMK1082GM",
+  "brand": "",
+  "price": 11.0,
+  "list_price": "",
+  "about": "Make sure this fits by entering your model number. | Assembled size 19\" wide by 41\" tall | Easy to apply--just peel and stick | Applies to any smooth surface | Removable and repositionable with no sticky residue",
+  "specs": "",
+  "category": "Home & Kitchen | Home Décor | Kids' Room Décor | Wall Décor",
+  "image": "shop_222cb8aa929d.jpg",
+  "url": "https://images-na.ssl-images-amazon.com/images/I/41OnKAe7b6L.jpg",
+  "heads": {
+   "aesthetic": {
+    "score": 0.7406598329544067,
+    "percentile": 86.05898123324397,
+    "confidence": 0.4813196659088135,
+    "top": [
+     "L 31a",
+     "R mind-wandering (23d)"
+    ]
+   },
+   "attention": {
+    "score": 0.5026895403862,
+    "percentile": 47.671232876712324,
+    "confidence": 0.005379080772399902,
+    "top": [
+     "early vision (V1–V4) mean",
+     "object shape & motion (MT/LO) mean"
+    ]
+   },
+   "appeal": {
+    "score": 0.5060466527938843,
+    "percentile": 62.857142857142854,
+    "confidence": 0.012093305587768555,
+    "top": [
+     "language (Broca/STG) std",
+     "faces & people (FFA/STS) max"
+    ]
+   },
+   "popularity": {
+    "score": 0.4740985035896301,
+    "percentile": 43.51648351648352,
+    "confidence": 0.051802992820739746,
+    "top": [
+     "faces & people (FFA/STS) max",
+     "faces & people (FFA/STS) slope"
+    ]
+   }
+  },
+  "diagnosis": [
+   "No clear bottleneck: keep the structure, refine typography rhythm, spacing and color temperature"
+  ],
+  "crowd_score": 0.6555620466008355,
+  "rational": {
+   "value_for_money": 4,
+   "quality_risk": 3,
+   "catches": [
+    "Irrelevant 'enter your model number' bullet shows sloppy generic listing with no real fit info",
+    "No material, durability, or paint-safety specs beyond 'smooth surface' and 'no residue' claims",
+    "Brand listed as unknown despite RoomMates name so licensed authenticity is unclear"
+   ],
+   "who_for": "parents or renters wanting cheap temporary Curious George decor for a kids room",
+   "verdict": "buy",
+   "crowd_vs_reason": "The crowd likes the cute photo but the facts provide no proof of print quality or durability to support that enthusiasm."
+  }
+ },
+ {
+  "id": "shop_06928288e853",
+  "name": "Jay Franco Nickelodeon JoJo Siwa Sweet Life Curtain/Drapes",
+  "brand": "",
+  "price": 19.99,
+  "list_price": "",
+  "about": "Make sure this fits by entering your model number. | 100% Polyester | HIGH QUALITY & EASY SET UP - Each Nickelodeon Jojo Siwa curtain panel measures 42\" inch wide (total width 84\" inch wide) by 84\" inch long. Curtains are made of super soft polyester microfiber. Durable fabric lasts long and does not fade in sunlight. Rod pocket panel fits standard 1\" inch decorative curtain rod (curtain rode sold separately). Easy care machine washable. To clean, machine wash cold. To dry, air/tumble dry on low | BEAUTIFUL DESIGN & LONG LASTING - Designed for the Jojo Siwa fan in your life, these drapes will make any room in your house pop. Bold and fun colors are good for playtime, naptime, and bedtime. Drapes are long lasting and durable. Note: Tie back design may vary from image. | GREAT GIFT - Jojo Siwa Sweet Life keeps out just the right amount of light so your child can sleep in peace. Makes a gre",
+  "specs": "ProductDimensions:84x42x0.2inches|ItemWeight:1.14pounds|ShippingWeight:1.14pounds(Viewshippingratesandpolicies)|Manufacturer:JayFranco&Sons,Inc.|ASIN:B07RQW4F5T|Itemmodelnumber:JF40237EPCD",
+  "category": "Home & Kitchen | Home Décor | Kids' Room Décor | Window Treatments | Curtain Panels",
+  "image": "shop_06928288e853.jpg",
+  "url": "https://images-na.ssl-images-amazon.com/images/I/51a-q22rvvL.jpg",
+  "heads": {
+   "aesthetic": {
+    "score": 0.7925456762313843,
+    "percentile": 90.3485254691689,
+    "confidence": 0.5850913524627686,
+    "top": [
+     "L 31a",
+     "R mind-wandering (23d)"
+    ]
+   },
+   "attention": {
+    "score": 0.47746846079826355,
+    "percentile": 44.38356164383562,
+    "confidence": 0.0450630784034729,
+    "top": [
+     "object shape & motion (MT/LO) mean",
+     "object shape & motion (MT/LO) max"
+    ]
+   },
+   "appeal": {
+    "score": 0.5858158469200134,
+    "percentile": 87.47252747252747,
+    "confidence": 0.17163169384002686,
+    "top": [
+     "faces & people (FFA/STS) max",
+     "language (Broca/STG) late"
+    ]
+   },
+   "popularity": {
+    "score": 0.505623459815979,
+    "percentile": 53.62637362637363,
+    "confidence": 0.011246919631958008,
+    "top": [
+     "object shape & motion (MT/LO) slope",
+     "faces & people (FFA/STS) max"
+    ]
+   }
+  },
+  "diagnosis": [
+   "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+   "Attention drops after the first 2 s (+0.18 → -0.11): nothing to look at after the first impression"
+  ],
+  "crowd_score": 0.6801292317010972,
+  "rational": {
+   "value_for_money": 4,
+   "quality_risk": 3,
+   "catches": [
+    "Curtain rod sold separately",
+    "Light-filtering only, not blackout despite sleep-in-peace claim",
+    "Tie-back design may vary from image and description is truncated"
+   ],
+   "who_for": "Only for young JoJo Siwa fans needing cheap decorative bedroom/playroom curtains",
+   "verdict": "buy",
+   "crowd_vs_reason": "The top 10% aesthetic gut reaction matches the fun licensed look but overstates the thin polyester light-filtering reality."
+  }
+ },
+ {
+  "id": "shop_35aacf8d9411",
+  "name": "Delta Children Bistro 2-Piece Chair Set, White with Driftwood",
+  "brand": "",
+  "price": 99.99,
+  "list_price": "",
+  "about": "Recommended for ages 3+; Pair these chairs with the matching Bistro Kids Play Table #560302 to complete the look | Chair legs feature rubber feet to protect floor surfaces; Durable metal and composite wood construction; Designed for indoor use only | Assembled Dimensions: 17.75\"W x 17\"D x 21\"H; Seat Surface Dimensions: 12\"W x 12\"D x 11.25\"H | Durable finish is easy to clean | Tested for lead and other toxic elements to meet or exceed government and ASTM",
+  "specs": "",
+  "category": "Home & Kitchen | Furniture | Kids' Furniture | Chairs & Seats | Armchairs",
+  "image": "shop_35aacf8d9411.jpg",
+  "url": "https://images-na.ssl-images-amazon.com/images/I/31pEKBkzOAL.jpg",
+  "heads": {
+   "aesthetic": {
+    "score": 0.7323670387268066,
+    "percentile": 85.45576407506702,
+    "confidence": 0.4647340774536133,
+    "top": [
+     "L reward value, liking (pOFC)",
+     "L 31a"
+    ]
+   },
+   "attention": {
+    "score": 0.56915283203125,
+    "percentile": 63.013698630136986,
+    "confidence": 0.1383056640625,
+    "top": [
+     "early vision (V1–V4) mean",
+     "object shape & motion (MT/LO) mean"
+    ]
+   },
+   "appeal": {
+    "score": 0.5280852913856506,
+    "percentile": 71.0989010989011,
+    "confidence": 0.05617058277130127,
+    "top": [
+     "language (Broca/STG) std",
+     "faces & people (FFA/STS) max"
+    ]
+   },
+   "popularity": {
+    "score": 0.4407167136669159,
+    "percentile": 32.637362637362635,
+    "confidence": 0.11856657266616821,
+    "top": [
+     "visual attention (IPS/FEF) max",
+     "faces & people (FFA/STS) max"
+    ]
+   }
+  },
+  "diagnosis": [
+   "Attention drops after the first 2 s (+1.17 → +0.91): nothing to look at after the first impression"
+  ],
+  "crowd_score": 0.6854269313708934,
+  "rational": {
+   "value_for_money": 2,
+   "quality_risk": 4,
+   "catches": [
+    "Table sold separately - $99.99 is chairs-only despite 'set' styling",
+    "Composite wood construction, indoor use only despite bistro look",
+    "Tiny 12\"x12\" seat, ages 3+ only - short usable lifespan, no weight limit listed"
+   ],
+   "who_for": "Parents of 3-5 year olds needing matching indoor play chairs who already own the Bistro table",
+   "verdict": "wait",
+   "crowd_vs_reason": "The crowd loves the top-15% look, but the facts are pricey composite indoor-only chairs without a table."
+  }
+ },
+ {
+  "id": "shop_2670292d9ff5",
+  "name": "Emoji Pals Kissy Kids Saucer Chair",
+  "brand": "",
+  "price": 37.45,
+  "list_price": "",
+  "about": "Make sure this fits by entering your model number. | Fun emoji printed design | Perfect for nursery's, playrooms and kids Bedrooms. | Sturdy metal frame with locking mechanism. | Dimensions: 23\" x 23\"x23\"",
+  "specs": "ProductDimensions:23x23x23inches|ItemWeight:3pounds|ShippingWeight:5.1pounds(Viewshippingratesandpolicies)|Manufacturer:IdeaNuova|ASIN:B071RW1BSL|Itemmodelnumber:NK656914",
+  "category": "Home & Kitchen | Furniture | Kids' Furniture | Chairs & Seats | Folding Chairs",
+  "image": "shop_2670292d9ff5.jpg",
+  "url": "https://images-na.ssl-images-amazon.com/images/I/51ALGZunYmL.jpg",
+  "heads": {
+   "aesthetic": {
+    "score": 0.8088334798812866,
+    "percentile": 91.62198391420911,
+    "confidence": 0.6176669597625732,
+    "top": [
+     "R mind-wandering (23d)",
+     "L 31a"
+    ]
+   },
+   "attention": {
+    "score": 0.5316385626792908,
+    "percentile": 54.24657534246575,
+    "confidence": 0.06327712535858154,
+    "top": [
+     "early vision (V1–V4) mean",
+     "cognitive control (dlPFC) max"
+    ]
+   },
+   "appeal": {
+    "score": 0.48236826062202454,
+    "percentile": 52.307692307692314,
+    "confidence": 0.03526347875595093,
+    "top": [
+     "faces & people (FFA/STS) max",
+     "language (Broca/STG) std"
+    ]
+   },
+   "popularity": {
+    "score": 0.4689531624317169,
+    "percentile": 42.08791208791209,
+    "confidence": 0.06209367513656616,
+    "top": [
+     "visual attention (IPS/FEF) max",
+     "faces & people (FFA/STS) max"
+    ]
+   }
+  },
+  "diagnosis": [
+   "No clear bottleneck: keep the structure, refine typography rhythm, spacing and color temperature"
+  ],
+  "crowd_score": 0.7110220973788675,
+  "rational": {
+   "value_for_money": 2,
+   "quality_risk": 4,
+   "catches": [
+    "Generic 'enter your model number' copy with no weight limit, age range, or fabric details",
+    "Only 3 lbs with folding locking frame likely tippy/flimsy for active kids",
+    "$37.45 from unknown maker is steep for basic novelty saucer seating"
+   ],
+   "who_for": "Parents needing cheap occasional-use novelty seating for a toddler playroom or nursery corner, not for daily rough use.",
+   "verdict": "wait",
+   "crowd_vs_reason": "The top-8% aesthetic gut reaction overstates it because the facts show a thinly-specified, lightweight novelty chair."
+  }
+ },
+ {
+  "id": "shop_fac75e6e0dac",
+  "name": "\"Numeric Candle, #4\"",
+  "brand": "",
+  "price": 4.83,
+  "list_price": "",
+  "about": "Make sure this fits by entering your model number. | Wax candle molded into a number 4; white candle with colorful polka dots | 3 x 1.5-inches | Insert into the top of a cake, cupcake or dessert to decorate; light wick for singing Happy Birthday and blow out to make a birthday wish | Coordinate with other polka dot candles to create any number combination | Partner with Creative Converting for the best in decorations for birthday parties, holidays and themed celebrations",
+  "specs": "ProductDimensions:0.6x2x4.5inches|ItemWeight:0.32ounces|ShippingWeight:0.32ounces(Viewshippingratesandpolicies)|Manufacturer:CreativeConverting|ASIN:B00623G6CA|DomesticShipping:ItemcanbeshippedwithinU.S.|InternationalShipping:ThisitemcanbeshippedtoselectcountriesoutsideoftheU.S.LearnMore|Itemmodelnumber:CANDLE-4563",
+  "category": "Home & Kitchen | Home Décor | Candles & Holders | Candles | Specialty Candles | Birthday Candles",
+  "image": "shop_fac75e6e0dac.jpg",
+  "url": "https://images-na.ssl-images-amazon.com/images/I/31ud3YsYsXL.jpg",
+  "heads": {
+   "aesthetic": {
+    "score": 0.7687066793441772,
+    "percentile": 88.53887399463807,
+    "confidence": 0.5374133586883545,
+    "top": [
+     "L 31a",
+     "R mind-wandering (23d)"
+    ]
+   },
+   "attention": {
+    "score": 0.5276006460189819,
+    "percentile": 53.97260273972603,
+    "confidence": 0.05520129203796387,
+    "top": [
+     "early vision (V1–V4) mean",
+     "object shape & motion (MT/LO) mean"
+    ]
+   },
+   "appeal": {
+    "score": 0.5702506899833679,
+    "percentile": 84.28571428571429,
+    "confidence": 0.14050137996673584,
+    "top": [
+     "language (Broca/STG) std",
+     "faces & people (FFA/STS) max"
+    ]
+   },
+   "popularity": {
+    "score": 0.49970895051956177,
+    "percentile": 51.64835164835166,
+    "confidence": 0.0005820989608764648,
+    "top": [
+     "faces & people (FFA/STS) max",
+     "object shape & motion (MT/LO) slope"
+    ]
+   }
+  },
+  "diagnosis": [
+   "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+   "Attention drops after the first 2 s (+0.93 → +0.67): nothing to look at after the first impression"
+  ],
+  "crowd_score": 0.6861343302119163,
+  "rational": {
+   "value_for_money": 2,
+   "quality_risk": 1,
+   "catches": [
+    "$4.83 for one single-use 0.32oz candle",
+    "Only the digit 4 — other numbers sold separately"
+   ],
+   "who_for": "parents doing a 4th birthday polka-dot cake who need this exact topper now",
+   "verdict": "skip",
+   "crowd_vs_reason": "The gut loves the cute top-11% look, but reason sees an overpriced one-time wax number."
+  }
+ },
+ {
+  "id": "shop_330fa6821c86",
+  "name": "Lunchskins LS4-TOTE-STRIPE-NAV Reusable Tote, Navy Blue Stripe",
+  "brand": "",
+  "price": 10.99,
+  "list_price": "",
+  "about": "Make sure this fits by entering your model number. | Replaces 500 plastic bags in its lifetime | Dishwasher-safe and complies with FDA standards for food safety | Toxin free | Convenient fold over flap with Hook and Loop closure | Quick-drying, lightweight fabric | Measures 7.25 x 8.25 x 6 inches | Freezer safe",
+  "specs": "",
+  "category": "Home & Kitchen | Kitchen & Dining | Storage & Organization | Travel & To-Go Food Containers | Lunch Bags",
+  "image": "shop_330fa6821c86.jpg",
+  "url": "https://images-na.ssl-images-amazon.com/images/I/51J0WBvogQL.jpg",
+  "heads": {
+   "aesthetic": {
+    "score": 0.65325927734375,
+    "percentile": 77.14477211796248,
+    "confidence": 0.3065185546875,
+    "top": [
+     "L reward value, liking (pOFC)",
+     "R mind-wandering (23d)"
+    ]
+   },
+   "attention": {
+    "score": 0.534319281578064,
+    "percentile": 54.794520547945204,
+    "confidence": 0.06863856315612793,
+    "top": [
+     "early vision (V1–V4) mean",
+     "object shape & motion (MT/LO) mean"
+    ]
+   },
+   "appeal": {
+    "score": 0.45933690667152405,
+    "percentile": 41.75824175824176,
+    "confidence": 0.0813261866569519,
+    "top": [
+     "language (Broca/STG) std",
+     "object shape & motion (MT/LO) max"
+    ]
+   },
+   "popularity": {
+    "score": 0.4716615378856659,
+    "percentile": 42.747252747252745,
+    "confidence": 0.05667692422866821,
+    "top": [
+     "visual attention (IPS/FEF) max",
+     "visual attention (IPS/FEF) slope"
+    ]
+   }
+  },
+  "diagnosis": [
+   "Reward/value areas (OFC/vmPFC) are low: no 'I want this' signal",
+   "Face areas (FFA/STS) are silent: no human or gaze cue"
+  ],
+  "crowd_score": 0.6166426644034031,
+  "rational": {
+   "value_for_money": 3,
+   "quality_risk": 4,
+   "catches": [
+    "Tiny 7.25 x 8.25 x 6 inches - lunch-bag size, not a grocery tote despite 'Tote' name",
+    "Sloppy listing with irrelevant 'enter your model number' fitment bullet and unverified 'replaces 500 bags' claim",
+    "Unknown brand with no fabric/material specs beyond 'quick-drying, lightweight'"
+   ],
+   "who_for": "Someone wanting a small reusable lunch/snack bag that is dishwasher/freezer safe, not a full-size shopping tote.",
+   "verdict": "wait",
+   "crowd_vs_reason": "The middling appeal and low aesthetic gut reaction matches the facts of a plain, small utilitarian bag."
+  }
+ },
+ {
+  "id": "shop_36b6df1f1cb5",
+  "name": "Hampton Nautical Red Painted Lifering with White Bands, 20\"",
+  "brand": "",
+  "price": 36.7,
+  "list_price": "",
+  "about": "Make sure this fits by entering your model number. | Great beach wall decor | Life ring handcrafted from dense Styrofoam | Prominent white rope and bands contrast the dark blue finish of the life preserver decoration",
+  "specs": "ProductDimensions:20x2x20inches|ItemWeight:1pounds|ShippingWeight:1.6pounds(Viewshippingratesandpolicies)|Manufacturer:HandcraftedModelShipsLLC|ASIN:B00IPLNI8C|DomesticShipping:ItemcanbeshippedwithinU.S.|InternationalShipping:ThisitemcanbeshippedtoselectcountriesoutsideoftheU.S.LearnMore|ShippingAdvisory:Thisitemmustbeshippedseparatelyfromotheritemsinyourorder.Additionalshippingchargeswillnotapply.|Californiaresidents:ClickhereforProposition65warning|Itemmodelnumber:Lifering-20inch-418",
+  "category": "Home & Kitchen | Home Décor | Kids' Room Décor",
+  "image": "shop_36b6df1f1cb5.jpg",
+  "url": "https://images-na.ssl-images-amazon.com/images/I/31umLZxG-JL.jpg",
+  "heads": {
+   "aesthetic": {
+    "score": 0.8000975251197815,
+    "percentile": 90.61662198391421,
+    "confidence": 0.600195050239563,
+    "top": [
+     "L reward value, liking (pOFC)",
+     "L 10pp"
+    ]
+   },
+   "attention": {
+    "score": 0.5661160349845886,
+    "percentile": 62.73972602739726,
+    "confidence": 0.13223206996917725,
+    "top": [
+     "early vision (V1–V4) mean",
+     "early vision (V1–V4) late"
+    ]
+   },
+   "appeal": {
+    "score": 0.4332314133644104,
+    "percentile": 31.758241758241756,
+    "confidence": 0.1335371732711792,
+    "top": [
+     "language (Broca/STG) std",
+     "faces & people (FFA/STS) max"
+    ]
+   },
+   "popularity": {
+    "score": 0.47463458776474,
+    "percentile": 43.62637362637363,
+    "confidence": 0.05073082447052002,
+    "top": [
+     "visual attention (IPS/FEF) max",
+     "faces & people (FFA/STS) max"
+    ]
+   }
+  },
+  "diagnosis": [
+   "Reward/value areas (OFC/vmPFC) are low: no 'I want this' signal",
+   "Attention drops after the first 2 s (+1.36 → +1.20): nothing to look at after the first impression"
+  ],
+  "crowd_score": 0.7238322051100132,
+  "rational": {
+   "value_for_money": 2,
+   "quality_risk": 4,
+   "catches": [
+    "Styrofoam decor only - not a functional life-saving device despite lifering name",
+    "Listing contradicts itself: title says Red Painted but bullets say dark blue finish",
+    "Unknown brand and $36.70 for 1lb foam ring is expensive for what it is"
+   ],
+   "who_for": "Only for someone wanting lightweight beach-themed wall decor, not for pool/boat safety use",
+   "verdict": "skip",
+   "crowd_vs_reason": "The crowd loves the look at top 9% aesthetic, but reason says it's just fragile painted Styrofoam with a color mismatch."
+  }
+ },
+ {
+  "id": "shop_bfcca40e3442",
+  "name": "Beistle 50354 Party Supplies, 8\" x 5½\" x 5½\", Multicolored",
+  "brand": "",
+  "price": 12.59,
+  "list_price": "",
+  "about": "Make sure this fits by entering your model number. | This item is a great value! | 1 per package | Pirate party item | Novelty Items for festive occasions | This item is printed on board stock and measures 8 inches by 51/2 inches. Assembly is required.",
+  "specs": "",
+  "category": "Home & Kitchen | Home Décor | Home Décor Accents | Decorative Accessories | Decorative Boxes",
+  "image": "shop_bfcca40e3442.jpg",
+  "url": "https://images-na.ssl-images-amazon.com/images/I/51YeISFWWwL.jpg",
+  "heads": {
+   "aesthetic": {
+    "score": 0.5589374899864197,
+    "percentile": 62.93565683646113,
+    "confidence": 0.11787497997283936,
+    "top": [
+     "L reward value, liking (pOFC)",
+     "R mind-wandering (23d)"
+    ]
+   },
+   "attention": {
+    "score": 0.4325069487094879,
+    "percentile": 33.15068493150685,
+    "confidence": 0.13498610258102417,
+    "top": [
+     "object shape & motion (MT/LO) mean",
+     "object shape & motion (MT/LO) max"
+    ]
+   },
+   "appeal": {
+    "score": 0.650161862373352,
+    "percentile": 96.48351648351648,
+    "confidence": 0.3003237247467041,
+    "top": [
+     "language (Broca/STG) std",
+     "early vision (V1–V4) early"
+    ]
+   },
+   "popularity": {
+    "score": 0.5374975204467773,
+    "percentile": 63.73626373626373,
+    "confidence": 0.07499504089355469,
+    "top": [
+     "early vision (V1–V4) slope",
+     "visual attention (IPS/FEF) max"
+    ]
+   }
+  },
+  "diagnosis": [
+   "Face areas (FFA/STS) are silent: no human or gaze cue"
+  ],
+  "crowd_score": 0.5051338644994859,
+  "rational": {
+   "value_for_money": 2,
+   "quality_risk": 4,
+   "catches": [
+    "$12.59 for just 1 small 8-inch board-stock item",
+    "Printed cardboard with assembly required - likely flimsy single-use novelty",
+    "Unknown brand with generic/irrelevant bullets ('enter your model number')"
+   ],
+   "who_for": "Only for a pirate-party host who specifically needs this 8-inch prop and accepts disposable quality",
+   "verdict": "skip",
+   "crowd_vs_reason": "Gut appeal at top 4% does not match facts of an overpriced single-use cardboard item."
+  }
+ },
+ {
+  "id": "shop_b59079489d3f",
+  "name": "AMERICAN GREETINGS Rainbow Latex Balloons| Pack of 20 | Party Decor",
+  "brand": "",
+  "price": 10.17,
+  "list_price": "",
+  "about": "Make sure this fits by entering your model number. | 20 balloons per pack; Each measure 9\" when inflated; Available in many other colors and sizes",
+  "specs": "ProductDimensions:7.5x5.5x0.4inches|ItemWeight:1.6ounces|ShippingWeight:1.6ounces(Viewshippingratesandpolicies)|DomesticShipping:ItemcanbeshippedwithinU.S.|InternationalShipping:ThisitemcanbeshippedtoselectcountriesoutsideoftheU.S.LearnMore|ASIN:B00AEIFXVE|Itemmodelnumber:113255.99|Manufacturerrecommendedage:4-12years",
+  "category": "Home & Kitchen | Home Décor | Candles & Holders | Candles | Specialty Candles | Birthday Candles",
+  "image": "shop_b59079489d3f.jpg",
+  "url": "https://images-na.ssl-images-amazon.com/images/I/31acE6aVlEL.jpg",
+  "heads": {
+   "aesthetic": {
+    "score": 0.8504131436347961,
+    "percentile": 94.3029490616622,
+    "confidence": 0.7008262872695923,
+    "top": [
+     "L reward value, liking (pOFC)",
+     "L 31a"
+    ]
+   },
+   "attention": {
+    "score": 0.5721325874328613,
+    "percentile": 63.287671232876704,
+    "confidence": 0.14426517486572266,
+    "top": [
+     "early vision (V1–V4) mean",
+     "object shape & motion (MT/LO) mean"
+    ]
+   },
+   "appeal": {
+    "score": 0.534494936466217,
+    "percentile": 72.74725274725274,
+    "confidence": 0.06898987293243408,
+    "top": [
+     "language (Broca/STG) std",
+     "object shape & motion (MT/LO) slope"
+    ]
+   },
+   "popularity": {
+    "score": 0.4763115644454956,
+    "percentile": 44.065934065934066,
+    "confidence": 0.04737687110900879,
+    "top": [
+     "visual attention (IPS/FEF) max",
+     "object shape & motion (MT/LO) slope"
+    ]
+   }
+  },
+  "diagnosis": [
+   "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette"
+  ],
+  "crowd_score": 0.7564640999966142,
+  "rational": {
+   "value_for_money": 2,
+   "quality_risk": 4,
+   "catches": [
+    "~$0.51 per balloon is 2-3x typical price for basic 9-inch latex",
+    "Listing uses generic 'enter your model number' copy and brand is listed as unknown despite name",
+    "No helium, pump, or string included; colors/finish may vary from photo"
+   ],
+   "who_for": "Last-minute party planner who specifically needs this rainbow mix delivered",
+   "verdict": "skip",
+   "crowd_vs_reason": "Gut reaction loves the bright photo in top 6% for aesthetics, but reason says it's just overpriced standard latex."
+  }
+ },
+ {
+  "id": "shop_e8301471150b",
+  "name": "Disney/Pixar Zootopia 'Bunny Ears' 3 Piece Sheet Set, Twin",
+  "brand": "",
+  "price": 22.35,
+  "list_price": "",
+  "about": "Make sure this fits by entering your model number. | 100% Polyester | Imported | Includes (1) Twin Microfiber Sheet Set | Measures: Fitted sheet 39\" x 75\", flat sheet 66\" x 96\", standard pillow case 20\" x 30\" | Super soft microfiber makes sleeping comfy and fun | Coordinating bedding and accessories available (sold separately) | Easy care, machine washable polyester",
+  "specs": "ProductDimensions:75x39x1inches|ItemWeight:2.09pounds|ShippingWeight:2.1pounds(Viewshippingratesandpolicies)|Manufacturer:JayFrancoandSons,Inc.|ASIN:B01AMV8PXA|Itemmodelnumber:JF28541TICD",
+  "category": "Home & Kitchen | Bedding | Kids' Bedding | Blankets & Throws",
+  "image": "shop_e8301471150b.jpg",
+  "url": "https://images-na.ssl-images-amazon.com/images/I/51l475QLgFL.jpg",
+  "heads": {
+   "aesthetic": {
+    "score": 0.959456205368042,
+    "percentile": 99.39678284182307,
+    "confidence": 0.918912410736084,
+    "top": [
+     "L reward value, liking (pOFC)",
+     "R sound (predicted even for stills) (A1)"
+    ]
+   },
+   "attention": {
+    "score": 0.42557743191719055,
+    "percentile": 32.054794520547944,
+    "confidence": 0.1488451361656189,
+    "top": [
+     "object shape & motion (MT/LO) mean",
+     "object shape & motion (MT/LO) max"
+    ]
+   },
+   "appeal": {
+    "score": 0.7662405967712402,
+    "percentile": 99.56043956043956,
+    "confidence": 0.5324811935424805,
+    "top": [
+     "language (Broca/STG) std",
+     "early vision (V1–V4) slope"
+    ]
+   },
+   "popularity": {
+    "score": 0.549432635307312,
+    "percentile": 67.47252747252747,
+    "confidence": 0.09886527061462402,
+    "top": [
+     "visual attention (IPS/FEF) max",
+     "early vision (V1–V4) slope"
+    ]
+   }
+  },
+  "diagnosis": [
+   "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+   "Face areas (FFA/STS) are silent: no human or gaze cue"
+  ],
+  "crowd_score": 0.7431317748717065,
+  "rational": {
+   "value_for_money": 3,
+   "quality_risk": 4,
+   "catches": [
+    "100% polyester microfiber - sleeps hot, pills, and lacks cotton comfort/durability, no thread count given",
+    "Twin set includes only 1 pillowcase and no fitted pocket depth listed - may not fit thick mattresses, coordinating pieces sold separately"
+   ],
+   "who_for": "Parents of a young Zootopia fan wanting cheap novelty kids bedding for occasional use, not anyone shopping for breathable, long-lasting sheets",
+   "verdict": "buy",
+   "crowd_vs_reason": "The top-1% aesthetic gut reaction does not match the facts of a basic $22 polyester set that is cute but thin and risky on comfort."
+  }
+ },
+ {
+  "id": "shop_bf52b1a91b95",
+  "name": "Safavieh Castle Gardens Collection Dragon Coin Antique White Glazed Ceramic Garden Stool",
+  "brand": "",
+  "price": 69.56,
+  "list_price": "",
+  "about": "Make sure this fits by entering your model number. | These stools will add an elegant accent to your home or garden | This ceramic garden stool features a fine reactive Blue finish | Crafted of fine ceramic | Perfect for a garden, patio, deck, sunroom, greenhouse or anywhere in your home that you want to add a fresh accent | For over 100 years, Safavieh has been crafting products of the highest quality and unmatched style",
+  "specs": "ProductDimensions:13x14x17inches|ItemWeight:18pounds|ShippingWeight:18pounds(Viewshippingratesandpolicies)|Manufacturer:Safavieh|ASIN:B00R87DPYQ|Californiaresidents:ClickhereforProposition65warning|Itemmodelnumber:ACS4533D",
+  "category": "Home & Kitchen | Furniture | Kids' Furniture | Chairs & Seats | Stools",
+  "image": "shop_bf52b1a91b95.jpg",
+  "url": "https://images-na.ssl-images-amazon.com/images/I/41Uvv7EGnBL.jpg",
+  "heads": {
+   "aesthetic": {
+    "score": 0.7947672605514526,
+    "percentile": 90.48257372654156,
+    "confidence": 0.5895345211029053,
+    "top": [
+     "R sound (predicted even for stills) (A1)",
+     "L affect, conflict (a24)"
+    ]
+   },
+   "attention": {
+    "score": 0.48254841566085815,
+    "percentile": 45.20547945205479,
+    "confidence": 0.03490316867828369,
+    "top": [
+     "object shape & motion (MT/LO) mean",
+     "object shape & motion (MT/LO) max"
+    ]
+   },
+   "appeal": {
+    "score": 0.6040656566619873,
+    "percentile": 90.21978021978022,
+    "confidence": 0.2081313133239746,
+    "top": [
+     "faces & people (FFA/STS) max",
+     "language (Broca/STG) mean"
+    ]
+   },
+   "popularity": {
+    "score": 0.496512234210968,
+    "percentile": 50.76923076923077,
+    "confidence": 0.006975531578063965,
+    "top": [
+     "faces & people (FFA/STS) max",
+     "visual attention (IPS/FEF) slope"
+    ]
+   }
+  },
+  "diagnosis": [
+   "No clear bottleneck: keep the structure, refine typography rhythm, spacing and color temperature"
+  ],
+  "crowd_score": 0.6831216163095706,
+  "rational": {
+   "value_for_money": 3,
+   "quality_risk": 4,
+   "catches": [
+    "Title says Antique White Glazed but bullets say reactive Blue finish - actual color is unclear",
+    "No weight capacity, weather/frost/UV rating despite garden/patio and stool/seat claims",
+    "18-lb ceramic with equal shipping weight means high chip/crack transit risk and no breakage warranty stated"
+   ],
+   "who_for": "someone wanting a decorative accent/plant stand who verifies exact color with seller first, not for heavy daily seating",
+   "verdict": "wait",
+   "crowd_vs_reason": "The crowd rates it top 10% on looks, but inconsistent color facts and missing durability specs mean the gut reaction does not match the reasoned risk."
+  }
+ },
+ {
+  "id": "shop_f9b0dee7d442",
+  "name": "RoomMates Fire Brigade Peel and Stick Wall Decals",
+  "brand": "",
+  "price": 8.56,
+  "list_price": "",
+  "about": "Make sure this fits by entering your model number. | Includes 22 wall decals | Easy to apply--just peel and stick | Applies to any smooth surface | Removable and repositionable with no sticky residue",
+  "specs": "",
+  "category": "Home & Kitchen | Home Décor | Kids' Room Décor | Wall Décor",
+  "image": "shop_f9b0dee7d442.jpg",
+  "url": "https://images-na.ssl-images-amazon.com/images/I/51mNCSJnMaL.jpg",
+  "heads": {
+   "aesthetic": {
+    "score": 0.5009090304374695,
+    "percentile": 54.892761394101875,
+    "confidence": 0.0018180608749389648,
+    "top": [
+     "R mind-wandering (23d)",
+     "L 31a"
+    ]
+   },
+   "attention": {
+    "score": 0.4631895422935486,
+    "percentile": 40.273972602739725,
+    "confidence": 0.07362091541290283,
+    "top": [
+     "object shape & motion (MT/LO) mean",
+     "object shape & motion (MT/LO) max"
+    ]
+   },
+   "appeal": {
+    "score": 0.5804383754730225,
+    "percentile": 86.81318681318682,
+    "confidence": 0.16087675094604492,
+    "top": [
+     "faces & people (FFA/STS) max",
+     "object shape & motion (MT/LO) max"
+    ]
+   },
+   "popularity": {
+    "score": 0.48365169763565063,
+    "percentile": 46.92307692307692,
+    "confidence": 0.03269660472869873,
+    "top": [
+     "faces & people (FFA/STS) max",
+     "visual attention (IPS/FEF) slope"
+    ]
+   }
+  },
+  "diagnosis": [
+   "Place areas (PPA/RSC) dominate: the background scene swallows the message"
+  ],
+  "crowd_score": 0.49382083732133364,
+  "rational": {
+   "value_for_money": 4,
+   "quality_risk": 4,
+   "catches": [
+    "Listing uses irrelevant 'enter your model number' filler and provides no sizes, materials, or dimensions",
+    "Only works on smooth surfaces with unverified removable/no-residue claim from unknown brand"
+   ],
+   "who_for": "parents doing a cheap temporary fire-truck themed kids room",
+   "verdict": "buy",
+   "crowd_vs_reason": "The crowd's top-13% appeal loves the cute theme, but reason sees only a cheap low-stakes pack with thin specs."
+  }
+ },
+ {
+  "id": "shop_939fc0494069",
+  "name": "#40 Celebration Candle | White/Red | Party Supply",
+  "brand": "",
+  "price": 4.75,
+  "list_price": "",
+  "about": "Make sure this fits by entering your model number. | 1 birthday candle per pack; Measures 2.75\" x 2.38\"; Features a white candle with red outline and glitters for that extra shine | Our products are made from high-quality materials to ensure a hassle-free experience | Bring out the super-planner in you with Amscan products. We provide everything you need to throw a legendary party that everyone will remember. Add to cart now | Rest assured that you will get the most out of your money | Makes any cake look festive and fun",
+  "specs": "",
+  "category": "Home & Kitchen | Home Décor | Candles & Holders | Candles | Specialty Candles | Birthday Candles",
+  "image": "shop_939fc0494069.jpg",
+  "url": "https://images-na.ssl-images-amazon.com/images/I/411c9M8-FcL.jpg",
+  "heads": {
+   "aesthetic": {
+    "score": 0.8365234732627869,
+    "percentile": 93.23056300268097,
+    "confidence": 0.6730469465255737,
+    "top": [
+     "R mind-wandering (23d)",
+     "L 31a"
+    ]
+   },
+   "attention": {
+    "score": 0.5432732701301575,
+    "percentile": 57.534246575342465,
+    "confidence": 0.08654654026031494,
+    "top": [
+     "early vision (V1–V4) mean",
+     "object shape & motion (MT/LO) mean"
+    ]
+   },
+   "appeal": {
+    "score": 0.5022852420806885,
+    "percentile": 61.75824175824176,
+    "confidence": 0.004570484161376953,
+    "top": [
+     "language (Broca/STG) std",
+     "faces & people (FFA/STS) max"
+    ]
+   },
+   "popularity": {
+    "score": 0.4786495864391327,
+    "percentile": 45.16483516483517,
+    "confidence": 0.04270082712173462,
+    "top": [
+     "faces & people (FFA/STS) max",
+     "language (Broca/STG) std"
+    ]
+   }
+  },
+  "diagnosis": [
+   "No clear bottleneck: keep the structure, refine typography rhythm, spacing and color temperature"
+  ],
+  "crowd_score": 0.7333529033844634,
+  "rational": {
+   "value_for_money": 1,
+   "quality_risk": 4,
+   "catches": [
+    "$4.75 for just 1 single-use candle is very expensive",
+    "Listing has copy-paste error about 'model number' and zero specs on wax, burn time, or food safety",
+    "Glitter coating looks pretty but can shed onto frosting"
+   ],
+   "who_for": "Someone desperate for a last-minute 40th birthday cake topper who accepts paying extra for one candle",
+   "verdict": "skip",
+   "crowd_vs_reason": "The photo rates highly aesthetic top 7% but the facts are one overpriced candle with a sloppy listing, so gut appeal does not match reason."
+  }
+ },
+ {
+  "id": "shop_9aa436aab8ea",
+  "name": "Rhode Island Novelty Monkey Bean Filled Plush Stuffed Animal",
+  "brand": "",
+  "price": 9.99,
+  "list_price": "",
+  "about": "Make sure this fits by entering your model number. | *Sold By The Each | *Size: 5\" | Bean Filled Monkey Stuffed Animal Design | *Made Of Soft Plush | *Synthetic Bean Filled",
+  "specs": "ProductDimensions:6.2x4.2x1inches|ItemWeight:2.24ounces|ShippingWeight:2.24ounces(Viewshippingratesandpolicies)|ASIN:B008E37FRG|Itemmodelnumber:AP-WEMON|Manufacturerrecommendedage:3yearsandup",
+  "category": "Home & Kitchen | Furniture | Kids' Furniture",
+  "image": "shop_9aa436aab8ea.jpg",
+  "url": "https://images-na.ssl-images-amazon.com/images/I/51HBaRnY0RL.jpg",
+  "heads": {
+   "aesthetic": {
+    "score": 0.7819753289222717,
+    "percentile": 89.74530831099196,
+    "confidence": 0.5639506578445435,
+    "top": [
+     "R mind-wandering (23d)",
+     "L 31a"
+    ]
+   },
+   "attention": {
+    "score": 0.5016120076179504,
+    "percentile": 47.671232876712324,
+    "confidence": 0.003224015235900879,
+    "top": [
+     "object shape & motion (MT/LO) mean",
+     "early vision (V1–V4) mean"
+    ]
+   },
+   "appeal": {
+    "score": 0.5365225672721863,
+    "percentile": 73.4065934065934,
+    "confidence": 0.07304513454437256,
+    "top": [
+     "faces & people (FFA/STS) max",
+     "language (Broca/STG) std"
+    ]
+   },
+   "popularity": {
+    "score": 0.4731868803501129,
+    "percentile": 43.40659340659341,
+    "confidence": 0.05362623929977417,
+    "top": [
+     "faces & people (FFA/STS) max",
+     "object shape & motion (MT/LO) slope"
+    ]
+   }
+  },
+  "diagnosis": [
+   "Attention drops after the first 2 s (+1.09 → +0.67): nothing to look at after the first impression"
+  ],
+  "crowd_score": 0.6818065530296822,
+  "rational": {
+   "value_for_money": 2,
+   "quality_risk": 4,
+   "catches": [
+    "Tiny 5-inch, 2.2oz size - much smaller than a typical gift plush",
+    "Novelty / party-favor grade with unknown brand and synthetic bean fill",
+    "$9.99 is steep for this size/quality with no discount shown"
+   ],
+   "who_for": "Only for kids 3+ needing a cheap stocking stuffer or party favor, not for durable everyday cuddle toy seekers",
+   "verdict": "skip",
+   "crowd_vs_reason": "The crowd loves the cute photo at top 10% aesthetic, but the facts show a tiny $10 novelty-grade toy that does not match the hype."
+  }
+ },
+ {
+  "id": "shop_12f1f7305a9c",
+  "name": "Wildkin 5 Pc Bedding, Twin, Heroes",
+  "brand": "",
+  "price": 79.99,
+  "list_price": "",
+  "about": "Make sure this fits by entering your model number. | SWEET DREAMS – Drifting off to slumber land is a breeze when your child is snuggled up in Wildkin’s ultra-cozy Twin Bedding Set! The 5 Piece Twin Bedding Set comes complete with a printed comforter, flat sheet, fitted bottom sheet, coordinating pillowcase, and embroidered sham. The comforter, flat sheet, and fitted sheet all fit a standard twin mattress. The matching pillowcase and embroidered sham both fit a standard pillow. Trust us, between the super soft microfiber material and bold Olive Kids pattern, little ones will be cuddled up and dreaming soundly in no time. | 100% SUPER SOFT Microfiber – Wildkin’s 5 Piece Twin Comforter features a 100% microfiber exterior that’s perfect for cozy cuddles. Its lightweight material makes the Twin Comforter breathable enough for hot summer nights, while keeping your little one nice and warm onc",
+  "specs": "ProductDimensions:86x0.5x68inches|ItemWeight:5.4pounds|ShippingWeight:7.8pounds(Viewshippingratesandpolicies)|DomesticShipping:ItemcanbeshippedwithinU.S.|InternationalShipping:ThisitemcanbeshippedtoselectcountriesoutsideoftheU.S.LearnMore|ASIN:B01BOYEURE|Itemmodelnumber:73691|Manufacturerrecommendedage:3-8months",
+  "category": "Home & Kitchen | Bedding | Kids' Bedding | Comforters & Sets | Comforter Sets",
+  "image": "shop_12f1f7305a9c.jpg",
+  "url": "https://images-na.ssl-images-amazon.com/images/I/61osmj4%2BOAL.jpg",
+  "heads": {
+   "aesthetic": {
+    "score": 0.8637204170227051,
+    "percentile": 95.24128686327077,
+    "confidence": 0.7274408340454102,
+    "top": [
+     "L reward value, liking (pOFC)",
+     "L TA2"
+    ]
+   },
+   "attention": {
+    "score": 0.39529725909233093,
+    "percentile": 26.027397260273972,
+    "confidence": 0.20940548181533813,
+    "top": [
+     "object shape & motion (MT/LO) mean",
+     "object shape & motion (MT/LO) max"
+    ]
+   },
+   "appeal": {
+    "score": 0.5731104612350464,
+    "percentile": 85.16483516483517,
+    "confidence": 0.14622092247009277,
+    "top": [
+     "language (Broca/STG) std",
+     "object shape & motion (MT/LO) max"
+    ]
+   },
+   "popularity": {
+    "score": 0.5096989870071411,
+    "percentile": 54.83516483516484,
+    "confidence": 0.019397974014282227,
+    "top": [
+     "faces & people (FFA/STS) slope",
+     "early vision (V1–V4) slope"
+    ]
+   }
+  },
+  "diagnosis": [
+   "No clear bottleneck: keep the structure, refine typography rhythm, spacing and color temperature"
+  ],
+  "crowd_score": 0.6764697446035162,
+  "rational": {
+   "value_for_money": 3,
+   "quality_risk": 4,
+   "catches": [
+    "100% microfiber is polyester, not breathable cotton - will sleep hot and pill despite marketing",
+    "Specs list manufacturer age 3-8 months for a twin bed set, a nonsense/safety red flag for sloppy listing QC",
+    "$79.99 with no list price discount for all-synthetic set - you pay for pattern, not fabric quality"
+   ],
+   "who_for": "Parents of toddlers/kids 3+ who want a cheap fun Heroes theme and accept polyester care trade-offs.",
+   "verdict": "wait",
+   "crowd_vs_reason": "The crowd loves the photo but the facts are just thin polyester with listing errors, so gut appeal overstates real quality."
+  }
+ },
+ {
+  "id": "shop_ce0851400959",
+  "name": "Sweet Jojo Designs 3-Piece Bear Mountain Watercolor Boy Full/Queen Kid Childrens Teen Bedding Comforter Set",
+  "brand": "",
+  "price": 119.99,
+  "list_price": "",
+  "about": "Make sure this fits by entering your model number. | 3 Piece Bedding Set: 1 Lightweight Full/Queen Comforter, 2 Standard Shams | Dimensions: Lightweight Comforter - Full/Queen (86in x 86in), Standard Shams (20in x 26in) | This set combines a stunning bear and mountain watercolor print and a triangle tree print fabric. | This set is made of brushed microfiber and is machine washable | This design has matching accessories such as window treatments, hampers, shower curtains and pillows",
+  "specs": "ProductDimensions:86x86x1.5inches|ItemWeight:4.8pounds|ShippingWeight:4.8pounds(Viewshippingratesandpolicies)|Department:baby-boys|Manufacturer:JojoDesigns,LLC|ASIN:B0775SXTMC|Itemmodelnumber:B073RRFMV2",
+  "category": "Home & Kitchen | Bedding | Kids' Bedding | Comforters & Sets | Comforter Sets",
+  "image": "shop_ce0851400959.jpg",
+  "url": "https://images-na.ssl-images-amazon.com/images/I/51YXqKyfNAL.jpg",
+  "heads": {
+   "aesthetic": {
+    "score": 0.6161426305770874,
+    "percentile": 71.44772117962466,
+    "confidence": 0.2322852611541748,
+    "top": [
+     "R mind-wandering (23d)",
+     "L reward value, liking (pOFC)"
+    ]
+   },
+   "attention": {
+    "score": 0.4604012370109558,
+    "percentile": 39.178082191780824,
+    "confidence": 0.07919752597808838,
+    "top": [
+     "object shape & motion (MT/LO) mean",
+     "object shape & motion (MT/LO) max"
+    ]
+   },
+   "appeal": {
+    "score": 0.5556844472885132,
+    "percentile": 79.45054945054945,
+    "confidence": 0.11136889457702637,
+    "top": [
+     "object shape & motion (MT/LO) max",
+     "faces & people (FFA/STS) max"
+    ]
+   },
+   "popularity": {
+    "score": 0.5269802808761597,
+    "percentile": 60.65934065934066,
+    "confidence": 0.053960561752319336,
+    "top": [
+     "early vision (V1–V4) slope",
+     "faces & people (FFA/STS) slope"
+    ]
+   }
+  },
+  "diagnosis": [
+   "Attention drops after the first 2 s (+0.56 → +0.37): nothing to look at after the first impression"
+  ],
+  "crowd_score": 0.5559311582350503,
+  "rational": {
+   "value_for_money": 2,
+   "quality_risk": 4,
+   "catches": [
+    "$119.99 for only comforter + 2 shams - no sheets, pillow inserts, or fill details disclosed",
+    "Brushed microfiber, lightweight 4.8 lbs with no thread count, GSM, or fill material - durability and warmth unclear",
+    "Listed under department baby-boys but sold as Full/Queen teen size - confusing fit/targeting"
+   ],
+   "who_for": "Parents who specifically want a bear-mountain watercolor theme for a kid/teen Full/Queen bed and plan to buy matching accessories",
+   "verdict": "wait",
+   "crowd_vs_reason": "The crowd's moderately positive gut reaction to the cute print overrates it versus the thin specs and high price for just 3 microfiber pieces."
+  }
+ },
+ {
+  "id": "shop_a776b55c0c6f",
+  "name": "Wood Designs 24\" x 48\" Rectangle Hardwood Table with 29\" Legs",
+  "brand": "",
+  "price": 208.52,
+  "list_price": "",
+  "about": "",
+  "specs": "Product Dimensions:         48 x 24 x 30 inches    |Shipping Weight: 43.4 pounds (View shipping rates and policies)|ASIN: B07TWBX6S8|Item model number: AAWD84829|    #40    in Kids' Tables",
+  "category": "Home & Kitchen | Furniture | Kids' Furniture | Tables & Chairs | Tables",
+  "image": "shop_a776b55c0c6f.jpg",
+  "url": "https://images-na.ssl-images-amazon.com/images/I/31U%2BBEG98iL.jpg",
+  "heads": {
+   "aesthetic": {
+    "score": 0.8126504421234131,
+    "percentile": 91.68900804289544,
+    "confidence": 0.6253008842468262,
+    "top": [
+     "L reward value, liking (pOFC)",
+     "L 10pp"
+    ]
+   },
+   "attention": {
+    "score": 0.611198365688324,
+    "percentile": 69.31506849315069,
+    "confidence": 0.22239673137664795,
+    "top": [
+     "early vision (V1–V4) mean",
+     "object shape & motion (MT/LO) mean"
+    ]
+   },
+   "appeal": {
+    "score": 0.532124400138855,
+    "percentile": 71.97802197802197,
+    "confidence": 0.06424880027770996,
+    "top": [
+     "language (Broca/STG) std",
+     "object shape & motion (MT/LO) slope"
+    ]
+   },
+   "popularity": {
+    "score": 0.4417189657688141,
+    "percentile": 32.967032967032964,
+    "confidence": 0.11656206846237183,
+    "top": [
+     "language (Broca/STG) std",
+     "object shape & motion (MT/LO) slope"
+    ]
+   }
+  },
+  "diagnosis": [
+   "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+   "Attention drops after the first 2 s (+0.97 → +0.81): nothing to look at after the first impression"
+  ],
+  "crowd_score": 0.7504928980911599,
+  "rational": {
+   "value_for_money": 3,
+   "quality_risk": 4,
+   "catches": [
+    "No bullets, wood species, finish, or assembly details to support 'hardwood' claim at $208.52",
+    "30-inch height is standard adult height yet ranked only #40 in Kids' Tables, so fit for young kids is questionable",
+    "Unknown brand support, no list price, reviews, or warranty to justify price"
+   ],
+   "who_for": "Classrooms/daycares needing a plain 24x48in utility table for older kids/adults who can verify materials first",
+   "verdict": "wait",
+   "crowd_vs_reason": "The gut reaction loves the look at top 8% aesthetic, but the thin facts give no reason to pay a premium for it."
+  }
+ },
+ {
+  "id": "shop_457573c195bf",
+  "name": "DC Fix 334-0025 Phantom Premium Window Film",
+  "brand": "",
+  "price": 13.75,
+  "list_price": "",
+  "about": "Make sure this fits by entering your model number. | Filters light and reduces glare | Block unwanted views and viewers | Great for shower doors, windows, and cabinets | Measures 17.7in x 59in | Easy to remove",
+  "specs": "",
+  "category": "Home & Kitchen | Home Décor | Window Treatments | Window Stickers & Films | Window Films",
+  "image": "shop_457573c195bf.jpg",
+  "url": "https://images-na.ssl-images-amazon.com/images/I/31yOXSFoGcL.jpg",
+  "heads": {
+   "aesthetic": {
+    "score": 0.509820282459259,
+    "percentile": 55.898123324396785,
+    "confidence": 0.019640564918518066,
+    "top": [
+     "L 31a",
+     "L reward value, liking (pOFC)"
+    ]
+   },
+   "attention": {
+    "score": 0.5272420644760132,
+    "percentile": 53.6986301369863,
+    "confidence": 0.05448412895202637,
+    "top": [
+     "early vision (V1–V4) mean",
+     "cognitive control (dlPFC) max"
+    ]
+   },
+   "appeal": {
+    "score": 0.6787521243095398,
+    "percentile": 97.58241758241758,
+    "confidence": 0.3575042486190796,
+    "top": [
+     "faces & people (FFA/STS) max",
+     "language (Broca/STG) std"
+    ]
+   },
+   "popularity": {
+    "score": 0.5288614630699158,
+    "percentile": 61.20879120879121,
+    "confidence": 0.05772292613983154,
+    "top": [
+     "faces & people (FFA/STS) max",
+     "default mode (mind-wandering) slope"
+    ]
+   }
+  },
+  "diagnosis": [
+   "Place areas (PPA/RSC) dominate: the background scene swallows the message"
+  ],
+  "crowd_score": 0.5258421909519725,
+  "rational": {
+   "value_for_money": 3,
+   "quality_risk": 4,
+   "catches": [
+    "Brand listed as unknown with no specs on adhesive, UV block, or privacy level",
+    "Small size at 17.7in x 59in covers only one small window/door",
+    "Generic bullets with no installation, durability, or removability details"
+   ],
+   "who_for": "renters needing cheap temporary privacy for one small bathroom window, shower door, or cabinet who have verified the size fits",
+   "verdict": "wait",
+   "crowd_vs_reason": "Crowd appeal at top 2% is very high but facts are thin and generic, so the gut reaction does not match the reasoned value."
+  }
+ },
+ {
+  "id": "shop_464223b564be",
+  "name": "Furnish my Place 740 Numbers 5X7 Kids ABC Educational Alphabet Letter Anti Skid, 4'5\"X6'9\", Multi/Color",
+  "brand": "",
+  "price": 54.99,
+  "list_price": "",
+  "about": "Spot clean with mild soap and water easy to clean stain resistance | Bacteria resistant surface is perfect for homes with kids and pets | Safe non-slip rubber backing and comfortable soft texture nylon pile. Thickness: 7Mm (approx.) | High quality and premium nylon machine made. Warranty: 1 year - manufacturer | It's easy to clean and roll-up. It would be ideal gifts for baby showers, holidays. Also would be usage for children's bedrooms, playrooms, kindergarten classrooms",
+  "specs": "ASIN:B01HIVOKW2|ShippingWeight:7pounds(Viewshippingratesandpolicies)|DateFirstAvailable:June24,2016",
+  "category": "Home & Kitchen | Home Décor | Kids' Room Décor | Rugs",
+  "image": "shop_464223b564be.jpg",
+  "url": "https://images-na.ssl-images-amazon.com/images/I/51yurmgqAAL.jpg",
+  "heads": {
+   "aesthetic": {
+    "score": 0.8090829253196716,
+    "percentile": 91.62198391420911,
+    "confidence": 0.6181658506393433,
+    "top": [
+     "L reward value, liking (pOFC)",
+     "R sound (predicted even for stills) (A1)"
+    ]
+   },
+   "attention": {
+    "score": 0.410746306180954,
+    "percentile": 29.315068493150687,
+    "confidence": 0.17850738763809204,
+    "top": [
+     "object shape & motion (MT/LO) max",
+     "object shape & motion (MT/LO) mean"
+    ]
+   },
+   "appeal": {
+    "score": 0.7437077164649963,
+    "percentile": 99.23076923076923,
+    "confidence": 0.4874154329299927,
+    "top": [
+     "language (Broca/STG) std",
+     "language (Broca/STG) early"
+    ]
+   },
+   "popularity": {
+    "score": 0.538655161857605,
+    "percentile": 64.50549450549451,
+    "confidence": 0.07731032371520996,
+    "top": [
+     "visual attention (IPS/FEF) slope",
+     "language (Broca/STG) std"
+    ]
+   }
+  },
+  "diagnosis": [
+   "Weak hook in the first 2 s (-0.08 → +0.25)"
+  ],
+  "crowd_score": 0.6532991298302802,
+  "rational": {
+   "value_for_money": 3,
+   "quality_risk": 4,
+   "catches": [
+    "Unknown brand with only a vague 1-year manufacturer warranty and listing from 2016",
+    "Very thin 7mm nylon pile - soft look but not plush or long-lasting",
+    "Marketing claims like bacteria-resistant and premium with no certifications or materials proof"
+   ],
+   "who_for": "Budget parents/teachers needing a cheap, colorful playroom/classroom rug for light use",
+   "verdict": "buy",
+   "crowd_vs_reason": "The crowd loves the bright photo but the facts show a thin budget nylon rug, not a premium piece."
+  }
+ },
+ {
+  "id": "shop_d9387efdfb2b",
+  "name": "Funko Pop! Disney: Lion King Live Action - Simba",
+  "brand": "",
+  "price": 5.9,
+  "list_price": "",
+  "about": "Make sure this fits by entering your model number. | From lion King live-action, Simba, as a stylized POP vinyl from Funko! | Stylized collectable stands 3 ¾ inches tall, perfect for any Mammoth cave fan! | Collect and display all lion King pop! Vinyl's!",
+  "specs": "ProductDimensions:2.5x2.5x3.8inches|ItemWeight:4.8ounces|ShippingWeight:5ounces(Viewshippingratesandpolicies)|ASIN:B07KPSBXR3|Itemmodelnumber:38543|Manufacturerrecommendedage:3yearsandup",
+  "category": "Home & Kitchen | Kids' Home Store",
+  "image": "shop_d9387efdfb2b.jpg",
+  "url": "https://images-na.ssl-images-amazon.com/images/I/41dH815KGcL.jpg",
+  "heads": {
+   "aesthetic": {
+    "score": 0.8711798191070557,
+    "percentile": 95.44235924932975,
+    "confidence": 0.7423596382141113,
+    "top": [
+     "L 31a",
+     "R mind-wandering (23d)"
+    ]
+   },
+   "attention": {
+    "score": 0.46837419271469116,
+    "percentile": 41.0958904109589,
+    "confidence": 0.06325161457061768,
+    "top": [
+     "object shape & motion (MT/LO) mean",
+     "object shape & motion (MT/LO) max"
+    ]
+   },
+   "appeal": {
+    "score": 0.578463613986969,
+    "percentile": 86.48351648351648,
+    "confidence": 0.156927227973938,
+    "top": [
+     "faces & people (FFA/STS) max",
+     "language (Broca/STG) late"
+    ]
+   },
+   "popularity": {
+    "score": 0.4875432550907135,
+    "percentile": 47.69230769230769,
+    "confidence": 0.024913489818572998,
+    "top": [
+     "faces & people (FFA/STS) max",
+     "language (Broca/STG) std"
+    ]
+   }
+  },
+  "diagnosis": [
+   "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+   "Attention drops after the first 2 s (+0.75 → +0.58): nothing to look at after the first impression"
+  ],
+  "crowd_score": 0.7185961800700502,
+  "rational": {
+   "value_for_money": 4,
+   "quality_risk": 4,
+   "catches": [
+    "Brand listed as 'unknown' despite Funko Pop name, so authenticity is unverified",
+    "Bullet copy has nonsense errors like 'Mammoth cave fan' and 'enter your model number', signaling sloppy third-party listing"
+   ],
+   "who_for": "casual Lion King fans wanting cheap decor/toy, not serious Funko collectors",
+   "verdict": "wait",
+   "crowd_vs_reason": "The gut reaction loves the cute top-5% look, but the facts show unknown brand and sloppy listing that undercut collectible trust."
+  }
+ },
+ {
+  "id": "shop_9daa5556e799",
+  "name": "Sweet Jojo Designs 3-Piece Navy Blue, Aqua and Grey Aztec Mountains Boy or Girl Full/Queen Kid Childrens Teen Bedding Comforter Set",
+  "brand": "",
+  "price": 99.99,
+  "list_price": "",
+  "about": "Make sure this fits by entering your model number. | 3 Piece Bedding Set: 1 Lightweight Full/Queen Comforter, 2 Standard Shams | Dimensions: Lightweight Comforter - Full/Queen (86in x 86in), Standard Shams (20in x 26in) | This set boasts a watercolor mountain print and a coordinating triangle print fabric | This set is made of brushed microfiber and is machine washable | This design has matching accessories such as window treatments, hampers, shower curtains and pillows",
+  "specs": "ProductDimensions:86x86x1.5inches|ItemWeight:4.88pounds|ShippingWeight:4.88pounds(Viewshippingratesandpolicies)|Department:baby-girls|Manufacturer:JojoDesigns,LLC|ASIN:B0775Y4D7Z|Itemmodelnumber:B075LW9WP7",
+  "category": "Home & Kitchen | Bedding | Kids' Bedding | Comforters & Sets | Comforter Sets",
+  "image": "shop_9daa5556e799.jpg",
+  "url": "https://images-na.ssl-images-amazon.com/images/I/51tx2asY5BL.jpg",
+  "heads": {
+   "aesthetic": {
+    "score": 0.7006040215492249,
+    "percentile": 82.03753351206434,
+    "confidence": 0.4012080430984497,
+    "top": [
+     "R mind-wandering (23d)",
+     "L reward value, liking (pOFC)"
+    ]
+   },
+   "attention": {
+    "score": 0.4736710488796234,
+    "percentile": 43.013698630136986,
+    "confidence": 0.052657902240753174,
+    "top": [
+     "object shape & motion (MT/LO) mean",
+     "cognitive control (dlPFC) max"
+    ]
+   },
+   "appeal": {
+    "score": 0.5461897253990173,
+    "percentile": 76.26373626373626,
+    "confidence": 0.09237945079803467,
+    "top": [
+     "object shape & motion (MT/LO) max",
+     "early vision (V1–V4) slope"
+    ]
+   },
+   "popularity": {
+    "score": 0.507389485836029,
+    "percentile": 54.065934065934066,
+    "confidence": 0.014778971672058105,
+    "top": [
+     "early vision (V1–V4) slope",
+     "early vision (V1–V4) std"
+    ]
+   }
+  },
+  "diagnosis": [
+   "Attention drops after the first 2 s (+0.69 → +0.48): nothing to look at after the first impression"
+  ],
+  "crowd_score": 0.6199653782255787,
+  "rational": {
+   "value_for_money": 2,
+   "quality_risk": 4,
+   "catches": [
+    "Brushed microfiber = thin polyester, not cotton/down - $99.99 is high for Full/Queen microfiber",
+    "Marketed as 'lightweight' comforter - likely thin/low warmth at 4.88 lbs",
+    "Sloppy listing: Department baby-girls for Full/Queen teen set, model number looks like ASIN, generic 'enter model number' bullet"
+   ],
+   "who_for": "Parents decorating a kid/teen room who want washable Aztec theme with matching accessories, not for warmth or premium fabric seekers",
+   "verdict": "wait",
+   "crowd_vs_reason": "Gut loves the look top 18% aesthetic but facts show overpriced thin polyester with listing errors."
+  }
+ },
+ {
+  "id": "shop_19e3e10b6695",
+  "name": "Childrens Factory Learning Carpet, Colorful",
+  "brand": "",
+  "price": 51.94,
+  "list_price": "",
+  "about": "",
+  "specs": "",
+  "category": "Home & Kitchen | Home Décor | Kids' Room Décor | Rugs",
+  "image": "shop_19e3e10b6695.jpg",
+  "url": "https://images-na.ssl-images-amazon.com/images/I/51OYLoKCpAL.jpg",
+  "heads": {
+   "aesthetic": {
+    "score": 0.8193973898887634,
+    "percentile": 91.95710455764075,
+    "confidence": 0.6387947797775269,
+    "top": [
+     "L reward value, liking (pOFC)",
+     "R sound (predicted even for stills) (A1)"
+    ]
+   },
+   "attention": {
+    "score": 0.45997628569602966,
+    "percentile": 39.178082191780824,
+    "confidence": 0.08004742860794067,
+    "top": [
+     "object shape & motion (MT/LO) mean",
+     "object shape & motion (MT/LO) max"
+    ]
+   },
+   "appeal": {
+    "score": 0.5948008894920349,
+    "percentile": 89.01098901098901,
+    "confidence": 0.18960177898406982,
+    "top": [
+     "faces & people (FFA/STS) max",
+     "language (Broca/STG) early"
+    ]
+   },
+   "popularity": {
+    "score": 0.49887245893478394,
+    "percentile": 51.64835164835166,
+    "confidence": 0.002255082130432129,
+    "top": [
+     "faces & people (FFA/STS) max",
+     "visual attention (IPS/FEF) max"
+    ]
+   }
+  },
+  "diagnosis": [
+   "No clear bottleneck: keep the structure, refine typography rhythm, spacing and color temperature"
+  ],
+  "crowd_score": 0.6829008827681773,
+  "rational": {
+   "value_for_money": 2,
+   "quality_risk": 5,
+   "catches": [
+    "Unknown brand with no reputation to verify",
+    "No bullets or specs - missing size, material, and child-safety info"
+   ],
+   "who_for": "Only for gamble-tolerant buyers who don't need verified details for a kids product.",
+   "verdict": "skip",
+   "crowd_vs_reason": "The crowd rates the photo highly for looks, but with zero facts that gut appeal is unsupported by reason."
+  }
+ },
+ {
+  "id": "shop_4a731e5c218a",
+  "name": "Kangaroo Trading Bison with Latte Kids Recliner",
+  "brand": "",
+  "price": 121.32,
+  "list_price": "",
+  "about": "Recommended ages: 3 to 7 | 75 lbs. Weight Capacity | No assembly required",
+  "specs": "ASIN:B01DYHV15I|ShippingWeight:32pounds(Viewshippingratesandpolicies)|DomesticShipping:ItemcanbeshippedwithinU.S.|InternationalShipping:ThisitemcanbeshippedtoselectcountriesoutsideoftheU.S.LearnMore|DateFirstAvailable:April7,2016",
+  "category": "Home & Kitchen | Furniture | Kids' Furniture",
+  "image": "shop_4a731e5c218a.jpg",
+  "url": "https://images-na.ssl-images-amazon.com/images/I/51sdqpbWbFL.jpg",
+  "heads": {
+   "aesthetic": {
+    "score": 0.4214753210544586,
+    "percentile": 41.89008042895443,
+    "confidence": 0.15704935789108276,
+    "top": [
+     "L 31a",
+     "L 10pp"
+    ]
+   },
+   "attention": {
+    "score": 0.5406736135482788,
+    "percentile": 57.26027397260274,
+    "confidence": 0.08134722709655762,
+    "top": [
+     "early vision (V1–V4) mean",
+     "object shape & motion (MT/LO) mean"
+    ]
+   },
+   "appeal": {
+    "score": 0.37903788685798645,
+    "percentile": 17.252747252747252,
+    "confidence": 0.2419242262840271,
+    "top": [
+     "language (Broca/STG) std",
+     "object shape & motion (MT/LO) max"
+    ]
+   },
+   "popularity": {
+    "score": 0.47961920499801636,
+    "percentile": 45.38461538461539,
+    "confidence": 0.040761590003967285,
+    "top": [
+     "language (Broca/STG) std",
+     "visual attention (IPS/FEF) max"
+    ]
+   }
+  },
+  "diagnosis": [
+   "Place areas (PPA/RSC) dominate: the background scene swallows the message",
+   "Face areas (FFA/STS) are silent: no human or gaze cue"
+  ],
+  "crowd_score": 0.48755102255979077,
+  "rational": {
+   "value_for_money": 2,
+   "quality_risk": 4,
+   "catches": [
+    "Unknown brand with no warranty or quality history",
+    "$121.32 is steep for ages 3-7 use before outgrown at 75 lbs limit",
+    "First available April 2016 suggests old/stale listing with uncertain support"
+   ],
+   "who_for": "Grandparents or parents who want a cute novelty chair for a 3-7 year old and accept short lifespan",
+   "verdict": "skip",
+   "crowd_vs_reason": "The crowd's high appeal (top 83%) is driven by cute looks, but the facts show an overpriced, short-use, unknown-brand risk."
+  }
+ },
+ {
+  "id": "shop_22096e8016ec",
+  "name": "Big Joe , Lavender Polka Dot Classic Bean Bag Chair, Lavendar with White",
+  "brand": "",
+  "price": 33.0,
+  "list_price": "",
+  "about": "Make sure this fits by entering your model number. | Gabardine | Plush seating for your little ones | Filled with soft, cozy Megahh Beans | Available in pink, purple, or green polka-dot print | Dual-locking zippers provide extra safety | Ideal for or reading, watching TV, or playing games",
+  "specs": "ProductDimensions:28x28x22inches|ItemWeight:4pounds|ShippingWeight:4.25pounds(Viewshippingratesandpolicies)|Manufacturer:ComfortResearch|ASIN:B005A2IJ2Y|ShippingAdvisory:Thisitemmustbeshippedseparatelyfromotheritemsinyourorder.Additionalshippingchargeswillnotapply.|Itemmodelnumber:0630252",
+  "category": "Home & Kitchen | Furniture | Kids' Furniture | Chairs & Seats | Bean Bags",
+  "image": "shop_22096e8016ec.jpg",
+  "url": "https://images-na.ssl-images-amazon.com/images/I/41vHEM%2BXRKL.jpg",
+  "heads": {
+   "aesthetic": {
+    "score": 0.8965057730674744,
+    "percentile": 96.44772117962466,
+    "confidence": 0.7930115461349487,
+    "top": [
+     "L 31a",
+     "L affect, conflict (a24)"
+    ]
+   },
+   "attention": {
+    "score": 0.54555743932724,
+    "percentile": 58.082191780821915,
+    "confidence": 0.09111487865447998,
+    "top": [
+     "object shape & motion (MT/LO) mean",
+     "early vision (V1–V4) mean"
+    ]
+   },
+   "appeal": {
+    "score": 0.5479576587677002,
+    "percentile": 76.92307692307693,
+    "confidence": 0.09591531753540039,
+    "top": [
+     "language (Broca/STG) std",
+     "language (Broca/STG) late"
+    ]
+   },
+   "popularity": {
+    "score": 0.48229604959487915,
+    "percentile": 46.59340659340659,
+    "confidence": 0.0354079008102417,
+    "top": [
+     "object shape & motion (MT/LO) slope",
+     "early vision (V1–V4) slope"
+    ]
+   }
+  },
+  "diagnosis": [
+   "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+   "Attention drops after the first 2 s (+0.87 → +0.57): nothing to look at after the first impression"
+  ],
+  "crowd_score": 0.7674811005085589,
+  "rational": {
+   "value_for_money": 3,
+   "quality_risk": 4,
+   "catches": [
+    "28x28x22 inches is kids-size only, not adult seating",
+    "EPS Megahh Beans will compress/flatten and need refills",
+    "Sloppy listing copy and gabardine cover suggest thin durability"
+   ],
+   "who_for": "parents needing a cheap lightweight lounger for small kids only",
+   "verdict": "buy",
+   "crowd_vs_reason": "The top-4% aesthetic gut reaction overstates it - cute photo hides a small kids-only beanbag that will flatten fast."
+  }
+ },
+ {
+  "id": "shop_ee69f3aad2a7",
+  "name": "Wildkin Duvet Cover, Full, Dinosaur Land",
+  "brand": "",
+  "price": 75.02,
+  "list_price": "",
+  "about": "Nullify | Imported | SWEET DREAMS – Drifting off to slumber land is a breeze when your child is snuggled up in Wildkin’s ultra-cozy Full Duvet Cover! The 100% Cotton Twin Duvet Cover measures 88 x 88 inches and fits a standard full mattress. Trust us, between the super soft cotton material and bold Olive Kids pattern, little ones will be cuddled up and dreaming soundly of dinosaur land in no time. | 100% SUPER SOFT COTTON – Wildkin’s Full Duvet Cover features a 100% cotton exterior that’s perfect for cozy cuddles. Its lightweight material makes the Full Duvet Cover breathable enough for hot summer nights, while keeping your child nice and warm once those colder months roll around. The Twin Duvet Cover is sure to keep your little one super comfortable, whatever the climate may be! | ALL ABOUT THE DETAILS – At Wildkin, we know that details matter to you and your child, and we made sure tha",
+  "specs": "",
+  "category": "Home & Kitchen | Bedding | Kids' Bedding | Duvet Covers & Sets | Duvet Covers",
+  "image": "shop_ee69f3aad2a7.jpg",
+  "url": "https://images-na.ssl-images-amazon.com/images/I/51Y9%2B4TBY8L.jpg",
+  "heads": {
+   "aesthetic": {
+    "score": 0.8989405035972595,
+    "percentile": 96.7828418230563,
+    "confidence": 0.797881007194519,
+    "top": [
+     "L reward value, liking (pOFC)",
+     "R mind-wandering (23d)"
+    ]
+   },
+   "attention": {
+    "score": 0.42889201641082764,
+    "percentile": 32.87671232876712,
+    "confidence": 0.14221596717834473,
+    "top": [
+     "object shape & motion (MT/LO) mean",
+     "object shape & motion (MT/LO) max"
+    ]
+   },
+   "appeal": {
+    "score": 0.588232159614563,
+    "percentile": 88.02197802197801,
+    "confidence": 0.17646431922912598,
+    "top": [
+     "faces & people (FFA/STS) max",
+     "object shape & motion (MT/LO) max"
+    ]
+   },
+   "popularity": {
+    "score": 0.490450918674469,
+    "percentile": 48.57142857142857,
+    "confidence": 0.01909816265106201,
+    "top": [
+     "faces & people (FFA/STS) slope",
+     "faces & people (FFA/STS) max"
+    ]
+   }
+  },
+  "diagnosis": [
+   "No clear bottleneck: keep the structure, refine typography rhythm, spacing and color temperature"
+  ],
+  "crowd_score": 0.7132129631514343,
+  "rational": {
+   "value_for_money": 2,
+   "quality_risk": 4,
+   "catches": [
+    "Listing confuses Full vs Twin sizing while claiming 88 x 88 inches",
+    "Truncated bullets with no thread count, closure type, or insert included, plus $75.02 for cover-only"
+   ],
+   "who_for": "Parents of dinosaur-loving kids who must have 100% cotton and accept a premium for the pattern",
+   "verdict": "wait",
+   "crowd_vs_reason": "The crowd loves the cute photo, but the facts show an expensive cover-only with a sloppy, inconsistent listing."
+  }
+ },
+ {
+  "id": "shop_63b33af9e60b",
+  "name": "Jay Franco Episode 7 BB8 Medallion Decal Woven Jersey Sweatshirt Fleece Blanket Twin, 60\" x 90\", Star Wars EP7",
+  "brand": "",
+  "price": 37.03,
+  "list_price": "",
+  "about": "Make sure this fits by entering your model number. | 70% Cotton/30% Polyester | Imported | Includes (1) super soft 60% cotton/40% polyester twin blanket | Twin blanket measures 60\" x 90\" | Super plush comfort and cozy woven sweatshirt with fleece backing | Mkes the perfect gift for any Star Wars enthusiast | Easy care, machine washable cotton/polyester",
+  "specs": "ProductDimensions:90x60x1inches|ItemWeight:1pounds|ShippingWeight:2.1pounds(Viewshippingratesandpolicies)|Manufacturer:JayFrancoandSons,Inc.|ASIN:B0725F9NRP|Itemmodelnumber:JF28525E",
+  "category": "Home & Kitchen | Bedding | Kids' Bedding | Blankets & Throws | Bed Blankets",
+  "image": "shop_63b33af9e60b.jpg",
+  "url": "https://images-na.ssl-images-amazon.com/images/I/41rWAGR1osL.jpg",
+  "heads": {
+   "aesthetic": {
+    "score": 0.6241470575332642,
+    "percentile": 72.5201072386059,
+    "confidence": 0.24829411506652832,
+    "top": [
+     "R sound (predicted even for stills) (A1)",
+     "R mind-wandering (23d)"
+    ]
+   },
+   "attention": {
+    "score": 0.5394316911697388,
+    "percentile": 56.986301369863014,
+    "confidence": 0.07886338233947754,
+    "top": [
+     "early vision (V1–V4) mean",
+     "object shape & motion (MT/LO) mean"
+    ]
+   },
+   "appeal": {
+    "score": 0.473702609539032,
+    "percentile": 48.35164835164835,
+    "confidence": 0.052594780921936035,
+    "top": [
+     "language (Broca/STG) std",
+     "faces & people (FFA/STS) max"
+    ]
+   },
+   "popularity": {
+    "score": 0.49049246311187744,
+    "percentile": 48.68131868131868,
+    "confidence": 0.019015073776245117,
+    "top": [
+     "faces & people (FFA/STS) max",
+     "language (Broca/STG) std"
+    ]
+   }
+  },
+  "diagnosis": [
+   "Reward/value areas (OFC/vmPFC) are low: no 'I want this' signal",
+   "Attention drops after the first 2 s (+0.97 → +0.72): nothing to look at after the first impression"
+  ],
+  "crowd_score": 0.5994096814617234,
+  "rational": {
+   "value_for_money": 3,
+   "quality_risk": 4,
+   "catches": [
+    "Material contradiction: 70% cotton/30% polyester vs 60% cotton/40% polyester in same listing",
+    "Copy-paste listing errors: 'Make sure this fits by entering your model number' and typo 'Mkes' suggest poor QC",
+    "Thin/light 1 lb twin sweatshirt-fleece, not a heavy winter blanket; brand listed as unknown despite Jay Franco manufacturer"
+   ],
+   "who_for": "Casual Star Wars BB-8 fans wanting a light, washable twin-size throw/gift, not someone needing thick warmth or premium bedding",
+   "verdict": "wait",
+   "crowd_vs_reason": "The middling crowd appeal matches the facts: decent looks and price but sloppy specs that don't justify instant trust."
+  }
+ },
+ {
+  "id": "shop_ed807040b1e3",
+  "name": "Licenses Products Social Distortion Logo Magnet",
+  "brand": "",
+  "price": 5.99,
+  "list_price": "",
+  "about": "Make sure this fits by entering your model number. | Printed Paper with Scratch Resistant Mylar | Able to stick on anything magnetic surface | Magnet is a great gift and souvenir",
+  "specs": "ProductDimensions:3x2x0.1inches|ItemWeight:0.32ounces|ShippingWeight:0.32ounces(Viewshippingratesandpolicies)|DomesticShipping:ItemcanbeshippedwithinU.S.|InternationalShipping:ThisitemcanbeshippedtoselectcountriesoutsideoftheU.S.LearnMore|ASIN:B00EFWPVT4|Itemmodelnumber:M-2020|Manufacturerrecommendedage:4-15years",
+  "category": "Home & Kitchen | Kitchen & Dining | Kitchen Utensils & Gadgets | Kitchen Accessories | Refrigerator Magnets",
+  "image": "shop_ed807040b1e3.jpg",
+  "url": "https://images-na.ssl-images-amazon.com/images/I/51IuAlVCdML.jpg",
+  "heads": {
+   "aesthetic": {
+    "score": 0.29327821731567383,
+    "percentile": 21.7828418230563,
+    "confidence": 0.41344356536865234,
+    "top": [
+     "L affect, conflict (a24)",
+     "R mind-wandering (23d)"
+    ]
+   },
+   "attention": {
+    "score": 0.46459197998046875,
+    "percentile": 40.54794520547945,
+    "confidence": 0.0708160400390625,
+    "top": [
+     "object shape & motion (MT/LO) mean",
+     "object shape & motion (MT/LO) max"
+    ]
+   },
+   "appeal": {
+    "score": 0.5137104392051697,
+    "percentile": 65.05494505494505,
+    "confidence": 0.027420878410339355,
+    "top": [
+     "language (Broca/STG) std",
+     "object shape & motion (MT/LO) slope"
+    ]
+   },
+   "popularity": {
+    "score": 0.49949613213539124,
+    "percentile": 51.64835164835166,
+    "confidence": 0.0010077357292175293,
+    "top": [
+     "object shape & motion (MT/LO) slope",
+     "visual attention (IPS/FEF) max"
+    ]
+   }
+  },
+  "diagnosis": [
+   "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+   "Place areas (PPA/RSC) dominate: the background scene swallows the message"
+  ],
+  "crowd_score": 0.36010709425482695,
+  "rational": {
+   "value_for_money": 3,
+   "quality_risk": 4,
+   "catches": [
+    "Printed paper with mylar, not premium enamel/metal construction",
+    "Unknown brand with generic copy-paste bullets like 'enter your model number'",
+    "Odd 4-15 years age recommendation suggests low-effort listing"
+   ],
+   "who_for": "Only for Social Distortion fans wanting a cheap fridge/locker souvenir, not collectors",
+   "verdict": "buy",
+   "crowd_vs_reason": "The crowd rates the logo look highly (aesthetic top 78%) but the facts show a basic $5.99 paper magnet, so style outruns substance."
+  }
+ },
+ {
+  "id": "shop_4c4bf3caad58",
+  "name": "Crocodile Creek Eco Kids Reusable Jungle Jamboree Lime Green Sandwich Keeper Eco Kids Sandwich Keeper",
+  "brand": "",
+  "price": 8.0,
+  "list_price": "",
+  "about": "Make sure this fits by entering your model number. | Sandwich Keepers are 525\"H x 55\"W x 2\"D | Made of polypropylene, BPA free, Phthalate free, non-toxic | Solid one-piece construction prevents crushing and lost lids | Easy for children to open and close latch | Hand washing recommended, Lifetime manufacturer Warranty",
+  "specs": "ProductDimensions:5.2x2x5.5inches|ItemWeight:4.2ounces|ShippingWeight:4.2ounces(Viewshippingratesandpolicies)|DomesticShipping:ItemcanbeshippedwithinU.S.|InternationalShipping:ThisitemcanbeshippedtoselectcountriesoutsideoftheU.S.LearnMore|ASIN:B06XKPB2FJ|Itemmodelnumber:6509-6|Manufacturerrecommendedage:3yearsandup",
+  "category": "Home & Kitchen | Kitchen & Dining | Storage & Organization | Travel & To-Go Food Containers | Lunch Boxes",
+  "image": "shop_4c4bf3caad58.jpg",
+  "url": "https://images-na.ssl-images-amazon.com/images/I/41j8tCh8NBL.jpg",
+  "heads": {
+   "aesthetic": {
+    "score": 0.7755772471427917,
+    "percentile": 89.00804289544236,
+    "confidence": 0.5511544942855835,
+    "top": [
+     "R mind-wandering (23d)",
+     "R sound (predicted even for stills) (A1)"
+    ]
+   },
+   "attention": {
+    "score": 0.5534717440605164,
+    "percentile": 60.0,
+    "confidence": 0.10694348812103271,
+    "top": [
+     "object shape & motion (MT/LO) mean",
+     "early vision (V1–V4) mean"
+    ]
+   },
+   "appeal": {
+    "score": 0.46242204308509827,
+    "percentile": 43.62637362637363,
+    "confidence": 0.07515591382980347,
+    "top": [
+     "language (Broca/STG) std",
+     "faces & people (FFA/STS) max"
+    ]
+   },
+   "popularity": {
+    "score": 0.4930756986141205,
+    "percentile": 49.67032967032967,
+    "confidence": 0.013848602771759033,
+    "top": [
+     "language (Broca/STG) std",
+     "faces & people (FFA/STS) max"
+    ]
+   }
+  },
+  "diagnosis": [
+   "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+   "Reward/value areas (OFC/vmPFC) are low: no 'I want this' signal"
+  ],
+  "crowd_score": 0.7036613729140714,
+  "rational": {
+   "value_for_money": 3,
+   "quality_risk": 2,
+   "catches": [
+    "Hand washing recommended, not dishwasher safe",
+    "Only ~5.2 inch square - tight for larger sandwiches, no insulation",
+    "Listing has typos and lifetime warranty from unclear seller support"
+   ],
+   "who_for": "parents of kids 3+ wanting a simple BPA-free crush-proof sandwich box",
+   "verdict": "buy",
+   "crowd_vs_reason": "The crowd rates the cute design highly but the facts show a basic $8 plastic box, so looks overstate function."
+  }
+ },
+ {
+  "id": "shop_81ff04051cbc",
+  "name": "Sweet Jojo Designs Blush Pink, Grey and White Watercolor Elephant Safari Girl Twin Kid Childrens Bedding Comforter Set - 4 Pieces",
+  "brand": "",
+  "price": 103.04,
+  "list_price": "",
+  "about": "Make sure this fits by entering your model number. | 4 piece Twin bedding set: 1-Lightweight Comforter, 1-Standard Sham, 2-Window Valances | Comforter (62in x 86in), Sham (20in x 26in), Valances (54in x 15in each) | This set boasts an impressive array of exclusive prints combining a watercolor elephant print, a chevron arrow print and a triangle print paired with solid coordinating fabrics | This set is made of brushed microfiber and corduroy fabric and is machine washable. Tumble dry low | This design has matching accessories such as window treatments, hampers, shower curtains and pillows",
+  "specs": "ProductDimensions:11x18x9inches|ItemWeight:3.25pounds|ShippingWeight:3.25pounds(Viewshippingratesandpolicies)|Manufacturer:SweetJojoDesigns|ASIN:B07HGGW5GY|Itemmodelnumber:Elephant-GY-PK-Twin-4",
+  "category": "Home & Kitchen | Bedding | Kids' Bedding | Comforters & Sets | Comforter Sets",
+  "image": "shop_81ff04051cbc.jpg",
+  "url": "https://images-na.ssl-images-amazon.com/images/I/51%2BxhvAUnxL.jpg",
+  "heads": {
+   "aesthetic": {
+    "score": 0.4233522415161133,
+    "percentile": 42.0911528150134,
+    "confidence": 0.15329551696777344,
+    "top": [
+     "R mind-wandering (23d)",
+     "L affect, conflict (a24)"
+    ]
+   },
+   "attention": {
+    "score": 0.4765249490737915,
+    "percentile": 44.38356164383562,
+    "confidence": 0.04695010185241699,
+    "top": [
+     "object shape & motion (MT/LO) mean",
+     "cognitive control (dlPFC) max"
+    ]
+   },
+   "appeal": {
+    "score": 0.5161144733428955,
+    "percentile": 65.71428571428571,
+    "confidence": 0.032228946685791016,
+    "top": [
+     "object shape & motion (MT/LO) max",
+     "faces & people (FFA/STS) max"
+    ]
+   },
+   "popularity": {
+    "score": 0.5133655667304993,
+    "percentile": 55.824175824175825,
+    "confidence": 0.026731133460998535,
+    "top": [
+     "faces & people (FFA/STS) max",
+     "visual attention (IPS/FEF) max"
+    ]
+   }
+  },
+  "diagnosis": [
+   "Place areas (PPA/RSC) dominate: the background scene swallows the message",
+   "Early visual cortex (V1–V4) fires hardest while the aesthetic head is low: high contrast/texture density reads as clutter"
+  ],
+  "crowd_score": 0.460876024573447,
+  "rational": {
+   "value_for_money": 2,
+   "quality_risk": 3,
+   "catches": [
+    "Only comforter + 1 sham + 2 valances - no sheets, pillow, or pillow insert included",
+    "Lightweight brushed microfiber (polyester) + corduroy accents, not cotton - expect thin and prone to pilling",
+    "$103.04 is high for an incomplete polyester twin set, valances add little value if you don't need them"
+   ],
+   "who_for": "parents doing a blush-pink/grey elephant theme for a kid's room who already have sheets and specifically want matching valances",
+   "verdict": "wait",
+   "crowd_vs_reason": "Gut reaction rates it above-average on looks, but the facts show a thin, incomplete polyester set at a premium price, so the gut overrates it."
+  }
+ },
+ {
+  "id": "shop_39322759b68d",
+  "name": "Lush Décor Race Cars 2 Piece Reversible Quilt Kids Bedding Set, Twin, Blue/Orange",
+  "brand": "",
+  "price": 59.39,
+  "list_price": "",
+  "about": "Make sure this fits by entering your model number. | 100% Polyester | Soft, beautifully designed quilt made from 100% polyester and a linen texture print - perfectly weighted, all season bedding. | Lush Décor race car quilt set is the ideal, fun and exciting bedding set for any young racing fan. | Unique design includes a colorful car print on the front and racing symbols and flags on the reverse. | 2 piece twin quilt set includes a reversible quilt (86 x 68 inches) and a reversible sham (20 x 26 inches). | Both quilt and shams are easy to care for and safe to machine wash, gentle cycle and tumble dry.",
+  "specs": "ProductDimensions:86x0.1x68inches|ItemWeight:4pounds|ShippingWeight:4.5pounds(Viewshippingratesandpolicies)|Manufacturer:TriangleHomeFashions|ASIN:B01M5EIO3Y|Itemmodelnumber:16T000544",
+  "category": "Home & Kitchen | Bedding | Kids' Bedding | Quilts & Sets | Quilt Sets",
+  "image": "shop_39322759b68d.jpg",
+  "url": "https://images-na.ssl-images-amazon.com/images/I/61mHwleW5zL.jpg",
+  "heads": {
+   "aesthetic": {
+    "score": 0.7239280939102173,
+    "percentile": 84.6514745308311,
+    "confidence": 0.44785618782043457,
+    "top": [
+     "L reward value, liking (pOFC)",
+     "R mind-wandering (23d)"
+    ]
+   },
+   "attention": {
+    "score": 0.44180893898010254,
+    "percentile": 35.06849315068493,
+    "confidence": 0.11638212203979492,
+    "top": [
+     "cognitive control (dlPFC) max",
+     "object shape & motion (MT/LO) mean"
+    ]
+   },
+   "appeal": {
+    "score": 0.44850701093673706,
+    "percentile": 37.032967032967036,
+    "confidence": 0.10298597812652588,
+    "top": [
+     "object shape & motion (MT/LO) max",
+     "places & scenes (PPA/RSC) max"
+    ]
+   },
+   "popularity": {
+    "score": 0.5180298089981079,
+    "percentile": 57.692307692307686,
+    "confidence": 0.03605961799621582,
+    "top": [
+     "faces & people (FFA/STS) slope",
+     "visual attention (IPS/FEF) max"
+    ]
+   }
+  },
+  "diagnosis": [
+   "Attention drops after the first 2 s (+0.61 → +0.41): nothing to look at after the first impression",
+   "Reward/value areas (OFC/vmPFC) are low: no 'I want this' signal"
+  ],
+  "crowd_score": 0.6171725208463178,
+  "rational": {
+   "value_for_money": 3,
+   "quality_risk": 3,
+   "catches": [
+    "100% polyester only - less breathable than cotton, may feel slick, pill or build static",
+    "2-piece Twin only: quilt + 1 sham, no sheets or second pillowcase",
+    "Very thin 0.1in all-season quilt at 4lbs will likely need extra blanket in winter"
+   ],
+   "who_for": "Parents of a young racing fan who want a fun, reversible, machine-washable Twin quilt for a kids room",
+   "verdict": "buy",
+   "crowd_vs_reason": "The top-15% aesthetic gut reaction overrates the flashy print versus a basic thin polyester 2-piece set."
+  }
+ },
+ {
+  "id": "shop_2861fd13f3e6",
+  "name": "Whitmor Kids Canvas Collapsible Cube-10 x 10 x 10 inches, Pink, Owl Collection",
+  "brand": "",
+  "price": 12.51,
+  "list_price": "",
+  "about": "Make sure this fits by entering your model number. | Durable canvas construction with felt animal appliqué | Fits great inside wood or wire storage cubes; folds flat for easy storage when not in use | Perfect size to store toys and books or to organize clothing and accessories | Dimensions: 10 L x 10 W x 10 H inches | Attractive, playful design compliments your child’s bedroom or play area | Folds flat for easy storage when not in use. Bottom of cube pulls upward and walls fold on top of each other into a very thin, flat profile for easy storage | A perfect addition to playrooms, bedrooms, classrooms, and more. Each playful, eye-catching design adds a touch of fun to any room! | For over 70 years, Whitmor has been bringing organization home. If you have questions or problems, please contact us for immediate assistance",
+  "specs": "ProductDimensions:10x10x10inches|ItemWeight:15.4ounces|ShippingWeight:1.47pounds(Viewshippingratesandpolicies)|Manufacturer:Whitmor|ASIN:B00K2R4H5U|DomesticShipping:ItemcanbeshippedwithinU.S.|InternationalShipping:ThisitemcanbeshippedtoselectcountriesoutsideoftheU.S.LearnMore|Itemmodelnumber:6241-4762-PNKOWL",
+  "category": "Home & Kitchen | Kitchen & Dining | Storage & Organization | Travel & To-Go Food Containers | Lunch Boxes",
+  "image": "shop_2861fd13f3e6.jpg",
+  "url": "https://images-na.ssl-images-amazon.com/images/I/41p61m2Ce2L.jpg",
+  "heads": {
+   "aesthetic": {
+    "score": 0.5934375524520874,
+    "percentile": 67.828418230563,
+    "confidence": 0.1868751049041748,
+    "top": [
+     "R mind-wandering (23d)",
+     "R affective value (p32)"
+    ]
+   },
+   "attention": {
+    "score": 0.5305277109146118,
+    "percentile": 54.24657534246575,
+    "confidence": 0.06105542182922363,
+    "top": [
+     "early vision (V1–V4) mean",
+     "object shape & motion (MT/LO) mean"
+    ]
+   },
+   "appeal": {
+    "score": 0.5288257002830505,
+    "percentile": 71.31868131868131,
+    "confidence": 0.057651400566101074,
+    "top": [
+     "language (Broca/STG) std",
+     "faces & people (FFA/STS) max"
+    ]
+   },
+   "popularity": {
+    "score": 0.5116740465164185,
+    "percentile": 55.38461538461539,
+    "confidence": 0.023348093032836914,
+    "top": [
+     "faces & people (FFA/STS) max",
+     "language (Broca/STG) std"
+    ]
+   }
+  },
+  "diagnosis": [
+   "Attention drops after the first 2 s (+0.81 → +0.65): nothing to look at after the first impression"
+  ],
+  "crowd_score": 0.5724920208556841,
+  "rational": {
+   "value_for_money": 3,
+   "quality_risk": 3,
+   "catches": [
+    "10x10x10 inches is smaller than standard 11\"/13\" cubby cubes - will look loose/rattle in IKEA Kallax-style units, verify your opening",
+    "Soft canvas with pull-up bottom and no frame/handles/lid mentioned - won't hold heavy books well and felt owl applique likely to peel/dirty with kid use"
+   ],
+   "who_for": "parents who need a single pink owl bin to match existing kids decor and have ~10.5in+ cubbies for light toys/clothes",
+   "verdict": "buy",
+   "crowd_vs_reason": "The slightly-above-average gut appeal for the cute owl photo is understandable but overstates a basic thin canvas box that is functional, not special."
+  }
+ }
+]

@@ -159,6 +159,15 @@ def run_arm(arm: str, key: str, cfg: dict, out: Path, rounds: int, variants: int
     return {"arm": arm, "best": best["tag"], "best_png": best["png"], "history": history}
 
 
+def _post_outcome(item_id: str, kind: str, value: float, against: str) -> None:
+    import httpx
+    server = os.environ.get("BRAINSENSE_SERVER_URL", "http://localhost:8000").rstrip("/")
+    try:
+        httpx.post(f"{server}/outcome", json={"item_id": item_id, "kind": kind, "value": value, "against": against, "source": "muse_judge"}, timeout=30)
+    except Exception as e:  # noqa: BLE001
+        print(f"[yellow]outcome post failed: {escape(str(e)[:80])}[/]")
+
+
 def _eval(item_id: str) -> dict:
     import httpx
     server = os.environ.get("BRAINSENSE_SERVER_URL", "http://localhost:8000").rstrip("/")
@@ -170,7 +179,8 @@ def run(rounds: int = typer.Option(2), variants: int = typer.Option(2), parallel
         only: str = typer.Option("", help="comma-separated brief keys"), out: Path = typer.Option(Path("results/showcase")),
         name: str = typer.Option(""), judge_weight: float = typer.Option(0.5),
         arms: str = typer.Option("oneshot,muse_loop,brain_loop"),
-        champion: str = typer.Option("brain_loop", help="arm compared pairwise against every other arm")):
+        champion: str = typer.Option("brain_loop", help="arm compared pairwise against every other arm"),
+        feed_memory: bool = typer.Option(False, help="POST judge verdicts to the server's Engram memory as chosen_over/rejected outcomes (judge-derived)")):
     run_dir = out / (name or time.strftime("%Y%m%d-%H%M%S"))
     run_dir.mkdir(parents=True, exist_ok=True)
     keys = [k for k in BRIEFS if not only or k in only.split(",")]
@@ -195,6 +205,10 @@ def run(rounds: int = typer.Option(2), variants: int = typer.Option(2), parallel
         if champion in results:
             for other in [a for a in arm_list if a != champion]:
                 pairs[f"{champion}_vs_{other}"] = judge_pair(Path(final[champion]["png"]), Path(final[other]["png"]), cfg["brief"])
+                if feed_memory:   # judge-derived, NOT the user's taste — feeds the Engram store so rules/learning curve have data
+                    win, lose = (champion, other) if pairs[f"{champion}_vs_{other}"]["p_first"] >= 0.5 else (other, champion)
+                    _post_outcome(f"final_{run_dir.name}_{key}_{win}", "chosen_over", 1.0, f"final_{run_dir.name}_{key}_{lose}")
+                    _post_outcome(f"final_{run_dir.name}_{key}_{lose}", "rejected", 0.0, f"final_{run_dir.name}_{key}_{win}")
         summary["briefs"][key] = {"brief": cfg["brief"], "kind": cfg["kind"], "arms": {a: {k: v for k, v in r.items() if k != "history"} | {"history": r["history"]} for a, r in results.items()},
                                   "final": final, "pairwise": pairs}
         (run_dir / "summary.json").write_text(json.dumps(summary, ensure_ascii=False, indent=1), encoding="utf-8")

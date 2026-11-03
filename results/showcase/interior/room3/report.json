@@ -1,0 +1,382 @@
+{
+ "brief": "A living-room corner people want to sit in: warm, calm, one clear focal point, modern and desirable (think a Scandinavian furniture catalogue hero shot).",
+ "best_round": 4,
+ "best": {
+  "round": 4,
+  "params": {
+   "wall_color": "#efe8da",
+   "floor_color": "#b08860",
+   "floor_roughness": 0.3,
+   "sofa_color": "#7a5a3a",
+   "accent_color": "#c75b2a",
+   "table_color": "#3a2a1e",
+   "rug": true,
+   "rug_color": "#8a6f5a",
+   "art": false,
+   "art_color": "#2d4a6b",
+   "plant": true,
+   "lamp": true,
+   "lamp_emit": 4.0,
+   "light_temp_k": 3000,
+   "key_energy": 250,
+   "sun_strength": 5.5,
+   "clutter": 0,
+   "camera": "front"
+  },
+  "ui_score": 0.4697817659199866,
+  "heads": {
+   "aesthetic": {
+    "score": 0.7107031345367432,
+    "percentile": 82.97587131367293,
+    "confidence": 0.42140626907348633,
+    "top": "▼ L_pOFC, ▼ R_10r"
+   },
+   "attention": {
+    "score": 0.6160596013069153,
+    "percentile": 69.86301369863014,
+    "confidence": 0.23211920261383057,
+    "top": "▲ 기본 시각 평균, ▲ 움직임·형태 평균"
+   }
+  },
+  "judge": {
+   "aesthetic": 0.222,
+   "clarity": 0.111,
+   "attention": 0.444,
+   "brief_fit": 0.222,
+   "judge_score": 0.25,
+   "reason": "Sterile beige low-poly render is calm and centered but looks crude, empty and uninviting with no message or desirability."
+  },
+  "brain_only": 0.764,
+  "critique": {
+   "kind": "poster",
+   "ranking": [
+    [
+     "scene_place",
+     1.551509852472033
+    ],
+    [
+     "attention_dorsal",
+     0.73180401457358
+    ],
+    [
+     "value_vmpfc",
+     0.691480119892995
+    ],
+    [
+     "control_dlpfc",
+     0.4471898584682869
+    ],
+    [
+     "default_mode",
+     -0.0780875420798629
+    ],
+    [
+     "face_body",
+     -0.552373350941982
+    ],
+    [
+     "language",
+     -0.6302475390817359
+    ],
+    [
+     "visual_early",
+     -0.988468804524605
+    ],
+    [
+     "visual_motion",
+     -1.1728066087787081
+    ]
+   ],
+   "hook": {
+    "attention_early": 0.8642968113812164,
+    "attention_late": 0.6655576161697618,
+    "visual_early": -0.36078151272417586,
+    "visual_late": -1.3023124504248196
+   },
+   "diagnosis": [
+    "Reward/value areas (OFC/vmPFC) are low: no 'I want this' signal",
+    "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+    "Attention drops after the first 2 s (+0.86 → +0.67): nothing to look at after the first impression"
+   ],
+   "directives": [
+    "Make the benefit concrete and desirable: show the outcome (before/after, real numbers, price or scarcity), warm highlight color on the offer, social proof near the CTA.",
+    "Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion.",
+    "Add a second discovery after the hero (a detail reveal, micro-illustration, or a strong secondary block) so interest holds past 2 s."
+   ],
+   "cited_areas": [
+    "▼ L reward value, liking (pOFC) [aesthetic]",
+    "▼ R subjective value / wanting (10r) [aesthetic]",
+    "▲ early vision (V1–V4) mean [attention]",
+    "▲ object shape & motion (MT/LO) mean [attention]"
+   ],
+   "groups": [
+    "value_vmpfc",
+    "visual_motion",
+    ""
+   ],
+   "prompt_block": "BRAIN CRITIQUE (TRIBE v2 predicted human cortex while looking at the last render; values are relative within this image):\n- most driven regions: places & scenes (PPA/RSC) +1.55, visual attention (IPS/FEF) +0.73, reward & value (OFC/vmPFC) +0.69; least: early vision (V1–V4) -0.99, object shape & motion (MT/LO) -1.17\n- first-2s hook vs later: attention +0.86 → +0.67, visual drive -0.36 → -1.30\n- areas the aesthetic head cites: ▼ L reward value, liking (pOFC) [aesthetic]; ▼ R subjective value / wanting (10r) [aesthetic]; ▲ early vision (V1–V4) mean [attention]; ▲ object shape & motion (MT/LO) mean [attention]\n- diagnosis: Reward/value areas (OFC/vmPFC) are low: no 'I want this' signal / Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette / Attention drops after the first 2 s (+0.86 → +0.67): nothing to look at after the first impression\n- DO NEXT (highest priority first): (1) Make the benefit concrete and desirable: show the outcome (before/after, real numbers, price or scarcity), warm highlight color on the offer, social proof near the CTA. (2) Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion. (3) Add a second discovery after the hero (a detail reveal, micro-illustration, or a strong secondary block) so interest holds past 2 s."
+  }
+ },
+ "history": [
+  {
+   "round": 0,
+   "accepted": true,
+   "ui_score": 0.25732023299761925,
+   "brain_only": 0.455,
+   "judge": 0.083,
+   "params": {
+    "wall_color": "#d9d9d9",
+    "floor_color": "#b08860",
+    "floor_roughness": 0.5,
+    "sofa_color": "#6b6b6b",
+    "accent_color": "#c8a04a",
+    "table_color": "#3a2a1e",
+    "rug": false,
+    "rug_color": "#8a6f5a",
+    "art": false,
+    "art_color": "#2d4a6b",
+    "plant": false,
+    "lamp": false,
+    "lamp_emit": 4.0,
+    "light_temp_k": 5500,
+    "key_energy": 250,
+    "sun_strength": 6.0,
+    "clutter": 5,
+    "camera": "corner"
+   },
+   "changed": [],
+   "why": "baseline: flat light, grey sofa, clutter"
+  },
+  {
+   "round": 1,
+   "accepted": true,
+   "ui_score": 0.3224247211255768,
+   "brain_only": 0.507,
+   "judge": 0.167,
+   "params": {
+    "wall_color": "#efe8da",
+    "floor_color": "#b08860",
+    "floor_roughness": 0.5,
+    "sofa_color": "#c9b18f",
+    "accent_color": "#c8a04a",
+    "table_color": "#3a2a1e",
+    "rug": true,
+    "rug_color": "#8a6f5a",
+    "art": false,
+    "art_color": "#2d4a6b",
+    "plant": false,
+    "lamp": false,
+    "lamp_emit": 4.0,
+    "light_temp_k": 3000,
+    "key_energy": 250,
+    "sun_strength": 6.0,
+    "clutter": 0,
+    "camera": "corner"
+   },
+   "changed": [
+    "wall_color",
+    "sofa_color",
+    "rug",
+    "light_temp_k",
+    "clutter"
+   ],
+   "why": "Removed competing clutter and warmed light and materials to make the sofa the single calm desirable hero.",
+   "diagnosis": [
+    "Place areas (PPA/RSC) dominate: the background scene swallows the message",
+    "Attention network (IPS/FEF) is busy: several candidates compete for the eye"
+   ]
+  },
+  {
+   "round": 2,
+   "accepted": true,
+   "ui_score": 0.4478794633829952,
+   "brain_only": 0.75,
+   "judge": 0.222,
+   "params": {
+    "wall_color": "#efe8da",
+    "floor_color": "#b08860",
+    "floor_roughness": 0.5,
+    "sofa_color": "#c9b18f",
+    "accent_color": "#c8a04a",
+    "table_color": "#3a2a1e",
+    "rug": true,
+    "rug_color": "#8a6f5a",
+    "art": false,
+    "art_color": "#2d4a6b",
+    "plant": true,
+    "lamp": true,
+    "lamp_emit": 4.0,
+    "light_temp_k": 3000,
+    "key_energy": 250,
+    "sun_strength": 2.5,
+    "clutter": 0,
+    "camera": "front"
+   },
+   "changed": [
+    "plant",
+    "lamp",
+    "sun_strength",
+    "camera"
+   ],
+   "why": "Front crop simplifies the room to one sofa hero, lower sun tames the window blowout, and lamp plus plant add warm desirable focal glow.",
+   "diagnosis": [
+    "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+    "Reward/value areas (OFC/vmPFC) are low: no 'I want this' signal"
+   ]
+  },
+  {
+   "round": 3,
+   "accepted": false,
+   "ui_score": 0.3544019310590771,
+   "brain_only": 0.588,
+   "judge": 0.167,
+   "params": {
+    "wall_color": "#efe8da",
+    "floor_color": "#b08860",
+    "floor_roughness": 0.5,
+    "sofa_color": "#c9b18f",
+    "accent_color": "#c8a04a",
+    "table_color": "#3a2a1e",
+    "rug": true,
+    "rug_color": "#8a6f5a",
+    "art": true,
+    "art_color": "#c96f32",
+    "plant": true,
+    "lamp": true,
+    "lamp_emit": 6.0,
+    "light_temp_k": 3000,
+    "key_energy": 450,
+    "sun_strength": 2.5,
+    "clutter": 0,
+    "camera": "corner"
+   },
+   "changed": [
+    "art",
+    "art_color",
+    "lamp_emit",
+    "key_energy",
+    "camera"
+   ],
+   "why": "Added warm art as clear focal silhouette with corner diagonal and stronger warm key to boost desire and hold attention.",
+   "diagnosis": [
+    "Place areas (PPA/RSC) dominate: the background scene swallows the message",
+    "Attention network (IPS/FEF) is busy: several candidates compete for the eye"
+   ]
+  },
+  {
+   "round": 4,
+   "accepted": true,
+   "ui_score": 0.4697817659199866,
+   "brain_only": 0.764,
+   "judge": 0.25,
+   "params": {
+    "wall_color": "#efe8da",
+    "floor_color": "#b08860",
+    "floor_roughness": 0.3,
+    "sofa_color": "#7a5a3a",
+    "accent_color": "#c75b2a",
+    "table_color": "#3a2a1e",
+    "rug": true,
+    "rug_color": "#8a6f5a",
+    "art": false,
+    "art_color": "#2d4a6b",
+    "plant": true,
+    "lamp": true,
+    "lamp_emit": 4.0,
+    "light_temp_k": 3000,
+    "key_energy": 250,
+    "sun_strength": 5.5,
+    "clutter": 0,
+    "camera": "front"
+   },
+   "changed": [
+    "floor_roughness",
+    "sofa_color",
+    "accent_color",
+    "sun_strength"
+   ],
+   "why": "Deepened sofa for dominant silhouette, warmed accent for desire, and stronger sun plus lower roughness for diagonal highlight and visual drive.",
+   "diagnosis": [
+    "Reward/value areas (OFC/vmPFC) are low: no 'I want this' signal",
+    "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette"
+   ]
+  },
+  {
+   "round": 5,
+   "accepted": false,
+   "ui_score": 0.4519460526959818,
+   "brain_only": 0.754,
+   "judge": 0.222,
+   "params": {
+    "wall_color": "#efe8da",
+    "floor_color": "#b08860",
+    "floor_roughness": 0.3,
+    "sofa_color": "#9c5e2e",
+    "accent_color": "#e8832e",
+    "table_color": "#3a2a1e",
+    "rug": true,
+    "rug_color": "#8a6f5a",
+    "art": false,
+    "art_color": "#2d4a6b",
+    "plant": true,
+    "lamp": true,
+    "lamp_emit": 4.0,
+    "light_temp_k": 2700,
+    "key_energy": 250,
+    "sun_strength": 8.0,
+    "clutter": 2,
+    "camera": "front"
+   },
+   "changed": [
+    "sofa_color",
+    "accent_color",
+    "light_temp_k",
+    "sun_strength",
+    "clutter"
+   ],
+   "why": "Warmer light, stronger sun highlight, richer sofa/accent and styled clutter create a desirable focal seat with a second detail to hold attention.",
+   "diagnosis": [
+    "Reward/value areas (OFC/vmPFC) are low: no 'I want this' signal",
+    "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette"
+   ]
+  },
+  {
+   "round": 6,
+   "accepted": false,
+   "ui_score": 0.4570073981415933,
+   "brain_only": 0.741,
+   "judge": 0.25,
+   "params": {
+    "wall_color": "#f7efe2",
+    "floor_color": "#c8a67e",
+    "floor_roughness": 0.3,
+    "sofa_color": "#7a5a3a",
+    "accent_color": "#c75b2a",
+    "table_color": "#5a3d28",
+    "rug": true,
+    "rug_color": "#e2c9a8",
+    "art": false,
+    "art_color": "#2d4a6b",
+    "plant": true,
+    "lamp": true,
+    "lamp_emit": 4.0,
+    "light_temp_k": 3000,
+    "key_energy": 250,
+    "sun_strength": 5.5,
+    "clutter": 0,
+    "camera": "front"
+   },
+   "changed": [
+    "wall_color",
+    "floor_color",
+    "table_color",
+    "rug_color"
+   ],
+   "why": "Lightened warm Scandinavian palette with contrasting rug zone to create one calm inviting focal seat.",
+   "diagnosis": [
+    "Reward/value areas (OFC/vmPFC) are low: no 'I want this' signal",
+    "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette"
+   ]
+  }
+ ]
+}

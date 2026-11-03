@@ -1,0 +1,1 @@
+{"wall_color": "#efe8da", "floor_color": "#b08860", "floor_roughness": 0.3, "sofa_color": "#9c5e2e", "accent_color": "#e8832e", "table_color": "#3a2a1e", "rug": true, "rug_color": "#8a6f5a", "art": false, "art_color": "#2d4a6b", "plant": true, "lamp": true, "lamp_emit": 4.0, "light_temp_k": 2700, "key_energy": 250, "sun_strength": 8.0, "clutter": 2, "camera": "front"}
