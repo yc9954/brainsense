@@ -33,11 +33,11 @@ from .skills import read_brain
 app = typer.Typer(add_completion=False)
 
 BRIEFS: dict[str, dict] = {
-    "popup": {"kind": "landing", "brief": "서울 성수동 3일 한정 팝업스토어 '스윗스팟 x 로컬 로스터리' 랜딩 첫 화면. 날짜·장소·사전예약 CTA. 20대 후반 여성 타깃, 감각적이지만 정보가 바로 읽혀야 함."},
-    "skincare_ad": {"kind": "ad", "brief": "비타민C 세럼 신제품 인스타그램 피드 광고(정사각형 느낌의 1280x800 첫 화면). 한 문장 헤드라인, 제품이 주인공, 런칭 30% 할인 배지, '지금 구매' CTA."},
-    "saas_pricing": {"kind": "app", "brief": "AI 회의록 SaaS의 가격 페이지 첫 화면. Free / Pro(월 12,000원) / Team 3단, Pro 강조, 신뢰 요소(고객 로고 자리, 환불 보장) 포함."},
-    "festival_poster": {"kind": "poster", "brief": "11월 재즈 페스티벌 웹 포스터 첫 화면. 라인업 5팀, 날짜·장소, 얼리버드 티켓 CTA. 밤·네온·따뜻한 금관악기 느낌."},
-    "fintech_onboarding": {"kind": "app", "brief": "주식 소수점 투자 앱의 첫 온보딩 화면(웹 미리보기 1280x800). 핵심 가치 한 줄, 1,000원부터 시작 가능 강조, '3분 만에 시작' CTA, 신뢰·안전 신호."},
+    "popup": {"kind": "landing", "brief": "Landing first screen for a 3-day pop-up store in Seongsu, Seoul: 'Sweetspot x Local Roastery' (strawberry desserts + specialty coffee). Dates, venue, 'Reserve a slot' CTA. Audience: women in their late 20s; stylish, but the facts must read instantly."},
+    "skincare_ad": {"kind": "ad", "brief": "Instagram feed ad (square feel, 1280x800 first screen) for a new vitamin C serum. One-sentence headline, the product is the hero, a 30% launch-discount badge, 'Buy now' CTA."},
+    "saas_pricing": {"kind": "app", "brief": "Pricing page first screen for an AI meeting-notes SaaS. Three tiers Free / Pro ($12/mo) / Team, Pro emphasized, trust elements (customer logos slot, money-back guarantee)."},
+    "festival_poster": {"kind": "poster", "brief": "Web poster first screen for a November jazz festival: 5-act line-up, dates and venue, early-bird ticket CTA. Night, neon, warm brass mood."},
+    "fintech_onboarding": {"kind": "app", "brief": "First onboarding screen (web preview 1280x800) of a fractional-shares investing app. One-line core value, 'start from $1', '3-minute sign-up' CTA, trust and safety signals."},
 }
 
 

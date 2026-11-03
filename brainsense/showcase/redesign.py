@@ -141,12 +141,12 @@ def build_page(d: Path) -> Path:
 
     def pct(s: dict, h: str) -> str:
         v = s["heads"].get(h, {}).get("percentile")
-        return f"상위 {100 - v:.0f}%" if v is not None else "—"
+        return f"top {100 - v:.0f}%" if v is not None else "—"
 
     def card(s: dict, title: str) -> str:
         diag = "<br>".join(e(x) for x in s["critique"]["diagnosis"][:3])
         return (f"<div class=card><div class=t>{title}</div><a href='{Path(s['png']).name}' target=_blank><img src='{Path(s['png']).name}'></a>"
-                f"<div class=m>ui_score <b>{s['ui_score']:.3f}</b> · 예쁨 {pct(s, 'aesthetic')} · 주목 {pct(s, 'attention')} · 심사위원 {s['judge'].get('judge_score', 0):.2f}</div>"
+                f"<div class=m>ui_score <b>{s['ui_score']:.3f}</b> · aesthetic {pct(s, 'aesthetic')} · attention {pct(s, 'attention')} · judge {s['judge'].get('judge_score', 0):.2f}</div>"
                 f"<div class=d>{diag}</div></div>")
 
     changes = "".join(f"<li><span class=k>{e(c.get('directive', ''))[:140]}</span><br>→ {e(c.get('change', ''))}</li>" for c in b.get("changes", []))
@@ -157,12 +157,12 @@ def build_page(d: Path) -> Path:
 .row{{display:grid;grid-template-columns:1fr 1fr;gap:18px}}.card{{background:#15151b;border:1px solid #23232b;border-radius:14px;overflow:hidden}}.card img{{width:100%;display:block}}
 .t{{padding:10px 14px;font-weight:600;font-size:13px;color:#ffb38a}}.m{{padding:8px 14px;font-size:12.5px;color:#ccc}}.d{{padding:0 14px 12px;font-size:12.5px;color:#9a9aa6;line-height:1.5}}
 h2{{font-size:15px;margin:28px 0 8px}}ul{{font-size:13px;line-height:1.6;color:#ddd}}.k{{color:#8b8b96}}.big{{font-size:28px;font-weight:700;color:{'#7ee787' if delta > 0 else '#ff7b72'}}}</style></head><body>
-<h1>뇌가 고친 첫 화면 — {e(rep['source'])}</h1>
+<h1>The first screen, redesigned by a brain — {e(rep['source'])}</h1>
 <div class=big>ui_score {o['ui_score']:.3f} → {b['ui_score']:.3f} ({delta:+.3f})</div>
-<div class=row>{card(o, 'BEFORE · 지금 사이트')}{card(b, f'AFTER · BrainSense 루프 r{b["round"]}')}</div>
-<h2>뇌가 원본에서 읽은 것 → 지시</h2><ul>{directives}</ul>
-<h2>Muse가 실제로 바꾼 것 (지시 ↔ 변경)</h2><ul>{changes or '<li>(변경 목록 없음)</li>'}</ul>
-<h2>라운드별</h2><ul>{''.join(f"<li>r{s['round']}: ui {s['ui_score']:.3f} · 뇌 {s['brain_only']:.3f} · 심사위원 {s['judge'].get('judge_score', 0):.2f}</li>" for s in steps)}</ul>
+<div class=row>{card(o, 'BEFORE · the live site')}{card(b, f'AFTER · BrainSense loop r{b["round"]}')}</div>
+<h2>What the brain read on the original → directives</h2><ul>{directives}</ul>
+<h2>What Muse actually changed (directive ↔ change)</h2><ul>{changes or '<li>(no change list)</li>'}</ul>
+<h2>Per round</h2><ul>{''.join(f"<li>r{s['round']}: ui {s['ui_score']:.3f} · brain {s['brain_only']:.3f} · judge {s['judge'].get('judge_score', 0):.2f}</li>" for s in steps)}</ul>
 </body></html>"""
     out = d / "index.html"
     out.write_text(page, encoding="utf-8")

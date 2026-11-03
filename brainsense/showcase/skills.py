@@ -12,6 +12,7 @@ look at the time course (hook in the first 2 s vs. the rest) rather than at abso
 """
 from __future__ import annotations
 
+import re
 from dataclasses import dataclass, field
 
 import numpy as np
@@ -59,6 +60,12 @@ AREA_INFO: dict[str, tuple[str, str]] = {
     "PoI1": ("후측 뇌섬엽", "interoception, arousal"), "A1": ("1차 청각", "sound (predicted even for stills)"),
     "PFm": ("하두정 PFm", "attention / semantics"), "PGi": ("각회 PGi", "semantic integration"), "PGs": ("각회 PGs", "semantic integration"),
 }
+GROUP_EN = {
+    "visual_early": "early vision (V1–V4)", "visual_motion": "object shape & motion (MT/LO)", "face_body": "faces & people (FFA/STS)",
+    "scene_place": "places & scenes (PPA/RSC)", "attention_dorsal": "visual attention (IPS/FEF)", "value_vmpfc": "reward & value (OFC/vmPFC)",
+    "language": "language (Broca/STG)", "default_mode": "default mode (mind-wandering)", "control_dlpfc": "cognitive control (dlPFC)",
+}
+DIAG_EN = {'1차 시각피질이 가장 세게 반응': 'Early visual cortex (V1–V4) fires hardest while the aesthetic head is low: high contrast/texture density reads as clutter', '1차 시각피질이 조용함': 'Early visual cortex is quiet: contrast too weak to pull the eye', '물체 형태(LO)·움직임(MT) 반응이 낮음': 'Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette', '얼굴 영역(FFA/STS)이 조용함': 'Face areas (FFA/STS) are silent: no human or gaze cue', '얼굴 반응은 강한데 주의 헤드가 낮음': 'Face response is strong but the attention head is low: the face pulls the eye away from the CTA', '장소 영역(PPA)이 우세': 'Place areas (PPA/RSC) dominate: the background scene swallows the message', '주의 네트워크(IPS/FEF)가 바쁨': 'Attention network (IPS/FEF) is busy: several candidates compete for the eye', '주의 네트워크가 잠잠함': 'Attention network is quiet: nothing tells the eye where to go', '보상·가치(OFC/vmPFC) 반응이 낮음': "Reward/value areas (OFC/vmPFC) are low: no 'I want this' signal", '보상 회로(OFC/vmPFC)는 켜졌는데 끌림 헤드는 평범': "Reward circuit (OFC/vmPFC) is on but the appeal head is average: value is felt but what is good isn't legible", '언어 영역(브로카/STG)이 바쁨': 'Language areas (Broca/STG) are busy: too much to read', '기본모드 네트워크가 올라옴': 'Default-mode network rises: a familiar, predictable screen → mind-wandering', '인지 통제(dlPFC)가 동원됨': 'Cognitive-control areas (dlPFC) recruited: the structure takes effort to parse'}
 GROUP_KO = {
     "visual_early": "1차 시각(V1–V4)", "visual_motion": "움직임·형태(MT/LO)", "face_body": "얼굴·사람(FFA/STS)",
     "scene_place": "장소·배경(PPA/RSC)", "attention_dorsal": "시각 주의(IPS/FEF)", "value_vmpfc": "보상·가치(OFC/vmPFC)",
@@ -66,8 +73,16 @@ GROUP_KO = {
 }
 
 
-def area_label(code: str) -> str:
-    """'L_pOFC' → '좌 후측 안와전두 보상 (pOFC)'; group__stat names pass through in Korean."""
+def area_label(code: str, lang: str = "ko") -> str:
+    """'L_pOFC' → '좌 후측 안와전두 보상 (pOFC)' / 'L posterior OFC — reward value, liking (pOFC)'."""
+    if lang == "en":
+        if "__" in code:
+            g, _, st = code.partition("__")
+            return f"{GROUP_EN.get(g, g)} {st}"
+        hemi = {"L": "L ", "R": "R "}.get(code[:1], "") if code[1:2] == "_" else ""
+        base = code[2:] if hemi else code
+        info = AREA_INFO.get(base)
+        return f"{hemi}{info[1]} ({base})" if info else f"{hemi}{base}"
     if "__" in code:
         g, _, st = code.partition("__")
         stk = {"mean": "평균", "max": "최대", "early": "초반", "late": "후반", "slope": "변화", "std": "변동"}.get(st, st)
@@ -87,11 +102,13 @@ class Critique:
     directives: list[str] = field(default_factory=list)  # what to change next (English, for the generator)
     cited_areas: list[str] = field(default_factory=list)
     groups: list[str] = field(default_factory=list)       # region group behind each diagnosis ("" for time-course rules)
+    lang: str = "en"
 
     @property
     def prompt_block(self) -> str:
-        top = ", ".join(f"{GROUP_KO[g]} {z:+.2f}" for g, z in self.ranking[:3])
-        low = ", ".join(f"{GROUP_KO[g]} {z:+.2f}" for g, z in self.ranking[-2:])
+        lab = GROUP_EN if self.lang == "en" else GROUP_KO
+        top = ", ".join(f"{lab[g]} {z:+.2f}" for g, z in self.ranking[:3])
+        low = ", ".join(f"{lab[g]} {z:+.2f}" for g, z in self.ranking[-2:])
         lines = ["BRAIN CRITIQUE (TRIBE v2 predicted human cortex while looking at the last render; values are "
                  "relative within this image):",
                  f"- most driven regions: {top}; least: {low}",
@@ -118,7 +135,7 @@ def _rel(series: dict[str, list[float]]) -> dict[str, np.ndarray]:
     return {g: (v - mu) / sd for g, v in arr.items()}
 
 
-def read_brain(ev: dict, kind: str = "landing") -> Critique:
+def read_brain(ev: dict, kind: str = "landing", lang: str = "en") -> Critique:
     heads = ev.get("heads") or {}
     rel = _rel(ev.get("roi_ts") or {})
     means = {g: float(v.mean()) for g, v in rel.items()}
@@ -200,13 +217,30 @@ def read_brain(ev: dict, kind: str = "landing") -> Critique:
     cited = []
     for h in ("aesthetic", "attention", "appeal"):
         for f in (heads.get(h) or {}).get("top_features", [])[:2]:
-            cited.append(f"{'▲' if f['contribution'] >= 0 else '▼'} {area_label(f['name'])} [{h}]")
+            cited.append(f"{'▲' if f['contribution'] >= 0 else '▼'} {area_label(f['name'], lang)} [{h}]")
+    def tr(d: str) -> str:
+        if lang != "en":
+            return d
+        for ko, en in DIAG_EN.items():
+            if d.startswith(ko):
+                tail = d[len(ko):]
+                m = re.search(r"\(([-+]\d\.\d+ → [-+]\d\.\d+)\)", tail)
+                return en + (f" ({m.group(1)})" if m else "")
+        if d.startswith("주의 반응이 첫 2초 이후 꺼짐"):
+            m = re.search(r"\(([^)]*)\)", d)
+            return f"Attention drops after the first 2 s ({m.group(1) if m else ''}): nothing to look at after the first impression"
+        if d.startswith("첫 2초 후킹이 약함"):
+            m = re.search(r"\(([^)]*)\)", d)
+            return f"Weak hook in the first 2 s ({m.group(1) if m else ''})"
+        return d
+
     for _, d, t, g in sorted(cand, key=lambda x: -x[0]):
-        diag.append(d)
+        diag.append(tr(d))
         todo.append(t)
         grps.append(g)
     if not diag:
-        diag.append("눈에 띄는 병목 없음: 현재 구성을 유지하고 디테일(타이포 리듬, 여백, 색 온도)만 다듬을 것")
+        diag.append("No clear bottleneck: keep the structure, refine typography rhythm, spacing and color temperature" if lang == "en"
+                    else "눈에 띄는 병목 없음: 현재 구성을 유지하고 디테일(타이포 리듬, 여백, 색 온도)만 다듬을 것")
         todo.append("Keep the structure; refine typography rhythm, spacing scale and color temperature only.")
     # keep the generator focused: 4 directives max, weakest head first
-    return Critique(kind=kind, ranking=ranking, hook=hook, diagnosis=diag[:5], directives=todo[:4], cited_areas=cited[:4], groups=grps[:5])
+    return Critique(kind=kind, ranking=ranking, hook=hook, diagnosis=diag[:5], directives=todo[:4], cited_areas=cited[:4], groups=grps[:5], lang=lang)

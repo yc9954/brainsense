@@ -6,7 +6,7 @@ import html
 import json
 from pathlib import Path
 
-ARM_KO = {"oneshot": "Muse 한 번 (베이스라인)", "muse_loop": "Muse 자기평가 루프", "brain_loop": "BrainSense 루프 (뇌만)", "hybrid_loop": "BrainSense 루프 (뇌 + 리뷰, 출시 하네스)"}
+ARM_KO = {"oneshot": "Muse once (baseline)", "muse_loop": "Muse self-critique loop", "brain_loop": "BrainSense loop (brain only)", "hybrid_loop": "BrainSense loop (brain + review)"}
 
 
 def build(run_dir: Path) -> Path:
@@ -18,8 +18,8 @@ h1{{font-weight:600;font-size:22px}} h2{{font-size:16px;font-weight:600;margin:4
 .card.win{{border-color:#ff6a2b;box-shadow:0 0 0 1px #ff6a2b}} .card img{{width:100%;display:block;aspect-ratio:1.6;object-fit:cover;object-position:top}}
 .meta{{padding:12px 14px;font-size:12.5px;line-height:1.5}} .arm{{font-weight:600;font-size:13px}} .k{{color:#8b8b96}} .diag{{color:#c9c9d2;margin-top:6px}}
 .verdict{{margin-top:10px;font-size:13px;color:#ffb38a}} .tiny{{font-size:11px;color:#777}}</style></head><body>
-<h1>BrainSense showcase — 같은 브리프, 같은 생성 예산, 피드백만 다르게</h1>
-<p class=brief>rounds {s['rounds']} × variants {s['variants']}. oneshot = Muse Spark 한 번. muse_loop = Muse가 자기 스크린샷을 스스로 평가해 고치는 루프. brain_loop = TRIBE v2 예측 피질 반응 → 전문가 비평(skills) → Muse가 고치는 루프. 최종 비교는 순서를 바꿔 두 번 묻는 블라인드 판정.</p>"""]
+<h1>BrainSense showcase — same brief, same generation budget, only the feedback differs</h1>
+<p class=brief>rounds {s['rounds']} × variants {s['variants']}. oneshot = Muse Spark asked once. muse_loop = Muse reviews its own screenshot and revises. brain_loop = TRIBE v2 predicted cortex → expert critique (skills) → Muse revises. Final verdict = blind pairwise judge, both image orders averaged.</p>"""]
     for key, b in s["briefs"].items():
         pw = b.get("pairwise", {})
         parts.append(f"<h2>{html.escape(key)}</h2><div class=brief>{html.escape(b['brief'])}</div><div class=row>")
@@ -32,7 +32,7 @@ h1{{font-weight:600;font-size:22px}} h2{{font-size:16px;font-weight:600;margin:4
             heads = f.get("heads", {})
             hs = " · ".join(f"{k} top {100 - v.get('percentile', 50):.0f}%" for k, v in heads.items() if isinstance(v, dict) and "percentile" in v)
             diag = "<br>".join(html.escape(d) for d in f["critique"]["diagnosis"][:3])
-            verdict = f"<div class=verdict>블라인드 판정 P({champ} 승) = {p['p_first']:.2f}</div><div class=tiny>{html.escape(p['reason'][:220])}</div>" if p else ""
+            verdict = f"<div class=verdict>Blind verdict P({champ} wins) = {p['p_first']:.2f}</div><div class=tiny>{html.escape(p['reason'][:220])}</div>" if p else ""
             parts.append(f"<div class='card{' win' if win else ''}'><a href='{rel}' target=_blank><img src='{rel}'></a><div class=meta>"
                          f"<div class=arm>{ARM_KO[arm]}</div><div class=k>brain ui_score {f['brain_ui_score']:.3f} · {hs}</div>"
                          f"<div class=diag>{diag}</div>{verdict}</div></div>")
@@ -51,7 +51,7 @@ def build_index(out_dir: Path) -> Path:
 <style>body{font-family:-apple-system,Pretendard,sans-serif;background:#0b0b0f;color:#eee;margin:0;padding:32px}
 h1{font-weight:600;font-size:22px} table{border-collapse:collapse;font-size:13px;margin-top:16px} td,th{padding:8px 12px;border-bottom:1px solid #23232b;text-align:left}
 a{color:#ffb38a} .k{color:#8b8b96}</style></head><body><h1>BrainSense showcase — runs</h1>
-<p class=k>brain_loop = TRIBE v2 예측 피질 → 전문가 비평 → Muse 수정. 승률은 순서를 바꿔 두 번 묻는 블라인드 판정 기준.</p>
+<p class=k>brain_loop = TRIBE v2 predicted cortex → expert critique → Muse revises. Win rates are from a blind pairwise judge asked in both image orders. Runs prefixed <b>en-</b> use English briefs; earlier runs were Korean.</p>
 <table><tr><th>run</th><th>briefs</th><th>vs Muse one-shot</th><th>vs Muse self-loop</th><th>brain score (oneshot / muse / brain)</th></tr>"""]
     for r in runs:
         try:
@@ -68,8 +68,8 @@ a{color:#ffb38a} .k{color:#8b8b96}</style></head><body><h1>BrainSense showcase �
     hz = out_dir / "harness"
     hruns = sorted((p for p in hz.iterdir() if (p / "summary.json").exists()), key=lambda p: p.stat().st_mtime, reverse=True) if hz.exists() else []
     if hruns:
-        parts.append("<h1 style='margin-top:36px'>같은 브리프, 제로부터 — Muse 한 번 vs BrainSense 하네스 (문제 장부 + 사진 소싱 + 개선될 때만 채택)</h1>"
-                     "<table><tr><th>run / brief</th><th>ui_score Muse 한 번 → 하네스</th><th>rounds kept</th><th>issues fixed</th><th>photos</th></tr>")
+        parts.append("<h1 style='margin-top:36px'>Same brief, from zero — Muse once vs the BrainSense harness (issue ledger + photo sourcing + keep-only-if-better)</h1>"
+                     "<table><tr><th>run / brief</th><th>ui_score Muse once → harness</th><th>best round</th><th>issues fixed</th><th>photos</th></tr>")
         for r in hruns:
             summ = json.loads((r / "summary.json").read_text(encoding="utf-8"))
             for key, v in summ.items():
@@ -80,7 +80,7 @@ a{color:#ffb38a} .k{color:#8b8b96}</style></head><body><h1>BrainSense showcase �
     rd = out_dir / "redesign"
     cases = sorted((p for p in rd.iterdir() if (p / "report.json").exists()), key=lambda p: p.stat().st_mtime, reverse=True) if rd.exists() else []
     if cases:
-        parts.append("<h1 style='margin-top:36px'>뇌가 고친 실제 사이트 (before → after)</h1><table><tr><th>site</th><th>ui_score before → after</th><th>뇌 점수</th><th>심사위원</th><th>첫 진단</th></tr>")
+        parts.append("<h1 style='margin-top:36px'>Live sites the brain redesigned (before → after)</h1><table><tr><th>site</th><th>ui_score before → after</th><th>brain score</th><th>judge</th><th>first diagnosis</th></tr>")
         for c in cases:
             r = json.loads((c / "report.json").read_text(encoding="utf-8"))
             o = r["steps"][0]

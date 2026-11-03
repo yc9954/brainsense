@@ -12,7 +12,7 @@ import random
 import sys
 from pathlib import Path
 
-ARM_KO = {"oneshot": "Muse 한 번", "muse_loop": "Muse 자기평가 루프", "brain_loop": "BrainSense 루프", "hybrid_loop": "BrainSense 하이브리드 루프"}
+ARM_KO = {"oneshot": "Muse once", "muse_loop": "Muse self-critique loop", "brain_loop": "BrainSense loop", "hybrid_loop": "BrainSense hybrid loop"}
 
 
 def pairs_from(run_dirs: list[Path], out_dir: Path) -> list[dict]:
@@ -48,18 +48,18 @@ h1{{font-size:18px;font-weight:600;margin:0 0 4px}} .brief{{color:#aaa;font-size
 .c:hover{{border-color:#ffb38a}} .c img{{width:100%;display:block}} .lab{{padding:10px 14px;font-size:14px;color:#ccc}}
 .bar{{display:flex;gap:12px;align-items:center;margin-top:14px;font-size:13px;color:#8b8b96}} button{{background:#ff6a2b;border:0;color:#fff;padding:8px 14px;border-radius:8px;font-size:13px;cursor:pointer}}
 .done{{font-size:15px;line-height:1.6}}</style></head><body>
-<h1>어느 쪽이 더 좋은 첫 화면인가요? (클릭 또는 ← →)</h1><div class=brief id=brief></div>
+<h1>Which first screen is better? (click, or ← / →)</h1><div class=brief id=brief></div>
 <div class=row><div class=c id=L onclick="vote(0)"><img id=imgL><div class=lab>A</div></div><div class=c id=R onclick="vote(1)"><img id=imgR><div class=lab>B</div></div></div>
-<div class=bar><span id=prog></span><button onclick="undo()">되돌리기</button><button onclick="exportVotes()">결과 내보내기 (votes.json)</button><button onclick="showVotes()">결과 여기 표시</button><span id=tally></span></div>
+<div class=bar><span id=prog></span><button onclick="undo()">Undo</button><button onclick="exportVotes()">Export votes.json</button><button onclick="showVotes()">Show results here</button><span id=tally></span></div>
 <textarea id=out style="display:none;width:100%;height:160px;margin-top:10px;background:#15151b;color:#ddd;border:1px solid #23232b;border-radius:8px;font-size:12px"></textarea>
 <script>
 const PAIRS={data}; let i=0; const votes=[];
-function show(){{ if(i>=PAIRS.length){{document.querySelector('.row').innerHTML='<div class=done>끝! 결과 내보내기를 눌러 votes.json을 저장한 뒤 `uv run python -m brainsense.showcase.vote --tally votes.json <runs…>` 로 집계하세요.</div>';document.getElementById('brief').textContent='';return;}}
+function show(){{ if(i>=PAIRS.length){{document.querySelector('.row').innerHTML='<div class=done>Done! Export votes.json (or Show results here), then run `uv run python -m brainsense.showcase.vote --tally votes.json`.</div>';document.getElementById('brief').textContent='';return;}}
  const p=PAIRS[i]; document.getElementById('brief').textContent=p.brief; const l=p.swap?p.other_png:p.champ_png, r=p.swap?p.champ_png:p.other_png;
  document.getElementById('imgL').src=l; document.getElementById('imgR').src=r; document.getElementById('prog').textContent=(i+1)+' / '+PAIRS.length; tallyNow(); }}
 function vote(side){{ const p=PAIRS[i]; const champWins = (side===0) ? !p.swap : p.swap; votes.push({{idx:i,run:p.run,brief_key:p.brief_key,champ:p.champ,other:p.other,champ_wins:champWins}}); i++; show(); }}
 function undo(){{ if(!votes.length) return; votes.pop(); i--; show(); }}
-function tallyNow(){{ const n=votes.length, w=votes.filter(v=>v.champ_wins).length; document.getElementById('tally').textContent = n? `지금까지 BrainSense ${{w}}/${{n}} 승`:''; }}
+function tallyNow(){{ const n=votes.length, w=votes.filter(v=>v.champ_wins).length; document.getElementById('tally').textContent = n? `so far BrainSense ${{w}}/${{n}}`:''; }}
 function showVotes(){{ const t=document.getElementById('out'); t.style.display='block'; t.value=JSON.stringify(votes,null,1); t.select(); try{{document.execCommand('copy');}}catch(e){{}} }}
 function exportVotes(){{ const blob=new Blob([JSON.stringify(votes,null,1)],{{type:'application/json'}}); const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='votes.json'; a.click(); }}
 addEventListener('keydown',e=>{{ if(e.key==='ArrowLeft') vote(0); if(e.key==='ArrowRight') vote(1); }});

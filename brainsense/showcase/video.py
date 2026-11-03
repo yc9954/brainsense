@@ -141,15 +141,15 @@ def score(mp4: Path, item_id: str = typer.Option("", help="defaults to the file 
 # Ad-clip A/B: same three arms as the page showcase, but the artifact is a 12 s animated clip and the
 # brain critique reads the time course (hook / hold / CTA) that no screenshot judge can see.
 AD_BRIEFS: dict[str, str] = {
-    "serum": "비타민C 세럼 신제품 12초 피드 광고. 한 문장 헤드라인, 제품이 주인공, 런칭 30% 할인, '지금 구매' CTA. 20대 후반 여성.",
-    "popup_ad": "성수동 3일 한정 팝업스토어 '스윗스팟 x 로컬 로스터리' 12초 스토리 광고. 날짜·장소·사전예약 CTA, 딸기 디저트 비주얼.",
-    "fintech_ad": "소수점 주식 투자 앱 12초 광고. '1,000원부터' 한 줄, 3분 가입, 안전·신뢰 신호, '지금 시작' CTA.",
+    "serum": "12-second feed ad for a new vitamin C serum. One-sentence headline, the product is the hero, 30% launch discount, 'Buy now' CTA. Women in their late 20s.",
+    "popup_ad": "12-second story ad for a 3-day pop-up store in Seongsu, Seoul, 'Sweetspot x Local Roastery': dates, venue, reserve-a-slot CTA, strawberry dessert visual.",
+    "fintech_ad": "12-second ad for a fractional-shares investing app: 'from $1' in one line, 3-minute sign-up, safety/trust signals, 'Start now' CTA.",
 }
 
 
 def _ad_judge(sheet: Path, brief: str) -> dict:
     from ..loop.judge import judge_image
-    return judge_image(sheet, brief + " (세 장은 같은 12초 광고의 1초/5초/9초 프레임: 훅 → 제품 → CTA)")
+    return judge_image(sheet, brief + " (the three frames are the same 12-second ad at 1 s / 5 s / 9 s: hook → product → CTA)")
 
 
 def _brain_ad_critique(history: list[dict]) -> str:
@@ -233,7 +233,7 @@ def ab(rounds: int = typer.Option(2), variants: int = typer.Option(2), only: str
         if "brain_loop" in final:
             for other in [a for a in final if a != "brain_loop"]:
                 pairs[f"brain_loop_vs_{other}"] = judge_pair(Path(final["brain_loop"]["png"]), Path(final[other]["png"]),
-                                                             brief + " (각 후보는 같은 12초 광고의 1초/5초/9초 프레임)")
+                                                             brief + " (each candidate shows the same 12-second ad at 1 s / 5 s / 9 s)")
         summary["briefs"][key] = {"brief": brief, "kind": "ad", "arms": results, "final": final, "pairwise": pairs}
         (run_dir / "summary.json").write_text(json.dumps(summary, ensure_ascii=False, indent=1), encoding="utf-8")
         for k, p in pairs.items():

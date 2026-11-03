@@ -147,7 +147,7 @@ You are now REVISING an existing page, not starting over. You receive the curren
 predicted human cortex still flags, how many rounds it has been open, what was already tried and did not help),
 a designer's review, and a list of locally available CC-licensed photos (use them with <img src="assets/..."> when
 an issue calls for a real face/product/scene; credit them in a small footer line with author and license).
-Fix the OPEN issues in priority order while keeping what already works (when only one issue is listed, change ONLY what that issue needs — a minimal, surgical edit; do not restyle the rest). If an attempt is listed as tried-and-failed,
+Write all page copy in the language of the brief. Fix the OPEN issues in priority order while keeping what already works (when only one issue is listed, change ONLY what that issue needs — a minimal, surgical edit; do not restyle the rest). If an attempt is listed as tried-and-failed,
 do something materially different. Start with ONE line: <!-- CHANGES: [{"issue": "...", "change": "..."}] --> then
 output ONLY the full revised HTML document."""
 
@@ -250,7 +250,7 @@ def run_brief(key: str, cfg: dict, run_dir: Path, rounds: int, patience: int, st
         open_issues = [i for i in ledger if i["resolved"] is None]
         sourced = []
         # source real photos when a visual issue persists (face / object / scene) or every other round while any issue is open
-        wants_photo = [i for i in open_issues if re.search(r"얼굴|물체|장소|실루엣", i["text"]) and i["attempts"] >= 1] or (open_issues if r == 1 else [])
+        wants_photo = [i for i in open_issues if re.search(r"face|object|silhouette|place|scene|people|얼굴|물체|장소|실루엣", i["text"], re.I) and i["attempts"] >= 1] or (open_issues if r == 1 else [])
         if wants_photo and len(assets) < 8:
             dropped = 0
             seen_paths = {a["path"] for a in assets} | rejected
@@ -314,7 +314,7 @@ def build_page(d: Path) -> Path:
 
     def pct(h: dict, k: str) -> str:
         v = h.get(k, {}).get("percentile")
-        return f"상위 {100 - v:.0f}%" if v is not None else "—"
+        return f"top {100 - v:.0f}%" if v is not None else "—"
 
     led = "".join(f"<tr><td>{e(i['text'])}</td><td>r{i['opened']}</td><td>{'r' + str(i['resolved']) if i['resolved'] is not None else '<b style=color:#ff7b72>open</b>'}</td>"
                   f"<td>{i['attempts']}</td><td class=k>{e(' / '.join(i['tried'][-2:]))}</td></tr>" for i in rep["ledger"])
@@ -328,13 +328,13 @@ def build_page(d: Path) -> Path:
 .row{{display:grid;grid-template-columns:1fr 1fr;gap:18px}}.card{{background:#15151b;border:1px solid #23232b;border-radius:14px;overflow:hidden}}.card img{{width:100%;display:block}}
 .t{{padding:10px 14px;font-weight:600;font-size:13px;color:#ffb38a}}.m{{padding:8px 14px 12px;font-size:12.5px;color:#ccc}}table{{border-collapse:collapse;font-size:12.5px;width:100%}}td,th{{padding:6px 10px;border-bottom:1px solid #23232b;text-align:left;vertical-align:top}}
 .k{{color:#8b8b96}}.big{{font-size:26px;font-weight:700;color:{'#7ee787' if delta > 0 else '#ff7b72'}}}.brief{{color:#aaa;font-size:13px}}ul{{font-size:12px;color:#9a9aa6}}</style></head><body>
-<h1>같은 브리프, 제로부터 — Muse 한 번 vs BrainSense 하네스</h1><div class=brief>{e(rep['brief'])}</div>
+<h1>Same brief, from zero — Muse once vs the BrainSense harness</h1><div class=brief>{e(rep['brief'])}</div>
 <div class=big>ui_score {b0['ui_score']:.3f} → {bb['ui_score']:.3f} ({delta:+.3f}) · {len(rep['rounds']) - 1} rounds · {sum(1 for i in rep['ledger'] if i['resolved'] is not None)}/{len(rep['ledger'])} issues fixed</div>
-<div class=row><div class=card><div class=t>Muse 한 번 (r0)</div><a href='r0.png' target=_blank><img src='r0.png'></a><div class=m>ui {b0['ui_score']:.3f} · 뇌 {b0['brain_only']:.3f} · 심사위원 {(b0['judge'] or 0):.2f}<br><span class=k>{e(' / '.join(b0['diagnosis'][:2]))}</span></div></div>
-<div class=card><div class=t>BrainSense 하네스 (r{br})</div><a href='r{br}.png' target=_blank><img src='r{br}.png'></a><div class=m>ui {bb['ui_score']:.3f} · 뇌 {bb['brain_only']:.3f} · 심사위원 {bb['judge'].get('judge_score', 0):.2f} · 예쁨 {pct(bb['heads'], 'aesthetic')} · 주목 {pct(bb['heads'], 'attention')}<br><span class=k>{e(' / '.join(bb['critique']['diagnosis'][:2]))}</span></div></div></div>
-<h2>문제 장부 (뇌가 연 이슈 → 해결 라운드)</h2><table><tr><th>issue</th><th>opened</th><th>resolved</th><th>attempts</th><th>tried</th></tr>{led}</table>
-<h2>라운드별</h2><table><tr><th>r</th><th>ui</th><th>뇌</th><th>심사위원</th><th>kept</th><th>changes</th><th>sourced photos</th></tr>{rows}</table>
-<h2>사진 출처 (Wikimedia Commons, 무료 라이선스)</h2><ul>{credits or '<li>없음</li>'}</ul></body></html>"""
+<div class=row><div class=card><div class=t>Muse once (r0)</div><a href='r0.png' target=_blank><img src='r0.png'></a><div class=m>ui {b0['ui_score']:.3f} · brain {b0['brain_only']:.3f} · judge {(b0['judge'] or 0):.2f}<br><span class=k>{e(' / '.join(b0['diagnosis'][:2]))}</span></div></div>
+<div class=card><div class=t>BrainSense harness (r{br})</div><a href='r{br}.png' target=_blank><img src='r{br}.png'></a><div class=m>ui {bb['ui_score']:.3f} · brain {bb['brain_only']:.3f} · judge {bb['judge'].get('judge_score', 0):.2f} · aesthetic {pct(bb['heads'], 'aesthetic')} · attention {pct(bb['heads'], 'attention')}<br><span class=k>{e(' / '.join(bb['critique']['diagnosis'][:2]))}</span></div></div></div>
+<h2>Issue ledger (opened by the brain → round resolved)</h2><table><tr><th>issue</th><th>opened</th><th>resolved</th><th>attempts</th><th>tried</th></tr>{led}</table>
+<h2>Per round</h2><table><tr><th>r</th><th>ui</th><th>brain</th><th>judge</th><th>kept</th><th>changes</th><th>sourced photos</th></tr>{rows}</table>
+<h2>Photo credits (Wikimedia Commons, free licences)</h2><ul>{credits or '<li>none</li>'}</ul></body></html>"""
     out = d / "index.html"
     out.write_text(page, encoding="utf-8")
     return out
