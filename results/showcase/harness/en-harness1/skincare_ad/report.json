@@ -1,0 +1,330 @@
+{
+ "brief": "Instagram feed ad (square feel, 1280x800 first screen) for a new vitamin C serum. One-sentence headline, the product is the hero, a 30% launch-discount badge, 'Buy now' CTA.",
+ "kind": "ad",
+ "baseline": {
+  "round": 0,
+  "accepted": true,
+  "ui_score": 0.6364648261738985,
+  "brain_only": 0.501,
+  "judge": 0.778,
+  "changes": [],
+  "sourced": [],
+  "diagnosis": [
+   "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+   "Place areas (PPA/RSC) dominate: the background scene swallows the message"
+  ]
+ },
+ "best_round": 2,
+ "best": {
+  "round": 2,
+  "ui_score": 0.7008113807097394,
+  "heads": {
+   "aesthetic": {
+    "score": 0.47873055934906006,
+    "percentile": 50.60321715817694,
+    "confidence": 0.04253888130187988,
+    "top": "▼ L_a24, ▼ R_23d"
+   },
+   "attention": {
+    "score": 0.5350328087806702,
+    "percentile": 55.06849315068493,
+    "confidence": 0.07006561756134033,
+    "top": "▲ 움직임·형태 평균, ▲ 움직임·형태 최대"
+   }
+  },
+  "judge": {
+   "aesthetic": 0.889,
+   "clarity": 0.889,
+   "attention": 0.778,
+   "brief_fit": 1.0,
+   "judge_score": 0.889,
+   "reason": "Bold, polished layout delivers every brief requirement clearly with product as hero, though oversized headline slightly competes for attention."
+  },
+  "brain_only": 0.528,
+  "critique": {
+   "kind": "ad",
+   "ranking": [
+    [
+     "scene_place",
+     1.196988879507286
+    ],
+    [
+     "value_vmpfc",
+     0.7203681631463897
+    ],
+    [
+     "attention_dorsal",
+     0.37838450529347273
+    ],
+    [
+     "control_dlpfc",
+     0.2785816754754428
+    ],
+    [
+     "visual_early",
+     0.2340712721493962
+    ],
+    [
+     "face_body",
+     -0.011427101475009768
+    ],
+    [
+     "language",
+     -0.382715745368678
+    ],
+    [
+     "default_mode",
+     -0.6257259598009447
+    ],
+    [
+     "visual_motion",
+     -1.7885256889273542
+    ]
+   ],
+   "hook": {
+    "attention_early": 0.4790167215088824,
+    "attention_late": 0.32806839718576786,
+    "visual_early": 0.9592314455917577,
+    "visual_late": -0.1285088145717845
+   },
+   "diagnosis": [
+    "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+    "Reward circuit (OFC/vmPFC) is on but the appeal head is average: value is felt but what is good isn't legible",
+    "Place areas (PPA/RSC) dominate: the background scene swallows the message",
+    "Attention drops after the first 2 s (+0.48 → +0.33): nothing to look at after the first impression"
+   ],
+   "directives": [
+    "Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion.",
+    "Name the value explicitly next to what the eye lands on: one benefit line + price/offer under the hero, nothing else competing.",
+    "Simplify the environment: crop or blur the scene, put copy on a solid panel, let one subject own the frame.",
+    "Add a second discovery after the hero (a detail reveal, micro-illustration, or a strong secondary block) so interest holds past 2 s."
+   ],
+   "cited_areas": [
+    "▼ L affect, conflict (a24) [aesthetic]",
+    "▼ R mind-wandering (23d) [aesthetic]",
+    "▲ object shape & motion (MT/LO) mean [attention]",
+    "▲ object shape & motion (MT/LO) max [attention]"
+   ],
+   "groups": [
+    "visual_motion",
+    "value_vmpfc",
+    "scene_place",
+    ""
+   ],
+   "prompt_block": "BRAIN CRITIQUE (TRIBE v2 predicted human cortex while looking at the last render; values are relative within this image):\n- most driven regions: places & scenes (PPA/RSC) +1.20, reward & value (OFC/vmPFC) +0.72, visual attention (IPS/FEF) +0.38; least: default mode (mind-wandering) -0.63, object shape & motion (MT/LO) -1.79\n- first-2s hook vs later: attention +0.48 → +0.33, visual drive +0.96 → -0.13\n- areas the aesthetic head cites: ▼ L affect, conflict (a24) [aesthetic]; ▼ R mind-wandering (23d) [aesthetic]; ▲ object shape & motion (MT/LO) mean [attention]; ▲ object shape & motion (MT/LO) max [attention]\n- diagnosis: Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette / Reward circuit (OFC/vmPFC) is on but the appeal head is average: value is felt but what is good isn't legible / Place areas (PPA/RSC) dominate: the background scene swallows the message / Attention drops after the first 2 s (+0.48 → +0.33): nothing to look at after the first impression\n- DO NEXT (highest priority first): (1) Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion. (2) Name the value explicitly next to what the eye lands on: one benefit line + price/offer under the hero, nothing else competing. (3) Simplify the environment: crop or blur the scene, put copy on a solid panel, let one subject own the frame. (4) Add a second discovery after the hero (a detail reveal, micro-illustration, or a strong secondary block) so interest holds past 2 s."
+  }
+ },
+ "rounds": [
+  {
+   "round": 0,
+   "accepted": true,
+   "ui_score": 0.6364648261738985,
+   "brain_only": 0.501,
+   "judge": 0.778,
+   "changes": [],
+   "sourced": [],
+   "diagnosis": [
+    "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+    "Place areas (PPA/RSC) dominate: the background scene swallows the message"
+   ]
+  },
+  {
+   "round": 1,
+   "accepted": false,
+   "ui_score": 0.6345915506655331,
+   "brain_only": 0.498,
+   "judge": 0.778,
+   "changes": [
+    {
+     "issue": "Object-shape (LO) and motion (MT) areas are low",
+     "change": "Enlarged serum bottle to 300px dominant silhouette, added bold diagonal motion slash behind arch, kept float animation for implied motion"
+    },
+    {
+     "issue": "Place areas (PPA/RSC) dominate",
+     "change": "Simplified visual to solid tangerine with one diagonal, removed dots/blob/halo texture, removed competing chips/pills/footnote so product owns frame"
+    }
+   ],
+   "sourced": [],
+   "diagnosis": [
+    "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+    "Place areas (PPA/RSC) dominate: the background scene swallows the message"
+   ]
+  },
+  {
+   "round": 2,
+   "accepted": true,
+   "ui_score": 0.7008113807097394,
+   "brain_only": 0.528,
+   "judge": 0.889,
+   "changes": [
+    {
+     "issue": "objectshapeloandmotionmtarea",
+     "change": "Made bottle 320px hero overlapping center divider with full-bleed diagonal marigold slash + speed lines for motion"
+    },
+    {
+     "issue": "placeareaspparscdominate",
+     "change": "Flattened visual to solid orange, removed dots/blob/halo/chips/benefit pills and duplicate 30% tags, copy on solid cream panel"
+    }
+   ],
+   "sourced": [],
+   "diagnosis": [
+    "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+    "Reward circuit (OFC/vmPFC) is on but the appeal head is average: value is felt but what is good isn't legible",
+    "Place areas (PPA/RSC) dominate: the background scene swallows the message",
+    "Attention drops after the first 2 s (+0.48 → +0.33): nothing to look at after the first impression"
+   ]
+  },
+  {
+   "round": 3,
+   "accepted": false,
+   "ui_score": 0.6734521987756378,
+   "brain_only": 0.572,
+   "judge": 0.806,
+   "changes": [
+    {
+     "issue": "objectshapeloandmotionmtarea",
+     "change": "Removed arch card, made bottle 340px free-standing silhouette overlapping center divider on giant cream halo + single diagonal slash for motion"
+    },
+    {
+     "issue": "placeareaspparscdominate",
+     "change": "Flattened visual to solid orange with one halo and one slash only, removed speedlines/pattern texture, let bottle own frame"
+    },
+    {
+     "issue": "rewardcircuitofcvmpfcisonbut",
+     "change": "Added one explicit value+price pill directly under bottle in visual panel as eye-landing anchor"
+    },
+    {
+     "issue": "attentiondropsafterthefirsts",
+     "change": "Added second-discovery droplet detail callout with leader line pinned to bottle plus reduced headline to let hero lead"
+    }
+   ],
+   "sourced": [],
+   "diagnosis": [
+    "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+    "Reward circuit (OFC/vmPFC) is on but the appeal head is average: value is felt but what is good isn't legible",
+    "Place areas (PPA/RSC) dominate: the background scene swallows the message"
+   ]
+  },
+  {
+   "round": 4,
+   "accepted": false,
+   "ui_score": 0.683720221015518,
+   "brain_only": 0.612,
+   "judge": 0.806,
+   "changes": [
+    {
+     "issue": "object-shape LO + motion MT low",
+     "change": "Removed arch card and center slash; added one 560px cream circle hero + free-standing 320px bottle bleeding over divider + angled proof-bar top edge and skewed panel edge for motion"
+    },
+    {
+     "issue": "place PPA/RSC dominates",
+     "change": "Flattened visual to solid #FF5C00 with single circle only, removed slash text/speedlines/halo/pattern, copy on solid paper panel"
+    },
+    {
+     "issue": "reward OFC/vmPFC appeal legibility",
+     "change": "Added single black-on-white value+price pill directly under bottle, removed all other competing chips in visual"
+    },
+    {
+     "issue": "attention drops after 2s",
+     "change": "Added bottom second-discovery proof bar with Day1-Day7 glow dots and formula strip as post-hero discovery"
+    }
+   ],
+   "sourced": [],
+   "diagnosis": [
+    "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+    "Reward circuit (OFC/vmPFC) is on but the appeal head is average: value is felt but what is good isn't legible",
+    "Attention drops after the first 2 s (+0.57 → +0.40): nothing to look at after the first impression"
+   ]
+  },
+  {
+   "round": 5,
+   "accepted": false,
+   "ui_score": 0.6694830353294039,
+   "brain_only": 0.562,
+   "judge": 0.806,
+   "changes": [
+    {
+     "issue": "object-shape and motion low",
+     "change": "removed arch card, made bottle 360px free-standing tilted silhouette on single cream halo with clean diagonal beam plus floating droplet trails for motion"
+    },
+    {
+     "issue": "place areas dominate",
+     "change": "simplified visual to solid tangerine with only one halo and one clean beam, removed speedlines and text-pattern slash"
+    },
+    {
+     "issue": "reward circuit value not legible",
+     "change": "added single white value+price tag directly under bottle: benefit plus $42 launch price"
+    },
+    {
+     "issue": "attention drops after 2s",
+     "change": "added second-discovery ingredient proof-bar and droplet detail callout with leader line"
+    }
+   ],
+   "sourced": [],
+   "diagnosis": [
+    "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+    "Reward circuit (OFC/vmPFC) is on but the appeal head is average: value is felt but what is good isn't legible",
+    "Place areas (PPA/RSC) dominate: the background scene swallows the message"
+   ]
+  }
+ ],
+ "ledger": [
+  {
+   "id": "objectshapeloandmotionmtarea",
+   "text": "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+   "directive": "Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion.",
+   "group": "visual_motion",
+   "z_opened": -2.028407111425905,
+   "opened": 0,
+   "resolved": null,
+   "attempts": 5,
+   "tried": [
+    "r1: Enlarged serum bottle to 300px dominant silhouette, added bold diagonal motion slash behin",
+    "r2: Made bottle 320px hero overlapping center divider with full-bleed diagonal marigold slash ",
+    "r3: Removed arch card, made bottle 340px free-standing silhouette overlapping center divider o"
+   ]
+  },
+  {
+   "id": "placeareaspparscdominate",
+   "text": "Place areas (PPA/RSC) dominate: the background scene swallows the message",
+   "directive": "Simplify the environment: crop or blur the scene, put copy on a solid panel, let one subject own the frame.",
+   "group": "scene_place",
+   "z_opened": 1.1317646220014217,
+   "opened": 0,
+   "resolved": null,
+   "attempts": 5,
+   "tried": [
+    "r1: Simplified visual to solid tangerine with one diagonal, removed dots/blob/halo texture, re",
+    "r2: Flattened visual to solid orange, removed dots/blob/halo/chips/benefit pills and duplicate",
+    "r3: Flattened visual to solid orange with one halo and one slash only, removed speedlines/patt"
+   ]
+  },
+  {
+   "id": "rewardcircuitofcvmpfcisonbut",
+   "text": "Reward circuit (OFC/vmPFC) is on but the appeal head is average: value is felt but what is good isn't legible",
+   "directive": "Name the value explicitly next to what the eye lands on: one benefit line + price/offer under the hero, nothing else competing.",
+   "group": "value_vmpfc",
+   "z_opened": 0.7203681631463897,
+   "opened": 2,
+   "resolved": null,
+   "attempts": 3,
+   "tried": [
+    "r3: Added one explicit value+price pill directly under bottle in visual panel as eye-landing a"
+   ]
+  },
+  {
+   "id": "attentiondropsafterthefirsts",
+   "text": "Attention drops after the first 2 s (+0.48 → +0.33): nothing to look at after the first impression",
+   "directive": "Add a second discovery after the hero (a detail reveal, micro-illustration, or a strong secondary block) so interest holds past 2 s.",
+   "group": "",
+   "z_opened": null,
+   "opened": 2,
+   "resolved": null,
+   "attempts": 3,
+   "tried": [
+    "r3: Added second-discovery droplet detail callout with leader line pinned to bottle plus reduc"
+   ]
+  }
+ ],
+ "assets": []
+}

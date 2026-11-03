@@ -1,0 +1,268 @@
+{
+ "brief": "Landing first screen for a 3-day pop-up store in Seongsu, Seoul: 'Sweetspot x Local Roastery' (strawberry desserts + specialty coffee). Dates, venue, 'Reserve a slot' CTA. Audience: women in their late 20s; stylish, but the facts must read instantly.",
+ "kind": "landing",
+ "baseline": {
+  "round": 0,
+  "accepted": true,
+  "ui_score": 0.5930291875635562,
+  "brain_only": 0.537,
+  "judge": 0.667,
+  "changes": [],
+  "sourced": [],
+  "diagnosis": [
+   "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+   "Place areas (PPA/RSC) dominate: the background scene swallows the message"
+  ]
+ },
+ "best_round": 2,
+ "best": {
+  "round": 2,
+  "ui_score": 0.6792853953579256,
+  "heads": {
+   "aesthetic": {
+    "score": 0.6205086708068848,
+    "percentile": 71.7828418230563,
+    "confidence": 0.24101734161376953,
+    "top": "▼ L_a24, ▲ L_31a"
+   },
+   "attention": {
+    "score": 0.5633331537246704,
+    "percentile": 62.19178082191781,
+    "confidence": 0.12666630744934082,
+    "top": "▲ 움직임·형태 평균, ▲ 기본 시각 평균"
+   }
+  },
+  "judge": {
+   "aesthetic": 0.667,
+   "clarity": 0.889,
+   "attention": 0.556,
+   "brief_fit": 0.889,
+   "judge_score": 0.75,
+   "reason": "Stylish editorial pink system nails the audience and WHEN/WHERE/CTA facts scan instantly, but the scribble underline, cut-off ribbon, and competing headline-illustration-CTA weaken polish and focus."
+  },
+  "brain_only": 0.67,
+  "critique": {
+   "kind": "landing",
+   "ranking": [
+    [
+     "scene_place",
+     1.0181580845403129
+    ],
+    [
+     "value_vmpfc",
+     0.7654194785925439
+    ],
+    [
+     "attention_dorsal",
+     0.5179004742893482
+    ],
+    [
+     "control_dlpfc",
+     0.4472984941495908
+    ],
+    [
+     "face_body",
+     0.1533525067972939
+    ],
+    [
+     "language",
+     -0.18344915721571162
+    ],
+    [
+     "visual_early",
+     -0.3949803817589534
+    ],
+    [
+     "default_mode",
+     -0.4828894620886122
+    ],
+    [
+     "visual_motion",
+     -1.8408100373058118
+    ]
+   ],
+   "hook": {
+    "attention_early": 0.6115785880156408,
+    "attention_late": 0.4710614174262018,
+    "visual_early": 0.344554756514302,
+    "visual_late": -0.764747950895581
+   },
+   "diagnosis": [
+    "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette"
+   ],
+   "directives": [
+    "Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion."
+   ],
+   "cited_areas": [
+    "▼ L affect, conflict (a24) [aesthetic]",
+    "▲ L 31a [aesthetic]",
+    "▲ object shape & motion (MT/LO) mean [attention]",
+    "▲ early vision (V1–V4) mean [attention]"
+   ],
+   "groups": [
+    "visual_motion"
+   ],
+   "prompt_block": "BRAIN CRITIQUE (TRIBE v2 predicted human cortex while looking at the last render; values are relative within this image):\n- most driven regions: places & scenes (PPA/RSC) +1.02, reward & value (OFC/vmPFC) +0.77, visual attention (IPS/FEF) +0.52; least: default mode (mind-wandering) -0.48, object shape & motion (MT/LO) -1.84\n- first-2s hook vs later: attention +0.61 → +0.47, visual drive +0.34 → -0.76\n- areas the aesthetic head cites: ▼ L affect, conflict (a24) [aesthetic]; ▲ L 31a [aesthetic]; ▲ object shape & motion (MT/LO) mean [attention]; ▲ early vision (V1–V4) mean [attention]\n- diagnosis: Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette\n- DO NEXT (highest priority first): (1) Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion."
+  }
+ },
+ "rounds": [
+  {
+   "round": 0,
+   "accepted": true,
+   "ui_score": 0.5930291875635562,
+   "brain_only": 0.537,
+   "judge": 0.667,
+   "changes": [],
+   "sourced": [],
+   "diagnosis": [
+    "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+    "Place areas (PPA/RSC) dominate: the background scene swallows the message"
+   ]
+  },
+  {
+   "round": 1,
+   "accepted": true,
+   "ui_score": 0.6264911315370789,
+   "brain_only": 0.459,
+   "judge": 0.778,
+   "changes": [
+    {
+     "issue": "objectshapeloandmotionmtarea",
+     "change": "Enlarged cake to one dominant silhouette on halo + diagonal ink ribbon and bob animation for motion"
+    },
+    {
+     "issue": "placeareaspparscdominate",
+     "change": "Simplified arch to solid paper panel with cropped diagonal base, copy on solid card, removed 2 stickers and side text to fix right-edge cropping"
+    }
+   ],
+   "sourced": [],
+   "diagnosis": [
+    "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+    "Place areas (PPA/RSC) dominate: the background scene swallows the message",
+    "Early visual cortex (V1–V4) fires hardest while the aesthetic head is low: high contrast/texture density reads as clutter"
+   ]
+  },
+  {
+   "round": 2,
+   "accepted": true,
+   "ui_score": 0.6792853953579256,
+   "brain_only": 0.67,
+   "judge": 0.75,
+   "changes": [
+    {
+     "issue": "object-shape and motion low",
+     "change": "Made cake the single dominant silhouette at 400px on plain halo with one diagonal berry ribbon behind it and gentle bob; removed competing seal, float badge, coffee icon and menu cards."
+    },
+    {
+     "issue": "place areas dominate",
+     "change": "Replaced arch scene with one cropped solid white panel owning the frame; copy moved to open whitespace with no card, menu collapsed to one line."
+    },
+    {
+     "issue": "early visual cortex clutter",
+     "change": "Removed dot texture, offset shadows and multicolor badges; single cream tone, ink plus berry only, facts as plain dividers, ticker replaced by quiet footer line."
+    }
+   ],
+   "sourced": [],
+   "diagnosis": [
+    "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette"
+   ]
+  },
+  {
+   "round": 3,
+   "accepted": false,
+   "ui_score": 0.6267399014239865,
+   "brain_only": 0.44,
+   "judge": 0.806,
+   "changes": [
+    {
+     "issue": "objectshapeloandmotionmtarea",
+     "change": "Replaced thin static ribbon + vertical bob with one dominant silhouette: oversized tilted cake with hard ink offset-shadow on bordered halo + full-bleed animated diagonal ticker (real motion) + 3-DAYS badge; removed scribble underline to restore focus"
+    }
+   ],
+   "sourced": [],
+   "diagnosis": [
+    "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+    "Place areas (PPA/RSC) dominate: the background scene swallows the message"
+   ]
+  },
+  {
+   "round": 4,
+   "accepted": false,
+   "ui_score": 0.652398494527432,
+   "brain_only": 0.506,
+   "judge": 0.806,
+   "changes": [
+    {
+     "issue": "objectshapeloandmotionmtarea",
+     "change": "Replaced cut-off thin ribbon + vertical bob with inset diagonal ticket pill + oversized tilted cake with diagonal drift and speed streaks; removed scribble underline for one dominant silhouette and implied motion"
+    }
+   ],
+   "sourced": [],
+   "diagnosis": [
+    "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+    "Place areas (PPA/RSC) dominate: the background scene swallows the message"
+   ]
+  },
+  {
+   "round": 5,
+   "accepted": false,
+   "ui_score": 0.6790508207707386,
+   "brain_only": 0.596,
+   "judge": 0.806,
+   "changes": [
+    {
+     "issue": "objectshapeloandmotionmtarea",
+     "change": "Removed cut-off ribbon + vertical bob; added dominant tilted strawberry silhouette + diagonal slab + inset animated ticket ticker with diagonal drift motion"
+    }
+   ],
+   "sourced": [],
+   "diagnosis": [
+    "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+    "Place areas (PPA/RSC) dominate: the background scene swallows the message"
+   ]
+  }
+ ],
+ "ledger": [
+  {
+   "id": "objectshapeloandmotionmtarea",
+   "text": "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+   "directive": "Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion.",
+   "group": "visual_motion",
+   "z_opened": -1.6044450922967088,
+   "opened": 0,
+   "resolved": null,
+   "attempts": 5,
+   "tried": [
+    "r1: Enlarged cake to one dominant silhouette on halo + diagonal ink ribbon and bob animation f",
+    "r3: Replaced thin static ribbon + vertical bob with one dominant silhouette: oversized tilted ",
+    "r4: Replaced cut-off thin ribbon + vertical bob with inset diagonal ticket pill + oversized ti",
+    "r5: Removed cut-off ribbon + vertical bob; added dominant tilted strawberry silhouette + diago"
+   ]
+  },
+  {
+   "id": "placeareaspparscdominate",
+   "text": "Place areas (PPA/RSC) dominate: the background scene swallows the message",
+   "directive": "Simplify the environment: crop or blur the scene, put copy on a solid panel, let one subject own the frame.",
+   "group": "scene_place",
+   "z_opened": 1.0686017616897396,
+   "opened": 0,
+   "resolved": 2,
+   "attempts": 2,
+   "tried": [
+    "r1: Simplified arch to solid paper panel with cropped diagonal base, copy on solid card, remov"
+   ]
+  },
+  {
+   "id": "earlyvisualcortexvvfireshard",
+   "text": "Early visual cortex (V1–V4) fires hardest while the aesthetic head is low: high contrast/texture density reads as clutter",
+   "directive": "Reduce visual noise: one background tone, max 2 accent colors, more whitespace, fewer borders/textures.",
+   "group": "visual_early",
+   "z_opened": 0.6617130477228691,
+   "opened": 1,
+   "resolved": 2,
+   "attempts": 1,
+   "tried": []
+  }
+ ],
+ "assets": []
+}

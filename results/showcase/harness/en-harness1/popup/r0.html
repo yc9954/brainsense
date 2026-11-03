@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sweetspot x Local Roastery — 3-Day Strawberry Pop-up in Seongsu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+--cream:#FFF6EE;
+--cream2:#FFEAD9;
+--paper:#FFFCF7;
+--ink:#2A1512;
+--ink2:#5C3D36;
+--berry:#C3123F;
+--berry-bright:#FF2D55;
+--berry-deep:#8D0B2E;
+--leaf:#2F5D3A;
+--gold:#B7791F;
+--line:2px solid var(--ink);
+}
+html{scroll-behavior:smooth}
+body{
+font-family:"Plus Jakarta Sans","Noto Sans KR",system-ui,sans-serif;
+background:var(--cream);
+color:var(--ink);
+font-size:17px;
+line-height:1.6;
+-webkit-font-smoothing:antialiased;
+overflow-x:hidden;
+}
+body::before{
+content:"";position:fixed;inset:0;pointer-events:none;opacity:.5;
+background-image:radial-gradient(#2A15121A 1.2px, transparent 1.2px);
+background-size:22px 22px;
+mask-image:linear-gradient(to bottom, black, transparent 70%);
+}
+a{color:inherit}
+.page{max-width:1280px;margin:0 auto;min-height:100vh;display:flex;flex-direction:column;padding:0 32px}
+.topbar{
+display:flex;align-items:center;justify-content:space-between;
+padding:18px 0;gap:16px;
+}
+.brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.02em}
+.brand-mark{width:40px;height:40px;border-radius:50%;background:var(--ink);color:var(--cream);display:grid;place-items:center;font-family:"DM Serif Display",serif;font-size:22px;line-height:1}
+.brand small{display:block;font-size:11px;font-weight:700;letter-spacing:.18em;opacity:.7}
+.brand strong{font-size:16px;line-height:1.1}
+.nav{display:flex;gap:28px;font-size:15px;font-weight:600}
+.nav a{text-decoration:none;opacity:.75}.nav a:hover{opacity:1;text-decoration:underline;text-underline-offset:6px}
+.top-actions{display:flex;align-items:center;gap:12px}
+.lang{font-size:13px;font-weight:800;border:var(--line);border-radius:100px;padding:7px 12px;background:var(--paper)}
+.btn{
+display:inline-flex;align-items:center;justify-content:center;gap:10px;
+border:var(--line);border-radius:100px;font-weight:800;text-decoration:none;cursor:pointer;
+transition:transform .15s ease, box-shadow .15s ease;
+}
+.btn-small{padding:11px 20px;font-size:15px;background:var(--ink);color:#fff;box-shadow:3px 3px 0 var(--berry-bright)}
+.btn-small:hover{transform:translate(-1px,-1px);box-shadow:5px 5px 0 var(--berry-bright)}
+.btn-big{padding:17px 30px;font-size:18px;background:var(--berry);color:#fff;box-shadow:5px 5px 0 var(--ink)}
+.btn-big:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 var(--ink)}
+.btn-ghost{padding:16px 24px;font-size:16px;background:var(--paper);color:var(--ink);box-shadow:5px 5px 0 #E8C9B5}
+.hero{
+display:grid;grid-template-columns:1.08fr .92fr;gap:36px;align-items:center;
+padding:10px 0 18px;flex:1;
+}
+.eyebrow{
+display:inline-flex;align-items:center;gap:10px;
+background:var(--ink);color:var(--cream);border-radius:100px;padding:8px 8px 8px 14px;
+font-size:13.5px;font-weight:800;letter-spacing:.08em;
+}
+.eyebrow .dot{width:9px;height:9px;border-radius:50%;background:#4ADE80;box-shadow:0 0 0 4px #4ADE8033;animation:pulse 1.8s infinite}
+@keyframes pulse{50%{opacity:.6}}
+.eyebrow .datechip{background:var(--cream);color:var(--ink);border-radius:100px;padding:5px 12px;letter-spacing:.02em}
+h1{
+font-family:"DM Serif Display",serif;font-weight:400;
+font-size:clamp(52px, 6.2vw, 84px);line-height:.95;letter-spacing:-.02em;margin:20px 0 14px;
+}
+h1 em{font-style:italic;color:var(--berry);position:relative;white-space:nowrap}
+h1 em svg{position:absolute;left:0;right:0;bottom:-10px;width:100%;height:14px}
+.lede{font-size:19px;line-height:1.6;color:var(--ink2);max-width:540px}
+.lede strong{color:var(--ink)}
+.facts{
+display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:22px 0 20px;max-width:620px;
+}
+.fact{background:var(--paper);border:var(--line);border-radius:18px;padding:14px 14px 12px;box-shadow:4px 4px 0 #E8C9B5}
+.fact-top{display:flex;align-items:center;gap:7px;font-size:12px;font-weight:800;letter-spacing:.14em;opacity:.9}
+.fact-top i{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:var(--cream2);border:1.5px solid var(--ink);font-style:normal;font-size:15px}
+.fact b{display:block;font-size:17px;line-height:1.25;margin-top:6px}
+.fact span{display:block;font-size:14px;color:var(--ink2);line-height:1.4}
+.fact.highlight{background:var(--ink);color:var(--cream);box-shadow:4px 4px 0 var(--berry-bright)}
+.fact.highlight span{color:#FFD9E1}
+.cta-row{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:6px}
+.cta-note{font-size:14px;font-weight:600;color:var(--ink2)}
+.proof{display:flex;align-items:center;gap:12px;margin-top:16px}
+.avatars{display:flex}
+.avatars span{width:36px;height:36px;border-radius:50%;border:2px solid var(--cream);margin-left:-10px;display:grid;place-items:center;font-size:13px;font-weight:800;color:#fff}
+.avatars span:first-child{margin-left:0}
+.proof p{font-size:14.5px;line-height:1.45}
+.proof p strong{font-weight:800}
+/* RIGHT VISUAL */
+.visual-col{position:relative;display:flex;justify-content:center}
+.kor-side{
+position:absolute;right:-6px;top:50%;transform:translateY(-50%) rotate(180deg);
+writing-mode:vertical-rl;font-size:13px;font-weight:700;letter-spacing:.35em;opacity:.55
+}
+.arch-wrap{position:relative;width:min(460px,100%)}
+.arch{
+position:relative;border:var(--line);border-radius:240px 240px 28px 28px;overflow:hidden;
+background:linear-gradient(180deg, #FFD6DE 0%, #FFB9C6 28%, #FF2D55 62%, #A60F33 100%);
+box-shadow:10px 10px 0 var(--ink);min-height:590px;
+display:flex;flex-direction:column;
+}
+.arch-top{
+display:flex;justify-content:space-between;align-items:center;
+padding:18px 22px 0;color:#fff;font-size:12px;font-weight:800;letter-spacing:.18em;
+}
+.arch-top .tag{border:1.5px solid #ffffffcc;border-radius:100px;padding:6px 12px;background:#ffffff22;backdrop-filter:blur(6px)}
+.cake-stage{flex:1;display:grid;place-items:center;padding:6px 20px 0;position:relative}
+.plate-shadow{position:absolute;bottom:92px;width:68%;height:28px;background:#00000033;border-radius:50%;filter:blur(8px)}
+.menu-card{
+margin:0 16px 16px;background:var(--paper);border:var(--line);border-radius:18px;
+display:grid;grid-template-columns:1fr 1fr 1fr;padding:12px;gap:8px;
+}
+.menu-card div{border-radius:12px;background:var(--cream);padding:10px;text-align:center}
+.menu-card b{font-size:14px;display:block;line-height:1.2}
+.menu-card span{font-size:12.5px;font-weight:700;color:var(--berry)}
+.menu-card small{font-size:12px;color:var(--ink2);display:block}
+.float{
+position:absolute;background:var(--paper);border:var(--line);border-radius:16px;
+padding:10px 14px;font-size:14px;font-weight:800;box-shadow:4px 4px 0 var(--ink);
+display:flex;align-items:center;gap:9px;
+}
+.float small{display:block;font-size:12px;font-weight:600;color:var(--ink2)}
+.f1{left:-78px;top:132px;transform:rotate(-6deg)}
+.f2{right:-42px;top:300px;transform:rotate(5deg)}
+.f3{left:-38px;bottom:132px;transform:rotate(3deg);background:var(--ink);color:var(--cream);box-shadow:4px 4px 0 var(--berry-bright)}
+.f3 small{color:#FFD9E1}
+.seal{
+position:absolute;left:-42px;top:-28px;width:124px;height:124px;
+}
+.seal .disc{position:absolute;inset:0;background:var(--gold);border:var(--line);border-radius:50%;display:grid;place-items:center;text-align:center}
+.seal svg.spin{position:absolute;inset:-12px;animation:spin 14s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.count-pill{
+position:absolute;right:8px;bottom:-18px;background:var(--ink);color:var(--cream);
+border-radius:100px;padding:10px 18px;font-size:14px;font-weight:700;border:2px solid var(--cream);
+box-shadow:4px 4px 0 var(--berry-bright);white-space:nowrap;
+}
+.count-pill b{color:#FFB9C6}
+/* ticker */
+.ticker{margin:10px -32px 0;background:var(--ink);color:var(--cream);border-top:var(--line);border-bottom:var(--line);overflow:hidden;white-space:nowrap}
+.ticker-inner{display:inline-flex;gap:0;animation:marquee 22s linear infinite;padding:12px 0;font-weight:800;font-size:14px;letter-spacing:.12em}
+.ticker-inner span{padding:0 18px}
+.ticker-inner span i{color:var(--berry-bright);font-style:normal;margin-right:18px}
+@keyframes marquee{to{transform:translateX(-50%)}}
+/* modal */
+.modal-back{position:fixed;inset:0;background:#2A1512AA;backdrop-filter:blur(6px);display:none;place-items:center;padding:20px;z-index:50}
+.modal-back.open{display:grid}
+.modal{width:min(560px,100%);background:var(--paper);border:3px solid var(--ink);border-radius:24px;box-shadow:10px 10px 0 var(--berry);overflow:hidden}
+.modal-head{background:var(--ink);color:var(--cream);padding:18px 22px;display:flex;justify-content:space-between;align-items:center}
+.modal-head b{font-family:"DM Serif Display",serif;font-size:22px;font-weight:400}
+.modal-head button{background:#fff;border:2px solid #fff;border-radius:50%;width:32px;height:32px;font-weight:900;cursor:pointer}
+.modal-body{padding:20px 22px}
+.slot-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin:12px 0}
+.slot{border:2px solid var(--ink);border-radius:12px;padding:10px;background:#fff;font-weight:700;font-size:14px;cursor:pointer;text-align:center}
+.slot.active,.slot:hover{background:var(--ink);color:#fff}
+.modal input,.modal select{width:100%;padding:13px 14px;border:2px solid var(--ink);border-radius:12px;font-size:16px;font-family:inherit;margin-top:8px;background:#fff}
+.modal .btn-big{width:100%;margin-top:14px}
+:focus-visible{outline:3px solid var(--berry-bright);outline-offset:3px}
+@media(max-width:1020px){
+.nav{display:none}.hero{grid-template-columns:1fr;padding-bottom:8px}h1{font-size:54px}.visual-col{order:-1}.arch{min-height:500px}.f1{left:6px}.f2{right:6px}.kor-side{display:none}.facts{max-width:none}
+}
+@media(max-width:560px){.page{padding:0 18px}.facts{grid-template-columns:1fr}.ticker{margin:10px -18px 0}.f1,.f2{display:none}}
+</style>
+</head>
+<body>
+<div class="page">
+<header class="topbar">
+<div class="brand"><div class="brand-mark">S</div><div><small>SWEETSPOT × LOCAL ROASTERY</small><strong>Seongsu Strawberry Club</strong></div></div>
+<nav class="nav" aria-label="Primary"><a href="#menu">Menu</a><a href="#visit">Visit</a><a href="#slots">Time slots</a><a href="#faq">FAQ</a></nav>
+<div class="top-actions"><span class="lang">EN · 한국어</span><a class="btn btn-small" href="#reserve" onclick="openModal(event)">Reserve a slot →</a></div>
+</header>
+
+<main class="hero">
+<div>
+<div class="eyebrow"><span class="dot"></span> 3-DAY POP-UP · SEONGSU <span class="datechip">NOV 13 — 15 · 11AM–8PM</span></div>
+<h1>Strawberries<br><em>meets slow coffee.<svg viewBox="0 0 200 14" preserveAspectRatio="none" aria-hidden="true"><path d="M2 10 Q 50 2 100 8 T 198 6" fill="none" stroke="#FF2D55" stroke-width="5" stroke-linecap="round"/></svg></em></h1>
+<p class="lede"><strong>Sweetspot x Local Roastery</strong> takes over Seongsu for one weekend only — fresh 딸기 shortcakes, strawberry cream lattes & single-origin pour-overs. 50-min tasting slots, photo-ready all pink.</p>
+
+<div class="facts" id="visit">
+<div class="fact highlight"><div class="fact-top"><i>📅</i> WHEN</div><b>Nov 13 (Fri) – 15 (Sun)</b><span>11:00–20:00 · last entry 19:30</span></div>
+<div class="fact"><div class="fact-top"><i>📍</i> WHERE</div><b>12 Seongsu-ro 14-gil</b><span>Seongsu Flagship 1F · 5-min from Seongsu St. Exit 3</span></div>
+<div class="fact"><div class="fact-top"><i>🎟️</i> ENTRY</div><b>₩5,000 → menu credit</b><span>Walk-ins OK · reservation priority</span></div>
+</div>
+
+<div class="cta-row" id="slots">
+<a class="btn btn-big" href="#reserve" onclick="openModal(event)">Reserve a slot — ₩5,000</a>
+<a class="btn btn-ghost" href="#menu">See the menu ↓</a>
+</div>
+<div class="cta-note">✓ Free cancellation · ✓ Only 32 seats per slot · ✓ Day 2 almost full</div>
+
+<div class="proof">
+<div class="avatars" aria-hidden="true"><span style="background:#FF2D55">YJ</span><span style="background:#2F5D3A">M</span><span style="background:#2A1512">S</span><span style="background:#B7791F">+9</span></div>
+<p><strong>486 girls already booked.</strong><br>“Last year sold out in 2 days — go early for the cloud cake.” — @seoul.dessert</p>
+</div>
+</div>
+
+<div class="visual-col">
+<span class="kor-side">성수 딸기 팝업 · 11월 13–15일 · 스위트스팟</span>
+<div class="arch-wrap">
+<div class="seal" aria-hidden="true">
+<svg class="spin" viewBox="0 0 124 124"><defs><path id="c" d="M62,62 m-48,0 a48,48 0 1,1 96,0 a48,48 0 1,1 -96,0"/></defs><text font-size="11.5" font-weight="800" letter-spacing="2.5" fill="#2A1512"><textPath href="#c">SWEETSPOT • LOCAL ROASTERY • SEONGSU • </textPath></text></svg>
+<div class="disc"><div style="font-size:28px;line-height:1">🍓</div><div style="font-size:11px;font-weight:800;letter-spacing:.12em">LIMITED<br>3 DAYS</div></div>
+</div>
+
+<div class="float f1">🍰 <div>Cloud Shortcake<small>fresh 딸기 daily 6AM</small></div></div>
+<div class="float f2">☕ <div>Pour-over Bar<small>Gesha · Washed · Strawberry notes</small></div></div>
+<div class="float f3">📸 <div>Photo spot 2F<small>pink mirror + neon “berry happy”</small></div></div>
+
+<div class="arch">
+<div class="arch-top"><span class="tag">POP-UP EXCLUSIVE</span><span>NO. 04 — SEONGSU</span></div>
+<div class="cake-stage">
+<div class="plate-shadow"></div>
+<!-- Cake illustration -->
+<svg width="300" height="360" viewBox="0 0 300 360" role="img" aria-label="Strawberry cloud shortcake with fresh strawberries and coffee">
+<ellipse cx="150" cy="318" rx="110" ry="18" fill="#fff" stroke="#2A1512" stroke-width="4"/>
+<ellipse cx="150" cy="312" rx="110" ry="18" fill="#FFEAD9" stroke="#2A1512" stroke-width="3"/>
+<!-- bottom layer -->
+<rect x="70" y="230" width="160" height="78" rx="14" fill="#FFF6EE" stroke="#2A1512" stroke-width="4"/>
+<rect x="70" y="248" width="160" height="22" rx="11" fill="#FFB9C6"/>
+<!-- cream drip -->
+<path d="M70 244 Q85 270 95 244 Q105 270 115 244 Q125 268 135 244 Q145 270 155 244 Q165 268 175 244 Q185 270 195 244 Q205 268 215 244 L230 244 L230 236 L70 236 Z" fill="#fff" stroke="#2A1512" stroke-width="3.5" stroke-linejoin="round"/>
+<!-- top layer -->
+<rect x="82" y="168" width="136" height="68" rx="14" fill="#FFF6EE" stroke="#2A1512" stroke-width="4"/>
+<path d="M82 182 Q95 206 105 182 Q115 206 125 182 Q135 204 145 182 Q155 206 165 182 Q175 204 185 182 Q195 206 205 182 L218 182 L218 174 L82 174 Z" fill="#fff" stroke="#2A1512" stroke-width="3.5"/>
+<!-- cream top -->
+<ellipse cx="150" cy="168" rx="68" ry="20" fill="#fff" stroke="#2A1512" stroke-width="4"/>
+<!-- strawberries -->
+<g>
+<g transform="translate(118,118)"><path d="M0 18 C -18 0 -12 -18 0 -18 C 12 -18 18 0 0 18Z" fill="#FF2D55" stroke="#2A1512" stroke-width="3.5"/><circle cx="-5" cy="-6" r="1.8" fill="#FFEAD9"/><circle cx="4" cy="-2" r="1.8" fill="#FFEAD9"/><circle cx="-1" cy="5" r="1.8" fill="#FFEAD9"/><path d="M-8 -18 Q0 -26 8 -18 Q4 -14 0 -16 Q-4 -14 -8 -18" fill="#2F5D3A" stroke="#2A1512" stroke-width="2.5"/></g>
+<g transform="translate(150,102) scale(1.25)"><path d="M0 18 C -18 0 -12 -18 0 -18 C 12 -18 18 0 0 18Z" fill="#FF2D55" stroke="#2A1512" stroke-width="3.5"/><circle cx="-5" cy="-6" r="1.8" fill="#FFEAD9"/><circle cx="4" cy="-2" r="1.8" fill="#FFEAD9"/><circle cx="-1" cy="5" r="1.8" fill="#FFEAD9"/><path d="M-8 -18 Q0 -26 8 -18 Q4 -14 0 -16 Q-4 -14 -8 -18" fill="#2F5D3A" stroke="#2A1512" stroke-width="2.5"/></g>
+<g transform="translate(182,118)"><path d="M0 18 C -18 0 -12 -18 0 -18 C 12 -18 18 0 0 18Z" fill="#FF2D55" stroke="#2A1512" stroke-width="3.5"/><circle cx="-5" cy="-6" r="1.8" fill="#FFEAD9"/><circle cx="4" cy="-2" r="1.8" fill="#FFEAD9"/><circle cx="-1" cy="5" r="1.8" fill="#FFEAD9"/><path d="M-8 -18 Q0 -26 8 -18 Q4 -14 0 -16 Q-4 -14 -8 -18" fill="#2F5D3A" stroke="#2A1512" stroke-width="2.5"/></g>
+</g>
+<!-- side strawberries -->
+<g transform="translate(72,272)"><path d="M0 14 C -14 0 -9 -14 0 -14 C 9 -14 14 0 0 14Z" fill="#FF2D55" stroke="#2A1512" stroke-width="3"/><circle cx="-3" cy="-2" r="1.5" fill="#fff"/></g>
+<g transform="translate(228,272)"><path d="M0 14 C -14 0 -9 -14 0 -14 C 9 -14 14 0 0 14Z" fill="#FF2D55" stroke="#2A1512" stroke-width="3"/><circle cx="-3" cy="-2" r="1.5" fill="#fff"/></g>
+<!-- coffee -->
+<g transform="translate(212,40)">
+<rect x="0" y="0" width="58" height="48" rx="10" fill="#2A1512"/><rect x="6" y="6" width="46" height="22" rx="7" fill="#C89B6A"/><ellipse cx="29" cy="28" rx="12" ry="4" fill="#E8C9B5"/>
+<path d="M12 2 Q18 -8 24 2" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".8"/><path d="M30 2 Q36 -8 42 2" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".8"/>
+</g>
+</svg>
+</div>
+<div class="menu-card" id="menu">
+<div><b>Cloud Shortcake</b><span>₩9,500</span><small>signature · 300/day</small></div>
+<div><b>Berry Affogato</b><span>₩7,500</span><small>espresso + sorbet</small></div>
+<div><b>Cream Latte</b><span>₩6,800</span><small>hot / iced</small></div>
+</div>
+</div>
+<div class="count-pill" id="count">Opens in <b>09 days 04:12:10</b> — Nov 13, 11AM</div>
+</div>
+</div>
+</main>
+
+<footer class="ticker" aria-hidden="true"><div class="ticker-inner" id="ticker"><span><i>●</i>NOV 13 FRI — CLOUD SHORTCAKE DAY</span><span><i>●</i>NOV 14 SAT — LATTE ART + DJ 2–5PM</span><span><i>●</i>NOV 15 SUN — FINALE + FREE STICKERS</span><span><i>●</i>11AM–8PM · SEONGSU-RO 14-GIL</span><span><i>●</i>NOV 13 FRI — CLOUD SHORTCAKE DAY</span><span><i>●</i>NOV 14 SAT — LATTE ART + DJ 2–5PM</span><span><i>●</i>NOV 15 SUN — FINALE + FREE STICKERS</span><span><i>●</i>11AM–8PM · SEONGSU-RO 14-GIL</span></div></footer>
+</div>
+
+<div class="modal-back" id="modalBack">
+<div class="modal" role="dialog" aria-modal="true" aria-label="Reserve a slot">
+<div class="modal-head"><b>Reserve your berry hour 🍓</b><button onclick="closeModal()" aria-label="Close">✕</button></div>
+<div class="modal-body">
+<div style="font-size:14px;font-weight:800;letter-spacing:.12em">1 · PICK A DAY</div>
+<div class="slot-grid" id="dayGrid"><button class="slot active">FRI<br>Nov 13</button><button class="slot">SAT<br>Nov 14</button><button class="slot">SUN<br>Nov 15</button></div>
+<div style="font-size:14px;font-weight:800;letter-spacing:.12em">2 · PICK A TIME — 50 MIN</div>
+<div class="slot-grid" id="timeGrid"><button class="slot">11:00</button><button class="slot active">13:30</button><button class="slot">15:00</button><button class="slot">16:30</button><button class="slot">18:00</button><button class="slot">19:00</button></div>
+<label style="font-size:14px;font-weight:800;letter-spacing:.08em">3 · YOUR DETAILS<input id="nameInput" placeholder="Name + phone — e.g. Jiwon 010-1234-5678"></label>
+<button class="btn btn-big" onclick="confirmReserve()">Confirm — Pay at door ₩5,000 →</button>
+<p id="confirmMsg" style="display:none;margin-top:12px;background:#E8F5E9;border:2px solid #2F5D3A;border-radius:12px;padding:12px;font-weight:700;font-size:15px">You're in! Fri Nov 13 · 13:30 · 2 seats held for 10 min. Show this screen at 12 Seongsu-ro 14-gil 💌</p>
+<p style="font-size:13px;color:#5C3D36;margin-top:10px">Free cancellation until day before. Entry credit fully usable on cake + coffee.</p>
+</div>
+</div>
+</div>
+
+<script>
+function openModal(e){if(e)e.preventDefault();document.getElementById('modalBack').classList.add('open');}
+function closeModal(){document.getElementById('modalBack').classList.remove('open');}
+document.getElementById('modalBack').addEventListener('click',e=>{if(e.target.id==='modalBack')closeModal()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+document.querySelectorAll('.slot-grid').forEach(g=>{g.addEventListener('click',e=>{if(e.target.closest('.slot')){g.querySelectorAll('.slot').forEach(s=>s.classList.remove('active'));e.target.closest('.slot').classList.add('active');}})});
+function confirmReserve(){document.getElementById('confirmMsg').style.display='block';}
+(function(){
+const target=new Date('2026-11-13T11:00:00+09:00').getTime();
+function tick(){
+const now=Date.now();let d=Math.max(0,target-now);
+const days=Math.floor(d/864e5);d-=days*864e5;
+const h=Math.floor(d/36e5);d-=h*36e5;const m=Math.floor(d/6e4);const s=Math.floor((d-m*6e4)/1e3);
+const pad=n=>String(n).padStart(2,'0');
+document.getElementById('count').innerHTML='Opens in <b>'+pad(days)+' days '+pad(h)+':'+pad(m)+':'+pad(s)+'</b> — Nov 13, 11AM';
+}tick();setInterval(tick,1000);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LUMEN C-15 — Glass Glow in 7 Days | 30% Off Launch</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,800;9..144,900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+--paper:#FFFBF2;
+--ink:#1A1210;
+--muted:#6B5D55;
+--tangerine:#FF5C00;
+--marigold:#FFC531;
+--cream:#FFF1D9;
+--line:2.5px solid #1A1210;
+}
+html{scroll-behavior:smooth}
+body{
+font-family:"Space Grotesk",system-ui,-apple-system,sans-serif;
+font-size:18px;line-height:1.5;color:var(--ink);
+background:#E8DDC9;
+min-height:100vh;
+display:flex;flex-direction:column;align-items:center;justify-content:center;
+padding:28px 20px;
+}
+.ad{
+width:min(1160px,100%);
+background:var(--paper);
+border:var(--line);
+border-radius:30px;
+box-shadow:10px 10px 0 var(--ink);
+overflow:hidden;
+position:relative;
+}
+.insta-bar{
+display:flex;align-items:center;gap:12px;
+padding:14px 28px;
+border-bottom:var(--line);
+background:var(--paper);
+position:relative;z-index:10;
+}
+.avatar{
+width:38px;height:38px;border-radius:50%;
+background:conic-gradient(from 20deg,#FF5C00,#FFC531,#FF8FB1,#FF5C00);
+border:2px solid var(--ink);
+display:grid;place-items:center;
+font-weight:700;font-size:15px;color:#fff;
+text-shadow:0 1px 0 #000;
+flex:0 0 auto;
+}
+.insta-meta{line-height:1.2}
+.insta-meta strong{font-size:16px;display:block;letter-spacing:-.2px}
+.insta-meta span{font-size:14px;color:var(--muted)}
+.sponsored{
+margin-left:6px;font-size:12.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+border:2px solid var(--ink);border-radius:999px;padding:3px 10px;background:#fff;
+}
+.insta-icons{margin-left:auto;display:flex;gap:10px;align-items:center;color:var(--ink);font-size:20px}
+.ad-grid{
+display:grid;grid-template-columns:1.02fr .98fr;
+min-height:640px;
+}
+.copy{padding:44px 20px 36px 54px;display:flex;flex-direction:column;justify-content:center;background:var(--paper);position:relative;z-index:3}
+.eyebrow{
+display:inline-flex;align-items:center;gap:10px;
+font-size:13.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+margin-bottom:18px;
+}
+.eyebrow i{width:10px;height:10px;background:#1AA159;border-radius:50%;border:2px solid var(--ink);display:inline-block}
+h1{
+font-family:"Fraunces",serif;font-weight:900;
+font-size:clamp(40px,3.9vw,54px);
+line-height:.98;letter-spacing:-1.5px;
+margin-bottom:16px;
+text-wrap:balance;
+max-width:14ch;
+}
+h1 .glow{
+background:linear-gradient(transparent 62%, var(--marigold) 62%, var(--marigold) 94%, transparent 94%);
+padding:0 4px;
+}
+h1 .c{color:var(--tangerine)}
+.sub{font-size:19px;color:#3E332E;max-width:42ch;margin-bottom:20px}
+.price-row{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+.price-now{font-family:"Fraunces",serif;font-size:42px;font-weight:900;line-height:1}
+.price-was{font-size:20px;color:var(--muted);text-decoration:line-through}
+.cta-row{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:6px}
+.btn-buy{
+appearance:none;text-decoration:none;
+background:var(--ink);color:var(--paper);
+font-weight:700;font-size:20px;letter-spacing:-.2px;
+padding:18px 32px;border-radius:999px;border:2.5px solid var(--ink);
+display:inline-flex;align-items:center;gap:12px;
+box-shadow:5px 5px 0 var(--tangerine);
+transition:transform .18s ease, box-shadow .18s ease;
+}
+.btn-buy:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 var(--tangerine)}
+.btn-buy:focus-visible{outline:4px solid var(--tangerine);outline-offset:3px}
+.btn-buy .arrow{background:var(--marigold);color:var(--ink);width:32px;height:32px;border-radius:50%;display:grid;place-items:center;font-size:20px}
+.guarantee{font-size:16px;color:var(--muted);line-height:1.4;max-width:22ch}
+.guarantee strong{color:var(--ink)}
+.trust{display:flex;align-items:center;gap:14px;margin-top:24px;padding-top:20px;border-top:2px dashed #C9BBA8}
+.faces{display:flex}
+.faces b{width:36px;height:36px;border-radius:50%;border:2px solid var(--ink);display:grid;place-items:center;font-size:13px;color:#fff;margin-left:-10px}
+.faces b:first-child{margin:0}
+.trust p{font-size:16px;line-height:1.35}
+.stars{color:#B86A00;letter-spacing:2px;font-size:16px}
+/* VISUAL — simplified solid + dominant silhouette + motion */
+.visual{
+position:relative;
+background:#FF5C00;
+border-left:var(--line);
+display:flex;align-items:center;justify-content:center;
+padding:56px 30px 72px;
+overflow:hidden;
+}
+.beam{
+position:absolute;top:50%;left:-15%;width:130%;height:112px;
+background:var(--marigold);
+border-top:3px solid var(--ink);border-bottom:3px solid var(--ink);
+transform:translateY(-50%) rotate(-14deg);
+z-index:1;
+}
+.halo{
+position:absolute;z-index:1;
+width:430px;height:430px;border-radius:50%;
+background:var(--cream);
+border:3px solid var(--ink);
+top:50%;left:50%;transform:translate(-50%,-54%);
+box-shadow:8px 8px 0 rgba(26,18,16,1);
+}
+.hero-wrap{position:relative;z-index:3;display:flex;flex-direction:column;align-items:center;}
+.bottle{
+width:318px;max-width:72vw;
+filter:drop-shadow(0 22px 18px rgba(60,20,0,.38));
+transform:rotate(-2.5deg);
+animation:float 4.5s ease-in-out infinite;
+}
+@keyframes float{0%,100%{transform:translateY(0) rotate(-2.5deg)}50%{transform:translateY(-12px) rotate(-1deg)}}
+.ground-shadow{width:220px;height:22px;background:#5A1E00;opacity:.35;border-radius:50%;filter:blur(6px);margin-top:-8px;}
+.value-tag{
+margin-top:14px;
+background:#fff;border:2.5px solid var(--ink);border-radius:16px;
+box-shadow:5px 5px 0 var(--ink);
+padding:10px 18px;text-align:center;line-height:1.25;
+transform:rotate(-1deg);
+}
+.value-tag strong{font-size:18px;display:block;letter-spacing:-.2px}
+.value-tag strong em{font-style:normal;background:var(--marigold);padding:1px 8px;border-radius:999px;border:2px solid var(--ink);white-space:nowrap}
+.value-tag span{font-size:16px;font-weight:700}
+.value-tag s{color:var(--muted);font-weight:500;margin-left:6px}
+.badge{
+position:absolute;z-index:5;
+left:22px;top:22px;
+width:168px;height:168px;
+background:var(--marigold);
+border:3px solid var(--ink);
+border-radius:50%;
+display:grid;place-items:center;text-align:center;
+transform:rotate(-12deg);
+box-shadow:6px 6px 0 var(--ink);
+}
+.badge::before{content:"";position:absolute;inset:11px;border:2px dashed var(--ink);border-radius:50%}
+.badge div{line-height:1}
+.badge strong{display:block;font-family:"Fraunces",serif;font-size:44px;font-weight:900;letter-spacing:-1px}
+.badge small{display:block;font-size:12.5px;font-weight:700;letter-spacing:.12em}
+.drop{position:absolute;z-index:3}
+.drop .d{
+display:block;border:2.5px solid var(--ink);background:linear-gradient(180deg,#FFE9A8,#FFB800);
+border-radius:50% 50% 50% 50% / 60% 60% 40% 40%;
+box-shadow:3px 3px 0 var(--ink);
+}
+.drop .trail{display:block;height:5px;background:var(--ink);border-radius:999px;margin-top:8px;opacity:.9}
+.drop-1{right:64px;top:148px;transform:rotate(14deg);animation:float 3.8s ease-in-out infinite}
+.drop-1 .d{width:34px;height:44px;border-radius:50% 50% 50% 50% / 55% 55% 45% 45%;clip-path:none;}
+.drop-2{left:52px;bottom:168px;animation:float 5s ease-in-out infinite}
+.drop-2 .d{width:26px;height:32px}
+.drop-2 .trail{width:52px;margin-left:-12px}
+.micro{
+position:absolute;z-index:4;right:22px;top:52%;
+background:var(--paper);border:2.5px solid var(--ink);border-radius:999px;
+font-size:14.5px;font-weight:700;padding:8px 14px 8px 10px;
+display:flex;align-items:center;gap:8px;
+box-shadow:4px 4px 0 var(--ink);
+transform:rotate(3deg);
+white-space:nowrap;
+}
+.micro i{width:28px;height:28px;border-radius:50%;background:#1AA159;border:2px solid var(--ink);display:grid;place-items:center;color:#fff;font-style:normal}
+.micro::before{
+content:"";position:absolute;left:-38px;top:50%;width:38px;height:2.5px;background:var(--ink);
+}
+.micro::after{content:"";position:absolute;left:-44px;top:50%;width:10px;height:10px;background:#fff;border:2.5px solid var(--ink);border-radius:50%;transform:translateY(-50%)}
+.proof-bar{
+position:absolute;left:0;right:0;bottom:0;z-index:5;
+background:var(--ink);color:var(--paper);
+font-size:13.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+padding:12px 18px;text-align:center;white-space:nowrap;overflow:hidden;
+}
+.proof-bar b{color:var(--marigold)}
+.page-note{margin-top:14px;font-size:13.5px;color:#5B4F48;letter-spacing:.02em;text-align:center}
+@media(max-width:940px){
+body{padding:16px 12px}
+.ad-grid{grid-template-columns:1fr}
+.visual{border-left:none;border-top:var(--line);order:-1;min-height:640px;padding-top:84px;padding-bottom:84px}
+.badge{left:18px;top:18px;width:142px;height:142px}
+.badge strong{font-size:36px}
+.copy{padding:30px 24px 32px}
+.micro{right:12px;top:auto;bottom:64px}
+}
+@media(prefers-reduced-motion:reduce){.bottle,.drop-1,.drop-2{animation:none}.btn-buy{transition:none}}
+</style>
+</head>
+<body>
+<main class="ad" aria-label="Sponsored Instagram post for Lumen Vitamin C serum">
+<div class="insta-bar">
+<div class="avatar" aria-hidden="true">L</div>
+<div class="insta-meta"><strong>lumen.skin <span>• Follow</span></strong><span>Original audio • Sponsored</span></div>
+<span class="sponsored">Ad</span>
+<div class="insta-icons" aria-hidden="true">♡ &nbsp; ✈ &nbsp; 🔖 &nbsp; ⋯ </div>
+</div>
+<div class="ad-grid">
+<section class="copy" aria-labelledby="headline">
+<div class="eyebrow"><i></i> New drop — C-15 Concentrate</div>
+<h1 id="headline">Get glass-like glow in 7 days with 15% pure vitamin&nbsp;C<span class="c">.</span></h1>
+<p class="sub">Lightweight daily serum that fades dark spots, evens tone and layers perfectly under SPF — no sting, no stickiness.</p>
+<div class="price-row" aria-label="Launch pricing">
+<span class="price-now">$42.00</span>
+<span class="price-was">$60.00</span>
+</div>
+<div class="cta-row">
+<a class="btn-buy" href="#" aria-label="Buy Lumen C-15 now for 42 dollars, 30 percent off">Buy now <span class="arrow" aria-hidden="true">→</span></a>
+<p class="guarantee"><strong>30-day glow guarantee.</strong><br>Launch offer ends Sunday.</p>
+</div>
+<div class="trust">
+<div class="faces" aria-hidden="true"><b style="background:#1A1210">AK</b><b style="background:#FF5C00">JM</b><b style="background:#1AA159">RS</b><b style="background:#6C4DFF">TP</b></div>
+<p><span class="stars" aria-hidden="true">★★★★★</span><br><strong>4.9 — 12,400+ glowy reviews.</strong> Dermatologist tested for sensitive skin.</p>
+</div>
+</section>
+<section class="visual" aria-label="Lumen C-15 serum bottle">
+<div class="beam" aria-hidden="true"></div>
+<div class="halo" aria-hidden="true"></div>
+<div class="badge" role="note" aria-label="30 percent off launch offer"><div><small>LAUNCH</small><strong>30%</strong><small>OFF ★</small></div></div>
+<div class="drop drop-1" aria-hidden="true"><span class="d"></span><span class="trail" style="width:58px"></span></div>
+<div class="drop drop-2" aria-hidden="true"><span class="d"></span><span class="trail"></span></div>
+<div class="micro" aria-hidden="true"><i>✓</i> stays potent to last drop</div>
+<div class="hero-wrap">
+<svg class="bottle" viewBox="0 0 280 440" role="img" aria-label="Amber glass serum bottle labeled Lumen C-15">
+<defs>
+<linearGradient id="liq" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFB800"/><stop offset=".55" stop-color="#FF8A00"/><stop offset="1" stop-color="#FF5C00"/></linearGradient>
+<linearGradient id="glas" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#FFE9BE"/><stop offset=".5" stop-color="#FFF7E6"/><stop offset="1" stop-color="#FFD99A"/></linearGradient>
+</defs>
+<ellipse cx="140" cy="414" rx="72" ry="12" fill="#7A2E00" opacity=".22"/>
+<rect x="90" y="18" width="100" height="82" rx="20" fill="#1A1210" stroke="#1A1210" stroke-width="4"/>
+<rect x="106" y="36" width="8" height="46" rx="4" fill="#3D2F29"/>
+<rect x="122" y="36" width="8" height="46" rx="4" fill="#3D2F29"/>
+<rect x="138" y="36" width="8" height="46" rx="4" fill="#3D2F29"/>
+<rect x="154" y="36" width="8" height="46" rx="4" fill="#3D2F29"/>
+<rect x="111" y="100" width="58" height="20" rx="6" fill="#1A1210"/>
+<path d="M111 120 L86 156 H194 L169 120 Z" fill="url(#glas)" stroke="#1A1210" stroke-width="5" stroke-linejoin="round"/>
+<rect x="60" y="152" width="160" height="256" rx="34" fill="url(#glas)" stroke="#1A1210" stroke-width="5"/>
+<rect x="73" y="200" width="134" height="192" rx="22" fill="url(#liq)"/>
+<rect x="85" y="214" width="18" height="152" rx="9" fill="#fff" opacity=".92"/>
+<circle cx="182" cy="230" r="10" fill="#fff" opacity=".9"/>
+<circle cx="182" cy="252" r="6" fill="#fff" opacity=".8"/>
+<rect x="60" y="236" width="160" height="116" fill="#FFFBF2" stroke="#1A1210" stroke-width="5"/>
+<text x="140" y="259" text-anchor="middle" font-family="Space Grotesk,sans-serif" font-size="11" font-weight="700" letter-spacing="3.5" fill="#1A1210">LUMEN</text>
+<text x="140" y="300" text-anchor="middle" font-family="Fraunces,serif" font-size="48" font-weight="900" fill="#1A1210">C-15</text>
+<text x="140" y="323" text-anchor="middle" font-family="Space Grotesk,sans-serif" font-size="10.5" font-weight="700" letter-spacing="1.8" fill="#FF5C00">VITAMIN C SERUM</text>
+<text x="140" y="337" text-anchor="middle" font-family="Space Grotesk,sans-serif" font-size="9" letter-spacing=".6" fill="#6B5D55">30 ml — 1.0 fl oz</text>
+</svg>
+<div class="ground-shadow" aria-hidden="true"></div>
+<div class="value-tag" aria-label="Fades dark spots in 7 days, launch price 42 dollars was 60 dollars"><strong>Fades dark spots in 7 days — <em>$42 today</em></strong><span>Launch price <s>$60.00</s></span></div>
+</div>
+<div class="proof-bar" aria-hidden="true">15% VIT C <b>•</b> VIT E + FERULIC <b>•</b> NO STING <b>•</b> VEGAN</div>
+</section>
+</div>
+</main>
+<p class="page-note">LUMEN C-15 launch creative • 1080 × 1080 safe zone • 30% off ends Sunday</p>
+</body>
+</html>

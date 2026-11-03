@@ -1,0 +1,312 @@
+{
+ "brief": "First onboarding screen (web preview 1280x800) of a fractional-shares investing app. One-line core value, 'start from $1', '3-minute sign-up' CTA, trust and safety signals.",
+ "kind": "app",
+ "baseline": {
+  "round": 0,
+  "accepted": true,
+  "ui_score": 0.6466912769020876,
+  "brain_only": 0.442,
+  "judge": 0.861,
+  "changes": [],
+  "sourced": [],
+  "diagnosis": [
+   "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+   "Place areas (PPA/RSC) dominate: the background scene swallows the message",
+   "Reward circuit (OFC/vmPFC) is on but the appeal head is average: value is felt but what is good isn't legible"
+  ]
+ },
+ "best_round": 2,
+ "best": {
+  "round": 2,
+  "ui_score": 0.6813680524687961,
+  "heads": {
+   "aesthetic": {
+    "score": 0.42487844824790955,
+    "percentile": 42.292225201072384,
+    "confidence": 0.1502431035041809,
+    "top": "▼ L_a24, ▲ L_31a"
+   },
+   "attention": {
+    "score": 0.565999448299408,
+    "percentile": 62.465753424657535,
+    "confidence": 0.13199889659881592,
+    "top": "▲ 움직임·형태 평균, ▲ 움직임·형태 최대"
+   }
+  },
+  "judge": {
+   "aesthetic": 0.889,
+   "clarity": 0.889,
+   "attention": 0.667,
+   "brief_fit": 1.0,
+   "judge_score": 0.861,
+   "reason": "Polished on-brief screen nails value, $1 entry, and trust, with only minor crowding diluting the single focal point."
+  },
+  "brain_only": 0.524,
+  "critique": {
+   "kind": "app",
+   "ranking": [
+    [
+     "scene_place",
+     1.1900991391909461
+    ],
+    [
+     "value_vmpfc",
+     0.7987371510070558
+    ],
+    [
+     "control_dlpfc",
+     0.47164137037545756
+    ],
+    [
+     "attention_dorsal",
+     0.33841175737668644
+    ],
+    [
+     "visual_early",
+     -0.03458845722083448
+    ],
+    [
+     "language",
+     -0.14475909873904905
+    ],
+    [
+     "face_body",
+     -0.21308197719995736
+    ],
+    [
+     "default_mode",
+     -0.26645922599754196
+    ],
+    [
+     "visual_motion",
+     -2.1400006587927605
+    ]
+   ],
+   "hook": {
+    "attention_early": 0.42701799038067684,
+    "attention_late": 0.29410864087469124,
+    "visual_early": 0.5653718192640161,
+    "visual_late": -0.3345685954632598
+   },
+   "diagnosis": [
+    "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+    "Place areas (PPA/RSC) dominate: the background scene swallows the message",
+    "Reward circuit (OFC/vmPFC) is on but the appeal head is average: value is felt but what is good isn't legible"
+   ],
+   "directives": [
+    "Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion.",
+    "Simplify the environment: crop or blur the scene, put copy on a solid panel, let one subject own the frame.",
+    "Name the value explicitly next to what the eye lands on: one benefit line + price/offer under the hero, nothing else competing."
+   ],
+   "cited_areas": [
+    "▼ L affect, conflict (a24) [aesthetic]",
+    "▲ L 31a [aesthetic]",
+    "▲ object shape & motion (MT/LO) mean [attention]",
+    "▲ object shape & motion (MT/LO) max [attention]"
+   ],
+   "groups": [
+    "visual_motion",
+    "scene_place",
+    "value_vmpfc"
+   ],
+   "prompt_block": "BRAIN CRITIQUE (TRIBE v2 predicted human cortex while looking at the last render; values are relative within this image):\n- most driven regions: places & scenes (PPA/RSC) +1.19, reward & value (OFC/vmPFC) +0.80, cognitive control (dlPFC) +0.47; least: default mode (mind-wandering) -0.27, object shape & motion (MT/LO) -2.14\n- first-2s hook vs later: attention +0.43 → +0.29, visual drive +0.57 → -0.33\n- areas the aesthetic head cites: ▼ L affect, conflict (a24) [aesthetic]; ▲ L 31a [aesthetic]; ▲ object shape & motion (MT/LO) mean [attention]; ▲ object shape & motion (MT/LO) max [attention]\n- diagnosis: Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette / Place areas (PPA/RSC) dominate: the background scene swallows the message / Reward circuit (OFC/vmPFC) is on but the appeal head is average: value is felt but what is good isn't legible\n- DO NEXT (highest priority first): (1) Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion. (2) Simplify the environment: crop or blur the scene, put copy on a solid panel, let one subject own the frame. (3) Name the value explicitly next to what the eye lands on: one benefit line + price/offer under the hero, nothing else competing."
+  }
+ },
+ "rounds": [
+  {
+   "round": 0,
+   "accepted": true,
+   "ui_score": 0.6466912769020876,
+   "brain_only": 0.442,
+   "judge": 0.861,
+   "changes": [],
+   "sourced": [],
+   "diagnosis": [
+    "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+    "Place areas (PPA/RSC) dominate: the background scene swallows the message",
+    "Reward circuit (OFC/vmPFC) is on but the appeal head is average: value is felt but what is good isn't legible"
+   ]
+  },
+  {
+   "round": 1,
+   "accepted": false,
+   "ui_score": 0.622730125860069,
+   "brain_only": 0.443,
+   "judge": 0.806,
+   "changes": [
+    {
+     "issue": "object-shape and motion low",
+     "change": "Removed floating cards/coin/orbs; enlarged phone as single dominant silhouette on rotated lime slab diagonal to imply motion with attached $1 badge"
+    },
+    {
+     "issue": "place areas dominate",
+     "change": "Simplified right panel to solid pine with no dots/glows/gradients or floating elements; copy stays on solid panel, phone owns frame"
+    },
+    {
+     "issue": "reward appeal legibility",
+     "change": "Added single benefit + price/offer caption directly under phone hero with nothing else competing"
+    }
+   ],
+   "sourced": [],
+   "diagnosis": [
+    "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+    "Place areas (PPA/RSC) dominate: the background scene swallows the message",
+    "Reward circuit (OFC/vmPFC) is on but the appeal head is average: value is felt but what is good isn't legible",
+    "Attention drops after the first 2 s (+0.48 → +0.33): nothing to look at after the first impression"
+   ]
+  },
+  {
+   "round": 2,
+   "accepted": true,
+   "ui_score": 0.6813680524687961,
+   "brain_only": 0.524,
+   "judge": 0.861,
+   "changes": [
+    {
+     "issue": "object-shape and motion low",
+     "change": "Removed competing floats/coin/orbs, enlarged phone to single dominant silhouette with lime offset shadow on a diagonal lime slash implying motion"
+    },
+    {
+     "issue": "place areas dominate",
+     "change": "Simplified right panel to solid pine with one diagonal, removed dot texture gradients and top badges so phone owns the frame"
+    },
+    {
+     "issue": "reward appeal not legible",
+     "change": "Added single benefit + price line directly under phone hero, removed all other competing captions"
+    }
+   ],
+   "sourced": [],
+   "diagnosis": [
+    "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+    "Place areas (PPA/RSC) dominate: the background scene swallows the message",
+    "Reward circuit (OFC/vmPFC) is on but the appeal head is average: value is felt but what is good isn't legible"
+   ]
+  },
+  {
+   "round": 3,
+   "accepted": false,
+   "ui_score": 0.6256915976200014,
+   "brain_only": 0.45,
+   "judge": 0.806,
+   "changes": [
+    {
+     "issue": "objectshapeloandmotionmtarea",
+     "change": "Enlarged phone to 360px dominant silhouette, tilted -3deg, added bold double lime diagonal + floating $1 coin and owned-chip with float animation for motion"
+    },
+    {
+     "issue": "placeareaspparscdominate",
+     "change": "Simplified right to flat pine vignette with one centered subject; removed donut chart clutter so phone owns frame and copy sits on solid paper panel"
+    },
+    {
+     "issue": "rewardcircuitofcvmpfcisonbut",
+     "change": "Made hero-offer the single benefit+price line under phone ($25 = real AAPL, $0 fee) and stripped competing visuals; kept left value as sole benefit line"
+    }
+   ],
+   "sourced": [],
+   "diagnosis": [
+    "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+    "Place areas (PPA/RSC) dominate: the background scene swallows the message",
+    "Reward circuit (OFC/vmPFC) is on but the appeal head is average: value is felt but what is good isn't legible"
+   ]
+  },
+  {
+   "round": 4,
+   "accepted": false,
+   "ui_score": 0.6377569736998691,
+   "brain_only": 0.424,
+   "judge": 0.861,
+   "changes": [
+    {
+     "issue": "objectshapeloandmotionmtarea",
+     "change": "Added dominant object silhouette: large lime halo disc behind phone + coral $1 coin badge, single translucent motion slash"
+    },
+    {
+     "issue": "placeareaspparscdominate",
+     "change": "Simplified right to flat pine with one centered subject; removed donut chart and second holding, phone is sole object"
+    },
+    {
+     "issue": "rewardcircuitofcvmpfcisonbut",
+     "change": "Made hero-offer the single benefit+price line under phone ($25 = real AAPL, $0 fee) with simplified phone interior"
+    }
+   ],
+   "sourced": [],
+   "diagnosis": [
+    "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+    "Place areas (PPA/RSC) dominate: the background scene swallows the message",
+    "Reward circuit (OFC/vmPFC) is on but the appeal head is average: value is felt but what is good isn't legible"
+   ]
+  },
+  {
+   "round": 5,
+   "accepted": false,
+   "ui_score": 0.6703860699294308,
+   "brain_only": 0.498,
+   "judge": 0.861,
+   "changes": [
+    {
+     "issue": "object-shape and motion low",
+     "change": "Replaced center slash with cropped 620px lime disc bleeding off right edge + top-edge diagonal motion bar + coral $1 coin silhouette; phone straight-on as single dominant device object"
+    },
+    {
+     "issue": "place areas dominate",
+     "change": "Narrowed right to solid flat pine, removed donut/legend/second holding clutter so one phone owns frame; copy stays on solid paper panel"
+    },
+    {
+     "issue": "reward appeal legibility",
+     "change": "Simplified phone to single AAPL holding + slider; hero-offer below phone is sole benefit+price line synced live to slider, no competing pills"
+    }
+   ],
+   "sourced": [],
+   "diagnosis": [
+    "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+    "Place areas (PPA/RSC) dominate: the background scene swallows the message",
+    "Reward circuit (OFC/vmPFC) is on but the appeal head is average: value is felt but what is good isn't legible"
+   ]
+  }
+ ],
+ "ledger": [
+  {
+   "id": "objectshapeloandmotionmtarea",
+   "text": "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+   "directive": "Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion.",
+   "group": "visual_motion",
+   "z_opened": -2.0298885392952166,
+   "opened": 0,
+   "resolved": null,
+   "attempts": 5,
+   "tried": [
+    "r3: Enlarged phone to 360px dominant silhouette, tilted -3deg, added bold double lime diagonal",
+    "r4: Added dominant object silhouette: large lime halo disc behind phone + coral $1 coin badge,"
+   ]
+  },
+  {
+   "id": "placeareaspparscdominate",
+   "text": "Place areas (PPA/RSC) dominate: the background scene swallows the message",
+   "directive": "Simplify the environment: crop or blur the scene, put copy on a solid panel, let one subject own the frame.",
+   "group": "scene_place",
+   "z_opened": 1.200988377030655,
+   "opened": 0,
+   "resolved": null,
+   "attempts": 5,
+   "tried": [
+    "r3: Simplified right to flat pine vignette with one centered subject; removed donut chart clut",
+    "r4: Simplified right to flat pine with one centered subject; removed donut chart and second ho"
+   ]
+  },
+  {
+   "id": "rewardcircuitofcvmpfcisonbut",
+   "text": "Reward circuit (OFC/vmPFC) is on but the appeal head is average: value is felt but what is good isn't legible",
+   "directive": "Name the value explicitly next to what the eye lands on: one benefit line + price/offer under the hero, nothing else competing.",
+   "group": "value_vmpfc",
+   "z_opened": 0.7747109614842623,
+   "opened": 0,
+   "resolved": null,
+   "attempts": 5,
+   "tried": [
+    "r3: Made hero-offer the single benefit+price line under phone ($25 = real AAPL, $0 fee) and st",
+    "r4: Made hero-offer the single benefit+price line under phone ($25 = real AAPL, $0 fee) with s"
+   ]
+  }
+ ],
+ "assets": []
+}

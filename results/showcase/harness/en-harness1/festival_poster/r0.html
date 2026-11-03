@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nocturne Brass — November Jazz Festival · Nov 20–22 Chicago</title>
+<meta name="description" content="Three nights, five acts, one brass-soaked room. Early-bird 3-night passes $89.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;0,9..144,900;1,9..144,700;1,9..144,900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+ --ink:#070714;
+ --ink2:#111123;
+ --cream:#FFF6E6;
+ --cream-dim:rgba(255,246,230,.72);
+ --gold:#FFC75F;
+ --gold2:#FF9A3D;
+ --gold-pale:#FFE9A8;
+ --neon:#FF4D6D;
+ --mint:#2DE1C2;
+ --line:rgba(255,199,95,.22);
+}
+html{scroll-behavior:smooth}
+body{
+ background:var(--ink);
+ color:var(--cream);
+ font-family:"Space Grotesk",system-ui,sans-serif;
+ font-size:17px;line-height:1.55;
+ min-height:100vh;
+ overflow-x:hidden;
+ -webkit-font-smoothing:antialiased;
+}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--mint);outline-offset:3px;border-radius:6px}
+.bg{position:fixed;inset:0;z-index:0;pointer-events:none;
+ background:
+  radial-gradient(700px 500px at 78% 18%, rgba(255,77,109,.28), transparent 65%),
+  radial-gradient(800px 600px at 62% 55%, rgba(255,154,61,.22), transparent 60%),
+  radial-gradient(900px 700px at 15% 90%, rgba(45,225,194,.10), transparent 60%),
+  radial-gradient(1200px 800px at 50% -10%, #242452 0%, #121226 45%, #070714 78%);
+}
+.bg:after{content:"";position:absolute;inset:0;opacity:.09;mix-blend-mode:overlay;
+ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.9'/%3E%3C/svg%3E");
+}
+.shell{position:relative;z-index:1;max-width:1280px;margin:0 auto;min-height:100vh;display:flex;flex-direction:column;padding:22px 32px 0}
+/* TOP BAR */
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:10px 4px 18px;border-bottom:1px solid rgba(255,246,230,.12)}
+.brand{display:flex;align-items:center;gap:12px;font-weight:700;letter-spacing:.14em;font-size:14px}
+.brand-mark{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;
+ background:linear-gradient(135deg,var(--gold-pale),var(--gold) 45%,#8A4A0F);
+ color:#1A0F00;font-size:20px;box-shadow:0 0 18px rgba(255,199,95,.7),0 0 42px rgba(255,77,109,.35)}
+.brand small{display:block;font-weight:500;letter-spacing:.22em;font-size:11px;color:var(--cream-dim)}
+.nav{display:flex;gap:26px;font-size:13.5px;letter-spacing:.18em;font-weight:600;color:var(--cream-dim)}
+.nav a{text-decoration:none;border-bottom:1px solid transparent;padding-bottom:2px}
+.nav a:hover{color:var(--gold)}
+.top-right{display:flex;align-items:center;gap:14px}
+.date-pill{font-size:13px;letter-spacing:.14em;font-weight:700;border:1px solid var(--line);padding:8px 14px;border-radius:100px;background:rgba(255,199,95,.08);white-space:nowrap}
+.date-pill b{color:var(--gold)}
+.mini-cta{background:var(--cream);color:#140A14;font-weight:700;text-decoration:none;font-size:14px;padding:10px 18px;border-radius:100px;white-space:nowrap}
+.mini-cta:hover{background:var(--gold)}
+/* HERO */
+.hero{flex:1;display:grid;grid-template-columns:1.04fr .96fr;gap:36px;align-items:stretch;padding:28px 4px 0}
+.copy{padding:10px 10px 18px 0;display:flex;flex-direction:column;justify-content:center}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:13px;letter-spacing:.2em;font-weight:700;color:#1A0F00;background:linear-gradient(90deg,var(--gold-pale),var(--gold));padding:9px 15px;border-radius:100px;width:fit-content;box-shadow:0 4px 24px rgba(255,199,95,.35)}
+.dot{width:9px;height:9px;border-radius:50%;background:#B11A35;box-shadow:0 0 0 4px rgba(177,26,53,.2);animation:pulse 1.8s infinite}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.35)}}
+h1{font-family:"Fraunces",serif;font-weight:900;line-height:.88;letter-spacing:-.02em;margin:20px 0 14px;font-size:clamp(64px,7.2vw,108px);text-transform:uppercase}
+h1 .row{display:block}
+h1 .outline{color:transparent;-webkit-text-stroke:2px var(--cream);font-style:italic;font-weight:700;letter-spacing:.01em}
+h1 .brass{background:linear-gradient(92deg,#FFF4C2 0%,var(--gold) 28%,var(--gold2) 55%,var(--neon) 88%);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 22px rgba(255,154,61,.45)) drop-shadow(0 0 44px rgba(255,77,109,.3))}
+h1 .year{font-family:"Space Grotesk";font-size:18px;letter-spacing:.32em;vertical-align:super;-webkit-text-stroke:0;color:var(--mint);font-weight:700}
+.lede{max-width:520px;color:var(--cream-dim);font-size:18px;line-height:1.6}
+.lede strong{color:var(--cream);font-weight:600}
+/* LINEUP */
+.lineup{list-style:none;margin:22px 0 6px;border-top:1px solid rgba(255,246,230,.14);max-width:560px}
+.lineup li{display:grid;grid-template-columns:44px 1fr auto;gap:14px;align-items:center;padding:11px 10px 11px 6px;border-bottom:1px solid rgba(255,246,230,.14);border-radius:10px;transition:.2s}
+.lineup li:hover{background:rgba(255,199,95,.07);transform:translateX(4px)}
+.num{font-family:"Fraunces";font-style:italic;font-weight:700;color:var(--gold);font-size:18px;opacity:.95}
+.act-name{font-weight:700;font-size:17px;line-height:1.25;display:block}
+.act-sub{font-size:14.5px;color:var(--cream-dim);letter-spacing:.02em;display:block;margin-top:1px}
+.act-sub em{color:var(--mint);font-style:normal;font-weight:600;letter-spacing:.08em;font-size:12px;border:1px solid rgba(45,225,194,.35);padding:2px 8px;border-radius:100px;margin-right:8px}
+.time{text-align:right;font-size:13px;font-weight:700;letter-spacing:.08em;line-height:1.4}
+.time span{display:block;color:var(--gold);font-size:13px}
+.time i{font-style:normal;color:var(--cream-dim);font-weight:500}
+/* CTA */
+.cta-row{display:flex;gap:18px;align-items:center;margin-top:20px;flex-wrap:wrap}
+.btn-main{display:inline-flex;align-items:center;gap:12px;background:linear-gradient(180deg,#FFE9A8 0%,var(--gold) 45%,var(--gold2) 100%);color:#1E0E00;font-weight:800;font-size:18px;letter-spacing:.01em;text-decoration:none;padding:17px 26px;border-radius:16px;box-shadow:0 8px 32px rgba(255,154,61,.45),0 0 0 1px rgba(255,255,255,.4) inset;transition:.2s}
+.btn-main:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(255,77,109,.45)}
+.btn-main .arrow{background:#1A0F00;color:var(--gold);width:32px;height:32px;border-radius:50%;display:grid;place-items:center;font-size:18px}
+.btn-ghost{color:var(--cream);text-decoration:none;font-weight:600;font-size:16px;border-bottom:2px solid var(--neon);padding-bottom:3px}
+.cta-meta{margin-top:14px;max-width:520px}
+.bar{height:8px;background:rgba(255,246,230,.14);border-radius:100px;overflow:hidden;margin:10px 0 8px}
+.bar-fill{width:78%;height:100%;background:linear-gradient(90deg,var(--mint),var(--gold),var(--neon));border-radius:100px;box-shadow:0 0 12px rgba(255,77,109,.7)}
+.cta-meta p{font-size:14.5px;color:var(--cream-dim)}
+.cta-meta p b{color:var(--gold)}
+.proof{display:flex;align-items:center;gap:12px;margin-top:16px;font-size:14.5px;color:var(--cream-dim)}
+.avatars{display:flex}
+.avatars span{width:32px;height:32px;border-radius:50%;border:2px solid var(--ink);margin-left:-8px;display:grid;place-items:center;font-size:13px;font-weight:700;color:#1A0F00}
+.avatars span:first-child{margin-left:0}
+/* ART */
+.art{position:relative;display:flex;align-items:center;justify-content:center;padding:6px 0 18px}
+.arch-wrap{position:relative;width:min(480px,100%)}
+.lights{display:flex;justify-content:space-between;padding:0 36px;margin-bottom:-14px;z-index:3;position:relative}
+.lights i{width:11px;height:11px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#fff,var(--gold) 55%,#7A3B00);box-shadow:0 0 10px var(--gold),0 0 22px rgba(255,154,61,.8);animation:twinkle 2.2s infinite}
+.lights i:nth-child(even){animation-delay:.6s;background:radial-gradient(circle at 30% 30%,#fff,var(--neon) 60%,#6B0820);box-shadow:0 0 10px var(--neon),0 0 22px rgba(255,77,109,.8)}
+.lights i:nth-child(3n){animation-delay:1.1s}
+@keyframes twinkle{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.55;transform:scale(.8)}}
+.arch{border-radius:240px 240px 22px 22px;padding:14px;background:linear-gradient(180deg,rgba(255,199,95,.35),rgba(255,77,109,.18));border:1px solid rgba(255,199,95,.5);box-shadow:0 0 0 10px rgba(7,7,20,.6),0 0 60px rgba(255,77,109,.25)}
+.arch-inner{border-radius:226px 226px 14px 14px;background:radial-gradient(420px 320px at 50% 28%, #3B1E4A 0%, #191331 42%, #0A0A1C 72%);border:2px solid var(--gold);overflow:hidden;position:relative;min-height:560px;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding-top:36px;box-shadow:inset 0 0 80px rgba(0,0,0,.7)}
+.moon{width:300px;height:300px;border-radius:50%;background:radial-gradient(circle at 35% 30%, #FFF6C8 0%, #FFD87A 18%, #FF9A3D 48%, #7A2100 78%, #1A0A1A 100%);box-shadow:0 0 40px rgba(255,199,95,.8),0 0 110px rgba(255,77,109,.55),0 0 200px rgba(255,154,61,.3);position:relative;display:grid;place-items:center;margin-top:18px}
+.moon:after{content:"";position:absolute;inset:18px;border-radius:50%;border:1px dashed rgba(26,10,0,.45)}
+.trumpet{width:86%;filter:drop-shadow(0 6px 12px rgba(0,0,0,.55)) drop-shadow(0 0 18px rgba(255,77,109,.6));transform:rotate(-8deg)}
+.waves{position:absolute;right:18px;top:46%;display:flex;gap:6px;align-items:center}
+.waves span{border:2px solid var(--neon);border-left:0;border-top-right-radius:100px;border-bottom-right-radius:100px;opacity:.9;box-shadow:0 0 12px var(--neon)}
+.waves span:nth-child(1){width:22px;height:44px}
+.waves span:nth-child(2){width:32px;height:68px;opacity:.7}
+.waves span:nth-child(3){width:44px;height:96px;opacity:.45}
+.note{position:absolute;font-size:28px;color:var(--gold-pale);text-shadow:0 0 14px var(--neon),0 0 30px rgba(255,77,109,.6);animation:float 4s ease-in-out infinite}
+.n1{left:18%;top:18%}.n2{right:20%;top:14%;animation-delay:1s;color:var(--mint);font-size:22px}.n3{left:12%;top:52%;animation-delay:2s;font-size:20px}
+@keyframes float{0%,100%{transform:translateY(0) rotate(-6deg)}50%{transform:translateY(-14px) rotate(8deg)}}
+.stage-floor{margin-top:auto;width:100%;background:linear-gradient(180deg,rgba(0,0,0,0) 0%,rgba(0,0,0,.72) 35%);padding:18px 20px 18px;text-align:center}
+.eq{display:flex;gap:5px;justify-content:center;align-items:end;height:42px;margin-bottom:12px}
+.eq b{width:9px;border-radius:4px;background:linear-gradient(180deg,var(--mint),var(--gold),var(--neon));box-shadow:0 0 10px rgba(255,77,109,.6);animation:eq 1.1s ease-in-out infinite}
+.eq b:nth-child(1){height:70%}.eq b:nth-child(2){height:100%;animation-delay:.15s}.eq b:nth-child(3){height:55%;animation-delay:.3s}.eq b:nth-child(4){height:90%;animation-delay:.45s}.eq b:nth-child(5){height:60%;animation-delay:.6s}.eq b:nth-child(6){height:95%;animation-delay:.75s}.eq b:nth-child(7){height:50%;animation-delay:.9s}.eq b:nth-child(8){height:78%;animation-delay:1s}
+@keyframes eq{0%,100%{transform:scaleY(.6)}50%{transform:scaleY(1)}}
+.live{font-size:12px;letter-spacing:.28em;font-weight:700;color:var(--mint)}
+.live i{font-style:normal;background:var(--neon);color:white;border-radius:4px;padding:2px 7px;margin-right:8px;letter-spacing:.14em;box-shadow:0 0 14px var(--neon);animation:pulse 1.6s infinite;display:inline-block}
+.venue-card{position:absolute;left:50%;bottom:-28px;transform:translateX(-50%);width:88%;background:rgba(18,18,36,.88);backdrop-filter:blur(12px);border:1px solid rgba(255,246,230,.18);border-radius:18px;padding:16px 18px;display:flex;gap:14px;align-items:center;box-shadow:0 18px 50px rgba(0,0,0,.6)}
+.pin{width:46px;height:46px;flex:0 0 46px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,var(--neon),#8A1030);font-size:22px;box-shadow:0 0 18px rgba(255,77,109,.6)}
+.venue-card strong{display:block;font-size:15px;letter-spacing:.06em}
+.venue-card span{display:block;font-size:13.5px;color:var(--cream-dim)}
+.venue-card .go{margin-left:auto;background:var(--cream);color:#111;border-radius:100px;width:40px;height:40px;display:grid;place-items:center;text-decoration:none;font-size:20px;flex:0 0 40px}
+/* TICKER */
+.ticker{margin:38px -32px 0;background:linear-gradient(90deg,#FF4D6D,#FF9A3D 50%,#FFC75F);color:#180A00;overflow:hidden;white-space:nowrap;font-weight:800;letter-spacing:.14em;font-size:13.5px;padding:11px 0;border-top:2px solid #000}
+.ticker-track{display:inline-block;animation:slide 22s linear infinite;padding-left:20px}
+@keyframes slide{to{transform:translateX(-50%)}}
+@media(max-width:1020px){
+ .shell{padding:16px 18px 0}
+ .nav{display:none}
+ .hero{grid-template-columns:1fr;gap:8px}
+ h1{font-size:62px}
+ .arch-inner{min-height:500px}
+ .venue-card{position:relative;bottom:auto;left:auto;transform:none;width:100%;margin-top:14px}
+ .arch-wrap{width:min(520px,100%)}
+ .ticker{margin:18px -18px 0}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="bg" aria-hidden="true"></div>
+<div class="shell">
+<header class="topbar">
+<div class="brand"><span class="brand-mark" aria-hidden="true">♯</span><span>NOCTURNE BRASS<small>NOV JAZZ FESTIVAL</small></span></div>
+<nav aria-label="Primary"><a href="#lineup">LINE-UP</a><a href="#venue">VENUE</a><a href="#tickets">TICKETS</a><a href="#faq">FAQ</a></nav>
+<div class="top-right"><span class="date-pill">NOV <b>20—22</b> · CHICAGO</span><a class="mini-cta" href="#tickets">Early-Bird $89 →</a></div>
+</header>
+
+<main class="hero">
+<section class="copy" aria-labelledby="fest-title">
+<div class="eyebrow"><span class="dot"></span> NOV 20—22 · THE HALCYON DEPOT · DOORS 7PM</div>
+<h1 id="fest-title"><span class="row outline">Midnight</span><span class="row brass">Brass <span class="year">’26</span></span></h1>
+<p class="lede">Three nights of <strong>late-night horns, smoky vocals &amp; neon dancefloors.</strong> Five acts, one brass-soaked room in Fulton Market — warm vinyl sound, cold cocktails.</p>
+
+<ul class="lineup" id="lineup">
+<li><span class="num">01</span><div><span class="act-name">Maya Lark &amp; The Brass Cathedral</span><span class="act-sub"><em>HEADLINER</em> Velvet soul · 9-piece horns</span></div><div class="time"><span>FRI 11.20</span><i>9:00 PM</i></div></li>
+<li><span class="num">02</span><div><span class="act-name">Brasshouse Collective</span><span class="act-sub">Second-line funk · tuba bass</span></div><div class="time"><span>FRI 11.20</span><i>11:30 PM</i></div></li>
+<li><span class="num">03</span><div><span class="act-name">Nina Solstice Trio</span><span class="act-sub">After-hours piano · whisper vocals</span></div><div class="time"><span>SAT 11.21</span><i>8:00 PM</i></div></li>
+<li><span class="num">04</span><div><span class="act-name">Congo Square Echoes</span><span class="act-sub">ft. D. Baptiste · Afro-Creole drums</span></div><div class="time"><span>SAT 11.21</span><i>10:15 PM</i></div></li>
+<li><span class="num">05</span><div><span class="act-name">Blue Smoke Late-Night Jam</span><span class="act-sub">All-star sit-in · til 2AM</span></div><div class="time"><span>SUN 11.22</span><i>10 PM — LATE</i></div></li>
+</ul>
+
+<div class="cta-row" id="tickets">
+<a class="btn-main" href="#tickets" aria-label="Get early-bird 3-night pass for 89 dollars">Get Early-Bird — $89 <span class="arrow" aria-hidden="true">↗</span></a>
+<a class="btn-ghost" href="#lineup">View full schedule</a>
+</div>
+<div class="cta-meta" role="status" aria-live="polite">
+<div class="bar" aria-hidden="true"><div class="bar-fill"></div></div>
+<p><b id="countdown">5 DAYS LEFT</b> — Early-bird ends Nov 8 · Save $40 · <b>234 / 300</b> passes claimed. 3 nights, all 5 acts, welcome pour included.</p>
+</div>
+<div class="proof"><div class="avatars" aria-hidden="true"><span style="background:#FFC75F">AL</span><span style="background:#FF4D6D;color:#fff">JM</span><span style="background:#2DE1C2">KR</span><span style="background:#FFF6E6">+</span></div><span>★★★★★ <b style="color:var(--cream)">4.9</b> — 2,400+ jazz heads already in</span></div>
+</section>
+
+<section class="art" aria-label="Neon stage illustration with glowing trumpet inside brass moon">
+<div class="arch-wrap">
+<div class="lights" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<div class="arch"><div class="arch-inner">
+<span class="note n1" aria-hidden="true">♪</span><span class="note n2" aria-hidden="true">♫</span><span class="note n3" aria-hidden="true">♩</span>
+<div class="moon">
+<svg class="trumpet" viewBox="0 0 420 220" role="img" aria-labelledby="tptTitle"><title id="tptTitle">Glowing brass trumpet</title>
+<defs><linearGradient id="brass" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFF6C8"/><stop offset=".45" stop-color="#FFC75F"/><stop offset="1" stop-color="#8A4A0F"/></linearGradient></defs>
+<ellipse cx="330" cy="110" rx="82" ry="86" fill="#FF4D6D" opacity=".28"/>
+<path d="M48 132 Q110 172 190 152" fill="none" stroke="url(#brass)" stroke-width="12" stroke-linecap="round"/>
+<rect x="38" y="102" width="232" height="18" rx="9" fill="url(#brass)"/>
+<rect x="112" y="74" width="14" height="58" rx="4" fill="url(#brass)"/><rect x="146" y="74" width="14" height="58" rx="4" fill="url(#brass)"/><rect x="180" y="74" width="14" height="58" rx="4" fill="url(#brass)"/>
+<rect x="102" y="60" width="34" height="18" rx="6" fill="#FFE9A8" stroke="#5A2800" stroke-width="2"/><rect x="136" y="60" width="34" height="18" rx="6" fill="#FFE9A8" stroke="#5A2800" stroke-width="2"/><rect x="170" y="60" width="34" height="18" rx="6" fill="#FFE9A8" stroke="#5A2800" stroke-width="2"/>
+<circle cx="119" cy="52" r="7" fill="#FFF6C8" stroke="#5A2800" stroke-width="2"/><circle cx="153" cy="52" r="7" fill="#FFF6C8" stroke="#5A2800" stroke-width="2"/><circle cx="187" cy="52" r="7" fill="#FFF6C8" stroke="#5A2800" stroke-width="2"/>
+<rect x="22" y="100" width="24" height="22" rx="6" fill="#2A1020" stroke="url(#brass)" stroke-width="3"/>
+<path d="M270 92 L362 46 L362 174 L270 128 Z" fill="url(#brass)" stroke="#5A2800" stroke-width="2"/>
+<ellipse cx="362" cy="110" rx="20" ry="64" fill="#FFE9A8" stroke="#FF4D6D" stroke-width="4"/><ellipse cx="362" cy="110" rx="9" ry="42" fill="#150812"/>
+<path d="M392 68 Q412 110 392 152" fill="none" stroke="#FF4D6D" stroke-width="4" stroke-linecap="round"/>
+</svg>
+<div class="waves" aria-hidden="true"><span></span><span></span><span></span></div>
+</div>
+<div class="stage-floor"><div class="eq" aria-hidden="true"><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b></div><div class="live"><i>● LIVE</i> FULTON MARKET · WARM BRASS / NEON NIGHTS</div></div>
+</div></div>
+<div class="venue-card" id="venue"><div class="pin" aria-hidden="true">◉</div><div><strong>THE HALCYON DEPOT</strong><span>1400 W Fulton Market, Chicago · 18+ · Doors 7PM</span></div><a class="go" href="#tickets" aria-label="Get directions to venue">↗</a></div>
+</div>
+</section>
+</main>
+
+<footer class="ticker" aria-hidden="true"><span class="ticker-track">EARLY-BIRD $89 ENDS NOV 8 ✦ NOV 20–22 ✦ 5 ACTS ✦ 3 NIGHTS ✦ THE HALCYON DEPOT CHICAGO ✦ EARLY-BIRD $89 ENDS NOV 8 ✦ NOV 20–22 ✦ 5 ACTS ✦ 3 NIGHTS ✦ THE HALCYON DEPOT CHICAGO ✦&nbsp;</span><span class="ticker-track">EARLY-BIRD $89 ENDS NOV 8 ✦ NOV 20–22 ✦ 5 ACTS ✦ 3 NIGHTS ✦ THE HALCYON DEPOT CHICAGO ✦ EARLY-BIRD $89 ENDS NOV 8 ✦ NOV 20–22 ✦ 5 ACTS ✦ 3 NIGHTS ✦ THE HALCYON DEPOT CHICAGO ✦&nbsp;</span></footer>
+</div>
+<script>
+(function(){var el=document.getElementById('countdown');try{var end=new Date('2026-11-08T23:59:00');var now=new Date();var d=Math.max(0,Math.ceil((end-now)/86400000));el.textContent=d+' DAY'+(d===1?'':'S')+' LEFT';}catch(e){}})();
+</script>
+</body>
+</html>

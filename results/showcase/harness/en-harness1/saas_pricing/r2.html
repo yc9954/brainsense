@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Minuta — Pricing that pays for itself</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+--paper:#FAF6EB;
+--paper2:#F3EDD9;
+--ink:#131B16;
+--pine:#12372A;
+--pine2:#0C271E;
+--lime:#D7F74B;
+--lime2:#E8FF7A;
+--coral:#FF6B4A;
+--line:#E2D8BE;
+--muted:#4E5E54;
+--card:#FFFFFF;
+}
+body{
+font-family:'Inter',system-ui,sans-serif;
+background:var(--paper);
+color:var(--ink);
+font-size:16px;
+line-height:1.5;
+-webkit-font-smoothing:antialiased;
+overflow-x:hidden;
+}
+body::before{
+content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+background:radial-gradient(700px 260px at 50% -60px, #EDEFCB 0%, transparent 70%);
+opacity:.7;
+}
+.grain{position:fixed;inset:0;opacity:.025;pointer-events:none;z-index:1;
+background-image:radial-gradient(#000 1px, transparent 1px);background-size:14px 14px;}
+.page{position:relative;z-index:2;max-width:1280px;margin:0 auto;padding:0 28px 18px;min-height:800px;display:flex;flex-direction:column}
+.topbar{
+margin:12px 0 0;background:var(--ink);color:#FFF;border-radius:100px;
+display:flex;align-items:center;justify-content:center;gap:10px;
+font-size:14px;font-weight:600;letter-spacing:.02em;padding:8px 16px;
+}
+.topbar span.pill{background:var(--lime);color:var(--ink);font-size:11px;font-weight:800;padding:2px 8px;border-radius:100px;letter-spacing:.08em}
+.topbar a{color:var(--lime2);text-decoration:none;border-bottom:1px solid rgba(215,247,75,.5)}
+header{display:flex;align-items:center;justify-content:space-between;padding:14px 0 12px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px;letter-spacing:-.02em}
+.logo-mark{width:34px;height:34px;background:var(--pine);border-radius:10px;display:grid;place-items:center;position:relative;box-shadow:3px 3px 0 var(--ink)}
+.nav{display:flex;gap:26px;font-size:16px;font-weight:500}
+.nav a{color:var(--ink);text-decoration:none;opacity:.75}
+.nav a.active{opacity:1;font-weight:700;border-bottom:3px solid var(--lime)}
+.actions{display:flex;align-items:center;gap:12px}
+.btn{font:inherit;font-weight:700;border-radius:100px;padding:10px 20px;cursor:pointer;border:2px solid var(--ink);transition:.18s}
+.btn-ghost{background:transparent}
+.btn-dark{background:var(--ink);color:#fff}
+.btn-dark:hover{transform:translate(-1px,-1px);box-shadow:3px 3px 0 var(--coral)}
+.hero{display:grid;grid-template-columns:372px 1fr;gap:22px;align-items:start;margin-top:6px}
+.pitch{background:#fff;border:2px solid var(--ink);border-radius:20px;padding:20px 20px 16px;box-shadow:6px 6px 0 rgba(19,27,22,.12);}
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.14em;font-weight:700;display:flex;align-items:center;gap:8px}
+.eyebrow i{width:28px;height:2px;background:var(--coral);display:inline-block}
+h1{font-family:'Fraunces',serif;font-size:50px;line-height:.95;letter-spacing:-.03em;margin:10px 0 10px;font-weight:900}
+h1 em{font-style:italic;font-weight:700;background:linear-gradient(180deg,transparent 62%, var(--lime) 62%, var(--lime) 92%, transparent 92%);padding:0 4px}
+.sub{font-size:16px;color:var(--muted);line-height:1.55;max-width:340px}
+.toggle-wrap{margin:16px 0 12px;background:#fff;border:2px solid var(--ink);border-radius:16px;padding:6px;display:flex;position:relative;box-shadow:4px 4px 0 var(--ink)}
+.toggle-wrap button{flex:1;border:0;background:transparent;font:inherit;font-weight:700;font-size:16px;padding:10px;border-radius:10px;cursor:pointer;color:var(--muted);z-index:1}
+.toggle-wrap button.active{background:var(--ink);color:#fff}
+.save{position:absolute;top:-14px;right:14px;background:var(--coral);color:#fff;font-size:12px;font-weight:800;padding:3px 10px;border-radius:100px;border:2px solid var(--ink);transform:rotate(3deg)}
+.calc{background:var(--pine);color:#EAF4D6;border-radius:16px;padding:12px 12px 10px;display:flex;gap:12px;align-items:flex-start;border:2px solid var(--ink);box-shadow:4px 4px 0 var(--ink)}
+.calc strong{font-size:16px}
+.calc p{font-size:14px;opacity:.85;line-height:1.45}
+.calc .num{font-family:'Fraunces',serif;font-size:28px;background:var(--lime);color:var(--ink);border-radius:10px;min-width:62px;text-align:center;font-weight:900;line-height:1;padding:6px 0}
+.guarantee{background:#fff;border:2px dashed #9AA79E;border-radius:16px;padding:10px 12px;display:flex;gap:10px;align-items:center;margin-top:10px}
+.guarantee p{font-size:14px;line-height:1.45}
+.guarantee strong{font-size:14px}
+.logos{margin-top:12px}
+.logos small{font-size:12px;font-weight:700;letter-spacing:.12em;color:var(--muted)}
+.logo-row{display:flex;align-items:center;gap:16px;margin-top:8px;flex-wrap:wrap;opacity:.9}
+.logo-row span{font-weight:800;font-size:16px;letter-spacing:-.02em;display:flex;align-items:center;gap:6px;white-space:nowrap}
+.stars{color:#B87A00;font-size:14px;letter-spacing:2px}
+/* STAGE: one dominant object + diagonal motion */
+.pricing-wrap{position:relative;padding-top:74px;margin-top:0}
+.beam{position:absolute;top:6px;left:-18px;right:-18px;height:62px;background:var(--lime);border:2.5px solid var(--ink);border-radius:14px;transform:rotate(-2.8deg);box-shadow:5px 5px 0 var(--ink);overflow:hidden;z-index:0;display:flex;align-items:center}
+.beam-track{display:flex;gap:0;white-space:nowrap;animation:slide 14s linear infinite;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:14px;letter-spacing:.08em;color:var(--ink)}
+.beam-track span{padding:0 14px}
+@keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.beam-track{animation:none}.product-chip{animation:none}}
+.product-chip{position:absolute;top:26px;left:50%;transform:translateX(-16%) rotate(3deg);width:302px;background:#fff;border:2.5px solid var(--ink);border-radius:16px;box-shadow:7px 7px 0 var(--ink);z-index:5;overflow:hidden;animation:floaty 4.5s ease-in-out infinite}
+@keyframes floaty{0%,100%{translate:0 0;rotate:0deg}50%{translate:0 -7px;rotate:0deg}}
+.chip-bar{display:flex;align-items:center;gap:6px;background:var(--ink);color:#fff;padding:8px 12px;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;letter-spacing:.06em}
+.dot{width:9px;height:9px;border-radius:100px;display:inline-block}
+.chip-body{padding:10px 12px 11px}
+.wave{display:flex;align-items:end;gap:3px;height:30px;margin:2px 0 8px;background:#F4F1E2;border:1px solid var(--line);border-radius:10px;padding:6px 8px}
+.wave b{flex:1;background:var(--pine);border-radius:3px;min-height:4px}
+.skel{height:9px;border-radius:100px;background:#E9E2C8;margin:6px 0}
+.skel.lime{background:var(--lime);border:1px solid var(--ink);height:11px}
+.chip-pills{display:flex;gap:6px;margin-top:8px}
+.chip-pills span{font-size:11px;font-weight:800;border:1.5px solid var(--ink);border-radius:100px;padding:2px 8px;background:#fff}
+.chip-pills span.solid{background:var(--pine);color:#fff}
+.motion-ticks{position:absolute;left:-28px;top:18px;display:flex;gap:6px;transform:rotate(-12deg)}
+.motion-ticks i{width:6px;height:28px;background:var(--ink);border-radius:100px;display:block;opacity:.9}
+.motion-ticks i:nth-child(2){height:38px;opacity:.55}
+.motion-ticks i:nth-child(3){height:22px;opacity:.3}
+.pricing{display:grid;grid-template-columns:1fr 1.18fr 1fr;gap:14px;align-items:stretch;position:relative;z-index:2}
+.card{background:var(--card);border:2px solid var(--ink);border-radius:20px;padding:20px 20px 18px;position:relative;display:flex;flex-direction:column;box-shadow:6px 6px 0 rgba(19,27,22,.10)}
+.card .tier{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;letter-spacing:.12em;display:flex;justify-content:space-between;align-items:center}
+.card h3{font-family:'Fraunces',serif;font-size:28px;letter-spacing:-.02em;margin:4px 0 2px}
+.card .desc{font-size:16px;color:var(--muted);min-height:48px}
+.price-row{display:flex;align-items:baseline;gap:6px;margin:10px 0 2px}
+.price{font-family:'Fraunces',serif;font-size:52px;font-weight:900;letter-spacing:-.04em;line-height:1}
+.per{font-size:16px;font-weight:600;color:var(--muted)}
+.billed{font-size:13px;color:var(--muted);min-height:20px}
+.card ul{list-style:none;margin:12px 0 16px;display:grid;gap:9px;border-top:1px solid var(--line);padding-top:14px}
+.card li{font-size:16px;display:flex;gap:9px;align-items:flex-start;line-height:1.4}
+.tick{width:22px;height:22px;border-radius:100px;display:grid;place-items:center;flex-shrink:0;font-size:13px;font-weight:900;border:1.5px solid var(--ink);background:#EFF5D6}
+.card.pro{background:var(--pine);color:#F6F1DF;border-color:var(--ink);box-shadow:8px 8px 0 var(--ink), 0 0 0 6px rgba(215,247,75,.55), 0 18px 50px rgba(18,55,42,.35);transform:translateY(-10px)}
+.card.pro .desc{color:#C8D6B8}
+.card.pro .per,.card.pro .billed{color:#B9C9A8}
+.card.pro ul{border-top-color:rgba(255,255,255,.18)}
+.card.pro .tick{background:var(--lime);color:var(--ink);border-color:var(--lime)}
+.badge{position:absolute;top:-16px;left:50%;transform:translateX(-50%) rotate(-2deg);background:var(--lime);color:var(--ink);border:2px solid var(--ink);font-size:12px;font-weight:800;letter-spacing:.08em;padding:6px 14px;border-radius:100px;white-space:nowrap;box-shadow:2px 2px 0 var(--ink);z-index:3}
+.pro-glow{position:absolute;inset:-2px;border-radius:20px;pointer-events:none;background:linear-gradient(180deg,rgba(215,247,75,.18),transparent 40%)}
+.btn-lime{background:var(--lime);color:var(--ink);border:2px solid #0A1A13;width:100%;padding:13px;font-size:16px;box-shadow:3px 3px 0 rgba(0,0,0,.6)}
+.btn-lime:hover{background:var(--lime2);transform:translateY(-1px)}
+.btn-outline{background:transparent;width:100%;padding:12px}
+.card.pro .btn-outline{border-color:#F6F1DF;color:#F6F1DF}
+.micro{text-align:center;font-size:13px;margin-top:8px;opacity:.8}
+.team-note{background:var(--paper2);border-radius:10px;padding:8px 10px;font-size:14px;border:1px solid var(--line);margin-top:2px}
+.trustbar{margin-top:14px;background:#fff;border:2px solid var(--ink);border-radius:14px;padding:10px 16px;display:flex;align-items:center;justify-content:space-between;box-shadow:4px 4px 0 var(--ink);position:relative;z-index:2}
+.trustbar div{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:600}
+.avatars{display:flex}
+.avatars span{width:28px;height:28px;border-radius:100px;border:2px solid #fff;margin-left:-8px;display:grid;place-items:center;font-size:14px;font-weight:700}
+@media(max-width:1020px){.hero{grid-template-columns:1fr}h1{font-size:44px}.pricing{grid-template-columns:1fr}.card.pro{transform:none}.nav{display:none}.product-chip{left:auto;right:10px;transform:rotate(3deg);width:270px}.beam{left:-10px;right:-10px}}
+</style>
+</head>
+<body>
+<div class="grain"></div>
+<div class="page">
+<div class="topbar"><span class="pill">NEW</span> Auto-chapters + 32 languages are live in Pro <a href="#">See what's new →</a></div>
+<header>
+<div class="logo"><span class="logo-mark"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M2 10 Q4 2 6 10 T10 10 T14 10 T18 10" stroke="#D7F74B" stroke-width="2.2" stroke-linecap="round"/><path d="M2 13 Q4 7 6 13 T10 13 T14 13 T18 13" stroke="white" stroke-width="1.6" stroke-linecap="round" opacity=".7"/></svg></span> Minuta</div>
+<nav class="nav"><a href="#">Product</a><a href="#" class="active">Pricing</a><a href="#">Security</a><a href="#">Changelog</a></nav>
+<div class="actions"><button class="btn btn-ghost">Sign in</button><button class="btn btn-dark">Try free →</button></div>
+</header>
+<div class="hero">
+<div class="pitch">
+<div class="eyebrow"><i></i> PRICING • NO SEAT TRAPS</div>
+<h1>Pay for clarity, <em>not chair time.</em></h1>
+<p class="sub">Minuta turns rambling Zooms into crisp notes, actions &amp; clips. Start free. Upgrade when meetings matter.</p>
+<div class="toggle-wrap" role="group" aria-label="Billing period">
+<div class="save">SAVE 25%</div>
+<button id="btnM" class="active" aria-pressed="true">Monthly</button>
+<button id="btnY" aria-pressed="false">Yearly</button>
+</div>
+<div class="calc">
+<div class="num" id="calcNum">6.2h</div>
+<div><strong>Avg. saved weekly with Pro</strong><p id="calcText">That's 322 hrs / year. At $12/mo, you pay $0.46 per hour back.</p></div>
+</div>
+<div class="guarantee">
+<div style="width:38px;height:38px;flex-shrink:0;background:#FFF3E8;border:2px solid #131B16;border-radius:100px;display:grid;place-items:center;font-size:20px">🛡️</div>
+<div><strong>30-day money-back guarantee</strong><p>No forms, no calls. If Minuta doesn't save you 3+ hours, we refund you.</p></div>
+</div>
+<div class="logos"><small>LOVED BY 40,000+ NOTE-TAKERS AT</small>
+<div class="logo-row"><span>◉ Hexlab</span><span>▲ Northwind</span><span>⬣ Craftly</span><span>◈ Loomly</span></div>
+<div style="margin-top:6px;display:flex;gap:8px;align-items:center"><span class="stars">★★★★★</span><span style="font-size:14px;font-weight:700">4.9/5 on G2 • SOC2 • GDPR</span></div>
+</div>
+</div>
+<div>
+<div class="pricing-wrap">
+<div class="beam" aria-hidden="true"><div class="beam-track"><span>UNLIMITED MEETINGS ✦ AI SUMMARIES ✦ ACTION ITEMS ✦ 1-CLICK CLIPS ✦ 32 LANGUAGES ✦</span><span>UNLIMITED MEETINGS ✦ AI SUMMARIES ✦ ACTION ITEMS ✦ 1-CLICK CLIPS ✦ 32 LANGUAGES ✦</span></div></div>
+<div class="product-chip" aria-hidden="true">
+<div class="motion-ticks"><i></i><i></i><i></i></div>
+<div class="chip-bar"><span class="dot" style="background:#FF6B4A"></span><span class="dot" style="background:#D7F74B"></span><span class="dot" style="background:#fff"></span> MINUTA AI • STANDUP — 12:04 ● REC</div>
+<div class="chip-body">
+<div class="wave"><b style="height:40%"></b><b style="height:90%"></b><b style="height:60%"></b><b style="height:100%"></b><b style="height:45%"></b><b style="height:75%"></b><b style="height:55%"></b><b style="height:95%"></b><b style="height:35%"></b><b style="height:70%"></b><b style="height:50%"></b><b style="height:85%"></b></div>
+<div class="skel lime" style="width:92%"></div>
+<div class="skel" style="width:78%"></div>
+<div class="skel" style="width:64%"></div>
+<div class="chip-pills"><span class="solid">✓ Summary ready</span><span>⧉ Clip 0:42</span><span>→ Notion</span></div>
+</div>
+</div>
+<div class="pricing">
+<!-- FREE -->
+<div class="card">
+<div class="tier"><span>01 — FREE</span><span>✦</span></div>
+<h3>Dabble</h3>
+<p class="desc">For trying AI notes on side projects.</p>
+<div class="price-row"><span class="price">$0</span><span class="per">/mo</span></div>
+<div class="billed">Free forever, no card required</div>
+<ul>
+<li><span class="tick">✓</span> 5 meetings / month, 30 min each</li>
+<li><span class="tick">✓</span> Auto summary + action items</li>
+<li><span class="tick">✓</span> Zoom, Meet &amp; Teams bot</li>
+<li><span class="tick">✓</span> Searchable transcript</li>
+</ul>
+<button class="btn btn-outline">Start for free</button>
+<div class="micro">No credit card • 2-min setup</div>
+</div>
+<!-- PRO -->
+<div class="card pro">
+<div class="pro-glow"></div>
+<div class="badge">★ MOST POPULAR — PRO</div>
+<div class="tier" style="color:#D7F74B"><span>02 — PRO</span><span style="background:#D7F74B;color:#12372A;border-radius:100px;padding:2px 8px;font-size:11px">-25% YEARLY</span></div>
+<h3 style="font-size:32px">Focus</h3>
+<p class="desc">For pros who live in meetings and hate notes.</p>
+<div class="price-row"><span class="price" id="proPrice" style="color:#fff">$12</span><span class="per">/mo</span></div>
+<div class="billed" id="proBilled">billed monthly • cancel anytime</div>
+<ul>
+<li><span class="tick">✓</span> <span><strong>Unlimited meetings,</strong> 4-hr length + 32 languages</span></li>
+<li><span class="tick">✓</span> <span>Ask-your-meeting chat + 1-click clips</span></li>
+<li><span class="tick">✓</span> <span>Notion, Slack, HubSpot auto-sync</span></li>
+<li><span class="tick">✓</span> <span>Custom vocab, no-bot stealth mode</span></li>
+</ul>
+<button class="btn btn-lime">Try Pro free for 14 days →</button>
+<div class="micro" style="color:#EAF4D6">✓ 30-day money-back • Cancel in 1 click</div>
+</div>
+<!-- TEAM -->
+<div class="card">
+<div class="tier"><span>03 — TEAM</span><span style="border:1.5px solid #131B16;border-radius:100px;padding:1px 8px">SSO</span></div>
+<h3>Align</h3>
+<p class="desc">For teams that need shared memory.</p>
+<div class="price-row"><span class="price" id="teamPrice">$29</span><span class="per">/mo / user</span></div>
+<div class="billed" id="teamBilled">billed monthly • min 3 seats</div>
+<ul>
+<li><span class="tick">✓</span> Everything in Pro, shared workspace</li>
+<li><span class="tick">✓</span> Deal boards, standups &amp; onboarding kits</li>
+<li><span class="tick">✓</span> SSO, retention, admin analytics</li>
+<li><span class="tick">✓</span> Dedicated success manager</li>
+</ul>
+<div class="team-note">💡 <strong>Onboarding week?</strong> We'll migrate your Gong / Otter history free.</div>
+<div style="height:10px"></div>
+<button class="btn btn-outline" style="background:#131B16;color:#fff">Talk to sales</button>
+</div>
+</div>
+<div class="trustbar">
+<div><div class="avatars"><span style="background:#FFD6C2">😎</span><span style="background:#D7F74B">🤓</span><span style="background:#B9D9FF">🧑‍💼</span><span style="background:#131B16;color:#fff;font-size:11px">40k+</span></div> <span>“Switched from Otter and never looked back.” — Maya, PM at Craftly</span></div>
+<div style="gap:6px"><span style="font-size:18px">🔒</span> Cancel anytime • Keep your exports forever</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+const btnM=document.getElementById('btnM'),btnY=document.getElementById('btnY');
+const proPrice=document.getElementById('proPrice'),proBilled=document.getElementById('proBilled');
+const teamPrice=document.getElementById('teamPrice'),teamBilled=document.getElementById('teamBilled');
+const calcNum=document.getElementById('calcNum'),calcText=document.getElementById('calcText');
+function setMode(yearly){
+btnM.classList.toggle('active',!yearly);btnY.classList.toggle('active',yearly);
+btnM.setAttribute('aria-pressed',!yearly);btnY.setAttribute('aria-pressed',yearly);
+if(yearly){proPrice.textContent='$9';proBilled.textContent='billed yearly ($108) • 2 months free';
+teamPrice.textContent='$23';teamBilled.textContent='billed yearly per user • save $216';
+calcNum.textContent='8.1h';calcText.textContent="Yearly members save more automations. That's 421 hrs / year at $0.25 per hour back.";}
+else{proPrice.textContent='$12';proBilled.textContent='billed monthly • cancel anytime';
+teamPrice.textContent='$29';teamBilled.textContent='billed monthly • min 3 seats';
+calcNum.textContent='6.2h';calcText.textContent="That's 322 hrs / year. At $12/mo, you pay $0.46 per hour back.";}
+}
+btnM.onclick=()=>setMode(false);btnY.onclick=()=>setMode(true);
+</script>
+</body>
+</html>

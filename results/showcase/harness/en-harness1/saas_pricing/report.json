@@ -1,0 +1,223 @@
+{
+ "brief": "Pricing page first screen for an AI meeting-notes SaaS. Three tiers Free / Pro ($12/mo) / Team, Pro emphasized, trust elements (customer logos slot, money-back guarantee).",
+ "kind": "app",
+ "baseline": {
+  "round": 0,
+  "accepted": true,
+  "ui_score": 0.6151805899559628,
+  "brain_only": 0.397,
+  "judge": 0.833,
+  "changes": [],
+  "sourced": [],
+  "diagnosis": [
+   "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+   "Place areas (PPA/RSC) dominate: the background scene swallows the message"
+  ]
+ },
+ "best_round": 0,
+ "best": {
+  "round": 0,
+  "ui_score": 0.6151805899559628,
+  "heads": {
+   "aesthetic": {
+    "score": 0.2934786081314087,
+    "percentile": 21.84986595174263,
+    "confidence": 0.4130427837371826,
+    "top": "▼ L_a24, ▲ L_31a"
+   },
+   "attention": {
+    "score": 0.5428504943847656,
+    "percentile": 57.534246575342465,
+    "confidence": 0.08570098876953125,
+    "top": "▲ 움직임·형태 평균, ▲ 움직임·형태 최대"
+   }
+  },
+  "judge": {
+   "aesthetic": 0.889,
+   "clarity": 0.778,
+   "attention": 0.667,
+   "brief_fit": 1.0,
+   "judge_score": 0.833,
+   "reason": "Polished distinctive pricing layout nails all brief requirements with clear tiers and trust signals, though competing highlights slightly dilute the Pro focal point."
+  },
+  "brain_only": 0.397,
+  "critique": {
+   "kind": "app",
+   "ranking": [
+    [
+     "scene_place",
+     1.1696412720878289
+    ],
+    [
+     "value_vmpfc",
+     0.8159532068923624
+    ],
+    [
+     "control_dlpfc",
+     0.4540826532019169
+    ],
+    [
+     "visual_early",
+     0.24706569427894853
+    ],
+    [
+     "attention_dorsal",
+     0.1674909936652779
+    ],
+    [
+     "language",
+     -0.05855025100851652
+    ],
+    [
+     "default_mode",
+     -0.21872246329773012
+    ],
+    [
+     "face_body",
+     -0.264339836657238
+    ],
+    [
+     "visual_motion",
+     -2.3126212691628525
+    ]
+   ],
+   "hook": {
+    "attention_early": 0.18426509507998484,
+    "attention_late": 0.15910394295792446,
+    "visual_early": 0.750697861144905,
+    "visual_late": -0.004750389154029699
+   },
+   "diagnosis": [
+    "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+    "Place areas (PPA/RSC) dominate: the background scene swallows the message"
+   ],
+   "directives": [
+    "Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion.",
+    "Simplify the environment: crop or blur the scene, put copy on a solid panel, let one subject own the frame."
+   ],
+   "cited_areas": [
+    "▼ L affect, conflict (a24) [aesthetic]",
+    "▲ L 31a [aesthetic]",
+    "▲ object shape & motion (MT/LO) mean [attention]",
+    "▲ object shape & motion (MT/LO) max [attention]"
+   ],
+   "groups": [
+    "visual_motion",
+    "scene_place"
+   ],
+   "prompt_block": "BRAIN CRITIQUE (TRIBE v2 predicted human cortex while looking at the last render; values are relative within this image):\n- most driven regions: places & scenes (PPA/RSC) +1.17, reward & value (OFC/vmPFC) +0.82, cognitive control (dlPFC) +0.45; least: faces & people (FFA/STS) -0.26, object shape & motion (MT/LO) -2.31\n- first-2s hook vs later: attention +0.18 → +0.16, visual drive +0.75 → -0.00\n- areas the aesthetic head cites: ▼ L affect, conflict (a24) [aesthetic]; ▲ L 31a [aesthetic]; ▲ object shape & motion (MT/LO) mean [attention]; ▲ object shape & motion (MT/LO) max [attention]\n- diagnosis: Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette / Place areas (PPA/RSC) dominate: the background scene swallows the message\n- DO NEXT (highest priority first): (1) Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion. (2) Simplify the environment: crop or blur the scene, put copy on a solid panel, let one subject own the frame."
+  }
+ },
+ "rounds": [
+  {
+   "round": 0,
+   "accepted": true,
+   "ui_score": 0.6151805899559628,
+   "brain_only": 0.397,
+   "judge": 0.833,
+   "changes": [],
+   "sourced": [],
+   "diagnosis": [
+    "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+    "Place areas (PPA/RSC) dominate: the background scene swallows the message"
+   ]
+  },
+  {
+   "round": 1,
+   "accepted": false,
+   "ui_score": 0.5614914820661815,
+   "brain_only": 0.417,
+   "judge": 0.694,
+   "changes": [
+    {
+     "issue": "objectshapeloandmotionmtarea",
+     "change": "Added dominant product-window silhouette overlapping Pro plus diagonal lime motion slash implying forward motion"
+    },
+    {
+     "issue": "placeareaspparscdominate",
+     "change": "Simplified background to single faint wash and put left copy on solid white panel so Pro owns the frame"
+    }
+   ],
+   "sourced": [],
+   "diagnosis": [
+    "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+    "Place areas (PPA/RSC) dominate: the background scene swallows the message"
+   ]
+  },
+  {
+   "round": 2,
+   "accepted": false,
+   "ui_score": 0.5378181657772504,
+   "brain_only": 0.417,
+   "judge": 0.639,
+   "changes": [
+    {
+     "issue": "object-shape and motion low",
+     "change": "Added dominant diagonal lime marquee beam + large floating product-window silhouette with float motion over Pro"
+    },
+    {
+     "issue": "place areas dominate",
+     "change": "Flattened background to single faint wash, removed grain, put left copy on solid white panel"
+    }
+   ],
+   "sourced": [],
+   "diagnosis": [
+    "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+    "Place areas (PPA/RSC) dominate: the background scene swallows the message"
+   ]
+  },
+  {
+   "round": 3,
+   "accepted": false,
+   "ui_score": 0.6063220961414539,
+   "brain_only": 0.412,
+   "judge": 0.778,
+   "changes": [
+    {
+     "issue": "objectshapeloandmotionmtarea",
+     "change": "Replaced product-window idea with one dominant lime disc object with diagonal ink motion-band + animated waveform and floating badge for real motion"
+    },
+    {
+     "issue": "placeareaspparscdominate",
+     "change": "Flattened background to single faint wash, removed color washes/grain and cropped scene inside one solid hero stage panel so Pro+disc owns frame"
+    }
+   ],
+   "sourced": [],
+   "diagnosis": [
+    "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+    "Place areas (PPA/RSC) dominate: the background scene swallows the message"
+   ]
+  }
+ ],
+ "ledger": [
+  {
+   "id": "objectshapeloandmotionmtarea",
+   "text": "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+   "directive": "Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion.",
+   "group": "visual_motion",
+   "z_opened": -2.3126212691628525,
+   "opened": 0,
+   "resolved": null,
+   "attempts": 3,
+   "tried": [
+    "r1: Added dominant product-window silhouette overlapping Pro plus diagonal lime motion slash i",
+    "r3: Replaced product-window idea with one dominant lime disc object with diagonal ink motion-b"
+   ]
+  },
+  {
+   "id": "placeareaspparscdominate",
+   "text": "Place areas (PPA/RSC) dominate: the background scene swallows the message",
+   "directive": "Simplify the environment: crop or blur the scene, put copy on a solid panel, let one subject own the frame.",
+   "group": "scene_place",
+   "z_opened": 1.1696412720878289,
+   "opened": 0,
+   "resolved": null,
+   "attempts": 3,
+   "tried": [
+    "r1: Simplified background to single faint wash and put left copy on solid white panel so Pro o",
+    "r3: Flattened background to single faint wash, removed color washes/grain and cropped scene in"
+   ]
+  }
+ ],
+ "assets": []
+}

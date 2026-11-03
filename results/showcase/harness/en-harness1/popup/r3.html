@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sweetspot x Local Roastery — 3-Day Strawberry Pop-up in Seongsu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+--cream:#FFF6EE;
+--paper:#FFFFFF;
+--ink:#2A1512;
+--ink2:#5C3D36;
+--berry:#C3123F;
+--berry-soft:#FCE4E9;
+--berry-pale:#FFF0F3;
+}
+body{
+font-family:"Plus Jakarta Sans","Noto Sans KR",system-ui,sans-serif;
+background:var(--cream);
+color:var(--ink);
+font-size:17px;line-height:1.6;
+-webkit-font-smoothing:antialiased;
+overflow-x:hidden;
+}
+.page{max-width:1280px;margin:0 auto;min-height:100vh;display:flex;flex-direction:column;padding:0 40px}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:22px 0;gap:16px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand-mark{width:40px;height:40px;border-radius:50%;background:var(--ink);color:var(--cream);display:grid;place-items:center;font-family:"DM Serif Display",serif;font-size:22px}
+.brand small{display:block;font-size:11px;font-weight:800;letter-spacing:.18em;opacity:.65}
+.brand strong{font-size:16px;line-height:1.1}
+.nav{display:flex;gap:28px;font-size:15px;font-weight:600}
+.nav a{text-decoration:none;opacity:.7;color:inherit}.nav a:hover{opacity:1}
+.top-actions{display:flex;align-items:center;gap:14px}
+.lang{font-size:13px;font-weight:700;opacity:.6}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border-radius:100px;font-weight:800;text-decoration:none;cursor:pointer;border:2px solid transparent;transition:transform .15s ease}
+.btn-small{padding:11px 22px;font-size:15px;background:var(--ink);color:#fff}
+.btn-small:hover{transform:translateY(-1px)}
+.btn-big{padding:18px 32px;font-size:18px;background:var(--berry);color:#fff}
+.btn-big:hover{transform:translateY(-2px);background:#A50E34}
+.btn-text{font-size:16px;font-weight:700;color:var(--ink);text-decoration:underline;text-underline-offset:6px;text-decoration-thickness:2px;text-decoration-color:var(--berry)}
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center;flex:1;padding:18px 0 28px}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:800;letter-spacing:.14em}
+.eyebrow .dot{width:8px;height:8px;border-radius:50%;background:var(--berry)}
+.eyebrow span:last-child{color:var(--berry)}
+h1{font-family:"DM Serif Display",serif;font-weight:400;font-size:clamp(56px,6.2vw,84px);line-height:.96;letter-spacing:-.02em;margin:18px 0 16px}
+h1 em{font-style:italic;color:var(--berry);white-space:nowrap}
+.lede{font-size:19px;line-height:1.6;color:var(--ink2);max-width:520px}
+.lede strong{color:var(--ink)}
+.facts{list-style:none;margin:26px 0 28px;max-width:520px;border-top:1px solid #E9D5C5}
+.facts li{display:flex;gap:14px;align-items:baseline;padding:13px 2px;border-bottom:1px solid #E9D5C5;font-size:17px}
+.facts li b{font-size:12px;letter-spacing:.14em;min-width:62px;color:var(--berry);font-weight:800}
+.facts li strong{font-weight:800}
+.facts li span{color:var(--ink2);font-size:16px}
+.cta-row{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.cta-note{font-size:14.5px;color:var(--ink2);margin-top:12px}
+.proof{margin-top:18px;font-size:15px;color:var(--ink2)}
+.proof strong{color:var(--ink)}
+/* ONE dominant object panel — diagonal motion system */
+.visual{background:var(--paper);border-radius:32px;position:relative;overflow:hidden;min-height:600px;display:grid;place-items:center;padding:44px 20px 170px;border:3px solid var(--ink)}
+.halo{position:absolute;width:440px;height:440px;background:#FFDCE4;border:3px solid var(--ink);border-radius:50%;top:36px;left:50%;transform:translateX(-50%)}
+.halo::after{content:"";position:absolute;inset:18px;border:2px dashed #C3123F55;border-radius:50%}
+.cake{position:relative;z-index:2;width:440px;max-width:88%;height:auto;transform:rotate(-3deg);filter:drop-shadow(12px 12px 0 #2A1512);animation:drift 5.2s ease-in-out infinite}
+@keyframes drift{0%,100%{transform:rotate(-3deg) translate(0,0)}50%{transform:rotate(-1deg) translate(12px,-16px)}}
+.plate{position:absolute;bottom:222px;width:320px;height:28px;background:rgba(42,21,18,.16);border-radius:50%;filter:blur(10px);z-index:1}
+.badge{position:absolute;top:26px;right:26px;width:112px;height:112px;background:var(--berry);color:#fff;border-radius:50%;border:3px solid var(--ink);box-shadow:4px 4px 0 var(--ink);display:grid;place-items:center;text-align:center;font-weight:800;font-size:14px;line-height:1.15;letter-spacing:.04em;transform:rotate(12deg);z-index:5}
+.badge small{font-size:11px;letter-spacing:.14em}
+.float-b{position:absolute;z-index:4;font-size:30px;filter:drop-shadow(2px 2px 0 #2A1512);animation:floatUp 3.8s ease-in-out infinite}
+.float-b.f1{left:56px;top:132px}
+.float-b.f2{right:64px;top:188px;font-size:26px;animation-delay:-1.2s}
+.float-b.f3{left:72px;bottom:220px;font-size:22px;animation-delay:-2.1s}
+@keyframes floatUp{0%,100%{transform:translate(0,0) rotate(-6deg)}50%{transform:translate(8px,-14px) rotate(8deg)}}
+.speed{position:absolute;left:30px;top:80px;z-index:1;display:flex;flex-direction:column;gap:10px;transform:rotate(-8deg)}
+.speed i{display:block;height:6px;border-radius:99px;background:#2A1512;opacity:.12}
+.speed i:nth-child(1){width:92px}.speed i:nth-child(2){width:64px}.speed i:nth-child(3){width:78px}
+.ribbon{position:absolute;left:-24px;right:-24px;bottom:88px;transform:rotate(-7deg);background:var(--berry);color:#fff;border-top:3px solid var(--ink);border-bottom:3px solid var(--ink);overflow:hidden;padding:11px 0;z-index:4}
+.ribbon-track{display:inline-block;white-space:nowrap;font-size:13px;font-weight:800;letter-spacing:.22em;padding-left:12px;will-change:transform;animation:slide 14s linear infinite}
+@keyframes slide{to{transform:translateX(-50%)}}
+.visual-foot{position:absolute;left:0;right:0;bottom:0;padding:16px 24px;display:flex;justify-content:space-between;align-items:center;font-size:14.5px;font-weight:600;background:var(--ink);color:var(--cream);z-index:5}
+.visual-foot strong{font-weight:800}
+.count{color:#FFB9C8;font-weight:800}
+.footer-line{border-top:1px solid #E9D5C5;padding:14px 0 22px;display:flex;justify-content:space-between;font-size:13.5px;font-weight:600;letter-spacing:.06em;color:var(--ink2)}
+.modal-back{position:fixed;inset:0;background:#2A1512AA;backdrop-filter:blur(6px);display:none;place-items:center;padding:20px;z-index:50}
+.modal-back.open{display:grid}
+.modal{width:min(560px,100%);background:#fff;border-radius:24px;overflow:hidden}
+.modal-head{background:var(--ink);color:var(--cream);padding:18px 22px;display:flex;justify-content:space-between;align-items:center}
+.modal-head b{font-family:"DM Serif Display",serif;font-size:22px;font-weight:400}
+.modal-head button{background:#fff;border:0;border-radius:50%;width:32px;height:32px;font-weight:900;cursor:pointer}
+.modal-body{padding:20px 22px}
+.slot-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin:12px 0}
+.slot{border:2px solid var(--ink);border-radius:12px;padding:10px;background:#fff;font-weight:700;font-size:14px;cursor:pointer;text-align:center}
+.slot.active{background:var(--ink);color:#fff}
+.modal input{width:100%;padding:13px 14px;border:2px solid var(--ink);border-radius:12px;font-size:16px;font-family:inherit;margin-top:8px;background:#fff}
+.modal .btn-big{width:100%;margin-top:14px}
+:focus-visible{outline:3px solid var(--berry);outline-offset:3px}
+@media(max-width:1020px){.nav{display:none}.hero{grid-template-columns:1fr;gap:28px}.visual{min-height:540px}h1{font-size:56px}}
+@media(max-width:560px){.page{padding:0 20px}.footer-line{flex-direction:column;gap:4px}.cake{width:360px}}
+@media(prefers-reduced-motion:reduce){.cake,.ribbon-track,.float-b{animation:none}}
+</style>
+</head>
+<body>
+<div class="page">
+<header class="topbar">
+<div class="brand"><div class="brand-mark">S</div><div><small>SWEETSPOT × LOCAL ROASTERY</small><strong>Seongsu Strawberry Club</strong></div></div>
+<nav class="nav" aria-label="Primary"><a href="#menu">Menu</a><a href="#visit">Visit</a><a href="#slots">Time slots</a></nav>
+<div class="top-actions"><span class="lang">EN · 한국어</span><a class="btn btn-small" href="#reserve" onclick="openModal(event)">Reserve a slot →</a></div>
+</header>
+
+<main class="hero">
+<div>
+<div class="eyebrow"><span class="dot"></span><span>3-DAY POP-UP · SEONGSU · NOV 13 — 15</span></div>
+<h1>Strawberries<br><em>meets slow coffee.</em></h1>
+<p class="lede"><strong>Sweetspot x Local Roastery</strong> takes over Seongsu for one weekend only — fresh 딸기 shortcakes, strawberry cream lattes &amp; single-origin pour-overs. 50-min tasting slots, photo-ready all pink.</p>
+<ul class="facts" id="visit">
+<li><b>WHEN</b><div><strong>Nov 13 (Fri) – 15 (Sun), 11:00–20:00</strong> <span>· last entry 19:30</span></div></li>
+<li><b>WHERE</b><div><strong>12 Seongsu-ro 14-gil, 1F</strong> <span>· 5-min from Seongsu St. Exit 3</span></div></li>
+<li><b>ENTRY</b><div><strong>₩5,000 → full menu credit</strong> <span>· walk-ins OK</span></div></li>
+</ul>
+<div class="cta-row" id="slots">
+<a class="btn btn-big" href="#reserve" onclick="openModal(event)">Reserve a slot — ₩5,000</a>
+<a class="btn-text" href="#menu">See the menu ↓</a>
+</div>
+<div class="cta-note">Free cancellation · Only 32 seats per slot · Day 2 almost full</div>
+<div class="proof"><strong>486 already booked.</strong> “Last year sold out in 2 days — go early for the cloud cake.” — @seoul.dessert</div>
+</div>
+
+<div class="visual" aria-label="Signature strawberry cloud shortcake">
+<div class="halo" aria-hidden="true"></div>
+<div class="speed" aria-hidden="true"><i></i><i></i><i></i></div>
+<div class="badge" aria-hidden="true"><div><small>ONLY</small><br>3 DAYS<br>★ 300/DAY</div></div>
+<span class="float-b f1" aria-hidden="true">🍓</span>
+<span class="float-b f2" aria-hidden="true">🍓</span>
+<span class="float-b f3" aria-hidden="true">🤍</span>
+<div class="plate" aria-hidden="true"></div>
+<svg class="cake" width="440" height="470" viewBox="0 0 300 360" role="img" aria-label="Strawberry cloud shortcake">
+<ellipse cx="150" cy="318" rx="110" ry="18" fill="#fff" stroke="#2A1512" stroke-width="5"/>
+<ellipse cx="150" cy="312" rx="110" ry="18" fill="#FCE4E9" stroke="#2A1512" stroke-width="4"/>
+<rect x="70" y="230" width="160" height="78" rx="14" fill="#FFF6EE" stroke="#2A1512" stroke-width="5"/>
+<rect x="70" y="248" width="160" height="22" rx="11" fill="#F5A8B8" stroke="#2A1512" stroke-width="3"/>
+<path d="M70 244 Q85 270 95 244 Q105 270 115 244 Q125 268 135 244 Q145 270 155 244 Q165 268 175 244 Q185 270 195 244 Q205 268 215 244 L230 244 L230 236 L70 236 Z" fill="#fff" stroke="#2A1512" stroke-width="4" stroke-linejoin="round"/>
+<rect x="82" y="168" width="136" height="68" rx="14" fill="#FFF6EE" stroke="#2A1512" stroke-width="5"/>
+<path d="M82 182 Q95 206 105 182 Q115 206 125 182 Q135 204 145 182 Q155 206 165 182 Q175 204 185 182 Q195 206 205 182 L218 182 L218 174 L82 174 Z" fill="#fff" stroke="#2A1512" stroke-width="4"/>
+<ellipse cx="150" cy="168" rx="68" ry="20" fill="#fff" stroke="#2A1512" stroke-width="5"/>
+<g>
+<g transform="translate(118,118)"><path d="M0 18 C -18 0 -12 -18 0 -18 C 12 -18 18 0 0 18Z" fill="#C3123F" stroke="#2A1512" stroke-width="4"/><circle cx="-5" cy="-6" r="1.8" fill="#fff"/><circle cx="4" cy="-2" r="1.8" fill="#fff"/><path d="M-8 -18 Q0 -26 8 -18 Q4 -14 0 -16 Q-4 -14 -8 -18" fill="#2A1512"/></g>
+<g transform="translate(150,102) scale(1.25)"><path d="M0 18 C -18 0 -12 -18 0 -18 C 12 -18 18 0 0 18Z" fill="#C3123F" stroke="#2A1512" stroke-width="4"/><circle cx="-5" cy="-6" r="1.8" fill="#fff"/><circle cx="4" cy="-2" r="1.8" fill="#fff"/><path d="M-8 -18 Q0 -26 8 -18 Q4 -14 0 -16 Q-4 -14 -8 -18" fill="#2A1512"/></g>
+<g transform="translate(182,118)"><path d="M0 18 C -18 0 -12 -18 0 -18 C 12 -18 18 0 0 18Z" fill="#C3123F" stroke="#2A1512" stroke-width="4"/><circle cx="-5" cy="-6" r="1.8" fill="#fff"/><circle cx="4" cy="-2" r="1.8" fill="#fff"/><path d="M-8 -18 Q0 -26 8 -18 Q4 -14 0 -16 Q-4 -14 -8 -18" fill="#2A1512"/></g>
+</g>
+<g transform="translate(72,272)"><path d="M0 14 C -14 0 -9 -14 0 -14 C 9 -14 14 0 0 14Z" fill="#C3123F" stroke="#2A1512" stroke-width="3.5"/></g>
+<g transform="translate(228,272)"><path d="M0 14 C -14 0 -9 -14 0 -14 C 9 -14 14 0 0 14Z" fill="#C3123F" stroke="#2A1512" stroke-width="3.5"/></g>
+</svg>
+<div class="ribbon" aria-hidden="true"><span class="ribbon-track">FRESH STRAWBERRY — SLOW COFFEE — SEONGSU — FRESH STRAWBERRY — SLOW COFFEE — SEONGSU —&nbsp;</span></div>
+<div class="visual-foot" id="menu"><span>Cloud Shortcake <strong>₩9,500</strong> · Berry Affogato ₩7,500</span><span class="count" id="count">Opens in 09 days</span></div>
+</div>
+</main>
+
+<footer class="footer-line"><span>NOV 13 FRI — NOV 15 SUN · 11AM–8PM · SEONGSU-RO 14-GIL</span><span>LIMITED 3 DAYS · 300 CAKES DAILY</span></footer>
+</div>
+
+<div class="modal-back" id="modalBack">
+<div class="modal" role="dialog" aria-modal="true" aria-label="Reserve a slot">
+<div class="modal-head"><b>Reserve your berry hour</b><button onclick="closeModal()" aria-label="Close">✕</button></div>
+<div class="modal-body">
+<div style="font-size:14px;font-weight:800;letter-spacing:.12em">1 · PICK A DAY</div>
+<div class="slot-grid"><button class="slot active">FRI<br>Nov 13</button><button class="slot">SAT<br>Nov 14</button><button class="slot">SUN<br>Nov 15</button></div>
+<div style="font-size:14px;font-weight:800;letter-spacing:.12em">2 · PICK A TIME — 50 MIN</div>
+<div class="slot-grid"><button class="slot">11:00</button><button class="slot active">13:30</button><button class="slot">15:00</button><button class="slot">16:30</button><button class="slot">18:00</button><button class="slot">19:00</button></div>
+<label style="font-size:14px;font-weight:800;letter-spacing:.08em">3 · YOUR DETAILS<input id="nameInput" placeholder="Name + phone — e.g. Jiwon 010-1234-5678"></label>
+<button class="btn btn-big" onclick="confirmReserve()">Confirm — Pay at door ₩5,000 →</button>
+<p id="confirmMsg" style="display:none;margin-top:12px;background:#FFF0F3;border:2px solid #C3123F;border-radius:12px;padding:12px;font-weight:700;font-size:15px">You're in! Fri Nov 13 · 13:30 · 2 seats held for 10 min. Show this screen at 12 Seongsu-ro 14-gil.</p>
+</div>
+</div>
+</div>
+
+<script>
+function openModal(e){if(e)e.preventDefault();document.getElementById('modalBack').classList.add('open');}
+function closeModal(){document.getElementById('modalBack').classList.remove('open');}
+document.getElementById('modalBack').addEventListener('click',e=>{if(e.target.id==='modalBack')closeModal()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+document.querySelectorAll('.slot-grid').forEach(g=>{g.addEventListener('click',e=>{if(e.target.closest('.slot')){g.querySelectorAll('.slot').forEach(s=>s.classList.remove('active'));e.target.closest('.slot').classList.add('active');}})});
+function confirmReserve(){document.getElementById('confirmMsg').style.display='block';}
+(function(){
+const target=new Date('2026-11-13T11:00:00+09:00').getTime();
+function tick(){
+const now=Date.now();let d=Math.max(0,target-now);
+const days=Math.floor(d/864e5);
+document.getElementById('count').textContent='Opens in '+String(days).padStart(2,'0')+' days — Nov 13, 11AM';
+}tick();setInterval(tick,60000);
+})();
+</script>
+</body>
+</html>

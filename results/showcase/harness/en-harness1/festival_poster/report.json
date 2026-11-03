@@ -1,0 +1,348 @@
+{
+ "brief": "Web poster first screen for a November jazz festival: 5-act line-up, dates and venue, early-bird ticket CTA. Night, neon, warm brass mood.",
+ "kind": "poster",
+ "baseline": {
+  "round": 0,
+  "accepted": true,
+  "ui_score": 0.5739613257177947,
+  "brain_only": 0.416,
+  "judge": 0.722,
+  "changes": [],
+  "sourced": [],
+  "diagnosis": [
+   "Place areas (PPA/RSC) dominate: the background scene swallows the message",
+   "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+   "Face areas (FFA/STS) are silent: no human or gaze cue",
+   "Reward circuit (OFC/vmPFC) is on but the appeal head is average: value is felt but what is good isn't legible"
+  ]
+ },
+ "best_round": 2,
+ "best": {
+  "round": 2,
+  "ui_score": 0.6616615749421597,
+  "heads": {
+   "aesthetic": {
+    "score": 0.5865951180458069,
+    "percentile": 66.89008042895442,
+    "confidence": 0.17319023609161377,
+    "top": "▲ R_IP1, ▼ L_a24"
+   },
+   "attention": {
+    "score": 0.5388532876968384,
+    "percentile": 56.43835616438356,
+    "confidence": 0.07770657539367676,
+    "top": "▲ 움직임·형태 평균, ▲ 움직임·형태 최대"
+   }
+  },
+  "judge": {
+   "aesthetic": 0.778,
+   "clarity": 0.667,
+   "attention": 0.667,
+   "brief_fit": 0.889,
+   "judge_score": 0.75,
+   "reason": "Polished brass-noir system nails the brief content and mood but splits focus between oversized type, illustration, and dense lineup while mixing Nocturne vs Midnight naming."
+  },
+  "brain_only": 0.617,
+  "critique": {
+   "kind": "poster",
+   "ranking": [
+    [
+     "scene_place",
+     1.2631483889203892
+    ],
+    [
+     "value_vmpfc",
+     0.9824410628526169
+    ],
+    [
+     "control_dlpfc",
+     0.7225845026901005
+    ],
+    [
+     "attention_dorsal",
+     0.6906859429096718
+    ],
+    [
+     "visual_early",
+     0.22714540834432073
+    ],
+    [
+     "default_mode",
+     -0.3453170376663966
+    ],
+    [
+     "language",
+     -0.559270792291223
+    ],
+    [
+     "face_body",
+     -1.4040380169153555
+    ],
+    [
+     "visual_motion",
+     -1.5773794588441243
+    ]
+   ],
+   "hook": {
+    "attention_early": 0.7744002119919675,
+    "attention_late": 0.648828808368524,
+    "visual_early": 0.6063492629048312,
+    "visual_late": 0.03754348106406545
+   },
+   "diagnosis": [
+    "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+    "Reward circuit (OFC/vmPFC) is on but the appeal head is average: value is felt but what is good isn't legible",
+    "Face areas (FFA/STS) are silent: no human or gaze cue"
+   ],
+   "directives": [
+    "Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion.",
+    "Name the value explicitly next to what the eye lands on: one benefit line + price/offer under the hero, nothing else competing.",
+    "Introduce a human cue: a portrait or illustrated face whose gaze points at the CTA/product (faces win attention fastest)."
+   ],
+   "cited_areas": [
+    "▲ R salience map (IP1) [aesthetic]",
+    "▼ L affect, conflict (a24) [aesthetic]",
+    "▲ object shape & motion (MT/LO) mean [attention]",
+    "▲ object shape & motion (MT/LO) max [attention]"
+   ],
+   "groups": [
+    "visual_motion",
+    "value_vmpfc",
+    "face_body"
+   ],
+   "prompt_block": "BRAIN CRITIQUE (TRIBE v2 predicted human cortex while looking at the last render; values are relative within this image):\n- most driven regions: places & scenes (PPA/RSC) +1.26, reward & value (OFC/vmPFC) +0.98, cognitive control (dlPFC) +0.72; least: faces & people (FFA/STS) -1.40, object shape & motion (MT/LO) -1.58\n- first-2s hook vs later: attention +0.77 → +0.65, visual drive +0.61 → +0.04\n- areas the aesthetic head cites: ▲ R salience map (IP1) [aesthetic]; ▼ L affect, conflict (a24) [aesthetic]; ▲ object shape & motion (MT/LO) mean [attention]; ▲ object shape & motion (MT/LO) max [attention]\n- diagnosis: Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette / Reward circuit (OFC/vmPFC) is on but the appeal head is average: value is felt but what is good isn't legible / Face areas (FFA/STS) are silent: no human or gaze cue\n- DO NEXT (highest priority first): (1) Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion. (2) Name the value explicitly next to what the eye lands on: one benefit line + price/offer under the hero, nothing else competing. (3) Introduce a human cue: a portrait or illustrated face whose gaze points at the CTA/product (faces win attention fastest)."
+  }
+ },
+ "rounds": [
+  {
+   "round": 0,
+   "accepted": true,
+   "ui_score": 0.5739613257177947,
+   "brain_only": 0.416,
+   "judge": 0.722,
+   "changes": [],
+   "sourced": [],
+   "diagnosis": [
+    "Place areas (PPA/RSC) dominate: the background scene swallows the message",
+    "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+    "Face areas (FFA/STS) are silent: no human or gaze cue",
+    "Reward circuit (OFC/vmPFC) is on but the appeal head is average: value is felt but what is good isn't legible"
+   ]
+  },
+  {
+   "round": 1,
+   "accepted": true,
+   "ui_score": 0.6310837806630526,
+   "brain_only": 0.525,
+   "judge": 0.75,
+   "changes": [
+    {
+     "issue": "placeareaspparscdominate",
+     "change": "dimmed background to near-solid ink, put copy on solid panel, cropped arch glow and grain"
+    },
+    {
+     "issue": "objectshapeloandmotionmtarea",
+     "change": "added diagonal neon motion beam + tilted trumpet silhouette as dominant object"
+    },
+    {
+     "issue": "faceareasffastsaresilent",
+     "change": "added illustrated vocalist profile in front of moon with gaze and trumpet aimed left at CTA"
+    },
+    {
+     "issue": "rewardcircuitofcvmpfcisonbut",
+     "change": "added single gold value badge under hero face with benefit + $89 offer"
+    }
+   ],
+   "sourced": [],
+   "diagnosis": [
+    "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+    "Reward circuit (OFC/vmPFC) is on but the appeal head is average: value is felt but what is good isn't legible",
+    "Face areas (FFA/STS) are silent: no human or gaze cue",
+    "Place areas (PPA/RSC) dominate: the background scene swallows the message"
+   ]
+  },
+  {
+   "round": 2,
+   "accepted": true,
+   "ui_score": 0.6616615749421597,
+   "brain_only": 0.617,
+   "judge": 0.75,
+   "changes": [
+    {
+     "issue": "placeareaspparscdominate",
+     "change": "removed beams, lights, grain and arch glow; art cropped to solid portrait card on flat ink"
+    },
+    {
+     "issue": "objectshapeloandmotionmtarea",
+     "change": "replaced diagonal beams with one dominant horizontal trumpet + 3 leftward motion sound-lines toward CTA"
+    },
+    {
+     "issue": "faceareasffastsaresilent",
+     "change": "enlarged vocalist to 340px with large left-gazing eye and eyeline vector to tickets; removed meta badge"
+    },
+    {
+     "issue": "rewardcircuitofcvmpfcisonbut",
+     "change": "kept single gold $89 benefit badge under hero; stripped competing prices from topbar, ticker and venue line"
+    }
+   ],
+   "sourced": [],
+   "diagnosis": [
+    "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+    "Reward circuit (OFC/vmPFC) is on but the appeal head is average: value is felt but what is good isn't legible",
+    "Face areas (FFA/STS) are silent: no human or gaze cue"
+   ]
+  },
+  {
+   "round": 3,
+   "accepted": false,
+   "ui_score": 0.5524849440869737,
+   "brain_only": 0.419,
+   "judge": 0.667,
+   "changes": [
+    {
+     "issue": "objectshapeloandmotionmtarea",
+     "change": "Replaced small moon-bound trumpet with one dominant diagonal trumpet silhouette (560px, -18deg, breaking frame) plus full-bleed neon slash beam and longer animated motion streaks pointing left to CTA"
+    },
+    {
+     "issue": "faceareasffastsaresilent",
+     "change": "Replaced small profile bust with large front 3/4 vocalist face (400px) whose both pupils are shifted left, plus strong gold eyeline arrow from eyes to tickets toward copy panel"
+    },
+    {
+     "issue": "rewardcircuitofcvmpfcisonbut",
+     "change": "Made hero-value the single price anchor ($89 + 3 nights/all 5 acts/welcome pour/save $40) and stripped competing prices from main CTA and urgency line; unified Nocturne Brass naming"
+    }
+   ],
+   "sourced": [],
+   "diagnosis": [
+    "Face areas (FFA/STS) are silent: no human or gaze cue",
+    "Place areas (PPA/RSC) dominate: the background scene swallows the message",
+    "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+    "Reward circuit (OFC/vmPFC) is on but the appeal head is average: value is felt but what is good isn't legible"
+   ]
+  },
+  {
+   "round": 4,
+   "accepted": false,
+   "ui_score": 0.6104007038279261,
+   "brain_only": 0.465,
+   "judge": 0.75,
+   "changes": [
+    {
+     "issue": "objectshapeloandmotionmtarea",
+     "change": "Replaced small moon-bound trumpet with one dominant diagonal mega-trumpet (135% width, -16deg, bell LEFT toward copy) + thick speed-beam and 4 animated leftward motion streaks"
+    },
+    {
+     "issue": "faceareasffastsaresilent",
+     "change": "Replaced small profile bust with large front 3/4 vocalist face (380px, both eyes visible, pupils shifted left toward CTA) with catchlights and gaze beam to tickets"
+    },
+    {
+     "issue": "rewardcircuitofcvmpfcisonbut",
+     "change": "Made $89 hero-value the single price anchor; removed $89 and Save $40 duplication from main CTA and countdown line; unified Nocturne Brass naming and reduced H1 to let art lead"
+    }
+   ],
+   "sourced": [],
+   "diagnosis": [
+    "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+    "Place areas (PPA/RSC) dominate: the background scene swallows the message",
+    "Face areas (FFA/STS) are silent: no human or gaze cue",
+    "Reward circuit (OFC/vmPFC) is on but the appeal head is average: value is felt but what is good isn't legible"
+   ]
+  },
+  {
+   "round": 5,
+   "accepted": false,
+   "ui_score": 0.60690938473775,
+   "brain_only": 0.447,
+   "judge": 0.75,
+   "changes": [
+    {
+     "issue": "objectshapeloandmotionmtarea",
+     "change": "Flipped trumpet to bell-left mega-silhouette at 165% width bleeding off arch on -16deg diagonal + full-hero diagonal beam + animated motion streaks"
+    },
+    {
+     "issue": "faceareasffastsaresilent",
+     "change": "Replaced single-eye profile with front 3/4 vocalist, both pupils locked left toward CTA plus gaze beam to tickets"
+    },
+    {
+     "issue": "rewardcircuitofcvmpfcisonbut",
+     "change": "Single benefit line + price in hero-value under eye-landing, removed $89/save duplication from button/meta, unified Nocturne naming"
+    }
+   ],
+   "sourced": [],
+   "diagnosis": [
+    "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+    "Place areas (PPA/RSC) dominate: the background scene swallows the message",
+    "Face areas (FFA/STS) are silent: no human or gaze cue",
+    "Reward circuit (OFC/vmPFC) is on but the appeal head is average: value is felt but what is good isn't legible"
+   ]
+  }
+ ],
+ "ledger": [
+  {
+   "id": "placeareaspparscdominate",
+   "text": "Place areas (PPA/RSC) dominate: the background scene swallows the message",
+   "directive": "Simplify the environment: crop or blur the scene, put copy on a solid panel, let one subject own the frame.",
+   "group": "scene_place",
+   "z_opened": 1.5033550222763112,
+   "opened": 0,
+   "resolved": 2,
+   "attempts": 2,
+   "tried": [
+    "r1: dimmed background to near-solid ink, put copy on solid panel, cropped arch glow and grain",
+    "r2: removed beams, lights, grain and arch glow; art cropped to solid portrait card on flat ink"
+   ]
+  },
+  {
+   "id": "objectshapeloandmotionmtarea",
+   "text": "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+   "directive": "Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion.",
+   "group": "visual_motion",
+   "z_opened": -1.3890010766917322,
+   "opened": 0,
+   "resolved": null,
+   "attempts": 5,
+   "tried": [
+    "r1: added diagonal neon motion beam + tilted trumpet silhouette as dominant object",
+    "r2: replaced diagonal beams with one dominant horizontal trumpet + 3 leftward motion sound-lin",
+    "r3: Replaced small moon-bound trumpet with one dominant diagonal trumpet silhouette (560px, -1",
+    "r4: Replaced small moon-bound trumpet with one dominant diagonal mega-trumpet (135% width, -16",
+    "r5: Flipped trumpet to bell-left mega-silhouette at 165% width bleeding off arch on -16deg dia"
+   ]
+  },
+  {
+   "id": "faceareasffastsaresilent",
+   "text": "Face areas (FFA/STS) are silent: no human or gaze cue",
+   "directive": "Introduce a human cue: a portrait or illustrated face whose gaze points at the CTA/product (faces win attention fastest).",
+   "group": "face_body",
+   "z_opened": -1.2758159959683248,
+   "opened": 0,
+   "resolved": null,
+   "attempts": 5,
+   "tried": [
+    "r1: added illustrated vocalist profile in front of moon with gaze and trumpet aimed left at CT",
+    "r2: enlarged vocalist to 340px with large left-gazing eye and eyeline vector to tickets; remov",
+    "r3: Replaced small profile bust with large front 3/4 vocalist face (400px) whose both pupils a",
+    "r4: Replaced small profile bust with large front 3/4 vocalist face (380px, both eyes visible, ",
+    "r5: Replaced single-eye profile with front 3/4 vocalist, both pupils locked left toward CTA pl"
+   ]
+  },
+  {
+   "id": "rewardcircuitofcvmpfcisonbut",
+   "text": "Reward circuit (OFC/vmPFC) is on but the appeal head is average: value is felt but what is good isn't legible",
+   "directive": "Name the value explicitly next to what the eye lands on: one benefit line + price/offer under the hero, nothing else competing.",
+   "group": "value_vmpfc",
+   "z_opened": 0.9715215104434317,
+   "opened": 0,
+   "resolved": null,
+   "attempts": 5,
+   "tried": [
+    "r1: added single gold value badge under hero face with benefit + $89 offer",
+    "r2: kept single gold $89 benefit badge under hero; stripped competing prices from topbar, tick",
+    "r3: Made hero-value the single price anchor ($89 + 3 nights/all 5 acts/welcome pour/save $40) ",
+    "r4: Made $89 hero-value the single price anchor; removed $89 and Save $40 duplication from mai",
+    "r5: Single benefit line + price in hero-value under eye-landing, removed $89/save duplication "
+   ]
+  }
+ ],
+ "assets": []
+}
