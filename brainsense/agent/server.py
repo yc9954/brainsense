@@ -275,6 +275,14 @@ def recall(item_id: str, k: int = 5, kinds: str | None = None, with_outcomes: bo
             "memory": ENGRAMS.count()}
 
 
+@app.post("/sleep")
+def sleep_now(owner: str = "local-user") -> dict[str, Any]:
+    """L3 consolidation: surprise-weighted personal refit, rule mining, USER_TASTE.md, AUROC report."""
+    from .sleep import sleep as _sleep
+    personal = getattr(registry, "_personal", None)
+    return _sleep(ENGRAMS, personal, owner=owner)
+
+
 @app.get("/rules")
 def rules(owner: str = "local-user") -> dict[str, Any]:
     return {"owner": owner, "rules": ENGRAMS.rules(owner), "memory": ENGRAMS.count(owner),

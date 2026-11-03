@@ -115,4 +115,5 @@ def build_registry(heads_dir: Path, cache: FeatureCache, personal_store: Path) -
         personal.add_feedback(item_id, features_for(personal.crowd, item_id), liked)
         return {"stored": True, "n_feedback": len(personal.y)}
 
+    reg._personal = personal   # the sleep pass refits this organ
     return reg
