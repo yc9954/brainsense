@@ -14,7 +14,12 @@ Attach a photo with "+" (or pick a sample) and type "이거 어때?". The agent 
 2. Item B: "꽤 좋아 보여" + compare with A ("A보다 보상 반응이 높아").
 3. "왜?" → the agent cites the numbers. "좋아" → record_feedback → personal head updates.
 
-## 1:30–2:10 Crowd vs you
+## 1:30–2:10 Crowd vs you — the memory loop (Engram)
+1. Reset memory (`POST /memory/reset`) so the taste starts at zero. 실험 tab: rate 8–10 photos with 좋아/별로 (10 outcomes trigger a sleep automatically, or press "자면서 정리하기" → `POST /sleep`).
+2. Show `USER.md`'s taste section appearing: 2–4 falsifiable rules with effect sizes ("보상·가치 영역이 더 켜질 때 네가 좋아할 확률이 높다, d=1.2"), and the learning-curve point (personal LOO AUROC vs crowd).
+3. Attach a photo close to one you rated: the card shows the **reflex** banner and the brain says it in one breath — "3일 전 네가 좋아라고 했던 것과 내 피질엔 거의 같은 패턴이야(유사도 0.97). 네 취향 모델은 92%로 좋아할 쪽" — no reasoning pass, sub-5 s in voice mode.
+4. Ask "나에 대해 뭘 배웠어?" → `brain_rules` quotes the rules with confidence; "이거 전에 본 것 중에 뭐랑 비슷해?" → `brain_recall` cites the precedent by date and outcome.
+5. Open `state/brain_home/` on screen: SOUL.md, MEMORY.md, USER.md, skills/ — the whole agent is readable files plus one SQLite of brain states (the Hermes convention, applied to a cortex).
 After ~8 feedbacks: "대중은 좋아할 것 같은데 네 취향은 아닐 듯. 채도 높은 거 별로라고 했잖아."
 Caption: personal head warm-started from the crowd head; refits in milliseconds on cached features.
 
