@@ -1,0 +1,509 @@
+{
+ "key": "popup_caption",
+ "cfg": {
+  "reader": "Instagram followers of a Seoul dessert brand",
+  "task": "an Instagram caption (under 90 words) announcing a 3-day pop-up, 'Sweetspot x Local Roastery', in Seongsu, Seoul, 14-16 November: strawberry desserts and specialty coffee, first 50 visitors each day get a free tart"
+ },
+ "select": "blend",
+ "source": {
+  "text": "Seongsu, we're popping up! 🍓☕\nSweetspot x Local Roastery\nNov 14-16, 11AM-7PM in Seongsu, Seoul\n\nStrawberry desserts meets specialty coffee for 3 days only!\nFirst 50 visitors each day get a FREE tart. 🥧\n\nBring your bestie, come hungry, come early!\nSee you there? 💕\n\n#SweetspotSeoul #SeongsuPopup #SeoulCafe",
+  "humanlike_pct": 84.3,
+  "humanlike_conf": 0.857,
+  "attention_pct": 63.8,
+  "select_score": 0.7937,
+  "critique": {
+   "kind": "text",
+   "ranking": [
+    "face_body",
+    "control_dlpfc",
+    "language",
+    "visual_early",
+    "attention_dorsal",
+    "scene_place",
+    "default_mode",
+    "visual_motion",
+    "value_vmpfc"
+   ],
+   "relative_z": {
+    "visual_early": 0.56,
+    "visual_motion": -0.86,
+    "face_body": 0.82,
+    "scene_place": 0.22,
+    "attention_dorsal": 0.25,
+    "value_vmpfc": -2.47,
+    "language": 0.63,
+    "default_mode": 0.03,
+    "control_dlpfc": 0.82
+   },
+   "diagnosis": [
+    "Reward and value circuits stay quiet: the reader is never told why this matters to them or what to feel",
+    "Focus and control regions run high: the sentences take effort to read (length, density, jargon)"
+   ],
+   "directives": [
+    "Put one stake or feeling for the reader in the first two sentences (what they lose, want, or did not expect)",
+    "Split the long sentences and give every technical term one plain comparison"
+   ],
+   "humanlike_percentile": 84.27835051546391
+  },
+  "top_features": [
+   {
+    "name": "L_a24",
+    "contribution": 14.1293
+   },
+   {
+    "name": "R_10r",
+    "contribution": 9.0703
+   },
+   {
+    "name": "R_d23ab",
+    "contribution": -8.4343
+   }
+  ]
+ },
+ "oneshot": {
+  "text": "okay Seongsu, big news!! we're teaming up with Local Roastery for Sweetspot x Local Roastery, 3 days only Nov 14-16, 11AM-7PM here in Seongsu, Seoul 🍓☕\nthink our strawberry desserts + their specialty coffee, it's gonna be so good\nif you're one of the first 50 visitors each day you get a free tart on us 🥧\ngrab your bestie and come hungry but like, come early!! see you there? 💕\n#SweetspotSeoul #SeongsuPopup #SeoulCafe",
+  "humanlike_pct": 21.0,
+  "humanlike_conf": 0.69,
+  "attention_pct": 64.9,
+  "select_score": 0.2999,
+  "critique": {
+   "kind": "text",
+   "ranking": [
+    "face_body",
+    "language",
+    "control_dlpfc",
+    "default_mode",
+    "visual_early",
+    "attention_dorsal",
+    "visual_motion",
+    "scene_place",
+    "value_vmpfc"
+   ],
+   "relative_z": {
+    "visual_early": -0.02,
+    "visual_motion": -0.28,
+    "face_body": 1.62,
+    "scene_place": -0.89,
+    "attention_dorsal": -0.19,
+    "value_vmpfc": -1.92,
+    "language": 1.3,
+    "default_mode": 0.11,
+    "control_dlpfc": 0.25
+   },
+   "diagnosis": [
+    "Reward and value circuits stay quiet: the reader is never told why this matters to them or what to feel",
+    "The scene region is quiet: the reader cannot picture where this happens"
+   ],
+   "directives": [
+    "Put one stake or feeling for the reader in the first two sentences (what they lose, want, or did not expect)",
+    "Sketch the place or situation in one line"
+   ],
+   "humanlike_percentile": 21.00515463917526
+  },
+  "top_features": [
+   {
+    "name": "L_a24",
+    "contribution": 10.635
+   },
+   {
+    "name": "R_10r",
+    "contribution": 7.4625
+   },
+   {
+    "name": "R_25",
+    "contribution": -7.2595
+   }
+  ]
+ },
+ "brain_loop": {
+  "history": [
+   {
+    "tag": "brain_loop_r1v1",
+    "round": 1,
+    "variant": 1,
+    "text": "we've been keeping a secret 👀\n\nSweetspot x Local Roastery is happening in Seongsu, Seoul Nov 14-16, 11AM-7PM for 3 days only!\n\nour strawberry desserts + their specialty coffee, together in one place 🍓☕\n\nfirst 50 visitors each day get a FREE tart from us 🥧 so yeah... come early, come hungry\n\ntag your coffee-obsessed bestie below? 💕\n\n#SweetspotSeoul #SeongsuPopup #SeoulCafe",
+    "critique_in": "",
+    "humanlike_pct": 53.9,
+    "humanlike_conf": 0.046,
+    "attention_pct": 64.4,
+    "select_score": 0.7009,
+    "critique": {
+     "kind": "text",
+     "ranking": [
+      "face_body",
+      "language",
+      "control_dlpfc",
+      "default_mode",
+      "visual_early",
+      "attention_dorsal",
+      "scene_place",
+      "visual_motion",
+      "value_vmpfc"
+     ],
+     "relative_z": {
+      "visual_early": -0.1,
+      "visual_motion": -0.91,
+      "face_body": 1.57,
+      "scene_place": -0.66,
+      "attention_dorsal": -0.16,
+      "value_vmpfc": -1.62,
+      "language": 1.57,
+      "default_mode": -0.04,
+      "control_dlpfc": 0.36
+     },
+     "diagnosis": [
+      "Reward and value circuits stay quiet: the reader is never told why this matters to them or what to feel",
+      "The scene region is quiet: the reader cannot picture where this happens"
+     ],
+     "directives": [
+      "Put one stake or feeling for the reader in the first two sentences (what they lose, want, or did not expect)",
+      "Sketch the place or situation in one line"
+     ],
+     "humanlike_percentile": 53.865979381443296
+    },
+    "top_features": [
+     {
+      "name": "L_a24",
+      "contribution": 10.7368
+     },
+     {
+      "name": "R_10r",
+      "contribution": 7.2285
+     },
+     {
+      "name": "R_25",
+      "contribution": -7.2013
+     }
+    ],
+    "review": {
+     "score": 0.9,
+     "reason": "It reads like a real playful brand admin with natural Instagram cadence, clear details, and engaging CTA that fits Seoul dessert followers perfectly."
+    }
+   },
+   {
+    "tag": "brain_loop_r1v2",
+    "round": 1,
+    "variant": 2,
+    "text": "This one’s been in the works forever and we can finally share it.\n\nSweetspot x Local Roastery pop-up is happening in Seongsu, Seoul — our strawberry desserts paired with their specialty coffee for 3 days only, Nov 14-16, 11AM-7PM.\n\nFirst 50 visitors each day get a free tart.\n\nHonestly can’t wait for you guys to try this combo 🍓☕",
+    "critique_in": "",
+    "humanlike_pct": 33.4,
+    "humanlike_conf": 0.468,
+    "attention_pct": 51.8,
+    "select_score": 0.6611,
+    "critique": {
+     "kind": "text",
+     "ranking": [
+      "language",
+      "face_body",
+      "control_dlpfc",
+      "visual_early",
+      "attention_dorsal",
+      "default_mode",
+      "scene_place",
+      "visual_motion",
+      "value_vmpfc"
+     ],
+     "relative_z": {
+      "visual_early": -0.04,
+      "visual_motion": -1.18,
+      "face_body": 1.38,
+      "scene_place": -0.7,
+      "attention_dorsal": -0.18,
+      "value_vmpfc": -1.26,
+      "language": 1.84,
+      "default_mode": -0.23,
+      "control_dlpfc": 0.37
+     },
+     "diagnosis": [
+      "Reward and value circuits stay quiet: the reader is never told why this matters to them or what to feel",
+      "The scene region is quiet: the reader cannot picture where this happens"
+     ],
+     "directives": [
+      "Put one stake or feeling for the reader in the first two sentences (what they lose, want, or did not expect)",
+      "Sketch the place or situation in one line"
+     ],
+     "humanlike_percentile": 33.376288659793815
+    },
+    "top_features": [
+     {
+      "name": "L_a24",
+      "contribution": 9.2635
+     },
+     {
+      "name": "R_10r",
+      "contribution": 6.9005
+     },
+     {
+      "name": "R_d23ab",
+      "contribution": -5.8098
+     }
+    ],
+    "review": {
+     "score": 0.9,
+     "reason": "It sounds like a real excited brand owner and delivers all key details in a warm Instagram-native tone perfect for fans"
+    }
+   },
+   {
+    "tag": "brain_loop_r2v1",
+    "round": 2,
+    "variant": 1,
+    "text": "ok Seongsu girls this is the one you can't miss 👀\nif you're obsessed with strawberry desserts + specialty coffee, we made this for you\n\nSweetspot x Local Roastery, Nov 14-16, 11AM-7PM in Seongsu, Seoul — 3 days only!\nimagine pink trays of strawberries everywhere with fresh espresso in the air 🍓☕\n\nfirst 50 visitors each day get a FREE tart 🥧 so come early, come hungry\nbring your bestie?? 💕\n\n#SweetspotSeoul #SeongsuPopup #SeoulCafe",
+    "critique_in": "A model of a reader's brain read your previous rounds. BEST so far: Human-likeness top 46% (percentile 54 vs 1,200 human and machine texts), attention percentile 64.\nIts text:\nwe've been keeping a secret 👀\n\nSweetspot x Local Roastery is happening in Seongsu, Seoul Nov 14-16, 11AM-7PM for 3 days only!\n\nour strawberry desserts + their specialty coffee, together in one place 🍓☕\n\nfirst 50 visitors each day get a FREE tart from us 🥧 so yeah... come early, come hungry\n\ntag your coffee-obsessed bestie below? 💕\n\n#SweetspotSeoul #SeongsuPopup #SeoulCafe\n\nWhat the reader's cortex says is missing in the best one: Reward and value circuits stay quiet: the reader is never told why this matters to them or what to feel / The scene region is quiet: the reader cannot picture where this happens\nDo this next: Put one stake or feeling for the reader in the first two sentences (what they lose, want, or did not expect) / Sketch the place or situation in one line\nThe WORST round (Human-likeness percentile 33) started: This one’s been in the works forever and we can finally share it.\n\nSweetspot x Local Roastery pop-up is happening in Seongsu, Seoul — our strawberry desserts pa...\nRewrite again from the best one. Keep every fact, keep the length limit.",
+    "humanlike_pct": 6.4,
+    "humanlike_conf": 0.901,
+    "attention_pct": 61.6,
+    "select_score": 0.4788,
+    "critique": {
+     "kind": "text",
+     "ranking": [
+      "face_body",
+      "language",
+      "visual_early",
+      "visual_motion",
+      "control_dlpfc",
+      "attention_dorsal",
+      "default_mode",
+      "scene_place",
+      "value_vmpfc"
+     ],
+     "relative_z": {
+      "visual_early": 0.52,
+      "visual_motion": 0.36,
+      "face_body": 1.33,
+      "scene_place": -0.67,
+      "attention_dorsal": 0.0,
+      "value_vmpfc": -2.27,
+      "language": 1.0,
+      "default_mode": -0.45,
+      "control_dlpfc": 0.18
+     },
+     "diagnosis": [
+      "Reward and value circuits stay quiet: the reader is never told why this matters to them or what to feel",
+      "The scene region is quiet: the reader cannot picture where this happens"
+     ],
+     "directives": [
+      "Put one stake or feeling for the reader in the first two sentences (what they lose, want, or did not expect)",
+      "Sketch the place or situation in one line"
+     ],
+     "humanlike_percentile": 6.443298969072164
+    },
+    "top_features": [
+     {
+      "name": "L_a24",
+      "contribution": 10.4695
+     },
+     {
+      "name": "L_V3A",
+      "contribution": 8.0013
+     },
+     {
+      "name": "R_10r",
+      "contribution": 7.5684
+     }
+    ],
+    "review": {
+     "score": 0.85,
+     "reason": "It sounds like a real playful cafe admin and nails the details, though Seongsu girls plus double question marks feels slightly exclusionary and sloppy."
+    }
+   },
+   {
+    "tag": "brain_loop_r2v2",
+    "round": 2,
+    "variant": 2,
+    "text": "okay strawberry lovers, cancel your weekend plans 🍓\n\nSweetspot x Local Roastery is taking over our little sunlit shop in Seongsu, Seoul Nov 14-16, 11AM-7PM — just 3 days!\n\nthink fresh strawberry desserts + proper specialty coffee in one cozy room ☕\n\nfirst 50 visitors each day get a FREE tart 🥧 so come early and come hungry\n\nbring your bestie?? 💕\n\n#SweetspotSeoul #SeongsuPopup #SeoulCafe",
+    "critique_in": "A model of a reader's brain read your previous rounds. BEST so far: Human-likeness top 46% (percentile 54 vs 1,200 human and machine texts), attention percentile 64.\nIts text:\nwe've been keeping a secret 👀\n\nSweetspot x Local Roastery is happening in Seongsu, Seoul Nov 14-16, 11AM-7PM for 3 days only!\n\nour strawberry desserts + their specialty coffee, together in one place 🍓☕\n\nfirst 50 visitors each day get a FREE tart from us 🥧 so yeah... come early, come hungry\n\ntag your coffee-obsessed bestie below? 💕\n\n#SweetspotSeoul #SeongsuPopup #SeoulCafe\n\nWhat the reader's cortex says is missing in the best one: Reward and value circuits stay quiet: the reader is never told why this matters to them or what to feel / The scene region is quiet: the reader cannot picture where this happens\nDo this next: Put one stake or feeling for the reader in the first two sentences (what they lose, want, or did not expect) / Sketch the place or situation in one line\nThe WORST round (Human-likeness percentile 33) started: This one’s been in the works forever and we can finally share it.\n\nSweetspot x Local Roastery pop-up is happening in Seongsu, Seoul — our strawberry desserts pa...\nRewrite again from the best one. Keep every fact, keep the length limit.",
+    "humanlike_pct": 49.5,
+    "humanlike_conf": 0.085,
+    "attention_pct": 50.7,
+    "select_score": 0.6748,
+    "critique": {
+     "kind": "text",
+     "ranking": [
+      "face_body",
+      "language",
+      "control_dlpfc",
+      "attention_dorsal",
+      "visual_motion",
+      "visual_early",
+      "default_mode",
+      "scene_place",
+      "value_vmpfc"
+     ],
+     "relative_z": {
+      "visual_early": -0.18,
+      "visual_motion": -0.03,
+      "face_body": 1.52,
+      "scene_place": -0.89,
+      "attention_dorsal": 0.18,
+      "value_vmpfc": -1.92,
+      "language": 1.34,
+      "default_mode": -0.42,
+      "control_dlpfc": 0.42
+     },
+     "diagnosis": [
+      "Reward and value circuits stay quiet: the reader is never told why this matters to them or what to feel",
+      "The scene region is quiet: the reader cannot picture where this happens"
+     ],
+     "directives": [
+      "Put one stake or feeling for the reader in the first two sentences (what they lose, want, or did not expect)",
+      "Sketch the place or situation in one line"
+     ],
+     "humanlike_percentile": 49.48453608247423
+    },
+    "top_features": [
+     {
+      "name": "L_a24",
+      "contribution": 11.0718
+     },
+     {
+      "name": "R_10r",
+      "contribution": 6.9199
+     },
+     {
+      "name": "R_25",
+      "contribution": -6.5556
+     }
+    ],
+    "review": {
+     "score": 0.85,
+     "reason": "Feels like a real cheerful shop staffer with clear details and perfect Instagram energy, except the closing line feels slightly forced."
+    }
+   }
+  ],
+  "best": "brain_loop_r1v1",
+  "text": "we've been keeping a secret 👀\n\nSweetspot x Local Roastery is happening in Seongsu, Seoul Nov 14-16, 11AM-7PM for 3 days only!\n\nour strawberry desserts + their specialty coffee, together in one place 🍓☕\n\nfirst 50 visitors each day get a FREE tart from us 🥧 so yeah... come early, come hungry\n\ntag your coffee-obsessed bestie below? 💕\n\n#SweetspotSeoul #SeongsuPopup #SeoulCafe",
+  "humanlike_pct": 53.9,
+  "humanlike_conf": 0.046,
+  "attention_pct": 64.4,
+  "select_score": 0.7009,
+  "critique": {
+   "kind": "text",
+   "ranking": [
+    "face_body",
+    "language",
+    "control_dlpfc",
+    "default_mode",
+    "visual_early",
+    "attention_dorsal",
+    "scene_place",
+    "visual_motion",
+    "value_vmpfc"
+   ],
+   "relative_z": {
+    "visual_early": -0.1,
+    "visual_motion": -0.91,
+    "face_body": 1.57,
+    "scene_place": -0.66,
+    "attention_dorsal": -0.16,
+    "value_vmpfc": -1.62,
+    "language": 1.57,
+    "default_mode": -0.04,
+    "control_dlpfc": 0.36
+   },
+   "diagnosis": [
+    "Reward and value circuits stay quiet: the reader is never told why this matters to them or what to feel",
+    "The scene region is quiet: the reader cannot picture where this happens"
+   ],
+   "directives": [
+    "Put one stake or feeling for the reader in the first two sentences (what they lose, want, or did not expect)",
+    "Sketch the place or situation in one line"
+   ],
+   "humanlike_percentile": 53.865979381443296
+  }
+ },
+ "pairwise": {
+  "brain_vs_oneshot": {
+   "p_first": 0.85,
+   "order_ab": 0.85,
+   "order_ba": 0.85,
+   "reason": "A feels like a real social manager with its hook, scannable breaks and direct tag-a-friend CTA versus B's repetitive run-on wording. | swapped: B uses a natural Instagram hook, cleaner details, and a specific tag-a-friend CTA that feels more human and engaging."
+  },
+  "brain_vs_source": {
+   "p_first": 0.9,
+   "order_ab": 0.9,
+   "order_ba": 0.9,
+   "reason": "Version A sounds like a real human with casual voice and specific CTA, while B feels templated and has a grammar error. | swapped: Version B uses natural conversational voice and a specific Instagram-native CTA while Version A feels generic and templated."
+  },
+  "oneshot_vs_source": {
+   "p_first": 0.9,
+   "order_ab": 0.9,
+   "order_ba": 0.9,
+   "reason": "Version A uses natural conversational voice and specific ownership while Version B feels like a generic templated flyer with a grammar slip. | swapped: B sounds like a real founder talking with warm conversational flow while keeping all details clear and specific."
+  }
+ },
+ "audio": {
+  "source": {
+   "file": "results/showcase/text/en-text2/popup_caption/source.wav",
+   "seconds": 25,
+   "heads": {
+    "attention": {
+     "percentile": 48.2,
+     "confidence": 0.011
+    },
+    "appeal": {
+     "percentile": 0.0,
+     "confidence": 0.871
+    }
+   },
+   "relative_z": {
+    "visual_early": 0.1,
+    "visual_motion": -0.71,
+    "face_body": -0.13,
+    "scene_place": -0.24,
+    "attention_dorsal": 1.72,
+    "value_vmpfc": -0.44,
+    "language": 0.72,
+    "default_mode": -1.96,
+    "control_dlpfc": 0.95
+   },
+   "ranking": [
+    "attention_dorsal",
+    "control_dlpfc",
+    "language",
+    "visual_early",
+    "face_body",
+    "scene_place",
+    "value_vmpfc",
+    "visual_motion",
+    "default_mode"
+   ]
+  },
+  "brain_loop": {
+   "file": "results/showcase/text/en-text2/popup_caption/brain_loop.wav",
+   "seconds": 28,
+   "heads": {
+    "attention": {
+     "percentile": 30.4,
+     "confidence": 0.17
+    },
+    "appeal": {
+     "percentile": 0.0,
+     "confidence": 0.907
+    }
+   },
+   "relative_z": {
+    "visual_early": -0.2,
+    "visual_motion": -1.67,
+    "face_body": 0.26,
+    "scene_place": -0.15,
+    "attention_dorsal": 1.38,
+    "value_vmpfc": -0.63,
+    "language": 1.19,
+    "default_mode": -1.17,
+    "control_dlpfc": 0.99
+   },
+   "ranking": [
+    "attention_dorsal",
+    "language",
+    "control_dlpfc",
+    "face_body",
+    "scene_place",
+    "visual_early",
+    "value_vmpfc",
+    "default_mode",
+    "visual_motion"
+   ]
+  }
+ },
+ "seconds": 329.8
+}

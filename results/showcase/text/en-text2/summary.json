@@ -1,0 +1,160 @@
+{
+ "run": "en-text2",
+ "rounds": 2,
+ "variants": 2,
+ "select": "blend",
+ "briefs": [
+  {
+   "key": "popup_caption",
+   "humanlike_pct": {
+    "source": 84.3,
+    "oneshot": 21.0,
+    "brain_loop": 53.9
+   },
+   "attention_pct": {
+    "source": 63.8,
+    "oneshot": 64.9,
+    "brain_loop": 64.4
+   },
+   "p_brain_over_oneshot": 0.85,
+   "p_brain_over_source": 0.9,
+   "p_oneshot_over_source": 0.9,
+   "audio": {
+    "source": {
+     "attention": {
+      "percentile": 48.2,
+      "confidence": 0.011
+     },
+     "appeal": {
+      "percentile": 0.0,
+      "confidence": 0.871
+     }
+    },
+    "brain_loop": {
+     "attention": {
+      "percentile": 30.4,
+      "confidence": 0.17
+     },
+     "appeal": {
+      "percentile": 0.0,
+      "confidence": 0.907
+     }
+    }
+   }
+  },
+  {
+   "key": "cold_email",
+   "humanlike_pct": {
+    "source": 6.4,
+    "oneshot": 2.3,
+    "brain_loop": 24.2
+   },
+   "attention_pct": {
+    "source": 60.0,
+    "oneshot": 82.7,
+    "brain_loop": 82.5
+   },
+   "p_brain_over_oneshot": 0.3,
+   "p_brain_over_source": 0.5,
+   "p_oneshot_over_source": 0.875,
+   "audio": {
+    "source": {
+     "attention": {
+      "percentile": 49.0,
+      "confidence": 0.014
+     },
+     "appeal": {
+      "percentile": 96.9,
+      "confidence": 0.326
+     }
+    },
+    "brain_loop": {
+     "attention": {
+      "percentile": 70.7,
+      "confidence": 0.24
+     },
+     "appeal": {
+      "percentile": 35.1,
+      "confidence": 0.115
+     }
+    }
+   }
+  },
+  {
+   "key": "support_reply",
+   "humanlike_pct": {
+    "source": 39.0,
+    "oneshot": 44.3,
+    "brain_loop": 47.2
+   },
+   "attention_pct": {
+    "source": 79.5,
+    "oneshot": 82.7,
+    "brain_loop": 79.5
+   },
+   "p_brain_over_oneshot": 0.85,
+   "p_brain_over_source": 0.9,
+   "p_oneshot_over_source": 0.9,
+   "audio": {
+    "source": {
+     "attention": {
+      "percentile": 68.2,
+      "confidence": 0.211
+     },
+     "appeal": {
+      "percentile": 0.0,
+      "confidence": 0.83
+     }
+    },
+    "brain_loop": {
+     "attention": {
+      "percentile": 71.0,
+      "confidence": 0.243
+     },
+     "appeal": {
+      "percentile": 0.0,
+      "confidence": 0.86
+     }
+    }
+   }
+  },
+  {
+   "key": "dating_bio",
+   "humanlike_pct": {
+    "source": 99.9,
+    "oneshot": 99.6,
+    "brain_loop": 98.8
+   },
+   "attention_pct": {
+    "source": 60.0,
+    "oneshot": 64.9,
+    "brain_loop": 72.9
+   },
+   "p_brain_over_oneshot": 0.525,
+   "p_brain_over_source": 0.85,
+   "p_oneshot_over_source": 0.9,
+   "audio": {
+    "source": {
+     "attention": {
+      "percentile": 64.4,
+      "confidence": 0.162
+     },
+     "appeal": {
+      "percentile": 62.0,
+      "confidence": 0.005
+     }
+    },
+    "brain_loop": {
+     "attention": {
+      "percentile": 44.4,
+      "confidence": 0.046
+     },
+     "appeal": {
+      "percentile": 100.0,
+      "confidence": 0.878
+     }
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,509 @@
+{
+ "key": "cold_email",
+ "cfg": {
+  "reader": "a busy head of marketing at a mid-size direct-to-consumer brand",
+  "task": "a cold email (under 120 words) from a small creative studio that designs pop-up stores, asking for a 15-minute call next week; mention one past project (a 9-day sneaker pop-up that drew 11,000 visitors)"
+ },
+ "select": "blend",
+ "source": {
+  "text": "Subject: quick pop-up idea for [Brand]?\n\nHi [First Name],\n\nWe're a small creative studio that designs pop-up stores to drive traffic + sales.\n\nLast fall, we built a 9-day sneaker pop-up that drew 11,000 visitors — sold out in 7 days.\n\nHave 1-2 ideas that could work well for [Brand]. Happy to share, no strings attached.\n\nOpen to a 15-minute call next week, Tue or Thu morning?\n\nThanks,\n[Your Name]\n[Studio Name], [City]",
+  "humanlike_pct": 6.4,
+  "humanlike_conf": 0.902,
+  "attention_pct": 60.0,
+  "select_score": 0.107,
+  "critique": {
+   "kind": "text",
+   "ranking": [
+    "face_body",
+    "language",
+    "control_dlpfc",
+    "default_mode",
+    "visual_early",
+    "attention_dorsal",
+    "visual_motion",
+    "value_vmpfc",
+    "scene_place"
+   ],
+   "relative_z": {
+    "visual_early": -0.28,
+    "visual_motion": -0.4,
+    "face_body": 1.88,
+    "scene_place": -1.13,
+    "attention_dorsal": -0.29,
+    "value_vmpfc": -1.08,
+    "language": 1.62,
+    "default_mode": -0.25,
+    "control_dlpfc": -0.06
+   },
+   "diagnosis": [
+    "Reward and value circuits stay quiet: the reader is never told why this matters to them or what to feel",
+    "The scene region is quiet: the reader cannot picture where this happens"
+   ],
+   "directives": [
+    "Put one stake or feeling for the reader in the first two sentences (what they lose, want, or did not expect)",
+    "Sketch the place or situation in one line"
+   ],
+   "humanlike_percentile": 6.443298969072164
+  },
+  "top_features": [
+   {
+    "name": "R_25",
+    "contribution": -7.0114
+   },
+   {
+    "name": "L_EC",
+    "contribution": -6.0851
+   },
+   {
+    "name": "L_25",
+    "contribution": -5.3718
+   }
+  ]
+ },
+ "oneshot": {
+  "text": "Subject: quick pop-up idea for [Brand]?\n\nHi [First Name],\n\nI'll keep this short — I know you're slammed.\n\nWe're a small creative studio in [City], we design pop-up stores to drive traffic and sales.\n\nLast fall we built a 9-day sneaker pop-up that drew 11,000 visitors — sold out in 7 days.\n\nTook a look at [Brand] and have 1-2 ideas I think could work well for you. Happy to share, no strings attached.\n\nOpen to a 15-minute call next week? I'm free Tue or Thu morning if either works.\n\nThanks,\n[Your Name]\n[Studio Name], [City]",
+  "humanlike_pct": 2.3,
+  "humanlike_conf": 0.958,
+  "attention_pct": 82.7,
+  "select_score": 0.0433,
+  "critique": {
+   "kind": "text",
+   "ranking": [
+    "face_body",
+    "language",
+    "default_mode",
+    "visual_motion",
+    "control_dlpfc",
+    "visual_early",
+    "attention_dorsal",
+    "scene_place",
+    "value_vmpfc"
+   ],
+   "relative_z": {
+    "visual_early": -0.29,
+    "visual_motion": -0.0,
+    "face_body": 1.88,
+    "scene_place": -1.28,
+    "attention_dorsal": -0.43,
+    "value_vmpfc": -1.3,
+    "language": 1.34,
+    "default_mode": 0.18,
+    "control_dlpfc": -0.11
+   },
+   "diagnosis": [
+    "Reward and value circuits stay quiet: the reader is never told why this matters to them or what to feel",
+    "The scene region is quiet: the reader cannot picture where this happens"
+   ],
+   "directives": [
+    "Put one stake or feeling for the reader in the first two sentences (what they lose, want, or did not expect)",
+    "Sketch the place or situation in one line"
+   ],
+   "humanlike_percentile": 2.3195876288659796
+  },
+  "top_features": [
+   {
+    "name": "L_MT",
+    "contribution": -6.7611
+   },
+   {
+    "name": "L_EC",
+    "contribution": -6.4116
+   },
+   {
+    "name": "R_MT",
+    "contribution": -6.0039
+   }
+  ]
+ },
+ "brain_loop": {
+  "history": [
+   {
+    "tag": "brain_loop_r1v1",
+    "round": 1,
+    "variant": 1,
+    "text": "Subject: idea for [Brand] in real life?\n\nHi [First Name],\n\nSaw what you're doing with [Brand] — feels like it would kill in person.\n\nWe're a small creative studio that designs pop-up stores to drive traffic + sales. Last fall we built a 9-day sneaker pop-up, 11,000 visitors, sold out in 7 days.\n\nI jotted down 1-2 ideas that could work for [Brand] — happy to share, no strings attached.\n\nIf useful, open to a 15-minute call next week, Tue or Thu morning?\n\nThanks,\n[Your Name]\n[Studio Name], [City]",
+    "critique_in": "",
+    "humanlike_pct": 22.3,
+    "humanlike_conf": 0.66,
+    "attention_pct": 68.2,
+    "select_score": 0.5836,
+    "critique": {
+     "kind": "text",
+     "ranking": [
+      "face_body",
+      "language",
+      "control_dlpfc",
+      "attention_dorsal",
+      "visual_early",
+      "visual_motion",
+      "default_mode",
+      "value_vmpfc",
+      "scene_place"
+     ],
+     "relative_z": {
+      "visual_early": -0.14,
+      "visual_motion": -0.14,
+      "face_body": 1.65,
+      "scene_place": -1.44,
+      "attention_dorsal": -0.13,
+      "value_vmpfc": -1.31,
+      "language": 1.54,
+      "default_mode": -0.18,
+      "control_dlpfc": 0.15
+     },
+     "diagnosis": [
+      "Reward and value circuits stay quiet: the reader is never told why this matters to them or what to feel",
+      "The scene region is quiet: the reader cannot picture where this happens"
+     ],
+     "directives": [
+      "Put one stake or feeling for the reader in the first two sentences (what they lose, want, or did not expect)",
+      "Sketch the place or situation in one line"
+     ],
+     "humanlike_percentile": 22.29381443298969
+    },
+    "top_features": [
+     {
+      "name": "L_a24",
+      "contribution": 6.2825
+     },
+     {
+      "name": "L_MT",
+      "contribution": -5.2995
+     },
+     {
+      "name": "L_EC",
+      "contribution": -5.1833
+     }
+    ],
+    "review": {
+     "score": 0.85,
+     "reason": "Short, natural, and respectful with concrete proof and a clear ask, though the opening line is a bit generic."
+    }
+   },
+   {
+    "tag": "brain_loop_r1v2",
+    "round": 1,
+    "variant": 2,
+    "text": "Subject: quick pop-up idea for [Brand]?\n\nHi [First Name],\n\nBorrowing 20 seconds —\n\nLast fall, we built a 9-day sneaker pop-up that drew 11,000 visitors — sold out in 7 days.\n\nWe're a small creative studio that designs pop-up stores to drive traffic + sales, and running that one gave me 1-2 ideas that could work well for [Brand]. Happy to share, no strings attached.\n\nOpen to a 15-minute call next week, Tue or Thu morning?\n\nThanks,\n[Your Name]\n[Studio Name], [City]",
+    "critique_in": "",
+    "humanlike_pct": 21.0,
+    "humanlike_conf": 0.691,
+    "attention_pct": 65.8,
+    "select_score": 0.5747,
+    "critique": {
+     "kind": "text",
+     "ranking": [
+      "language",
+      "face_body",
+      "control_dlpfc",
+      "default_mode",
+      "attention_dorsal",
+      "visual_early",
+      "visual_motion",
+      "value_vmpfc",
+      "scene_place"
+     ],
+     "relative_z": {
+      "visual_early": -0.45,
+      "visual_motion": -0.74,
+      "face_body": 1.58,
+      "scene_place": -1.35,
+      "attention_dorsal": -0.13,
+      "value_vmpfc": -0.89,
+      "language": 1.73,
+      "default_mode": -0.06,
+      "control_dlpfc": 0.31
+     },
+     "diagnosis": [
+      "Reward and value circuits stay quiet: the reader is never told why this matters to them or what to feel",
+      "The scene region is quiet: the reader cannot picture where this happens"
+     ],
+     "directives": [
+      "Put one stake or feeling for the reader in the first two sentences (what they lose, want, or did not expect)",
+      "Sketch the place or situation in one line"
+     ],
+     "humanlike_percentile": 21.00515463917526
+    },
+    "top_features": [
+     {
+      "name": "R_25",
+      "contribution": -5.5191
+     },
+     {
+      "name": "L_a24",
+      "contribution": 4.8479
+     },
+     {
+      "name": "L_EC",
+      "contribution": -4.6429
+     }
+    ],
+    "review": {
+     "score": 0.85,
+     "reason": "Concise, human and credible with clear proof and an easy ask, though the brand-specific hook feels slightly templated."
+    }
+   },
+   {
+    "tag": "brain_loop_r2v1",
+    "round": 2,
+    "variant": 1,
+    "text": "Subject: [Brand] offline for a weekend?\n\nHi [First Name],\n\nOnline-only attention fades fast — the brands winning right now are the ones people can actually walk into.\n\nWe're a small creative studio that designs pop-up stores to drive traffic + sales. Last fall we built a 9-day sneaker pop-up that drew 11,000 visitors — sold out in 7 days.\n\nPicture it for [Brand]: one tight room, product wall in back, line out the door Saturday morning.\n\nI have 1-2 ideas that could work well for [Brand]. Happy to share, no strings attached.\n\nOpen to a 15-minute call next week, Tue or Thu morning?\n\nThanks,\n[Your Name]\n[Studio Name], [City]",
+    "critique_in": "A model of a reader's brain read your previous rounds. BEST so far: Human-likeness top 78% (percentile 22 vs 1,200 human and machine texts), attention percentile 68.\nIts text:\nSubject: idea for [Brand] in real life?\n\nHi [First Name],\n\nSaw what you're doing with [Brand] — feels like it would kill in person.\n\nWe're a small creative studio that designs pop-up stores to drive traffic + sales. Last fall we built a 9-day sneaker pop-up, 11,000 visitors, sold out in 7 days.\n\nI jotted down 1-2 ideas that could work for [Brand] — happy to share, no strings attached.\n\nIf useful, open to a 15-minute call next week, Tue or Thu morning?\n\nThanks,\n[Your Name]\n[Studio Name], [City]\n\nWhat the reader's cortex says is missing in the best one: Reward and value circuits stay quiet: the reader is never told why this matters to them or what to feel / The scene region is quiet: the reader cannot picture where this happens\nDo this next: Put one stake or feeling for the reader in the first two sentences (what they lose, want, or did not expect) / Sketch the place or situation in one line\nThe WORST round (Human-likeness percentile 21) started: Subject: quick pop-up idea for [Brand]?\n\nHi [First Name],\n\nBorrowing 20 seconds —\n\nLast fall, we built a 9-day sneaker pop-up that drew 11,000 visitors — sold o...\nRewrite again from the best one. Keep every fact, keep the length limit.",
+    "humanlike_pct": 22.7,
+    "humanlike_conf": 0.654,
+    "attention_pct": 63.3,
+    "select_score": 0.5856,
+    "critique": {
+     "kind": "text",
+     "ranking": [
+      "face_body",
+      "language",
+      "default_mode",
+      "visual_motion",
+      "visual_early",
+      "control_dlpfc",
+      "attention_dorsal",
+      "scene_place",
+      "value_vmpfc"
+     ],
+     "relative_z": {
+      "visual_early": -0.18,
+      "visual_motion": -0.17,
+      "face_body": 1.88,
+      "scene_place": -0.93,
+      "attention_dorsal": -0.44,
+      "value_vmpfc": -1.39,
+      "language": 1.54,
+      "default_mode": -0.11,
+      "control_dlpfc": -0.2
+     },
+     "diagnosis": [
+      "Reward and value circuits stay quiet: the reader is never told why this matters to them or what to feel",
+      "The scene region is quiet: the reader cannot picture where this happens"
+     ],
+     "directives": [
+      "Put one stake or feeling for the reader in the first two sentences (what they lose, want, or did not expect)",
+      "Sketch the place or situation in one line"
+     ],
+     "humanlike_percentile": 22.68041237113402
+    },
+    "top_features": [
+     {
+      "name": "L_EC",
+      "contribution": -6.2918
+     },
+     {
+      "name": "L_a24",
+      "contribution": 5.9607
+     },
+     {
+      "name": "R_25",
+      "contribution": -5.8694
+     }
+    ],
+    "review": {
+     "score": 0.85,
+     "reason": "Concise, vivid and human with strong proof, but opening line and 'no strings attached' feel slightly templated."
+    }
+   },
+   {
+    "tag": "brain_loop_r2v2",
+    "round": 2,
+    "variant": 2,
+    "text": "Subject: idea for [Brand] in real life?\n\nHi [First Name],\n\nYou're probably leaving in-person sales on the table — most DTC brands we meet are.\n\nWe're a small creative studio that designs pop-up stores to drive traffic + sales. Last fall we turned an empty corner shop into a 9-day sneaker pop-up with a line out the door — 11,000 visitors, sold out in 7 days.\n\nI have 1-2 ideas that could work for [Brand] — happy to share, no strings attached.\n\nOpen to a 15-minute call next week, Tue or Thu morning?\n\nThanks,\n[Your Name]\n[Studio Name], [City]",
+    "critique_in": "A model of a reader's brain read your previous rounds. BEST so far: Human-likeness top 78% (percentile 22 vs 1,200 human and machine texts), attention percentile 68.\nIts text:\nSubject: idea for [Brand] in real life?\n\nHi [First Name],\n\nSaw what you're doing with [Brand] — feels like it would kill in person.\n\nWe're a small creative studio that designs pop-up stores to drive traffic + sales. Last fall we built a 9-day sneaker pop-up, 11,000 visitors, sold out in 7 days.\n\nI jotted down 1-2 ideas that could work for [Brand] — happy to share, no strings attached.\n\nIf useful, open to a 15-minute call next week, Tue or Thu morning?\n\nThanks,\n[Your Name]\n[Studio Name], [City]\n\nWhat the reader's cortex says is missing in the best one: Reward and value circuits stay quiet: the reader is never told why this matters to them or what to feel / The scene region is quiet: the reader cannot picture where this happens\nDo this next: Put one stake or feeling for the reader in the first two sentences (what they lose, want, or did not expect) / Sketch the place or situation in one line\nThe WORST round (Human-likeness percentile 21) started: Subject: quick pop-up idea for [Brand]?\n\nHi [First Name],\n\nBorrowing 20 seconds —\n\nLast fall, we built a 9-day sneaker pop-up that drew 11,000 visitors — sold o...\nRewrite again from the best one. Keep every fact, keep the length limit.",
+    "humanlike_pct": 24.2,
+    "humanlike_conf": 0.627,
+    "attention_pct": 82.5,
+    "select_score": 0.6092,
+    "critique": {
+     "kind": "text",
+     "ranking": [
+      "face_body",
+      "language",
+      "default_mode",
+      "control_dlpfc",
+      "attention_dorsal",
+      "visual_early",
+      "visual_motion",
+      "scene_place",
+      "value_vmpfc"
+     ],
+     "relative_z": {
+      "visual_early": -0.31,
+      "visual_motion": -0.58,
+      "face_body": 1.8,
+      "scene_place": -1.15,
+      "attention_dorsal": -0.31,
+      "value_vmpfc": -1.18,
+      "language": 1.58,
+      "default_mode": 0.12,
+      "control_dlpfc": 0.02
+     },
+     "diagnosis": [
+      "Reward and value circuits stay quiet: the reader is never told why this matters to them or what to feel",
+      "The scene region is quiet: the reader cannot picture where this happens"
+     ],
+     "directives": [
+      "Put one stake or feeling for the reader in the first two sentences (what they lose, want, or did not expect)",
+      "Sketch the place or situation in one line"
+     ],
+     "humanlike_percentile": 24.22680412371134
+    },
+    "top_features": [
+     {
+      "name": "L_a24",
+      "contribution": 6.4137
+     },
+     {
+      "name": "R_25",
+      "contribution": -6.343
+     },
+     {
+      "name": "L_EC",
+      "contribution": -6.0787
+     }
+    ],
+    "review": {
+     "score": 0.88,
+     "reason": "Short human voice with concrete proof and a low-friction ask that respects a busy marketer's inbox."
+    }
+   }
+  ],
+  "best": "brain_loop_r2v2",
+  "text": "Subject: idea for [Brand] in real life?\n\nHi [First Name],\n\nYou're probably leaving in-person sales on the table — most DTC brands we meet are.\n\nWe're a small creative studio that designs pop-up stores to drive traffic + sales. Last fall we turned an empty corner shop into a 9-day sneaker pop-up with a line out the door — 11,000 visitors, sold out in 7 days.\n\nI have 1-2 ideas that could work for [Brand] — happy to share, no strings attached.\n\nOpen to a 15-minute call next week, Tue or Thu morning?\n\nThanks,\n[Your Name]\n[Studio Name], [City]",
+  "humanlike_pct": 24.2,
+  "humanlike_conf": 0.627,
+  "attention_pct": 82.5,
+  "select_score": 0.6092,
+  "critique": {
+   "kind": "text",
+   "ranking": [
+    "face_body",
+    "language",
+    "default_mode",
+    "control_dlpfc",
+    "attention_dorsal",
+    "visual_early",
+    "visual_motion",
+    "scene_place",
+    "value_vmpfc"
+   ],
+   "relative_z": {
+    "visual_early": -0.31,
+    "visual_motion": -0.58,
+    "face_body": 1.8,
+    "scene_place": -1.15,
+    "attention_dorsal": -0.31,
+    "value_vmpfc": -1.18,
+    "language": 1.58,
+    "default_mode": 0.12,
+    "control_dlpfc": 0.02
+   },
+   "diagnosis": [
+    "Reward and value circuits stay quiet: the reader is never told why this matters to them or what to feel",
+    "The scene region is quiet: the reader cannot picture where this happens"
+   ],
+   "directives": [
+    "Put one stake or feeling for the reader in the first two sentences (what they lose, want, or did not expect)",
+    "Sketch the place or situation in one line"
+   ],
+   "humanlike_percentile": 24.22680412371134
+  }
+ },
+ "pairwise": {
+  "brain_vs_oneshot": {
+   "p_first": 0.3,
+   "order_ab": 0.1,
+   "order_ba": 0.5,
+   "reason": "B respects the busy reader, shows real homework on the brand, and sounds human instead of salesy. | swapped: "
+  },
+  "brain_vs_source": {
+   "p_first": 0.5,
+   "order_ab": 0.15,
+   "order_ba": 0.85,
+   "reason": "B respects the busy reader with direct proof and a clear ask instead of opening with a generic presumptuous sales line. | swapped: B feels human and specific with vivid detail and first-person voice while A reads flat and generic."
+  },
+  "oneshot_vs_source": {
+   "p_first": 0.875,
+   "order_ab": 0.85,
+   "order_ba": 0.9,
+   "reason": "Version A feels personally written with empathy, location detail, and natural first-person phrasing that respects a busy reader without sounding clipped. | swapped: B feels human and respectful with specific homework and natural phrasing, while A reads like a terse template."
+  }
+ },
+ "audio": {
+  "source": {
+   "file": "results/showcase/text/en-text2/cold_email/source.wav",
+   "seconds": 30,
+   "heads": {
+    "attention": {
+     "percentile": 49.0,
+     "confidence": 0.014
+    },
+    "appeal": {
+     "percentile": 96.9,
+     "confidence": 0.326
+    }
+   },
+   "relative_z": {
+    "visual_early": -0.68,
+    "visual_motion": -1.19,
+    "face_body": 1.03,
+    "scene_place": -1.17,
+    "attention_dorsal": 0.77,
+    "value_vmpfc": -0.66,
+    "language": 1.62,
+    "default_mode": -0.56,
+    "control_dlpfc": 0.84
+   },
+   "ranking": [
+    "language",
+    "face_body",
+    "control_dlpfc",
+    "attention_dorsal",
+    "default_mode",
+    "value_vmpfc",
+    "visual_early",
+    "scene_place",
+    "visual_motion"
+   ]
+  },
+  "brain_loop": {
+   "file": "results/showcase/text/en-text2/cold_email/brain_loop.wav",
+   "seconds": 37,
+   "heads": {
+    "attention": {
+     "percentile": 70.7,
+     "confidence": 0.24
+    },
+    "appeal": {
+     "percentile": 35.1,
+     "confidence": 0.115
+    }
+   },
+   "relative_z": {
+    "visual_early": -0.32,
+    "visual_motion": -1.43,
+    "face_body": 1.15,
+    "scene_place": -1.01,
+    "attention_dorsal": 0.44,
+    "value_vmpfc": -0.25,
+    "language": 1.87,
+    "default_mode": -0.79,
+    "control_dlpfc": 0.35
+   },
+   "ranking": [
+    "language",
+    "face_body",
+    "attention_dorsal",
+    "control_dlpfc",
+    "value_vmpfc",
+    "visual_early",
+    "default_mode",
+    "scene_place",
+    "visual_motion"
+   ]
+  }
+ },
+ "seconds": 404.4
+}
