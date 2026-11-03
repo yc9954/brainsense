@@ -182,8 +182,10 @@ def sleep(store: EngramStore, personal: PersonalHead | None, *, owner: str = "lo
             store.retire_rule(r["id"])
     new_rules = []
     for m, text in zip(mined, sentences):
-        if any((r.get("evidence") or {}).get("area") == m["area"] and (r.get("evidence") or {}).get("direction") == m["direction"]
-               and r.get("retired_at") is None for r in existing):
+        same = next((r for r in existing if (r.get("evidence") or {}).get("area") == m["area"]
+                     and (r.get("evidence") or {}).get("direction") == m["direction"] and r.get("retired_at") is None), None)
+        if same is not None:   # same contrast still holds: refresh wording, effect size and confidence in place
+            store.update_rule(same["id"], text, m["confidence"], {**m, "items": ids[:50]})
             continue
         store.add_rule(owner, text, {**m, "items": ids[:50]}, m["confidence"])
         new_rules.append(text)

@@ -169,6 +169,11 @@ class EngramStore:
         self.db.commit()
         return int(cur.lastrowid)
 
+    def update_rule(self, rule_id: int, text: str, confidence: float, evidence: dict[str, Any]) -> None:
+        self.db.execute("UPDATE rules SET text=?, confidence=?, evidence=? WHERE id=?",
+                        (text, float(confidence), json.dumps(evidence, ensure_ascii=False), rule_id))
+        self.db.commit()
+
     def retire_rule(self, rule_id: int) -> None:
         self.db.execute("UPDATE rules SET retired_at=? WHERE id=?", (time.time(), rule_id))
         self.db.commit()

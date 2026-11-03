@@ -142,10 +142,24 @@ generic score.
 | L1 personal head, ms refit on 👍/👎, crowd prior | done (per-process JSON store) |
 | L4 cortex-in-the-loop: UI loop, showcase A/B (brain loop beats one-shot), text rewrite loop | done |
 | L5 routing (kind + heads), first-person voice, compare tool, voice reflex-lite | done |
-| L2 engram store (SQLite + PCA index), `brain_recall`, `brain_rules` | **to build** |
-| L3 sleep: surprise-weighted refit, rule mining, USER_TASTE.md, learning-curve report | **to build** |
-| L5 reflex with precedent + rule | **to build** |
+| L2 engram store (SQLite + PCA index), `brain_recall`, `brain_rules`, `/outcome`, `/note` | done 2026-11-04 (`agent/engram.py`) |
+| L3 sleep: surprise-weighted refit, rule mining (bootstrap CI), USER.md taste mirror, LOO AUROC, auto-sleep every 10 outcomes | done (`agent/sleep.py`, `POST /sleep`, `/learning_curve`) |
+| L5 reflex with precedent + rule (`reflex` on `/eval`) | done |
+| Brain home ported from Hermes: SOUL.md, §-MEMORY.md/USER.md with budgets + write gate, agentskills SKILL.md skills (index in prompt, body on demand, create/patch/archive), `/prompt` | done (`agent/home.py`, `home_seed/`) |
 | world outcomes importer (Sweetspot popup sales as labels) | after the hackathon |
+
+## 5b. What was taken from Hermes Agent, concretely
+
+Hermes Agent (NousResearch, MIT) was the reference implementation for the *inspectable, self-improving* half. Ported, not forked: Hermes is 150k lines of Python around a terminal/gateway agent; we needed its conventions inside a 1,500-line FastAPI service.
+
+| Hermes | BrainSense | note |
+|---|---|---|
+| `SOUL.md` loaded verbatim at the top of the prompt, user-authored | `state/brain_home/SOUL.md` | first-person brain persona lives in a file, not in code |
+| `MEMORY.md` / `USER.md`, §-delimited entries, 2,200 / 1,375 char budgets, "declarative facts, not instructions" gate | `Home.memory()` + `brain_memory` tool | same budgets, same gate; the taste section of USER.md is machine-owned (mirror of mined rules) |
+| skills = `SKILL.md` with YAML frontmatter (agentskills.io), index in prompt, body on demand, `skill_manage` create/patch, never delete (archive) | `Home.skills_index/skill_view/skill_manage`, `skill_view` + `skill_manage` tools, five seeded brain-reading skills | the agent loads `humanize-copy` before rewriting copy (verified in chat) |
+| curator: inactivity-triggered background maintenance | `_AutoSleep`: consolidate after every 10 outcomes | cron, not curator; skill archiving by usage is next |
+| "prompt caching is sacred": no mid-conversation prompt rebuilds | `/prompt` deterministic + cached 60 s; OpenMuse prefixes it per run | — |
+| memory as text | **memory as brain states** (engrams) with the Markdown files as *derived* mirrors | the difference |
 
 ## 6. Build plan for the remaining day (owner: this session, all CPU-only)
 

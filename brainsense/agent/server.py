@@ -326,6 +326,43 @@ def sleep_now(owner: str = "local-user") -> dict[str, Any]:
     return rep
 
 
+def _reflex(item_id: str, heads: dict[str, Any], owner: str = "local-user") -> dict[str, Any] | None:
+    """L5 reflex: a precedent within radius + a confident personal head + an applicable rule → a
+    ready-made sentence the voice can read without a reasoning pass. Returns None when any leg is missing."""
+    e = ENGRAMS.get(item_id)
+    if e is None:
+        return None
+    key = e["pca"] if e["pca"] is not None else e["cortex"]
+    hits = ENGRAMS.recall(key, k=1, exclude=item_id, with_outcomes_only=True)
+    if not hits or hits[0].similarity < 0.9:
+        return None
+    hit = hits[0]
+    personal = (heads.get("personal") or {}).get("personal") if isinstance(heads.get("personal"), dict) else None
+    if not personal or abs(float(personal.get("score", 0.5)) - 0.5) < 0.35:
+        return None
+    last = hit.outcomes[-1]
+    liked_then = (last["kind"] == "liked" and last["value"] >= 0.5) or last["kind"] == "chosen_over"
+    rules_ = [r for r in ENGRAMS.rules(owner) if r["confidence"] >= 0.3]
+    rule = rules_[0] if rules_ else None
+    verdict = "좋아할" if personal["score"] >= 0.5 else "별로일"
+    when = f"{round((__import__('time').time() - hit.created_at) / 86400)}일 전" if hit.created_at else "전에"
+    sentence = (f"{when} 네가 {'좋아' if liked_then else '별로'}라고 했던 것과 내 피질엔 거의 같은 패턴이야"
+                f"(유사도 {hit.similarity:.2f}). 네 취향 모델은 {int(personal['score'] * 100)}%로 {verdict} 쪽."
+                + (f" 규칙대로야: {rule['text'][:80]}" if rule else ""))
+    return {"reflex": True, "sentence": sentence, "precedent": {"item_id": hit.id, "similarity": round(hit.similarity, 3),
+                                                               "outcome": last, "note": hit.note},
+            "personal_score": round(float(personal["score"]), 3), "rule": rule["text"] if rule else None}
+
+
+@app.get("/learning_curve")
+def learning_curve(owner: str = "local-user") -> dict[str, Any]:
+    """Personal-head quality as feedback accumulates: one point per sleep (LOO AUROC vs crowd)."""
+    pts = [{"n_labeled": c["n_outcomes"], "loo_auroc": (c["report"] or {}).get("loo_auroc"),
+            "crowd_auroc": (c["report"] or {}).get("crowd_loo_auroc"), "at": c["started_at"]}
+           for c in ENGRAMS.consolidations(owner) if c.get("report") and not (c["report"] or {}).get("skipped")]
+    return {"owner": owner, "points": pts, "memory": ENGRAMS.count(owner)}
+
+
 @app.get("/prompt")
 def prompt() -> dict[str, Any]:
     """The top of the voice's system prompt: SOUL + memory + user + taste + skills index (cached 60 s)."""
@@ -470,6 +507,12 @@ def eval_item(item_id: str, heads: str | None = None) -> dict[str, Any]:
     out["roi_ts"] = roi_ts.get(item_id, {})
     if kind == "text":
         out["critique"] = text_critique(out["roi_ts"], out.get("heads", {}))
+    try:
+        rf = _reflex(item_id, out.get("heads", {}))
+        if rf:
+            out["reflex"] = rf
+    except Exception as e:   # a reflex is a shortcut, never a failure
+        out["reflex_error"] = f"{type(e).__name__}: {e}"
     import json as _json
     f = _ROI_DIR / f"{item_id}.frames.json"
     if f.exists():
