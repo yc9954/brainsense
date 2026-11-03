@@ -38,7 +38,8 @@ def _label(area: str, group_ko: str) -> str:
         return group_ko
     try:
         from ..showcase.skills import area_label
-        return area_label(area.split("_", 1)[-1])
+        lab = area_label(area) or area_label(area.split("_", 1)[-1])
+        return lab.strip() or area
     except Exception:
         return area
 
