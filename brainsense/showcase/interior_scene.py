@@ -104,10 +104,10 @@ key.data.energy = float(g("key_energy", 300))
 key.data.size = 2.5
 key.data.color = kelvin_rgb(float(g("light_temp_k", 4000)))
 
-cam_pos = {"corner": ((3.2, -3.4, 1.7), (math.radians(78), 0, math.radians(42))), "front": ((0.3, -3.8, 1.5), (math.radians(84), 0, 0))}[g("camera", "corner")]
+cam_pos = {"corner": ((2.5, -2.7, 1.7), (math.radians(78), 0, math.radians(40))), "front": ((0.3, -2.9, 1.5), (math.radians(84), 0, 0))}[g("camera", "corner")]
 bpy.ops.object.camera_add(location=cam_pos[0], rotation=cam_pos[1])
 cam = bpy.context.object
-cam.data.lens = 28
+cam.data.lens = 22
 sc.camera = cam
 bpy.ops.render.render(write_still=True)
 print("RENDERED", OUT)

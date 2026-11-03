@@ -90,7 +90,7 @@ table{{border-collapse:collapse;font-size:13px}}td,th{{padding:6px 12px;border-b
 .c{{background:#15151b;border:2px solid #23232b;border-radius:10px;overflow:hidden}}.c.hit{{border-color:#2e6b3a}}.c.miss{{border-color:#6b2e2e}}.c img{{width:100%;aspect-ratio:1;object-fit:cover}}.m{{padding:6px 8px;font-size:11.5px;line-height:1.4}}.k{{color:#8b8b96}}.sub{{color:#9a9aa6;font-size:13px;max-width:980px}}</style></head><body>
 <h1>{cfg['title'].format(n=len(ids))}</h1>
 <div class=sub>Label = {cfg['label']}. 5-fold out-of-fold logistic regression, averaged over 3 seeds; the brain features are TRIBE v2's predicted cortex pooled into 9 region groups × 6 statistics (54 numbers), the baseline is the raw vision backbone embedding of the same clip. Green border = the brain's call matched reality, red = it did not.</div>
-<h2>Numbers</h2><table><tr><th>features</th><th>AUROC</th><th>Spearman vs log(downloads/views)</th></tr>{rows}</table>
+<h2>Numbers</h2><table><tr><th>features</th><th>AUROC</th><th>Spearman vs {cfg['cont']}</th></tr>{rows}</table>
 <h2>Photos the brain ranks highest</h2><div class=grid>{top}</div>
 <h2>…and lowest</h2><div class=grid>{bottom}</div>
 <p class=sub>Reading: the cortex features land in the same league as the 1,408-number vision embedding (on AADB the raw embedding's PCA is a few points ahead; the brain's gain is that every call is <i>interpretable</i> — each call can be traced to named brain areas. {cfg['note']}</p>
