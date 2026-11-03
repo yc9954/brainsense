@@ -82,12 +82,14 @@ class AnalyzeIn(BaseModel):
     item_id: str
     session: str = "default"
     transcribe: bool = False   # set True only when the clip contains speech
+    render_frames: bool = False  # server-rendered PNG frames are only the native fallback; the web card uses vertex_ts (saves ~2 s + 300 KB)
 
 
 class AnalyzeTextIn(BaseModel):
     text: str
     item_id: str | None = None
     session: str = "default"
+    render_frames: bool = False
 
 
 class AskIn(BaseModel):
@@ -142,7 +144,7 @@ def analyze(inp: AnalyzeIn) -> dict[str, Any]:
         inp.video_b64, inp.filename = _image_to_still_b64(inp.video_b64), inp.filename.rsplit(".", 1)[0] + ".mp4"
     res = _tribe_call({"video_b64": inp.video_b64, "filename": inp.filename,
                        "item_id": inp.item_id, "with_raw_embed": False,
-                       "transcribe": inp.transcribe, "bf16": True})
+                       "transcribe": inp.transcribe, "bf16": True, "render_brain": inp.render_frames})
     return _store_result(inp.item_id, res, kind=kind)
 
 
@@ -155,7 +157,7 @@ def analyze_text(inp: AnalyzeTextIn) -> dict[str, Any]:
         raise HTTPException(422, "text too short (need at least 3 words)")
     item_id = inp.item_id or f"txt_{hashlib.sha1(text.encode()).hexdigest()[:16]}"
     if item_id not in cache.ids():
-        res = _tribe_call({"text": text, "item_id": item_id, "bf16": True})
+        res = _tribe_call({"text": text, "item_id": item_id, "bf16": True, "render_brain": inp.render_frames})
         out = _store_result(item_id, res, kind="text", stimulus_text=text[:600])
     else:
         out = {"item_id": item_id, "roi_ts": roi_ts.get(item_id, {}), "cached": True, **_load_meta(item_id)}
