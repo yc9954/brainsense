@@ -50,7 +50,8 @@ h1{{font-size:18px;font-weight:600;margin:0 0 4px}} .brief{{color:#aaa;font-size
 .done{{font-size:15px;line-height:1.6}}</style></head><body>
 <h1>어느 쪽이 더 좋은 첫 화면인가요? (클릭 또는 ← →)</h1><div class=brief id=brief></div>
 <div class=row><div class=c id=L onclick="vote(0)"><img id=imgL><div class=lab>A</div></div><div class=c id=R onclick="vote(1)"><img id=imgR><div class=lab>B</div></div></div>
-<div class=bar><span id=prog></span><button onclick="undo()">되돌리기</button><button onclick="exportVotes()">결과 내보내기 (votes.json)</button><span id=tally></span></div>
+<div class=bar><span id=prog></span><button onclick="undo()">되돌리기</button><button onclick="exportVotes()">결과 내보내기 (votes.json)</button><button onclick="showVotes()">결과 여기 표시</button><span id=tally></span></div>
+<textarea id=out style="display:none;width:100%;height:160px;margin-top:10px;background:#15151b;color:#ddd;border:1px solid #23232b;border-radius:8px;font-size:12px"></textarea>
 <script>
 const PAIRS={data}; let i=0; const votes=[];
 function show(){{ if(i>=PAIRS.length){{document.querySelector('.row').innerHTML='<div class=done>끝! 결과 내보내기를 눌러 votes.json을 저장한 뒤 `uv run python -m brainsense.showcase.vote --tally votes.json <runs…>` 로 집계하세요.</div>';document.getElementById('brief').textContent='';return;}}
@@ -59,6 +60,7 @@ function show(){{ if(i>=PAIRS.length){{document.querySelector('.row').innerHTML=
 function vote(side){{ const p=PAIRS[i]; const champWins = (side===0) ? !p.swap : p.swap; votes.push({{idx:i,run:p.run,brief_key:p.brief_key,champ:p.champ,other:p.other,champ_wins:champWins}}); i++; show(); }}
 function undo(){{ if(!votes.length) return; votes.pop(); i--; show(); }}
 function tallyNow(){{ const n=votes.length, w=votes.filter(v=>v.champ_wins).length; document.getElementById('tally').textContent = n? `지금까지 BrainSense ${{w}}/${{n}} 승`:''; }}
+function showVotes(){{ const t=document.getElementById('out'); t.style.display='block'; t.value=JSON.stringify(votes,null,1); t.select(); try{{document.execCommand('copy');}}catch(e){{}} }}
 function exportVotes(){{ const blob=new Blob([JSON.stringify(votes,null,1)],{{type:'application/json'}}); const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='votes.json'; a.click(); }}
 addEventListener('keydown',e=>{{ if(e.key==='ArrowLeft') vote(0); if(e.key==='ArrowRight') vote(1); }});
 show();
