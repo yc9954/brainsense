@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Memoly — Pricing that pays for itself</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+--ink:#0A0E1E;
+--panel:#131937;
+--cream:#FFFEF6;
+--lime:#D9FF3D;
+--lime2:#BFFF00;
+--muted:#9AA3C7;
+--line:rgba(255,255,255,.12);
+}
+body{background:var(--ink);color:#fff;font-family:Inter,system-ui,sans-serif;font-size:16px;line-height:1.5;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1280px;margin:0 auto;padding:0 32px;position:relative;z-index:2}
+/* BG - simplified solid + one diagonal motion slash */
+.bg{position:fixed;inset:0;z-index:0;pointer-events:none;background:
+radial-gradient(800px 400px at 50% -100px, rgba(217,255,61,.18), transparent 70%),
+radial-gradient(600px 500px at 90% 20%, rgba(99,102,241,.25), transparent 60%),
+var(--ink)}
+.slash{position:fixed;left:-10%;right:-10%;top:300px;height:420px;background:var(--lime);transform:rotate(-6deg);z-index:0;opacity:1;box-shadow:0 0 0 1px rgba(0,0,0,.1)}
+.slash::after{content:"";position:absolute:inset:0;background:repeating-linear-gradient(90deg, rgba(0,0,0,.08) 0 2px, transparent 2px 28px)}
+.slash-bottom{position:fixed;left:-10%;right:-10%;top:730px;height:18px;background:#fff;transform:rotate(-6deg);z-index:0}
+/* NAV */
+nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{display:flex;align-items:center;gap:10px;font-family:"Space Grotesk";font-weight:700;font-size:20px;letter-spacing:-.02em}
+.mark{width:32px;height:32px;background:var(--lime);border-radius:9px;display:grid;place-items:center;color:#0A0E1E;font-weight:900;font-size:18px;transform:rotate(-6deg)}
+.links{display:flex;gap:28px;color:#C8CFEF;font-size:15px;font-weight:500}
+.btn{display:inline-flex;align-items:center;justify-content:center;font-weight:700;border-radius:999px;transition:.2s}
+.btn-sm{padding:10px 20px;font-size:15px}
+.btn-ghost{border:1px solid var(--line);color:#fff}
+.btn-lime{background:var(--lime);color:#0A0E1E}
+.btn-lime:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(217,255,61,.35)}
+/* HERO */
+.hero{text-align:center;padding:18px 0 14px;max-width:760px;margin:0 auto}
+.pill{display:inline-flex;align-items:center;gap:8px;background:rgba(217,255,61,.12);border:1px solid rgba(217,255,61,.4);color:var(--lime);font-size:13.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:7px 14px;border-radius:999px}
+h1{font-family:"Space Grotesk";font-size:50px;line-height:.95;letter-spacing:-.04em;margin:14px 0 10px}
+h1 em{font-style:normal;background:var(--lime);color:#0A0E1E;padding:0 10px;border-radius:6px;transform:rotate(-1.5deg);display:inline-block}
+.sub{color:#C2C8E8;font-size:17px;max-width:600px;margin:0 auto}
+.toggle{display:inline-flex;align-items:center;background:#1A2145;border:1px solid var(--line);border-radius:999px;padding:4px;margin-top:14px;gap:4px}
+.toggle button{border:0;background:transparent;color:#9AA3C7;font-weight:700;font-size:14px;padding:8px 18px;border-radius:999px;cursor:pointer}
+.toggle button.on{background:#fff;color:#0A0E1E}
+.toggle .save{background:var(--lime);color:#0A0E1E;font-size:12px;font-weight:800;padding:3px 8px;border-radius:999px;margin-left:2px}
+/* PRICING */
+.pricing{display:grid;grid-template-columns:1fr 1.12fr 1fr;gap:18px;align-items:start;margin-top:52px;position:relative}
+.card{border-radius:22px;padding:26px 24px 22px;position:relative}
+.card.dark{background:#141A3A;border:1px solid rgba(255,255,255,.14);box-shadow:0 20px 50px rgba(0,0,0,.35)}
+.card.pro{background:var(--cream);color:#0E1230;transform:translateY(-18px) rotate(.4deg);border:3px solid #0A0E1E;outline:3px solid var(--lime);box-shadow:12px 12px 0 #0A0E1E, 0 20px 80px rgba(217,255,61,.45);z-index:3}
+.badge-pop{position:absolute;top:-17px;left:50%;transform:translateX(-50%) rotate(-2deg);background:#0A0E1E;color:var(--lime);font-size:12.5px;font-weight:800;letter-spacing:.08em;padding:7px 16px;border-radius:999px;border:2px solid var(--lime);white-space:nowrap}
+.tier{font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;opacity:.7}
+.price{display:flex;align-items:baseline;gap:6px;margin:8px 0 4px}
+.price strong{font-family:"Space Grotesk";font-size:46px;letter-spacing:-.04em;line-height:1}
+.price span{font-size:15px;opacity:.65;font-weight:500}
+.desc{font-size:15px;line-height:1.45;min-height:44px}
+.dark .desc{color:#B9C0E3}
+.pro .desc{color:#3E456E}
+.cta{width:100%;padding:13px;margin:14px 0 16px;font-size:16px}
+.btn-dark{background:#0A0E1E;color:#fff}
+.btn-outline-dark{border:2px solid #0A0E1E;color:#0A0E1E;background:transparent}
+.btn-outline-light{border:1px solid rgba(255,255,255,.25);color:#fff;background:rgba(255,255,255,.06)}
+.feat{list-style:none;display:grid;gap:10px;font-size:15px;font-weight:500}
+.feat li{display:flex;gap:10px;align-items:flex-start}
+.tick{width:22px;height:22px;flex:0 0 22px;border-radius:50%;display:grid;place-items:center;font-size:13px;font-weight:900}
+.dark .tick{background:rgba(217,255,61,.18);color:var(--lime);border:1px solid rgba(217,255,61,.4)}
+.pro .tick{background:#0A0E1E;color:var(--lime)}
+.dim{opacity:.55}
+/* FLOATING OBJECT - dominant silhouette for LO/MT */
+.float-summary{position:absolute;top:-62px;left:50%;transform:translateX(-50%) rotate(-3deg);width:300px;background:#fff;color:#0A0E1E;border:2px solid #0A0E1E;border-radius:14px;box-shadow:6px 6px 0 #0A0E1E;padding:10px 12px;z-index:5;animation:bob 4s ease-in-out infinite}
+.float-summary .row1{display:flex;align-items:center;gap:8px;font-size:12.5px;font-weight:800}
+.dot{width:10px;height:10px;border-radius:50%;background:#FF4D4D;display:inline-block;box-shadow:12px 0 0 #FFC531, 24px 0 0 #22C55E}
+.bars{display:flex;align-items:end;gap:3px;height:26px;margin:8px 0}
+.bars i{display:block;width:6px;border-radius:3px;background:#0A0E1E}
+.bars i:nth-child(odd){background:#6C5CFF}
+.chip{display:inline-block;background:var(--lime);border:1.5px solid #0A0E1E;border-radius:999px;font-size:12px;font-weight:800;padding:3px 9px}
+.side-chip{position:absolute;background:#fff;color:#0A0E1E;border:2px solid #0A0E1E;border-radius:12px;font-size:13px;font-weight:800;padding:8px 12px;box-shadow:4px 4px 0 #0A0E1E;z-index:4;white-space:nowrap;animation:bob 5s ease-in-out infinite}
+.chip-l{left:-84px;top:140px;transform:rotate(-8deg)}
+.chip-r{right:-78px;top:210px;transform:rotate(7deg);animation-delay:1.2s}
+@keyframes bob{0%,100%{margin-top:0}50%{margin-top:-8px}}
+/* TRUST */
+.trust{margin-top:8px;background:#0A0E1E;border:1px solid var(--line);border-radius:16px;padding:14px 22px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logos{display:flex;align-items:center;gap:22px;color:#fff}
+.logos small{color:#8B93BB;font-size:11px;font-weight:800;letter-spacing:.14em}
+.logo-t{font-weight:800;opacity:.85;font-size:16px;letter-spacing:-.02em}
+.logo-t:nth-child(3){font-family:"Space Grotesk"}
+.stars{color:var(--lime);letter-spacing:2px;font-size:14px}
+.guarantee{display:flex;align-items:center;gap:12px;border-left:1px solid var(--line);padding-left:20px;font-size:14px}
+.shield{width:38px;height:38px;flex:0 0 38px;background:var(--lime);border-radius:50%;display:grid;place-items:center;font-size:19px}
+.guarantee b{display:block;font-size:14px}
+.guarantee span{color:#9AA3C7;font-size:13px}
+@media(max-width:1020px){
+h1{font-size:38px}.pricing{grid-template-columns:1fr;max-width:520px;margin:70px auto 0}.card.pro{transform:none}.side-chip,.float-summary{display:none}.trust{flex-direction:column;text-align:center}.guarantee{border:0;padding:0}.slash{top:420px}
+.links{display:none}
+}
+:focus-visible{outline:3px solid var(--lime);outline-offset:2px}
+</style>
+</head>
+<body>
+<div class="bg"></div>
+<div class="slash" aria-hidden="true"></div>
+<div class="slash-bottom" aria-hidden="true"></div>
+<div class="wrap">
+<nav aria-label="Main">
+<div class="logo"><span class="mark">◐</span> Memoly</div>
+<div class="links"><a href="#">Product</a><a href="#">How it works</a><a href="#" style="color:#fff;border-bottom:3px solid #D9FF3D;padding-bottom:2px">Pricing</a><a href="#">Security</a><a href="#">Reviews</a></div>
+<div style="display:flex;gap:10px"><a class="btn btn-ghost btn-sm" href="#">Sign in</a><a class="btn btn-lime btn-sm" href="#">Get Memoly free →</a></div>
+</nav>
+
+<header class="hero">
+<span class="pill">● 30-day money-back guarantee — no questions asked</span>
+<h1>Pricing that pays for <em>itself</em> in one meeting</h1>
+<p class="sub">Record, transcribe & summarize every call. Save 4.2 hrs a week. Start free, upgrade when you're ready.</p>
+<div class="toggle" role="tablist" aria-label="Billing period"><button class="on">Monthly</button><button>Annual <span class="save">−20%</span></button></div>
+</header>
+
+<main class="pricing" aria-label="Pricing plans">
+<!-- FREE -->
+<section class="card dark">
+<div class="tier">Free</div>
+<div class="price"><strong style="font-size:38px">$0</strong><span>/ forever</span></div>
+<p class="desc">For trying AI notes on personal calls.</p>
+<a class="btn btn-outline-light cta" href="#">Start for free</a>
+<ul class="feat">
+<li><span class="tick">✓</span> 5 AI summaries / month</li>
+<li><span class="tick">✓</span> 30-min max per meeting</li>
+<li><span class="tick">✓</span> Zoom + Meet integration</li>
+<li><span class="tick dim">✕</span> <span class="dim">Action items & CRM sync</span></li>
+</ul>
+</section>
+
+<!-- PRO emphasized -->
+<section class="card pro" aria-highlight="true">
+<div class="float-summary" aria-hidden="true">
+<div class="row1"><span class="dot"></span> Q3 Planning — Summary ready <span class="chip">96% accurate</span></div>
+<div class="bars"><i style="height:10px"></i><i style="height:22px"></i><i style="height:14px"></i><i style="height:26px"></i><i style="height:12px"></i><i style="height:20px"></i><i style="height:8px"></i><i style="height:18px"></i><i style="height:24px"></i><i style="height:11px"></i><i style="height:19px"></i><i style="height:15px"></i><i style="height:23px"></i><i style="height:9px"></i></div>
+<div style="font-size:12.5px;font-weight:600">✓ 3 decisions • ✓ 5 action items • Sent to Notion</div>
+</div>
+<div class="side-chip chip-l" aria-hidden="true">⚡ Recap in 8 sec</div>
+<div class="side-chip chip-r" aria-hidden="true">✅ Never miss a follow-up</div>
+<div class="badge-pop">★ MOST POPULAR — PRO</div>
+<div class="tier" style="margin-top:8px">Pro</div>
+<div class="price"><strong>$12</strong><span>/ user / mo, billed monthly</span></div>
+<p class="desc"><b>For professionals</b> who live in meetings. Unlimited magic.</p>
+<a class="btn btn-dark cta" href="#" style="background:#0A0E1E">Try Pro free for 14 days →</a>
+<ul class="feat">
+<li><span class="tick">✓</span> <b>Unlimited AI summaries + chapters</b></li>
+<li><span class="tick">✓</span> Action items auto-assigned</li>
+<li><span class="tick">✓</span> 98 languages, ask-anything chat</li>
+<li><span class="tick">✓</span> Notion, Slack, HubSpot sync</li>
+</ul>
+<p style="font-size:12.5px;margin-top:12px;font-weight:700">↳ No credit card required • Cancel in 1 click</p>
+</section>
+
+<!-- TEAM -->
+<section class="card dark">
+<div class="tier">Team</div>
+<div class="price"><strong style="font-size:38px">$29</strong><span>/ user / mo</span></div>
+<p class="desc">For orgs that need control, security & insights.</p>
+<a class="btn btn-lime cta" href="#">Talk to sales</a>
+<ul class="feat">
+<li><span class="tick">✓</span> Everything in Pro, plus:</li>
+<li><span class="tick">✓</span> Shared team library & analytics</li>
+<li><span class="tick">✓</span> SSO / SOC 2 + retention rules</li>
+<li><span class="tick">✓</span> Dedicated success manager</li>
+</ul>
+</section>
+</main>
+
+<footer class="trust" aria-label="Trust">
+<div class="logos"><small>TRUSTED BY 40,000+ TEAMS AT</small><span class="logo-t">◍ Nimbus</span><span class="logo-t">⬢ Vertex</span><span class="logo-t">✦ Craftly</span><span class="logo-t">⟡ Loom&Co</span><span class="logo-t">● Framely</span></div>
+<div><span class="stars">★★★★★</span> <b style="font-size:14px">4.9/5</b> <span style="color:#9AA3C7;font-size:13px">from 2,400+ reviews</span></div>
+<div class="guarantee"><span class="shield">🛡</span><div><b>30-day money-back guarantee</b><span>Love it or get refunded. Keep your notes.</span></div></div>
+</footer>
+<p style="text-align:center;color:#7B84AD;font-size:13px;margin:10px 0 18px">Prices in USD. Switch or cancel anytime. Your meetings are encrypted & never used for training.</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<title>LUMARA Vitamin C - 30% Launch</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%}
+body{background:#140C07;display:grid;place-items:center;font-family:Inter,system-ui,sans-serif;overflow:hidden}
+.stage{width:1280px;height:720px;position:relative;overflow:hidden;background:#FFF6EB;color:#2C170D;flex-shrink:0;display:flex;flex-direction:column}
+.bg-wash{position:absolute;inset:0;background:
+radial-gradient(760px 560px at 78% 48%, #FFD9A8 0%, #FFC08A 22%, #FFF6EB 62%),
+linear-gradient(180deg,#FFFBF4 0%,#FFF2DF 55%,#FFE6C9 100%)}
+.sun-core{position:absolute;right:78px;top:78px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle at 50% 45%, #FFF8E8 0%, #FFD49A 28%, #FF9E5E 55%, rgba(255,158,94,0) 71%);opacity:.95;animation:sunPulse 12s ease-in-out infinite}
+.sun-ring{position:absolute;right:118px;top:118px;width:440px;height:440px;border-radius:50%;border:1.5px solid rgba(200,110,55,.32);animation:sunPulse 12s ease-in-out infinite}
+.sun-ring.r2{right:88px;top:88px;width:500px;height:500px;border-color:rgba(200,110,55,.18);animation-name:sunPulse2}
+@keyframes sunPulse{0%,100%{transform:scale(.96);opacity:.75}50%{transform:scale(1.04);opacity:1}}
+@keyframes sunPulse2{0%,100%{transform:scale(1.03) rotate(0deg);opacity:.6}50%{transform:scale(.97) rotate(8deg);opacity:1}}
+.grain{position:absolute;inset:0;opacity:.06;background:radial-gradient(circle at 20% 30%,#000 1px,transparent 1.5px);background-size:22px 22px}
+.topbar{position:relative;z-index:5;display:flex;align-items:center;justify-content:space-between;padding:22px 48px 0 48px}
+.brand{font-weight:800;letter-spacing:.22em;font-size:18px}
+.brand span{font-weight:400;letter-spacing:.14em;font-size:13px;opacity:.7;margin-left:10px}
+.mini-cta{font-size:13px;font-weight:800;letter-spacing:.12em;color:#2C170D;border:1.5px solid #2C170D;border-radius:999px;padding:10px 20px;background:rgba(255,255,255,.6)}
+.mini-cta b{color:#C93E0B}
+.main{position:relative;z-index:4;flex:1;display:grid;grid-template-columns:600px 1fr;align-items:center;padding:0 48px 0 60px;gap:20px}
+.copy{position:relative;height:480px}
+.phase{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;opacity:0}
+.phase.hook{animation:hookPhase 12s ease-in-out infinite}
+.phase.benefit{animation:benefitPhase 12s ease-in-out infinite}
+.phase.offer{animation:offerPhase 12s ease-in-out infinite}
+@keyframes hookPhase{0%{opacity:0;transform:translateY(36px)}4%{opacity:1;transform:translateY(0)}27%{opacity:1;transform:translateY(0)}32.5%{opacity:0;transform:translateY(-28px)}100%{opacity:0;transform:translateY(-28px)}}
+@keyframes benefitPhase{0%,32.5%{opacity:0;transform:translateY(36px)}37.5%{opacity:1;transform:translateY(0)}60%{opacity:1;transform:translateY(0)}65.5%{opacity:0;transform:translateY(-28px)}100%{opacity:0}}
+@keyframes offerPhase{0%,65.5%{opacity:0;transform:translateY(36px)}70.5%{opacity:1;transform:translateY(0)}97%{opacity:1;transform:translateY(0)}100%{opacity:0;transform:translateY(-12px)}}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:800;letter-spacing:.2em;color:#C93E0B;margin-bottom:18px}
+.eyebrow::before{content:"";width:28px;height:2px;background:#C93E0B;display:inline-block}
+h1{font-family:Fraunces,serif;font-weight:700;font-size:78px;line-height:.95;letter-spacing:-.02em}
+h1 em{font-style:normal;color:#C93E0B;position:relative}
+.sub{margin-top:18px;font-size:20px;line-height:1.5;color:#6B4430;max-width:480px}
+.sub strong{color:#2C170D}
+.proof{display:flex;align-items:center;gap:12px;margin-top:22px;font-size:15px;font-weight:600}
+.stars{color:#E67A1E;letter-spacing:2px;font-size:17px}
+.benefit-title{font-family:Fraunces,serif;font-size:54px;line-height:1;margin-bottom:22px}
+.benefit-list{list-style:none;display:grid;gap:14px}
+.benefit-list li{display:flex;gap:14px;align-items:center;background:#fff;border:1px solid #F1D9BE;border-radius:18px;padding:14px 18px;box-shadow:0 12px 30px rgba(180,90,30,.12);max-width:500px}
+.dot{width:44px;height:44px;border-radius:50%;background:#2C170D;color:#FFD9A8;display:grid;place-items:center;font-weight:800;font-size:18px;flex-shrink:0}
+.benefit-list p{font-size:17px;line-height:1.35}
+.benefit-list p strong{display:block;font-size:17px}
+.offer-label{font-size:14px;font-weight:800;letter-spacing:.24em;color:#fff;background:#2C170D;display:inline-block;padding:10px 18px;border-radius:999px;margin-bottom:16px;width:fit-content}
+.offer-big{font-family:Fraunces,serif;font-size:112px;line-height:.9;letter-spacing:-.03em}
+.offer-big span{color:#C93E0B}
+.offer-sub{font-size:20px;margin-top:12px;color:#6B4430}
+.cta-row{display:flex;align-items:center;gap:18px;margin-top:26px}
+.cta-main{font-size:22px;font-weight:800;letter-spacing:.02em;color:#fff;background:#C93E0B;border:0;border-radius:999px;padding:22px 54px;box-shadow:0 18px 40px rgba(201,62,11,.42);animation:ctaBeat 12s ease-in-out infinite;transform-origin:center}
+@keyframes ctaBeat{0%,68%{transform:scale(1)}72%,78%{transform:scale(1.06)}75%,81%{transform:scale(1)}88%{transform:scale(1.07)}92%,100%{transform:scale(1)}}
+.price{font-size:18px;font-weight:700}
+.price s{opacity:.5;font-weight:400;margin-right:8px}
+.guarantee{margin-top:14px;font-size:14px;letter-spacing:.04em;opacity:.7;font-weight:600}
+/* HERO PRODUCT - single hero */
+.hero{position:relative;height:560px;display:grid;place-items:center}
+.pedestal{position:absolute;bottom:48px;width:420px;height:84px;background:radial-gradient(ellipse at center, rgba(60,25,8,.38) 0%, rgba(60,25,8,0) 68%);animation:shadowPulse 12s ease-in-out infinite}
+@keyframes shadowPulse{0%,100%{transform:scaleX(1);opacity:.9}50%{transform:scaleX(.82);opacity:.6}}
+.float{animation:floatY 12s ease-in-out infinite;position:relative;display:grid;place-items:center}
+@keyframes floatY{0%,100%{transform:translateY(10px)}27%{transform:translateY(-10px)}50%{transform:translateY(-22px)}72%{transform:translateY(-8px)}}
+.bottle{position:relative;width:230px;height:400px}
+.cap{width:84px;height:78px;margin:0 auto;background:linear-gradient(180deg,#3A2316,#17100B);border-radius:14px 14px 6px 6px;position:relative;box-shadow:inset 0 2px 6px rgba(255,255,255,.25)}
+.cap::after{content:"";position:absolute;left:10px;right:10px;top:14px;bottom:14px;background:repeating-linear-gradient(90deg, rgba(255,255,255,.12) 0 3px, transparent 3px 8px);border-radius:6px}
+.collar{width:84px;height:22px;margin:0 auto;background:linear-gradient(90deg,#8A5A2B,#FFD99A,#8A5A2B);border-radius:2px}
+.neck{width:54px;height:28px;margin:0 auto;background:linear-gradient(90deg,#E8C49A,#FFF3DE,#E8C49A)}
+.glass{width:230px;height:292px;background:linear-gradient(180deg, rgba(255,236,200,.95) 0%, #F9B46A 18%, #E67E2E 55%, #A63E0A 100%);border-radius:28px 28px 36px 36px;position:relative;overflow:hidden;border:1px solid rgba(90,40,10,.35);box-shadow:inset 0 0 0 2px rgba(255,255,255,.35), 0 30px 60px rgba(166,62,10,.35)}
+.glass::before{content:"";position:absolute;left:18px;top:14px;bottom:14px;width:28px;background:linear-gradient(180deg, rgba(255,255,255,.9), rgba(255,255,255,.15));border-radius:20px;filter:blur(.2px)}
+.glass::after{content:"";position:absolute;inset:0;background:linear-gradient(105deg, transparent 42%, rgba(255,255,255,.85) 48%, transparent 54%);transform:translateX(-140%);animation:sweep 12s ease-in-out infinite}
+@keyframes sweep{0%,34%{transform:translateX(-140%)}52%{transform:translateX(140%)}70%,100%{transform:translateX(140%)}}
+.label{position:absolute;left:22px;right:22px;top:78px;background:#FFFEF8;border-radius:14px;padding:18px 12px 16px 12px;text-align:center;box-shadow:0 8px 20px rgba(0,0,0,.18)}
+.label h3{font-size:22px;letter-spacing:.18em;font-weight:800}
+.label p{font-size:12px;letter-spacing:.28em;font-weight:700;color:#C93E0B;margin-top:4px}
+.label small{display:block;margin-top:10px;font-size:12.5px;line-height:1.4;color:#5A3A28;font-weight:500}
+.drop{position:absolute;left:50%;top:-46px;width:26px;height:34px;background:linear-gradient(180deg,#FFD9A0,#FF7A1E);border-radius:50% 50% 50% 50% / 60% 60% 40% 40%;clip-path:ellipse(48% 50% at 50% 58%);transform:translateX(-50%);animation:dropGlow 12s ease-in-out infinite}
+.drop::before{content:"";position:absolute;left:50%;top:-14px;width:16px;height:18px;background:#FF7A1E;transform:translateX(-50%) rotate(45deg);border-radius:3px}
+@keyframes dropGlow{0%,100%{transform:translateX(-50%) translateY(0) scale(1);opacity:.95}50%{transform:translateX(-50%) translateY(-10px) scale(1.15);opacity:1}}
+.bottombar{position:relative;z-index:5;display:flex;align-items:center;justify-content:space-between;padding:0 48px 22px 60px}
+.chapters{display:flex;gap:10px;align-items:center;font-size:12px;font-weight:800;letter-spacing:.18em}
+.chapters i{font-style:normal;opacity:.45}
+.chapters i.on{opacity:1;color:#C93E0B;animation:chap 12s linear infinite}
+.chapters i:nth-child(1){animation-name:chap1}.chapters i:nth-child(3){animation-name:chap2}.chapters i:nth-child(5){animation-name:chap3}
+@keyframes chap1{0%,33%{opacity:1;color:#C93E0B}34%,100%{opacity:.45;color:#2C170D}}
+@keyframes chap2{0%,33%{opacity:.45}34%,66%{opacity:1;color:#C93E0B}67%,100%{opacity:.45;color:#2C170D}}
+@keyframes chap3{0%,66%{opacity:.45}67%,100%{opacity:1;color:#C93E0B}}
+@keyframes chap{0%,100%{opacity:.45}}
+.track{width:360px;height:6px;background:rgba(44,23,13,.15);border-radius:99px;overflow:hidden}
+.fill{width:100%;height:100%;background:#C93E0B;border-radius:99px;transform-origin:left;animation:fill 12s linear infinite}
+@keyframes fill{0%{transform:scaleX(0)}100%{transform:scaleX(1)}}
+</style>
+</head>
+<body>
+<div class="stage">
+<div class="bg-wash"></div>
+<div class="sun-core"></div>
+<div class="sun-ring"></div>
+<div class="sun-ring r2"></div>
+<div class="grain"></div>
+
+<div class="topbar">
+<div class="brand">LUMARA <span>VITAMIN C SERUM</span></div>
+<div class="mini-cta">BUY NOW • <b>30% OFF</b></div>
+</div>
+
+<div class="main">
+<div class="copy">
+<div class="phase hook">
+<div class="eyebrow">NEW • 15% VITAMIN C</div>
+<h1>One drop every morning for glass-like <em>glow.</em></h1>
+<p class="sub"><strong>Bright, dewy skin in 14 days</strong> — made for your late-20s routine.</p>
+<div class="proof"><span class="stars">★★★★★</span> 4.9 — loved by 42,000 women</div>
+</div>
+
+<div class="phase benefit">
+<div class="eyebrow">WHY IT WORKS</div>
+<div class="benefit-title">Dull to dewy,<br>in one step.</div>
+<ul class="benefit-list">
+<li><span class="dot">C</span><p><strong>15% stabilized vitamin C</strong>Fades dark spots + boosts radiance.</p></li>
+<li><span class="dot">H</span><p><strong>Hyaluronic + vitamin E</strong>Locks in moisture, layers under makeup.</p></li>
+<li><span class="dot">✓</span><p><strong>Gentle for daily use</strong>Lightweight, non-sticky, no sting.</p></li>
+</ul>
+</div>
+
+<div class="phase offer">
+<div class="offer-label">LAUNCH OFFER ENDS TONIGHT</div>
+<div class="offer-big"><span>30%</span> OFF</div>
+<p class="offer-sub">Your glow starter for <strong>$27.30</strong> today. Free shipping included.</p>
+<div class="cta-row">
+<button class="cta-main">Buy Now</button>
+<div class="price"><s>$39.00</s> $27.30</div>
+</div>
+<div class="guarantee">30-DAY GLOW GUARANTEE • NO CODE NEEDED</div>
+</div>
+</div>
+
+<div class="hero">
+<div class="pedestal"></div>
+<div class="float">
+<div class="bottle">
+<div class="drop"></div>
+<div class="cap"></div>
+<div class="collar"></div>
+<div class="neck"></div>
+<div class="glass">
+<div class="label"><h3>LUMARA</h3><p>VITAMIN C 15%</p><small>brightening serum<br>30 ml • morning dew</small></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="bottombar">
+<div class="chapters"><i>01 HOOK</i><i>—</i><i>02 GLOW</i><i>—</i><i>03 30% OFF</i></div>
+<div class="track"><div class="fill"></div></div>
+</div>
+</div>
+</body>
+</html>

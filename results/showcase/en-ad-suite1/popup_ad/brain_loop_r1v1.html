@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@700;800;900&family=Noto+Sans+KR:wght@700;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0d0d0d;display:flex;align-items:center;justify-content:center;min-height:100vh;font-family:'Archivo','Noto Sans KR',sans-serif}
+.stage{width:1280px;height:720px;background:#FFF3E2;position:relative;overflow:hidden;flex-shrink:0;border:1px solid #000}
+.stage::before{content:"";position:absolute;inset:0;background-image:radial-gradient(#160b0614 2.2px, transparent 2.3px);background-size:26px 26px;pointer-events:none}
+/* TOP TICKER */
+.topbar{position:absolute;top:0;left:0;right:0;height:62px;background:#160B06;color:#FFF3E2;display:flex;align-items:center;overflow:hidden;z-index:20;border-bottom:4px solid #160B06}
+.topbar-track{display:flex;white-space:nowrap;font-weight:900;letter-spacing:.14em;font-size:18px;animation:tickerMove 12s linear infinite}
+.topbar-track span{padding:0 28px;display:flex;align-items:center;gap:28px}
+.dot{width:12px;height:12px;background:#FF2442;border-radius:50%;display:inline-block}
+@keyframes tickerMove{0%{transform:translateX(0);opacity:1}100%{transform:translateX(-50%);opacity:1}}
+/* BOTTOM TIMELINE */
+.timeline{position:absolute;bottom:0;left:0;right:0;height:52px;background:#160B06;color:#fff;display:flex;align-items:center;gap:26px;padding:0 28px;z-index:20}
+.timeline b{font-size:14px;letter-spacing:.18em}
+.timeline b.on{background:#FFC700;color:#160B06;padding:5px 12px;border-radius:100px}
+.timeline small{font-size:13px;letter-spacing:.14em;opacity:.7;font-weight:800}
+.progress{flex:1;height:10px;background:#ffffff26;border-radius:100px;overflow:hidden}
+.progress i{display:block;height:100%;background:#FF2442;border-radius:100px;transform-origin:left;animation:progressFill 12s linear infinite}
+@keyframes progressFill{0%{transform:scaleX(0);opacity:1}100%{transform:scaleX(1);opacity:1}}
+/* SCENES */
+.scene{position:absolute;left:0;right:0;top:62px;bottom:52px;display:flex;align-items:center;animation-duration:12s;animation-iteration-count:infinite}
+.scene-1{padding:34px 40px 20px 56px;gap:20px;animation-name:scene1Show}
+.scene-2{padding:30px 56px;gap:36px;animation-name:scene2Show}
+.scene-3{padding:28px 56px;gap:36px;animation-name:scene3Show}
+@keyframes scene1Show{0%{opacity:1}24%{opacity:1}31%{opacity:0}91%{opacity:0}95%{opacity:1}100%{opacity:1}}
+@keyframes scene2Show{0%{opacity:0}30%{opacity:0}34.5%{opacity:1}58%{opacity:1}64%{opacity:0}100%{opacity:0}}
+@keyframes scene3Show{0%{opacity:0}60%{opacity:0}64.5%{opacity:1}92%{opacity:1}96%{opacity:0}100%{opacity:0}}
+/* SCENE 1 */
+.s1-left{width:700px}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;background:#160B06;color:#FFC700;font-weight:900;font-size:17px;letter-spacing:.16em;padding:10px 18px;border-radius:100px;box-shadow:5px 5px 0 #FF2442;animation:hookPop 12s infinite}
+@keyframes hookPop{0%{opacity:1;transform:translateY(0) scale(1)}24%{opacity:1;transform:translateY(0) scale(1)}30%{opacity:0;transform:translateY(-60px) scale(1.05)}91%{opacity:0;transform:translateY(50px) scale(.96)}95%{opacity:1;transform:translateY(0) scale(1)}100%{opacity:1;transform:translateY(0) scale(1)}}
+h1{font-family:'Anton',sans-serif;font-size:132px;line-height:.9;letter-spacing:.01em;color:#160B06;margin:18px 0 6px;animation:hookHead 12s infinite}
+h1 .red{color:#FF2442;-webkit-text-stroke:3px #160B06;text-shadow:7px 7px 0 #160B06}
+h1 .out{color:#FFF3E2;-webkit-text-stroke:3px #160B06;text-shadow:7px 7px 0 #160B06}
+@keyframes hookHead{0%{opacity:1;transform:translateY(0) rotate(0) scale(1)}24%{opacity:1;transform:translateY(0) scale(1)}30%{opacity:0;transform:translateY(-70px) scale(1.06)}91%{opacity:0;transform:translateY(70px) scale(.9)}95%{opacity:1;transform:translateY(0) scale(1)}100%{opacity:1;transform:translateY(0) scale(1)}}
+.s1-sub{font-size:22px;font-weight:800;color:#160B06;max-width:620px;line-height:1.35;animation:hookPop 12s infinite}
+.s1-meta{display:flex;gap:14px;margin-top:18px;animation:hookPop 12s infinite}
+.s1-meta div{background:#fff;border:3px solid #160B06;border-radius:14px;padding:10px 18px;font-weight:900;font-size:18px;box-shadow:6px 6px 0 #160B06}
+.s1-meta div small{display:block;font-size:12px;letter-spacing:.18em;opacity:.7}
+.bg-kr{position:absolute;left:20px;bottom:50px;font-family:'Noto Sans KR',sans-serif;font-weight:900;font-size:220px;color:transparent;-webkit-text-stroke:2px #160b0618;line-height:1;pointer-events:none;animation:bgKr 12s infinite}
+@keyframes bgKr{0%{opacity:1;transform:translateX(0)}24%{opacity:1;transform:translateX(0)}30%{opacity:0;transform:translateX(-40px)}91%{opacity:0;transform:translateX(20px)}95%{opacity:1;transform:translateX(0)}100%{opacity:1;transform:translateX(0)}}
+/* MEGA STRAWBERRY */
+.s1-right{width:480px;display:flex;justify-content:center;animation:megaBerry 12s infinite}
+@keyframes megaBerry{0%{opacity:1;transform:translateY(0) rotate(-3deg)}6%{opacity:1;transform:translateY(12px) rotate(-3deg)}12%{opacity:1;transform:translateY(-10px) rotate(-3deg)}18%{opacity:1;transform:translateY(6px) rotate(-3deg)}24%{opacity:1;transform:translateY(0) rotate(-3deg)}30%{opacity:0;transform:translateY(-140px) rotate(6deg) scale(.9)}84%{opacity:0;transform:translateY(-340px) rotate(10deg) scale(.9)}92%{opacity:1;transform:translateY(18px) rotate(-5deg) scale(1.03)}96%{opacity:1;transform:translateY(0) rotate(-3deg) scale(1)}100%{opacity:1;transform:translateY(0) rotate(-3deg) scale(1)}}
+.berry-stage{position:relative;width:380px;height:470px}
+.berry-body{position:absolute;left:20px;top:70px;width:340px;height:360px;background:radial-gradient(circle at 32% 28%, #FF7A90 0 18%, #FF2442 42%, #C6002A 78%);border:6px solid #160B06;border-radius:48% 48% 50% 50% / 30% 30% 70% 70%;box-shadow:14px 14px 0 #160B06}
+.shine{position:absolute;left:62px;top:120px;width:56px;height:130px;background:#fff;border-radius:100px;opacity:.85;transform:rotate(-18deg)}
+.seed{position:absolute;width:16px;height:22px;background:#FFF3E2;border:3px solid #160B06;border-radius:50%}
+.leaf{position:absolute;top:42px;left:50%;width:110px;height:56px;background:#0E7A4F;border:5px solid #160B06;border-radius:100px}
+.leaf.l1{transform:translateX(-92%) rotate(-28deg)}
+.leaf.l2{transform:translateX(-50%) rotate(4deg);background:#17A567;width:120px}
+.leaf.l3{transform:translateX(-8%) rotate(28deg)}
+.stem{position:absolute;top:8px;left:50%;width:22px;height:60px;background:#0E7A4F;border:4px solid #160B06;border-radius:20px;transform:translateX(-50%) rotate(8deg)}
+.sticker{position:absolute;right:-6px;top:22px;width:148px;height:148px;background:#FFC700;border:5px solid #160B06;border-radius:50%;display:flex;align-items:center;justify-content:center;text-align:center;font-weight:900;font-size:22px;line-height:1;transform:rotate(12deg);box-shadow:7px 7px 0 #160B06;animation:stickerWig 12s infinite}
+@keyframes stickerWig{0%{opacity:1;transform:rotate(12deg) scale(1)}8%{opacity:1;transform:rotate(-6deg) scale(1.1)}14%{opacity:1;transform:rotate(12deg) scale(1)}24%{opacity:1;transform:rotate(12deg) scale(1)}30%{opacity:0;transform:rotate(20deg) scale(1.2)}91%{opacity:0;transform:rotate(0) scale(.8)}95%{opacity:1;transform:rotate(12deg) scale(1)}100%{opacity:1;transform:rotate(12deg) scale(1)}}
+/* SCENE 2 */
+@keyframes prodIn{0%{opacity:0;transform:translateY(90px)}31%{opacity:0;transform:translateY(90px)}37%{opacity:1;transform:translateY(0)}58%{opacity:1;transform:translateY(0)}64%{opacity:0;transform:translateY(-70px)}72%{opacity:0;transform:translateY(90px)}100%{opacity:0;transform:translateY(90px)}}
+.s2-visual{width:540px;background:#fff;border:5px solid #160B06;border-radius:28px;box-shadow:12px 12px 0 #160B06;padding:22px;animation:prodIn 12s infinite}
+.plate{position:relative;background:#FFE9EE;border:4px solid #160B06;border-radius:22px;padding:22px 20px 18px;display:flex;gap:20px;align-items:center}
+.cake{width:210px;height:210px;position:relative}
+.cake-base{position:absolute;bottom:0;left:10px;right:10px;height:150px;background:#fff;border:4px solid #160B06;border-radius:12px;overflow:hidden}
+.cake-base::before{content:"";position:absolute;top:0;left:0;right:0;height:44px;background:#FF2442;border-bottom:4px solid #160B06}
+.cake-base::after{content:"";position:absolute;top:66px;left:0;right:0;height:30px;background:#FFB9C6;border-top:4px solid #160B06;border-bottom:4px solid #160B06}
+.mini-berry{position:absolute;top:6px;left:50%;width:84px;height:96px;background:radial-gradient(circle at 30% 30%, #FF7A90, #FF2442 60%, #A80022);border:4px solid #160B06;border-radius:48% 48% 50% 50% / 30% 30% 70% 70%;transform:translateX(-50%)}
+.cup{width:190px;text-align:center}
+.cup-body{width:150px;height:150px;background:#160B06;border-radius:18px 18px 28px 28px;margin:0 auto;position:relative;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:15px;letter-spacing:.1em}
+.cup-body::before{content:"● ● ●";position:absolute;top:-26px;left:0;right:0;color:#160B06;opacity:.25;font-size:18px;animation:steam 12s infinite}
+@keyframes steam{0%{opacity:0;transform:translateY(6px)}35%{opacity:0;transform:translateY(6px)}42%{opacity:.9;transform:translateY(0)}55%{opacity:.4;transform:translateY(-6px)}62%{opacity:0;transform:translateY(-8px)}100%{opacity:0;transform:translateY(6px)}}
+.s2-info{width:590px}
+.s2-info h2{font-family:'Anton',sans-serif;font-size:78px;line-height:.95;color:#160B06;animation:prodIn 12s infinite}
+.s2-info h2 em{font-style:normal;background:#FF2442;color:#fff;padding:0 14px;border:4px solid #160B06;box-shadow:6px 6px 0 #160B06;display:inline-block;transform:rotate(-1.5deg)}
+.feat{display:flex;gap:12px;margin-top:18px}
+.feat div{flex:1;background:#160B06;color:#FFF3E2;border-radius:16px;padding:14px 14px;font-size:15px;font-weight:800;line-height:1.4;animation:prodIn 12s infinite}
+.feat div b{color:#FFC700;display:block;font-size:13px;letter-spacing:.16em;margin-bottom:6px}
+/* SCENE 3 */
+@keyframes offerIn{0%{opacity:0;transform:translateY(90px) rotate(0)}60%{opacity:0;transform:translateY(90px)}66%{opacity:1;transform:translateY(0)}90%{opacity:1;transform:translateY(0)}95%{opacity:0;transform:translateY(-50px)}100%{opacity:0;transform:translateY(90px)}}
+.s3-left{width:620px}
+.s3-left h2{font-family:'Anton',sans-serif;font-size:92px;line-height:.9;color:#160B06;animation:offerIn 12s infinite}
+.s3-left h2 span{background:#160B06;color:#FFC700;padding:0 16px;display:inline-block;transform:rotate(-1deg)}
+.date-row{display:flex;gap:12px;margin:18px 0;animation:offerIn 12s infinite}
+.date-row div{flex:1;background:#FF2442;color:#fff;border:4px solid #160B06;border-radius:16px;text-align:center;padding:12px 0;box-shadow:6px 6px 0 #160B06}
+.date-row strong{font-size:34px;font-family:'Anton',sans-serif;letter-spacing:.02em;display:block}
+.date-row small{font-weight:900;letter-spacing:.18em;font-size:13px}
+.venue{background:#fff;border:4px solid #160B06;border-radius:16px;padding:14px 18px;font-weight:800;font-size:18px;box-shadow:6px 6px 0 #160B06;animation:offerIn 12s infinite}
+.venue small{display:block;font-size:13px;letter-spacing:.16em;background:#0E7A4F;color:#fff;display:inline-block;padding:4px 10px;border-radius:100px;margin-bottom:8px}
+.ticket{width:490px;background:#160B06;color:#FFF3E2;border-radius:24px;padding:28px;position:relative;box-shadow:12px 12px 0 #FF2442;border:4px solid #160B06;animation:ticketPop 12s infinite}
+@keyframes ticketPop{0%{opacity:0;transform:translateY(90px) rotate(2deg) scale(.96)}60%{opacity:0;transform:translateY(90px) rotate(2deg) scale(.96)}67%{opacity:1;transform:translateY(0) rotate(-1deg) scale(1.02)}71%{opacity:1;transform:translateY(0) rotate(0) scale(1)}90%{opacity:1;transform:translateY(0) rotate(0) scale(1)}95%{opacity:0;transform:translateY(-50px) scale(1.04)}100%{opacity:0;transform:translateY(90px) scale(.96)}}
+.ticket::after{content:"";position:absolute;top:18px;bottom:18px;left:50%;border-left:3px dashed #ffffff55}
+.qr{width:110px;height:110px;background:#fff;border-radius:10px;background-image:linear-gradient(#160B06,#160B06),linear-gradient(#160B06,#160B06),linear-gradient(#160B06,#160B06),linear-gradient(#FF2442,#FF2442);background-size:34px 34px,22px 22px,18px 52px,26px 26px;background-position:10px 10px,58px 12px,12px 56px,62px 62px;background-repeat:no-repeat}
+.cta{display:block;background:#FFC700;color:#160B06;text-align:center;font-weight:900;font-size:28px;letter-spacing:.04em;padding:16px;border-radius:14px;border:4px solid #fff;text-decoration:none;margin-top:16px;animation:ctaPulse 12s infinite}
+@keyframes ctaPulse{0%{opacity:0;transform:scale(.9)}65%{opacity:0;transform:scale(.9)}70%{opacity:1;transform:scale(1.06)}74%{opacity:1;transform:scale(1)}82%{opacity:1;transform:scale(1.04)}86%{opacity:1;transform:scale(1)}90%{opacity:1;transform:scale(1)}95%{opacity:0;transform:scale(1.05)}100%{opacity:0;transform:scale(.9)}}
+</style>
+</head>
+<body>
+<div class="stage">
+<div class="topbar"><div class="topbar-track"><span>SWEETSPOT × LOCAL ROASTERY <i class="dot"></i> 3-DAY POP-UP IN SEONGSU <i class="dot"></i> STRAWBERRY CLOUD SHORTCAKE <i class="dot"></i> DEC 12 — 14 <i class="dot"></i> RESERVE A SLOT </span><span>SWEETSPOT × LOCAL ROASTERY <i class="dot"></i> 3-DAY POP-UP IN SEONGSU <i class="dot"></i> STRAWBERRY CLOUD SHORTCAKE <i class="dot"></i> DEC 12 — 14 <i class="dot"></i> RESERVE A SLOT </span></div></div>
+<div class="bg-kr">딸기폭발</div>
+<!-- SCENE 1 HOOK 0-4s -->
+<div class="scene scene-1">
+<div class="s1-left">
+<div class="eyebrow">★ 3 DAYS ONLY — SEONGSU TAKEOVER</div>
+<h1>STRAWBERRY<br><span class="red">GOES</span> <span class="out">LOUD.</span></h1>
+<p class="s1-sub">Sweetspot × Local Roastery drops a giant strawberry dessert + bold espresso bar. One weekend. Gone in a bite.</p>
+<div class="s1-meta"><div><small>WHEN</small>DEC 12–14 • 11AM–8PM</div><div><small>WHERE</small>22 Seongsu-ro, Seoul</div><div style="background:#160B06;color:#FFC700">FRESH HOURLY ★</div></div>
+</div>
+<div class="s1-right"><div class="berry-stage">
+<div class="stem"></div><div class="leaf l1"></div><div class="leaf l2"></div><div class="leaf l3"></div>
+<div class="berry-body"></div><div class="shine"></div>
+<div class="seed" style="left:90px;top:170px"></div><div class="seed" style="left:170px;top:160px"></div><div class="seed" style="left:250px;top:175px"></div><div class="seed" style="left:125px;top:240px"></div><div class="seed" style="left:205px;top:235px"></div><div class="seed" style="left:280px;top:245px"></div><div class="seed" style="left:155px;top:315px"></div><div class="seed" style="left:230px;top:310px"></div>
+<div class="sticker">100%<br>REAL<br>딸기!</div>
+</div></div>
+</div>
+<!-- SCENE 2 PRODUCT 4-8s -->
+<div class="scene scene-2">
+<div class="s2-visual"><div class="plate">
+<div class="cake"><div class="mini-berry"></div><div class="cake-base"></div></div>
+<div class="cup"><div class="cup-body">STRAWBERRY<br>LATTE</div><p style="font-weight:900;margin-top:10px;font-size:15px">Roastery Single-Origin +<br>House Strawberry Milk</p></div>
+</div><p style="font-weight:900;font-size:16px;letter-spacing:.12em;margin-top:14px;text-align:center">★ STRAWBERRY CLOUD SHORTCAKE — BAKED HOURLY ★</p></div>
+<div class="s2-info"><h2>CREAMY.<br><em>BOOZY?</em> NO — BERRY.</h2>
+<div class="feat"><div><b>01 DESSERT</b>Fluffy chiffon, Seongju strawberries, vanilla chantilly. 4,800 won slice.</div><div><b>02 COFFEE</b>Double espresso over strawberry milk. Hot / Iced. Roasted in Seongsu.</div><div><b>03 BONUS</b>Tasting flight + brew demo every hour. Free stickers.</div></div>
+</div>
+</div>
+<!-- SCENE 3 OFFER + CTA 8-12s -->
+<div class="scene scene-3">
+<div class="s3-left"><h2>3 DAYS. <span>THEN GONE.</span></h2>
+<div class="date-row"><div><small>FRI</small><strong>DEC 12</strong><small>11AM–8PM</small></div><div><small>SAT</small><strong>DEC 13</strong><small>11AM–8PM</small></div><div><small>SUN</small><strong>DEC 14</strong><small>11AM–6PM</small></div></div>
+<div class="venue"><small>FIRST 100 DAILY — FREE FINANCIER + TOTE</small>📍 Sweetspot Seongsu, 22 Seongsu-ro, Seongdong-gu, Seoul — 2 min from Seongsu St. Exit 3</div>
+</div>
+<div class="ticket"><p style="font-weight:900;letter-spacing:.2em;font-size:14px;color:#FFC700">★ RESERVE-A-SLOT TICKET ★</p><p style="font-family:Anton;font-size:44px;line-height:1;margin:8px 0">SKIP THE LINE.</p><div style="display:flex;gap:18px;align-items:center"><div class="qr"></div><div style="font-weight:800;font-size:16px;line-height:1.5">Scan to book<br>sweetspot.kr/seongsu<br><span style="background:#FF2442;padding:2px 10px;border-radius:100px;font-size:13px">ONLY 30 SEATS / HOUR</span></div></div><a class="cta" href="#">RESERVE A SLOT →</a></div>
+</div>
+<div class="timeline"><b class="on">01 HOOK</b><small>02 TASTE</small><small>03 RESERVE</small><div class="progress"><i></i></div><b>12s LOOP</b></div>
+</div>
+</body>
+</html>

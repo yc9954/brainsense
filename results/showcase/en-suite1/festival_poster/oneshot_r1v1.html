@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BRASS AFTER DARK — November Jazz Festival · Nov 19–21</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+--bg:#0D0805;
+--panel:#1A1109;
+--brass:#FFB43A;
+--ember:#FF5E1A;
+--cream:#FFF7E8;
+--muted:#D9C5A3;
+--dim:#9C8B72;
+--line:rgba(255,180,58,.22);
+--card:#1F140B;
+--teal:#7DF0C8;
+}
+html,body{height:100%}
+body{
+background:var(--bg);
+color:var(--cream);
+font-family:"Space Grotesk",system-ui,sans-serif;
+font-size:16px;
+line-height:1.5;
+overflow-x:hidden;
+-webkit-font-smoothing:antialiased;
+}
+body::before{
+content:"";position:fixed;inset:0;pointer-events:none;z-index:1;
+background:
+radial-gradient(900px 500px at 78% 18%, rgba(255,94,26,.38), transparent 60%),
+radial-gradient(700px 600px at 15% 90%, rgba(255,180,58,.18), transparent 60%),
+radial-gradient(500px 400px at 55% 50%, rgba(255,180,58,.08), transparent 70%),
+linear-gradient(180deg, #0D0805 0%, #140C06 100%);
+}
+body::after{
+content:"";position:fixed;inset:0;z-index:50;pointer-events:none;opacity:.09;mix-blend-mode:overlay;
+background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+a{color:inherit}
+.page{position:relative;z-index:2;max-width:1280px;min-height:100vh;max-height:100vh;margin:0 auto;display:flex;flex-direction:column;overflow:hidden}
+@media(max-width:900px){.page{max-height:none}}
+/* ticker */
+.ticker{background:var(--brass);color:#1A0F00;font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;overflow:hidden;padding:9px 0;border-bottom:2px solid #000}
+.ticker-track{display:inline-flex;gap:0;animation:scroll 22s linear infinite}
+.ticker span{padding:0 22px}
+@keyframes scroll{to{transform:translateX(-50%)}}
+/* header */
+header{display:flex;align-items:center;justify-content:space-between;padding:16px 40px 12px}
+.brand{display:flex;align-items:center;gap:12px}
+.mark{width:40px;height:40px;border-radius:50%;background:radial-gradient(circle at 30% 30%, #FFE9B8, #FFB43A 45%, #FF5E1A 78%, #5A1E00);display:grid;place-items:center;font-size:20px;box-shadow:0 0 24px rgba(255,180,58,.6), inset 0 0 0 2px rgba(0,0,0,.4)}
+.brand b{font-family:Anton,sans-serif;letter-spacing:.08em;font-size:17px;line-height:1}
+.brand small{display:block;font-family:"Space Grotesk",sans-serif;font-weight:600;font-size:11px;letter-spacing:.22em;color:var(--brass)}
+.hdr-mid{font-size:13.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.hdr-mid strong{color:var(--cream)}
+.hdr-cta{display:flex;align-items:center;gap:12px}
+.live-dot{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:700;letter-spacing:.16em;color:var(--teal)}
+.live-dot i{width:9px;height:9px;border-radius:50%;background:var(--teal);box-shadow:0 0 12px var(--teal);animation:pulse 1.6s infinite}
+@keyframes pulse{50%{opacity:.4}}
+.btn-small{font-weight:700;font-size:14px;letter-spacing:.06em;background:transparent;color:var(--cream);border:1px solid rgba(255,247,232,.35);border-radius:999px;padding:10px 18px;cursor:pointer;text-decoration:none;transition:.2s}
+.btn-small:hover{border-color:var(--brass);color:var(--brass)}
+/* main */
+main{flex:1;display:grid;grid-template-columns:1.08fr .92fr;gap:32px;padding:8px 40px 12px;align-items:stretch;min-height:0}
+.left{display:flex;flex-direction:column;justify-content:center;min-width:0}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;align-self:flex-start;border:1px solid var(--line);background:rgba(255,180,58,.1);border-radius:999px;padding:8px 14px;font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--brass)}
+.eyebrow em{font-style:normal;background:var(--brass);color:#1A0F00;border-radius:999px;padding:2px 9px;font-size:12px}
+h1{font-family:Anton,sans-serif;line-height:.88;letter-spacing:.01em;text-transform:uppercase;margin:16px 0 12px;font-size:clamp(56px,7.2vw,102px)}
+h1 .stroke{color:transparent;-webkit-text-stroke:2px var(--brass);text-shadow:0 0 32px rgba(255,180,58,.35)}
+h1 .script{font-family:"Instrument Serif",serif;font-style:italic;text-transform:none;font-weight:400;letter-spacing:-.02em;color:var(--cream);text-shadow:0 0 18px rgba(255,94,26,.8),0 0 60px rgba(255,94,26,.5);position:relative}
+h1 .script::after{content:"";position:absolute;left:2%;right:2%;bottom:6px;height:10px;background:linear-gradient(90deg,var(--ember),var(--brass));filter:blur(14px);opacity:.7;z-index:-1}
+.sub{font-size:17px;color:var(--muted);max-width:52ch}
+.sub strong{color:var(--cream);font-weight:600}
+/* lineup */
+.lineup{margin-top:18px;border-top:1px solid var(--line)}
+.lineup-head{display:flex;justify-content:space-between;align-items:center;padding:10px 0 6px;font-size:13px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--brass)}
+.act{display:grid;grid-template-columns:44px 1fr auto;gap:12px;align-items:center;padding:9px 10px;border-top:1px solid rgba(255,247,232,.1);border-radius:10px;text-decoration:none;transition:.18s}
+.act:hover,.act:focus-visible{background:rgba(255,180,58,.09);outline:2px solid var(--brass);outline-offset:-2px}
+.num{font-family:Anton,sans-serif;color:transparent;-webkit-text-stroke:1px var(--dim);font-size:20px}
+.act-name{font-weight:700;font-size:16.5px;line-height:1.2}
+.act-name small{display:block;font-weight:400;font-size:14px;color:var(--dim);letter-spacing:.02em}
+.act-meta{text-align:right;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;line-height:1.3}
+.act-meta span{display:block;font-weight:500;color:var(--brass);font-size:12.5px}
+.headline-tag{background:var(--ember);color:#fff;font-size:11px;letter-spacing:.12em;padding:3px 8px;border-radius:999px;margin-left:8px;vertical-align:middle;box-shadow:0 0 14px rgba(255,94,26,.7)}
+/* right */
+.right{display:flex;gap:16px;align-items:stretch;min-height:0}
+.stage-arch{flex:1.15;position:relative;border-radius:220px 220px 22px 22px;overflow:hidden;border:1px solid rgba(255,180,58,.45);background:#080402;min-height:560px;display:flex;flex-direction:column;box-shadow:0 20px 80px rgba(0,0,0,.6), 0 0 0 6px rgba(255,180,58,.08)}
+.beams{position:absolute;inset:0;background:
+conic-gradient(from 180deg at 50% 0%, transparent 0deg, rgba(255,180,58,.28) 12deg, transparent 24deg, transparent 40deg, rgba(255,94,26,.32) 52deg, transparent 64deg, transparent 80deg, rgba(255,180,58,.28) 92deg, transparent 104deg),
+radial-gradient(420px 320px at 50% 28%, #FFD98A 0%, #FF8A2A 28%, #4A1400 62%, transparent 72%),
+linear-gradient(180deg, #2B1203 0%, #120802 55%, #080402 100%);
+}
+.moon{position:absolute;top:96px;left:50%;transform:translateX(-50%);width:210px;height:210px;border-radius:50%;background:radial-gradient(circle at 35% 35%, #FFF6D8 0%, #FFD27A 32%, #FF7A1A 62%, rgba(255,122,26,0) 72%);filter:blur(.3px);box-shadow:0 0 60px 10px rgba(255,150,30,.55),0 0 140px 40px rgba(255,94,26,.35)}
+.neon-sign{position:absolute;top:22px;left:0;right:0;text-align:center;font-weight:700;letter-spacing:.42em;font-size:15px;color:#FFE9B8;text-shadow:0 0 8px #FFB43A,0 0 22px #FF5E1A,0 0 46px #FF5E1A;animation:flick 4s infinite}
+@keyframes flick{0%,100%{opacity:1}92%{opacity:1}93%{opacity:.4}94%{opacity:1}95%{opacity:.6}96%{opacity:1}}
+.sax-wrap{position:relative;margin-top:138px;display:grid;place-items:center}
+.sax-glow{position:absolute;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle, rgba(255,220,130,.45), transparent 65%);filter:blur(10px)}
+.sax{font-size:148px;line-height:1;filter:drop-shadow(0 0 22px rgba(255,180,58,.9)) drop-shadow(0 18px 30px rgba(0,0,0,.7));transform:rotate(-8deg)}
+.eq{display:flex;gap:7px;align-items:flex-end;justify-content:center;margin-top:6px;height:44px}
+.eq i{width:10px;border-radius:99px;background:linear-gradient(180deg,#FFE9B8,#FFB43A,#FF5E1A);box-shadow:0 0 12px rgba(255,180,58,.8);animation:eq 1s ease-in-out infinite}
+.eq i:nth-child(1){height:60%;animation-delay:0s}.eq i:nth-child(2){height:90%;animation-delay:.15s}.eq i:nth-child(3){height:45%;animation-delay:.3s}.eq i:nth-child(4){height:80%;animation-delay:.45s}.eq i:nth-child(5){height:55%;animation-delay:.6s}.eq i:nth-child(6){height:95%;animation-delay:.2s}.eq i:nth-child(7){height:50%;animation-delay:.5s}
+@keyframes eq{50%{transform:scaleY(.4)}}
+.skyline{position:absolute;bottom:0;left:0;right:0}
+.stage-foot{position:relative;margin-top:auto;background:rgba(8,4,2,.72);backdrop-filter:blur(6px);border-top:1px solid rgba(255,180,58,.3);padding:12px 18px 14px;display:flex;justify-content:space-between;align-items:center;font-size:13px;letter-spacing:.12em;text-transform:uppercase;font-weight:700}
+.stage-foot b{color:var(--brass)}
+/* ticket */
+.ticket{flex:.95;background:linear-gradient(180deg,#2A1C0E,#1A1109);border:1px solid rgba(255,180,58,.5);border-radius:20px;padding:22px 22px 18px;display:flex;flex-direction:column;position:relative;overflow:hidden;box-shadow:0 18px 50px rgba(0,0,0,.55)}
+.ticket::before{content:"";position:absolute;inset:0;background:radial-gradient(300px 200px at 50% -10%, rgba(255,180,58,.25), transparent 70%);pointer-events:none}
+.ticket::after{content:"";position:absolute;left:0;right:0;top:116px;border-top:2px dashed rgba(255,180,58,.35)}
+.kicker{font-size:12.5px;font-weight:700;letter-spacing:.24em;color:var(--brass);text-transform:uppercase;display:flex;justify-content:space-between}
+.kicker span:last-child{color:var(--teal)}
+.price-row{display:flex;align-items:flex-end;gap:10px;margin:10px 0 2px}
+.price{font-family:Anton,sans-serif;font-size:62px;line-height:1}
+.per{font-size:14px;color:var(--muted);padding-bottom:10px}
+.saves{display:inline-flex;align-self:flex-start;background:#0D0805;border:1px solid var(--ember);color:#FFD9C2;font-size:13px;font-weight:700;border-radius:999px;padding:5px 11px;margin-bottom:12px}
+.ticket ul{list-style:none;margin:18px 0 14px;display:grid;gap:9px;font-size:15.5px}
+.ticket li{display:flex;gap:10px;align-items:flex-start;color:#F3E6CC}
+.ticket li i{width:22px;height:22px;flex:0 0 22px;border-radius:50%;background:rgba(125,240,200,.15);border:1px solid rgba(125,240,200,.6);display:grid;place-items:center;font-style:normal;font-size:13px;color:var(--teal)}
+.count{background:#0D0805;border:1px solid rgba(255,247,232,.15);border-radius:12px;padding:10px 12px;display:flex;justify-content:space-between;align-items:center;font-size:13px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--muted)}
+.count b{color:var(--cream);font-variant-numeric:tabular-nums;letter-spacing:.06em}
+.cta{margin-top:14px;background:linear-gradient(180deg,#FFD27A,#FFB43A 45%,#FF7A1A);color:#1E0F00;font-weight:800;font-size:17px;letter-spacing:.02em;border:0;border-radius:14px;padding:16px;cursor:pointer;box-shadow:0 8px 28px rgba(255,122,26,.45), inset 0 1px 0 rgba(255,255,255,.7);transition:.18s;text-decoration:none;text-align:center}
+.cta:hover{transform:translateY(-1px);filter:brightness(1.05)}
+.cta small{display:block;font-weight:600;font-size:13px;opacity:.75}
+.secure{margin-top:10px;text-align:center;font-size:13.5px;color:var(--dim)}
+.secure a{color:var(--muted)}
+/* footer */
+footer{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 40px 16px;border-top:1px solid rgba(255,247,232,.12);font-size:14px;color:var(--muted)}
+footer strong{color:var(--cream)}
+footer .addr{display:flex;gap:10px;align-items:center}
+:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
+@media(max-width:1020px){
+main{grid-template-columns:1fr;padding:12px 24px}
+.stage-arch{min-height:460px}
+.right{flex-direction:column}
+header,.page footer{padding-left:24px;padding-right:24px}
+.hdr-mid{display:none}
+.page{max-height:none}
+}
+</style>
+</head>
+<body>
+<div class="page">
+<div class="ticker" aria-hidden="true"><div class="ticker-track" id="tick"></div></div>
+<header>
+<div class="brand"><div class="mark" aria-hidden="true">♯</div><div><b>MIDNIGHT BRASS</b><small>JAZZ FESTIVAL</small></div></div>
+<div class="hdr-mid"><strong>Nov 19–21, 2026</strong> &nbsp;·&nbsp; EartH Hackney, London &nbsp;·&nbsp; Doors 7PM</div>
+<div class="hdr-cta"><span class="live-dot"><i></i> 200 EARLY-BIRDS LEFT</span><a class="btn-small" href="#tickets">Seating Plan</a></div>
+</header>
+<main>
+<section class="left" aria-labelledby="fest-title">
+<div class="eyebrow"><em>● Nov 19—21</em> 3 Nights · 5 Acts · One Glowing Room</div>
+<h1 id="fest-title"><span class="stroke">BRASS</span><br><span class="script">after dark</span></h1>
+<p class="sub"><strong>A November jazz festival where trumpet heat meets neon haze.</strong> Low lights, warm brass, late vinyl sets till 2AM at EartH Hackney. Come for the headline, stay for the afterglow.</p>
+<div class="lineup" role="list" aria-label="Festival line-up">
+<div class="lineup-head"><span>The Line-up — 5 Acts</span><span>Thu → Sat</span></div>
+<a class="act" role="listitem" href="#tickets"><span class="num">01</span><span class="act-name">Nia Solé <small>Velvet soul · slow-burn opener</small></span><span class="act-meta">Thu 8:00PM<span>Main Hall</span></span></a>
+<a class="act" role="listitem" href="#tickets"><span class="num">02</span><span class="act-name">Django's Ghost <small>Gypsy swing · Paris after midnight</small></span><span class="act-meta">Thu 10:00PM<span>Main Hall</span></span></a>
+<a class="act" role="listitem" href="#tickets"><span class="num">03</span><span class="act-name">Theo Lumen Quartet <small>Modal · midnight · alive</small></span><span class="act-meta">Fri 9:00PM<span>Main Hall</span></span></a>
+<a class="act" role="listitem" href="#tickets"><span class="num">04</span><span class="act-name">Brasshouse Collective <small>12 horns · full floor shake</small></span><span class="act-meta">Sat 8:30PM<span>Main Hall</span></span></a>
+<a class="act" role="listitem" href="#tickets"><span class="num">05</span><span class="act-name">Kamara Blue &amp; The Late Lights <span class="headline-tag">★ HEADLINE</span><small>Blue-note trumpet · new album live</small></span><span class="act-meta">Sat 10:30PM<span>Main Hall</span></span></a>
+</div>
+</section>
+<section class="right" aria-label="Stage visual and tickets">
+<div class="stage-arch" aria-hidden="true">
+<div class="beams"></div><div class="moon"></div>
+<div class="neon-sign">● LIVE ● EartH HACKNEY</div>
+<div class="sax-wrap"><div class="sax-glow"></div><div class="sax">🎷</div></div>
+<div class="eq"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<svg class="skyline" viewBox="0 0 400 78" preserveAspectRatio="none" style="height:78px;width:100%;display:block"><path d="M0 78V52h18V38h12v14h14V30h10v-8h8v8h12v22h16V42h14v10h12V28h10v24h18V36h12v16h14V22h8v10h10v20h16V40h12v12h14V32h12v20h14V44h16v34Z" fill="#080402"/><g fill="#FFB43A" opacity=".9"><rect x="88" y="36" width="4" height="4"/><rect x="96" y="36" width="4" height="4"/><rect x="194" y="42" width="4" height="4"/><rect x="286" y="38" width="4" height="4"/><rect x="294" y="38" width="4" height="4"/><rect x="342" y="48" width="4" height="4"/></g></svg>
+<div class="stage-foot"><span>Warm brass · <b>Neon haze</b></span><span>18+ · 7PM–2AM</span></div>
+</div>
+<div class="ticket" id="tickets">
+<div class="kicker"><span>✦ Early-Bird Pass</span><span>−35%</span></div>
+<div class="price-row"><div class="price">$49</div><div class="per">/ 3 nights<br><s style="color:var(--dim)">reg. $75</s></div></div>
+<div class="saves">🔥 You save $26 — ends Nov 5</div>
+<ul>
+<li><i>✓</i> All 5 acts, Thu–Sat, Main Hall + Loft bar sets</li>
+<li><i>✓</i> Free 7” vinyl + cloakroom included</li>
+<li><i>✓</i> Front stalls + after-party till 2AM</li>
+</ul>
+<div class="count" aria-live="polite"><span>Early-bird ends in</span><b id="cd">01d : 14h : 22m</b></div>
+<a class="cta" href="#" onclick="this.innerHTML='You’re on the list — check email ✦<small>Early-bird locked at $49</small>';return false;">Claim Early-Bird — $49<small>Only 200 at this price · instant e-ticket</small></a>
+<div class="secure">🔒 Secure checkout · <a href="#">Refund promise</a> · 4.9★ from 2,300 fans</div>
+</div>
+</section>
+</main>
+<footer>
+<div class="addr">📍 <span><strong>EartH Hackney,</strong> 11–17 Stoke Newington Rd, London N16 8BH</span></div>
+<div>Doors 7PM · First horn 8PM sharp · Step-free access</div>
+<div>🎟️ <strong>Nov 19–21, 2026</strong> — Single-night $22 on door</div>
+</footer>
+</div>
+<script>
+// ticker
+const t="MIDNIGHT BRASS ✦ NOV 19–21 ✦ 5 ACTS ✦ EARLY-BIRD $49 ✦ EARTH HACKNEY ✦ ";
+document.getElementById('tick').innerHTML=("<span>"+t.repeat(3)+"</span>").repeat(2);
+// countdown to Nov 5 23:59 UTC 2026
+const end=new Date('2026-11-05T23:59:00Z').getTime();
+function pad(n){return String(n).padStart(2,'0')}
+function tickCd(){
+let d=end-Date.now(); if(d<0)d=0;
+const days=Math.floor(d/864e5),h=Math.floor(d%864e5/36e5),m=Math.floor(d%36e5/6e4);
+document.getElementById('cd').textContent=pad(days)+'d : '+pad(h)+'h : '+pad(m)+'m';
+}
+tickCd(); setInterval(tickCd,30000);
+</script>
+</body>
+</html>

@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nota — Simple pricing for AI meeting notes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+--paper:#F9F5E8;
+--paper2:#FFFDF4;
+--ink:#161510;
+--muted:#625D4F;
+--muted2:#8A8471;
+--line:#E7DDC3;
+--lime:#D9FF3D;
+--lime2:#C4F000;
+--dark:#14140F;
+--white:#fff;
+}
+body{
+font-family:'Inter',system-ui,sans-serif;
+background:var(--paper);
+color:var(--ink);
+font-size:17px;
+line-height:1.5;
+-webkit-font-smoothing:antialiased;
+overflow-x:hidden;
+}
+body::before{
+content:"";position:fixed;inset:0;pointer-events:none;
+background-image:radial-gradient(#D8CFAF 1.2px, transparent 1.2px);
+background-size:26px 26px;
+opacity:.35;
+mask-image:linear-gradient(to bottom, black 0%, transparent 62%);
+}
+.blob{position:fixed;border-radius:50%;filter:blur(80px);pointer-events:none;z-index:0}
+.b1{width:560px;height:360px;left:-120px;top:-120px;background:radial-gradient(circle,#FFC65C 0%, transparent 70%);opacity:.55}
+.b2{width:620px;height:380px;right:-140px;top:-80px;background:radial-gradient(circle,#D9FF3D 0%, transparent 70%);opacity:.55}
+.wrap{max-width:1200px;margin:0 auto;padding:0 28px;position:relative;z-index:1}
+/* NAV */
+.nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.02em;font-size:22px}
+.mark{width:34px;height:34px;border-radius:10px;background:var(--ink);color:var(--lime);display:grid;place-items:center;font-size:19px}
+.links{display:flex;gap:28px;font-size:16px;font-weight:500;color:#3E3A2E}
+.links a{text-decoration:none;color:inherit}
+.links a.active{background:var(--ink);color:#fff;padding:6px 14px;border-radius:999px;font-weight:600}
+.nav-cta{display:flex;gap:12px;align-items:center;font-size:16px}
+.login{text-decoration:none;color:var(--ink);font-weight:600}
+.btn-try{background:var(--ink);color:#fff;border:0;border-radius:999px;padding:11px 20px;font-weight:700;font-size:16px;cursor:pointer}
+/* HERO */
+.hero{text-align:center;max-width:760px;margin:8px auto 0}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-size:13px;font-weight:800;letter-spacing:.12em}
+.dot{width:8px;height:8px;border-radius:50%;background:#1DB954;box-shadow:0 0 0 4px #D9FF3D}
+h1{font-family:'Fraunces',serif;font-weight:900;font-size:58px;line-height:.95;letter-spacing:-.03em;margin:14px 0 10px}
+h1 em{font-style:normal;background:linear-gradient(transparent 62%, var(--lime) 62% 96%, transparent 96%)}
+.sub{color:var(--muted);font-size:18px;max-width:620px;margin:0 auto}
+.toggle{display:inline-flex;align-items:center;background:#fff;border:1px solid var(--line);border-radius:999px;padding:4px;margin-top:14px;gap:4px}
+.toggle button{border:0;background:transparent;padding:9px 18px;border-radius:999px;font-weight:700;font-size:15px;cursor:pointer;color:var(--muted)}
+.toggle button.on{background:var(--ink);color:#fff}
+.toggle .save{background:var(--lime);color:var(--ink);font-size:13px;font-weight:800;padding:4px 9px;border-radius:999px;margin-right:6px}
+/* CARDS */
+.cards{display:grid;grid-template-columns:1fr 1.12fr 1fr;gap:20px;align-items:stretch;margin-top:18px}
+.card{background:var(--white);border:1px solid var(--line);border-radius:22px;padding:24px 24px 22px;position:relative;text-align:left;box-shadow:0 8px 24px rgba(60,50,20,.06)}
+.card h3{font-size:13px;letter-spacing:.14em;font-weight:800;color:var(--muted)}
+.card .desc{font-size:16px;color:var(--muted);margin:4px 0 12px}
+.price-row{display:flex;align-items:baseline;gap:6px}
+.price{font-size:46px;font-weight:800;letter-spacing:-.04em;line-height:1}
+.per{color:var(--muted);font-size:16px}
+.bill{font-size:14px;color:var(--muted2);margin:2px 0 14px}
+.btn{width:100%;border-radius:12px;padding:14px;font-size:16px;font-weight:800;cursor:pointer;border:1.5px solid var(--ink)}
+.btn-ghost{background:#fff;color:var(--ink)}
+.btn-ghost:hover{background:#F3EDD8}
+.feat{list-style:none;margin-top:16px;display:grid;gap:10px;font-size:16px;line-height:1.4}
+.feat li{display:flex;gap:10px;align-items:flex-start}
+.tick{flex:0 0 22px;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-size:13px;font-weight:800}
+.light .tick{background:#EAF4D6;border:1px solid #CBDFA0}
+/* PRO */
+.pro{background:var(--dark);color:#F5F3E8;border:1px solid #2B2B21;border-radius:24px;padding:26px 26px 24px;box-shadow:0 0 0 6px var(--lime), 0 30px 70px rgba(15,15,5,.38);transform:translateY(-8px)}
+.pro h3{color:var(--lime)}
+.pro .desc{color:#CFCABB}
+.pro .bill,.pro .per{color:#B8B39E}
+.pop{position:absolute;top:-16px;left:50%;transform:translateX(-50%);background:var(--lime);color:var(--ink);font-size:13px;font-weight:800;letter-spacing:.08em;padding:7px 16px;border-radius:999px;border:2px solid var(--ink);white-space:nowrap}
+.pro .price{font-size:54px}
+.btn-lime{background:var(--lime);border-color:var(--lime);color:var(--ink);box-shadow:0 6px 0 #000}
+.btn-lime:hover{background:#E6FF70}
+.micro{text-align:center;font-size:13.5px;color:#A9A48D;margin-top:10px}
+.pro .feat .tick{background:var(--lime);color:#000;border:0}
+.sticker{position:absolute;right:-18px;top:46px;background:#FF5C1A;color:#fff;font-weight:800;font-size:13px;line-height:1.1;padding:10px 12px;border-radius:12px;transform:rotate(8deg);border:2px solid #000;box-shadow:3px 3px 0 #000;text-align:center}
+/* TRUST */
+.trust{margin-top:18px;background:var(--paper2);border:1px solid var(--line);border-radius:16px;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logos{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.small-label{font-size:12px;font-weight:800;letter-spacing:.12em;color:var(--muted)}
+.logo{font-weight:800;font-size:16px;color:#9A9480;letter-spacing:-.02em;white-space:nowrap}
+.logo span{font-weight:400}
+.guar{display:flex;align-items:center;gap:12px}
+.shield{width:40px;height:40px;border-radius:50%;background:var(--ink);display:grid;place-items:center;color:var(--lime);font-size:18px;flex:0 0 40px}
+.guar strong{font-size:16px;display:block;line-height:1.2}
+.guar small{font-size:14px;color:var(--muted)}
+.divider{width:1px;height:42px;background:var(--line)}
+.stars{color:#E69B00;font-size:14px;letter-spacing:2px}
+@media(max-width:980px){
+h1{font-size:42px}.links{display:none}.cards{grid-template-columns:1fr}.pro{transform:none}.sticker{right:10px}.trust{flex-direction:column;text-align:center}.divider{display:none}
+}
+</style>
+</head>
+<body>
+<div class="blob b1"></div><div class="blob b2"></div>
+<div class="wrap">
+<header class="nav">
+<div class="brand"><div class="mark">◐</div> Nota</div>
+<nav class="links" aria-label="Primary">
+<a href="#">Product</a><a href="#" class="active">Pricing</a><a href="#">Security</a><a href="#">Customers</a><a href="#">Changelog</a>
+</nav>
+<div class="nav-cta"><a class="login" href="#">Log in</a><button class="btn-try">Try free →</button></div>
+</header>
+
+<main>
+<div class="hero">
+<div class="eyebrow"><span class="dot"></span> PRICING • START FREE, UPGRADE ANYTIME</div>
+<h1>Simple pricing that <em>pays for itself</em> in one meeting.</h1>
+<p class="sub">Start free. Get unlimited AI summaries, action items &amp; syncs on <strong style="color:#161510">Pro for $12/mo</strong>. No seat minimums.</p>
+<div class="toggle" role="tablist" aria-label="Billing period">
+<button class="on" id="bM">Monthly</button>
+<button id="bA">Annual</button>
+<span class="save">−25% annual</span>
+</div>
+</div>
+
+<section class="cards" aria-label="Pricing tiers">
+<!-- FREE -->
+<div class="card light">
+<h3>FREE</h3>
+<div class="desc">For trying AI notes out.</div>
+<div class="price-row"><div class="price">$0</div><div class="per">forever</div></div>
+<div class="bill">No credit card required</div>
+<button class="btn btn-ghost">Start for free</button>
+<ul class="feat">
+<li><span class="tick">✓</span> 10 AI meetings per month</li>
+<li><span class="tick">✓</span> Meet, Zoom &amp; Teams auto-join bot</li>
+<li><span class="tick">✓</span> Searchable transcript + summary</li>
+<li><span class="tick">✓</span> 45-min limit per meeting</li>
+<li><span class="tick">✓</span> 1 personal workspace</li>
+</ul>
+</div>
+
+<!-- PRO -->
+<div class="card pro">
+<div class="pop">★ MOST POPULAR • PRO</div>
+<div class="sticker">Saves<br>4.2 hrs<br>/week</div>
+<h3>PRO</h3>
+<div class="desc">For pros who live in meetings.</div>
+<div class="price-row"><div class="price" id="proPrice">$12</div><div class="per">/ mo</div></div>
+<div class="bill" id="proBill">billed monthly • cancel anytime</div>
+<button class="btn btn-lime">Start 14-day free trial →</button>
+<div class="micro">No card required • Keep notes forever</div>
+<ul class="feat">
+<li><span class="tick">✓</span> <span><strong>Unlimited</strong> AI summaries + transcripts</span></li>
+<li><span class="tick">✓</span> Auto action items, owners &amp; deadlines</li>
+<li><span class="tick">✓</span> Ask-your-meeting AI chat + follow-ups</li>
+<li><span class="tick">✓</span> Slack, Notion, HubSpot &amp; Salesforce sync</li>
+<li><span class="tick">✓</span> 32 languages + custom vocabulary</li>
+</ul>
+</div>
+
+<!-- TEAM -->
+<div class="card light">
+<h3>TEAM</h3>
+<div class="desc">For orgs that share knowledge.</div>
+<div class="price-row"><div class="price">$20</div><div class="per">/ user / mo</div></div>
+<div class="bill">annual billing • SSO included</div>
+<button class="btn btn-ghost">Talk to sales</button>
+<ul class="feat">
+<li><span class="tick">✓</span> Everything in Pro, plus:</li>
+<li><span class="tick">✓</span> Shared library + permissions</li>
+<li><span class="tick">✓</span> SSO / SAML, SOC 2, retention rules</li>
+<li><span class="tick">✓</span> Admin analytics + adoption insights</li>
+<li><span class="tick">✓</span> Dedicated success manager</li>
+</ul>
+</div>
+</section>
+
+<div class="trust">
+<div class="logos" aria-label="Customer logos">
+<span class="small-label">TRUSTED BY 40,000+ TEAMS AT</span>
+<span class="logo">▲ Vertex</span>
+<span class="logo">◉ Loomly</span>
+<span class="logo">⬣ Northbeam</span>
+<span class="logo">✦ Helios</span>
+<span class="logo">⌘ Acme Co</span>
+<span class="stars">★★★★★ <span style="color:#625D4F;letter-spacing:0">4.9/5 on G2</span></span>
+</div>
+<div style="display:flex;align-items:center;gap:16px">
+<div class="divider"></div>
+<div class="guar">
+<div class="shield">🛡</div>
+<div><strong>30-day money-back guarantee</strong><small>No questions asked • Cancel in 1 click • SOC 2 + GDPR</small></div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<script>
+const bM=document.getElementById('bM'),bA=document.getElementById('bA'),p=document.getElementById('proPrice'),bill=document.getElementById('proBill');
+bM.onclick=()=>{bM.classList.add('on');bA.classList.remove('on');p.textContent='$12';bill.textContent='billed monthly • cancel anytime';}
+bA.onclick=()=>{bA.classList.add('on');bM.classList.remove('on');p.textContent='$9';bill.textContent='billed annually ($108/yr) • 2 months free';}
+</script>
+</body>
+</html>

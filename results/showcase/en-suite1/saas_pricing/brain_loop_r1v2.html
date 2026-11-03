@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Noted — Pricing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0A0D16;
+  --panel:#121724;
+  --line:rgba(255,255,255,.11);
+  --lime:#DFFF4D;
+  --lime-2:#C4F000;
+  --violet:#9B8CFF;
+  --text:#F3F5F9;
+  --muted:#AEB7C8;
+  --muted2:#7E889E;
+}
+html,body{height:100%}
+body{
+  font-family:'Inter',system-ui,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  font-size:16px;
+  line-height:1.5;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+body::before{
+  content:"";
+  position:fixed;inset:0;
+  background:
+    radial-gradient(700px 420px at 15% -10%, rgba(155,140,255,.22), transparent 60%),
+    radial-gradient(800px 500px at 85% 10%, rgba(223,255,77,.14), transparent 60%),
+    radial-gradient(600px 600px at 50% 110%, rgba(64,120,255,.12), transparent 60%);
+  pointer-events:none;z-index:0;
+}
+.grid-bg{
+  position:fixed;inset:0;z-index:0;opacity:.55;pointer-events:none;
+  background-image:linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px);
+  background-size:56px 56px;
+  mask-image:radial-gradient(900px 520px at 50% 0%, black 60%, transparent 85%);
+}
+.wrap{max-width:1220px;margin:0 auto;padding:0 28px;position:relative;z-index:1}
+/* NAV */
+nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.brand{display:flex;align-items:center;gap:10px;font-family:'Space Grotesk';font-weight:700;font-size:22px;letter-spacing:-.02em}
+.brand-mark{width:32px;height:32px;border-radius:9px;background:var(--lime);display:grid;place-items:center;color:#0A0D16}
+.nav-links{display:flex;gap:28px;font-size:15px;font-weight:500;color:var(--muted)}
+.nav-links a{color:inherit;text-decoration:none}
+.nav-links a.active{color:#fff}
+.nav-cta{display:flex;align-items:center;gap:12px}
+.btn-ghost{color:#fff;text-decoration:none;font-weight:600;font-size:15px;padding:10px 14px}
+.btn-light{background:#fff;color:#0A0D16;font-weight:700;font-size:15px;padding:11px 18px;border-radius:999px;text-decoration:none}
+/* HERO HEADER */
+.hero-top{display:flex;justify-content:space-between;align-items:end;gap:32px;padding:18px 0 20px}
+.eyebrow{font-family:'JetBrains Mono';font-size:12.5px;letter-spacing:.16em;color:var(--lime);font-weight:700;display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.eyebrow::before{content:"";width:28px;height:2px;background:var(--lime);display:inline-block;border-radius:2px}
+h1{font-family:'Space Grotesk';font-size:54px;line-height:.95;letter-spacing:-.04em;font-weight:700}
+h1 em{font-style:normal;color:var(--lime)}
+h1 .thin{color:transparent;-webkit-text-stroke:1.2px rgba(255,255,255,.7);font-weight:500}
+.hero-right{max-width:380px;text-align:right}
+.hero-right p{color:var(--muted);font-size:16px;line-height:1.55}
+.toggle{display:inline-flex;background:rgba(255,255,255,.07);border:1px solid var(--line);border-radius:999px;padding:4px;margin-top:14px;position:relative}
+.toggle button{border:0;background:transparent;color:var(--muted);font-weight:700;font-size:14px;padding:9px 18px;border-radius:999px;cursor:pointer;font-family:'Inter'}
+.toggle button.on{background:var(--lime);color:#0A0D16}
+.toggle .save{font-family:'JetBrains Mono';font-size:11px;background:#fff;color:#0A0D16;border-radius:999px;padding:2px 7px;margin-left:6px;vertical-align:middle}
+/* PRICING */
+.pricing{display:grid;grid-template-columns:1fr 1.08fr 1fr;gap:18px;align-items:stretch}
+.card{border-radius:20px;padding:24px 24px 22px;background:linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.025));border:1px solid var(--line);position:relative;display:flex;flex-direction:column}
+.card-num{font-family:'JetBrains Mono';font-size:12px;letter-spacing:.14em;color:var(--muted2);display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+.card h3{font-family:'Space Grotesk';font-size:20px;letter-spacing:-.02em;display:flex;align-items:center;gap:8px}
+.card .desc{color:var(--muted);font-size:16px;margin:6px 0 16px;min-height:48px}
+.price-row{display:flex;align-items:baseline;gap:8px;margin-bottom:4px}
+.price{font-family:'Space Grotesk';font-size:46px;font-weight:700;letter-spacing:-.05em;line-height:1}
+.per{color:var(--muted);font-size:15px;font-weight:500}
+.bill-note{font-size:13.5px;color:var(--muted2);min-height:20px;margin-bottom:14px}
+.feat{list-style:none;display:grid;gap:10px;margin:6px 0 18px}
+.feat li{display:flex;gap:10px;align-items:flex-start;font-size:16px;color:#D6DCE8}
+.feat li strong{color:#fff}
+.tick{flex:0 0 22px;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-size:13px;font-weight:800;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.14)}
+.feat li.dim{color:var(--muted2)}
+.card .cta{margin-top:auto}
+.btn{display:block;text-align:center;text-decoration:none;font-weight:700;font-size:16px;padding:13px;border-radius:12px;border:1px solid rgba(255,255,255,.18);color:#fff;background:rgba(255,255,255,.06)}
+.btn:hover{background:rgba(255,255,255,.11)}
+.fine{margin-top:10px;text-align:center;font-size:13.5px;color:var(--muted2)}
+/* PRO */
+.card.pro{background:var(--lime);border-color:var(--lime);color:#0C1105;transform:translateY(-8px);box-shadow:0 24px 80px -12px rgba(223,255,77,.45), 0 0 0 1px rgba(223,255,77,.6);padding:24px 26px 22px;overflow:hidden}
+.card.pro::after{content:"";position:absolute;right:-60px;top:-60px;width:200px;height:200px;background:radial-gradient(circle, rgba(0,0,0,.12), transparent 70%);pointer-events:none}
+.card.pro .card-num{color:rgba(0,0,0,.6)}
+.pop{position:absolute;top:14px;right:-2px;background:#0A0D16;color:var(--lime);font-family:'JetBrains Mono';font-size:11.5px;font-weight:700;letter-spacing:.1em;padding:8px 14px 8px 14px;border-radius:999px 0 0 999px}
+.card.pro h3{font-size:22px}
+.card.pro .desc{color:rgba(12,17,5,.72)}
+.card.pro .price{font-size:58px}
+.card.pro .per{color:rgba(0,0,0,.6)}
+.card.pro .bill-note{color:rgba(0,0,0,.6)}
+.card.pro .feat li{color:#121806}
+.card.pro .feat li strong{color:#000}
+.card.pro .tick{background:#0A0D16;color:var(--lime);border-color:#0A0D16}
+.btn-dark{display:block;text-align:center;background:#0A0D16;color:#fff;text-decoration:none;font-weight:800;font-size:16px;padding:15px;border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.btn-dark:hover{transform:translateY(-1px)}
+.pro-proof{display:flex;align-items:center;gap:8px;margin-top:12px;background:rgba(0,0,0,.08);border:1px dashed rgba(0,0,0,.25);border-radius:10px;padding:9px 11px;font-size:14px;font-weight:600}
+/* TRUST */
+.trust{margin-top:16px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.03);display:flex;align-items:center;gap:0;overflow:hidden}
+.logos{display:flex;align-items:center;gap:22px;padding:14px 22px;flex:1;white-space:nowrap;overflow:hidden}
+.logos span.label{font-family:'JetBrains Mono';font-size:11px;letter-spacing:.14em;color:var(--muted2)}
+.logo{font-family:'Space Grotesk';font-weight:700;font-size:15px;color:#CBD3E1;display:flex;align-items:center;gap:7px;opacity:.9}
+.logo i{width:18px;height:18px;border-radius:5px;display:inline-grid;place-items:center;font-style:normal;font-size:11px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.14)}
+.trust-div{width:1px;align-self:stretch;background:var(--line)}
+.trust-item{display:flex;align-items:center;gap:10px;padding:12px 20px;font-size:14.5px;color:var(--muted)}
+.trust-item strong{color:#fff}
+.shield{width:34px;height:34px;border-radius:50%;background:var(--lime);display:grid;place-items:center;flex:0 0 34px}
+.stars{color:var(--lime);letter-spacing:2px;font-size:14px}
+@media(max-width:980px){
+  .hero-top{flex-direction:column;align-items:start}.hero-right{text-align:left}
+  h1{font-size:42px}.pricing{grid-template-columns:1fr}.card.pro{transform:none}.trust{flex-direction:column;align-items:stretch}.trust-div{height:1px;width:auto}
+}
+</style>
+</head>
+<body>
+<div class="grid-bg"></div>
+<div class="wrap">
+  <nav aria-label="Main">
+    <div class="brand"><span class="brand-mark" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M2 9h2l2-5 3 10 2.5-7L13 9h3" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Noted</div>
+    <div class="nav-links"><a href="#">Product</a><a href="#" class="active">Pricing</a><a href="#">Integrations</a><a href="#">Changelog</a></div>
+    <div class="nav-cta"><a class="btn-ghost" href="#">Sign in</a><a class="btn-light" href="#">Get Noted free →</a></div>
+  </nav>
+
+  <div class="hero-top">
+    <div>
+      <div class="eyebrow">PRICING — 02 / DARK EDITION</div>
+      <h1>Pay only for <em>meetings</em><br><span class="thin">that actually matter.</span></h1>
+    </div>
+    <div class="hero-right">
+      <p>Auto-join, transcribe & summarize every call. Cancel anytime, keep your notes forever.</p>
+      <div class="toggle" role="tablist" aria-label="Billing period">
+        <button id="bM" class="on" onclick="setBill('m')">Monthly</button>
+        <button id="bY" onclick="setBill('y')">Yearly <span class="save">−25%</span></button>
+      </div>
+    </div>
+  </div>
+
+  <section class="pricing" aria-label="Pricing tiers">
+    <!-- FREE -->
+    <article class="card">
+      <div class="card-num"><span>01 / STARTER</span><span>● FREE</span></div>
+      <h3>Free</h3>
+      <p class="desc">For trying AI notes on side projects & coffee chats.</p>
+      <div class="price-row"><span class="price">$0</span><span class="per">/ forever</span></div>
+      <div class="bill-note">No credit card required</div>
+      <ul class="feat">
+        <li><span class="tick">✓</span><span><strong>5 meetings</strong> / month, 30 min each</span></li>
+        <li><span class="tick">✓</span><span>AI summary + action items</span></li>
+        <li><span class="tick">✓</span><span>Zoom & Meet integration</span></li>
+        <li><span class="tick" style="opacity:.5">–</span><span class="dim">Ask AI + unlimited search</span></li>
+        <li><span class="tick" style="opacity:.5">–</span><span class="dim">CRM & Slack auto-sync</span></li>
+      </ul>
+      <div class="cta"><a class="btn" href="#">Start for free</a><div class="fine">Free forever • Upgrade when ready</div></div>
+    </article>
+
+    <!-- PRO -->
+    <article class="card pro" aria-label="Pro - most popular">
+      <div class="pop">✦ MOST POPULAR</div>
+      <div class="card-num"><span>02 / PRO</span><span>● 92% CHOOSE THIS</span></div>
+      <h3>Pro ⚡</h3>
+      <p class="desc">For professionals who live in meetings and hate notes.</p>
+      <div class="price-row"><span class="price" id="proPrice">$12</span><span class="per">/ month, billed <span id="proPer">monthly</span></span></div>
+      <div class="bill-note" id="proNote">Switch to yearly and pay $9/mo → save $36</div>
+      <ul class="feat">
+        <li><span class="tick">✓</span><span><strong>Unlimited meetings</strong>, 4-hr length</span></li>
+        <li><span class="tick">✓</span><span><strong>Ask AI</strong> — chat with any meeting</span></li>
+        <li><span class="tick">✓</span><span>Auto CRM, Notion, Slack sync</span></li>
+        <li><span class="tick">✓</span><span>95% accurate + 42 languages</span></li>
+        <li><span class="tick">✓</span><span>Priority support & early features</span></li>
+      </ul>
+      <div class="cta"><a class="btn-dark" href="#">Start 14-day free trial →</a>
+        <div class="pro-proof">🛡️ <span>30-day money-back guarantee • No questions asked</span></div>
+      </div>
+    </article>
+
+    <!-- TEAM -->
+    <article class="card">
+      <div class="card-num"><span>03 / SCALE</span><span>● SSO / SOC2</span></div>
+      <h3>Team <span style="font-weight:400;color:var(--muted);font-size:14px;border:1px solid var(--line);padding:3px 9px;border-radius:999px">for 3+ seats</span></h3>
+      <p class="desc">Shared memory for fast-moving sales & product teams.</p>
+      <div class="price-row"><span class="price" id="teamPrice">$20</span><span class="per">/ user / month</span></div>
+      <div class="bill-note" id="teamNote">or $15/user yearly • min 3 seats</div>
+      <ul class="feat">
+        <li><span class="tick">✓</span><span>Everything in <strong>Pro</strong>, plus:</span></li>
+        <li><span class="tick">✓</span><span>Team library + private folders</span></li>
+        <li><span class="tick">✓</span><span>Coaching insights & talk ratios</span></li>
+        <li><span class="tick">✓</span><span>SSO, audit log, data retention</span></li>
+        <li><span class="tick">✓</span><span>Dedicated success manager</span></li>
+      </ul>
+      <div class="cta"><a class="btn" href="#">Talk to sales</a><div class="fine">Onboarding in under 10 minutes</div></div>
+    </article>
+  </section>
+
+  <div class="trust" aria-label="Trust">
+    <div class="logos">
+      <span class="label">TRUSTED BY 40,000+ TEAMS:</span>
+      <span class="logo"><i>⬢</i> NORTHWIND</span>
+      <span class="logo"><i>◍</i> Hexlab</span>
+      <span class="logo"><i>✦</i> Craftly</span>
+      <span class="logo"><i>⟡</i> LOOPWORK</span>
+      <span class="logo"><i>⬣</i> Brightline</span>
+    </div>
+    <div class="trust-div"></div>
+    <div class="trust-item"><span class="shield">🛡️</span><span><strong>30-day money-back.</strong> Love it or refunded.</span></div>
+    <div class="trust-div"></div>
+    <div class="trust-item"><span class="stars">★★★★★</span><span><strong>4.9/5</strong> from 6,200+ reviews</span></div>
+  </div>
+  <p style="text-align:center;color:var(--muted2);font-size:13.5px;margin:10px 0 14px">SOC 2 Type II • GDPR • Your data never trains models • Cancel in 1 click</p>
+</div>
+<script>
+function setBill(v){
+  document.getElementById('bM').classList.toggle('on', v==='m');
+  document.getElementById('bY').classList.toggle('on', v==='y');
+  document.getElementById('proPrice').textContent = v==='m' ? '$12' : '$9';
+  document.getElementById('proPer').textContent = v==='m' ? 'monthly' : 'yearly';
+  document.getElementById('proNote').textContent = v==='m' ? 'Switch to yearly and pay $9/mo → save $36' : 'Billed $108/year • 2 months free included';
+  document.getElementById('teamPrice').textContent = v==='m' ? '$20' : '$15';
+  document.getElementById('teamNote').textContent = v==='m' ? 'or $15/user yearly • min 3 seats' : 'billed yearly • onboarding included';
+}
+</script>
+</body>
+</html>

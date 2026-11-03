@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1280, initial-scale=1">
+<title>LUMARA C15 — Glass Skin in 7 Days | 30% Off</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,ital,wght@9..144,0,700;9..144,0,900;9..144,1,900&family=Inter:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:'Inter',system-ui,sans-serif;
+  background:#D9D2C2 radial-gradient(circle at 20% 10%, #EFE9DA 0%, #D9D2C2 55%, #C5BCA6 100%);
+  min-height:100vh;
+  display:flex;align-items:center;justify-content:center;
+  padding:18px 16px;
+  color:#10201F;
+}
+.stage{width:1280px;max-width:100%;display:flex;align-items:center;justify-content:center;gap:48px}
+.post{
+  width:640px;background:#fff;border-radius:22px;overflow:hidden;
+  box-shadow:0 30px 80px rgba(16,32,31,.28), 0 2px 0 rgba(255,255,255,.6) inset;
+  border:1px solid rgba(0,0,0,.08);
+}
+.ig-head{display:flex;align-items:center;gap:12px;padding:12px 18px}
+.avatar{width:38px;height:38px;border-radius:50%;background:conic-gradient(from 0deg,#FFB000,#FF5A1F,#0A2725,#FFB000);padding:3px;flex-shrink:0}
+.avatar span{display:block;width:100%;height:100%;background:#0A2725;border-radius:50%;color:#FFC53D;font-weight:900;display:flex;align-items:center;justify-content:center;font-size:18px;border:2px solid #fff}
+.ig-head strong{font-size:15px;display:block;line-height:1.1}
+.ig-head small{font-size:13px;color:#6B6B6B}
+.dots{margin-left:auto;font-size:22px;letter-spacing:2px;color:#222;line-height:1}
+.ad{background:#FFF9ED;display:flex;flex-direction:column}
+.ad-top{background:#0A2725;color:#FFF9ED;text-align:center;padding:20px 36px 18px;position:relative}
+.eyebrow{font-size:12.5px;font-weight:800;letter-spacing:.22em;color:#FFB86A}
+.ad-top h1{
+  font-family:'Fraunces',serif;font-weight:900;
+  font-size:36px;line-height:1.04;letter-spacing:-.02em;margin-top:8px;
+}
+.ad-top h1 em{font-style:italic;font-weight:900;color:#FFC53D}
+.ad-top p.sub{font-size:16px;color:#CFCFC0;margin-top:8px;opacity:.9}
+.ad-hero{
+  position:relative;height:386px;overflow:hidden;
+  background:
+    radial-gradient(520px 320px at 50% 68%, #FFD071 0%, #FF8A1E 48%, #FF5A1F 72%, #FFF9ED 72.5%),
+    linear-gradient(#FFF9ED,#FFF9ED);
+  display:flex;align-items:flex-end;justify-content:center;
+}
+.watermark{
+  position:absolute;top:34px;left:50%;transform:translateX(-50%);
+  font-family:'Fraunces',serif;font-weight:900;font-size:132px;letter-spacing:.02em;line-height:1;
+  color:transparent;-webkit-text-stroke:2px rgba(10,39,37,.14);white-space:nowrap;user-select:none;
+}
+.halo{
+  position:absolute;left:50%;bottom:18px;transform:translateX(-50%);
+  width:420px;height:420px;border-radius:50%;
+  background:radial-gradient(circle at 35% 30%, #FFE9A8 0%, #FFC53D 22%, #FF7A00 58%, #E94E00 78%);
+  box-shadow:0 18px 50px rgba(255,90,31,.45), inset 0 10px 30px rgba(255,255,255,.5);
+}
+.halo:after{
+  content:'';position:absolute;inset:18px;border-radius:50%;
+  border:2px dashed rgba(255,249,237,.85);
+}
+.bottle-wrap{position:relative;z-index:3;margin-bottom:6px;filter:drop-shadow(0 28px 28px rgba(90,20,0,.35));animation:float 4.5s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.ground-shadow{position:absolute;left:50%;bottom:14px;transform:translateX(-50%);width:220px;height:26px;background:radial-gradient(ellipse at center, rgba(90,20,0,.35), transparent 70%);z-index:2}
+.badge{
+  position:absolute;z-index:4;right:30px;top:22px;width:124px;height:124px;border-radius:50%;
+  background:#0A2725;color:#FFF9ED;text-align:center;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  transform:rotate(10deg);border:3px solid #FFF9ED;outline:3px solid #0A2725;
+  box-shadow:0 12px 28px rgba(10,39,37,.35);
+}
+.badge b{font-family:'Fraunces',serif;font-size:32px;line-height:1}
+.badge b small{font-size:18px;vertical-align:super}
+.badge span{font-size:11px;font-weight:800;letter-spacing:.14em;background:#FF5A1F;color:#fff;padding:4px 10px;border-radius:999px;margin-top:6px}
+.slice{position:absolute;z-index:2;left:44px;bottom:52px;width:112px;height:112px;filter:drop-shadow(0 10px 18px rgba(0,0,0,.25))}
+.drop{position:absolute;z-index:3;background:#fff;border-radius:50% 50% 50% 0;transform:rotate(-45deg);box-shadow:0 4px 10px rgba(0,0,0,.2)}
+.benefit-line{position:absolute;left:50%;bottom:30px;transform:translateX(-50%);z-index:4;background:rgba(10,39,37,.92);color:#FFF9ED;font-size:13.5px;font-weight:700;letter-spacing:.06em;padding:9px 18px;border-radius:999px;white-space:nowrap}
+.ad-cta{background:#fff;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 26px 20px;border-top:1px solid #EEE6D3}
+.price small{display:block;font-size:14px;font-weight:700;color:#6B7A79;letter-spacing:.02em}
+.price strong{font-size:30px;letter-spacing:-.03em}
+.price s{font-size:18px;color:#9A9A9A;margin-left:8px;font-weight:600}
+.stars{font-size:15px;margin-top:2px;color:#0A2725} .stars i{color:#FF7A00;font-style:normal;letter-spacing:2px}
+.btn{
+  background:#0A2725;color:#fff;border:0;cursor:pointer;text-decoration:none;
+  font-size:19px;font-weight:800;letter-spacing:-.01em;
+  padding:18px 38px;border-radius:999px;display:flex;align-items:center;gap:12px;
+  box-shadow:0 12px 26px rgba(10,39,37,.32);transition:.2s;white-space:nowrap;
+}
+.btn:hover{background:#123B38;transform:translateY(-1px)}
+.btn .arr{background:#FF5A1F;width:30px;height:30px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:18px}
+.ig-foot{display:flex;align-items:center;gap:14px;padding:12px 18px 16px;font-size:14px}
+.ig-foot svg{width:26px;height:26px}
+.ig-foot p{color:#333;font-size:14.5px}
+.side-note{max-width:300px;color:#2B3A39}
+.side-note h2{font-family:'Fraunces',serif;font-size:28px;line-height:1.1;margin-bottom:12px}
+.side-note p{font-size:17px;line-height:1.6}
+@media(max-width:1050px){.side-note{display:none}.post{width:min(640px,94vw)}}
+</style>
+</head>
+<body>
+<div class="stage">
+<div class="post" role="article" aria-label="Instagram sponsored ad for Lumara Vitamin C serum">
+  <div class="ig-head">
+    <div class="avatar"><span>L</span></div>
+    <div><strong>lumara.skin</strong><small>Sponsored • Original audio</small></div>
+    <div class="dots">···</div>
+  </div>
+
+  <div class="ad">
+    <div class="ad-top">
+      <div class="eyebrow">★ NEW — C15 VITAMIN C SERUM</div>
+      <h1>Get glass-like glow in 7 days with 15% pure vitamin C.</h1>
+      <p class="sub">Dermatologist tested for dark spots, dullness & uneven tone.</p>
+    </div>
+
+    <div class="ad-hero">
+      <div class="watermark">C15 GLOW</div>
+      <div class="halo" aria-hidden="true"></div>
+      <div class="ground-shadow"></div>
+
+      <!-- orange slice SVG -->
+      <svg class="slice" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="48" fill="#FF7A00"/><circle cx="50" cy="50" r="40" fill="#FFF3C4"/><g fill="#FF8A1E"><path d="M50 50 L50 12 A38 38 0 0 1 79 21 Z"/><path d="M50 50 L79 21 A38 38 0 0 1 88 50 Z"/><path d="M50 50 L88 50 A38 38 0 0 1 79 79 Z"/><path d="M50 50 L79 79 A38 38 0 0 1 50 88 Z"/><path d="M50 50 L50 88 A38 38 0 0 1 21 79 Z"/><path d="M50 50 L21 79 A38 38 0 0 1 12 50 Z"/><path d="M50 50 L12 50 A38 38 0 0 1 21 21 Z"/><path d="M50 50 L21 21 A38 38 0 0 1 50 12 Z"/></g><circle cx="50" cy="50" r="6" fill="#FFF3C4"/></svg>
+
+      <div class="badge" aria-label="30 percent off launch offer"><b>30<small>%</small> OFF</b><span>LAUNCH</span></div>
+
+      <div class="drop" style="left:27%;top:28%;width:16px;height:16px;opacity:.9"></div>
+      <div class="drop" style="right:29%;top:44%;width:11px;height:11px;opacity:.8"></div>
+
+      <!-- HERO BOTTLE -->
+      <div class="bottle-wrap">
+      <svg width="210" height="330" viewBox="0 0 210 330" role="img" aria-label="Lumara C15 Vitamin C serum bottle">
+        <defs>
+          <linearGradient id="glass" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#FFD996"/><stop offset=".25" stop-color="#FFB84D"/><stop offset=".55" stop-color="#FF8A1E"/><stop offset="1" stop-color="#C63E00"/></linearGradient>
+          <linearGradient id="cap" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2A2A2A"/><stop offset=".5" stop-color="#000"/><stop offset="1" stop-color="#2E2E2E"/></linearGradient>
+        </defs>
+        <!-- dropper -->
+        <rect x="78" y="8" width="54" height="22" rx="11" fill="#111"/>
+        <rect x="70" y="28" width="70" height="68" rx="14" fill="url(#cap)"/>
+        <g stroke="#3A3A3A" stroke-width="2" opacity=".9"><line x1="86" y1="36" x2="86" y2="88"/><line x1="98" y1="36" x2="98" y2="88"/><line x1="110" y1="36" x2="110" y2="88"/><line x1="122" y1="36" x2="122" y2="88"/></g>
+        <rect x="88" y="96" width="34" height="20" fill="#E8DCC2"/>
+        <!-- body -->
+        <rect x="42" y="114" width="126" height="198" rx="26" fill="url(#glass)" stroke="#7A2500" stroke-width="2"/>
+        <rect x="54" y="126" width="14" height="172" rx="7" fill="#fff" opacity=".55"/>
+        <!-- label -->
+        <rect x="55" y="168" width="100" height="116" rx="14" fill="#FFF9ED"/>
+        <text x="105" y="188" text-anchor="middle" font-family="Inter" font-weight="800" font-size="11" letter-spacing="2" fill="#0A2725">LUMARA</text>
+        <text x="105" y="224" text-anchor="middle" font-family="Fraunces" font-weight="900" font-size="44" fill="#0A2725">C15</text>
+        <text x="105" y="242" text-anchor="middle" font-family="Inter" font-weight="700" font-size="10" letter-spacing="1.2" fill="#E05A00">VITAMIN C SERUM</text>
+        <rect x="75" y="252" width="60" height="20" rx="10" fill="#0A2725"/><text x="105" y="266" text-anchor="middle" font-family="Inter" font-weight="800" font-size="10" fill="#fff">30 ml • 1 fl oz</text>
+        <!-- drop icon -->
+        <path d="M150 178 c6 8 10 12 10 17 a10 10 0 1 1 -20 0 c0-5 4-9 10-17" fill="#FF5A1F" stroke="#fff" stroke-width="2"/>
+      </svg>
+      </div>
+      <div class="benefit-line">BRIGHTENS &nbsp;•&nbsp; EVENS TONE &nbsp;•&nbsp; FIRMS</div>
+    </div>
+
+    <div class="ad-cta">
+      <div class="price"><small>LAUNCH PRICE — ENDS SUNDAY</small><div><strong>$34.30</strong><s>$49.00</s></div><div class="stars"><i>★★★★★</i> 12,400+ reviews</div></div>
+      <a class="btn" href="#" aria-label="Buy now Lumara C15 serum for 34 dollars 30">Buy now <span class="arr">→</span></a>
+    </div>
+  </div>
+
+  <div class="ig-foot">
+    <svg viewBox="0 0 24 24" fill="none" stroke="#222" stroke-width="2"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+    <svg viewBox="0 0 24 24" fill="none" stroke="#222" stroke-width="2"><path d="M21 12a8 8 0 0 1-8 8H5l-2 2V12a8 8 0 0 1 8-8h2a8 8 0 0 1 8 8z"/></svg>
+    <svg viewBox="0 0 24 24" fill="none" stroke="#222" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+    <p><b>24,812 likes</b> — lumara.skin My morning glow in one drop ✨</p>
+  </div>
+</div>
+</div>
+</body>
+</html>

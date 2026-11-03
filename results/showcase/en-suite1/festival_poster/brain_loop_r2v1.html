@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BRASS AFTER DARK — Crescent City Jazz Fest • Nov 20-22</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;0,9..144,900;1,9..144,700;1,9..144,900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+--bg:#0E0A13; --ink:#FFF5E6; --muted:#CBBBA6;
+--brass:#F5B942; --brass2:#FFD98A; --pink:#FF3D81; --teal:#46F2D2; --line:rgba(255,246,232,.14);
+}
+html,body{height:100%}
+body{
+background:var(--bg); color:var(--ink);
+font-family:"Space Grotesk",system-ui,sans-serif; font-size:17px; line-height:1.5;
+overflow-x:hidden;
+-webkit-font-smoothing:antialiased;
+}
+body::before{
+content:""; position:fixed; inset:0; pointer-events:none; z-index:0;
+background:
+radial-gradient(900px 600px at 78% 22%, rgba(255,61,129,.22), transparent 60%),
+radial-gradient(800px 600px at 15% 90%, rgba(245,185,66,.18), transparent 60%),
+radial-gradient(600px 500px at 50% 50%, rgba(70,242,210,.07), transparent 60%),
+linear-gradient(180deg, #171020 0%, #0E0A13 60%);
+}
+body::after{
+content:""; position:fixed; inset:0; pointer-events:none; opacity:.09; z-index:0;
+background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.9'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='.9'/%3E%3C/svg%3E");
+}
+/* diagonal motion beam */
+.beam{position:fixed; z-index:0; top:-20%; left:8%; width:140%; height:180px; transform:rotate(-18deg);
+background:linear-gradient(90deg, transparent, rgba(245,185,66,.18) 20%, rgba(255,61,129,.28) 50%, rgba(70,242,210,.18) 75%, transparent);
+filter:blur(1px); pointer-events:none;
+border-top:1px solid rgba(245,185,66,.4); border-bottom:1px solid rgba(255,61,129,.4);
+}
+.beam.b2{top:auto; bottom:-8%; height:2px; opacity:.8; background:linear-gradient(90deg, var(--brass), var(--pink), var(--teal));}
+.wrap{position:relative; z-index:1; max-width:1280px; margin:0 auto; padding:0 32px; min-height:100vh; display:flex; flex-direction:column;}
+header{display:flex; align-items:center; justify-content:space-between; padding:18px 0; border-bottom:1px solid var(--line);}
+.brand{display:flex; align-items:center; gap:12px;}
+.mark{width:42px; height:42px; border-radius:12px; background:linear-gradient(135deg, var(--brass), var(--pink)); display:grid; place-items:center; font-weight:900; color:#1A0F02; font-family:Fraunces,serif; font-size:22px; box-shadow:0 0 24px rgba(245,185,66,.5);}
+.brand b{font-family:Fraunces,serif; letter-spacing:.06em; font-size:18px;}
+.brand small{display:block; font-family:"Space Grotesk"; font-weight:600; font-size:11px; letter-spacing:.28em; color:var(--brass2);}
+nav{display:flex; gap:26px; font-size:14px; letter-spacing:.14em; font-weight:600; color:var(--muted);}
+nav a{color:inherit; text-decoration:none;} nav a:hover{color:#fff}
+.topcta{display:flex; align-items:center; gap:12px;}
+.count{font-size:13px; letter-spacing:.12em; font-weight:700; color:#1A0F02; background:var(--teal); padding:7px 12px; border-radius:100px;}
+.btn{appearance:none; border:0; cursor:pointer; text-decoration:none; font-weight:700; letter-spacing:.04em; border-radius:100px; padding:13px 22px; font-size:16px; display:inline-flex; align-items:center; gap:10px; transition:.2s;}
+.btn-gold{background:linear-gradient(180deg, #FFD98A, #F5B942 55%, #E68A00); color:#221001; box-shadow:0 8px 30px rgba(245,185,66,.45), inset 0 1px 0 #fff8;}
+.btn-gold:hover{transform:translateY(-2px); box-shadow:0 12px 36px rgba(255,61,129,.5);}
+.btn-ghost{background:transparent; color:var(--ink); border:1px solid rgba(255,255,255,.28);}
+.hero{flex:1; display:grid; grid-template-columns:1.08fr .92fr; gap:32px; align-items:center; padding:22px 0 10px;}
+.eyebrow{display:inline-flex; align-items:center; gap:10px; border:1px solid rgba(245,185,66,.5); background:rgba(245,185,66,.1); border-radius:100px; padding:8px 14px; font-size:13px; letter-spacing:.18em; font-weight:700; color:var(--brass2);}
+.dot{width:8px; height:8px; border-radius:50%; background:var(--pink); box-shadow:0 0 12px var(--pink); animation:blink 1.6s infinite;}
+@keyframes blink{50%{opacity:.35}}
+h1{font-family:Fraunces,serif; font-weight:900; line-height:.9; font-size:86px; letter-spacing:-.02em; margin:16px 0 10px; text-transform:uppercase;}
+h1 .neon{font-style:italic; font-weight:900; text-transform:none; background:linear-gradient(90deg, #FFD98A, #FF3D81 55%, #FF7AB8); -webkit-background-clip:text; background-clip:text; color:transparent; filter:drop-shadow(0 0 18px rgba(255,61,129,.55)); position:relative;}
+h1 .outline{color:transparent; -webkit-text-stroke:2px var(--ink);}
+.sub{color:var(--muted); font-size:17px; max-width:560px;}
+.sub strong{color:var(--ink);}
+.lineup{margin:18px 0 18px; border:1px solid var(--line); border-radius:18px; overflow:hidden; background:rgba(255,255,255,.03); backdrop-filter:blur(6px);}
+.lineup-head{display:flex; justify-content:space-between; align-items:center; padding:10px 16px; background:rgba(245,185,66,.12); font-size:12.5px; letter-spacing:.2em; font-weight:700; color:var(--brass2); border-bottom:1px solid var(--line);}
+.act{display:grid; grid-template-columns:52px 1fr auto; gap:12px; align-items:center; padding:9px 16px; border-bottom:1px solid rgba(255,255,255,.07);}
+.act:last-child{border:0}
+.act:hover{background:rgba(255,61,129,.08);}
+.num{font-family:Fraunces,serif; font-weight:900; color:var(--brass); font-size:18px;}
+.act-name{font-weight:700; font-size:16.5px; line-height:1.2;}
+.act-name span{display:block; font-weight:500; font-size:13.5px; color:var(--muted); letter-spacing:.02em;}
+.tag{font-size:11px; letter-spacing:.12em; font-weight:700; border:1px solid rgba(70,242,210,.5); color:var(--teal); border-radius:100px; padding:4px 9px; white-space:nowrap;}
+.time{text-align:right; font-weight:700; font-size:15px;}
+.time small{display:block; font-size:11px; letter-spacing:.18em; color:var(--muted);}
+.cta-row{display:flex; align-items:center; gap:16px; flex-wrap:wrap;}
+.price-note{font-size:14px; color:var(--muted);}
+.price-note strong{color:var(--ink); font-size:20px;}
+.urgency{display:flex; align-items:center; gap:10px; font-size:13.5px; color:var(--brass2); margin-top:10px;}
+.bar{flex:1; max-width:220px; height:8px; border-radius:100px; background:rgba(255,255,255,.12); overflow:hidden;}
+.bar i{display:block; width:73%; height:100%; background:linear-gradient(90deg, var(--brass), var(--pink)); box-shadow:0 0 12px var(--pink);}
+.avatars{display:flex;} .avatars span{width:28px; height:28px; border-radius:50%; border:2px solid #0E0A13; margin-left:-8px; display:grid; place-items:center; font-size:14px;}
+/* RIGHT VISUAL */
+.visual{position:relative; height:640px; border-radius:28px; background:linear-gradient(180deg, #22162E 0%, #130D1C 55%, #0E0A13 100%); border:1px solid rgba(245,185,66,.35); overflow:hidden; box-shadow:0 30px 80px rgba(0,0,0,.6), 0 0 0 8px rgba(245,185,66,.06), 0 0 60px rgba(255,61,129,.25); transform:rotate(1.2deg);}
+.visual::before{content:"STAGE 01 • EMBER HALL"; position:absolute; top:16px; left:0; right:0; text-align:center; font-size:11px; letter-spacing:.4em; color:rgba(255,246,232,.5); z-index:5;}
+.neon-arch{position:absolute; left:50%; top:52%; width:520px; height:520px; transform:translate(-50%,-50%); border-radius:50%; border:3px solid rgba(255,61,129,.9); box-shadow:0 0 30px rgba(255,61,129,.8), inset 0 0 60px rgba(255,61,129,.25); opacity:.9;}
+.neon-arch::after{content:""; position:absolute; inset:18px; border-radius:50%; border:2px solid rgba(245,185,66,.9); box-shadow:0 0 24px rgba(245,185,66,.7), inset 0 0 40px rgba(245,185,66,.2);}
+.moon{position:absolute; left:50%; top:52%; width:400px; height:400px; transform:translate(-50%,-50%); border-radius:50%; background:radial-gradient(circle at 35% 30%, #FFF6D6 0%, #FFD98A 28%, #E68A2E 58%, #5A1A2E 78%, #130D1C 100%); box-shadow:0 0 80px rgba(245,185,66,.55);}
+.speed{position:absolute; inset:0; background:repeating-linear-gradient(-18deg, transparent 0 22px, rgba(255,255,255,.06) 22px 23px); mask:radial-gradient(circle at 50% 52%, black 40%, transparent 72%);}
+.trumpet-svg{position:absolute; left:-4%; right:-6%; top:6%; height:74%; width:108%; filter:drop-shadow(0 12px 30px rgba(0,0,0,.6)) drop-shadow(0 0 22px rgba(245,185,66,.45)); transform:rotate(-8deg);}
+.eq{position:absolute; bottom:92px; left:24px; right:24px; display:flex; align-items:flex-end; gap:6px; height:52px; z-index:4; opacity:.95;}
+.eq i{flex:1; border-radius:4px 4px 2px 2px; background:linear-gradient(180deg, var(--teal), var(--brass) 60%, var(--pink)); animation:eq 1s ease-in-out infinite; box-shadow:0 0 12px rgba(70,242,210,.4);}
+@keyframes eq{0%,100%{height:18%} 50%{height:95%}}
+.face-card{position:absolute; left:18px; top:62px; z-index:6; display:flex; align-items:center; gap:12px; background:rgba(14,10,19,.82); border:1px solid rgba(255,255,255,.18); border-radius:18px; padding:10px 14px 10px 10px; backdrop-filter:blur(8px); box-shadow:0 12px 30px rgba(0,0,0,.5); max-width:300px;}
+.face-card::after{content:""; position:absolute; right:-34px; top:50%; width:34px; height:2px; background:repeating-linear-gradient(90deg, var(--brass2) 0 6px, transparent 6px 10px); opacity:.9;}
+.portrait{width:86px; height:86px; border-radius:50%; flex-shrink:0; border:3px solid var(--brass); box-shadow:0 0 18px rgba(245,185,66,.7); overflow:hidden; background:#2A1E2E;}
+.face-card b{font-size:14px; line-height:1.2; display:block;}
+.face-card small{font-size:12.5px; color:var(--muted);}
+.gaze{font-size:11px; letter-spacing:.14em; font-weight:700; color:var(--teal); margin-top:4px; display:block;}
+.stub{position:absolute; left:22px; right:22px; bottom:18px; z-index:6; background:linear-gradient(180deg, #FFF6E6, #FFE2A8); color:#231203; border-radius:14px; padding:12px 16px; display:flex; align-items:center; justify-content:space-between; transform:rotate(-2deg); border:2px dashed rgba(35,18,3,.35); box-shadow:0 10px 30px rgba(0,0,0,.5);}
+.stub b{font-family:Fraunces,serif; font-size:20px;} .stub small{letter-spacing:.18em; font-weight:700; font-size:11px;}
+.stub .go{background:#160A18; color:var(--brass2); border-radius:100px; padding:10px 16px; font-weight:700; font-size:14px; text-decoration:none;}
+.venue-strip{display:flex; gap:18px; align-items:center; border-top:1px solid var(--line); padding:12px 2px 14px; font-size:13.5px; color:var(--muted);}
+.venue-strip strong{color:var(--ink);}
+.marquee{white-space:nowrap; overflow:hidden; border-top:1px solid var(--line); padding:8px 0 14px; font-size:12px; letter-spacing:.3em; color:rgba(255,246,232,.55); font-weight:700;}
+.marquee span{animation:scroll 18s linear infinite; display:inline-block; padding-right:40px;}
+@keyframes scroll{to{transform:translateX(-50%)}}
+:focus-visible{outline:3px solid var(--teal); outline-offset:3px;}
+@media(max-width:980px){.hero{grid-template-columns:1fr} h1{font-size:58px} .visual{height:560px; transform:none}}
+</style>
+</head>
+<body>
+<div class="beam" aria-hidden="true"></div><div class="beam b2" aria-hidden="true"></div>
+<div class="wrap">
+<header>
+<div class="brand"><div class="mark">♯</div><div><b>BRASS AFTER DARK</b><small>CRESCENT CITY JAZZ FEST</small></div></div>
+<nav aria-label="Festival"><a href="#lineup">LINE-UP</a><a href="#venue">VENUE</a><a href="#tickets">TICKETS</a></nav>
+<div class="topcta"><span class="count">⏳ 5 DAYS LEFT</span><a class="btn btn-gold" style="padding:10px 18px; font-size:15px" href="#tickets">Early-Bird $49 →</a></div>
+</header>
+
+<div class="hero">
+<!-- LEFT -->
+<section>
+<span class="eyebrow"><span class="dot"></span> NOV 20–22, 2026 • THE EMBER HALL, NEW ORLEANS</span>
+<h1><span class="outline">BRASS</span><br><span class="neon">after dark</span></h1>
+<p class="sub"><strong>Three nights. Five acts. One low-lit room</strong> where trumpets glow and the floor shakes. Soul-jazz, hard bop & second-line funk — doors 7PM nightly on Decatur St.</p>
+
+<div class="lineup" id="lineup">
+<div class="lineup-head"><span>★ 5-ACT LINE-UP — 3 STAGES, ONE HALL</span><span>FRI → SUN</span></div>
+<div class="act"><div class="num">01</div><div class="act-name">Mara Blue &amp; The Late Lights <span>Soul-jazz headline • velvet voice + 7-piece horns</span></div><div class="time">FRI 9:30<small>MAIN</small></div></div>
+<div class="act"><div class="num">02</div><div class="act-name">Yuki Tanaka Trio <span>Modal piano • Blue Note Tokyo meets NOLA</span></div><div style="display:flex;gap:8px;align-items:center"><span class="tag">EARLY SET</span><div class="time">FRI 7:30<small>DEN</small></div></div></div>
+<div class="act"><div class="num">03</div><div class="act-name">Theo Coleman Quartet <span>Hard bop • tenor sax fire</span></div><div class="time">SAT 8:00<small>MAIN</small></div></div>
+<div class="act"><div class="num">04</div><div class="act-name">Brass &amp; Smoke <span>Second-line funk brass band</span></div><div class="time">SAT 10:30<small>LATE</small></div></div>
+<div class="act"><div class="num">05</div><div class="act-name">The Velvet Hounds ft. Odette Rivers <span>Late-night blues closer</span></div><div class="time">SUN 8:30<small>MAIN</small></div></div>
+</div>
+
+<div class="cta-row" id="tickets">
+<a href="#tickets" class="btn btn-gold">Get Early-Bird — $49 <span aria-hidden="true">→</span></a>
+<a href="#lineup" class="btn btn-ghost">Full schedule</a>
+<div class="price-note"><strong>$49</strong> <s style="opacity:.6">$79</s> • save 38% • 3-night pass</div>
+</div>
+<div class="urgency"><div class="avatars" aria-hidden="true"><span style="background:#F5B942">🎺</span><span style="background:#FF3D81">🎷</span><span style="background:#46F2D2">🎹</span><span style="background:#FFF6E6">+2k</span></div><div class="bar" aria-hidden="true"><i></i></div><span><strong>73% claimed</strong> — ends Nov 8 at midnight</span></div>
+</section>
+
+<!-- RIGHT : dominant object + human gaze -->
+<section class="visual" aria-label="Neon trumpet and headliner Mara Blue looking toward tickets">
+<div class="moon" aria-hidden="true"></div>
+<div class="neon-arch" aria-hidden="true"></div>
+<div class="speed" aria-hidden="true"></div>
+
+<div class="face-card">
+<div class="portrait" role="img" aria-label="Illustrated portrait of headliner Mara Blue looking left toward ticket button">
+<svg viewBox="0 0 100 100" width="86" height="86" aria-hidden="true">
+<rect width="100" height="100" fill="#2A1A2E"/>
+<!-- headwrap -->
+<path d="M8 48 C12 12 88 10 92 46 L88 38 C70 22 30 22 12 38 Z" fill="#46F2D2"/>
+<path d="M12 38 C30 22 70 22 88 38 L84 30 C68 16 32 16 16 30 Z" fill="#7FF5E0"/>
+<circle cx="78" cy="22" r="7" fill="#F5B942"/>
+<!-- face -->
+<ellipse cx="50" cy="60" rx="28" ry="32" fill="#7A4630"/>
+<ellipse cx="38" cy="62" rx="6" ry="8" fill="#9A6246" opacity=".7"/>
+<!-- eyes looking LEFT toward CTA -->
+<ellipse cx="39" cy="58" rx="8" ry="6.5" fill="white"/>
+<ellipse cx="61" cy="58" rx="8" ry="6.5" fill="white"/>
+<circle cx="35.5" cy="58.5" r="3.2" fill="#160A18"/><circle cx="57.5" cy="58.5" r="3.2" fill="#160A18"/>
+<circle cx="34.5" cy="57.5" r="1" fill="white"/><circle cx="56.5" cy="57.5" r="1" fill="white"/>
+<path d="M30 50 Q39 47 47 50" stroke="#160A18" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+<path d="M53 50 Q61 47 70 50" stroke="#160A18" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+<path d="M48 62 Q46 70 50 72 Q54 70 52 62" stroke="#3A1F14" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+<!-- lips -->
+<path d="M38 80 Q50 76 62 80 Q50 90 38 80" fill="#FF3D81"/>
+<path d="M42 81.5 Q50 84 58 81.5" stroke="white" stroke-width="1" opacity=".7" fill="none"/>
+<!-- earrings -->
+<circle cx="24" cy="70" r="5" fill="none" stroke="#F5B942" stroke-width="2.5"/>
+<circle cx="76" cy="70" r="5" fill="none" stroke="#F5B942" stroke-width="2.5"/>
+<path d="M28 88 Q50 98 72 88 L72 100 L28 100 Z" fill="#FF3D81"/>
+</svg>
+</div>
+<div><b>Mara Blue headlines Fri</b><small>“Follow my eyes — that $49 won’t last.”</small><span class="gaze">◀ ◀ LOOK: EARLY-BIRD ENDS NOV 8</span></div>
+</div>
+
+<!-- DOMINANT TRUMPET OBJECT - diagonal motion -->
+<svg class="trumpet-svg" viewBox="0 0 600 420" aria-hidden="true">
+<defs>
+<linearGradient id="brassG" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFF0B8"/><stop offset=".35" stop-color="#F5B942"/><stop offset=".65" stop-color="#C46A00"/><stop offset="1" stop-color="#5E2A00"/></linearGradient>
+<radialGradient id="bellG" cx=".4" cy=".4" r=".7"><stop offset="0" stop-color="#FFF8D6"/><stop offset=".4" stop-color="#FFD98A"/><stop offset=".7" stop-color="#E68A00"/><stop offset="1" stop-color="#3A1600"/></radialGradient>
+<filter id="glow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<g transform="rotate(-18 300 210)" filter="url(#glow)">
+<!-- motion streaks -->
+<g opacity=".9"><rect x="40" y="120" width="260" height="8" rx="4" fill="#46F2D2" opacity=".8"/><rect x="60" y="145" width="200" height="6" rx="3" fill="#FF3D81" opacity=".9"/><rect x="50" y="165" width="240" height="5" rx="2.5" fill="#F5B942" opacity=".9"/></g>
+<!-- main tube -->
+<rect x="100" y="190" width="320" height="26" rx="13" fill="url(#brassG)" stroke="#2A1500" stroke-width="3"/>
+<rect x="100" y="232" width="300" height="18" rx="9" fill="url(#brassG)" stroke="#2A1500" stroke-width="3"/>
+<path d="M400 190 L440 175 L440 265 L400 250 Z" fill="url(#brassG)" stroke="#2A1500" stroke-width="3"/>
+<!-- valves -->
+<g><rect x="210" y="150" width="22" height="70" rx="6" fill="url(#brassG)" stroke="#2A1500" stroke-width="3"/><rect x="248" y="150" width="22" height="70" rx="6" fill="url(#brassG)" stroke="#2A1500" stroke-width="3"/><rect x="286" y="150" width="22" height="70" rx="6" fill="url(#brassG)" stroke="#2A1500" stroke-width="3"/><ellipse cx="221" cy="142" rx="16" ry="10" fill="#FFF0B8" stroke="#2A1500" stroke-width="3"/><ellipse cx="259" cy="142" rx="16" ry="10" fill="#FFF0B8" stroke="#2A1500" stroke-width="3"/><ellipse cx="297" cy="142" rx="16" ry="10" fill="#FFF0B8" stroke="#2A1500" stroke-width="3"/></g>
+<!-- bell -->
+<g><ellipse cx="485" cy="220" rx="68" ry="92" fill="url(#bellG)" stroke="#2A1500" stroke-width="5"/><ellipse cx="485" cy="220" rx="44" ry="66" fill="#0E0A13"/><ellipse cx="485" cy="220" rx="34" ry="52" fill="url(#bellG)"/><ellipse cx="485" cy="220" rx="18" ry="30" fill="#FFF0B8" opacity=".9"/></g>
+<!-- mouthpiece -->
+<rect x="72" y="196" width="38" height="14" rx="7" fill="#FFF0B8" stroke="#2A1500" stroke-width="3"/>
+<!-- sparkles -->
+<g fill="white"><circle cx="150" cy="130" r="3" opacity=".9"/><circle cx="360" cy="120" r="4" opacity=".9"/><circle cx="530" cy="110" r="3.5" opacity=".9"/><path d="M180 110 l4 10 10 4 -10 4 -4 10 -4 -10 -10 -4 10 -4z" opacity=".9"/></g>
+</g>
+</svg>
+
+<div class="eq" aria-hidden="true"><i style="animation-delay:0s"></i><i style="animation-delay:.1s"></i><i style="animation-delay:.25s"></i><i style="animation-delay:.05s"></i><i style="animation-delay:.3s"></i><i style="animation-delay:.15s"></i><i style="animation-delay:.4s"></i><i style="animation-delay:.2s"></i><i style="animation-delay:.35s"></i><i style="animation-delay:.12s"></i><i style="animation-delay:.28s"></i><i style="animation-delay:.08s"></i><i style="animation-delay:.45s"></i><i style="animation-delay:.18s"></i></div>
+
+<div class="stub"><div><small>EARLY-BIRD • 3-NIGHT PASS</small><br><b>$49 ADMIT ONE</b></div><a class="go" href="#tickets">Claim →</a></div>
+</section>
+</div>
+
+<div class="venue-strip" id="venue"><span>📍 <strong>The Ember Hall</strong> — 714 Decatur St, New Orleans</span><span>•</span><span>Doors 7PM • 18+ • Free brass-band parade Sat 6PM</span><span style="margin-left:auto">🔥 <strong style="color:#F5B942">Neon • Brass • Late Nights</strong></span></div>
+<div class="marquee" aria-hidden="true"><span>MARA BLUE • THEO COLEMAN • YUKI TANAKA • BRASS &amp; SMOKE • VELVET HOUNDS • NOV 20–22 • EARLY-BIRD $49 ENDS NOV 8 • MARA BLUE • THEO COLEMAN • YUKI TANAKA • BRASS &amp; SMOKE • VELVET HOUNDS • NOV 20–22 • EARLY-BIRD $49 ENDS NOV 8 •&nbsp;</span></div>
+</div>
+</body>
+</html>

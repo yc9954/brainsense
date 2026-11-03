@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VELA C15 — Vitamin C Serum | Launch -30%</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;0,9..144,900;1,9..144,700;1,9..144,900&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --ink:#0B2C24;
+  --cream:#FFF8EB;
+  --lime:#D9F154;
+  --tango:#FF4D16;
+  --tango-deep:#B92B00;
+}
+html,body{height:100%}
+body{
+  font-family:"Instrument Sans",system-ui,-apple-system,sans-serif;
+  font-size:18px;line-height:1.5;color:var(--ink);
+  background:#081712;
+  min-height:100vh;
+  display:flex;align-items:center;justify-content:center;
+  padding:22px;
+  -webkit-font-smoothing:antialiased;
+}
+body::before{
+  content:"";position:fixed;inset:0;
+  background:
+    radial-gradient(700px 500px at 12% 15%, #1a4a3e 0%, transparent 60%),
+    radial-gradient(800px 600px at 90% 85%, #2a4d00 0%, transparent 55%),
+    radial-gradient(500px 400px at 85% 10%, rgba(255,77,22,.35) 0%, transparent 60%);
+  pointer-events:none;
+}
+.stage{width:min(1220px,100%);position:relative}
+.top-meta{
+  display:flex;justify-content:space-between;align-items:center;
+  color:#C7D8D1;font-size:12.5px;letter-spacing:.18em;font-weight:700;
+  text-transform:uppercase;margin-bottom:12px;padding:0 6px;
+}
+.top-meta span:last-child{border:1px solid rgba(255,255,255,.22);padding:6px 12px;border-radius:100px}
+.feed{
+  background:var(--cream);
+  border-radius:30px;overflow:hidden;
+  display:grid;grid-template-rows:64px 1fr 68px;
+  height:min(704px,calc(100vh - 90px));min-height:620px;
+  box-shadow:0 40px 100px rgba(0,0,0,.55), 0 2px 0 rgba(255,255,255,.6) inset;
+  border:1px solid rgba(255,255,255,.15);
+}
+/* IG chrome */
+.ig-head{display:flex;align-items:center;gap:12px;padding:12px 22px;border-bottom:1px solid #0B2C2414;background:var(--cream)}
+.avatar{width:38px;height:38px;border-radius:50%;padding:2.5px;background:conic-gradient(from 0deg,#FF4D16,#FFB800,#D9F154,#00C48C,#FF4D16)}
+.avatar i{display:block;width:100%;height:100%;background:#0B2C24;color:var(--lime);border-radius:50%;font-style:normal;font-weight:900;font-size:18px;display:flex;align-items:center;justify-content:center;border:2px solid var(--cream)}
+.ig-name{line-height:1.1}
+.ig-name b{font-size:15px;display:block}
+.ig-name small{font-size:13px;color:#5A6E67}
+.ig-head .dots{margin-left:auto;font-size:24px;letter-spacing:2px;line-height:1;color:#0B2C24}
+.ad{display:grid;grid-template-columns:1.02fr .98fr;min-height:0}
+/* LEFT COPY */
+.copy{padding:38px 44px 28px 46px;display:flex;flex-direction:column;justify-content:center;position:relative;background:var(--cream)}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
+.eyebrow .dot{width:9px;height:9px;border-radius:50%;background:var(--tango);box-shadow:0 0 0 6px rgba(255,77,22,.15)}
+.eyebrow em{font-style:normal;background:var(--ink);color:var(--lime);padding:4px 10px;border-radius:100px;letter-spacing:.12em}
+h1{
+  font-family:"Fraunces",serif;font-weight:900;
+  font-size:clamp(42px,4.4vw,62px);line-height:.92;letter-spacing:-.03em;
+  margin:18px 0 14px;color:var(--ink);max-width:12ch;
+}
+h1 .italic{font-style:italic;font-weight:700;color:var(--tango-deep);position:relative;white-space:nowrap}
+h1 .italic svg{position:absolute;left:0;right:0;bottom:-10px;width:100%;height:14px}
+.sub{font-size:18px;color:#344844;max-width:42ch}
+.proof{display:flex;gap:10px;margin:20px 0 22px;flex-wrap:wrap}
+.proof span{font-size:14px;font-weight:700;border:1.5px solid #0B2C2422;padding:8px 14px;border-radius:100px;background:#fff;display:inline-flex;align-items:center;gap:7px}
+.cta-row{display:flex;align-items:center;gap:18px;margin-top:2px}
+.btn-buy{
+  appearance:none;border:0;cursor:pointer;text-decoration:none;
+  background:var(--ink);color:#fff;font-weight:800;font-size:19px;
+  padding:18px 30px;border-radius:100px;display:inline-flex;align-items:center;gap:12px;
+  box-shadow:0 14px 28px rgba(11,44,36,.28);transition:.2s;
+}
+.btn-buy:hover{transform:translateY(-2px);background:#123B32;box-shadow:0 18px 34px rgba(11,44,36,.32)}
+.btn-buy .arrow{background:var(--lime);color:var(--ink);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px}
+.price{line-height:1.1}
+.price s{color:#8A9B95;font-size:16px;font-weight:600}
+.price b{font-size:24px;display:block;letter-spacing:-.02em}
+.price small{font-size:13px;font-weight:700;color:var(--tango-deep)}
+.trust{display:flex;align-items:center;gap:12px;margin-top:20px;font-size:15px;color:#405551}
+.stars{color:#0B2C24;letter-spacing:2px;font-size:15px;background:var(--lime);padding:5px 10px;border-radius:100px;border:1px solid #0B2C24}
+/* RIGHT VISUAL */
+.visual{position:relative;background:var(--lime);overflow:hidden;display:flex;align-items:center;justify-content:center;border-left:2px solid #0B2C24}
+.visual::before{
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(circle at 50% 38%, #F2FF9E 0 18%, transparent 19%),
+    radial-gradient(circle at 50% 38%, rgba(11,44,36,.08) 0 32%, transparent 33%),
+    repeating-linear-gradient(-45deg, rgba(11,44,36,.07) 0 2px, transparent 2px 22px);
+}
+.huge-c{
+  position:absolute;font-family:"Fraunces",serif;font-weight:900;
+  font-size:560px;line-height:1;color:rgba(11,44,36,.08);
+  top:46%;left:50%;transform:translate(-50%,-50%);pointer-events:none;user-select:none;
+}
+.orange-ring{
+  position:absolute;width:460px;height:460px;border-radius:50%;
+  background:radial-gradient(circle at 35% 30%, #FFB25E 0%, #FF7A1A 38%, #F04A00 70%, #C22E00 100%);
+  box-shadow:0 30px 80px rgba(185,43,0,.35), inset -20px -30px 60px rgba(0,0,0,.25), inset 18px 20px 50px rgba(255,255,255,.45);
+  top:50%;left:50%;transform:translate(-50%,-46%);
+}
+.orange-ring::after{ /* segment lines */
+  content:"";position:absolute;inset:22px;border-radius:50%;
+  background:
+    conic-gradient(from 0deg, rgba(255,255,255,.55) 0 2deg, transparent 2deg 60deg, rgba(255,255,255,.55) 60deg 62deg, transparent 62deg 120deg, rgba(255,255,255,.55) 120deg 122deg, transparent 122deg 180deg, rgba(255,255,255,.55) 180deg 182deg, transparent 182deg 240deg, rgba(255,255,255,.55) 240deg 242deg, transparent 242deg 300deg, rgba(255,255,255,.55) 300deg 302deg, transparent 302deg 360deg);
+  opacity:.5;
+}
+.orange-ring::before{content:"";position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle at 50% 50%, rgba(255,255,255,.7) 0 7%, transparent 8%)}
+.pedestal{
+  position:absolute;bottom:72px;left:50%;transform:translateX(-50%);
+  width:360px;height:44px;background:radial-gradient(ellipse at center, rgba(11,44,36,.35) 0%, transparent 70%);
+}
+.bottle-wrap{position:relative;z-index:3;transform:rotate(-3deg);filter:drop-shadow(0 30px 30px rgba(11,44,36,.35))}
+.bottle-label{
+  position:absolute;top:51%;left:50%;transform:translate(-50%,-50%) rotate(3deg);
+  background:#FFFCF2;width:146px;padding:14px 10px 12px;text-align:center;border-radius:6px;
+  box-shadow:0 2px 0 rgba(0,0,0,.15);
+}
+.bottle-label b{font-size:22px;letter-spacing:.12em;display:block;line-height:1}
+.bottle-label i{font-style:normal;font-size:11px;font-weight:800;letter-spacing:.22em;color:var(--tango-deep)}
+.bottle-label small{display:block;font-size:11px;font-weight:700;margin-top:6px;background:var(--ink);color:var(--lime);border-radius:100px;padding:3px 0}
+.drop{
+  position:absolute;z-index:4;width:22px;height:30px;background:linear-gradient(#FFB25E,#FF6A00);
+  border-radius:50% 50% 50% 50% / 10% 10% 50% 50%;clip-path:path("M11 0 C11 0 0 14 0 20 A11 11 0 0 0 22 20 C22 14 11 0 11 0 Z");
+  box-shadow:0 8px 16px rgba(185,43,0,.4);
+}
+/* badge */
+.burst{position:absolute;top:22px;right:22px;z-index:5;width:144px;height:144px;display:grid;place-items:center;transform:rotate(10deg)}
+.burst svg.star{position:absolute;inset:0;width:100%;height:100%;animation:spin 14s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.burst-core{width:104px;height:104px;background:#0B2C24;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;border:3px solid #fff;box-shadow:0 10px 24px rgba(0,0,0,.3)}
+.burst-core strong{font-size:32px;line-height:1;letter-spacing:-.04em}
+.burst-core span{font-size:11px;font-weight:800;letter-spacing:.2em;color:var(--lime)}
+.chip{
+  position:absolute;z-index:5;background:rgba(255,255,255,.88);backdrop-filter:blur(8px);
+  border:1.5px solid #0B2C24;border-radius:16px;padding:10px 14px;font-size:14px;font-weight:700;
+  box-shadow:0 12px 24px rgba(11,44,36,.18);display:flex;align-items:center;gap:9px;
+}
+.chip small{display:block;font-size:12px;font-weight:500;color:#4B5E59}
+.chip-1{left:20px;top:86px;transform:rotate(-4deg)}
+.chip-2{right:18px;bottom:112px;transform:rotate(3deg)}
+.chip-ico{width:34px;height:34px;border-radius:50%;background:var(--ink);display:grid;place-items:center;font-size:18px}
+.marquee{position:absolute;bottom:0;left:0;right:0;background:#0B2C24;color:var(--lime);font-size:13px;font-weight:800;letter-spacing:.22em;padding:10px 0;white-space:nowrap;overflow:hidden;z-index:4}
+.marquee div{display:inline-block;animation:mq 18s linear infinite}
+@keyframes mq{to{transform:translateX(-50%)}}
+/* IG footer */
+.ig-foot{display:flex;align-items:center;gap:18px;padding:12px 22px;background:var(--cream);border-top:1px solid #0B2C2414}
+.ig-foot .icons{display:flex;gap:16px}
+.ig-foot .icons svg{width:26px;height:26px;stroke:#0B2C24;fill:none;stroke-width:2}
+.ig-foot .save{margin-left:auto}
+.ig-foot p{font-size:14px;color:#334743;padding:0 22px 2px}
+.ig-foot p b{color:var(--ink)}
+a:focus-visible,.btn-buy:focus-visible{outline:4px solid #FF4D16;outline-offset:3px}
+@media(max-width:980px){
+  .feed{grid-template-rows:56px 1fr auto;height:auto}
+  .ad{grid-template-columns:1fr}
+  .visual{min-height:520px;border-left:0;border-top:2px solid #0B2C24}
+  .copy{padding:28px 26px}
+  h1{font-size:44px}
+  .huge-c{font-size:380px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="stage">
+  <div class="top-meta"><span>● Variant #01 — Citrus Lab / High-contrast</span><span>1:1 Feed Ad • 1080 × 1080</span></div>
+  <article class="feed" aria-label="Instagram sponsored ad for Vela vitamin C serum">
+    <header class="ig-head">
+      <div class="avatar" aria-hidden="true"><i>V</i></div>
+      <div class="ig-name"><b>vela.skin ✓</b><small>Sponsored • Original audio</small></div>
+      <div class="dots" aria-hidden="true">···</div>
+    </header>
+
+    <div class="ad">
+      <!-- COPY -->
+      <section class="copy">
+        <div class="eyebrow"><span class="dot"></span> New drop <em>15% Vitamin C</em></div>
+        <h1>Get glass-like glow in 7 days with 15% pure vitamin C.
+        </h1>
+        <p class="sub">Vela C15 with ferulic + vitamin E fades dark spots, firms, and brightens — no sting, no stickiness. Just juicy skin.</p>
+        <div class="proof" aria-label="Product benefits">
+          <span>☀️ Fades spots</span><span>💧 Hyaluronic boost</span><span>🐰 Vegan & cruelty-free</span>
+        </div>
+        <div class="cta-row">
+          <a href="#" class="btn-buy">Buy now <span class="arrow" aria-hidden="true">→</span></a>
+          <div class="price"><s>$55.00</s><b>$38.50</b><small>Launch price ends Sunday</small></div>
+        </div>
+        <div class="trust"><span class="stars" aria-label="Rated 4.9 out of 5">★★★★★ 4.9</span> 12,400+ five-star glows • Dermatologist tested</div>
+      </section>
+
+      <!-- VISUAL -->
+      <section class="visual" aria-label="Vela C15 serum bottle on fresh orange">
+        <div class="huge-c" aria-hidden="true">C</div>
+        <div class="orange-ring" aria-hidden="true"></div>
+        <div class="pedestal" aria-hidden="true"></div>
+
+        <div class="bottle-wrap" role="img" aria-label="Amber glass bottle of Vela C15 vitamin C serum with black dropper">
+          <svg width="228" height="412" viewBox="0 0 228 412" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="78" y="8" width="72" height="72" rx="14" fill="#0B2C24"/>
+            <rect x="78" y="8" width="72" height="72" rx="14" stroke="#D9F154" stroke-width="3"/>
+            <rect x="92" y="22" width="10" height="44" rx="5" fill="#FFFFFF" opacity=".18"/>
+            <rect x="86" y="80" width="56" height="18" rx="4" fill="#0B2C24"/>
+            <path d="M70 124 L70 108 Q70 98 80 98 L148 98 Q158 98 158 108 L158 124 Z" fill="#1A3A33"/>
+            <path d="M42 150 Q42 128 64 128 L164 128 Q186 128 186 150 L186 368 Q186 396 158 396 L70 396 Q42 396 42 368 Z" fill="#FF9A2B" stroke="#0B2C24" stroke-width="5"/>
+            <path d="M42 150 Q42 128 64 128 L84 128 L84 396 L70 396 Q42 396 42 368 Z" fill="#FFB85E"/>
+            <rect x="58" y="168" width="18" height="180" rx="9" fill="white" opacity=".55"/>
+            <path d="M52 300 Q114 315 176 290 L176 368 Q176 388 156 388 L72 388 Q52 388 52 368 Z" fill="#E94A00" opacity=".55"/>
+          </svg>
+          <div class="bottle-label"><i>VELA • C15</i><b>VC SERUM</b><small>30 ml — 1.0 fl oz</small></div>
+          <div class="drop" style="left:-18px;top:180px"></div>
+          <div class="drop" style="right:-10px;top:250px;width:16px;height:22px;opacity:.9"></div>
+        </div>
+
+        <div class="burst" role="img" aria-label="30 percent off launch discount">
+          <svg class="star" viewBox="0 0 144 144" aria-hidden="true"><path d="M72 0 L84 18 L104 8 L106 30 L128 28 L124 50 L144 56 L134 74 L144 92 L124 98 L128 120 L106 118 L104 140 L84 130 L72 148 L60 130 L40 140 L38 118 L16 120 L20 98 L0 92 L10 74 L0 56 L20 50 L16 28 L38 30 L40 8 L60 18 Z" fill="#FF4D16" stroke="#0B2C24" stroke-width="4" stroke-linejoin="round"/></svg>
+          <div class="burst-core"><strong>-30%</strong><span>LAUNCH</span></div>
+        </div>
+
+        <div class="chip chip-1"><div class="chip-ico">🍊</div><div>15% Pure L-Ascorbic<small>pH 3.5 for max absorption</small></div></div>
+        <div class="chip chip-2"><div class="chip-ico">✨</div><div>7-day glow clinical<small>93% saw brighter skin*</small></div></div>
+
+        <div class="marquee" aria-hidden="true"><div>VITAMIN C 15% &nbsp;•&nbsp; FERULIC ACID &nbsp;•&nbsp; VITAMIN E &nbsp;•&nbsp; 7-DAY GLOW &nbsp;•&nbsp; VITAMIN C 15% &nbsp;•&nbsp; FERULIC ACID &nbsp;•&nbsp; VITAMIN E &nbsp;•&nbsp; 7-DAY GLOW &nbsp;•&nbsp;&nbsp;</div></div>
+      </section>
+    </div>
+
+    <footer>
+      <div class="ig-foot">
+        <div class="icons" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 21C7 16.5 3 13 3 8.8 3 6 5.2 4 7.8 4c1.7 0 3.2.9 4.2 2.3C13 4.9 14.5 4 16.2 4 18.8 4 21 6 21 8.8c0 4.2-4 7.7-9 12.2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-8 8H5l-2 2V12a8 8 0 0 1 8-8h2a8 8 0 0 1 8 8z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M22 2 11 13M22 2 15 22l-4-9-9-4 20-7z"/></svg>
+        </div>
+        <div class="icons save" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1z"/></svg></div>
+      </div>
+      <p><b>24,812 likes</b> • <b>vela.skin</b> Our strongest brightening serum ever. Tap Buy now to lock -30% launch pricing 🌞</p>
+    </footer>
+  </article>
+</div>
+</body>
+</html>

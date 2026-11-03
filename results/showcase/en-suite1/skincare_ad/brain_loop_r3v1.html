@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280, initial-scale=1">
+<title>LUMIÈRE C — 30% Launch Offer</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,ital,wght@9..144,0,800;9..144,1,800&family=Inter:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#070D0D;color:#111;font-family:Inter,system-ui,sans-serif;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:18px;-webkit-font-smoothing:antialiased}
+.page{width:1240px;max-width:96vw}
+.ad{width:100%;height:740px;background:#FFFBF0;border-radius:28px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 30px 80px rgba(0,0,0,.55),0 2px 0 rgba(255,255,255,.2) inset;border:1px solid rgba(255,255,255,.15)}
+.topbar{display:flex;align-items:center;gap:12px;padding:12px 20px;background:#FFFBF0;border-bottom:1px solid #EDE3D3}
+.ava{width:38px;height:38px;border-radius:50%;background:conic-gradient(from 20deg,#FF5C1A,#FFB627,#D9FF3D,#00C2A8,#FF5C1A);padding:2.5px;flex-shrink:0}
+.ava div{width:100%;height:100%;border-radius:50%;background:#0A1E1D;color:#D9FF3D;display:grid;place-items:center;font-weight:800;font-size:18px;border:2px solid #FFFBF0}
+.tname{line-height:1.1}
+.tname b{font-size:14px;display:block}
+.tname span{font-size:12.5px;color:#6B6257}
+.follow{margin-left:auto;font-size:13px;font-weight:800;border:1.5px solid #111;border-radius:999px;padding:7px 16px;background:#fff}
+.dots{font-size:20px;letter-spacing:2px;color:#111;padding:0 4px}
+.main{flex:1;display:grid;grid-template-columns:520px 1fr;min-height:0}
+.copy{padding:36px 38px 24px 40px;display:flex;flex-direction:column;justify-content:center;background:#FFFBF0;position:relative}
+.pill{display:inline-flex;align-items:center;gap:8px;background:#0A1E1D;color:#D9FF3D;font-size:12.5px;font-weight:800;letter-spacing:.12em;padding:8px 14px;border-radius:999px;width:fit-content}
+.pill i{width:8px;height:8px;background:#FF5C1A;border-radius:50%;display:inline-block;box-shadow:0 0 0 4px rgba(255,92,26,.25)}
+h1{font-family:Fraunces,serif;font-weight:800;line-height:.95;letter-spacing:-.03em;font-size:60px;color:#0A1E1D;margin:18px 0 14px}
+h1 em{font-style:italic;font-weight:800;background:linear-gradient(92deg,#FF5C1A 10%,#E85D00 90%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.benefit{font-size:18px;line-height:1.5;color:#2B2620;display:flex;gap:10px;align-items:flex-start}
+.check{flex-shrink:0;width:26px;height:26px;border-radius:50%;background:#00C2A8;color:#fff;display:grid;place-items:center;font-weight:900;margin-top:1px}
+.stars{display:flex;align-items:center;gap:10px;margin:16px 0 18px;font-size:14.5px;color:#4A443B;font-weight:600}
+.stars b{color:#111}
+.star{color:#FF8A00;letter-spacing:2px;font-size:16px}
+.price-row{display:flex;align-items:baseline;gap:12px}
+.now{font-size:34px;font-weight:800;letter-spacing:-.02em}
+.was{font-size:18px;color:#8A8175;text-decoration:line-through;font-weight:600}
+.offchip{font-size:13px;font-weight:800;background:#FFE1D1;border:1.5px dashed #FF5C1A;color:#B83A00;padding:5px 10px;border-radius:999px}
+.cta-row{display:flex;gap:12px;margin-top:16px;align-items:center}
+.btn{font-size:18px;font-weight:800;letter-spacing:-.01em;background:#0A1E1D;color:#fff;border:0;border-radius:999px;padding:18px 34px;cursor:pointer;display:inline-flex;align-items:center;gap:10px;box-shadow:0 12px 24px rgba(10,30,29,.28);transition:.2s}
+.btn:hover{transform:translateY(-2px);background:#162E2C}
+.btn .arr{background:#D9FF3D;color:#0A1E1D;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-size:18px}
+.guar{font-size:13.5px;color:#6B6257;margin-top:14px;font-weight:600}
+.visual{position:relative;background:radial-gradient(900px 600px at 55% 38%,#16403A 0%,#0A1E1D 58%,#060F0E 100%);overflow:hidden;display:flex;align-items:center;justify-content:center}
+.visual:before{content:"";position:absolute;inset:0;background:radial-gradient(rgba(255,255,255,.12) 1.5px,transparent 1.6px);background-size:22px 22px;opacity:.35}
+.slash{position:absolute;left:-10%;right:-10%;bottom:68px;height:74px;background:#D9FF3D;transform:rotate(-8deg);display:flex;align-items:center;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.slash span{white-space:nowrap;font-weight:800;font-size:15px;letter-spacing:.18em;color:#0A1E1D;animation:marq 12s linear infinite}
+@keyframes marq{to{transform:translateX(-50%)}}
+.halo{position:absolute;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,#D9FF3D 0%,#D9FF3D 62%,rgba(217,255,61,0) 71%);box-shadow:0 0 120px rgba(217,255,61,.45);top:50%;left:50%;transform:translate(-50%,-56%)}
+.slice{position:absolute;top:50%;left:50%;width:470px;height:470px;transform:translate(-50%,-58%) rotate(-12deg);border-radius:50%;background:repeating-conic-gradient(#FFB627 0 16deg,#FF8A1A 16deg 32deg);border:18px solid #FFF3D6;box-shadow:0 0 0 12px rgba(255,251,240,.15),0 30px 80px rgba(0,0,0,.5);opacity:.98}
+.slice:after{content:"";position:absolute;inset:36px;border-radius:50%;background:radial-gradient(circle,#FFF3D6 0 18%,transparent 19%),repeating-conic-gradient(rgba(255,255,255,.9) 0 8deg,transparent 8deg 32deg);opacity:.9}
+.bottle-wrap{position:relative;z-index:3;filter:drop-shadow(0 40px 40px rgba(0,0,0,.55));animation:float 4.5s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-14px) rotate(1deg)}}
+.tag-top{position:absolute;z-index:4;top:62px;left:50%;transform:translateX(-50%);background:rgba(255,251,240,.95);backdrop-filter:blur(4px);font-size:12px;font-weight:800;letter-spacing:.16em;padding:9px 16px;border-radius:999px;border:1.5px solid #0A1E1D;white-space:nowrap}
+.badge{position:absolute;z-index:5;right:72px;top:88px;width:142px;height:142px;display:grid;place-items:center;text-align:center;transform:rotate(12deg);animation:spinBob 5s ease-in-out infinite}
+.badge svg{position:absolute;inset:0;width:100%;height:100%;filter:drop-shadow(0 12px 18px rgba(0,0,0,.4))}
+.badge div{position:relative;line-height:1}
+.badge .big{font-size:38px;font-weight:800;letter-spacing:-.04em;display:block;color:#0A1E1D}
+.badge .sm{font-size:12px;font-weight:800;letter-spacing:.12em;color:#0A1E1D}
+@keyframes spinBob{0%,100%{transform:rotate(12deg) scale(1)}50%{transform:rotate(6deg) scale(1.06)}}
+.price-card{position:absolute;z-index:5;bottom:148px;left:50%;transform:translateX(-50%) rotate(-2deg);background:#FFFBF0;border:2px solid #0A1E1D;border-radius:16px;padding:10px 14px;display:flex;align-items:center;gap:12px;box-shadow:0 14px 30px rgba(0,0,0,.4);white-space:nowrap}
+.price-card strong{font-size:20px}
+.price-card span{font-size:13px;font-weight:700;color:#3D3830;line-height:1.3}
+.dotpulse{width:12px;height:12px;background:#00C838;border-radius:50%;box-shadow:0 0 0 6px rgba(0,200,56,.25)}
+.drop{position:absolute;z-index:4;border-radius:50%;background:linear-gradient(135deg,#FFD36B,#FF5C1A);box-shadow:inset -3px -6px 10px rgba(0,0,0,.25),0 10px 20px rgba(0,0,0,.4)}
+.d1{width:26px;height:26px;left:128px;top:200px;animation:float 3s ease-in-out infinite}
+.d2{width:16px;height:16px;left:170px;top:420px;animation:float 3.6s ease-in-out infinite}
+.d3{width:34px;height:34px;right:120px;bottom:230px;animation:float 4s ease-in-out infinite}
+.streak{position:absolute;width:120px;height:6px;border-radius:999px;background:linear-gradient(90deg,transparent,#D9FF3D);opacity:.7;transform:rotate(-18deg)}
+.s1{left:90px;top:300px}.s2{right:90px;top:340px;width:90px}
+.bottombar{display:flex;align-items:center;gap:14px;padding:10px 20px;background:#FFFBF0;border-top:1px solid #EDE3D3;font-size:14px}
+.ic{display:flex;gap:14px;font-size:20px}
+.liked{font-weight:600;color:#333}.liked b{font-weight:800}
+.save{margin-left:auto;font-size:20px}
+@media(max-width:900px){.ad{height:auto}.main{grid-template-columns:1fr}h1{font-size:44px}.visual{min-height:560px}}
+</style>
+</head>
+<body>
+<div class="page">
+<div class="ad" role="img" aria-label="Instagram ad for Lumiere Vitamin C serum, 30 percent launch discount, buy now">
+<div class="topbar"><div class="ava"><div>L</div></div><div class="tname"><b>lumiere.labs ✓</b><span>Sponsored • Shop now</span></div><button class="follow">Follow</button><div class="dots">···</div></div>
+<div class="main">
+<div class="copy">
+<div class="pill"><i></i> NEW DROP • 15% PURE VITAMIN C</div>
+<h1>Glass skin in 14 days with 15% pure vitamin C.</h1>
+<p class="benefit"><span class="check">✓</span><span><b>Fades dark spots + boosts glow in one morning drop</b> — ferulic + vitamin E, dermatologist tested for sensitive skin.</span></p>
+<div class="stars"><span class="star">★★★★★</span><span><b>4.9</b> — 12,400+ five-star glows</span></div>
+<div class="price-row"><div class="now">$38.50</div><div class="was">$55.00</div><div class="offchip">SAVE 30% TODAY</div></div>
+<div class="cta-row"><button class="btn">Buy now <span class="arr">→</span></button></div>
+<div class="guar">Free shipping over $30 • 30-day glow guarantee • Launch ends Sunday</div>
+</div>
+<div class="visual">
+<div class="halo"></div>
+<div class="slice" aria-hidden="true"></div>
+<div class="tag-top">VITAMIN C 15% + FERULIC • 30ML</div>
+<div class="streak s1"></div><div class="streak s2"></div>
+<div class="drop d1"></div><div class="drop d2"></div><div class="drop d3"></div>
+<div class="badge" aria-hidden="true">
+<svg viewBox="0 0 100 100"><path d="M50 0 L58 12 L71 6 L73 20 L87 18 L85 32 L99 36 L91 47 L99 58 L85 62 L87 76 L73 74 L71 88 L58 82 L50 94 L42 82 L29 88 L27 74 L13 76 L15 62 L1 58 L9 47 L1 36 L15 32 L13 18 L27 20 L29 6 L42 12 Z" fill="#D9FF3D" stroke="#0A1E1D" stroke-width="3" stroke-linejoin="round"/></svg>
+<div><span class="big">30%</span><span class="sm">LAUNCH<br>OFF</span></div>
+</div>
+<div class="bottle-wrap">
+<svg width="240" height="400" viewBox="0 0 200 380" aria-label="Lumiere Vitamin C serum bottle">
+<defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#FFC25E"/><stop offset=".5" stop-color="#FF8A1A"/><stop offset="1" stop-color="#C94A00"/></linearGradient>
+<linearGradient id="gl" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity=".9"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient></defs>
+<ellipse cx="100" cy="360" rx="62" ry="14" fill="rgba(0,0,0,.45)"/>
+<rect x="68" y="8" width="64" height="66" rx="12" fill="#0E1514"/>
+<g fill="#2A3533"><rect x="72" y="22" width="56" height="4" rx="2"/><rect x="72" y="30" width="56" height="4" rx="2"/><rect x="72" y="38" width="56" height="4" rx="2"/><rect x="72" y="46" width="56" height="4" rx="2"/></g>
+<rect x="76" y="74" width="48" height="18" rx="4" fill="#D9FF3D" stroke="#0A1E1D" stroke-width="2"/>
+<rect x="78" y="92" width="44" height="16" fill="#1A1A1A"/>
+<path d="M52 108 Q100 98 148 108 L156 130 Q100 145 44 130 Z" fill="#FFF3D6"/>
+<rect x="38" y="128" width="124" height="218" rx="26" fill="url(#g)" stroke="#5A2400" stroke-width="2"/>
+<rect x="52" y="144" width="16" height="180" rx="8" fill="url(#gl)" opacity=".85"/>
+<rect x="50" y="188" width="100" height="98" rx="12" fill="#FFFBF0" stroke="#0A1E1D" stroke-width="2.5"/>
+<text x="100" y="210" text-anchor="middle" font-family="Inter" font-weight="800" font-size="13" letter-spacing="2">LUMIÈRE</text>
+<text x="100" y="228" text-anchor="middle" font-family="Fraunces" font-weight="800" font-size="28">C 15%</text>
+<text x="100" y="245" text-anchor="middle" font-family="Inter" font-size="9.5" font-weight="700" letter-spacing="1">VITAMIN C SERUM</text>
+<rect x="62" y="254" width="76" height="18" rx="9" fill="#0A1E1D"/><text x="100" y="267" text-anchor="middle" font-family="Inter" font-size="10" font-weight="800" fill="#D9FF3D" letter-spacing="1">30ML • GLOW</text>
+</svg>
+</div>
+<div class="price-card"><span class="dotpulse"></span><strong>$38.50</strong><span>30% OFF TODAY<br><s>$55.00</s> • free ship</span></div>
+<div class="slash"><span>&nbsp; 30% LAUNCH SALE — FREE SHIPPING — DERMATOLOGIST TESTED — 30% LAUNCH SALE — FREE SHIPPING — DERMATOLOGIST TESTED — 30% LAUNCH SALE — FREE SHIPPING —&nbsp;</span></div>
+</div>
+</div>
+<div class="bottombar"><div class="ic">♥︎ ◯ ➤</div><div class="liked">Liked by <b>glow.with.mia</b> and <b>24,318 others</b></div><div class="save">▢</div></div>
+</div>
+</div>
+</body>
+</html>

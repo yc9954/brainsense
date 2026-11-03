@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BRASSLIGHT — November Jazz Fest • Nov 20–22</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Fraunces:ital,opsz,wght@0,9..144,800;0,9..144,900;1,9..144,700;1,9..144,900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+--bg:#0B0712; --panel:#120C1E; --cream:#FFF4DE; --muted:#CBBBA0;
+--brass:#E9B44C; --brass2:#FFD789; --coral:#FF3D5E; --plum:#7A2FFF;
+--line:rgba(233,180,76,.22);
+}
+body{background:var(--bg);color:var(--cream);font-family:"Space Grotesk",system-ui,sans-serif;font-size:18px;line-height:1.5;overflow-x:hidden;
+background-image:radial-gradient(900px 500px at 85% 10%,rgba(255,61,94,.22),transparent 60%),radial-gradient(700px 500px at 10% 90%,rgba(233,180,76,.18),transparent 60%),radial-gradient(600px 600px at 50% 50%,rgba(122,47,255,.12),transparent 70%);}
+a{color:inherit}
+.page{max-width:1280px;margin:0 auto;padding:0 32px;min-height:100vh;display:flex;flex-direction:column}
+header{display:flex;align-items:center;justify-content:space-between;padding:18px 0;border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:12px;font-weight:700;letter-spacing:.14em;font-size:14px}
+.brand-mark{width:34px;height:34px;border-radius:50%;background:conic-gradient(from 0deg,var(--brass),var(--coral),var(--plum),var(--brass));display:grid;place-items:center;box-shadow:0 0 18px rgba(255,61,94,.7)}
+.brand-mark span{width:22px;height:22px;border-radius:50%;background:#0B0712;display:grid;place-items:center;font-size:14px}
+.meta-top{display:flex;gap:10px;align-items:center;font-size:13.5px;letter-spacing:.08em;color:var(--muted)}
+.meta-top strong{color:var(--cream);border:1px solid var(--line);padding:6px 12px;border-radius:999px;background:rgba(255,244,222,.06)}
+.btn-small{border:1px solid var(--brass);color:#0B0712;background:var(--brass);padding:10px 18px;border-radius:999px;font-weight:700;font-size:14px;letter-spacing:.06em;text-decoration:none}
+.hero{flex:1;display:grid;grid-template-columns:1.02fr .98fr;gap:28px;align-items:center;padding:22px 0 10px;position:relative}
+.hero::before{content:"";position:absolute;left:-80px;right:-80px;top:8%;bottom:8%;background:linear-gradient(105deg,transparent 58.5%,rgba(233,180,76,.14) 58.6%,rgba(233,180,76,.14) 59%,transparent 59.2%);pointer-events:none}
+/* LEFT */
+.eyebrow{display:inline-flex;align-items:center;gap:10px;background:rgba(255,61,94,.12);border:1px solid rgba(255,61,94,.55);color:#FFD3DB;padding:8px 14px;border-radius:999px;font-size:13px;letter-spacing:.18em;font-weight:700}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--coral);box-shadow:0 0 12px var(--coral);animation:pulse 1.6s infinite}
+@keyframes pulse{50%{transform:scale(1.5);opacity:.6}}
+h1{font-family:Anton,sans-serif;line-height:.9;margin:16px 0 10px;text-transform:uppercase;letter-spacing:.01em}
+h1 .l1{display:block;font-size:92px;color:var(--cream);text-shadow:0 0 32px rgba(255,61,94,.35)}
+h1 .l2{display:block;font-family:Fraunces,serif;font-style:italic;font-weight:900;text-transform:none;font-size:78px;background:linear-gradient(92deg,var(--brass2) 10%,var(--brass) 35%,#FF7A59 70%,var(--coral) 100%);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 18px rgba(233,180,76,.35))}
+h1 .l3{display:block;font-size:92px;color:transparent;-webkit-text-stroke:2px var(--brass);letter-spacing:.04em}
+.sub{max-width:520px;color:var(--muted);font-size:18px}
+.sub strong{color:var(--cream)}
+.lineup{margin:18px 0 6px;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:linear-gradient(180deg,rgba(255,244,222,.07),rgba(255,244,222,.02));}
+.lineup-head{display:flex;justify-content:space-between;align-items:center;padding:10px 16px;font-size:12.5px;letter-spacing:.2em;font-weight:700;color:var(--brass);border-bottom:1px dashed var(--line)}
+.lineup ol{list-style:none}
+.lineup li{display:grid;grid-template-columns:64px 1fr auto;gap:12px;align-items:center;padding:10px 16px;border-bottom:1px solid rgba(255,244,222,.08);transition:.2s}
+.lineup li:last-child{border:0}
+.lineup li:hover{background:rgba(233,180,76,.1)}
+.day{font-size:12px;font-weight:700;letter-spacing:.08em;background:#1E1431;border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:6px 4px;text-align:center;line-height:1.2}
+.day b{display:block;font-size:16px;color:var(--brass2)}
+.act{font-weight:700;font-size:17px;line-height:1.2}
+.act small{display:block;font-weight:400;color:var(--muted);font-size:14.5px}
+.time{font-size:13px;font-weight:700;color:#0B0712;background:var(--cream);border-radius:999px;padding:5px 10px;white-space:nowrap}
+li.headline .act{color:var(--brass2)}
+.cta-row{display:flex;align-items:center;gap:16px;margin-top:16px;flex-wrap:wrap}
+.btn-big{display:inline-flex;align-items:center;gap:12px;background:linear-gradient(180deg,var(--brass2),var(--brass));color:#190E02;font-weight:800;font-size:19px;letter-spacing:.02em;padding:16px 26px;border-radius:16px;text-decoration:none;box-shadow:0 8px 0 #7A4D12,0 0 34px rgba(233,180,76,.55);position:relative;transform:rotate(-1deg)}
+.btn-big:hover{transform:rotate(-1deg) translateY(-2px)}
+.btn-big small{background:#0B0712;color:var(--brass2);border-radius:8px;padding:4px 8px;font-size:13px}
+.cta-note{font-size:15px;color:var(--muted);max-width:220px}
+.cta-note strong{color:var(--brass2)}
+.proof{display:flex;align-items:center;gap:12px;margin-top:14px;font-size:15px;color:var(--muted)}
+.avatars{display:flex}
+.avatars i{width:32px;height:32px;border-radius:50%;border:2px solid #0B0712;display:grid;place-items:center;font-style:normal;font-weight:700;font-size:14px;margin-left:-8px}
+.avatars i:first-child{margin:0}
+/* RIGHT STAGE */
+.stage{position:relative;height:650px;display:flex;justify-content:center;align-items:center}
+.beam{position:absolute;width:140%;height:86px;top:18%;left:-20%;transform:rotate(-18deg);background:linear-gradient(90deg,transparent,rgba(255,61,94,.35) 20%,rgba(233,180,76,.55) 50%,rgba(255,61,94,.35) 80%,transparent);filter:blur(1px);pointer-events:none}
+.beam.b2{top:68%;opacity:.6;height:42px}
+.staff{position:absolute;top:12%;left:0;right:0;transform:rotate(-18deg);opacity:.5;pointer-events:none}
+.arch{position:relative;width:410px;height:590px;border-radius:240px 240px 28px 28px;overflow:hidden;border:2px solid var(--brass);box-shadow:0 0 0 8px rgba(233,180,76,.12),0 0 80px rgba(255,61,94,.45),0 0 120px rgba(233,180,76,.25);background:#0E0A1A}
+.arch svg.scene{width:100%;height:100%;display:block}
+.sax-big{position:absolute;left:-40px;top:-10px;width:300px;height:520px;transform:rotate(-18deg);filter:drop-shadow(0 0 22px rgba(233,180,76,.8)) drop-shadow(0 0 46px rgba(255,61,94,.4));animation:sway 5s ease-in-out infinite;z-index:3;pointer-events:none}
+@keyframes sway{50%{transform:rotate(-14deg) translateY(-10px)}}
+.vinyl{position:absolute;right:18px;bottom:34px;width:148px;height:148px;border-radius:50%;background:repeating-radial-gradient(circle at center,#0A0A0A 0 2px,#1E1E1E 2px 4px);border:6px solid #111;box-shadow:0 0 0 2px var(--brass),0 0 30px rgba(0,0,0,.8);display:grid;place-items:center;z-index:4;animation:spin 8s linear infinite}
+.vinyl::after{content:"BRASSLIGHT • NOV 20-22 •";position:absolute;font-size:10px;letter-spacing:.2em;color:var(--brass);width:90px;height:90px;border-radius:50%;background:var(--coral);display:grid;place-items:center;text-align:center;color:#0B0712;font-weight:800;line-height:1.1;padding:12px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.ticket{position:absolute;left:6px;bottom:48px;z-index:4;background:var(--cream);color:#160B02;border-radius:16px;padding:14px 16px;width:230px;transform:rotate(-4deg);box-shadow:0 12px 30px rgba(0,0,0,.5);border:2px dashed #160B02}
+.ticket b{font-size:13px;letter-spacing:.16em}
+.ticket .price{display:flex;align-items:baseline;gap:8px;margin:4px 0}
+.ticket .price strong{font-family:Anton;font-size:38px}
+.ticket .price s{color:#8A7A64}
+.ticket .bar{height:8px;border-radius:999px;background:#E8D9BE;overflow:hidden}
+.ticket .bar i{display:block;height:100%;width:78%;background:linear-gradient(90deg,var(--coral),var(--brass))}
+.ticket p{font-size:12.5px;font-weight:600}
+.gaze-tag{position:absolute;top:44%;left:58px;z-index:5;background:#0B0712;border:1px solid var(--brass);color:var(--brass2);font-size:13px;font-weight:700;letter-spacing:.04em;padding:8px 12px;border-radius:999px;box-shadow:0 0 18px rgba(233,180,76,.5)}
+.gaze-tag::after{content:"";position:absolute;right:-18px;top:50%;width:18px;height:2px;background:var(--brass)}
+.note{position:absolute;font-size:28px;color:var(--brass2);text-shadow:0 0 14px var(--coral);animation:float 4s ease-in-out infinite;z-index:5}
+@keyframes float{0%{transform:translateY(0) rotate(-10deg);opacity:0}15%{opacity:1}100%{transform:translateY(-140px) rotate(12deg);opacity:0}}
+.ticker{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;white-space:nowrap;padding:10px 0;font-size:14px;letter-spacing:.18em;font-weight:700;color:var(--brass2);background:rgba(0,0,0,.4)}
+.ticker span{display:inline-block;animation:mar 22s linear infinite}
+@keyframes mar{to{transform:translateX(-50%)}}
+:focus-visible{outline:3px solid var(--brass2);outline-offset:3px}
+@media(max-width:980px){.hero{grid-template-columns:1fr}.stage{height:620px}.h1 .l1,.h1 .l3{font-size:64px}h1 .l1{font-size:64px}h1 .l3{font-size:64px}h1 .l2{font-size:56px}}
+</style>
+</head>
+<body>
+<div class="page">
+<header>
+<div class="brand"><div class="brand-mark"><span>♯</span></div> BRASSLIGHT&nbsp;·&nbsp;JAZZ&nbsp;FEST</div>
+<div class="meta-top"><strong>NOV 20–22 • FOUNDRY HALL, CHICAGO</strong><span>3 NIGHTS • 5 ACTS • LATE SETS TIL 2AM</span><a class="btn-small" href="#tickets">GET PASSES</a></div>
+</header>
+
+<main class="hero">
+<!-- LEFT / MESSAGE -->
+<section aria-label="Festival poster">
+<div class="eyebrow"><span class="dot"></span> EARLY-BIRD ENDS OCT 31 • SAVE $40</div>
+<h1><span class="l1">Night Glows</span><span class="l2">warm &amp; brass-lit</span><span class="l3">LIVE IN NOV</span></h1>
+<p class="sub"><strong>A neon-noir jazz weekender.</strong> Low lights, loud brass, velvet vocals — five acts across two stages in a converted iron foundry. Come hungry, leave humming.</p>
+
+<div class="lineup">
+<div class="lineup-head"><span>★ THE 5-ACT LINE-UP</span><span>FRI → SUN</span></div>
+<ol>
+<li class="headline"><div class="day">FRI<b>20</b></div><div class="act">Nia Lark &amp; The Velvet Tone <small>Velvet soul-jazz headliner • 10-piece strings</small></div><div class="time">8:00 PM</div></li>
+<li><div class="day">FRI<b>20</b></div><div class="act">Brasshouse Collective <small>Second-line funk • tuba + 3 trumpets</small></div><div class="time">10:30 PM</div></li>
+<li><div class="day">SAT<b>21</b></div><div class="act">Theo Marlow Quartet <small>Blue-note piano • new album “Afterglow”</small></div><div class="time">7:30 PM</div></li>
+<li><div class="day">SAT<b>21</b></div><div class="act">Luna Rey Late Set <small>Neon bossa + DJ Blue Note til late</small></div><div class="time">11:59 PM</div></li>
+<li><div class="day">SUN<b>22</b></div><div class="act">Foundry Finale Jam <small>All-stars + 40-person parade finale</small></div><div class="time">6:00 PM</div></li>
+</ol>
+</div>
+
+<div class="cta-row" id="tickets">
+<a class="btn-big" href="#tickets">Get Early-Bird Passes <small>$89 → $129</small> →</a>
+<p class="cta-note"><strong>78% claimed.</strong> 3-night pass • front-hall seats • free vinyl sampler.</p>
+</div>
+<div class="proof"><div class="avatars"><i style="background:#E9B44C">N</i><i style="background:#FF3D5E;color:#fff">T</i><i style="background:#7A2FFF;color:#fff">L</i><i style="background:#FFF4DE">+2k</i></div> ★★★★★ <span><strong style="color:#fff">4.9 from 1,180</strong> jazz heads — “Chicago’s warmest night out”</span></div>
+</section>
+
+<!-- RIGHT / OBJECT + FACE -->
+<section class="stage" aria-label="Illustrated jazz singer on neon stage">
+<div class="beam"></div><div class="beam b2"></div>
+<svg class="staff" height="120" viewBox="0 0 600 120" aria-hidden="true"><g stroke="#E9B44C" stroke-width="2" opacity=".7"><line x1="0" y1="20" x2="600" y2="20"/><line x1="0" y1="40" x2="600" y2="40"/><line x1="0" y1="60" x2="600" y2="60"/><line x1="0" y1="80" x2="600" y2="80"/><line x1="0" y1="100" x2="600" y2="100"/></g><g fill="#FF3D5E" font-size="26"><text x="80" y="55">♪</text><text x="280" y="35">♫</text><text x="460" y="75">♪</text></g></svg>
+
+<!-- DOMINANT BRASS OBJECT: diagonal sax -->
+<svg class="sax-big" viewBox="0 0 200 420" aria-hidden="true">
+<defs><linearGradient id="brass" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFD789"/><stop offset=".5" stop-color="#E9B44C"/><stop offset="1" stop-color="#9A5A12"/></linearGradient></defs>
+<path d="M128 12 C 128 140 128 230 128 285 Q128 350 88 350 Q38 350 38 305" fill="none" stroke="url(#brass)" stroke-width="30" stroke-linecap="round"/>
+<ellipse cx="38" cy="275" rx="34" ry="28" fill="url(#brass)" transform="rotate(-20 38 275)"/>
+<ellipse cx="38" cy="275" rx="20" ry="15" fill="#0B0712" opacity=".85" transform="rotate(-20 38 275)"/>
+<g fill="#0B0712" opacity=".9"><circle cx="128" cy="120" r="7"/><circle cx="128" cy="155" r="7"/><circle cx="128" cy="190" r="7"/><circle cx="124" cy="225" r="7"/><rect x="118" y="40" width="20" height="10" rx="5"/></g>
+<path d="M128 12 L168 6 L166 22 L126 28 Z" fill="url(#brass)"/>
+</svg>
+
+<div class="arch">
+<svg class="scene" viewBox="0 0 410 590" role="img" aria-label="Illustrated jazz singer looking left toward ticket offer, singing into microphone">
+<defs>
+<linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1A0F2E"/><stop offset=".6" stop-color="#2B0F2A"/><stop offset="1" stop-color="#0B0712"/></linearGradient>
+<radialGradient id="halo" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#FF3D5E" stop-opacity=".9"/><stop offset="1" stop-color="#FF3D5E" stop-opacity="0"/></radialGradient>
+<linearGradient id="skin" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C98A5E"/><stop offset="1" stop-color="#7E4A2C"/></linearGradient>
+</defs>
+<rect width="410" height="590" fill="url(#sky)"/>
+<circle cx="205" cy="250" r="145" fill="url(#halo)" opacity=".7"/>
+<circle cx="205" cy="250" r="118" fill="none" stroke="#FF3D5E" stroke-width="3" opacity=".9"/>
+<circle cx="205" cy="250" r="132" fill="none" stroke="#E9B44C" stroke-width="1.5" stroke-dasharray="6 8" opacity=".9"/>
+<g fill="#fff" opacity=".8"><circle cx="40" cy="80" r="2"/><circle cx="90" cy="50" r="1.6"/><circle cx="330" cy="70" r="2.2"/><circle cx="360" cy="140" r="1.5"/><circle cx="50" cy="180" r="1.8"/></g>
+<!-- hair afro silhouette -->
+<ellipse cx="205" cy="225" rx="130" ry="125" fill="#0F0818" stroke="#E9B44C" stroke-width="2.5"/>
+<path d="M95 200 Q110 120 205 110 Q300 120 315 200 Q290 170 205 165 Q120 170 95 200" fill="none" stroke="#E9B44C" stroke-width="2" opacity=".7"/>
+<!-- shoulders / dress -->
+<path d="M45 590 C45 480 110 430 205 425 C300 430 365 480 365 590 Z" fill="#1C0F33"/>
+<path d="M45 590 C90 530 140 500 205 495 C270 500 320 530 365 590" fill="none" stroke="#E9B44C" stroke-width="2" opacity=".6"/>
+<g fill="#E9B44C" opacity=".9"><circle cx="140" cy="540" r="3"/><circle cx="170" cy="555" r="3"/><circle cx="205" cy="545" r="3"/><circle cx="240" cy="560" r="3"/><circle cx="270" cy="540" r="3"/><circle cx="190" cy="520" r="2.5"/><circle cx="225" cy="520" r="2.5"/></g>
+<!-- neck -->
+<rect x="185" y="340" width="40" height="85" rx="12" fill="url(#skin)"/>
+<!-- head -->
+<ellipse cx="205" cy="285" rx="72" ry="86" fill="url(#skin)"/>
+<!-- ears -->
+<ellipse cx="133" cy="290" rx="10" ry="16" fill="#8A5433"/><ellipse cx="277" cy="290" rx="10" ry="16" fill="#8A5433"/>
+<circle cx="133" cy="315" r="7" fill="#E9B44C"/><circle cx="133" cy="328" r="4" fill="#E9B44C"/>
+<!-- brows -->
+<path d="M155 255 Q172 248 192 256" stroke="#140B1A" stroke-width="5" fill="none" stroke-linecap="round"/>
+<path d="M218 256 Q238 248 255 255" stroke="#140B1A" stroke-width="5" fill="none" stroke-linecap="round"/>
+<!-- eyes looking LEFT toward CTA -->
+<ellipse cx="174" cy="278" rx="17" ry="12" fill="#FFF7E8"/><ellipse cx="236" cy="278" rx="17" ry="12" fill="#FFF7E8"/>
+<circle cx="165" cy="279" r="6.5" fill="#120A1E"/><circle cx="227" cy="279" r="6.5" fill="#120A1E"/>
+<circle cx="163" cy="277" r="2" fill="#fff"/><circle cx="225" cy="277" r="2" fill="#fff"/>
+<path d="M157 272 Q174 265 191 272" stroke="#120A1E" stroke-width="3" fill="none" stroke-linecap="round"/>
+<path d="M219 272 Q236 265 253 272" stroke="#120A1E" stroke-width="3" fill="none" stroke-linecap="round"/>
+<!-- nose -->
+<path d="M205 288 L198 315 Q205 321 214 315" stroke="#5A2E1A" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+<!-- lips open singing -->
+<ellipse cx="200" cy="345" rx="20" ry="15" fill="#FF3D5E"/>
+<ellipse cx="200" cy="348" rx="12" ry="8" fill="#2B0A12"/>
+<rect x="190" y="340" width="20" height="6" rx="3" fill="#fff"/>
+<!-- mic -->
+<g transform="rotate(-18 135 370)"><rect x="128" y="390" width="14" height="110" rx="7" fill="#0E0E12" stroke="#E9B44C" stroke-width="1.5"/><circle cx="135" cy="365" r="28" fill="#1E1E22" stroke="#E9B44C" stroke-width="2"/><g stroke="#555" stroke-width="1.5"><line x1="115" y1="355" x2="155" y2="355"/><line x1="112" y1="365" x2="158" y2="365"/><line x1="115" y1="375" x2="155" y2="375"/></g></g>
+<!-- neon text on stage -->
+<text x="205" y="500" text-anchor="middle" font-family="Anton" font-size="28" letter-spacing="4" fill="#E9B44C" opacity=".95">BRASSLIGHT</text>
+<text x="205" y="522" text-anchor="middle" font-size="11" letter-spacing="5" fill="#FF8AA0" font-weight="700">NOV 20 — 22 • CHICAGO</text>
+</svg>
+<div class="gaze-tag">◀ she knows the deal →</div>
+<span class="note" style="left:58px;top:28%;animation-delay:0s">♫</span>
+<span class="note" style="right:42px;top:22%;animation-delay:1.2s;color:#FF3D5E">♪</span>
+<span class="note" style="right:88px;top:58%;animation-delay:2.1s">♫</span>
+</div>
+
+<div class="vinyl" aria-hidden="true"></div>
+<div class="ticket"><b>EARLY-BIRD • 3 NIGHTS</b><div class="price"><strong>$89</strong><s>$129</s><span style="font-size:12px;font-weight:700;background:#0B0712;color:#fff;padding:3px 7px;border-radius:99px">-31%</span></div><div class="bar"><i></i></div><p>312 / 400 left • ends Oct 31</p></div>
+</section>
+</main>
+
+<div class="ticker" aria-hidden="true"><span>NIA LARK ✦ BRASSHOUSE COLLECTIVE ✦ THEO MARLOW QUARTET ✦ LUNA REY LATE SET ✦ FOUNDRY FINALE JAM ✦ NIA LARK ✦ BRASSHOUSE COLLECTIVE ✦ THEO MARLOW QUARTET ✦ LUNA REY LATE SET ✦ FOUNDRY FINALE JAM ✦&nbsp;</span></div>
+</div>
+</body>
+</html>

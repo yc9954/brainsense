@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Noted — Pricing that pays for itself</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+--bg:#0A0B14; --panel:#151724; --panel2:#1B1E30;
+--lime:#D9F651; --lime2:#EFFF7A;
+--ink:#11131A; --white:#fff; --muted:#A7AEC6; --muted2:#7C84A0;
+--line:rgba(255,255,255,.11);
+}
+html,body{height:100%}
+body{
+font-family:'Inter',system-ui,sans-serif; font-size:16px; line-height:1.5;
+background:var(--bg); color:#fff;
+-webkit-font-smoothing:antialiased; overflow-x:hidden;
+}
+body::before{
+content:""; position:fixed; inset:0; pointer-events:none; z-index:0;
+background:
+radial-gradient(640px 340px at 18% -5%, rgba(217,246,81,.18), transparent 60%),
+radial-gradient(720px 380px at 82% 0%, rgba(122,92,255,.22), transparent 60%),
+radial-gradient(900px 500px at 50% 110%, rgba(217,246,81,.07), transparent 60%);
+}
+.grid-bg{position:fixed; inset:0; z-index:0; opacity:.5; pointer-events:none;
+background-image:linear-gradient(rgba(255,255,255,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.055) 1px,transparent 1px);
+background-size:56px 56px;
+mask-image:radial-gradient(900px 520px at 50% 0%, black 30%, transparent 75%);
+}
+.wrap{position:relative; z-index:1; max-width:1200px; margin:0 auto; padding:0 28px 14px}
+/* NAV */
+nav{display:flex; align-items:center; justify-content:space-between; padding:16px 0}
+.logo{display:flex; align-items:center; gap:10px; font-family:'Space Grotesk'; font-weight:700; font-size:21px; letter-spacing:-.02em}
+.logo-mark{width:32px;height:32px;border-radius:10px;background:var(--lime);display:grid;place-items:center;color:#111;font-size:18px;font-weight:800}
+.links{display:flex; gap:28px; font-size:15.5px; color:var(--muted)}
+.links a{color:var(--muted); text-decoration:none}
+.links a.active{color:#fff; font-weight:600}
+.nav-cta{display:flex; align-items:center; gap:14px; font-size:15.5px}
+.sign{color:#fff; text-decoration:none; font-weight:500}
+.btn{display:inline-flex; align-items:center; justify-content:center; gap:8px; border-radius:999px; font-weight:700; text-decoration:none; cursor:pointer; border:0; transition:.18s}
+.btn-lime{background:var(--lime); color:#111; padding:11px 20px; font-size:15.5px}
+.btn-lime:hover{background:var(--lime2); transform:translateY(-1px)}
+/* HERO centered = instant pricing clarity */
+.hero{text-align:center; padding:10px 0 14px; max-width:860px; margin:0 auto}
+.pill{display:inline-flex; align-items:center; gap:8px; border:1px solid rgba(217,246,81,.35); background:rgba(217,246,81,.08); color:#E9FF8E; border-radius:999px; padding:7px 14px; font-size:13.5px; font-weight:600; letter-spacing:.06em}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--lime);box-shadow:0 0 12px var(--lime)}
+h1{font-family:'Space Grotesk'; font-size:50px; line-height:1.02; letter-spacing:-.03em; margin:14px 0 10px; font-weight:700}
+h1 .hl{color:var(--lime); position:relative; white-space:nowrap}
+h1 .hl svg{position:absolute; left:0; right:0; bottom:-8px; width:100%; height:12px}
+.sub{color:var(--muted); font-size:17px; max-width:620px; margin:0 auto}
+.toggle-row{display:flex; align-items:center; justify-content:center; gap:14px; margin-top:14px}
+.toggle{display:flex; background:#1A1D2E; border:1px solid var(--line); border-radius:999px; padding:4px; gap:4px}
+.toggle button{border:0; background:transparent; color:var(--muted); font-weight:700; font-size:14.5px; padding:8px 18px; border-radius:999px; cursor:pointer}
+.toggle button.on{background:var(--lime); color:#111}
+.save{font-size:14px; font-weight:700; color:#111; background:#fff; border-radius:999px; padding:4px 10px}
+.micro{font-size:14px; color:var(--muted2)}
+/* PRICING */
+.pricing{display:grid; grid-template-columns:1fr 1.12fr 1fr; gap:18px; align-items:stretch; margin-top:14px}
+.card{border-radius:22px; padding:24px 24px 20px; background:linear-gradient(180deg,var(--panel2),var(--panel)); border:1px solid var(--line); position:relative; display:flex; flex-direction:column}
+.card h3{font-family:'Space Grotesk'; font-size:17px; letter-spacing:.08em; display:flex; align-items:center; gap:8px}
+.card .for{color:var(--muted); font-size:15px; margin:4px 0 12px}
+.price-row{display:flex; align-items:baseline; gap:8px}
+.price{font-family:'Space Grotesk'; font-size:52px; font-weight:700; letter-spacing:-.04em; line-height:1}
+.per{color:var(--muted); font-size:14.5px; line-height:1.3}
+.card ul{list-style:none; margin:16px 0 18px; display:grid; gap:10px; font-size:15.5px}
+.card li{display:flex; gap:10px; align-items:flex-start; color:#D9DDF0}
+.check{flex:0 0 22px; width:22px; height:22px; border-radius:50%; display:grid; place-items:center; font-size:13px; font-weight:800}
+.dark .check{background:rgba(217,246,81,.15); color:var(--lime); border:1px solid rgba(217,246,81,.35)}
+.btn-ghost{border:1px solid rgba(255,255,255,.22); color:#fff; padding:13px; width:100%; font-size:16px; background:rgba(255,255,255,.04)}
+.btn-ghost:hover{border-color:#fff}
+.btn-white{background:#fff; color:#111; padding:13px; width:100%; font-size:16px}
+.btn-dark{background:#111; color:#fff; padding:14px; width:100%; font-size:16.5px}
+.btn-dark:hover{transform:translateY(-1px)}
+/* PRO focal */
+.pro{background:linear-gradient(180deg,#F1FF8B,var(--lime) 45%,#CFF14A); color:var(--ink); border:1px solid #F3FF9E; transform:translateY(-10px) scale(1.015); box-shadow:0 0 0 1px rgba(217,246,81,.9),0 18px 70px rgba(217,246,81,.28),0 24px 60px rgba(0,0,0,.5); padding-top:22px; padding-bottom:20px}
+.pro .for{color:rgba(17,19,26,.68)}
+.pro .per{color:rgba(17,19,26,.7)}
+.pro ul li{color:#171A24; font-weight:500}
+.pro .check{background:#111; color:var(--lime)}
+.badge{position:absolute; top:-15px; left:50%; transform:translateX(-50%); background:#111; color:var(--lime); font-size:12.5px; font-weight:800; letter-spacing:.12em; padding:8px 16px; border-radius:999px; border:1px solid rgba(217,246,81,.6); white-space:nowrap; box-shadow:0 8px 24px rgba(0,0,0,.5)}
+.pro-note{display:flex; align-items:center; justify-content:center; gap:7px; margin-top:10px; font-size:13.5px; font-weight:700}
+.trial{font-size:13.5px; text-align:center; margin-top:6px; opacity:.7}
+/* TRUST */
+.trust{margin-top:12px; border:1px solid var(--line); background:rgba(255,255,255,.04); backdrop-filter:blur(8px); border-radius:16px; padding:12px 20px; display:flex; align-items:center; justify-content:space-between; gap:20px}
+.logos{display:flex; align-items:center; gap:18px}
+.logos small{font-size:11.5px; letter-spacing:.14em; font-weight:700; color:var(--muted2)}
+.logo-row{display:flex; align-items:center; gap:20px; font-weight:700; color:rgba(255,255,255,.62); font-size:16px; letter-spacing:-.01em}
+.logo-row span{display:flex; align-items:center; gap:7px; white-space:nowrap}
+.guarantee{display:flex; align-items:center; gap:12px; border-left:1px solid var(--line); padding-left:20px; font-size:14.5px}
+.shield{width:36px;height:36px;border-radius:50%;background:rgba(217,246,81,.14);border:1px solid rgba(217,246,81,.4);display:grid;place-items:center;font-size:18px; flex:0 0 36px}
+.guarantee strong{color:#fff}
+.stars{color:var(--lime); font-size:13px; letter-spacing:2px}
+@media(max-width:980px){
+h1{font-size:36px} .links{display:none} .pricing{grid-template-columns:1fr} .pro{transform:none} .trust{flex-direction:column; text-align:center} .guarantee{border:0; padding:0}
+}
+:focus-visible{outline:3px solid var(--lime); outline-offset:3px}
+</style>
+</head>
+<body>
+<div class="grid-bg" aria-hidden="true"></div>
+<div class="wrap">
+<nav aria-label="Main">
+<div class="logo"><span class="logo-mark">◐</span> Noted<span style="color:var(--lime)">.</span></div>
+<div class="links"><a href="#" class="active">Pricing</a><a href="#">Features</a><a href="#">Integrations</a><a href="#">Customers</a><a href="#">Changelog</a></div>
+<div class="nav-cta"><a class="sign" href="#">Sign in</a><a class="btn btn-lime" href="#">Get started free →</a></div>
+</nav>
+
+<header class="hero">
+<span class="pill"><span class="dot"></span> PRICING • 4.9/5 FROM 6,200+ TEAMS • CANCEL ANYTIME</span>
+<h1>Free to start. <span class="hl">$12 to never miss a thing.<svg viewBox="0 0 200 12" preserveAspectRatio="none" aria-hidden="true"><path d="M2 9 Q 100 -2 198 7" fill="none" stroke="#D9F651" stroke-width="5" stroke-linecap="round"/></svg></span></h1>
+<p class="sub">AI notes, summaries &amp; action items for every meeting. Start free — upgrade to Pro when meetings matter.</p>
+<div class="toggle-row">
+<div class="toggle" role="tablist" aria-label="Billing period">
+<button id="bMon" class="on" onclick="setBill('m')">Monthly</button>
+<button id="bAnn" onclick="setBill('a')">Annual</button>
+</div>
+<span class="save">Save 25% annually</span>
+<span class="micro">Prices in USD, per user</span>
+</div>
+</header>
+
+<main class="pricing" aria-label="Pricing plans">
+<!-- FREE -->
+<section class="card dark">
+<h3>○ FREE</h3>
+<p class="for">For trying AI notes on side projects.</p>
+<div class="price-row"><span class="price">$0</span><span class="per">forever<br>no card required</span></div>
+<ul>
+<li><span class="check">✓</span> 5 AI meetings per month</li>
+<li><span class="check">✓</span> 30-min transcription limit</li>
+<li><span class="check">✓</span> Auto summary + highlights</li>
+<li><span class="check">✓</span> Zoom, Meet &amp; Teams bot</li>
+<li><span class="check">✓</span> 7-day searchable history</li>
+</ul>
+<a class="btn btn-ghost" href="#">Start for free</a>
+</section>
+
+<!-- PRO emphasized -->
+<section class="card pro" aria-label="Pro plan, most popular">
+<div class="badge">★ MOST POPULAR — 82% CHOOSE PRO</div>
+<h3>⚡ PRO</h3>
+<p class="for">For pros who live in meetings.</p>
+<div class="price-row"><span class="price" id="proPrice">$12</span><span class="per" id="proPer">/ user / month<br>billed monthly</span></div>
+<ul>
+<li><span class="check">✓</span> <span><strong>Unlimited</strong> meetings, 4-hr length</span></li>
+<li><span class="check">✓</span> GPT-4 summaries, decisions &amp; owners</li>
+<li><span class="check">✓</span> 98.7% accuracy in 52 languages</li>
+<li><span class="check">✓</span> HubSpot, Notion, Slack sync</li>
+<li><span class="check">✓</span> Ask-your-meetings search + snippets</li>
+</ul>
+<a class="btn btn-dark" href="#">Start 14-day free trial →</a>
+<p class="trial">Free 14 days • No credit card • Then <span id="proThen">$12/mo</span></p>
+<div class="pro-note">🛡️ 30-day money-back guarantee</div>
+</section>
+
+<!-- TEAM -->
+<section class="card dark">
+<h3>⬣ TEAM</h3>
+<p class="for">For companies that run on meetings.</p>
+<div class="price-row"><span class="price" id="teamPrice">$20</span><span class="per" id="teamPer">/ user / month<br>billed monthly</span></div>
+<ul>
+<li><span class="check">✓</span> Everything in Pro, unlimited</li>
+<li><span class="check">✓</span> SSO / SAML, SCIM &amp; audit log</li>
+<li><span class="check">✓</span> Unlimited retention + EU residency</li>
+<li><span class="check">✓</span> Admin analytics &amp; coaching insights</li>
+<li><span class="check">✓</span> Dedicated success manager</li>
+</ul>
+<a class="btn btn-white" href="#">Talk to sales</a>
+</section>
+</main>
+
+<footer class="trust" aria-label="Trust">
+<div class="logos">
+<small>TRUSTED BY 6,000+ TEAMS AT</small>
+<div class="logo-row" aria-label="Customer logos">
+<span>▲ Vercelia</span><span>◍ Loomly</span><span>⬢ Hexlab</span><span>✦ Figmaro</span><span>● Rampfly</span>
+</div>
+</div>
+<div class="guarantee">
+<div class="shield">🛡️</div>
+<div><div class="stars">★★★★★ <span style="color:#fff; letter-spacing:0">4.9/5</span></div><div><strong>30-day money-back guarantee.</strong> <span style="color:var(--muted)">Love Pro or get a full refund — no questions.</span></div></div>
+</div>
+</footer>
+</div>
+<script>
+function setBill(v){
+document.getElementById('bMon').classList.toggle('on',v==='m');
+document.getElementById('bAnn').classList.toggle('on',v==='a');
+const pro = document.getElementById('proPrice');
+const per = document.getElementById('proPer');
+const then = document.getElementById('proThen');
+const team = document.getElementById('teamPrice');
+const tper = document.getElementById('teamPer');
+if(v==='a'){pro.textContent='$9'; per.innerHTML='/ user / month<br>billed annually ($108)'; then.textContent='$9/mo'; team.textContent='$15'; tper.innerHTML='/ user / month<br>billed annually ($180)';}
+else{pro.textContent='$12'; per.innerHTML='/ user / month<br>billed monthly'; then.textContent='$12/mo'; team.textContent='$20'; tper.innerHTML='/ user / month<br>billed monthly';}
+}
+</script>
+</body>
+</html>

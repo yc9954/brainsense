@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<title>Sweetspot x Local Roastery — Seongsu Pop-up</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@500;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%;background:#000}
+body{display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;overflow:hidden}
+.stage{width:1280px;height:720px;flex-shrink:0;position:relative;overflow:hidden;background:#FFF6E9;display:flex}
+.left{width:640px;height:720px;background:#150808;color:#FFF6E9;position:relative;overflow:hidden;display:flex;flex-direction:column}
+.right{width:640px;height:720px;background:#FFF6E9;position:relative;overflow:hidden}
+.top-strip{background:#E6002D;color:#fff;font-weight:900;font-size:19px;letter-spacing:2.5px;padding:14px 32px;display:flex;justify-content:space-between;align-items:center;animation:topIn 12s infinite}
+.top-strip span:last-child{background:#fff;color:#E6002D;padding:4px 12px;border-radius:100px;font-size:15px;letter-spacing:1px}
+.copy-area{position:relative;flex:1}
+.scene{position:absolute;inset:0;padding:36px 46px 20px 48px;display:flex;flex-direction:column;justify-content:center}
+.scene1{animation:show1 12s infinite}
+.scene2{animation:show2 12s infinite}
+.scene3{animation:show3 12s infinite}
+@keyframes show1{0%{opacity:1;transform:translateX(0)}29%{opacity:1;transform:translateX(0)}33.33%{opacity:0;transform:translateX(-60px)}96%{opacity:0;transform:translateX(-60px)}100%{opacity:1;transform:translateX(0)}}
+@keyframes show2{0%,30%{opacity:0;transform:translateX(60px)}33.33%{opacity:1;transform:translateX(0)}60%{opacity:1;transform:translateX(0)}66.66%,100%{opacity:0;transform:translateX(-60px)}}
+@keyframes show3{0%,62%{opacity:0;transform:translateX(60px)}66.66%{opacity:1;transform:translateX(0)}96%{opacity:1;transform:translateX(0)}100%{opacity:0;transform:translateX(0)}}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;background:#FFF6E9;color:#150808;font-weight:900;font-size:17px;letter-spacing:2.2px;padding:9px 16px;border-radius:100px;width:max-content}
+.eyebrow i{width:10px;height:10px;background:#E6002D;border-radius:50%;display:block;animation:dotBlink 12s infinite}
+@keyframes dotBlink{0%,10%{opacity:1;transform:scale(1)}14%{opacity:.3;transform:scale(.7)}18%,100%{opacity:1;transform:scale(1)}}
+h1{font-family:'Anton',sans-serif;font-size:92px;line-height:.92;letter-spacing:.5px;margin:18px 0 14px;text-transform:uppercase}
+h1 em{font-style:normal;color:#FF4D6A}
+h2{font-family:'Anton',sans-serif;font-size:76px;line-height:.94;text-transform:uppercase;margin:16px 0 14px}
+h2 em{font-style:normal;color:#FF4D6A}
+.sub{font-size:21px;line-height:1.45;font-weight:500;opacity:.92;max-width:480px}
+.benefit{display:flex;gap:12px;margin-top:20px}
+.benefit div{flex:1;background:#2A1212;border:1px solid #4A2222;border-radius:16px;padding:14px 14px;text-align:left}
+.benefit b{display:block;font-size:26px;font-weight:900}
+.benefit span{font-size:14px;font-weight:700;letter-spacing:.8px;opacity:.8;text-transform:uppercase}
+.cta-btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;background:#E6002D;color:#fff;font-weight:900;font-size:28px;letter-spacing:.5px;text-decoration:none;padding:20px 28px;border-radius:18px;margin-top:20px;box-shadow:0 12px 0 #7A0016;animation:ctaPush 12s infinite}
+@keyframes ctaPush{0%,66%{transform:scale(1)}71%{transform:scale(1.05)}75%{transform:scale(1)}80%{transform:scale(1.05)}84%,100%{transform:scale(1)}}
+.small-note{font-size:16px;font-weight:700;letter-spacing:1px;margin-top:14px;opacity:.85}
+.bottom-bar{background:#000;color:#fff;display:flex;justify-content:space-between;align-items:center;padding:16px 24px;font-size:16px;font-weight:800;letter-spacing:1.2px}
+.bottom-bar b{color:#FFD166}
+.timeline{height:6px;background:#3A1A1A;position:relative}
+.timeline div{position:absolute;inset:0;background:#E6002D;transform-origin:left;animation:barFill 12s infinite}
+@keyframes barFill{0%{transform:scaleX(0)}100%{transform:scaleX(1)}}
+/* RIGHT HERO */
+.visual-bg{position:absolute;inset:0;background:radial-gradient(circle at 50% 42%,#FFE3E6 0 220px,#FFF6E9 221px)}
+.big-word{position:absolute;top:34px;left:0;right:0;text-align:center;font-family:'Anton',sans-serif;font-size:118px;color:#150808;opacity:.07;letter-spacing:4px;animation:wordDrift 12s infinite}
+@keyframes wordDrift{0%,100%{opacity:.07;transform:translateX(0)}50%{opacity:.09;transform:translateX(-10px)}}
+.hero-wrap{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;animation:heroFloat 12s infinite}
+@keyframes heroFloat{0%,100%{transform:translateY(0) rotate(-1.5deg)}15%{transform:translateY(-18px) rotate(-1.5deg)}30%{transform:translateY(0) rotate(-1.5deg)}55%{transform:translateY(-14px) rotate(1deg)}70%{transform:translateY(0) rotate(-1.5deg)}85%{transform:translateY(-20px) rotate(0deg)}}
+.berry{width:360px;height:430px;position:relative;background:linear-gradient(165deg,#FF6B7A 0%,#E6002D 48%,#8F001A 100%);border-radius:50% 50% 50% 50% / 32% 32% 68% 68%;box-shadow:inset -28px -30px 0 rgba(0,0,0,.18),inset 22px 22px 40px rgba(255,255,255,.35);margin-top:30px}
+.berry::after{content:"";position:absolute;left:52px;top:70px;width:66px;height:140px;background:rgba(255,255,255,.55);border-radius:50%;filter:blur(2px);transform:rotate(-14deg)}
+.leaves{position:absolute;top:-28px;left:50%;transform:translateX(-50%);width:300px;height:90px;z-index:3}
+.leaf{position:absolute;top:0;left:50%;width:56px;height:86px;background:#1A7A2E;border-radius:0 60px 0 60px;transform-origin:bottom center}
+.leaf:nth-child(1){transform:translateX(-50%) rotate(-52deg);background:#1A7A2E}
+.leaf:nth-child(2){transform:translateX(-50%) rotate(-26deg);background:#22963A}
+.leaf:nth-child(3){transform:translateX(-50%) rotate(0deg);background:#147026;height:96px}
+.leaf:nth-child(4){transform:translateX(-50%) rotate(26deg);background:#22963A}
+.leaf:nth-child(5){transform:translateX(-50%) rotate(52deg);background:#1A7A2E}
+.stem{position:absolute;top:-48px;left:50%;width:22px;height:56px;background:#0E4D1D;border-radius:12px;transform:translateX(-50%) rotate(8deg)}
+.seed{position:absolute;width:18px;height:26px;background:#FFF6E9;border-radius:50%;box-shadow:inset -2px -3px 0 rgba(0,0,0,.2);animation:seedShine 12s infinite}
+@keyframes seedShine{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.75;transform:scale(.9)}}
+.cream{width:480px;height:150px;background:#fff;border-radius:50%;margin-top:-46px;box-shadow:0 28px 50px rgba(21,8,8,.18);position:relative;z-index:2;display:flex;align-items:center;justify-content:center;gap:10px}
+.cream::before{content:"";position:absolute;top:-26px;left:60px;right:60px;height:60px;background:#fff;border-radius:50%}
+.price-tag{position:absolute;top:118px;right:54px;width:148px;height:148px;background:#150808;color:#FFF6E9;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;border:6px solid #E6002D;z-index:5;animation:badgeSpin 12s infinite}
+@keyframes badgeSpin{0%,100%{transform:rotate(-10deg) scale(1)}12%{transform:rotate(-10deg) scale(1.12)}20%{transform:rotate(-10deg) scale(1)}55%{transform:rotate(-10deg) scale(1)}62%{transform:rotate(-10deg) scale(1.12)}70%{transform:rotate(-10deg) scale(1)}}
+.price-tag b{font-family:'Anton',sans-serif;font-size:34px;line-height:1}
+.price-tag span{font-size:13px;font-weight:900;letter-spacing:1.5px}
+.caption{margin-top:16px;background:#150808;color:#fff;font-weight:900;font-size:18px;letter-spacing:1.6px;padding:12px 22px;border-radius:100px;z-index:4}
+.caption b{color:#FFD166}
+.kicker{position:absolute;bottom:22px;left:0;right:0;text-align:center;font-size:15px;font-weight:800;letter-spacing:2px;color:#150808;opacity:.65}
+</style>
+</head>
+<body>
+<div class="stage">
+<div class="left">
+<div class="timeline"><div></div></div>
+<div class="top-strip"><span>SWEETSPOT × LOCAL ROASTERY</span><span>3 DAYS ONLY</span></div>
+<div class="copy-area">
+<div class="scene scene1">
+<div class="eyebrow"><i></i> SEONGSU • STRAWBERRY TAKEOVER</div>
+<h1>TASTE<br>THE<br><em>STRAWBERRY CLOUD</em></h1>
+<p class="sub">The most photographed dessert in Seoul is landing for 72 hours only.</p>
+</div>
+<div class="scene scene2">
+<div class="eyebrow"><i></i> FRESH TODAY • MADE LIVE</div>
+<h2>FRESH<br>CREAM +<br><em>BOLD ESPRESSO</em></h2>
+<p class="sub">Jeju strawberries at dawn. Single-origin Seongsu roast. Torched in front of you.</p>
+<div class="benefit"><div><b>300</b><span>cups / day</span></div><div><b>100%</b><span>Jeju berries</span></div><div><b>LIVE</b><span>dessert bar</span></div></div>
+</div>
+<div class="scene scene3">
+<div class="eyebrow"><i></i> DEC 11 — 13 • FRI TO SUN</div>
+<h2>RESERVE<br>YOUR<br><em>SLOT NOW</em></h2>
+<p class="sub">42 Seongsu-ro, Seongdong-gu • 11AM – 8PM. Walk-ins will sell out.</p>
+<a class="cta-btn" href="#">RESERVE YOUR SLOT →</a>
+<div class="small-note">ONLY 90 SLOTS PER DAY • FIRST 100 GET FREE ESPRESSO CUP</div>
+</div>
+</div>
+<div class="bottom-bar"><span>DEC <b>11–13</b> • 42 SEONGSU-RO, SEOUL</span><span>11AM–8PM</span></div>
+</div>
+<div class="right">
+<div class="visual-bg"></div>
+<div class="big-word">딸기 딸기</div>
+<div class="price-tag"><span>ONLY</span><b>300/DAY</b><span>SOLD OUT FAST</span></div>
+<div class="hero-wrap">
+<div class="berry">
+<div class="stem"></div>
+<div class="leaves"><div class="leaf"></div><div class="leaf"></div><div class="leaf"></div><div class="leaf"></div><div class="leaf"></div></div>
+<div class="seed" style="left:70px;top:110px"></div><div class="seed" style="left:150px;top:90px"></div><div class="seed" style="left:230px;top:95px"></div><div class="seed" style="left:285px;top:130px"></div><div class="seed" style="left:110px;top:180px"></div><div class="seed" style="left:190px;top:165px"></div><div class="seed" style="left:265px;top:185px"></div><div class="seed" style="left:145px;top:250px"></div><div class="seed" style="left:220px;top:245px"></div><div class="seed" style="left:185px;top:320px"></div>
+</div>
+<div class="cream"></div>
+<div class="caption">FRESH STRAWBERRY CREAM CAKE • <b>₩9,900</b></div>
+</div>
+<div class="kicker">SWEETSPOT × LOCAL ROASTERY — SEONGSU POP-UP</div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1280, height=720">
+<title>Stake — Big Stocks from $1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{background:#000;width:100%;min-height:100%;display:flex;align-items:center;justify-content:center}
+body{font-family:'Inter',sans-serif}
+.stage{width:1280px;height:720px;flex-shrink:0;background:#080B14;color:#fff;position:relative;overflow:hidden;display:flex;flex-direction:column}
+.topbar{height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 48px;z-index:20;position:relative;border-bottom:1px solid rgba(255,255,255,.12)}
+.logo{font-family:'Archivo',sans-serif;font-weight:900;font-size:26px;letter-spacing:-.5px;display:flex;align-items:center;gap:10px}
+.logo-mark{width:32px;height:32px;background:#D9FF3D;color:#080B14;display:flex;align-items:center;justify-content:center;border-radius:8px;font-size:20px;font-weight:900}
+.top-pills{display:flex;gap:10px;align-items:center}
+.pill{font-size:13px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;border:1px solid rgba(255,255,255,.22);border-radius:100px;padding:9px 16px;color:#fff;white-space:nowrap}
+.pill.lime{background:#D9FF3D;color:#0A0F0A;border-color:#D9FF3D}
+.main{flex:1;position:relative}
+.scene{position:absolute;inset:0;padding:36px 48px 0 48px;display:flex;align-items:center;gap:40px}
+.eyebrow{font-size:14px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;color:#D9FF3D;margin-bottom:16px}
+h1,h2{font-family:'Archivo',sans-serif;font-weight:900;line-height:.92;letter-spacing:-2px}
+.ticker{position:absolute;left:0;right:0;bottom:58px;border-top:1px solid rgba(255,255,255,.14);border-bottom:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.04);overflow:hidden;height:44px;display:flex;align-items:center;z-index:5}
+.ticker-track{display:flex;gap:0;white-space:nowrap;font-size:14px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:rgba(255,255,255,.85);animation:tickerMove 12s linear infinite}
+.ticker-track span{padding:0 28px}
+.ticker-track b{color:#D9FF3D}
+.progress{position:absolute;left:0;right:0;bottom:0;height:58px;display:flex;align-items:center;padding:0 48px;gap:16px;background:#080B14;z-index:20}
+.bar{flex:1;height:6px;background:rgba(255,255,255,.15);border-radius:100px;overflow:hidden}
+.bar-fill{width:100%;height:100%;background:#D9FF3D;border-radius:100px;transform-origin:left center;animation:barFill 12s linear infinite}
+.times{font-size:12px;font-weight:700;letter-spacing:1px;color:rgba(255,255,255,.7);white-space:nowrap}
+.times strong{color:#fff}
+/* SCENE VISIBILITY - 0-4s / 4-8s / 8-12s */
+.s1{animation:s1Show 12s linear infinite}
+.s2{animation:s2Show 12s linear infinite}
+.s3{animation:s3Show 12s linear infinite;justify-content:center;text-align:center}
+@keyframes s1Show{0%,27%{opacity:1;transform:translateX(0);pointer-events:auto}33.33%,91%{opacity:0;transform:translateX(-60px);pointer-events:none}95%,100%{opacity:1;transform:translateX(0)}}
+@keyframes s2Show{0%,30%{opacity:0;transform:translateX(60px);pointer-events:none}36%,60%{opacity:1;transform:translateX(0);pointer-events:auto}66.66%,100%{opacity:0;transform:translateX(-60px);pointer-events:none}}
+@keyframes s3Show{0%,62%{opacity:0;transform:translateX(60px);pointer-events:none}69%,95%{opacity:1;transform:translateX(0)}100%{opacity:0;transform:translateX(-40px)}}
+/* HOOK INNER */
+.h-left{flex:1.05}
+.h-right{flex:.95;position:relative;height:520px;display:flex;align-items:center;justify-content:center}
+.h1a{font-size:84px;color:#fff;animation:hLine1 12s linear infinite}
+.h1b{font-size:110px;color:#D9FF3D;white-space:nowrap;animation:hLine2 12s linear infinite}
+.sub{font-size:20px;line-height:1.45;color:rgba(255,255,255,.82);margin-top:18px;max-width:520px;animation:hSub 12s linear infinite}
+.sub strong{color:#fff}
+@keyframes hLine1{0%,1%{opacity:0;transform:translateY(70px)}4%,27%{opacity:1;transform:translateY(0)}31%,100%{opacity:0;transform:translateY(-50px)}}
+@keyframes hLine2{0%,3%{opacity:0;transform:translateY(70px) scale(.96)}6%,27%{opacity:1;transform:translateY(0) scale(1)}31%,100%{opacity:0;transform:translateY(-50px)}}
+@keyframes hSub{0%,6%{opacity:0;transform:translateY(30px)}9%,27%{opacity:1;transform:translateY(0)}31%,100%{opacity:0;transform:translateY(-20px)}}
+.kicker{animation:kick 12s linear infinite}
+@keyframes kick{0%,1%{opacity:0;transform:translateY(20px)}3%,27%{opacity:1;transform:translateY(0)}31%,100%{opacity:0}}
+.bg1{position:absolute;font-family:'Archivo',sans-serif;font-weight:900;font-size:520px;line-height:1;color:transparent;-webkit-text-stroke:2px rgba(217,255,61,.18);right:-20px;top:-40px;animation:bg1Anim 12s linear infinite;pointer-events:none}
+@keyframes bg1Anim{0%{opacity:0;transform:translateX(80px)}4%,27%{opacity:1;transform:translateX(0)}32%,100%{opacity:0}}
+.stock-card{width:380px;background:#fff;color:#0B0E14;border-radius:22px;padding:22px 24px;position:relative;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.5);animation:cardMain 12s linear infinite}
+.stock-card .row{display:flex;justify-content:space-between;align-items:center}
+.stock-card .sym{font-family:'Archivo',sans-serif;font-weight:900;font-size:28px}
+.stock-card .price{font-weight:800;font-size:22px}
+.cut{height:2px;background:repeating-linear-gradient(90deg,#0B0E14 0 10px,transparent 10px 18px);margin:16px 0;opacity:.3}
+.slice-piece{margin-top:14px;background:#0B0E14;color:#fff;border-radius:14px;padding:16px 18px;display:flex;justify-content:space-between;align-items:center;position:relative;overflow:hidden}
+.slice-piece:after{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:#D9FF3D}
+.slice-piece .big{font-family:'Archivo',sans-serif;font-weight:900;font-size:42px;color:#D9FF3D}
+@keyframes cardMain{0%,4%{opacity:0;transform:translateY(90px) rotate(4deg)}8%,27%{opacity:1;transform:translateY(0) rotate(-2deg)}31%,100%{opacity:0;transform:translateY(-60px)}}
+.badge{position:absolute;background:#D9FF3D;color:#0B0E14;font-weight:800;font-size:15px;padding:12px 18px;border-radius:100px;box-shadow:0 12px 30px rgba(0,0,0,.4);white-space:nowrap;z-index:3}
+.b1{top:58px;right:22px;animation:b1 12s linear infinite}
+.b2{bottom:72px;left:0;background:#fff;animation:b2 12s linear infinite}
+@keyframes b1{0%,8%{opacity:0;transform:scale(.6) translateY(20px)}12%,27%{opacity:1;transform:scale(1) translateY(0)}31%,100%{opacity:0}}
+@keyframes b2{0%,10%{opacity:0;transform:scale(.6) translateY(20px)}14%,27%{opacity:1;transform:scale(1) translateY(0)}31%,100%{opacity:0}}
+/* PRODUCT */
+.phone{width:320px;height:540px;background:#fff;border-radius:36px;padding:22px;color:#0B0E14;position:relative;box-shadow:0 40px 100px rgba(0,0,0,.55);animation:phoneIn 12s linear infinite;flex-shrink:0}
+.phone-notch{width:120px;height:22px;background:#0B0E14;border-radius:100px;margin:0 auto 16px auto}
+.phone-stock{font-family:'Archivo',sans-serif;font-weight:900;font-size:24px;display:flex;justify-content:space-between}
+.chart{display:flex;align-items:end;gap:7px;height:110px;margin:16px 0;background:#0B0E14;border-radius:16px;padding:14px}
+.chart i{flex:1;background:#D9FF3D;border-radius:4px;display:block}
+.slider{background:#EEF0F4;border-radius:14px;padding:14px;margin-bottom:14px}
+.slider-bar{height:10px;background:#D5D9E2;border-radius:100px;position:relative;overflow:hidden}
+.slider-bar:after{content:"";position:absolute;left:0;top:0;bottom:0;width:22%;background:#0B0E14;border-radius:100px}
+.buybtn{background:#0B0E14;color:#D9FF3D;text-align:center;font-weight:800;font-size:19px;padding:16px;border-radius:14px}
+@keyframes phoneIn{0%,32%{opacity:0;transform:translateY(100px) rotate(3deg)}38%,60%{opacity:1;transform:translateY(0) rotate(0)}65%,100%{opacity:0;transform:translateY(-60px)}}
+.p-right{flex:1}
+.p-title{font-size:64px;line-height:.95;animation:pTitle 12s linear infinite}
+.p-title span{color:#D9FF3D}
+.steps{margin-top:22px;display:flex;flex-direction:column;gap:12px}
+.step{display:flex;gap:16px;align-items:center;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:14px 18px}
+.step-n{width:44px;height:44px;border-radius:12px;background:#D9FF3D;color:#0B0E14;font-family:'Archivo',sans-serif;font-weight:900;font-size:20px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.step p{font-size:17px;line-height:1.35;color:rgba(255,255,255,.85)}
+.step p strong{color:#fff}
+.step.s-a{animation:st1 12s linear infinite}.step.s-b{animation:st2 12s linear infinite}.step.s-c{animation:st3 12s linear infinite}
+@keyframes pTitle{0%,33%{opacity:0;transform:translateY(50px)}38%,60%{opacity:1;transform:translateY(0)}65%,100%{opacity:0}}
+@keyframes st1{0%,37%{opacity:0;transform:translateX(60px)}41%,60%{opacity:1;transform:translateX(0)}65%,100%{opacity:0}}
+@keyframes st2{0%,39%{opacity:0;transform:translateX(60px)}43%,60%{opacity:1;transform:translateX(0)}65%,100%{opacity:0}}
+@keyframes st3{0%,41%{opacity:0;transform:translateX(60px)}45%,60%{opacity:1;transform:translateX(0)}65%,100%{opacity:0}}
+/* OFFER */
+.o-box{max-width:880px}
+.offer-pill{display:inline-block;background:#D9FF3D;color:#0B0E14;font-weight:800;font-size:15px;letter-spacing:1.5px;text-transform:uppercase;padding:12px 22px;border-radius:100px;margin-bottom:18px;animation:oPill 12s linear infinite}
+.o-title{font-size:84px;line-height:.92;animation:oTitle 12s linear infinite}
+.o-title span{color:#D9FF3D;white-space:nowrap}
+.o-sub{font-size:20px;color:rgba(255,255,255,.85);margin:16px 0 24px 0;animation:oSub 12s linear infinite}
+.cta{display:inline-flex;align-items:center;gap:14px;background:#D9FF3D;color:#0B0E14;font-family:'Archivo',sans-serif;font-weight:900;font-size:30px;padding:20px 52px;border-radius:100px;animation:ctaPulse 12s linear infinite}
+.cta small{font-family:'Inter',sans-serif;font-weight:700;font-size:15px;background:#0B0E14;color:#fff;padding:8px 14px;border-radius:100px}
+.trust{display:flex;gap:12px;justify-content:center;margin-top:26px}
+.trust div{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:14px;padding:13px 20px;font-size:15px;font-weight:700;white-space:nowrap}
+.trust div i{color:#D9FF3D;font-style:normal;margin-right:6px}
+.disc{margin-top:14px;font-size:12px;color:rgba(255,255,255,.5)}
+.t1{animation:tr1 12s linear infinite}.t2{animation:tr2 12s linear infinite}.t3{animation:tr3 12s linear infinite}
+@keyframes oPill{0%,66%{opacity:0;transform:translateY(30px) scale(.9)}70%,94%{opacity:1;transform:translateY(0) scale(1)}97%,100%{opacity:0}}
+@keyframes oTitle{0%,68%{opacity:0;transform:translateY(60px)}72%,94%{opacity:1;transform:translateY(0)}97%,100%{opacity:0}}
+@keyframes oSub{0%,70%{opacity:0;transform:translateY(20px)}74%,94%{opacity:1;transform:translateY(0)}97%,100%{opacity:0}}
+@keyframes ctaPulse{0%,73%{opacity:0;transform:scale(.85)}77%,79%{opacity:1;transform:scale(1.06)}81%,94%{opacity:1;transform:scale(1)}95%,96%{opacity:1;transform:scale(1.04)}97%,100%{opacity:0;transform:scale(.95)}}
+@keyframes tr1{0%,74%{opacity:0;transform:translateY(20px)}78%,94%{opacity:1;transform:translateY(0)}97%,100%{opacity:0}}
+@keyframes tr2{0%,76%{opacity:0;transform:translateY(20px)}80%,94%{opacity:1;transform:translateY(0)}97%,100%{opacity:0}}
+@keyframes tr3{0%,78%{opacity:0;transform:translateY(20px)}82%,94%{opacity:1;transform:translateY(0)}97%,100%{opacity:0}}
+@keyframes tickerMove{0%{opacity:1;transform:translateX(0)}100%{opacity:1;transform:translateX(-50%)}}
+@keyframes barFill{0%{opacity:1;transform:scaleX(0)}100%{opacity:1;transform:scaleX(1)}}
+</style>
+</head>
+<body>
+<div class="stage">
+<div class="topbar">
+<div class="logo"><span class="logo-mark">◧</span> STAKE</div>
+<div class="top-pills"><span class="pill">✓ SIPC Protected</span><span class="pill lime">3-min sign-up</span></div>
+</div>
+<div class="main">
+<!-- HOOK 0-4s -->
+<div class="scene s1">
+<div class="bg1">$1</div>
+<div class="h-left">
+<div class="eyebrow kicker">Fractional shares • No minimums</div>
+<div class="h1a"><h1>BIG STOCKS.</h1></div>
+<div class="h1b">from $1.</div>
+<p class="sub">Own a slice of <strong>Apple, Tesla, Nvidia & 5,000+ stocks.</strong> No $3,000 buy-ins. No gatekeeping.</p>
+</div>
+<div class="h-right">
+<div class="stock-card">
+<div class="row"><span class="sym">AAPL</span><span class="price">$235.42</span></div>
+<div style="font-size:14px;font-weight:700;color:#5A6272;letter-spacing:1px">APPLE INC • +2.4% TODAY</div>
+<div class="cut"></div>
+<div style="font-size:13px;font-weight:800;letter-spacing:1.5px">YOU PAY → YOU OWN</div>
+<div class="slice-piece"><span class="big">$1.00</span><span style="font-weight:800;font-size:16px;text-align:right">0.0042 shares<br><span style="color:#D9FF3D;font-size:13px">INSTANT • $0 FEES</span></span></div>
+</div>
+<div class="badge b1">TESLA $248 → $1 ✓</div>
+<div class="badge b2">✂️ Sliced to fit your wallet</div>
+</div>
+</div>
+<!-- PRODUCT 4-8s -->
+<div class="scene s2">
+<div class="phone">
+<div class="phone-notch"></div>
+<div class="phone-stock"><span>AAPL</span><span>$235.42</span></div>
+<div style="font-size:13px;font-weight:700;color:#5A6272">FRACTIONAL • REAL-TIME</div>
+<div class="chart"><i style="height:38%"></i><i style="height:55%"></i><i style="height:42%"></i><i style="height:68%"></i><i style="height:82%"></i><i style="height:64%"></i><i style="height:95%"></i></div>
+<div class="slider"><div style="font-weight:800;font-size:15px;margin-bottom:8px">Invest: $1.00</div><div class="slider-bar"></div></div>
+<div class="buybtn">Buy slice — $1.00</div>
+<div style="text-align:center;font-size:12px;font-weight:700;margin-top:10px;color:#5A6272">3-MINUTE SIGN-UP • ID + BANK</div>
+</div>
+<div class="p-right">
+<div class="eyebrow">How it works</div>
+<h2 class="p-title">3 steps. <span>3 minutes.</span></h2>
+<div class="steps">
+<div class="step s-a"><div class="step-n">01</div><p><strong>Pick any stock.</strong> Apple, Amazon, 5,000+ more.</p></div>
+<div class="step s-b"><div class="step-n">02</div><p><strong>Enter $1 or more.</strong> Buy a fraction instantly, $0 commission.</p></div>
+<div class="step s-c"><div class="step-n">03</div><p><strong>Own your slice.</strong> Dividends, charts & auto-invest included.</p></div>
+</div>
+</div>
+</div>
+<!-- OFFER 8-12s -->
+<div class="scene s3">
+<div class="o-box">
+<div class="offer-pill">Limited — Get $5 bonus stock on signup</div>
+<h2 class="o-title">Start now with <span>just $1.</span></h2>
+<p class="o-sub">3-minute sign-up • Zero commission • Cancel anytime</p>
+<div><span class="cta">Start now → <small>FROM $1</small></span></div>
+<div class="trust"><div class="t1"><i>✓</i> SIPC protected to $500k</div><div class="t2"><i>✓</i> 256-bit bank encryption</div><div class="t3"><i>✓</i> Loved by 2M+ investors</div></div>
+<div class="disc">Investing involves risk. Bonus stock terms apply. Brokerage by Stake Securities LLC, member SIPC.</div>
+</div>
+</div>
+<div class="ticker"><div class="ticker-track"><span>AAPL <b>$235.42 +2.4%</b></span><span>•</span><span>TSLA <b>$248.10 +1.8%</b></span><span>•</span><span>NVDA <b>$131.29 +3.1%</b></span><span>•</span><span>AMZN <b>$197.12 +0.9%</b></span><span>•</span><span>OWN IT ALL <b>FROM $1</b></span><span>•</span><span>AAPL <b>$235.42 +2.4%</b></span><span>•</span><span>TSLA <b>$248.10 +1.8%</b></span><span>•</span><span>NVDA <b>$131.29 +3.1%</b></span><span>•</span><span>AMZN <b>$197.12 +0.9%</b></span><span>•</span><span>OWN IT ALL <b>FROM $1</b></span><span>•</span></div></div>
+</div>
+<div class="progress"><span class="times"><strong>00:00</strong> HOOK</span><div class="bar"><div class="bar-fill"></div></div><span class="times">PRODUCT • OFFER <strong>00:12 ↻</strong></span></div>
+</div>
+</body>
+</html>

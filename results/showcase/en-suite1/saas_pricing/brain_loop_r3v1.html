@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Minutes — Pricing that pays for itself</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',system-ui,sans-serif;background:#FFF4DF;color:#131624;font-size:17px;line-height:1.5;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1280px;min-height:800px;margin:0 auto;padding:18px 24px 20px;display:flex;flex-direction:column}
+nav{display:flex;align-items:center;justify-content:space-between;padding:6px 6px 16px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.02em;font-size:20px}
+.mark{width:34px;height:34px;border-radius:11px;background:#131624;color:#D8FF3E;display:grid;place-items:center;font-size:18px;position:relative;overflow:hidden}
+.mark:after{content:"";position:absolute;right:-6px;top:-6px;width:20px;height:20px;background:#D8FF3E;transform:rotate(45deg);opacity:.9}
+.links{display:flex;gap:26px;font-size:15px;font-weight:600;color:#3E3B34}
+.links a{opacity:.75}.links a.on{opacity:1;border-bottom:3px solid #D8FF3E}
+.navcta{display:flex;gap:10px;align-items:center}
+.btn{font-weight:700;font-size:15px;border-radius:999px;padding:11px 20px;border:2px solid #131624;cursor:pointer;display:inline-flex;align-items:center;gap:8px}
+.btn-ghost{background:transparent}
+.btn-dark{background:#131624;color:#fff}
+.btn-lime{background:#D8FF3E;color:#131624;border-color:#131624;box-shadow:3px 3px 0 #131624}
+.layout{display:grid;grid-template-columns:442px 1fr;gap:22px;flex:1;min-height:0}
+/* LEFT SOLID PANEL */
+.hero{background:#12172D;color:#fff;border-radius:28px;padding:28px 28px 22px;position:relative;overflow:hidden;display:flex;flex-direction:column;border:2px solid #12172D}
+.hero:before{content:"";position:absolute;top:-90px;right:-90px;width:280px;height:280px;background:radial-gradient(circle at center,#2A3563 0%,transparent 70%);pointer-events:none}
+.kicker{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:800;letter-spacing:.14em;background:#D8FF3E;color:#131624;border-radius:999px;padding:7px 12px;width:fit-content}
+.hero h1{font-family:'Fraunces',serif;font-weight:900;font-size:48px;line-height:.95;letter-spacing:-.03em;margin:16px 0 12px}
+.hero h1 em{font-style:normal;color:#D8FF3E;position:relative}
+.hero p.sub{color:#C9CBD8;font-size:17px;line-height:1.5;max-width:36ch}
+.mock{background:#fff;color:#131624;border-radius:18px;margin-top:18px;transform:rotate(-1.6deg);box-shadow:0 18px 40px rgba(0,0,0,.35),8px 8px 0 #D8FF3E;position:relative;z-index:2;overflow:hidden}
+.mock-top{display:flex;align-items:center;gap:8px;padding:11px 14px;border-bottom:1px solid #EEE7D3;font-size:13px;font-weight:700}
+.dots{display:flex;gap:5px}.dots i{width:10px;height:10px;border-radius:50%;display:block}
+.live{margin-left:auto;background:#131624;color:#D8FF3E;font-size:11px;font-weight:800;letter-spacing:.08em;border-radius:999px;padding:4px 10px}
+.wave{display:flex;align-items:end;gap:4px;height:46px;padding:12px 14px 4px}
+.wave span{flex:1;background:#131624;border-radius:4px;min-height:6px;animation:eq 1.6s ease-in-out infinite}
+.wave span:nth-child(odd){background:#7A7FA0}
+@keyframes eq{0%,100%{transform:scaleY(.6)}50%{transform:scaleY(1.15)}}
+.lines{padding:8px 14px 6px;font-size:13.5px;line-height:1.5}
+.lines b{background:#D8FF3E;padding:0 4px;border-radius:4px}
+.ai{margin:6px 12px 12px;background:#F5F0DF;border:1px dashed #C9BFA6;border-radius:12px;padding:10px 12px;font-size:13px}
+.ai strong{font-size:12px;letter-spacing:.08em}
+.chip{position:absolute;font-size:12.5px;font-weight:800;background:#D8FF3E;color:#131624;border:2px solid #131624;border-radius:999px;padding:7px 12px;box-shadow:3px 3px 0 rgba(0,0,0,.9);z-index:3;white-space:nowrap}
+.chip.c1{top:132px;right:-10px;transform:rotate(6deg)}
+.chip.c2{bottom:120px;left:-10px;transform:rotate(-5deg);background:#fff}
+.slash{position:absolute;left:-20px;right:-20px;bottom:92px;height:54px;background:#D8FF3E;transform:rotate(-6deg);display:flex;align-items:center;overflow:hidden;z-index:1;border-top:2px solid #000;border-bottom:2px solid #000}
+.slash div{font-size:13px;font-weight:800;letter-spacing:.12em;color:#131624;white-space:nowrap;animation:marq 12s linear infinite}
+@keyframes marq{to{transform:translateX(-50%)}}
+.trust{margin-top:auto;padding-top:58px;position:relative;z-index:2}
+.logos{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+.logos span{font-size:12.5px;font-weight:700;color:#EDEEF5;border:1px solid #3A4368;border-radius:999px;padding:5px 10px;background:#1B2340}
+.guar{display:flex;gap:10px;align-items:center;font-size:14px;color:#EDEEF5}
+.guar i{width:32px;height:32px;border-radius:50%;background:#D8FF3E;display:grid;place-items:center;font-size:16px;flex-shrink:0}
+/* RIGHT */
+.side{padding:2px 4px 0 8px;display:flex;flex-direction:column}
+.side-head{display:flex;align-items:end;justify-content:space-between;gap:16px}
+.side-head h2{font-family:'Fraunces',serif;font-size:30px;letter-spacing:-.02em;line-height:1}
+.side-head p{font-size:15.5px;color:#4A463C;margin-top:6px}
+.toggle{display:flex;align-items:center;background:#fff;border:2px solid #131624;border-radius:999px;padding:4px;gap:4px;box-shadow:3px 3px 0 #131624}
+.toggle button{border:0;background:transparent;font-weight:800;font-size:14px;padding:8px 16px;border-radius:999px;cursor:pointer}
+.toggle button.on{background:#131624;color:#fff}
+.toggle small{background:#D8FF3E;border-radius:999px;padding:2px 8px;font-weight:800;margin-left:4px;border:1px solid #131624}
+.cards{margin-top:14px;display:flex;flex-direction:column;gap:12px;position:relative}
+.cards:before{content:"";position:absolute;left:40px;right:40px;top:46%;height:90px;background:#D8FF3E;transform:rotate(-2.5deg);z-index:0;border:2px solid #131624;border-radius:12px}
+.tier{position:relative;z-index:1;display:grid;grid-template-columns:148px 1fr auto;gap:18px;align-items:center;background:#FFFEF7;border:2px solid #131624;border-radius:20px;padding:16px 18px;box-shadow:5px 5px 0 #131624}
+.tier.pro{background:#12172D;color:#fff;box-shadow:7px 7px 0 #131624,0 0 0 4px #D8FF3E;padding-top:20px;padding-bottom:18px}
+.badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%) rotate(-1.5deg);background:#D8FF3E;color:#131624;font-size:12px;font-weight:800;letter-spacing:.1em;border:2px solid #131624;border-radius:999px;padding:5px 14px;box-shadow:2px 2px 0 #000}
+.price small{display:block;font-size:13px;font-weight:800;letter-spacing:.12em;opacity:.7}
+.price strong{font-size:34px;letter-spacing:-.04em;line-height:1}
+.price strong span{font-size:16px;font-weight:600;opacity:.7}
+.feat h3{font-size:17px;margin-bottom:4px}
+.feat ul{list-style:none;display:flex;flex-wrap:wrap;gap:4px 14px;font-size:14.5px}
+.feat li:before{content:"✓";font-weight:800;margin-right:6px;color:#5A9E00}
+.pro .feat li:before{color:#D8FF3E}
+.feat li{opacity:.92}
+.cta{text-align:center}
+.cta .btn{width:150px;justify-content:center}
+.pro .btn-lime{box-shadow:3px 3px 0 #fff}
+.micro{font-size:12.5px;margin-top:8px;opacity:.75;font-weight:600}
+.bottom{display:flex;align-items:center;justify-content:space-between;margin-top:12px;background:#131624;color:#fff;border-radius:16px;padding:11px 16px;font-size:14px}
+.stars{color:#D8FF3E;letter-spacing:2px;font-size:14px}
+@media(max-width:980px){.layout{grid-template-columns:1fr}.wrap{min-height:auto}.tier{grid-template-columns:1fr}.slash{bottom:110px}}
+:focus-visible{outline:3px solid #5A9E00;outline-offset:2px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav aria-label="main">
+<div class="brand"><span class="mark">◉</span> Minutes</div>
+<div class="links"><a href="#" class="on">Pricing</a><a href="#">How it works</a><a href="#">Integrations</a><a href="#">Customers</a></div>
+<div class="navcta"><a href="#" class="btn btn-ghost">Log in</a><a href="#" class="btn btn-dark">Try free →</a></div>
+</nav>
+<div class="layout">
+<!-- LEFT OBJECT PANEL -->
+<section class="hero" aria-label="product preview">
+<span class="kicker">✦ AI MEETING NOTES</span>
+<h1>Never take <em>notes</em> again.</h1>
+<p class="sub">Minutes joins Zoom, Meet & Teams, writes perfect summaries, actions & follow-ups before you hang up.</p>
+<div class="chip c1">⚡ Summary ready in 8s</div>
+<div class="chip c2">✔ Action item assigned → Priya</div>
+<div class="mock" aria-hidden="true">
+<div class="mock-top"><span class="dots"><i style="background:#FF5A5A"></i><i style="background:#FFC93A"></i><i style="background:#3ED598"></i></span> Q3 Launch Sync • 32:14 <span class="live">● REC</span></div>
+<div class="wave"><span style="height:30px"></span><span style="height:42px;animation-delay:.1s"></span><span style="height:22px;animation-delay:.2s"></span><span style="height:38px"></span><span style="height:16px;animation-delay:.3s"></span><span style="height:34px"></span><span style="height:44px;animation-delay:.15s"></span><span style="height:26px"></span><span style="height:36px;animation-delay:.4s"></span><span style="height:18px"></span><span style="height:40px"></span><span style="height:28px;animation-delay:.25s"></span><span style="height:12px"></span><span style="height:32px"></span><span style="height:46px;animation-delay:.05s"></span><span style="height:24px"></span><span style="height:38px"></span><span style="height:20px;animation-delay:.35s"></span></div>
+<div class="lines"><b>Sarah:</b> So launch moves to Oct 12th? <br><b>AI:</b> Decision logged — Oct 12 launch, owners assigned…</div>
+<div class="ai"><strong>✨ AI SUMMARY</strong><br>Agreed Oct 12 launch • 3 blockers cleared • 4 follow-ups drafted to Slack + Notion</div>
+</div>
+<div class="slash" aria-hidden="true"><div> &nbsp; NO MORE NOTES &nbsp; • &nbsp; 6 HRS SAVED / WEEK &nbsp; • &nbsp; SOC2 SECURE &nbsp; • &nbsp; NO MORE NOTES &nbsp; • &nbsp; 6 HRS SAVED / WEEK &nbsp; • &nbsp; SOC2 SECURE &nbsp; •</div></div>
+<div class="trust">
+<div class="logos"><span>⬢ Hexlab</span><span>● Loomly</span><span>◆ Northwind</span><span>▲ Vercia</span><span>+ 4,200 teams</span></div>
+<div class="guar"><i>🛡</i><span><strong>30-day money-back guarantee.</strong> Love it or get every cent back — no questions.</span></div>
+</div>
+</section>
+<!-- RIGHT PRICING -->
+<section class="side" aria-label="pricing plans">
+<div class="side-head">
+<div><h2>One meeting pays for a year.</h2><p>Start free. Upgrade when you’re ready to remember everything.</p></div>
+<div class="toggle" role="tablist" aria-label="billing"><button>Monthly</button><button class="on">Yearly <small>-20%</small></button></div>
+</div>
+<div class="cards">
+<article class="tier"><div class="price"><small>FREE</small><strong>$0 <span>/mo</span></strong><div class="micro">For trying it out</div></div><div class="feat"><h3>Dip your toes</h3><ul><li>5 meetings / mo</li><li>30-min limit</li><li>Zoom + Meet</li></ul></div><div class="cta"><a href="#" class="btn btn-ghost">Start free</a><div class="micro">No card needed</div></div></article>
+<article class="tier pro"><span class="badge">★ MOST POPULAR — PRO</span><div class="price"><small style="color:#D8FF3E">PRO</small><strong>$12 <span style="color:#C9CBD8">/mo</span></strong><div class="micro" style="color:#C9CBD8">Billed yearly • $15 monthly</div></div><div class="feat"><h3>For pros who live in meetings</h3><ul><li>Unlimited meetings</li><li>AI summaries + actions</li><li>Ask-your-meeting chat</li><li>Notion, Slack, HubSpot sync</li></ul></div><div class="cta"><a href="#" class="btn btn-lime">Get Pro →</a><div class="micro" style="color:#fff">7-day free trial</div></div></article>
+<article class="tier"><div class="price"><small>TEAM</small><strong>$29 <span>/mo</span></strong><div class="micro">Per team, up to 10 seats</div></div><div class="feat"><h3>For aligned teams</h3><ul><li>Everything in Pro</li><li>Shared library + SSO</li><li>Admin controls</li></ul></div><div class="cta"><a href="#" class="btn btn-dark">Talk to sales</a><div class="micro">Onboarding included</div></div></article>
+</div>
+<div class="bottom"><span><span class="stars">★★★★★</span> <strong>4.9/5</strong> from 6,300+ reviews • Cancel anytime</span><span>🔒 SOC2 • GDPR • <u>Money-back promise</u></span></div>
+</section>
+</div>
+</div>
+</body>
+</html>

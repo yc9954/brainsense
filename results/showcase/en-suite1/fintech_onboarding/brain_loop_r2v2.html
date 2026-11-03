@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<title>Pebble — Own the stocks you love, $1 at a time</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#04060F;font-family:Inter,system-ui,sans-serif;color:#fff;display:flex;justify-content:center;min-height:100vh}
+.canvas{width:1280px;height:800px;background:#0A0F22;position:relative;overflow:hidden;display:flex;flex-direction:column;border-left:1px solid #1b2342;border-right:1px solid #1b2342}
+.canvas::before{content:"";position:absolute;inset:0;background:
+ radial-gradient(700px 420px at 78% 32%,rgba(200,240,74,.18),transparent 60%),
+ radial-gradient(600px 500px at 92% 88%,rgba(124,92,255,.22),transparent 60%),
+ linear-gradient(rgba(255,255,255,.06) 1px,transparent 1px),
+ linear-gradient(90deg,rgba(255,255,255,.06) 1px,transparent 1px);
+ background-size:auto,auto,44px 44px,44px 44px;pointer-events:none}
+.top{position:relative;z-index:5;display:flex;align-items:center;gap:28px;padding:20px 32px 0}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.02em;font-size:20px}
+.mark{width:34px;height:34px;border-radius:11px;background:#C8F04A;display:grid;place-items:center;color:#0A0F22;font-weight:800;font-size:20px;box-shadow:0 4px 18px rgba(200,240,74,.5)}
+.nav{display:flex;gap:22px;margin-left:12px;font-size:14.5px;font-weight:500;color:#B9C0D8}
+.nav span{cursor:pointer}
+.top-right{margin-left:auto;display:flex;align-items:center;gap:12px}
+.sign{font-size:15px;font-weight:600;color:#E6EAF6;text-decoration:none}
+.mini-cta{background:#fff;color:#0A0F22;font-weight:700;font-size:14.5px;border-radius:999px;padding:10px 18px;border:0;cursor:pointer}
+.main{position:relative;z-index:4;display:grid;grid-template-columns:560px 1fr;gap:0;padding:18px 32px 0;flex:1}
+.copy-card{background:#FFFEF3;color:#12141F;border-radius:28px;padding:34px 36px 24px;position:relative;overflow:hidden;box-shadow:0 20px 70px rgba(0,0,0,.45)}
+.copy-card::after{content:"";position:absolute;top:-40px;right:-40px;width:170px;height:170px;background:#C8F04A;border-radius:50%;opacity:.25}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:800;letter-spacing:.12em;color:#2B2E3A;background:#fff;border:1.5px solid #12141F;border-radius:999px;padding:7px 12px;box-shadow:3px 3px 0 #12141F}
+.dot{width:8px;height:8px;border-radius:50%;background:#1DB954;box-shadow:0 0 0 4px rgba(29,185,84,.2)}
+h1{font-family:Fraunces,serif;font-size:56px;line-height:.95;letter-spacing:-.04em;margin:16px 0 12px;color:#0E1020}
+h1 em{font-style:normal;background:linear-gradient(180deg,transparent 62%,#C8F04A 62%);padding:0 2px}
+.sub{font-size:17.5px;line-height:1.55;color:#3E4257;max-width:44ch}
+.offer-row{display:flex;gap:10px;margin:18px 0 18px}
+.offer{flex:1;background:#0E1020;color:#fff;border-radius:16px;padding:12px 14px;display:flex;gap:10px;align-items:center}
+.offer b{font-size:20px;display:block;line-height:1}
+.offer small{font-size:13px;opacity:.75;font-weight:600}
+.offer-ico{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;font-size:18px;flex-shrink:0}
+.cta-row{display:flex;gap:12px;align-items:center}
+.btn-primary{background:#0E1020;color:#C8F04A;font-weight:800;font-size:17px;border:0;border-radius:16px;padding:17px 22px;cursor:pointer;display:flex;align-items:center;gap:10px;box-shadow:5px 5px 0 #C8F04A;transition:.15s}
+.btn-primary:hover{transform:translate(-1px,-1px);box-shadow:6px 6px 0 #C8F04A}
+.btn-primary small{background:#C8F04A;color:#0E1020;font-size:12px;font-weight:800;border-radius:999px;padding:4px 9px}
+.btn-ghost{background:#fff;border:1.5px solid #12141F;border-radius:16px;padding:16px 18px;font-weight:700;font-size:15.5px;cursor:pointer;display:flex;align-items:center;gap:8px}
+.micro{font-size:13.5px;color:#6B7089;margin-top:10px;font-weight:500}
+.social{display:flex;align-items:center;gap:12px;margin-top:16px;border-top:1.5px dashed #D8D3C0;padding-top:14px}
+.avatars{display:flex}
+.avatars span{width:32px;height:32px;border-radius:50%;border:2.5px solid #FFFEF3;margin-left:-8px;display:grid;place-items:center;font-size:12px;font-weight:800;color:#fff}
+.avatars span:first-child{margin-left:0}
+.stars{font-size:14px;line-height:1.3}
+.stars strong{font-size:14.5px}
+/* RIGHT HERO */
+.hero{position:relative;display:flex;align-items:center;justify-content:center;padding-bottom:18px}
+.beam{position:absolute;width:720px;height:132px;top:52%;left:50%;transform:translate(-50%,-50%) rotate(-18deg);background:linear-gradient(90deg,#C8F04A 0%,#7CFFB2 60%,#7C5CFF 100%);border-radius:20px;opacity:.95;box-shadow:0 0 70px rgba(200,240,74,.35)}
+.beam::after{content:"START FROM $1 • $0 COMMISSION • START FROM $1 • $0 COMMISSION";position:absolute;inset:0;display:flex;align-items:center;white-space:nowrap;font-family:"JetBrains Mono",monospace;font-size:18px;font-weight:600;color:#0A0F22;letter-spacing:.06em;padding-left:18px;overflow:hidden}
+.beam2{position:absolute;width:720px;height:18px;top:52%;left:50%;transform:translate(-50%,calc(-50% + 92px)) rotate(-18deg);background:#fff;opacity:.18;border-radius:999px}
+.phone{position:relative;z-index:3;width:302px;height:592px;background:#0D1228;border-radius:46px;padding:11px;box-shadow:0 30px 80px rgba(0,0,0,.6),0 0 0 1px #2A335E,0 0 90px rgba(200,240,74,.25);transform:rotate(2deg)}
+.screen{background:#fff;border-radius:36px;height:100%;overflow:hidden;display:flex;flex-direction:column;color:#12141F}
+.notch{height:32px;display:flex;align-items:center;justify-content:center;gap:8px;font-size:12px;font-weight:700}
+.notch i{display:block;width:86px;height:22px;background:#0D1228;border-radius:999px}
+.scr-body{padding:6px 16px 12px}
+.balance-label{font-size:12px;font-weight:700;letter-spacing:.08em;color:#7A7F99}
+.balance{font-size:32px;font-weight:800;letter-spacing:-.04em}
+.up{font-size:13px;font-weight:800;color:#0A9B4A;background:#DDF8E6;border-radius:999px;padding:3px 8px;margin-left:8px}
+.spark{margin:10px -16px 6px;background:#0E1020;padding:12px 16px 8px}
+.hold{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid #EEEAD9}
+.hold:last-child{border:0}
+.tk{width:38px;height:38px;border-radius:12px;display:grid;place-items:center;font-weight:800;font-size:15px;color:#fff;flex-shrink:0}
+.hold b{font-size:14.5px;display:block}
+.hold small{font-size:12.5px;color:#6B7089;font-weight:600}
+.frac{margin-left:auto;font-family:"JetBrains Mono",monospace;font-size:11.5px;background:#EFFFC2;border:1px solid #12141F;border-radius:999px;padding:4px 8px;font-weight:600;white-space:nowrap}
+.buybtn{margin-top:10px;background:#C8F04A;border:2px solid #12141F;border-radius:14px;padding:13px;font-weight:800;text-align:center;font-size:15px;box-shadow:3px 3px 0 #12141F}
+.float{position:absolute;z-index:4;background:#fff;color:#12141F;border-radius:16px;padding:12px 14px;box-shadow:0 16px 40px rgba(0,0,0,.45),0 0 0 1.5px #12141F;display:flex;gap:10px;align-items:center;animation:float 4.2s ease-in-out infinite}
+.float small{font-size:12.5px;color:#5C607A;font-weight:600}
+.float b{font-size:15px;display:block}
+.f1{top:96px;right:22px;transform:rotate(4deg)}
+.f2{top:300px;left:6px;animation-delay:-2s;transform:rotate(-4deg)}
+.f3{bottom:120px;right:36px;animation-delay:-1s}
+@keyframes float{0%,100%{translate:0 0}50%{translate:0 -12px}}
+.pill-dollar{position:absolute;z-index:5;top:42px;left:50%;transform:translateX(-18%) rotate(-6deg);background:#C8F04A;border:2px solid #0A0F22;border-radius:999px;padding:8px 8px 8px 8px;display:flex;align-items:center;gap:10px;box-shadow:4px 4px 0 #fff;font-weight:800}
+.pill-dollar .coin{width:36px;height:36px;border-radius:50%;background:#0A0F22;color:#C8F04A;display:grid;place-items:center;font-weight:800;font-size:18px}
+.hero-caption{position:absolute;bottom:2px;left:50%;transform:translateX(-50%);background:rgba(10,15,34,.85);border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(8px);border-radius:999px;padding:8px 14px;font-size:13.5px;white-space:nowrap;color:#E7EAF6;z-index:5}
+.hero-caption b{color:#C8F04A}
+/* trust bar */
+.trust{position:relative;z-index:5;display:flex;align-items:center;gap:0;margin:0 32px 18px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:18px;padding:13px 18px;backdrop-filter:blur(10px)}
+.trust div{flex:1;display:flex;align-items:center;gap:10px;font-size:14px;font-weight:600;color:#D6DBEE}
+.trust div+div{border-left:1px solid rgba(255,255,255,.14);padding-left:18px}
+.sh{width:32px;height:32px;border-radius:10px;background:rgba(200,240,74,.15);display:grid;place-items:center;font-size:16px;flex-shrink:0}
+.ticker{position:relative;z-index:5;border-top:1px solid rgba(255,255,255,.12);background:#070B1A;overflow:hidden;white-space:nowrap;padding:10px 0;font-family:"JetBrains Mono",monospace;font-size:13px;color:#9AA3C2}
+.ticker span{margin:0 18px} .g{color:#4ADE80} .r{color:#FB7185}
+:focus-visible{outline:3px solid #C8F04A;outline-offset:2px}
+@media (max-width:1280px){.canvas{width:100%;height:auto}}
+</style>
+</head>
+<body>
+<div class="canvas" role="main" aria-label="Pebble onboarding">
+  <header class="top">
+    <div class="logo"><span class="mark">◍</span> Pebble</div>
+    <nav class="nav" aria-label="Primary"><span>Invest</span><span>Retirement</span><span>Learn</span><span>Pricing</span></nav>
+    <div class="top-right"><a class="sign" href="#">Log in</a><button class="mini-cta">Get the app</button></div>
+  </header>
+
+  <div class="main">
+    <!-- SOLID COPY PANEL -->
+    <section class="copy-card" aria-labelledby="h">
+      <span class="eyebrow"><span class="dot"></span> SIPC INSURED • FINRA MEMBER</span>
+      <h1 id="h">Own the stocks you love, <em>one dollar</em> at a time.</h1>
+      <p class="sub">Buy tiny slices of 2,000+ US companies. Pebble splits expensive shares so <strong style="color:#111">$1 is enough to start</strong> — no jargon, no minimums.</p>
+      <div class="offer-row">
+        <div class="offer"><span class="offer-ico" style="background:#C8F04A">◒</span><div><b>$1 minimum</b><small>$0 commission</small></div></div>
+        <div class="offer"><span class="offer-ico" style="background:#12141F;color:#fff">◷</span><div><b>3-min sign-up</b><small>ID + bank link</small></div></div>
+        <div class="offer"><span class="offer-ico" style="background:#7C5CFF">✦</span><div><b>Auto-invest</b><small>from $5/wk</small></div></div>
+      </div>
+      <div class="cta-row">
+        <button class="btn-primary">Start investing <small>3 min ⏱</small> →</button>
+        <button class="btn-ghost">▶ How it works</button>
+      </div>
+      <p class="micro">No credit card needed &nbsp;•&nbsp; Cancel anytime &nbsp;•&nbsp; Bank-level 256-bit encryption</p>
+      <div class="social">
+        <div class="avatars" aria-hidden="true"><span style="background:#7C5CFF">JK</span><span style="background:#0EA5E9">AM</span><span style="background:#F59E0B">RS</span><span style="background:#10B981">+</span></div>
+        <div class="stars">★★★★★ <strong>4.8 · 128k reviews</strong><br><span style="color:#6B7089;font-size:13px">Joined by 480,000+ first-time investors</span></div>
+        <div style="margin-left:auto;text-align:right;font-size:12px;color:#6B7089;line-height:1.4">🔒 SIPC protects<br>up to <strong style="color:#111">$500,000</strong></div>
+      </div>
+    </section>
+
+    <!-- DOMINANT OBJECT HERO -->
+    <section class="hero" aria-label="App preview">
+      <div class="beam" aria-hidden="true"></div><div class="beam2" aria-hidden="true"></div>
+      <div class="pill-dollar" aria-hidden="true"><span class="coin">$</span><span style="padding-right:10px;font-size:15px">Start from $1 — slices, not whole shares</span></div>
+
+      <div class="phone" role="img" aria-label="Pebble app showing fractional portfolio">
+        <div class="screen">
+          <div class="notch"><span style="opacity:.6">9:41</span><i></i><span>●●●</span></div>
+          <div class="scr-body">
+            <div class="balance-label">TOTAL INVESTED</div>
+            <div><span class="balance">$1,284.56</span><span class="up">▲ 12.4%</span></div>
+            <div class="spark">
+              <svg viewBox="0 0 260 70" width="100%" height="62" aria-hidden="true"><path d="M0 55 L30 50 L55 52 L80 38 L110 42 L135 28 L160 32 L190 14 L220 18 L260 4" fill="none" stroke="#C8F04A" stroke-width="3.5" stroke-linecap="round"/><circle cx="260" cy="4" r="5" fill="#C8F04A"/><path d="M0 55 L30 50 L55 52 L80 38 L110 42 L135 28 L160 32 L190 14 L220 18 L260 4 L260 70 L0 70 Z" fill="rgba(200,240,74,.15)"/></svg>
+              <div style="display:flex;justify-content:space-between;font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#8A90AD"><span>1D</span><span>1W</span><span style="background:#C8F04A;color:#0A0F22;border-radius:6px;padding:1px 7px">1Y</span><span>MAX</span></div>
+            </div>
+            <div class="hold"><span class="tk" style="background:#000"></span><div><b>Apple Inc.</b><small>AAPL · $228.40</small></div><span class="frac">0.12 sh · $27.40</span></div>
+            <div class="hold"><span class="tk" style="background:#E11D48">T</span><div><b>Tesla Inc.</b><small>TSLA · $248.10</small></div><span class="frac">0.08 sh · $19.84</span></div>
+            <div class="hold"><span class="tk" style="background:#2563EB">a</span><div><b>Amazon</b><small>AMZN · $186.33</small></div><span class="frac">0.25 sh · $46.58</span></div>
+            <div class="buybtn">Buy a $1 slice →</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="float f1"><span style="font-size:22px;background:#DDF8E6;border-radius:10px;padding:6px">◍</span><div><small>YOU JUST BOUGHT</small><b>0.083 AAPL · $14.22 ✓</b></div></div>
+      <div class="float f2"><span style="font-size:22px;background:#0E1020;color:#C8F04A;border-radius:10px;padding:6px 9px">$</span><div><small>DIVIDEND RECEIVED</small><b>+$0.84 from KO 🥤</b></div></div>
+      <div class="float f3"><span style="font-size:20px">🛡️</span><div><small>SIPC PROTECTED</small><b>Up to $500,000</b></div></div>
+
+      <div class="hero-caption">This is <b>fractional ownership</b> — ½ Amazon share = <b>$93.16</b>, yours from <b>$1</b></div>
+    </section>
+  </div>
+
+  <div class="trust" aria-label="Trust signals">
+    <div><span class="sh">🛡️</span> SIPC insured to $500k · FINRA member</div>
+    <div><span class="sh">🔒</span> 256-bit encryption · Never sell your data</div>
+    <div><span class="sh">🏦</span> Partner banks · FDIC sweep up to $2M</div>
+    <div><span class="sh">★</span> 4.8/5 · 128k App Store reviews</div>
+  </div>
+  <div class="ticker" aria-hidden="true"><span>AAPL $228.40 <span class="g">+1.2%</span></span>•<span>TSLA $248.10 <span class="g">+2.8%</span></span>•<span>AMZN $186.33 <span class="g">+0.6%</span></span>•<span>NVDA $131.20 <span class="g">+3.4%</span></span>•<span>KO $62.11 <span class="r">-0.2%</span></span>•<span>SPY $591.04 <span class="g">+0.9%</span></span>•<span> OWN A SLICE FROM $1 </span>•<span>AAPL $228.40 <span class="g">+1.2%</span></span>•<span>TSLA $248.10 <span class="g">+2.8%</span></span></div>
+</div>
+</body>
+</html>

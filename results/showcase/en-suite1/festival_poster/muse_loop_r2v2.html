@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EMBER Jazz Fest — Nov 14–16 • The Brasshouse, New Orleans</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --night:#0B0714;
+  --plum:#1B1129;
+  --cream:#FFF7E8;
+  --muted:#CFC0B3;
+  --brass:#E9B86B;
+  --brass-hi:#FFF0C5;
+  --tangerine:#FF6B35;
+  --rose:#FF2E7E;
+  --line:rgba(255,240,210,.16);
+}
+html,body{height:100%}
+body{
+  background:var(--night);
+  color:var(--cream);
+  font-family:"Outfit",system-ui,sans-serif;
+  font-size:17px;
+  line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+a{color:inherit}
+.poster{
+  position:relative;
+  min-height:100vh;
+  max-width:1280px;
+  margin:0 auto;
+  display:flex;
+  flex-direction:column;
+  padding:26px 48px 0 48px;
+  overflow:hidden;
+  isolation:isolate;
+}
+/* ---- BACKGROUND ART ---- */
+.bg{position:absolute;inset:0;z-index:-2;overflow:hidden;
+  background:
+    radial-gradient(900px 520px at 50% 38%, rgba(255,107,53,.28), transparent 65%),
+    radial-gradient(700px 500px at 18% 15%, rgba(255,46,126,.22), transparent 65%),
+    radial-gradient(800px 600px at 85% 20%, rgba(233,184,107,.18), transparent 60%),
+    radial-gradient(1200px 700px at 50% 110%, rgba(255,140,60,.14), transparent 60%),
+    linear-gradient(180deg, #150C24 0%, #0B0714 52%, #07050D 100%);
+}
+.halo{
+  position:absolute;left:50%;top:46%;translate:-50% -50%;
+  width:660px;height:660px;border-radius:50%;z-index:-1;
+  background:radial-gradient(circle, rgba(255,199,95,.32) 0%, rgba(255,122,61,.14) 32%, transparent 62%);
+  filter:blur(2px);
+}
+.ring{
+  position:absolute;left:50%;top:46%;translate:-50% -50%;
+  width:610px;height:610px;border-radius:50%;z-index:-1;
+  border:1.5px solid rgba(255,180,90,.38);
+  box-shadow:0 0 0 1px rgba(255,46,126,.18), 0 0 55px rgba(255,107,53,.35), inset 0 0 80px rgba(255,107,53,.18);
+}
+.ring::after{
+  content:"";position:absolute;inset:22px;border-radius:50%;
+  border:1px dashed rgba(255,240,197,.28);
+}
+.beams{
+  position:absolute;left:50%;top:-10%;translate:-50% 0;
+  width:900px;height:650px;z-index:-1;opacity:.55;
+  background:conic-gradient(from 180deg at 50% 0%,
+    transparent 0deg, rgba(255,180,90,.10) 12deg, transparent 24deg,
+    transparent 40deg, rgba(255,46,126,.10) 52deg, transparent 64deg,
+    transparent 78deg, rgba(255,180,90,.12) 90deg, transparent 102deg,
+    transparent 118deg, rgba(255,180,90,.08) 130deg, transparent 142deg);
+  mask-image:linear-gradient(to bottom, black 55%, transparent 85%);
+  filter:blur(1px);
+}
+.floor{
+  position:absolute;left:0;right:0;bottom:0;height:210px;z-index:-1;
+  background:
+    linear-gradient(to top, rgba(255,122,61,.14), transparent 70%),
+    repeating-linear-gradient(90deg, rgba(255,220,150,.09) 0 1px, transparent 1px 88px);
+  mask-image:linear-gradient(to top, black 20%, transparent 90%);
+  opacity:.7;
+}
+.note{position:absolute;font-size:22px;opacity:.28;filter:blur(.2px);color:var(--brass-hi)}
+.n1{left:12%;top:28%}.n2{right:13%;top:24%;font-size:30px}.n3{left:20%;bottom:28%;font-size:18px}.n4{right:20%;bottom:30%}
+/* ---- TOP BAR ---- */
+.top{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:20px;z-index:2;
+}
+.brand{display:flex;align-items:center;gap:12px;font-weight:700;letter-spacing:.14em;font-size:14px}
+.brand-mark{
+  width:36px;height:36px;border-radius:50%;display:grid;place-items:center;
+  background:radial-gradient(circle at 30% 30%, #FFF0C5, #E9B86B 45%, #8A4E1B 100%);
+  color:#1A0E00;font-size:20px;line-height:1;
+  box-shadow:0 0 18px rgba(255,180,90,.7);
+}
+.brand small{display:block;font-weight:500;letter-spacing:.22em;color:var(--muted);font-size:11px}
+.top-meta{display:flex;align-items:center;gap:18px;font-size:14.5px;letter-spacing:.08em;color:var(--muted)}
+.top-meta strong{color:var(--cream);letter-spacing:.12em}
+.mini-btn{
+  text-decoration:none;font-weight:700;font-size:14px;letter-spacing:.08em;
+  color:#1C0F00;background:linear-gradient(180deg,#FFE9B6,#E9B86B);
+  padding:11px 20px;border-radius:999px;white-space:nowrap;
+  box-shadow:0 0 0 1px rgba(255,240,197,.6), 0 6px 22px rgba(255,140,60,.35);
+}
+/* ---- HERO : SINGLE FOCAL ---- */
+.hero{
+  flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:10px 0 8px;z-index:2;
+}
+.trumpet{width:300px;height:62px;margin-bottom:6px;filter:drop-shadow(0 0 12px rgba(255,180,90,.65))}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:13.5px;font-weight:700;letter-spacing:.28em;
+  color:#FFE9B6;
+  border:1px solid rgba(255,220,150,.32);
+  background:rgba(255,180,90,.10);
+  padding:9px 18px;border-radius:999px;
+  backdrop-filter:blur(6px);
+}
+.eyebrow i{width:7px;height:7px;border-radius:50%;background:#FF5A2D;box-shadow:0 0 10px #FF5A2D;display:inline-block}
+h1{
+  font-family:"Anton",sans-serif;
+  text-transform:uppercase;
+  line-height:.84;
+  margin:14px 0 0;
+  letter-spacing:.01em;
+}
+.ember{
+  display:block;
+  font-size:clamp(120px,17.5vw,218px);
+  background:linear-gradient(180deg, #FFFEF6 5%, #FFE9B6 28%, #E9B86B 52%, #C67A2E 72%, #FFE9B6 96%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 4px 0 rgba(60,20,0,.55)) drop-shadow(0 0 32px rgba(255,150,60,.35));
+}
+.jazz{
+  display:block;
+  font-size:clamp(56px,7.8vw,96px);
+  letter-spacing:.08em;
+  color:transparent;
+  -webkit-text-stroke:2px #FF8A5B;
+  text-shadow:0 0 26px rgba(255,46,126,.55), 0 0 70px rgba(255,107,53,.35);
+  margin-top:6px;
+}
+.tagline{
+  margin-top:16px;max-width:620px;
+  font-size:18.5px;color:var(--cream);
+}
+.tagline span{color:var(--brass);font-weight:600}
+.cta-row{display:flex;align-items:center;gap:18px;margin-top:24px;flex-wrap:wrap;justify-content:center}
+.btn{
+  text-decoration:none;
+  font-weight:800;letter-spacing:.02em;font-size:18px;
+  color:#1E1000;
+  background:linear-gradient(180deg, #FFF3CF 0%, #FFC973 45%, #FF7E3D 100%);
+  padding:18px 34px;border-radius:999px;
+  box-shadow:0 0 0 2px rgba(255,240,197,.85), 0 10px 34px rgba(255,110,50,.55), 0 2px 0 rgba(0,0,0,.4);
+  display:inline-flex;align-items:center;gap:12px;
+}
+.btn:hover{filter:brightness(1.05)}
+.btn-arrow{width:34px;height:34px;border-radius:50%;background:#1A0E00;color:#FFD99A;display:grid;place-items:center;font-size:18px}
+.cta-note{font-size:15px;color:var(--muted);letter-spacing:.04em;text-align:left;line-height:1.35}
+.cta-note strong{color:#FFE9B6}
+/* ---- LINEUP STRIP ---- */
+.lineup{
+  border-top:1px solid var(--line);
+  margin-top:18px;
+  padding:18px 0 20px;
+  display:grid;
+  grid-template-columns:150px repeat(5,1fr);
+  gap:0;
+  z-index:2;
+  background:linear-gradient(to bottom, rgba(0,0,0,.15), transparent);
+}
+.lineup-label{
+  padding-right:18px;border-right:1px solid var(--line);
+  font-family:"Anton",sans-serif;letter-spacing:.14em;font-size:15px;line-height:1.2;color:var(--brass);
+}
+.lineup-label em{display:block;font-family:"Outfit",sans-serif;font-style:normal;font-weight:500;letter-spacing:.08em;font-size:12.5px;color:var(--muted);margin-top:6px}
+.act{
+  padding:2px 18px 0 18px;border-right:1px solid var(--line);
+}
+.act:last-child{border-right:0}
+.act-num{font-size:12px;font-weight:800;letter-spacing:.2em;color:#FF8A5B}
+.act-name{display:block;font-size:16.5px;font-weight:700;line-height:1.25;margin:5px 0 3px;color:#FFF7E8}
+.act-meta{display:block;font-size:13.5px;letter-spacing:.06em;color:var(--muted);font-weight:500}
+@media (max-width:980px){
+  .poster{padding:20px 22px 0}
+  .top-meta span{display:none}
+  .lineup{grid-template-columns:1fr 1fr;gap:14px}
+  .lineup-label{grid-column:1/-1;border-right:0;border-bottom:1px solid var(--line);padding-bottom:12px}
+  .act{border:0;padding-left:0}
+}
+:focus-visible{outline:3px solid #FFD99A;outline-offset:3px}
+</style>
+</head>
+<body>
+<div class="poster">
+  <div class="bg" aria-hidden="true"></div>
+  <div class="beams" aria-hidden="true"></div>
+  <div class="halo" aria-hidden="true"></div>
+  <div class="ring" aria-hidden="true"></div>
+  <div class="floor" aria-hidden="true"></div>
+  <span class="note n1" aria-hidden="true">♪</span>
+  <span class="note n2" aria-hidden="true">♫</span>
+  <span class="note n3" aria-hidden="true">♫</span>
+  <span class="note n4" aria-hidden="true">♪</span>
+
+  <header class="top">
+    <div class="brand">
+      <span class="brand-mark">♪</span>
+      <span>EMBER JAZZ FEST<small>3RD ANNUAL • NEW ORLEANS</small></span>
+    </div>
+    <div class="top-meta">
+      <span><strong>NOV 14–16</strong> &nbsp;•&nbsp; THE BRASSHOUSE</span>
+      <a class="mini-btn" href="#tickets">Early-Bird $49</a>
+    </div>
+  </header>
+
+  <main class="hero" id="tickets">
+    <svg class="trumpet" viewBox="0 0 320 64" fill="none" aria-hidden="true">
+      <defs>
+        <linearGradient id="brass" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#FFF0C5"/><stop offset=".5" stop-color="#E9B86B"/><stop offset="1" stop-color="#B46A26"/>
+        </linearGradient>
+      </defs>
+      <g stroke="url(#brass)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 32 H185 M185 22 V42 M185 22 H235 M185 42 H235 M235 16 L295 8 L295 56 L235 48"/>
+        <circle cx="150" cy="32" r="10"/><circle cx="125" cy="32" r="10"/><circle cx="100" cy="32" r="10"/>
+        <path d="M100 22 V14 M125 22 V14 M150 22 V14" stroke-width="3"/>
+        <path d="M12 32 L32 32 M32 26 V38" stroke-width="4"/>
+      </g>
+      <g fill="url(#brass)" opacity=".9">
+        <circle cx="100" cy="14" r="4"/><circle cx="125" cy="14" r="4"/><circle cx="150" cy="14" r="4"/>
+      </g>
+    </svg>
+
+    <p class="eyebrow"><i></i> NOV 14 — 16, 2026 • THE BRASSHOUSE, NEW ORLEANS</p>
+    <h1><span class="ember">Ember</span><span class="jazz">Jazz Fest</span></h1>
+    <p class="tagline">Three nights of <span>smoke, brass &amp; neon</span> — low lights, late sets, loud horns till 2AM.</p>
+    <div class="cta-row">
+      <a class="btn" href="#tickets">Get Early-Bird Tickets · $49 <span class="btn-arrow">→</span></a>
+      <span class="cta-note"><strong>Ends Oct 31 — save 40%.</strong><br>Doors 7PM • 3 stages • 18+</span>
+    </div>
+  </main>
+
+  <footer class="lineup" aria-label="Festival line-up">
+    <div class="lineup-label">THE<br>LINE-UP <em>5 ACTS • 3 NIGHTS</em></div>
+    <div class="act"><span class="act-num">01 — FRI</span><span class="act-name">Celeste Marlowe Quartet</span><span class="act-meta">8:00 PM • Velvet Room</span></div>
+    <div class="act"><span class="act-num">02 — FRI</span><span class="act-name">Theo “Brass” Coleman</span><span class="act-meta">10:30 PM • Main Horn Stage</span></div>
+    <div class="act"><span class="act-num">03 — SAT</span><span class="act-name">Lulu Vane &amp; Velvetones</span><span class="act-meta">8:00 PM • Main Horn Stage</span></div>
+    <div class="act"><span class="act-num">04 — SAT</span><span class="act-name">Kamal Rivers Trio</span><span class="act-meta">10:30 PM • Neon Basement</span></div>
+    <div class="act"><span class="act-num">05 — SUN</span><span class="act-name">Night Owls Big Band</span><span class="act-meta">9:00 PM • Finale • All Stages</span></div>
+  </footer>
+</div>
+</body>
+</html>

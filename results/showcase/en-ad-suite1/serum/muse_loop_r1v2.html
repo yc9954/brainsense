@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;0,9..144,900;1,9..144,700&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0e0a0d;min-height:100vh;display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;padding:24px}
+.ad{width:1280px;height:720px;position:relative;overflow:hidden;border-radius:28px;background:linear-gradient(105deg,#FFF8F0 0%,#FFEEDD 34%,#FFDCC2 58%,#FFC7A8 82%,#FFB693 100%);color:#2A0F1E;flex-shrink:0;box-shadow:0 40px 120px rgba(0,0,0,.55)}
+.sun{position:absolute;inset:-10% -10%;background:radial-gradient(700px 500px at 78% 42%,rgba(255,255,255,.95),rgba(255,236,200,.7) 32%,rgba(255,176,120,.35) 55%,transparent 72%),radial-gradient(900px 600px at 15% 90%,rgba(255,122,89,.35),transparent 60%),linear-gradient(180deg,rgba(255,255,255,.6),transparent 40%);animation:sunShift 12s linear infinite}
+@keyframes sunShift{0%{transform:translateX(-1.5%) scale(1);opacity:1}25%{transform:translateX(0%) scale(1.03);opacity:1}50%{transform:translateX(1.5%) scale(1.05);opacity:1}75%{transform:translateX(0%) scale(1.03);opacity:1}100%{transform:translateX(-1.5%) scale(1);opacity:1}}
+.orb{position:absolute;border-radius:50%;filter:blur(2px)}
+.orb1{width:620px;height:620px;left:-140px;top:-220px;background:radial-gradient(circle,#FFFFFF 0%,#FFE7C9 38%,rgba(255,183,138,0) 70%);opacity:.9;animation:orbA 12s ease-in-out infinite}
+.orb2{width:520px;height:520px;left:420px;bottom:-260px;background:radial-gradient(circle,rgba(255,255,255,.9),rgba(255,190,150,.45) 55%,transparent 70%);animation:orbB 12s ease-in-out infinite}
+@keyframes orbA{0%,100%{transform:translate(0,0) scale(1)}33.33%{transform:translate(40px,30px) scale(1.08)}66.66%{transform:translate(-10px,15px) scale(1.02)}}
+@keyframes orbB{0%,100%{transform:translate(0,0) scale(1.05)}33.33%{transform:translate(-30px,-25px) scale(1)}66.66%{transform:translate(25px,0) scale(1.1)}}
+.grain{position:absolute;inset:0;opacity:.12;background-image:radial-gradient(rgba(42,15,30,.35) 1px,transparent 1.2px);background-size:22px 22px;mask-image:radial-gradient(80% 80% at 50% 50%,black,transparent)}
+.topbar{position:absolute;top:0;left:0;right:0;height:74px;display:flex;align-items:center;justify-content:space-between;padding:0 36px;z-index:20}
+.logo{font-family:'Fraunces',serif;font-weight:900;letter-spacing:.14em;font-size:22px}
+.logo span{font-style:italic;font-weight:700;letter-spacing:.02em}
+.top-mid{font-size:12.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;opacity:.72;border:1.5px solid rgba(42,15,30,.25);padding:9px 18px;border-radius:100px;background:rgba(255,255,255,.55)}
+.mini-cta{display:flex;align-items:center;gap:12px;background:#240A1B;color:#fff;border-radius:100px;padding:10px 10px 10px 20px;font-weight:800;font-size:15px;letter-spacing:.04em;box-shadow:0 12px 30px rgba(36,10,27,.35)}
+.mini-cta b{background:#FFB11B;color:#240A1B;border-radius:100px;padding:7px 14px;font-size:14px}
+.left{position:absolute;left:56px;top:104px;width:620px;bottom:92px;z-index:10}
+.scene{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:#9A2B2B}
+.eyebrow i{width:28px;height:2px;background:#9A2B2B;display:block}
+.scene-hook{animation:showHook 12s ease-in-out infinite}
+@keyframes showHook{0%{opacity:1;transform:translateY(0);visibility:visible}27%{opacity:1;transform:translateY(0);visibility:visible}33.33%{opacity:0;transform:translateY(-36px);visibility:hidden}95%{opacity:0;transform:translateY(28px);visibility:hidden}100%{opacity:1;transform:translateY(0);visibility:visible}}
+.scene-benefit{animation:showBenefit 12s ease-in-out infinite}
+@keyframes showBenefit{0%,29%{opacity:0;transform:translateY(36px);visibility:hidden}35%{opacity:1;transform:translateY(0);visibility:visible}60%{opacity:1;transform:translateY(0);visibility:visible}66.66%{opacity:0;transform:translateY(-36px);visibility:hidden}100%{opacity:0;transform:translateY(36px);visibility:hidden}}
+.scene-offer{animation:showOffer 12s ease-in-out infinite}
+@keyframes showOffer{0%,61%{opacity:0;transform:translateY(36px) scale(.98);visibility:hidden}67%{opacity:1;transform:translateY(0) scale(1);visibility:visible}93%{opacity:1;transform:translateY(0) scale(1);visibility:visible}99%,100%{opacity:0;transform:translateY(-20px);visibility:hidden}}
+h1{font-family:'Fraunces',serif;font-size:74px;line-height:.95;letter-spacing:-.03em;margin:16px 0 16px;font-weight:900}
+h1 em{font-style:italic;font-weight:700;background:linear-gradient(92deg,#C81E3A,#FF6B2E);-webkit-background-clip:text;background-clip:text;color:transparent}
+h2{font-family:'Fraunces',serif;font-size:62px;line-height:.95;letter-spacing:-.03em;margin:14px 0 14px}
+.sub{font-size:19px;line-height:1.5;color:rgba(42,15,30,.78);max-width:510px;font-weight:500}
+.bullets{margin-top:20px;display:flex;flex-direction:column;gap:12px}
+.bullet{display:flex;align-items:center;gap:14px;background:rgba(255,255,255,.78);border:1.5px solid rgba(42,15,30,.1);border-radius:18px;padding:13px 16px;box-shadow:0 10px 30px rgba(180,70,30,.12);backdrop-filter:blur(6px)}
+.bullet .tick{width:34px;height:34px;border-radius:50%;background:#240A1B;color:#FFD48A;display:grid;place-items:center;font-weight:900;flex-shrink:0}
+.bullet strong{font-size:17px}
+.bullet small{display:block;font-size:14px;opacity:.7;font-weight:500}
+.b1{animation:b1 12s ease-in-out infinite}
+.b2{animation:b2 12s ease-in-out infinite}
+.b3{animation:b3 12s ease-in-out infinite}
+@keyframes b1{0%,33%{opacity:0;transform:translateX(-28px)}38%,60%{opacity:1;transform:translateX(0)}66.66%,100%{opacity:0;transform:translateX(0)}}
+@keyframes b2{0%,36%{opacity:0;transform:translateX(-28px)}41%,60%{opacity:1;transform:translateX(0)}66.66%,100%{opacity:0;transform:translateX(0)}}
+@keyframes b3{0%,39%{opacity:0;transform:translateX(-28px)}44%,60%{opacity:1;transform:translateX(0)}66.66%,100%{opacity:0;transform:translateX(0)}}
+.price-row{display:flex;align-items:center;gap:16px;margin:14px 0 10px}
+.price-now{font-size:56px;font-weight:900;letter-spacing:-.04em}
+.price-was{font-size:22px;opacity:.55;text-decoration:line-through;font-weight:700}
+.off-badge{background:#C81E3A;color:#fff;font-weight:900;font-size:20px;letter-spacing:.04em;padding:10px 18px;border-radius:14px;transform:rotate(-3deg);box-shadow:0 12px 26px rgba(200,30,58,.4)}
+.cta-big{display:flex;align-items:center;justify-content:space-between;background:#240A1B;color:#fff;border-radius:22px;padding:12px 12px 12px 28px;margin-top:14px;max-width:520px;box-shadow:0 20px 50px rgba(36,10,27,.4);animation:ctaPulse 12s ease-in-out infinite}
+@keyframes ctaPulse{0%,66%{transform:scale(1)}72%,78%{transform:scale(1.04)}84%{transform:scale(1)}100%{transform:scale(1)}}
+.cta-big span{font-size:26px;font-weight:900;letter-spacing:.06em}
+.cta-big small{display:block;font-size:13px;font-weight:600;opacity:.7;letter-spacing:.08em}
+.cta-arrow{background:#FFB11B;color:#240A1B;font-size:28px;font-weight:900;width:72px;height:62px;border-radius:16px;display:grid;place-items:center}
+.trust{font-size:13.5px;font-weight:600;letter-spacing:.06em;opacity:.7;margin-top:12px}
+.right{position:absolute;right:0;top:0;width:600px;height:100%;z-index:5}
+.halo{position:absolute;left:50%;top:50%;width:560px;height:560px;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(255,255,255,.95) 0%,rgba(255,213,150,.85) 26%,rgba(255,150,90,.35) 52%,transparent 70%);animation:halo 12s ease-in-out infinite}
+@keyframes halo{0%,100%{transform:translate(-50%,-50%) scale(1);opacity:.9}33.33%{transform:translate(-50%,-52%) scale(1.12);opacity:1}66.66%{transform:translate(-50%,-48%) scale(1.05);opacity:.95}}
+.citrus{position:absolute;left:50%;top:50%;width:480px;height:480px;transform:translate(-50%,-50%);border-radius:50%;background:repeating-conic-gradient(from 0deg,#FF9A3D 0 12deg,#FFD9A0 12deg 24deg);border:18px solid #FFF6E8;outline:6px solid rgba(255,255,255,.7);box-shadow:0 30px 80px rgba(200,80,20,.35),inset 0 0 0 12px #FF7A2E;animation:spinCitrus 12s linear infinite}
+@keyframes spinCitrus{0%{transform:translate(-50%,-50%) rotate(0)}100%{transform:translate(-50%,-50%) rotate(360deg)}}
+.citrus:after{content:"";position:absolute;inset:34%;background:#FFF6E8;border-radius:50%;box-shadow:inset 0 4px 18px rgba(200,80,20,.2)}
+.bottle-float{position:absolute;left:50%;top:50%;width:320px;height:560px;transform:translate(-50%,-50%);animation:floatB 12s ease-in-out infinite;filter:drop-shadow(0 40px 50px rgba(80,15,25,.35))}
+@keyframes floatB{0%,100%{transform:translate(-50%,-52%) rotate(-1.5deg)}25%{transform:translate(-50%,-48%) rotate(1.2deg)}50%{transform:translate(-50%,-52.5%) rotate(-1deg)}75%{transform:translate(-50%,-48.5%) rotate(1deg)}}
+.dropper{width:118px;height:96px;margin:0 auto;background:linear-gradient(180deg,#3A1430,#1D0716);border-radius:22px 22px 10px 10px;position:relative;box-shadow:inset 0 8px 14px rgba(255,255,255,.25)}
+.dropper:before{content:"";position:absolute;top:-18px;left:50%;transform:translateX(-50%);width:64px;height:28px;background:#1D0716;border-radius:14px}
+.dropper:after{content:"";position:absolute;bottom:-12px;left:50%;transform:translateX(-50%);width:138px;height:18px;background:linear-gradient(90deg,#FFB11B,#FFE29A,#FFB11B);border-radius:100px}
+.neck{width:92px;height:28px;margin:0 auto;background:linear-gradient(180deg,#FFE9C9,#E8B67E)}
+.bottle-body{width:270px;height:380px;margin:0 auto;background:linear-gradient(105deg,rgba(255,255,255,.92) 0%,rgba(255,236,210,.92) 22%,rgba(255,170,110,.55) 55%,rgba(255,255,255,.85) 82%);border-radius:36px;border:2px solid rgba(255,255,255,.9);position:relative;overflow:hidden;box-shadow:inset 18px 0 30px rgba(255,255,255,.9),inset -18px 0 30px rgba(200,90,30,.2)}
+.bottle-body:before{content:"";position:absolute;left:22px;top:18px;bottom:18px;width:26px;background:linear-gradient(180deg,rgba(255,255,255,.95),rgba(255,255,255,.1));border-radius:100px}
+.shine{position:absolute;top:-20%;bottom:-20%;width:70px;background:linear-gradient(100deg,transparent,rgba(255,255,255,.95),transparent);left:-40%;transform:skewX(-18deg);animation:shineMove 12s ease-in-out infinite}
+@keyframes shineMove{0%,28%{left:-40%;opacity:0}36%{left:110%;opacity:1}44%,100%{left:140%;opacity:0}}
+.label{position:absolute;left:18px;right:18px;top:72px;background:#FFFEFB;border-radius:22px;padding:20px 18px 18px;text-align:center;box-shadow:0 12px 30px rgba(80,20,20,.15)}
+.label small{font-size:11px;letter-spacing:.28em;font-weight:800;opacity:.6}
+.label h3{font-family:'Fraunces',serif;font-size:34px;letter-spacing:-.02em;line-height:1}
+.label p{font-size:13px;font-weight:800;letter-spacing:.12em;color:#C81E3A;margin-top:6px}
+.label div{margin-top:10px;background:#FFF0D6;border-radius:12px;font-size:13px;font-weight:700;padding:8px}
+.drop{position:absolute;left:50%;top:168px;width:18px;height:24px;background:#FF7A2E;border-radius:50% 50% 50% 50% / 60% 60% 40% 40%;transform:translateX(-50%) rotate(180deg);clip-path:ellipse(50% 50% at 50% 50%);border-radius:0 50% 50% 50%;animation:dropFall 12s ease-in infinite}
+@keyframes dropFall{0%,72%{transform:translate(-50%,0) rotate(45deg) scale(0);opacity:0}78%{transform:translate(-50%,10px) rotate(45deg) scale(1);opacity:1}88%{transform:translate(-50%,120px) rotate(45deg) scale(1);opacity:1}92%,100%{transform:translate(-50%,150px) rotate(45deg) scale(.6);opacity:0}}
+.chip{position:absolute;background:rgba(255,255,255,.92);border:1.5px solid rgba(42,15,30,.12);border-radius:100px;padding:10px 16px;font-size:14px;font-weight:800;box-shadow:0 14px 30px rgba(80,20,20,.18);backdrop-filter:blur(6px);white-space:nowrap}
+.chip1{left:22px;top:168px;animation:chip1 12s ease-in-out infinite}
+.chip2{right:18px;top:420px;animation:chip2 12s ease-in-out infinite}
+.chip3{left:34px;bottom:120px;animation:chip3 12s ease-in-out infinite}
+@keyframes chip1{0%,100%{transform:translateY(0)}33.33%{transform:translateY(-14px)}66.66%{transform:translateY(10px)}}
+@keyframes chip2{0%,100%{transform:translateY(10px)}33.33%{transform:translateY(0)}66.66%{transform:translateY(-14px)}}
+@keyframes chip3{0%,100%{transform:translateY(-8px)}33.33%{transform:translateY(10px)}66.66%{transform:translateY(0)}}
+.spark{position:absolute;font-size:26px;color:#fff;text-shadow:0 2px 12px rgba(255,122,40,.9);animation:twinkle 12s ease-in-out infinite}
+@keyframes twinkle{0%,100%{opacity:0;transform:scale(.6) rotate(0)}15%{opacity:1;transform:scale(1.2) rotate(20deg)}28%{opacity:0;transform:scale(.7)}50%{opacity:1;transform:scale(1.15)}63%{opacity:0;transform:scale(.6)}78%{opacity:1;transform:scale(1.2)}90%{opacity:0;transform:scale(.6)}}
+.s1{left:120px;top:140px;animation-delay:0s}.s2{right:90px;top:150px;font-size:32px;animation-delay:-4s}.s3{left:90px;bottom:180px;animation-delay:-8s}.s4{right:140px;bottom:90px;animation-delay:-2s}
+.bottom{position:absolute;left:56px;right:36px;bottom:20px;display:flex;align-items:center;gap:18px;z-index:20}
+.stars{font-size:14px;font-weight:700;letter-spacing:.02em;background:rgba(255,255,255,.7);padding:8px 14px;border-radius:100px}
+.timeline{flex:1;display:flex;align-items:center;gap:10px}
+.tlabel{font-size:11px;font-weight:800;letter-spacing:.14em;opacity:.6;white-space:nowrap}
+.track{flex:1;height:6px;background:rgba(42,15,30,.15);border-radius:100px;overflow:hidden}
+.fill{height:100%;width:100%;background:#240A1B;border-radius:100px;transform-origin:left;animation:prog 12s linear infinite}
+@keyframes prog{0%{transform:scaleX(0)}100%{transform:scaleX(1)}}
+@media(max-width:1300px){body{padding:0}.ad{border-radius:0}}
+</style>
+</head>
+<body>
+<div class="ad" role="img" aria-label="Vitamin C serum ad, 30 percent launch discount, buy now">
+<div class="sun"></div><div class="orb orb1"></div><div class="orb orb2"></div><div class="grain"></div>
+<div class="topbar"><div class="logo">LUMIÈRE<span>.</span></div><div class="top-mid">15% Pure Vitamin C + Hyaluronic Acid</div><div class="mini-cta"><span>30% OFF LAUNCH</span><b>BUY NOW</b></div></div>
+<div class="left">
+<div class="scene scene-hook"><div class="eyebrow"><i></i>New • Vitamin C Serum</div><h1>Dewy glass skin starts with <em>one drop each morning.</em></h1><p class="sub">Made for your late 20s — fades post-acne marks, dullness and first fine lines in 14 days.</p></div>
+<div class="scene scene-benefit"><div class="eyebrow"><i></i>Why you’ll love it</div><h2>Bright, even, bouncy.</h2><div class="bullets"><div class="bullet b1"><div class="tick">✓</div><div><strong>Fades dark spots + acne marks</strong><small>15% stabilized vitamin C + vitamin E</small></div></div><div class="bullet b2"><div class="tick">✓</div><div><strong>Glass glow without stickiness</strong><small>Hyaluronic acid, lightweight fast-absorb</small></div></div><div class="bullet b3"><div class="tick">✓</div><div><strong>Gentle for daily mornings</strong><small>Fragrance-free • All skin tones</small></div></div></div></div>
+<div class="scene scene-offer"><div class="eyebrow"><i></i>Launch Exclusive — Today Only</div><h2>Get 30% off your glow.</h2><div class="price-row"><div class="price-now">$27.30</div><div class="price-was">$39.00</div><div class="off-badge">30% OFF</div></div><p class="sub">New Lumière C15 Serum. Free shipping + 30-day glow guarantee.</p><div class="cta-big"><div><small>LIMITED LAUNCH OFFER</small><span>BUY NOW →</span></div><div class="cta-arrow">↗</div></div><div class="trust">★ 4.9 from 2,300+ reviews • Dermatologist tested • Vegan</div></div>
+</div>
+<div class="right"><div class="halo"></div><div class="citrus"></div><div class="bottle-float"><div class="dropper"></div><div class="neck"></div><div class="bottle-body"><div class="shine"></div><div class="label"><small>LUMIÈRE PARIS</small><h3>Vit C 15%</h3><p>BRIGHTENING SERUM</p><div>30 ml • Morning Ritual</div></div></div></div><div class="drop"></div><div class="chip chip1">🍊 15% PURE C</div><div class="chip chip2">✨ Dark spots visibly faded</div><div class="chip chip3">★ 4.9 loved by 2,300+ women</div><div class="spark s1">✦</div><div class="spark s2">✦</div><div class="spark s3">✦</div><div class="spark s4">✧</div></div>
+<div class="bottom"><div class="stars">★★★★★ 4.9 • Real results in 14 days</div><div class="timeline"><span class="tlabel">GLOW</span><div class="track"><div class="fill"></div></div><span class="tlabel">30% OFF • BUY NOW</span></div></div>
+</div>
+</body>
+</html>

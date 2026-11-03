@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Noto+Sans+KR:wght@500;700;900&family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
+<title>Sweetspot x Local Roastery — Seongsu Pop-up</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%}
+body{background:#0E0B08;display:flex;align-items:center;justify-content:center;min-height:100vh;font-family:'Inter','Noto Sans KR',sans-serif;overflow:hidden}
+.stage{width:1280px;height:720px;position:relative;overflow:hidden;background:#FFF5E2;flex-shrink:0;color:#221105}
+@media(max-width:1320px){.stage{transform:scale(.78)}}
+@media(max-width:1000px){.stage{transform:scale(.58)}}
+@media(max-width:760px){.stage{transform:scale(.42)}}
+/* TOP BAR - static */
+.topbar{position:absolute;top:0;left:0;right:0;height:56px;background:#221105;color:#FFF5E2;display:flex;align-items:center;justify-content:space-between;padding:0 28px;z-index:50;font-size:13px;letter-spacing:.14em;font-weight:800}
+.topbar .l{display:flex;align-items:center;gap:12px}
+.dotlive{width:10px;height:10px;background:#FF2E4D;border-radius:50%}
+.topbar .r{display:flex;gap:10px;align-items:center}
+.pilldate{background:#FF2E4D;color:#fff;padding:7px 14px;border-radius:100px;letter-spacing:.08em}
+.scene{position:absolute;inset:56px 0 64px 0;pointer-events:none}
+.s1{z-index:10;background:#FFF5E2;overflow:hidden;display:flex;align-items:center;padding:0 0 0 64px;animation:showS1 12s linear infinite}
+.s2{z-index:20;background:#FFF5E2;overflow:hidden;display:flex;align-items:center;padding:28px 48px;gap:24px;animation:showS2 12s linear infinite}
+.s3{z-index:30;background:#1A0E06;color:#FFF5E2;overflow:hidden;display:flex;align-items:center;padding:40px 56px;gap:40px;animation:showS3 12s linear infinite}
+@keyframes showS1{0%{opacity:1}27%{opacity:1}32.5%{opacity:0}91.5%{opacity:0}96.5%{opacity:1}100%{opacity:1}}
+@keyframes showS2{0%{opacity:0}29%{opacity:0}33.33%{opacity:1}60%{opacity:1}64.5%{opacity:0}100%{opacity:0}}
+@keyframes showS3{0%{opacity:0}60%{opacity:0}64.5%{opacity:1}91.5%{opacity:1}96%{opacity:0}100%{opacity:0}}
+/* S1 */
+.s1-bgword{position:absolute;left:-10px;bottom:-18px;font-family:'Anton';font-size:210px;line-height:1;color:#221105;opacity:.06;white-space:nowrap}
+.s1-redbar{position:absolute;left:0;top:0;bottom:0;width:18px;background:#FF2E4D}
+.s1-left{width:680px;position:relative;z-index:2}
+.badge{display:inline-flex;align-items:center;gap:10px;background:#221105;color:#fff;font-size:14px;font-weight:800;letter-spacing:.14em;padding:10px 18px;border-radius:100px;animation:s1Badge 12s linear infinite}
+.badge b{background:#FF2E4D;border-radius:100px;padding:3px 10px}
+@keyframes s1Badge{0%{opacity:0;transform:translateY(20px)}2%{opacity:1;transform:translateY(0)}26%{opacity:1;transform:translateY(0)}31%{opacity:0;transform:translateY(-20px)}32%{opacity:0;transform:translateY(20px)}100%{opacity:0;transform:translateY(20px)}}
+.s1 h1{font-family:'Anton';font-size:138px;line-height:.86;margin:18px 0 12px;letter-spacing:.01em}
+.s1 h1 span{display:block;overflow:hidden}
+.s1 h1 span i{display:block;font-style:normal;animation:s1L1 12s linear infinite}
+.s1 h1 .r2 i{animation-name:s1L2;color:#FF2E4D}
+.s1 h1 .r3 i{animation-name:s1L3}
+@keyframes s1L1{0%{opacity:0;transform:translateY(90px)}2.5%{opacity:1;transform:translateY(0)}26%{opacity:1;transform:translateY(0)}31%{opacity:0;transform:translateY(-50px)}32%{opacity:0;transform:translateY(90px)}100%{opacity:0;transform:translateY(90px)}}
+@keyframes s1L2{0%,1.5%{opacity:0;transform:translateY(90px)}4%{opacity:1;transform:translateY(0)}26%{opacity:1;transform:translateY(0)}31%{opacity:0;transform:translateY(-50px)}32%{opacity:0;transform:translateY(90px)}100%{opacity:0;transform:translateY(90px)}}
+@keyframes s1L3{0%,3%{opacity:0;transform:translateY(90px)}5.5%{opacity:1;transform:translateY(0)}26%{opacity:1;transform:translateY(0)}31%{opacity:0;transform:translateY(-50px)}32%{opacity:0;transform:translateY(90px)}100%{opacity:0;transform:translateY(90px)}}
+.s1-sub{font-size:19px;font-weight:600;line-height:1.45;max-width:560px;animation:s1Sub 12s linear infinite}
+.s1-sub strong{background:#1A7A4C;color:#fff;padding:2px 8px;border-radius:6px}
+@keyframes s1Sub{0%,6%{opacity:0;transform:translateY(24px)}8.5%{opacity:1;transform:translateY(0)}26%{opacity:1;transform:translateY(0)}31%{opacity:0;transform:translateY(-20px)}32%{opacity:0;transform:translateY(24px)}100%{opacity:0;transform:translateY(24px)}}
+.s1-meta{display:flex;gap:12px;margin-top:18px;animation:s1Sub 12s linear infinite}
+.s1-meta div{border:2px solid #221105;border-radius:12px;padding:10px 16px;font-weight:900;font-size:15px;letter-spacing:.04em;background:#fff}
+.s1-meta div:last-child{background:#221105;color:#fff}
+.s1-right{flex:1;position:relative;height:100%;display:flex;align-items:center;justify-content:center}
+.circle{position:absolute;width:480px;height:480px;background:#FF2E4D;border-radius:50%;box-shadow:0 0 0 18px #221105,0 0 0 34px #fff,0 30px 80px rgba(0,0,0,.25);animation:circlePop 12s linear infinite}
+@keyframes circlePop{0%{opacity:0;transform:scale(.4)}4%{opacity:1;transform:scale(1.07)}6.5%{opacity:1;transform:scale(1)}26%{opacity:1;transform:scale(1)}31%{opacity:0;transform:scale(1.2)}32%{opacity:0;transform:scale(.4)}100%{opacity:0;transform:scale(.4)}}
+.berrywrap{position:relative;z-index:2;animation:berryDrop 12s linear infinite}
+@keyframes berryDrop{0%{opacity:0;transform:translateY(-700px) rotate(-18deg)}1%{opacity:1;transform:translateY(-650px) rotate(-18deg)}7%{opacity:1;transform:translateY(0) rotate(0)}9.5%{opacity:1;transform:translateY(-38px) rotate(-4deg)}12%{opacity:1;transform:translateY(0) rotate(0)}14%{opacity:1;transform:translateY(-14px)}16%{opacity:1;transform:translateY(0)}26%{opacity:1;transform:translateY(0) rotate(0)}31%{opacity:0;transform:translateY(140px) rotate(10deg)}32%{opacity:0;transform:translateY(-700px) rotate(-18deg)}100%{opacity:0;transform:translateY(-700px) rotate(-18deg)}}
+.berry{width:300px;height:340px;background:radial-gradient(circle at 30% 28%,#FF6B85 0 18%,#FF2E4D 38%,#D6072A 72%,#9B041D 100%);border-radius:50% 50% 50% 50% / 38% 38% 62% 62%;position:relative;box-shadow:inset -22px -28px 0 rgba(0,0,0,.18)}
+.berry:after{content:"";position:absolute;left:38px;top:58px;width:52px;height:110px;background:rgba(255,255,255,.55);border-radius:50%;transform:rotate(-18deg);filter:blur(.5px)}
+.leaves{position:absolute;top:-28px;left:50%;width:0;height:0;transform:translateX(-50%)}
+.leaves i{position:absolute;top:0;left:50%;width:90px;height:42px;background:#1A7A4C;border-radius:0 100% 0 100%;transform-origin:left center}
+.leaves i:nth-child(1){transform:translateX(-50%) rotate(-18deg)}
+.leaves i:nth-child(2){transform:translateX(-50%) rotate(22deg) scaleX(-1);background:#22925E}
+.leaves i:nth-child(3){transform:translateX(-50%) rotate(-45deg) scale(.8);background:#0F5A36}
+.stem{position:absolute;top:-58px;left:50%;width:18px;height:44px;background:#0F3D24;border-radius:10px;transform:translateX(-50%) rotate(8deg)}
+.seed{position:absolute;width:14px;height:20px;background:#FFE9A8;border-radius:50%;box-shadow:inset -2px -3px 0 rgba(0,0,0,.2)}
+.tagspin{position:absolute;right:22px;top:78px;width:138px;height:138px;background:#FFF8B0;border:3px solid #221105;border-radius:50%;display:flex;align-items:center;justify-content:center;text-align:center;font-weight:900;font-size:15px;line-height:1.1;z-index:3;animation:tagSpin 12s linear infinite}
+.tagspin:after{content:"";position:absolute;inset:8px;border:2px dashed #221105;border-radius:50%}
+@keyframes tagSpin{0%,5%{opacity:0;transform:scale(0) rotate(-120deg)}7.5%{opacity:1;transform:scale(1) rotate(0)}10%{opacity:1;transform:scale(1) rotate(10deg)}12.5%{opacity:1;transform:scale(1) rotate(-8deg)}15%{opacity:1;transform:scale(1) rotate(0)}26%{opacity:1;transform:scale(1) rotate(0)}31%{opacity:0;transform:scale(.6) rotate(20deg)}32%,100%{opacity:0;transform:scale(0) rotate(-120deg)}}
+.drop{position:absolute;background:#FF2E4D;border-radius:50%;z-index:1;animation:dropF 12s linear infinite}
+.d1{width:22px;height:22px;left:88px;top:150px}
+.d2{width:14px;height:14px;right:110px;top:220px;background:#221105}
+.d3{width:18px;height:18px;left:140px;bottom:120px;background:#1A7A4C}
+@keyframes dropF{0%,8%{opacity:0;transform:translateY(-20px) scale(.6)}12%{opacity:1;transform:translateY(10px) scale(1)}18%{opacity:1;transform:translateY(26px)}24%{opacity:0;transform:translateY(50px)}100%{opacity:0;transform:translateY(-20px)}}
+/* S2 */
+.s2-kicker{position:absolute;top:22px;left:48px;font-weight:900;letter-spacing:.18em;font-size:13px;animation:s2K 12s linear infinite}
+@keyframes s2K{0%,30%{opacity:0;transform:translateY(12px)}34%{opacity:1;transform:translateY(0)}58%{opacity:1;transform:translateY(0)}63%{opacity:0;transform:translateY(-10px)}100%{opacity:0;transform:translateY(12px)}}
+.card{background:#fff;border:3px solid #221105;border-radius:22px;padding:22px;box-shadow:8px 8px 0 #221105;width:320px}
+.card h3{font-family:'Anton';font-size:30px;line-height:.95}
+.card p{font-size:14.5px;margin-top:10px;line-height:1.5;font-weight:600}
+.price{display:inline-block;margin-top:12px;background:#221105;color:#fff;font-weight:900;padding:6px 12px;border-radius:100px;font-size:15px}
+.card.left{animation:s2Left 12s linear infinite}
+.card.right{animation:s2Right 12s linear infinite}
+@keyframes s2Left{0%,31%{opacity:0;transform:translateX(-90px) rotate(-2deg)}37%{opacity:1;transform:translateX(0) rotate(0)}58%{opacity:1;transform:translateX(0)}63%{opacity:0;transform:translateX(-40px)}100%{opacity:0;transform:translateX(-90px)}}
+@keyframes s2Right{0%,33%{opacity:0;transform:translateX(90px) rotate(2deg)}39%{opacity:1;transform:translateX(0) rotate(0)}58%{opacity:1;transform:translateX(0)}63%{opacity:0;transform:translateX(40px)}100%{opacity:0;transform:translateX(90px)}}
+.parfaitwrap{flex:1;display:flex;flex-direction:column;align-items:center;animation:s2Par 12s linear infinite}
+@keyframes s2Par{0%,32%{opacity:0;transform:translateY(80px) scale(.92)}38%{opacity:1;transform:translateY(0) scale(1)}58%{opacity:1;transform:translateY(0) scale(1)}63%{opacity:0;transform:translateY(-30px) scale(.98)}100%{opacity:0;transform:translateY(80px) scale(.92)}}
+.s2-title{font-family:'Anton';font-size:54px;line-height:.9;text-align:center;color:#221105}
+.s2-title em{font-style:normal;color:#FF2E4D}
+.glass{margin-top:14px;position:relative;width:210px;height:260px}
+.glass-top{display:flex;justify-content:center;gap:8px;margin-bottom:-18px;z-index:2;position:relative}
+.mini{width:54px;height:62px;background:radial-gradient(circle at 30% 30%,#FF7A90,#E1092F 70%);border-radius:50% 50% 50% 50% / 40% 40% 60% 60%;border:2px solid #221105;position:relative}
+.mini:after{content:"▲";position:absolute;top:-20px;left:50%;transform:translateX(-50%);color:#1A7A4C;font-size:18px}
+.cream{position:absolute;top:36px;left:50%;transform:translateX(-50%);width:190px;height:56px;background:#FFFDF5;border:3px solid #221105;border-radius:30px;z-index:1}
+.cup{position:absolute;top:70px;left:50%;transform:translateX(-50%);width:170px;height:170px;background:linear-gradient(#FFD9E1 0 22%,#FFFDF5 22% 38%,#FF2E4D 38% 52%,#FFFDF5 52% 68%,#7A3B1E 68% 100%);border:3px solid #221105;border-radius:12px 12px 60px 60px;overflow:hidden}
+.cup:after{content:"SWEETSPOT";position:absolute;bottom:36px;left:0;right:0;text-align:center;font-weight:900;font-size:13px;letter-spacing:.12em;color:#fff;background:#221105;padding:5px 0}
+.steam{position:absolute;top:-30px;width:10px;height:44px;background:rgba(34,17,5,.18);border-radius:20px;filter:blur(1px);animation:steam 12s linear infinite}
+.steam.s1{left:70px}.steam.s2{left:100px}.steam.s3{left:130px}
+@keyframes steam{0%,35%{opacity:0;transform:translateY(14px) scaleY(.8)}42%{opacity:1;transform:translateY(-6px) scaleY(1)}50%{opacity:0;transform:translateY(-18px)}52%{opacity:0;transform:translateY(14px)}58%{opacity:1;transform:translateY(-6px)}62%,100%{opacity:0;transform:translateY(-18px)}}
+/* S3 */
+.s3-left{flex:1.1}
+.s3-k{font-size:13px;letter-spacing:.22em;font-weight:800;color:#FFB3C0;animation:s3In 12s linear infinite}
+.s3 h2{font-family:'Anton';font-size:102px;line-height:.88;margin:10px 0;animation:s3In2 12s linear infinite}
+.s3 h2 span{color:#FF2E4D}
+@keyframes s3In{0%,62%{opacity:0;transform:translateY(18px)}66%{opacity:1;transform:translateY(0)}88%{opacity:1;transform:translateY(0)}92%{opacity:0;transform:translateY(-14px)}100%{opacity:0;transform:translateY(18px)}}
+@keyframes s3In2{0%,63%{opacity:0;transform:translateY(50px)}68%{opacity:1;transform:translateY(0)}88%{opacity:1;transform:translateY(0)}92%{opacity:0;transform:translateY(-20px)}100%{opacity:0;transform:translateY(50px)}}
+.info{display:flex;gap:14px;margin-top:18px;animation:s3In2 12s linear infinite}
+.info div{background:#FFF5E2;color:#221105;border-radius:16px;padding:14px 18px;flex:1}
+.info h4{font-size:12px;letter-spacing:.16em;font-weight:900;color:#B00024}
+.info p{font-weight:900;font-size:17px;line-height:1.3;margin-top:4px}
+.info small{font-weight:600;font-size:13px}
+.s3-right{width:380px;background:#FFF5E2;color:#221105;border-radius:26px;padding:28px;text-align:center;position:relative;color:#221105;animation:s3Card 12s linear infinite}
+@keyframes s3Card{0%,65%{opacity:0;transform:translateY(60px) rotate(2deg) scale(.95)}70.5%{opacity:1;transform:translateY(0) rotate(0) scale(1)}88%{opacity:1;transform:translateY(0) scale(1)}92%{opacity:0;transform:translateY(-20px) scale(.98)}100%{opacity:0;transform:translateY(60px) scale(.95)}}
+.s3-right .slots{font-size:12px;font-weight:900;letter-spacing:.16em;background:#221105;color:#fff;display:inline-block;padding:7px 14px;border-radius:100px}
+.bar{height:12px;background:#EADAC0;border-radius:100px;margin:14px 0 6px;overflow:hidden;border:2px solid #221105}
+.bar i{display:block;height:100%;width:73%;background:#FF2E4D;border-radius:100px;transform-origin:left;animation:barP 12s linear infinite}
+@keyframes barP{0%,69%{opacity:1;transform:scaleX(0)}76%{transform:scaleX(1)}88%{transform:scaleX(1)}92%,100%{transform:scaleX(0)}}
+.cta{position:relative;margin-top:14px;background:#FF2E4D;color:#fff;font-weight:900;font-size:26px;letter-spacing:.02em;border:3px solid #221105;border-radius:16px;padding:18px;box-shadow:6px 6px 0 #221105}
+.cta small{display:block;font-size:13px;letter-spacing:.14em;margin-top:4px}
+.ring{position:absolute;inset:-8px;border:4px solid #FF2E4D;border-radius:22px;animation:ringP 12s linear infinite}
+@keyframes ringP{0%,70%{opacity:0;transform:scale(.92)}73%{opacity:1;transform:scale(1)}78%{opacity:0;transform:scale(1.14)}80%{opacity:0;transform:scale(.92)}83%{opacity:1;transform:scale(1)}88%{opacity:0;transform:scale(1.14)}100%{opacity:0;transform:scale(.92)}}
+.url{margin-top:12px;font-weight:800;font-size:14px;letter-spacing:.06em}
+/* ticker + progress - persistent */
+.ticker{position:absolute;left:0;right:0;bottom:0;height:64px;background:#FF2E4D;color:#fff;display:flex;align-items:center;overflow:hidden;z-index:60;border-top:4px solid #221105}
+.track{display:flex;gap:0;white-space:nowrap;font-weight:900;font-size:18px;letter-spacing:.08em;animation:tickerM 12s linear infinite}
+.track span{padding:0 28px}
+@keyframes tickerM{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.progress{position:absolute;top:56px;left:0;right:0;height:6px;background:rgba(0,0,0,.15);z-index:60}
+.progress i{display:block;height:100%;background:#1A7A4C;transform-origin:left;animation:prog 12s linear infinite}
+@keyframes prog{0%{transform:scaleX(0)}100%{transform:scaleX(1)}}
+.dots{position:absolute;right:24px;top:76px;display:flex;gap:8px;z-index:61}
+.dots i{width:32px;height:8px;border-radius:100px;background:rgba(34,17,5,.2)}
+.d1d{animation:dot1 12s linear infinite}.d2d{animation:dot2 12s linear infinite}.d3d{animation:dot3 12s linear infinite}
+@keyframes dot1{0%,27%{opacity:1;background:#221105}32.5%,91.5%{opacity:1;background:rgba(34,17,5,.2)}96.5%,100%{opacity:1;background:#221105}}
+@keyframes dot2{0%,29%{opacity:1;background:rgba(34,17,5,.2)}33.33%,60%{opacity:1;background:#221105}64.5%,100%{opacity:1;background:rgba(34,17,5,.2)}}
+@keyframes dot3{0%,60%{opacity:1;background:rgba(34,17,5,.2)}64.5%,91.5%{opacity:1;background:#221105}96%,100%{opacity:1;background:rgba(34,17,5,.2)}}
+</style>
+</head>
+<body>
+<div class="stage">
+<div class="topbar"><div class="l"><span class="dotlive"></span> SWEETSPOT × LOCAL ROASTERY &nbsp;·&nbsp; SEONGSU POP-UP 성수동</div><div class="r"><span>12s LOOP</span><span class="pilldate">DEC 12 — 14 • FRI–SUN</span></div></div>
+<div class="progress"><i></i></div>
+<div class="dots"><i class="d1d"></i><i class="d2d"></i><i class="d3d"></i></div>
+
+<!-- SCENE 1 HOOK 0-4s -->
+<div class="scene s1">
+<div class="s1-redbar"></div>
+<div class="s1-bgword">SEONGSU • SEONGSU • SEONGSU</div>
+<div class="s1-left">
+<div class="badge"><b>01 / HOOK</b> 3-DAY POP-UP • SEONGSU 성수동</div>
+<h1><span><i>STRAW-</i></span><span class="r2"><i>BERRY</i></span><span class="r3"><i>ROAST!</i></span></h1>
+<p class="s1-sub">Sweetspot × Local Roastery — fresh <strong>생딸기 desserts</strong> meet single-origin smoke. Only in Seongsu, only 3 days.</p>
+<div class="s1-meta"><div>DEC 12–14 • 11AM–8PM</div><div>22 Seongsui-ro, Seoul →</div></div>
+</div>
+<div class="s1-right">
+<div class="circle"></div>
+<div class="berrywrap"><div class="stem"></div><div class="leaves"><i></i><i></i><i></i></div><div class="berry"><span class="seed" style="left:58px;top:90px"></span><span class="seed" style="left:122px;top:78px"></span><span class="seed" style="left:188px;top:92px"></span><span class="seed" style="left:88px;top:150px"></span><span class="seed" style="left:152px;top:142px"></span><span class="seed" style="left:212px;top:152px"></span><span class="seed" style="left:112px;top:210px"></span><span class="seed" style="left:174px;top:205px"></span><span class="seed" style="left:142px;top:268px"></span></div></div>
+<div class="tagspin">FRESH<br>딸기<br>DAILY!</div>
+<div class="drop d1"></div><div class="drop d2"></div><div class="drop d3"></div>
+</div>
+</div>
+
+<!-- SCENE 2 PRODUCT 4-8s -->
+<div class="scene s2">
+<div class="s2-kicker">02 / WHAT'S INSIDE — BAKED HOURLY ON SITE</div>
+<div class="card left"><h3>STRAWBERRY<br>CLOUD TART</h3><p>Vanilla custard, glazed 생딸기 piled high, basil sugar crunch. Baked every hour.</p><span class="price">₩9,500 • Limited 120 / day</span></div>
+<div class="parfaitwrap"><div class="s2-title">POURED <em>SLOWLY.</em><br>EATEN FAST.</div><div class="glass"><div class="glass-top"><div class="mini"></div><div class="mini"></div><div class="mini"></div></div><div class="cream"></div><div class="cup"></div><div class="steam s1"></div><div class="steam s2"></div><div class="steam s3"></div></div><p style="font-weight:800;font-size:14px;margin-top:12px;letter-spacing:.06em">ROASTERY STRAWBERRY LATTE — ESPRESSO + HOUSE STRAWBERRY MILK — ₩7,000</p></div>
+<div class="card right"><h3>SINGLE-ORIGIN<br>POUR BAR</h3><p>Ethiopia & Yeonmu roast, brewed 200m from the farm table. Free first tasting.</p><span class="price">✓ Beans roasted next door</span></div>
+</div>
+
+<!-- SCENE 3 OFFER + CTA 8-12s -->
+<div class="scene s3">
+<div class="s3-left"><div class="s3-k">03 / LAST CALL — 3 DAYS ONLY • ONLY 90 SLOTS / DAY</div><h2>3 DAYS<br><span>ONLY.</span></h2><div class="info"><div><h4>● DATES</h4><p>DEC 12–14<br>FRI–SUN</p><small>11AM–8PM, last entry 7:30PM</small></div><div><h4>● VENUE</h4><p>22 Seongsui-ro 14-gil<br>Seongdong-gu, Seoul</p><small>2-min from Seongsu Station Exit 3</small></div></div></div>
+<div class="s3-right"><span class="slots">● 73% BOOKED — HURRY</span><div class="bar"><i></i></div><div style="font-size:13px;font-weight:800">FIRST 50 / DAY GET FREE TASTING CUP</div><div class="cta">RESERVE A SLOT →<small>SWEETSPOT.KR/SEONGSU</small><div class="ring"></div></div><div class="url">sweetspot.kr/seongsu • @sweetspot.seoul</div></div>
+</div>
+
+<div class="ticker"><div class="track"><span>★ DEC 12–14 SEONGSU POP-UP ★ SWEETSPOT × LOCAL ROASTERY ★ FRESH STRAWBERRY TART ★ RESERVE A SLOT ★ 22 SEONGSUI-RO SEOUL ★ DEC 12–14 SEONGSU POP-UP ★ SWEETSPOT × LOCAL ROASTERY ★ FRESH STRAWBERRY TART ★ RESERVE A SLOT ★ 22 SEONGSUI-RO SEOUL ★</span><span>★ DEC 12–14 SEONGSU POP-UP ★ SWEETSPOT × LOCAL ROASTERY ★ FRESH STRAWBERRY TART ★ RESERVE A SLOT ★ 22 SEONGSUI-RO SEOUL ★ DEC 12–14 SEONGSU POP-UP ★ SWEETSPOT × LOCAL ROASTERY ★ FRESH STRAWBERRY TART ★ RESERVE A SLOT ★ 22 SEONGSUI-RO SEOUL ★</span></div></div>
+</div>
+</body>
+</html>

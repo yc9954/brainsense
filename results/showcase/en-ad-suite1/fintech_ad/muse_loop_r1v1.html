@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<title>SplitShare — from $1</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0e0c09;display:flex;align-items:center;justify-content:center;min-height:100vh;font-family:Inter,sans-serif}
+.stage{width:1280px;height:720px;position:relative;overflow:hidden;background:#FFF3E2;color:#16130E;flex-shrink:0;border-radius:18px;box-shadow:0 30px 120px rgba(0,0,0,.6)}
+/* paper dots */
+.stage::before{content:"";position:absolute;inset:0;background-image:radial-gradient(#16130E 1.2px, transparent 1.3px);background-size:26px 26px;opacity:.08;pointer-events:none}
+.stage::after{content:"";position:absolute;left:0;right:0;top:0;height:14px;background:#16130E}
+.topbar{position:absolute;top:14px;left:0;right:0;height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 48px;z-index:20}
+.logo{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.02em;font-size:22px}
+.logo-mark{width:44px;height:44px;background:#FF4D00;border:3px solid #16130E;border-radius:12px;display:flex;align-items:center;justify-content:center;font-family:"Archivo Black";font-size:24px;color:#16130E;box-shadow:4px 4px 0 #16130E}
+.top-pills{display:flex;gap:10px;align-items:center}
+.pill{font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;border:2.5px solid #16130E;border-radius:100px;padding:8px 16px;background:#fff}
+.pill.dark{background:#16130E;color:#FFF3E2}
+.scene{position:absolute;inset:0;padding:112px 60px 92px;display:flex;align-items:center;z-index:5}
+.s1{animation:s1Vis 12s linear infinite}
+.s2{animation:s2Vis 12s linear infinite}
+.s3{animation:s3Vis 12s linear infinite;justify-content:center}
+@keyframes s1Vis{0%,29%{opacity:1;visibility:visible;transform:translateX(0)}33.3%,91.5%{opacity:0;visibility:hidden;transform:translateX(-70px)}95.8%,100%{opacity:1;visibility:visible;transform:translateX(0)}}
+@keyframes s2Vis{0%,33.3%{opacity:0;visibility:hidden;transform:translateX(70px)}37%,61.5%{opacity:1;visibility:visible;transform:translateX(0)}66.6%,100%{opacity:0;visibility:hidden;transform:translateX(-70px)}}
+@keyframes s3Vis{0%,66.6%{opacity:0;visibility:hidden;transform:translateY(40px)}70.5%,91.5%{opacity:1;visibility:visible;transform:translateY(0)}95.8%,100%{opacity:0;visibility:hidden;transform:translateY(-30px)}}
+/* windowed entries */
+@keyframes aIn{0%{opacity:0;transform:translateX(-80px)}3.5%{opacity:1;transform:translateX(0)}26%{opacity:1;transform:translateX(0)}30.5%,92%{opacity:0;transform:translateX(-40px)}95.5%,100%{opacity:0;transform:translateX(-80px)}}
+@keyframes aIn2{0%,2%{opacity:0;transform:translateX(-80px)}6%{opacity:1;transform:translateX(0)}26%{opacity:1;transform:translateX(0)}30.5%,92%{opacity:0;transform:translateX(-40px)}95.5%,100%{opacity:0;transform:translateX(-80px)}}
+@keyframes aPop{0%{opacity:0;transform:scale(.5) rotate(-10deg)}4%{opacity:1;transform:scale(1) rotate(0)}26%{opacity:1;transform:scale(1) rotate(0)}30.5%,92%{opacity:0;transform:scale(.8)}95.5%,100%{opacity:0;transform:scale(.5) rotate(-10deg)}}
+@keyframes bIn{0%,33.8%{opacity:0;transform:translateX(80px)}37.5%{opacity:1;transform:translateX(0)}59.5%{opacity:1;transform:translateX(0)}64%,100%{opacity:0;transform:translateX(-40px)}}
+@keyframes bIn2{0%,35.5%{opacity:0;transform:translateY(40px)}39.5%{opacity:1;transform:translateY(0)}59.5%{opacity:1;transform:translateY(0)}64%,100%{opacity:0;transform:translateY(-20px)}}
+@keyframes bPop{0%,34%{opacity:0;transform:scale(.7) translateY(30px)}38.5%{opacity:1;transform:scale(1) translateY(0)}59.5%{opacity:1;transform:scale(1)}64%,100%{opacity:0;transform:scale(.95)}}
+@keyframes cIn{0%,67%{opacity:0;transform:translateY(50px)}71%{opacity:1;transform:translateY(0)}90.5%{opacity:1;transform:translateY(0)}94.5%,100%{opacity:0;transform:translateY(-24px)}}
+@keyframes cIn2{0%,68.5%{opacity:0;transform:translateY(50px)}72.5%{opacity:1;transform:translateY(0)}90.5%{opacity:1;transform:translateY(0)}94.5%,100%{opacity:0;transform:translateY(-24px)}}
+/* continuous loops - still 12s */
+@keyframes floatY{0%,100%{transform:translateY(-12px)}50%{transform:translateY(12px)}}
+@keyframes floatY2{0%,100%{transform:translateY(10px) rotate(-2deg)}50%{transform:translateY(-10px) rotate(2deg)}}
+@keyframes wiggle{0%,100%{transform:rotate(-7deg)}50%{transform:rotate(7deg)}}
+@keyframes pulseDot{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.35);opacity:.7}}
+@keyframes prog{0%{transform:scaleX(0)}100%{transform:scaleX(1)}}
+@keyframes shineMove{0%,100%{transform:translateX(-140%) skewX(-18deg)}50%{transform:translateX(240%) skewX(-18deg)}}
+@keyframes barPulse{0%,100%{transform:scaleY(1)}50%{transform:scaleY(1.12)}}
+/* SCENE 1 */
+.s1-left{width:640px}
+.eyebrow{display:inline-block;font-size:15px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;background:#16130E;color:#D9FF3D;padding:10px 18px;border-radius:100px;margin-bottom:22px}
+.s1 .eyebrow{animation:aIn 12s linear infinite}
+.s1 h1{font-family:"Archivo Black";font-size:92px;line-height:.92;letter-spacing:-.03em;text-transform:uppercase}
+.s1 h1{animation:aIn2 12s linear infinite}
+.s1 h1 .hl{background:#FF4D00;padding:2px 18px;border:4px solid #16130E;border-radius:18px;box-shadow:7px 7px 0 #16130E;white-space:nowrap;display:inline-block;transform:rotate(-1.5deg)}
+.s1 .sub{font-size:22px;font-weight:600;margin-top:20px;max-width:520px;line-height:1.35}
+.s1 .sub{animation:aIn2 12s linear infinite}
+.s1-right{flex:1;display:flex;justify-content:center;position:relative;height:520px;align-items:center}
+.coin-wrap{position:relative;width:460px;height:460px;animation:aPop 12s linear infinite}
+.coin{position:absolute;left:50%;top:50%;width:320px;height:320px;margin:-160px 0 0 -160px;background:#0B3D2E;color:#D9FF3D;border:6px solid #16130E;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-direction:column;box-shadow:14px 14px 0 #16130E;animation:wiggle 12s ease-in-out infinite}
+.coin b{font-family:"Archivo Black";font-size:110px;line-height:1}
+.coin span{font-weight:800;letter-spacing:.2em;font-size:14px;margin-top:6px}
+.coin::after{content:"";position:absolute;left:50%;top:-6px;bottom:-6px;width:6px;background:#16130E}
+.chip{position:absolute;background:#fff;border:3px solid #16130E;border-radius:16px;box-shadow:6px 6px 0 #16130E;padding:12px 16px;font-weight:800;font-size:17px;line-height:1.2}
+.chip small{display:block;font-size:13px;font-weight:700;opacity:.7}
+.chip.c1{left:0;top:54px;animation:floatY 12s ease-in-out infinite}
+.chip.c2{right:0;top:190px;background:#D9FF3D;animation:floatY2 12s ease-in-out infinite}
+.chip.c3{left:30px;bottom:48px;background:#16130E;color:#fff;animation:floatY 12s ease-in-out infinite}
+.up{color:#0a7a3e}.chip.c3 .up{color:#5CFF9A}
+/* SCENE 2 */
+.s2{ gap:50px}
+.phone{width:300px;height:560px;background:#16130E;border-radius:44px;padding:14px;box-shadow:12px 12px 0 rgba(22,19,14,.9);animation:bPop 12s linear infinite;flex-shrink:0}
+.screen{background:#FFFDF6;border-radius:32px;height:100%;overflow:hidden;padding:20px 18px;position:relative}
+.screen-top{display:flex;justify-content:space-between;align-items:center;font-weight:800;font-size:14px}
+.balance{font-family:"Archivo Black";font-size:42px;margin:12px 0 2px}
+.gain{display:inline-block;background:#0B3D2E;color:#5CFF9A;font-weight:800;font-size:14px;padding:6px 12px;border-radius:100px}
+.chart{display:flex;align-items:end;gap:8px;height:120px;margin:18px 0 16px}
+.bar{flex:1;background:#FF4D00;border:2px solid #16130E;border-radius:8px 8px 4px 4px;transform-origin:bottom;animation:barPulse 12s ease-in-out infinite}
+.row{display:flex;justify-content:space-between;align-items:center;background:#fff;border:2.5px solid #16130E;border-radius:14px;padding:10px 12px;margin-bottom:10px;font-weight:800;font-size:15px}
+.row small{font-weight:600;opacity:.6}
+.shine{position:absolute;top:0;bottom:0;width:60px;background:linear-gradient(90deg,transparent,rgba(255,77,0,.18),transparent);animation:shineMove 12s linear infinite}
+.s2-right{flex:1}
+.s2-right .kicker{font-size:15px;font-weight:800;letter-spacing:.16em;color:#FF4D00;text-transform:uppercase;margin-bottom:10px;animation:bIn 12s linear infinite}
+.s2-right h2{font-family:"Archivo Black";font-size:62px;line-height:.95;letter-spacing:-.02em;text-transform:uppercase;animation:bIn 12s linear infinite}
+.s2-right h2 em{font-style:normal;background:#D9FF3D;border:3px solid #16130E;padding:0 12px;border-radius:12px;white-space:nowrap}
+.benefits{margin-top:22px;display:grid;gap:12px}
+.ben{background:#fff;border:3px solid #16130E;border-radius:18px;padding:14px 18px;display:flex;gap:14px;align-items:center;font-weight:700;font-size:19px;box-shadow:6px 6px 0 #16130E}
+.ben i{width:42px;height:42px;flex-shrink:0;background:#16130E;color:#D9FF3D;border-radius:50%;display:flex;align-items:center;justify-content:center;font-style:normal;font-weight:800}
+.ben:nth-child(1){animation:bIn2 12s linear infinite}
+.ben:nth-child(2){animation:bIn2 12s linear infinite}
+.ben:nth-child(3){animation:bIn2 12s linear infinite}
+/* SCENE 3 */
+.offer-card{background:#0B3D2E;color:#FFF3E2;border:5px solid #16130E;border-radius:28px;box-shadow:14px 14px 0 #16130E;width:1060px;padding:44px 54px;display:flex;gap:44px;align-items:center;position:relative;overflow:hidden;animation:cIn 12s linear infinite}
+.offer-card::before{content:"$1 $1 $1 $1 $1";position:absolute;top:10px;left:20px;right:20px;font-family:"Archivo Black";font-size:22px;letter-spacing:.4em;color:#D9FF3D;opacity:.18;white-space:nowrap}
+.offer-left{flex:1}
+.offer-left h2{font-family:"Archivo Black";font-size:68px;line-height:.9;text-transform:uppercase}
+.offer-left h2 span{color:#D9FF3D;white-space:nowrap}
+.trust{display:flex;gap:10px;margin:18px 0}
+.trust div{flex:1;background:rgba(255,255,255,.1);border:2px solid rgba(255,243,226,.35);border-radius:14px;padding:10px 12px;font-size:14px;font-weight:700;line-height:1.3}
+.trust strong{display:block;color:#D9FF3D;font-size:13px;letter-spacing:.08em;text-transform:uppercase}
+.offer-right{width:360px;text-align:center;animation:cIn2 12s linear infinite}
+.cta-price{background:#D9FF3D;color:#16130E;font-weight:800;display:inline-block;padding:8px 18px;border-radius:100px;margin-bottom:14px;font-size:16px;border:3px solid #16130E}
+.cta-btn{display:flex;align-items:center;justify-content:space-between;background:#FF4D00;color:#16130E;border:4px solid #16130E;border-radius:100px;padding:10px 10px 10px 32px;font-family:"Archivo Black";font-size:38px;text-decoration:none;box-shadow:8px 8px 0 #16130E}
+.cta-btn span:last-child{background:#16130E;color:#D9FF3D;width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:34px}
+.cta-sub{margin-top:12px;font-size:15px;font-weight:600;opacity:.9}
+/* timeline */
+.timeline{position:absolute;left:0;right:0;bottom:0;height:58px;background:#16130E;color:#FFF3E2;display:flex;align-items:center;gap:24px;padding:0 48px;z-index:20}
+.t-track{flex:1;height:10px;background:rgba(255,255,255,.2);border-radius:100px;overflow:hidden}
+.t-fill{height:100%;background:#D9FF3D;border-radius:100px;transform-origin:left;animation:prog 12s linear infinite}
+.t-labels{display:flex;gap:18px;font-size:13px;font-weight:800;letter-spacing:.12em}
+.dot{width:10px;height:10px;border-radius:50%;background:#FF4D00;display:inline-block;margin-right:6px;animation:pulseDot 12s linear infinite}
+</style>
+</head>
+<body>
+<div class="stage">
+<div class="topbar">
+<div class="logo"><div class="logo-mark">S</div> SplitShare</div>
+<div class="top-pills"><span class="pill">SIPC Protected</span><span class="pill dark">● 12s loop</span></div>
+</div>
+<!-- SCENE 1 HOOK 0-4s -->
+<div class="scene s1">
+<div class="s1-left">
+<div class="eyebrow">★ Fractional investing — no commissions</div>
+<h1>Own big<br>stocks <span class="hl">from $1.</span></h1>
+<p class="sub">Slices of Apple, Tesla &amp; 4,000+ giants. No full share needed.</p>
+</div>
+<div class="s1-right">
+<div class="coin-wrap">
+<div class="coin"><b>$1</b><span>ONE SLICE</span></div>
+<div class="chip c1">AAPL <span class="up">▲ +2.4%</span><small>0.42 shares • $98.12</small></div>
+<div class="chip c2">TSLA 0.18 sh<small>$44.07 • slice owned</small></div>
+<div class="chip c3">NVDA <span class="up">▲ +3.1%</span><small>fraction • $27.50</small></div>
+</div>
+</div>
+</div>
+<!-- SCENE 2 PRODUCT 4-8s -->
+<div class="scene s2">
+<div class="phone"><div class="screen"><div class="shine"></div>
+<div class="screen-top"><span>◩ SplitShare</span><span>●●●</span></div>
+<div class="balance">$1,284.60</div><div class="gain">▲ +$132.40 (11.5%) this year</div>
+<div class="chart"><div class="bar" style="height:42%"></div><div class="bar" style="height:58%;background:#0B3D2E"></div><div class="bar" style="height:50%"></div><div class="bar" style="height:76%;background:#0B3D2E"></div><div class="bar" style="height:96%"></div></div>
+<div class="row"><span>AAPL <small>0.42 sh</small></span><span>$98.12</span></div>
+<div class="row"><span>TSLA <small>0.18 sh</small></span><span>$44.07</span></div>
+<div class="row" style="background:#D9FF3D"><span>Buy slice</span><span>from $1 →</span></div>
+</div></div>
+<div class="s2-right">
+<div class="kicker">How it works — 3 steps</div>
+<h2>Own fractions. <em>Build wealth.</em></h2>
+<div class="benefits">
+<div class="ben"><i>1</i> Pick any stock — buy a slice from $1</div>
+<div class="ben"><i>2</i> Sign up in 3 minutes — ID + bank, done</div>
+<div class="ben"><i>3</i> Auto-invest weekly &amp; watch it compound</div>
+</div>
+</div>
+</div>
+<!-- SCENE 3 OFFER + CTA 8-12s -->
+<div class="scene s3">
+<div class="offer-card">
+<div class="offer-left">
+<h2>Start small.<br><span>Grow big.</span></h2>
+<div class="trust">
+<div><strong>✓ SIPC Protected</strong>Up to $500k coverage</div>
+<div><strong>✓ 256-bit encryption</strong>Bank-grade security</div>
+<div><strong>✓ 2M+ investors</strong>4.8★ rated app</div>
+</div>
+</div>
+<div class="offer-right">
+<div class="cta-price">3-minute sign-up • No minimum</div>
+<a class="cta-btn" href="#"><span>Start now</span><span>→</span></a>
+<div class="cta-sub">From $1 • Cancel anytime • Learn &amp; earn</div>
+</div>
+</div>
+</div>
+<div class="timeline"><div class="t-labels"><span><span class="dot"></span>HOOK</span><span>PRODUCT</span><span>OFFER</span></div><div class="t-track"><div class="t-fill"></div></div><div class="t-labels"><span>0:12</span></div></div>
+</div>
+</body>
+</html>

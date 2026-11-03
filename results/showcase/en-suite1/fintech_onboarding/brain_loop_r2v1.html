@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<title>Portion — Own a slice of Wall Street from $1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+--cream:#FFF9EB;
+--ink:#0E1A14;
+--pine:#0F3D2E;
+--pine2:#134E3A;
+--lime:#D4F542;
+--coral:#FF6B4A;
+--line:#0E1A14;
+--muted:#4A5A52;
+}
+body{background:#E9E2D0;font-family:'Inter',system-ui,sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased}
+.page{width:1280px;min-height:800px;margin:0 auto;background:var(--cream);border-left:1px solid #d8d0b8;border-right:1px solid #d8d0b8;display:flex;flex-direction:column;overflow:hidden;position:relative}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:18px 40px 14px}
+.brand{display:flex;align-items:center;gap:11px;font-weight:800;letter-spacing:-.02em;font-size:22px}
+.mark{width:36px;height:36px;background:var(--ink);border-radius:11px;display:grid;place-items:center;color:var(--lime);font-weight:900;font-size:20px;position:relative}
+.mark:after{content:"";position:absolute;right:7px;top:7px;width:8px;height:8px;background:var(--lime);border-radius:50%}
+.nav{display:flex;gap:28px;font-size:15.5px;font-weight:600;color:#1d2a24}
+.nav a{text-decoration:none;color:inherit}
+.actions{display:flex;align-items:center;gap:14px}
+.login{font-weight:700;font-size:15.5px;text-decoration:none;color:var(--ink)}
+.btn-small{background:var(--ink);color:#fff;text-decoration:none;font-weight:700;font-size:15px;padding:11px 18px;border-radius:999px}
+.hero{display:grid;grid-template-columns:560px 1fr;gap:10px;align-items:stretch;padding:8px 40px 0;flex:1}
+.copy{padding:28px 10px 0 0}
+.pill{display:inline-flex;align-items:center;gap:9px;background:#fff;border:1.5px solid var(--ink);border-radius:999px;padding:8px 14px 8px 9px;font-size:13.5px;font-weight:700;letter-spacing:.02em;box-shadow:3px 3px 0 var(--ink)}
+.dot{width:22px;height:22px;background:var(--lime);border:1.5px solid var(--ink);border-radius:50%;display:grid;place-items:center;font-size:13px}
+h1{font-family:'Fraunces',serif;font-weight:900;line-height:.92;letter-spacing:-.04em;font-size:76px;margin:20px 0 16px}
+h1 em{font-style:normal;background:linear-gradient(transparent 62%, var(--lime) 62%, var(--lime) 94%, transparent 94%)}
+h1 .one{background:var(--ink);color:var(--lime);border-radius:14px;padding:0 14px;display:inline-block;transform:rotate(-2deg)}
+.sub{font-size:19px;line-height:1.5;color:#27332D;max-width:480px}
+.sub strong{color:var(--ink)}
+.cta-row{display:flex;align-items:center;gap:16px;margin:24px 0 12px}
+.btn-big{background:var(--lime);color:var(--ink);border:2px solid var(--ink);border-radius:16px;padding:17px 22px;font-size:18px;font-weight:800;display:inline-flex;align-items:center;gap:12px;text-decoration:none;box-shadow:5px 5px 0 var(--ink);transition:transform .15s}
+.btn-big:hover{transform:translate(-1px,-1px)}
+.btn-big .arr{width:32px;height:32px;background:var(--ink);color:var(--lime);border-radius:50%;display:grid;place-items:center;font-size:18px}
+.micro{font-size:14.5px;font-weight:600;color:var(--muted)}
+.demo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:16px;color:var(--ink);text-decoration:none}
+.play{width:44px;height:44px;border:2px solid var(--ink);border-radius:50%;display:grid;place-items:center;background:#fff;font-size:16px}
+.checks{display:flex;gap:18px;margin-top:14px;font-size:14.5px;font-weight:600}
+.checks span:before{content:"✓";display:inline-grid;place-items:center;width:20px;height:20px;background:var(--pine);color:#fff;border-radius:50%;font-size:12px;margin-right:7px}
+.stats{display:grid;grid-template-columns:1fr 1fr 1fr;background:var(--ink);color:#fff;border-radius:18px;margin-top:22px;overflow:hidden;border:2px solid var(--ink)}
+.stats div{padding:14px 18px;border-right:1px solid #2a3a32}
+.stats div:last-child{border:none}
+.stats b{display:block;font-size:22px;letter-spacing:-.02em}
+.stats b i{font-style:normal;color:var(--lime)}
+.stats small{font-size:13px;opacity:.75;font-weight:600;letter-spacing:.02em;text-transform:uppercase}
+.visual{position:relative;display:flex;align-items:center;justify-content:center;padding:10px 0 0 20px;min-height:600px}
+.slab{position:absolute;right:0;top:18px;bottom:0;width:640px;background:var(--pine);border-radius:32px 0 0 0;border:2px solid var(--ink);border-right:none;overflow:hidden}
+.slab:before{content:"";position:absolute;inset:0;background:radial-gradient(600px 360px at 70% 20%, #1E7A5A 0%, transparent 60%),repeating-linear-gradient(0deg, rgba(255,255,255,.07) 0 1px, transparent 1px 28px),repeating-linear-gradient(90deg, rgba(255,255,255,.07) 0 1px, transparent 1px 28px)}
+.diag{position:absolute;left:-80px;top:140px;width:820px;height:120px;background:var(--lime);border:2px solid var(--ink);transform:rotate(-16deg);display:flex;align-items:center;overflow:hidden;white-space:nowrap;font-weight:800;font-size:18px;letter-spacing:.08em}
+.diag span{padding:0 18px}
+.phone{position:relative;width:300px;height:607px;background:#0B0F0D;border-radius:44px;padding:12px;box-shadow:16px 20px 0 rgba(14,26,20,.18), 0 30px 60px rgba(0,0,0,.35);border:2px solid #000;z-index:3;transform:rotate(2deg)}
+.screen{background:#fff;border-radius:32px;height:100%;overflow:hidden;display:flex;flex-direction:column}
+.status{display:flex;justify-content:space-between;padding:12px 20px 6px;font-size:12px;font-weight:700}
+.acct{padding:8px 18px 10px}
+.acct small{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#6B7A72}
+.balance{display:flex;align-items:baseline;gap:8px}
+.balance b{font-size:32px;letter-spacing:-.04em}
+.up{background:#E6F7B8;border:1px solid #0E1A14;border-radius:999px;font-size:12.5px;font-weight:800;padding:3px 8px}
+.chart{background:var(--ink);border-radius:18px;margin:0 14px;padding:12px 12px 8px;color:#fff}
+.chart-head{display:flex;justify-content:space-between;font-size:12px;font-weight:700}
+.chart-head em{font-style:normal;color:var(--lime)}
+.hold{display:flex;align-items:center;gap:10px;padding:11px 4px;border-bottom:1px solid #EEEAD9}
+.logo-sm{width:36px;height:36px;border-radius:11px;display:grid;place-items:center;font-weight:900;color:#fff;font-size:16px;border:1.5px solid #0E1A14}
+.hold b{font-size:14.5px;display:block;line-height:1.1}
+.hold small{font-size:12.5px;color:#6B7A72;font-weight:600}
+.hold .r{margin-left:auto;text-align:right}
+.buy{margin:12px 14px 14px;background:var(--ink);color:#fff;border-radius:12px;padding:13px;text-align:center;font-weight:800;font-size:15px}
+.buy span{color:var(--lime)}
+.float{position:absolute;z-index:4;background:#fff;border:2px solid var(--ink);border-radius:16px;box-shadow:5px 5px 0 var(--ink);padding:12px 14px;display:flex;gap:10px;align-items:center}
+.f1{left:18px;top:92px;transform:rotate(-4deg)}
+.f2{right:18px;top:350px;transform:rotate(3deg)}
+.f3{left:70px;bottom:44px;background:var(--ink);color:#fff;box-shadow:5px 5px 0 rgba(0,0,0,.25)}
+.coin{position:absolute;z-index:5;left:236px;top:38px;width:110px;height:110px;background:var(--lime);border:3px solid var(--ink);border-radius:50%;display:grid;place-items:center;text-align:center;box-shadow:4px 4px 0 var(--ink);transform:rotate(-10deg)}
+.coin b{font-family:'Fraunces',serif;font-size:38px;line-height:1}
+.coin small{font-size:11px;font-weight:800;letter-spacing:.08em}
+.tick{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;font-weight:900;border:1.5px solid var(--ink)}
+.caption{position:absolute;right:46px;bottom:18px;z-index:4;color:#CFF08A;font-size:13.5px;font-weight:600;background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.25);padding:8px 12px;border-radius:999px}
+.trust{margin:0 40px 18px;background:#fff;border:2px solid var(--ink);border-radius:18px;display:grid;grid-template-columns:1fr 1fr 1fr 1fr;box-shadow:5px 5px 0 var(--ink)}
+.trust div{display:flex;gap:12px;align-items:center;padding:14px 20px;border-right:2px solid var(--ink);font-size:14.5px}
+.trust div:last-child{border:none}
+.trust b{display:block;font-size:15px}
+.trust small{color:#5A6A62;font-size:13.5px}
+.ic{width:38px;height:38px;border-radius:11px;background:var(--cream);border:1.5px solid var(--ink);display:grid;place-items:center;font-size:18px;flex-shrink:0}
+.foot{display:flex;justify-content:space-between;padding:0 44px 16px;font-size:12.5px;color:#6B7A72;font-weight:500}
+a:focus-visible,.btn-big:focus-visible{outline:3px solid #005FCC;outline-offset:3px}
+@media (max-width:900px){.page{width:100%}.hero{grid-template-columns:1fr}.slab{border-radius:24px;width:100%}}
+</style>
+</head>
+<body>
+<div class="page">
+<header class="topbar">
+<div class="brand"><div class="mark">◧</div> Portion</div>
+<nav class="nav" aria-label="Primary"><a href="#">Invest</a><a href="#">Learn</a><a href="#">Pricing</a><a href="#">Safety</a></nav>
+<div class="actions"><a class="login" href="#">Log in</a><a class="btn-small" href="#">Get the app</a></div>
+</header>
+
+<main class="hero">
+<section class="copy">
+<div class="pill"><span class="dot">●</span> SIPC PROTECTED &nbsp;•&nbsp; FINRA MEMBER &nbsp;•&nbsp; LIVE</div>
+<h1>Own Wall Street, <em>starting at</em> <span class="one">$1</span></h1>
+<p class="sub"><strong>Buy slices of Apple, Nvidia & 2,000+ stocks.</strong> No commissions, real-time prices, dividends included — built for first-time investors.</p>
+<div class="cta-row">
+<a class="btn-big" href="#">Create free account <span class="arr">→</span></a>
+<a class="demo" href="#"><span class="play">▶</span> 45-sec demo</a>
+</div>
+<div class="micro">3-minute sign-up with ID &nbsp;•&nbsp; No credit card &nbsp;•&nbsp; Cancel anytime</div>
+<div class="checks"><span>No minimum balance</span><span>FDIC cash sweep</span></div>
+<div class="stats" aria-label="Key facts">
+<div><b><i>$1</i> min</b><small>Start investing</small></div>
+<div><b>$0 fees</b><small>Commissions</small></div>
+<div><b>2,000+</b><small>Stocks & ETFs</small></div>
+</div>
+</section>
+
+<section class="visual" aria-label="App preview">
+<div class="slab" aria-hidden="true"><div class="diag"><span>● FRACTIONAL SHARES ● FROM $1 ● NO COMMISSIONS ● REAL-TIME ● FRACTIONAL SHARES ● FROM $1 ●</span></div></div>
+
+<div class="coin" aria-hidden="true"><div><b>$1</b><br><small>MINIMUM</small></div></div>
+
+<div class="float f1"><div class="tick" style="background:#D4F542">✓</div><div><b style="font-size:14px">Bought 0.083 AAPL</b><br><small style="font-size:12.5px;color:#5A6A62;font-weight:600">$20.00 @ $241.12 • Just now</small></div></div>
+
+<div class="phone" role="img" aria-label="Phone showing fractional portfolio with Apple, Tesla and Nvidia shares">
+<div class="screen">
+<div class="status"><span>9:41</span><span>●●● ▮</span></div>
+<div class="acct"><small>Total invested</small><div class="balance"><b>$1,284.92</b><span class="up">▲ 12.4%</span></div></div>
+<div class="chart">
+<div class="chart-head"><span>PORTFOLIO</span><em>▲ +$142 this mo</em></div>
+<svg viewBox="0 0 260 90" width="100%" height="78" aria-hidden="true"><path d="M0 70 L30 62 L55 66 L80 48 L105 52 L130 34 L155 38 L180 22 L205 26 L235 8 L260 12" fill="none" stroke="#D4F542" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="235" cy="8" r="6" fill="#D4F542" stroke="#0E1A14" stroke-width="2"/><path d="M0 70 L30 62 L55 66 L80 48 L105 52 L130 34 L155 38 L180 22 L205 26 L235 8 L260 12 L260 90 L0 90 Z" fill="rgba(212,245,66,.15)"/></svg>
+</div>
+<div style="padding:8px 18px">
+<div class="hold"><div class="logo-sm" style="background:#000"></div><div><b>Apple • AAPL</b><small>0.412 shares</small></div><div class="r"><b>$99.34</b><small style="color:#0A7A3A">+4.2%</small></div></div>
+<div class="hold"><div class="logo-sm" style="background:#FF6B4A">T</div><div><b>Tesla • TSLA</b><small>0.150 shares</small></div><div class="r"><b>$37.18</b><small style="color:#0A7A3A">+8.1%</small></div></div>
+<div class="hold"><div class="logo-sm" style="background:#1A73E8">N</div><div><b>Nvidia • NVDA</b><small>0.082 shares</small></div><div class="r"><b>$112.04</b><small style="color:#0A7A3A">+11.6%</small></div></div>
+</div>
+<div class="buy">Buy a slice from <span>$1 →</span></div>
+</div>
+</div>
+
+<div class="float f2"><div class="tick" style="background:#0F3D2E;color:#fff;border-color:#0F3D2E">$</div><div><b style="font-size:14px">+$12.40 dividend</b><br><small style="font-size:12.5px;color:#5A6A62;font-weight:600">Auto-reinvested • VTI</small></div></div>
+<div class="float f3"><span style="font-size:20px">🛡️</span><div><b style="font-size:13.5px">Protected up to $500k</b><br><small style="font-size:12.5px;opacity:.7">SIPC insurance included</small></div></div>
+<div class="caption">◉ AAPL 0.083 shares = $20.00 — that’s the value.</div>
+</section>
+</main>
+
+<div class="trust" aria-label="Trust signals">
+<div><div class="ic">🔒</div><div><b>Bank-grade security</b><small>AES-256 + biometric login</small></div></div>
+<div><div class="ic">🛡️</div><div><b>SIPC insured to $500k</b><small>FINRA member firm</small></div></div>
+<div><div class="ic">★</div><div><b>4.8 • 82k reviews</b><small>Top rated investing app</small></div></div>
+<div><div class="ic">🏦</div><div><b>Cash earns 4.1% APY</b><small>FDIC sweep, no lockup</small></div></div>
+</div>
+<div class="foot"><span>Investing involves risk, including loss of principal. Fractional shares are real assets held in your name.</span><span>© 2026 Portion Securities LLC</span></div>
+</div>
+</body>
+</html>

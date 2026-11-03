@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1280">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,900;9..144,800&family=Inter:wght@500;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%}
+body{background:#0c0808;display:flex;align-items:center;justify-content:center;min-height:100vh;font-family:Inter,sans-serif}
+.stage{width:1280px;height:720px;flex-shrink:0;position:relative;overflow:hidden;background:#FFF6EE;color:#211011}
+.bg{position:absolute;inset:0;background:radial-gradient(900px 500px at 70% 45%,#FFFFFF 0%,#FFF6EE 55%,#FBE7D2 100%)}
+.bigC{position:absolute;left:50%;top:50%;transform:translate(-50%,-54%);font-family:Fraunces,serif;font-weight:900;font-size:640px;line-height:1;color:#F7DCC0;letter-spacing:-40px;z-index:1;animation:bigC 12s infinite}
+@keyframes bigC{0%{opacity:0;transform:translate(-50%,-54%) scale(.92)}4%{opacity:1;transform:translate(-50%,-54%) scale(1)}28%{opacity:1;transform:translate(-50%,-54%) scale(1)}35%{opacity:1;transform:translate(calc(-50% + 180px),-54%) scale(1)}92%{opacity:1;transform:translate(calc(-50% + 180px),-54%) scale(1.02)}97%,100%{opacity:0;transform:translate(-50%,-54%) scale(.94)}}
+.diagonal{position:absolute;left:-20%;top:54%;width:140%;height:172px;background:#FF4D2E;transform:rotate(-11deg);z-index:1;box-shadow:0 18px 0 #211011;animation:diag 12s infinite}
+@keyframes diag{0%{opacity:0;transform:rotate(-11deg) translateX(-120px)}3%{opacity:1;transform:rotate(-11deg) translateX(0)}30%{transform:rotate(-11deg) translateX(0)}36%{transform:rotate(-11deg) translateX(40px)}92%{opacity:1;transform:rotate(-11deg) translateX(40px)}97%,100%{opacity:0;transform:rotate(-11deg) translateX(-80px)}}
+.diagonal2{position:absolute;left:-20%;top:calc(54% + 196px);width:140%;height:14px;background:#211011;transform:rotate(-11deg);z-index:1;animation:diag 12s infinite}
+.glow{position:absolute;left:50%;top:50%;width:520px;height:520px;transform:translate(-50%,-42%);background:radial-gradient(circle,#FFC37A 0%,#FF8A2B 38%,rgba(255,77,46,0) 70%);z-index:2;animation:glowP 12s infinite}
+@keyframes glowP{0%{opacity:0;transform:translate(-50%,-42%) scale(.7)}4%{opacity:.95;transform:translate(-50%,-42%) scale(1)}28%{opacity:.95;transform:translate(-50%,-42%) scale(1)}35%{opacity:.9;transform:translate(calc(-50% + 330px),-42%) scale(.92)}92%{opacity:.9;transform:translate(calc(-50% + 330px),-42%) scale(.95)}97%,100%{opacity:0;transform:translate(-50%,-42%) scale(.7)}}
+.top{position:absolute;top:0;left:0;right:0;z-index:10;display:flex;justify-content:space-between;align-items:center;padding:26px 44px}
+.logo{font-family:Fraunces,serif;font-weight:900;font-size:28px;letter-spacing:3px}
+.logo em{font-style:normal;background:#211011;color:#FFF6EE;padding:2px 10px;border-radius:99px;margin-left:10px;font-family:Inter;font-size:13px;letter-spacing:2px;vertical-align:middle}
+.top-right{font-size:14px;font-weight:800;letter-spacing:2.5px;border:2px solid #211011;border-radius:99px;padding:10px 20px;background:#fff}
+/* BOTTLE HERO */
+.bottle-wrap{position:absolute;left:50%;top:50%;width:280px;height:560px;z-index:5;animation:bottleMove 12s infinite}
+@keyframes bottleMove{0%{opacity:0;transform:translate(-50%,-48%) scale(.62) rotate(-8deg)}3%{opacity:1;transform:translate(-50%,-50%) scale(1.06) rotate(0deg)}6.5%{opacity:1;transform:translate(-50%,-50%) scale(1) rotate(0deg)}28%{opacity:1;transform:translate(-50%,-50%) scale(1) rotate(0deg)}35%{opacity:1;transform:translate(calc(-50% + 335px),-50%) scale(1) rotate(2deg)}61%{opacity:1;transform:translate(calc(-50% + 335px),-48%) scale(1) rotate(2deg)}69%{opacity:1;transform:translate(calc(-50% + 335px),-50%) scale(1.05) rotate(2deg)}92%{opacity:1;transform:translate(calc(-50% + 335px),-50%) scale(1.03) rotate(2deg)}97%{opacity:0;transform:translate(calc(-50% + 150px),-50%) scale(.9)}100%{opacity:0;transform:translate(-50%,-48%) scale(.62)}}
+.cap{width:92px;height:118px;background:#211011;border-radius:22px 22px 10px 10px;margin:0 auto;position:relative;z-index:2}
+.cap:before{content:"";position:absolute;top:22px;left:12px;right:12px;height:8px;background:#FFB800;border-radius:99px}
+.cap:after{content:"";position:absolute;top:-18px;left:50%;transform:translateX(-50%);width:44px;height:28px;background:#211011;border-radius:12px 12px 0 0}
+.neck{width:118px;height:30px;background:linear-gradient(#fff,#E9D9C6);margin:-2px auto 0;border:4px solid #211011;border-bottom:0;border-radius:8px 8px 0 0}
+.bbody{width:268px;height:384px;margin:0 auto;background:linear-gradient(180deg,#FFDF9E 0%,#FF9E3D 42%,#E94E12 100%);border:6px solid #211011;border-radius:38px;position:relative;overflow:hidden;box-shadow:18px 22px 0 rgba(33,16,17,.18)}
+.shine{position:absolute;left:22px;top:18px;bottom:18px;width:34px;background:linear-gradient(rgba(255,255,255,.95),rgba(255,255,255,.15));border-radius:99px;animation:shine 12s infinite}
+@keyframes shine{0%,100%{opacity:.25;transform:translateX(0)}8%{opacity:.9;transform:translateX(0)}20%{opacity:.55;transform:translateX(8px)}50%,80%{opacity:.6;transform:translateX(6px)}}
+.label{position:absolute;left:20px;right:20px;top:92px;background:#FFFDF8;border:4px solid #211011;border-radius:18px;padding:18px 14px 16px;text-align:center}
+.label b{display:block;font-family:Fraunces,serif;font-size:32px;line-height:.95;letter-spacing:.5px}
+.label span{display:block;font-size:12.5px;font-weight:900;letter-spacing:2.8px;margin-top:8px;background:#211011;color:#FFB800;border-radius:99px;padding:6px 8px}
+.label small{display:block;font-size:12px;font-weight:700;margin-top:10px;line-height:1.4}
+.dropC{width:54px;height:54px;background:#FF4D2E;border:3px solid #211011;border-radius:50% 50% 50% 8px;transform:rotate(45deg);margin:0 auto 10px;display:flex;align-items:center;justify-content:center}
+.dropC i{transform:rotate(-45deg);font-style:normal;font-family:Fraunces,serif;font-weight:900;font-size:28px;color:#fff}
+.fshadow{width:300px;height:36px;background:rgba(33,16,17,.28);border-radius:50%;margin:12px auto 0;filter:blur(2px);animation:shadow 12s infinite}
+@keyframes shadow{0%,100%{opacity:0;transform:scaleX(.6)}4%{opacity:1;transform:scaleX(1)}60%,92%{opacity:1;transform:scaleX(1)}97%{opacity:0;transform:scaleX(.6)}}
+/* SCENES */
+.scene{position:absolute;inset:0;z-index:4;pointer-events:none}
+.hook{text-align:center;padding-top:86px;animation:hookS 12s infinite}
+@keyframes hookS{0%{opacity:0;transform:translateY(36px)}1.5%{opacity:1;transform:translateY(0)}26%{opacity:1;transform:translateY(0)}31%{opacity:0;transform:translateY(-34px)}32%,100%{opacity:0;transform:translateY(-34px)}}
+.eyebrow{display:inline-block;background:#211011;color:#fff;font-size:15px;font-weight:800;letter-spacing:3px;border-radius:99px;padding:11px 22px}
+.hook h1{font-family:Fraunces,serif;font-weight:900;font-size:118px;line-height:.92;letter-spacing:-2px;margin:18px auto 0;max-width:1020px;color:#211011}
+.hook h1 u{text-decoration:none;background:linear-gradient(transparent 62%,#FFB800 62%,#FFB800 96%,transparent 96%)}
+.hook p{font-size:22px;font-weight:700;margin-top:14px}
+.hook p b{background:#FF4D2E;color:#fff;padding:2px 12px;border-radius:99px}
+.benefit,.offer{animation:hideAll 12s infinite}
+.benefit{animation-name:benS}.offer{animation-name:offS}
+@keyframes benS{0%,32%{opacity:0;transform:translateX(-60px)}35.5%{opacity:1;transform:translateX(0)}60%{opacity:1;transform:translateX(0)}64.5%,100%{opacity:0;transform:translateX(-40px)}}
+@keyframes offS{0%,65.5%{opacity:0;transform:translateX(-60px)}69%{opacity:1;transform:translateX(0)}93%{opacity:1;transform:translateX(0)}97.5%,100%{opacity:0;transform:translateY(-20px)}}
+@keyframes hideAll{0%{opacity:0}100%{opacity:0}}
+.card{position:absolute;left:72px;top:132px;width:540px;background:#FFFFFF;border:5px solid #211011;border-radius:28px;padding:32px 34px 26px;box-shadow:14px 14px 0 #211011;z-index:6}
+.kicker{font-size:14px;font-weight:900;letter-spacing:3px;color:#C73A14}
+.card h2{font-family:Fraunces,serif;font-size:62px;line-height:.95;letter-spacing:-1px;margin:10px 0 16px}
+.stat{background:#FFF1D6;border:3px solid #211011;border-radius:16px;padding:14px 16px;font-weight:900;font-size:19px}
+.bar{height:14px;background:#fff;border:2px solid #211011;border-radius:99px;margin-top:10px;overflow:hidden}
+.bar i{display:block;height:100%;width:93%;background:linear-gradient(90deg,#FF4D2E,#FFB800);border-radius:99px;transform-origin:left;animation:barF 12s infinite}
+@keyframes barF{0%,35%{transform:scaleX(0);opacity:0}42%{transform:scaleX(1);opacity:1}60%{transform:scaleX(1);opacity:1}64%,100%{transform:scaleX(1);opacity:0}}
+.ticks{font-weight:800;font-size:18px;margin:14px 0 8px;line-height:1.6}
+.card small{font-size:13.5px;font-weight:500;opacity:.7}
+.off-badge{display:inline-block;background:#FFB800;border:3px solid #211011;border-radius:99px;font-weight:900;font-size:18px;letter-spacing:1px;padding:10px 18px;animation:badgeP 12s infinite}
+@keyframes badgeP{0%,68%{transform:scale(.8);opacity:0}71%{transform:scale(1.12);opacity:1}74%{transform:scale(1)}88%{transform:scale(1)}91%{transform:scale(1.08)}93%{transform:scale(1)}100%{transform:scale(1)}}
+.price{font-size:22px;font-weight:800;margin-top:12px}
+.price s{opacity:.5}.price b{font-size:42px}.price em{font-style:normal;background:#0E7A4A;color:#fff;border-radius:10px;padding:2px 10px;font-size:18px;margin-left:8px}
+.btn{display:inline-block;background:#211011;color:#fff;font-size:28px;font-weight:900;letter-spacing:1px;border-radius:99px;padding:18px 54px;margin-top:14px;box-shadow:0 8px 0 #FF4D2E;animation:btnP 12s infinite}
+@keyframes btnP{0%,69%{opacity:0;transform:translateY(18px) scale(.9)}73%{opacity:1;transform:translateY(0) scale(1.05)}76%,92%{opacity:1;transform:translateY(0) scale(1)}93%,100%{opacity:1;transform:translateY(0) scale(1)}}
+.stars{margin-left:16px;font-weight:800;font-size:17px}
+.stars span{color:#E98A00;font-size:20px;letter-spacing:2px}
+.progress{position:absolute;left:72px;right:72px;bottom:30px;height:8px;background:rgba(33,16,17,.15);border-radius:99px;z-index:10;overflow:hidden}
+.progress i{display:block;height:100%;background:#211011;border-radius:99px;transform-origin:left;animation:prog 12s infinite}
+@keyframes prog{0%{transform:scaleX(0)}100%{transform:scaleX(1)}}
+.side{position:absolute;right:36px;top:50%;transform:translateY(-50%) rotate(90deg);font-size:13px;font-weight:800;letter-spacing:4px;z-index:10;opacity:.7}
+</style>
+</head>
+<body>
+<div class="stage">
+<div class="bg"></div>
+<div class="bigC">C</div>
+<div class="diagonal"></div>
+<div class="diagonal2"></div>
+<div class="glow"></div>
+<div class="top"><div class="logo">LUMIÈRE<em>PARIS</em></div><div class="top-right">NEW • VITAMIN C 15%</div></div>
+<div class="scene hook"><div class="eyebrow">NEW LAUNCH • FOR WOMEN 25-34</div><h1>Glass skin in <u>7 days.</u></h1><p><b>15% vitamin C</b> + hyaluronic acid &nbsp;•&nbsp; one drop morning + night</p></div>
+<div class="scene benefit"><div class="card"><div class="kicker">WHY IT WORKS • 2 DROPS DAILY</div><h2>Fades spots. Firms. Glows.</h2><div class="stat">93% saw brighter skin in 14 days*<div class="bar"><i></i></div></div><div class="ticks">✓ Dark spots visibly lighter &nbsp; ✓ Makeup-free glow</div><small>*Independent 8-week study, 112 women aged 26-33.</small></div></div>
+<div class="scene offer"><div class="card"><div class="off-badge">★ 30% OFF LAUNCH • SAVE $11.40</div><h2>Glow for $27.60, not $39.</h2><div class="price"><s>$39.00</s> <b>$27.60</b><em>Today only</em></div><div><span class="btn">Buy now →</span><span class="stars"><span>★★★★★</span><br>4.9 • Loved by 12,000+</span></div><small style="display:block;margin-top:12px">Launch week only — ends Sunday. 30-day glow guarantee.</small></div></div>
+<div class="bottle-wrap"><div class="cap"></div><div class="neck"></div><div class="bbody"><div class="shine"></div><div class="label"><div class="dropC"><i>C</i></div><b>LUMIÈRE</b><span>VITAMIN C 15%</span><small>brightening serum<br>30 ml / 1.0 fl oz</small></div></div><div class="fshadownow fshadow"></div></div>
+<div class="side">DERMATOLOGIST TESTED • VEGAN • FRAGRANCE-FREE</div>
+<div class="progress"><i></i></div>
+</div>
+</body>
+</html>

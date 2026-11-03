@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slice — Own the stocks you love, from $1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+--paper:#F3EEE1;
+--paper2:#EDE5D2;
+--ink:#132A1F;
+--ink2:#3A4A41;
+--muted:#5E6E64;
+--line:#E4D9C1;
+--accent:#FF5A2B;
+--accent-dark:#D63E12;
+--pine:#14301F;
+--sage:#E9F1E6;
+--gold:#FFB800;
+--white:#FFFFFF;
+}
+body{
+font-family:'Inter',system-ui,-apple-system,sans-serif;
+background:var(--paper);
+color:var(--ink);
+font-size:16px;
+line-height:1.5;
+min-height:100vh;
+-webkit-font-smoothing:antialiased;
+background-image:
+ radial-gradient(900px 500px at 12% 0%, #FFF8E6 0%, transparent 60%),
+ radial-gradient(800px 500px at 95% 100%, #DDEBD7 0%, transparent 60%),
+ radial-gradient(rgba(19,42,31,.10) 1.2px, transparent 1.3px);
+background-size:auto,auto,22px 22px;
+}
+a{color:inherit}
+.wrap{max-width:1200px;margin:0 auto;padding:0 28px}
+/* HEADER */
+header{padding:18px 0 16px}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none}
+.mark{width:36px;height:36px;border-radius:11px;background:var(--ink);display:grid;place-items:center;color:#fff;font-weight:800;font-size:20px;position:relative;overflow:hidden}
+.mark::after{content:"";position:absolute;left:-6px;right:-6px;top:16px;height:4px;background:var(--accent);transform:rotate(-18deg)}
+.mark span{position:relative;z-index:1}
+.brand b{font-size:21px;letter-spacing:-.02em}
+.brand small{display:block;font-size:11px;font-weight:700;letter-spacing:.14em;color:var(--muted);line-height:1}
+.links{display:flex;gap:26px;font-size:15px;font-weight:600;color:var(--ink2)}
+.links a{text-decoration:none;opacity:.85}
+.links a:hover{opacity:1;text-decoration:underline;text-underline-offset:4px}
+.nav-cta{display:flex;align-items:center;gap:12px}
+.signin{font-weight:700;font-size:15px;text-decoration:none;padding:10px 14px;border-radius:999px}
+.signin:hover{background:rgba(19,42,31,.07)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;cursor:pointer;text-decoration:none;font-weight:800;border-radius:999px;transition:transform .15s ease, box-shadow .15s ease}
+.btn-dark{background:var(--ink);color:#fff;padding:12px 22px;font-size:15px}
+.btn-dark:hover{transform:translateY(-1px);box-shadow:0 8px 20px rgba(19,42,31,.25)}
+.btn:focus-visible,.signin:focus-visible,.ghost:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+/* HERO CARD = SINGLE FOCAL */
+.hero{padding:6px 0 12px}
+.card{
+background:var(--white);
+border:1px solid var(--line);
+border-radius:28px;
+display:grid;
+grid-template-columns:1.08fr .92fr;
+overflow:hidden;
+box-shadow:0 24px 60px rgba(19,42,31,.14), 0 2px 0 rgba(19,42,31,.06);
+position:relative;
+}
+.left{padding:44px 46px 32px 50px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:#FFF1E8;border:1px solid #F6C7B0;color:#7A2E12;font-size:12px;font-weight:800;letter-spacing:.12em;padding:8px 14px;border-radius:999px}
+.dot{width:8px;height:8px;border-radius:50%;background:#1B9B55;box-shadow:0 0 0 4px rgba(27,155,85,.18)}
+h1{font-family:'Fraunces',serif;font-weight:700;font-size:58px;line-height:.95;letter-spacing:-.03em;margin:18px 0 14px;color:var(--ink)}
+h1 em{font-style:italic;font-weight:600;background:linear-gradient(180deg,transparent 62%, #FFE2A8 62%, #FFE2A8 92%, transparent 92%)}
+.sub{font-size:18px;line-height:1.55;color:var(--ink2);max-width:460px}
+.sub strong{color:var(--ink)}
+.cta-row{display:flex;gap:14px;margin:24px 0 10px;align-items:center;flex-wrap:wrap}
+.btn-big{background:var(--ink);color:#fff;padding:17px 26px;font-size:17px;border-radius:16px}
+.btn-big:hover{background:#1E3D2C;transform:translateY(-1px)}
+.btn-big .arrow{background:var(--accent);color:#fff;width:28px;height:28px;display:inline-grid;place-items:center;border-radius:50%;font-size:18px}
+.ghost{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:16px;color:var(--ink);text-decoration:none;padding:16px 10px}
+.ghost i{width:32px;height:32px;border-radius:50%;border:1.5px solid var(--ink);display:grid;place-items:center;font-style:normal;font-size:13px}
+.micro{font-size:14px;color:var(--muted);font-weight:600;display:flex;align-items:center;gap:8px}
+.checks{display:flex;gap:18px;margin:18px 0 20px;flex-wrap:wrap}
+.checks span{font-size:14.5px;font-weight:700;color:var(--ink2);display:flex;gap:7px;align-items:center}
+.checks b{width:20px;height:20px;border-radius:50%;background:#1B7A4D;color:#fff;display:grid;place-items:center;font-size:12px}
+.trust{display:flex;align-items:center;gap:14px;border-top:1px dashed var(--line);padding-top:18px;margin-top:4px}
+.avatars{display:flex}
+.avatars div{width:34px;height:34px;border-radius:50%;border:2.5px solid #fff;margin-left:-9px;display:grid;place-items:center;font-size:12px;font-weight:800;color:#fff}
+.avatars div:first-child{margin-left:0}
+.trust-txt{font-size:14.5px;line-height:1.35}
+.stars{color:#9A6700;font-size:14px;letter-spacing:1px;font-weight:800}
+.trust-txt strong{color:var(--ink)}
+/* RIGHT */
+.visual{background:var(--pine);color:#EAF2E8;padding:32px 36px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:center}
+.visual::before{content:"$1";position:absolute;right:-10px;top:2px;font-family:'Fraunces',serif;font-size:210px;line-height:1;color:rgba(255,255,255,.06);font-weight:700;pointer-events:none}
+.visual::after{content:"";position:absolute;left:-80px;bottom:-80px;width:280px;height:280px;background:radial-gradient(circle at center, rgba(255,90,43,.45), transparent 70%);pointer-events:none}
+.v-eyebrow{font-size:12px;letter-spacing:.16em;font-weight:800;color:#B9D4BF;display:flex;justify-content:space-between;align-items:center;position:relative;z-index:2}
+.live{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);padding:5px 11px;border-radius:999px;color:#fff;font-size:12px;letter-spacing:.02em}
+.live i{width:7px;height:7px;background:#3DDA7A;border-radius:50%;box-shadow:0 0 0 4px rgba(61,218,122,.25)}
+.stock{background:#fff;color:var(--ink);border-radius:20px;padding:20px 20px 16px;margin-top:14px;position:relative;z-index:2;box-shadow:0 16px 40px rgba(0,0,0,.30)}
+.s-top{display:flex;align-items:center;justify-content:space-between}
+.s-id{display:flex;gap:12px;align-items:center}
+.apple{width:44px;height:44px;border-radius:14px;background:#111;display:grid;place-items:center;font-size:24px}
+.s-id b{display:block;font-size:16px;line-height:1.1}
+.s-id small{font-size:13px;color:var(--muted);font-weight:600}
+.up{background:#E6F6EB;color:#0E6B33;font-weight:800;font-size:13px;padding:6px 10px;border-radius:999px}
+.s-own{display:flex;align-items:baseline;justify-content:space-between;margin:16px 0 8px}
+.s-own .amt{font-family:'Fraunces',serif;font-size:44px;line-height:1;letter-spacing:-.02em}
+.s-own .amt small{font-family:'Inter',sans-serif;font-size:14px;font-weight:700;color:var(--muted)}
+.s-own .shr{text-align:right;font-size:13px;font-weight:700;color:var(--ink2);line-height:1.4}
+.s-own .shr strong{color:var(--ink);font-size:15px}
+.chart{background:#F7F3E8;border:1px solid #EADFC6;border-radius:14px;padding:12px 12px 8px;margin-top:6px}
+.s-bottom{display:flex;gap:10px;margin-top:12px}
+.buy{flex:1;background:var(--accent);color:#fff;font-weight:800;font-size:16px;padding:13px;border-radius:12px;border:0;cursor:pointer}
+.buy:hover{background:var(--accent-dark)}
+.sell{padding:13px 18px;border-radius:12px;border:1.5px solid var(--line);background:#fff;font-weight:800;cursor:pointer}
+.float{position:absolute;z-index:3;background:#fff;color:var(--ink);border-radius:14px;padding:10px 14px;font-size:13.5px;font-weight:800;box-shadow:0 12px 28px rgba(0,0,0,.28);display:flex;gap:9px;align-items:center;border:1px solid rgba(0,0,0,.06)}
+.f1{top:66px;right:28px;transform:rotate(2deg)}
+.f1 i,.f2 i{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;color:#fff;font-style:normal}
+.f1 i{background:#1B9B55}
+.f2{bottom:92px;left:22px;transform:rotate(-2deg)}
+.f2 i{background:var(--accent)}
+.float small{display:block;font-weight:600;color:var(--muted);font-size:12px}
+.v-foot{display:flex;gap:16px;margin-top:16px;font-size:13px;font-weight:600;color:#C6D8CB;position:relative;z-index:2}
+/* FOOT STRIP - muted, single line */
+.safety{display:flex;align-items:center;justify-content:center;gap:26px;padding:14px 10px 18px;font-size:14px;font-weight:600;color:#5B6B61;flex-wrap:wrap}
+.safety span{display:inline-flex;align-items:center;gap:8px}
+.safety b{color:var(--ink)}
+@media(max-width:1020px){
+.card{grid-template-columns:1fr}
+.visual{border-radius:0}
+h1{font-size:46px}
+.left{padding:32px 28px}
+.links{display:none}
+.f1,.f2{position:static;transform:none;margin-top:10px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<nav class="nav" aria-label="Main">
+<a class="brand" href="#" aria-label="Slice home">
+<div class="mark"><span>S</span></div>
+<div><b>Slice</b><small>FRACTIONAL INVESTING</small></div>
+</a>
+<div class="links">
+<a href="#">How slices work</a>
+<a href="#">Stocks</a>
+<a href="#">Pricing</a>
+<a href="#">Safety</a>
+</div>
+<div class="nav-cta">
+<a class="signin" href="#">Sign in</a>
+<a class="btn btn-dark" href="#">Get started</a>
+</div>
+</nav>
+</header>
+
+<main class="hero">
+<section class="card" aria-label="Get started with Slice">
+<div class="left">
+<div class="eyebrow"><span class="dot"></span> SEC-REGISTERED BROKERAGE PARTNER</div>
+<h1>Own the stocks you love, <em>from $1.</em></h1>
+<p class="sub"><strong>Slice splits Apple, Tesla &amp; 4,000+ stocks</strong> into bite-size shares. Buy in seconds, earn real dividends — no commissions, no jargon.</p>
+
+<div class="cta-row">
+<a href="#" class="btn btn-big" aria-label="Start investing, 3 minute sign-up">Start in 3 minutes <span class="arrow">→</span></a>
+<a href="#" class="ghost"><i>▶</i> How slices work</a>
+</div>
+<p class="micro">⏱ 3-min sign-up with ID &nbsp;•&nbsp; $1 to start &nbsp;•&nbsp; Sell anytime</p>
+
+<div class="checks" aria-label="Benefits">
+<span><b>✓</b> Real shares in your name</span>
+<span><b>✓</b> Auto-invest from $1</span>
+<span><b>✓</b> Cancel anytime</span>
+</div>
+
+<div class="trust">
+<div class="avatars" aria-hidden="true">
+<div style="background:#1B7A4D">MK</div>
+<div style="background:#FF5A2B">JA</div>
+<div style="background:#132A1F">RS</div>
+<div style="background:#C9A227">+9</div>
+</div>
+<div class="trust-txt">
+<div class="stars" aria-label="Rated 4.8 out of 5">★★★★★ <span style="color:#132A1F">4.8/5</span></div>
+<strong>Loved by 1.2M investors</strong> • SIPC-protected to $500k
+</div>
+</div>
+</div>
+
+<div class="visual" aria-label="Example $1 slice of Apple stock">
+<div class="v-eyebrow"><span>● LIVE EXAMPLE — YOUR FIRST SLICE</span> <span class="live"><i></i> Market open</span></div>
+
+<div class="float f1"><i>✓</i><div>$1 slice confirmed<small>0.0043 AAPL • just now</small></div></div>
+
+<div class="stock">
+<div class="s-top">
+<div class="s-id">
+<div class="apple">🍎</div>
+<div><b>Apple Inc. • AAPL</b><small>$231.42 today • Nasdaq</small></div>
+</div>
+<div class="up">▲ +1.2%</div>
+</div>
+<div class="s-own">
+<div class="amt">$1.00 <small>invested</small></div>
+<div class="shr"><strong>0.0043 shares</strong><br>≈ 1 slice of Apple</div>
+</div>
+<div class="chart">
+<svg viewBox="0 0 320 74" width="100%" height="64" role="img" aria-label="Apple stock trending up">
+<defs><linearGradient id="g" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#FF5A2B" stop-opacity=".28"/><stop offset="1" stop-color="#FF5A2B" stop-opacity="0"/></linearGradient></defs>
+<path d="M0 58 L28 54 L56 56 L84 44 L112 46 L140 36 L168 38 L196 28 L224 30 L252 20 L280 22 L320 10 L320 74 L0 74 Z" fill="url(#g)"/>
+<path d="M0 58 L28 54 L56 56 L84 44 L112 46 L140 36 L168 38 L196 28 L224 30 L252 20 L280 22 L320 10" fill="none" stroke="#132A1F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="320" cy="10" r="6" fill="#FF5A2B" stroke="#fff" stroke-width="3"/>
+</svg>
+<div style="display:flex;justify-content:space-between;font-size:12px;font-weight:700;color:#5E6E64"><span>Past 30 days</span><span style="color:#0E6B33">Your slice +$0.04 (+4.1%)</span></div>
+</div>
+<div class="s-bottom">
+<button class="buy">Add $1 slice</button>
+<button class="sell">Details</button>
+</div>
+</div>
+
+<div class="float f2"><i>$</i><div>Dividend earned: $0.02<small>Paid in cash • real ownership</small></div></div>
+
+<div class="v-foot"><span>🔒 256-bit encryption</span><span>🛡️ SIPC up to $500k</span><span>🇺🇸 US-regulated partner</span></div>
+</div>
+</section>
+
+<div class="safety" aria-label="Trust and safety">
+<span>🛡️ <span><b>SIPC-protected</b> to $500k</span></span>
+<span>🔒 <span><b>Bank-level security</b> + 2FA</span></span>
+<span>📊 <span><b>Real shares,</b> never CFDs • No data selling</span></span>
+</div>
+</main>
+</div>
+</body>
+</html>

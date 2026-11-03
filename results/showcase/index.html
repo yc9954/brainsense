@@ -2,15 +2,22 @@
 <style>body{font-family:-apple-system,Pretendard,sans-serif;background:#0b0b0f;color:#eee;margin:0;padding:32px}
 h1{font-weight:600;font-size:22px} table{border-collapse:collapse;font-size:13px;margin-top:16px} td,th{padding:8px 12px;border-bottom:1px solid #23232b;text-align:left}
 a{color:#ffb38a} .k{color:#8b8b96}</style></head><body><h1>BrainSense showcase — runs</h1>
-<p class=k>brain_loop = TRIBE v2 예측 피질 → 전문가 비평 → Muse 수정. 승률은 순서를 바꿔 두 번 묻는 블라인드 판정 기준.</p>
+<p class=k>brain_loop = TRIBE v2 predicted cortex → expert critique → Muse revises. Win rates are from a blind pairwise judge asked in both image orders. Runs prefixed <b>en-</b> use English briefs; earlier runs were Korean.</p>
 <table><tr><th>run</th><th>briefs</th><th>vs Muse one-shot</th><th>vs Muse self-loop</th><th>brain score (oneshot / muse / brain)</th></tr>
+<tr><td><a href='en-ad-suite1/index.html'>en-ad-suite1</a></td><td>3</td><td>100% (P 0.89, n=3)</td><td>100% (P 0.89, n=3)</td><td>0.376 / 0.331 / 0.382</td></tr>
+<tr><td><a href='en-suite1/index.html'>en-suite1</a></td><td>5</td><td>60% (P 0.64, n=5)</td><td>20% (P 0.33, n=5)</td><td>0.436 / 0.477 / 0.554</td></tr>
 <tr><td><a href='ad-suite1/index.html'>ad-suite1</a></td><td>3</td><td>100% (P 0.89, n=3)</td><td>67% (P 0.50, n=3)</td><td>0.363 / 0.340 / 0.349</td></tr>
 <tr><td><a href='suite2-hybrid/index.html'>suite2-hybrid</a></td><td>5</td><td>—</td><td>—</td><td>nan / 0.454 / nan</td></tr>
 <tr><td><a href='suite1/index.html'>suite1</a></td><td>5</td><td>80% (P 0.65, n=5)</td><td>20% (P 0.33, n=5)</td><td>0.454 / 0.451 / 0.544</td></tr>
 <tr><td><a href='ad-smoke/index.html'>ad-smoke</a></td><td>1</td><td>100% (P 0.90, n=1)</td><td>100% (P 0.90, n=1)</td><td>0.322 / 0.259 / 0.326</td></tr>
 <tr><td><a href='smoke/index.html'>smoke</a></td><td>1</td><td>0% (P 0.48, n=1)</td><td>0% (P 0.12, n=1)</td><td>0.574 / 0.503 / 0.549</td></tr>
 </table>
-<h1 style='margin-top:36px'>같은 브리프, 제로부터 — Muse 한 번 vs BrainSense 하네스 (문제 장부 + 사진 소싱 + 개선될 때만 채택)</h1><table><tr><th>run / brief</th><th>ui_score Muse 한 번 → 하네스</th><th>rounds kept</th><th>issues fixed</th><th>photos</th></tr>
+<h1 style='margin-top:36px'>Same brief, from zero — Muse once vs the BrainSense harness (issue ledger + photo sourcing + keep-only-if-better)</h1><table><tr><th>run / brief</th><th>ui_score Muse once → harness</th><th>best round</th><th>issues fixed</th><th>photos</th></tr>
+<tr><td><a href='harness/en-harness1/popup/index.html'>en-harness1 / popup</a></td><td>0.593 → <b>0.679</b> (+0.086)</td><td>r2</td><td>2/3</td><td>0</td></tr>
+<tr><td><a href='harness/en-harness1/skincare_ad/index.html'>en-harness1 / skincare_ad</a></td><td>0.636 → <b>0.701</b> (+0.064)</td><td>r2</td><td>0/4</td><td>0</td></tr>
+<tr><td><a href='harness/en-harness1/saas_pricing/index.html'>en-harness1 / saas_pricing</a></td><td>0.615 → <b>0.615</b> (+0.000)</td><td>r0</td><td>0/2</td><td>0</td></tr>
+<tr><td><a href='harness/en-harness1/festival_poster/index.html'>en-harness1 / festival_poster</a></td><td>0.574 → <b>0.662</b> (+0.088)</td><td>r2</td><td>1/4</td><td>0</td></tr>
+<tr><td><a href='harness/en-harness1/fintech_onboarding/index.html'>en-harness1 / fintech_onboarding</a></td><td>0.647 → <b>0.681</b> (+0.035)</td><td>r2</td><td>0/3</td><td>0</td></tr>
 <tr><td><a href='harness/hz-suite3-focus/skincare_ad/index.html'>hz-suite3-focus / skincare_ad</a></td><td>0.640 → <b>0.640</b> (+0.000)</td><td>r0</td><td>0/2</td><td>0</td></tr>
 <tr><td><a href='harness/hz-suite3-focus/fintech_onboarding/index.html'>hz-suite3-focus / fintech_onboarding</a></td><td>0.520 → <b>0.562</b> (+0.042)</td><td>r4</td><td>0/3</td><td>1</td></tr>
 <tr><td><a href='harness/hz-suite2-gated/skincare_ad/index.html'>hz-suite2-gated / skincare_ad</a></td><td>0.680 → <b>0.680</b> (+0.000)</td><td>r0</td><td>0/3</td><td>0</td></tr>
@@ -23,7 +30,8 @@ a{color:#ffb38a} .k{color:#8b8b96}</style></head><body><h1>BrainSense showcase �
 <tr><td><a href='harness/hz-suite1/fintech_onboarding/index.html'>hz-suite1 / fintech_onboarding</a></td><td>0.659 → <b>0.659</b> (+0.000)</td><td>r0</td><td>0/2</td><td>6</td></tr>
 <tr><td><a href='harness/hz-smoke/popup/index.html'>hz-smoke / popup</a></td><td>0.583 → <b>0.660</b> (+0.077)</td><td>r2</td><td>1/5</td><td>0</td></tr>
 </table>
-<h1 style='margin-top:36px'>뇌가 고친 실제 사이트 (before → after)</h1><table><tr><th>site</th><th>ui_score before → after</th><th>뇌 점수</th><th>심사위원</th><th>첫 진단</th></tr>
+<h1 style='margin-top:36px'>Live sites the brain redesigned (before → after)</h1><table><tr><th>site</th><th>ui_score before → after</th><th>brain score</th><th>judge</th><th>first diagnosis</th></tr>
+<tr><td><a href='redesign/en-/index.html'>https://www.craigslist.org/about/sites craigslist app</a></td><td>0.529 → <b>0.579</b> (+0.050)</td><td>0.889 → 0.589</td><td>0.25 → 0.61</td><td class=k>Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object </td></tr>
 <tr><td><a href='redesign/craigslist/index.html'>https://www.craigslist.org/about/sites</a></td><td>0.486 → <b>0.656</b> (+0.170)</td><td>0.657 → 0.610</td><td>0.33 → 0.75</td><td class=k>물체 형태(LO)·움직임(MT) 반응이 낮음: 뚜렷한 사물 실루엣이 없는 텍스트 위주 화면</td></tr>
 <tr><td><a href='redesign/hackernews/index.html'>https://news.ycombinator.com</a></td><td>0.475 → <b>0.558</b> (+0.082)</td><td>0.753 → 0.412</td><td>0.28 → 0.69</td><td class=k>물체 형태(LO)·움직임(MT) 반응이 낮음: 뚜렷한 사물 실루엣이 없는 텍스트 위주 화면</td></tr>
 <tr><td><a href='redesign/sweetspot/index.html'>https://www.sweetspot.co.kr</a></td><td>0.663 → <b>0.740</b> (+0.077)</td><td>0.909 → 0.816</td><td>0.44 → 0.72</td><td class=k>얼굴 영역(FFA/STS)이 조용함: 사람·시선 단서가 없음</td></tr>

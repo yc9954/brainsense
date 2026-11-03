@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>glowlab C-Glow — 30% Launch Offer</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  min-height:100vh;
+  background:#E7DCC6;
+  background-image:radial-gradient(circle at 20% 20%, #F5EBD6 0, transparent 45%), radial-gradient(circle at 90% 90%, #D8C6A8 0, transparent 40%);
+  display:grid;place-items:center;
+  font-family:Inter,system-ui,sans-serif;
+  padding:22px;
+  color:#181118;
+}
+.sponsored-top{
+  width:min(1160px,96vw);
+  display:flex;align-items:center;gap:10px;
+  font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#4A3F33;
+  margin-bottom:10px;
+}
+.sponsored-top .dot{width:32px;height:32px;border-radius:50%;background:#160A1E;color:#FFD60A;display:grid;place-items:center;font-weight:900}
+.ad{
+  width:min(1160px,96vw);
+  min-height:660px;
+  height:min(700px,86vh);
+  background:#FFFEF7;
+  border-radius:30px;
+  overflow:hidden;
+  display:grid;
+  grid-template-columns:500px 1fr;
+  box-shadow:0 30px 80px rgba(22,10,30,.28), 0 2px 0 rgba(0,0,0,.9);
+  border:3px solid #160A1E;
+  position:relative;
+}
+/* LEFT PANEL */
+.copy{
+  padding:44px 44px 30px 48px;
+  display:flex;flex-direction:column;justify-content:center;
+  background:#FFFEF7;
+  position:relative;
+}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:13px;font-weight:800;letter-spacing:.12em;
+}
+.pill-new{background:#160A1E;color:#FFD60A;border-radius:100px;padding:7px 12px;font-size:12px;letter-spacing:.12em}
+.stars{font-size:14px;letter-spacing:.02em;color:#181118;font-weight:600}
+.stars span{color:#E85D04}
+h1{
+  font-family:Fraunces,serif;
+  font-weight:900;
+  font-size:56px;
+  line-height:.95;
+  letter-spacing:-.03em;
+  margin:18px 0 14px;
+  color:#160A1E;
+}
+h1 em{font-style:normal;background:linear-gradient(transparent 62%, #FFD60A 62%);padding:0 4px}
+.sub{
+  font-size:18px;line-height:1.5;color:#3D3340;max-width:38ch;
+}
+.proof{display:flex;gap:10px;margin:18px 0 22px}
+.proof div{
+  flex:1;background:#FFF3C4;border:2px solid #160A1E;border-radius:14px;
+  padding:10px 12px;font-size:14px;font-weight:700;line-height:1.3
+}
+.cta-row{display:flex;align-items:center;gap:14px;margin-top:2px}
+.btn-buy{
+  appearance:none;border:3px solid #160A1E;border-radius:100px;
+  background:#FF4D00;color:#fff;
+  font-size:20px;font-weight:800;letter-spacing:-.01em;
+  padding:16px 32px 16px 30px;cursor:pointer;
+  display:inline-flex;align-items:center;gap:10px;
+  box-shadow:5px 5px 0 #160A1E;
+  transition:.15s;
+}
+.btn-buy:hover{transform:translate(-1px,-1px);box-shadow:7px 7px 0 #160A1E;background:#E84400}
+.btn-buy:active{transform:translate(2px,2px);box-shadow:2px 2px 0 #160A1E}
+.price-old{font-size:15px;font-weight:600;color:#6B5E6B;line-height:1.4}
+.price-old s{color:#9A8E9A}
+.trust{margin-top:16px;font-size:14px;color:#5A4F5A;font-weight:500;display:flex;gap:8px;align-items:center}
+.trust b{color:#181118}
+/* RIGHT STAGE */
+.stage{
+  background:#160A1E;
+  position:relative;
+  overflow:hidden;
+  display:grid;place-items:center;
+  padding:30px;
+}
+.stage::before{
+  content:"";position:absolute;inset:-20%;
+  background:
+    radial-gradient(520px 420px at 50% 48%, rgba(255,109,44,.85) 0%, rgba(255,109,44,.25) 42%, transparent 70%);
+}
+.diagonal{
+  position:absolute;left:-10%;right:-10%;top:46%;
+  height:148px;background:#FF5A1F;
+  transform:rotate(-16deg);
+  box-shadow:0 0 0 10px #FFD60A inset, 0 0 60px rgba(255,90,31,.8);
+  z-index:0;
+}
+.diagonal::after{
+  content:"PURE GLOW • VITAMIN C • PURE GLOW • VITAMIN C •";
+  position:absolute;inset:0;display:grid;place-items:center;
+  color:#160A1E;font-weight:900;letter-spacing:.2em;font-size:22px;white-space:nowrap;
+}
+.diagonal.ghost{top:60%;height:52px;background:#FFFEF7;opacity:.95}
+.diagonal.ghost::after{content:"";display:none}
+.glow-ring{
+  position:absolute;width:520px;height:520px;border-radius:50%;
+  border:2px dashed rgba(255,214,10,.45);z-index:0;
+  animation:spin 28s linear infinite;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+.bottle-wrap{position:relative;z-index:2;display:grid;place-items:center;margin-top:-26px}
+.bottle-shadow{position:absolute;bottom:66px;width:260px;height:36px;background:rgba(0,0,0,.55);border-radius:50%;filter:blur(12px)}
+.bottle{position:relative;width:204px;filter:drop-shadow(0 24px 30px rgba(0,0,0,.5))}
+.cap-top{width:72px;height:28px;background:#0D0D0D;border-radius:10px 10px 4px 4px;margin:0 auto;border:2px solid #333;border-bottom:0}
+.cap{width:86px;height:96px;background:linear-gradient(90deg,#000,#3A3A3A 30%,#0A0A0A 70%);border-radius:14px;margin:0 auto;border:2px solid #000;position:relative}
+.cap::after{content:"";position:absolute;left:12px;top:10px;bottom:10px;width:10px;background:linear-gradient(#fff,transparent);opacity:.28;border-radius:10px}
+.neck{width:54px;height:18px;background:#E9E9E9;margin:0 auto}
+.glass{
+  width:204px;height:310px;border-radius:22px 22px 34px 34px;
+  background:linear-gradient(90deg,#5E2600 0%, #C86A1A 12%, #FFB25A 38%, #FFD9A0 50%, #E68A2E 62%, #7A3200 100%);
+  border:3px solid #0E070F;
+  position:relative;overflow:hidden;
+}
+.glass::before{content:"";position:absolute;left:18px;top:18px;bottom:18px;width:22px;background:linear-gradient(rgba(255,255,255,.85),rgba(255,255,255,.05));border-radius:20px}
+.label{
+  position:absolute;left:14px;right:14px;top:74px;background:#FFFEF7;border:2.5px solid #160A1E;border-radius:14px;
+  padding:14px 12px 12px;text-align:center;
+}
+.label small{font-size:11px;font-weight:800;letter-spacing:.18em;color:#FF4D00}
+.label strong{font-family:Fraunces,serif;font-size:34px;line-height:1;display:block;letter-spacing:-.04em}
+.label p{font-size:12.5px;font-weight:700;margin-top:4px}
+.drops i{position:absolute;border-radius:50%;background:radial-gradient(circle at 30% 30%, #fff, #FFB703 45%, #FF6B00 75%);box-shadow:0 4px 14px rgba(255,140,0,.7);animation:float 3.2s ease-in-out infinite}
+.drops i:nth-child(1){width:34px;height:34px;left:-52px;top:120px}
+.drops i:nth-child(2){width:22px;height:22px;right:-44px;top:90px;animation-delay:.6s}
+.drops i:nth-child(3){width:16px;height:16px;right:-58px;top:220px;animation-delay:1.1s}
+.drops i:nth-child(4){width:44px;height:44px;left:-74px;top:230px;background:radial-gradient(circle at 35% 35%, #fff 10%, #FFD60A 40%, #FF6B00 80%);animation-delay:1.6s}
+@keyframes float{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-16px) scale(1.06)}}
+/* BADGE */
+.badge{
+  position:absolute;z-index:4;top:34px;right:36px;
+  width:138px;height:138px;display:grid;place-items:center;text-align:center;
+  background:#FFD60A;color:#160A1E;
+  border:3px solid #160A1E;border-radius:50%;
+  box-shadow:4px 4px 0 #FF4D00, 0 10px 30px rgba(0,0,0,.4);
+  transform:rotate(-12deg);
+  animation:wob 2.6s ease-in-out infinite;
+}
+.badge::before{content:"";position:absolute;inset:8px;border:2px dashed #160A1E;border-radius:50%}
+.badge b{font-size:34px;line-height:.9;letter-spacing:-.04em;display:block}
+.badge span{font-size:12px;font-weight:800;letter-spacing:.14em}
+@keyframes wob{0%,100%{transform:rotate(-12deg) scale(1)}50%{transform:rotate(-6deg) scale(1.06)}}
+/* value bar under hero */
+.value-bar{
+  position:relative;z-index:3;margin-top:-8px;
+  background:#FFFEF7;border:3px solid #160A1E;border-radius:100px;
+  display:flex;align-items:center;gap:12px;padding:10px 10px 10px 18px;
+  box-shadow:5px 5px 0 rgba(0,0,0,.9);
+  max-width:520px;
+}
+.value-bar .now{font-size:26px;font-weight:900;letter-spacing:-.03em}
+.value-bar s{font-size:16px;font-weight:700;color:#8A7E8A}
+.value-bar .div{width:2px;height:28px;background:#160A1E;opacity:.2}
+.value-bar p{font-size:15px;font-weight:600;line-height:1.25}
+.free{margin-left:auto;background:#160A1E;color:#FFD60A;font-size:12px;font-weight:800;letter-spacing:.08em;border-radius:100px;padding:10px 14px;white-space:nowrap}
+.under{position:relative;z-index:2;margin-top:10px;color:#FFE9B8;font-size:13.5px;font-weight:600;letter-spacing:.02em}
+@media(max-width:980px){
+  .ad{grid-template-columns:1fr;height:auto}
+  h1{font-size:44px}
+  .stage{min-height:620px}
+}
+</style>
+</head>
+<body>
+<div>
+<div class="sponsored-top"><span class="dot">g</span> glowlab • Sponsored • Shop now</div>
+<main class="ad" role="img" aria-label="Instagram ad for glowlab Vitamin C serum, 30 percent launch discount, buy now for 27 dollars 30 cents">
+<!-- COPY PANEL -->
+<section class="copy">
+<div class="eyebrow"><span class="pill-new">NEW • 15% PURE C</span> <span class="stars"><span>★★★★★</span> 4.9 (12k)</span></div>
+<h1>Get glass-like glow in 14 days with pure vitamin C.</h1>
+<p class="sub">One drop AM + PM fades dark spots and boosts bounce — no sting, no stick.</p>
+<div class="proof"><div>✓ Dermatologist tested</div><div>✓ Sensitive-safe + vegan</div></div>
+<div class="cta-row">
+<button class="btn-buy">Buy now <span aria-hidden="true">→</span></button>
+<div class="price-old"><s>$39.00</s><br><b style="color:#111">$27.30 launch price</b></div>
+</div>
+<div class="trust">🔒 <span><b>30-day glow guarantee</b> • Free shipping over $25 • Ends Sunday</span></div>
+</section>
+<!-- PRODUCT STAGE -->
+<section class="stage">
+<div class="glow-ring"></div>
+<div class="diagonal"></div>
+<div class="diagonal ghost"></div>
+<div class="badge"><div><span>LAUNCH</span><b>30%<br>OFF</b><span>— TODAY —</span></div></div>
+<div>
+<div class="bottle-wrap">
+<div class="bottle-shadow"></div>
+<div class="drops"><i></i><i></i><i></i><i></i></div>
+<div class="bottle">
+<div class="cap-top"></div><div class="cap"></div><div class="neck"></div>
+<div class="glass"><div class="label"><small>glowlab • 30ML</small><strong>C-GLOW</strong><p>15% VITAMIN C SERUM</p></div></div>
+</div>
+</div>
+<div class="value-bar"><span class="now">$27.30</span><s>$39</s><span class="div"></span><p>Brightens + fades spots<br>in 2 weeks</p><span class="free">FREE SHIP</span></div>
+<div class="under" style="text-align:center">✨ 93% saw brighter skin in 14 days* • Tap Buy now to claim 30% off</div>
+</div>
+</section>
+</main>
+</div>
+</body>
+</html>

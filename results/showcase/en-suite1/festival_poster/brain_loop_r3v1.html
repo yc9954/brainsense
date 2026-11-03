@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BRASS AFTER DARK — Velvet Note Jazz Festival Nov 20–22</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+--ink:#070712;
+--paper:#FFF6E8;
+--brass:#E8B86D;
+--brass-hi:#FFE9B8;
+--ember:#FF5C2A;
+--neon-pink:#FF2E7A;
+--neon-teal:#2DE1C2;
+--line:rgba(255,246,232,.16);
+}
+html,body{background:var(--ink);color:var(--paper);font-family:"Space Grotesk",system-ui,sans-serif;}
+body{min-height:100vh;display:flex;flex-direction:column;overflow-x:hidden;
+background:
+radial-gradient(900px 600px at 78% 32%, rgba(255,46,122,.28), transparent 60%),
+radial-gradient(700px 500px at 85% 80%, rgba(45,225,194,.18), transparent 60%),
+radial-gradient(1200px 800px at -10% 100%, rgba(255,92,42,.18), transparent 60%),
+linear-gradient(180deg,#0B0B1E 0%, #070712 60%, #0D0714 100%);
+}
+a{color:inherit}
+.topbar{
+max-width:1280px;margin:0 auto;width:100%;
+display:flex;align-items:center;justify-content:space-between;
+padding:18px 32px;
+font-size:13px;letter-spacing:.18em;text-transform:uppercase;
+}
+.brand{display:flex;align-items:center;gap:12px;font-weight:700;letter-spacing:.22em}
+.brand-mark{width:34px;height:34px;border-radius:50%;
+background:conic-gradient(from 0deg,#FFE9B8,#E8B86D,#FF5C2A,#FF2E7A,#E8B86D,#FFE9B8);
+display:grid;place-items:center;color:#0A0A16;font-family:"Bebas Neue";font-size:20px;box-shadow:0 0 18px rgba(232,184,109,.7)}
+.top-meta{display:flex;gap:18px;align-items:center;color:#FFD9A8}
+.top-meta strong{color:#fff}
+.btn-small{border:1px solid rgba(255,246,232,.3);border-radius:100px;padding:9px 18px;text-decoration:none;font-weight:700;letter-spacing:.14em;font-size:12px}
+.btn-small:hover{background:#fff;color:#111}
+.poster{
+max-width:1280px;margin:0 auto;width:100%;flex:1;
+display:grid;grid-template-columns:1.08fr .92fr;
+gap:0;align-items:stretch;
+padding:0 32px 0 32px;min-height:660px;
+position:relative;
+}
+/* diagonal light beams = motion cue */
+.beams{position:absolute;inset:-10% -10%;pointer-events:none;overflow:hidden}
+.beams i{position:absolute;left:-10%;right:-10%;height:2px;opacity:.55;
+background:linear-gradient(90deg,transparent,rgba(45,225,194,.7),rgba(255,46,122,.8),rgba(232,184,109,.9),transparent);
+transform:rotate(-16deg);filter:blur(.2px)}
+.beams i:nth-child(1){top:28%}.beams i:nth-child(2){top:36%;opacity:.3}.beams i:nth-child(3){top:68%;opacity:.35}
+.beams i:nth-child(4){top:75%;background:linear-gradient(90deg,transparent,rgba(232,184,109,.9),transparent)}
+.left{padding:10px 36px 10px 0;position:relative;z-index:2;display:flex;flex-direction:column;justify-content:center}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:#0A0A16;background:linear-gradient(90deg,var(--brass-hi),var(--brass));border-radius:100px;padding:8px 14px;font-weight:700;width:fit-content;box-shadow:0 0 22px rgba(232,184,109,.55)}
+.eyebrow .dot{width:8px;height:8px;border-radius:50%;background:#0A0A16;box-shadow:0 0 0 4px rgba(0,0,0,.15);animation:blink 1.6s infinite}
+@keyframes blink{50%{opacity:.3}}
+h1{font-family:"Bebas Neue",sans-serif;line-height:.86;margin:18px 0 8px;font-size:clamp(68px,7.8vw,112px);letter-spacing:.01em}
+h1 .brass{background:linear-gradient(180deg,#FFF7D8 5%,#FFE9B8 28%,#E8B86D 52%,#FF7A2E 78%,#FF2E7A 105%);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 22px rgba(255,92,42,.45))}
+h1 .outline{color:transparent;-webkit-text-stroke:1.5px rgba(255,246,232,.9)}
+.sub{font-family:"Instrument Serif",serif;font-style:italic;font-size:22px;line-height:1.35;color:#FFE9C6;max-width:520px}
+.sub b{color:#fff;font-style:normal}
+.meta-row{display:flex;gap:12px;margin:18px 0 18px;flex-wrap:wrap}
+.meta-pill{display:flex;align-items:center;gap:10px;border:1px solid var(--line);background:rgba(255,255,255,.06);backdrop-filter:blur(8px);border-radius:14px;padding:10px 14px;font-size:16px}
+.meta-pill span{font-size:20px}
+.meta-pill strong{display:block;font-size:16px;line-height:1.1}
+.meta-pill small{display:block;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:#E8B86D}
+.lineup{border-top:1px solid var(--line);margin-top:4px}
+.lineup-head{display:flex;justify-content:space-between;align-items:center;font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;color:#FFD9A8;padding:12px 2px 8px}
+.act{display:grid;grid-template-columns:44px 1fr auto;gap:12px;align-items:center;padding:9px 10px;border-radius:12px;border:1px solid transparent}
+.act:hover{background:rgba(255,255,255,.06);border-color:var(--line)}
+.act-num{font-family:"Bebas Neue";font-size:22px;color:var(--neon-teal);opacity:.95}
+.act-name{font-size:16.5px;font-weight:700;line-height:1.2}
+.act-name small{display:block;font-weight:400;color:#D8CFC0;font-size:13.5px;letter-spacing:.02em}
+.act-time{font-size:13px;font-weight:700;letter-spacing:.08em;background:#141427;border:1px solid var(--line);padding:7px 10px;border-radius:100px;white-space:nowrap}
+.act.headline .act-name{color:#FFE9B8}
+.act.headline{ background:linear-gradient(90deg,rgba(255,46,122,.18),rgba(232,184,109,.14));border-color:rgba(232,184,109,.35)}
+.cta-row{display:flex;gap:14px;align-items:stretch;margin-top:18px}
+.btn-main{flex:1;display:flex;align-items:center;justify-content:space-between;gap:12px;text-decoration:none;background:linear-gradient(92deg,#FF2E7A 0%,#FF5C2A 55%,#E8B86D 110%);color:#0A0A16;font-weight:800;padding:16px 20px;border-radius:16px;font-size:18px;box-shadow:0 10px 32px rgba(255,46,122,.45), inset 0 1px 0 rgba(255,255,255,.6);position:relative;overflow:hidden}
+.btn-main::after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.7),transparent);transform:skewX(-20deg);animation:sheen 3.2s infinite}
+@keyframes sheen{0%{left:-60%}60%,100%{left:130%}}
+.btn-main small{display:block;font-size:13px;font-weight:700;letter-spacing:.08em}
+.btn-main .price{font-family:"Bebas Neue";font-size:36px;line-height:1}
+.btn-ghost{display:grid;place-items:center;padding:0 20px;border-radius:16px;border:1.5px dashed rgba(232,184,109,.6);text-decoration:none;font-size:15px;color:#FFE9B8;min-width:150px}
+.urgency{margin-top:12px;font-size:15px;color:#EADDC6;display:flex;gap:10px;align-items:center}
+.urgency strong{color:#2DE1C2}
+.bar{height:8px;background:rgba(255,255,255,.12);border-radius:100px;margin-top:8px;overflow:hidden;max-width:520px}
+.bar i{display:block;height:100%;width:78%;background:linear-gradient(90deg,var(--neon-teal),var(--brass),var(--neon-pink));border-radius:100px;box-shadow:0 0 12px rgba(45,225,194,.8)}
+/* RIGHT STAGE */
+.right{position:relative;z-index:2;display:flex;align-items:center;justify-content:center;padding:10px 0}
+.stage{position:relative;width:100%;max-width:520px;aspect-ratio:.92;background:radial-gradient(circle at 50% 28%, #FFF0C2 0%, #E8B86D 18%, #7A2E3A 46%, #141026 68%, #070712 78%);border-radius:260px 260px 28px 28px;border:1px solid rgba(232,184,109,.55);overflow:hidden;box-shadow:0 0 0 8px rgba(232,184,109,.12), 0 0 80px rgba(255,46,122,.35), inset 0 0 80px rgba(0,0,0,.6)}
+.stage::before{content:"";position:absolute;inset:14px;border:1px solid rgba(45,225,194,.6);border-radius:240px 240px 20px 20px;box-shadow:0 0 18px rgba(45,225,194,.5), inset 0 0 18px rgba(45,225,194,.25);pointer-events:none}
+.spot{position:absolute;top:-20%;left:50%;transform:translateX(-50%);width:70%;height:70%;background:linear-gradient(180deg,rgba(255,240,194,.9),transparent 70%);clip-path:polygon(35% 0,65% 0,100% 100%,0% 100%);opacity:.55;filter:blur(6px)}
+.notes{position:absolute;inset:0;pointer-events:none;font-size:28px;color:#FFE9B8}
+.notes span{position:absolute;animation:float 5s ease-in-out infinite;text-shadow:0 0 14px rgba(255,46,122,.9)}
+.notes span:nth-child(1){left:12%;top:22%;animation-delay:0s}
+.notes span:nth-child(2){left:82%;top:28%;color:#2DE1C2;animation-delay:1s;font-size:34px}
+.notes span:nth-child(3){left:78%;top:62%;animation-delay:2s}
+.notes span:nth-child(4){left:8%;top:58%;color:#FF8A3D;animation-delay:.5s}
+@keyframes float{0%,100%{transform:translateY(0) rotate(-6deg)}50%{transform:translateY(-16px) rotate(8deg)}}
+.player{position:absolute;bottom:44px;left:50%;transform:translateX(-50%);width:88%;filter:drop-shadow(0 18px 30px rgba(0,0,0,.7))}
+.eq{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);display:flex;gap:6px;align-items:end;height:36px}
+.eq i{width:8px;border-radius:100px;background:linear-gradient(180deg,#2DE1C2,#E8B86D,#FF2E7A);box-shadow:0 0 10px rgba(45,225,194,.8);animation:eq 1s ease-in-out infinite}
+.eq i:nth-child(1){height:60%}.eq i:nth-child(2){height:100%;animation-delay:.15s}.eq i:nth-child(3){height:45%;animation-delay:.3s}.eq i:nth-child(4){height:90%;animation-delay:.1s}.eq i:nth-child(5){height:55%;animation-delay:.4s}.eq i:nth-child(6){height:80%;animation-delay:.25s}.eq i:nth-child(7){height:35%;animation-delay:.5s}
+@keyframes eq{50%{transform:scaleY(.35)}}
+.ticket-card{position:absolute;right:-8px;top:52%;transform:rotate(8deg);background:#FFF6E8;color:#111;border-radius:16px;padding:14px 14px 12px;width:210px;box-shadow:0 18px 40px rgba(0,0,0,.6);border:1px solid #fff}
+.ticket-card::before{content:"";position:absolute;left:-10px;top:50%;width:20px;height:20px;background:var(--ink);border-radius:50%;transform:translateY(-50%)}
+.ticket-card h4{font-family:"Bebas Neue";font-size:22px;letter-spacing:.04em;line-height:1}
+.ticket-card p{font-size:13px;line-height:1.4;margin:4px 0 8px}
+.ticket-card .row{display:flex;justify-content:space-between;align-items:center;font-weight:800}
+.ticket-card .row s{color:#8A7F70;font-size:13px}
+.ticket-card .row b{font-size:20px}
+.gaze-line{position:absolute;left:8%;right:28%;top:31%;height:2px;background:repeating-linear-gradient(90deg,rgba(255,255,255,.9) 0 6px,transparent 6px 12px);opacity:0;animation:gaze 4s infinite}
+@keyframes gaze{0%,70%,100%{opacity:0}75%,90%{opacity:.6}}
+.price-badge{position:absolute;left:-18px;top:28px;width:112px;height:112px;border-radius:50%;background:#0A0A16;border:2px solid var(--brass);display:grid;place-items:center;text-align:center;box-shadow:0 0 24px rgba(232,184,109,.7);transform:rotate(-12deg)}
+.price-badge b{font-family:"Bebas Neue";font-size:28px;color:var(--brass-hi);line-height:1}
+.price-badge small{font-size:10.5px;letter-spacing:.16em;color:#2DE1C2;font-weight:700}
+.marquee{max-width:1280px;margin:6px auto 0;width:100%;border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;white-space:nowrap;padding:12px 0;background:rgba(0,0,0,.35);font-size:14px;letter-spacing:.18em;text-transform:uppercase;color:#FFE9B8}
+.marquee span{margin:0 14px}
+.marquee b{color:#FF2E7A}
+:focus-visible{outline:3px solid #2DE1C2;outline-offset:3px}
+@media(max-width:960px){
+.poster{grid-template-columns:1fr;padding:0 20px}.right{order:-1}.stage{max-width:420px}.left{padding-right:0}h1{font-size:64px}.top-meta{display:none}
+}
+</style>
+</head>
+<body>
+<div class="topbar">
+<div class="brand"><span class="brand-mark">B</span> BRASS AFTER DARK • CHI</div>
+<div class="top-meta"><span>★ 4.9 — 6,200 jazz lovers</span><span><strong>NOV 20–22</strong> • VELVET NOTE HALL</span><a class="btn-small" href="#tickets">Early-bird $49</a></div>
+</div>
+
+<div class="poster">
+<div class="beams" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+
+<section class="left" aria-label="Festival details">
+<div class="eyebrow"><span class="dot"></span> November Jazz Festival • 3 Nights • Chicago</div>
+<h1><span class="outline">BRASS</span><br><span class="brass">AFTER DARK</span></h1>
+<p class="sub">Three smoky nights of <b>neon, velvet & brass</b> — five acts, late jams, vinyl bar & midnight soul food. Dress loud, stay late.</p>
+
+<div class="meta-row">
+<div class="meta-pill"><span>📅</span><div><small>Dates</small><strong>Thu Nov 20 – Sat Nov 22</strong></div></div>
+<div class="meta-pill"><span>📍</span><div><small>Venue</small><strong>Velvet Note Hall, 423 S Wabash</strong></div></div>
+</div>
+
+<div class="lineup" role="list" aria-label="Line-up">
+<div class="lineup-head"><span>— 5-act line-up —</span><span>Doors 7PM</span></div>
+<div class="act headline" role="listitem"><div class="act-num">01</div><div class="act-name">Elena Voss & The Midnight Brass <small>FRI 8:00PM • Headline • velvet soul jazz</small></div><div class="act-time">FRI</div></div>
+<div class="act" role="listitem"><div class="act-num">02</div><div class="act-name">Theo Coleman Quartet <small>FRI 10:30PM • sax-led hard bop</small></div><div class="act-time">FRI LATE</div></div>
+<div class="act" role="listitem"><div class="act-num">03</div><div class="act-name">Brass &amp; Smoke Big Band <small>SAT 8:00PM • 12-piece, tap feature</small></div><div class="act-time">SAT</div></div>
+<div class="act" role="listitem"><div class="act-num">04</div><div class="act-name">Amara Rivers <small>SAT 10:00PM • neo-soul trumpet & voice</small></div><div class="act-time">SAT LATE</div></div>
+<div class="act" role="listitem"><div class="act-num">05</div><div class="act-name">Midnight Blue Collective <small>SUN 7:00PM • finale all-star jam till 1AM</small></div><div class="act-time">SUN</div></div>
+</div>
+
+<div class="cta-row" id="tickets">
+<a class="btn-main" href="#" aria-label="Get early-bird tickets for 49 dollars"><span>Get Early-Bird Tickets <small>Save $30 • Ends Nov 8 • 3-night pass</small></span><span class="price">$49 →</span></a>
+<a class="btn-ghost" href="#">Full<br>schedule</a>
+</div>
+<div class="urgency">🔥 <span><strong>78% of early-birds claimed</strong> — 2,410 / 3,000 gone. Regular $79 at door.</span></div>
+<div class="bar" aria-hidden="true"><i></i></div>
+</section>
+
+<section class="right" aria-label="Stage visual">
+<div class="stage" role="img" aria-label="Illustrated jazz singer playing saxophone under spotlight looking toward tickets">
+<div class="spot"></div>
+<div class="notes" aria-hidden="true"><span>♪</span><span>♫</span><span>♬</span><span>♪</span></div>
+<div class="gaze-line" aria-hidden="true"></div>
+<div class="price-badge"><div><small>EARLY-BIRD</small><br><b>SAVE<br>$30</b></div></div>
+
+<!-- DOMINANT OBJECT + HUMAN CUE -->
+<svg class="player" viewBox="0 0 420 480" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<defs>
+<linearGradient id="brassG" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#FFF7D8"/><stop offset=".35" stop-color="#E8B86D"/><stop offset=".7" stop-color="#C67A2E"/><stop offset="1" stop-color="#FF7A2E"/>
+</linearGradient>
+<linearGradient id="neonG" x1="0" y1="0" x2="1" y2="0">
+<stop offset="0" stop-color="#2DE1C2"/><stop offset="1" stop-color="#FF2E7A"/>
+</linearGradient>
+<filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<!-- body silhouette -->
+<path d="M150 470 C148 380 138 330 120 300 C110 282 118 268 135 262 L165 252 L175 210 L205 215 L215 252 L260 265 C285 272 292 290 280 310 C265 335 255 380 258 470 Z" fill="#0A0A1A" stroke="#E8B86D" stroke-width="2.5"/>
+<!-- lapel neon -->
+<path d="M175 260 L195 320 L180 360 M205 262 L210 320 L225 355" stroke="#2DE1C2" stroke-width="2.5" fill="none" opacity=".9" filter="url(#glow)"/>
+<!-- neck/head profile looking LEFT toward CTA -->
+<circle cx="185" cy="150" r="52" fill="#0A0A1A" stroke="#E8B86D" stroke-width="2.5"/>
+<!-- fedora -->
+<ellipse cx="188" cy="108" rx="78" ry="16" fill="#0A0A1A" stroke="#E8B86D" stroke-width="2.5"/>
+<path d="M145 108 L152 62 L228 62 L235 108 Z" fill="#0A0A1A" stroke="#E8B86D" stroke-width="2.5"/>
+<rect x="150" y="82" width="82" height="12" fill="#FF2E7A" opacity=".9"/>
+<!-- nose + lips profile left -->
+<path d="M134 145 L118 155 L126 165 L132 172" fill="none" stroke="#0A0A1A" stroke-width="6" stroke-linecap="round"/>
+<path d="M134 145 L118 155 L126 165" fill="none" stroke="#E8B86D" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<!-- EYE looking left to CTA -->
+<ellipse cx="145" cy="143" rx="12" ry="8" fill="#FFF6E8"/>
+<circle cx="139" cy="143" r="4.2" fill="#0A0A1A"/>
+<circle cx="139" cy="143" r="1.5" fill="#fff"/>
+<path d="M133 132 Q145 128 157 133" stroke="#E8B86D" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+<!-- earring neon -->
+<circle cx="208" cy="175" r="6" fill="none" stroke="#FF2E7A" stroke-width="2.5" filter="url(#glow)"/>
+<!-- SAX - dominant diagonal brass object -->
+<g transform="rotate(-22 260 300)" filter="url(#glow)">
+<path d="M240 170 C260 240 275 320 250 380 C235 418 200 440 165 430" fill="none" stroke="url(#brassG)" stroke-width="30" stroke-linecap="round"/>
+<path d="M240 170 C260 240 275 320 250 380 C235 418 200 440 165 430" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="6" stroke-linecap="round" opacity=".7"/>
+<!-- keys -->
+<g fill="#0A0A1A" stroke="#2DE1C2" stroke-width="2">
+<circle cx="252" cy="230" r="9"/><circle cx="258" cy="260" r="9"/><circle cx="260" cy="290" r="9"/><circle cx="258" cy="320" r="9"/><circle cx="250" cy="350" r="9"/>
+</g>
+<g fill="#FF2E7A"><circle cx="252" cy="230" r="3"/><circle cx="258" cy="260" r="3"/><circle cx="260" cy="290" r="3"/><circle cx="258" cy="320" r="3"/></g>
+<!-- bell -->
+<ellipse cx="148" cy="428" rx="38" ry="28" fill="url(#brassG)" stroke="#FFF0C2" stroke-width="2"/>
+<ellipse cx="148" cy="428" rx="22" ry="15" fill="#0A0A1A"/>
+<ellipse cx="148" cy="428" rx="22" ry="15" fill="none" stroke="#FF2E7A" stroke-width="2" opacity=".9"/>
+</g>
+<!-- hands -->
+<circle cx="245" cy="275" r="12" fill="#0A0A1A" stroke="#E8B86D" stroke-width="2.2"/>
+<circle cx="240" cy="325" r="12" fill="#0A0A1A" stroke="#E8B86D" stroke-width="2.2"/>
+<!-- breath / sound waves toward left -->
+<g fill="none" stroke-linecap="round" filter="url(#glow)">
+<path d="M110 165 Q85 165 70 185" stroke="url(#neonG)" stroke-width="3"/>
+<path d="M108 185 Q75 188 60 210" stroke="#E8B86D" stroke-width="3" opacity=".8"/>
+<path d="M112 205 Q88 212 78 230" stroke="#2DE1C2" stroke-width="3" opacity=".8"/>
+</g>
+</svg>
+
+<div class="ticket-card">
+<h4>★ 3-NIGHT PASS</h4>
+<p>All 5 acts + late jam + vinyl bar. Velvet Note Hall.</p>
+<div class="row"><span><s>$79</s> <b>$49</b></span><span style="background:#0A0A16;color:#2DE1C2;padding:6px 10px;border-radius:100px;font-size:12px">ENDS NOV 8</span></div>
+</div>
+
+<div class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+</div>
+</section>
+</div>
+
+<div class="marquee" aria-hidden="true"><span>ELENA VOSS <b>✦</b> THEO COLEMAN <b>✦</b> BRASS & SMOKE BIG BAND <b>✦</b> AMARA RIVERS <b>✦</b> MIDNIGHT BLUE JAM <b>✦</b> NOV 20–22 VELVET NOTE HALL <b>✦</b> EARLY-BIRD $49 </span><span>ELENA VOSS <b>✦</b> THEO COLEMAN <b>✦</b> BRASS & SMOKE BIG BAND <b>✦</b> AMARA RIVERS <b>✦</b> MIDNIGHT BLUE JAM <b>✦</b> NOV 20–22 VELVET NOTE HALL <b>✦</b> EARLY-BIRD $49 </span></div>
+</body>
+</html>

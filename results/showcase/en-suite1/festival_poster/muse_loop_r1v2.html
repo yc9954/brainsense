@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Midnight Brass — November Jazz Festival | Nov 20–22, Troxy London</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Space+Grotesk:wght@400;500;600;700&family=Yellowtail&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --ink:#140507;
+  --night:#0f0406;
+  --cream:#fff6e8;
+  --cream-dim:#e9d4b5;
+  --brass:#ffb43a;
+  --brass-light:#ffd99a;
+  --brass-deep:#b35a14;
+  --neon:#ff3e6c;
+  --teal:#2de1c2;
+  --paper:#ffefd0;
+  --line:rgba(255,246,232,.16);
+}
+html{scroll-behavior:smooth}
+body{
+  background:var(--night);
+  color:var(--cream);
+  font-family:"Space Grotesk",system-ui,sans-serif;
+  font-size:17px;line-height:1.55;
+  min-height:100vh;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:1;
+  background:
+    radial-gradient(700px 420px at 12% 8%, rgba(255,62,108,.22), transparent 65%),
+    radial-gradient(800px 520px at 85% 15%, rgba(255,180,58,.18), transparent 60%),
+    radial-gradient(900px 600px at 50% 110%, rgba(45,225,194,.10), transparent 60%);
+}
+body::after{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:60;opacity:.07;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.9'/%3E%3C/svg%3E");
+}
+a{color:inherit}
+.page{position:relative;z-index:2;min-height:100vh;display:flex;flex-direction:column;max-width:1360px;margin:0 auto}
+/* HEADER */
+header{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:18px 40px;gap:20px;
+  border-bottom:1px solid var(--line);
+}
+.brand{display:flex;align-items:center;gap:14px}
+.brand-mark{
+  width:44px;height:44px;border-radius:50%;flex:0 0 44px;
+  background:radial-gradient(circle at 30% 30%, #ffd99a, #ffb43a 45%, #7a2b0e 100%);
+  display:grid;place-items:center;color:#1a0a05;font-weight:900;font-size:22px;
+  box-shadow:0 0 0 2px #140507, 0 0 0 3px var(--brass), 0 0 24px rgba(255,180,58,.55);
+}
+.brand-text{line-height:1.1}
+.brand-text strong{font-family:"Fraunces",serif;font-size:18px;letter-spacing:.06em}
+.brand-text span{display:block;font-size:12.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--brass-light)}
+.nav{display:flex;align-items:center;gap:26px;font-size:14.5px;letter-spacing:.12em;text-transform:uppercase}
+.nav a{text-decoration:none;opacity:.85}
+.nav a:hover{opacity:1;color:var(--brass-light)}
+.date-pill{
+  display:inline-flex;align-items:center;gap:10px;
+  border:1px solid rgba(255,180,58,.55);border-radius:999px;
+  padding:8px 16px;font-size:14px;letter-spacing:.14em;text-transform:uppercase;
+  background:rgba(255,180,58,.08);white-space:nowrap;
+}
+.date-pill i{width:9px;height:9px;border-radius:50%;background:var(--neon);box-shadow:0 0 12px var(--neon);animation:pulse 1.6s infinite}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.4);opacity:.7}}
+.btn-small{
+  background:var(--cream);color:#180607;text-decoration:none;font-weight:700;
+  padding:11px 20px;border-radius:999px;font-size:15px;letter-spacing:.02em;
+  transition:.2s;
+}
+.btn-small:hover{background:var(--brass);box-shadow:0 0 22px rgba(255,180,58,.6)}
+/* HERO */
+.hero{
+  display:grid;grid-template-columns:1.08fr .92fr;
+  gap:36px;padding:28px 40px 18px;align-items:stretch;flex:1;
+}
+.eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:12px;flex-wrap:wrap}
+.eyebrow .loc{font-size:15px;letter-spacing:.18em;text-transform:uppercase;color:var(--cream-dim)}
+.eyebrow .loc b{color:var(--cream)}
+.script{
+  font-family:"Yellowtail",cursive;font-size:42px;line-height:1;
+  color:#ff8aa5;text-shadow:0 0 8px rgba(255,62,108,.9),0 0 28px rgba(255,62,108,.75),0 0 64px rgba(255,62,108,.5);
+  transform:rotate(-3deg);display:inline-block;
+}
+h1{
+  font-family:"Fraunces",serif;font-weight:900;
+  font-size:clamp(62px,7.1vw,102px);line-height:.88;letter-spacing:-.02em;
+  text-transform:uppercase;margin:6px 0 14px;
+}
+h1 .outline{
+  display:block;color:transparent;-webkit-text-stroke:2px var(--cream);
+}
+h1 .solid{
+  display:block;
+  background:linear-gradient(180deg,#fff6d8 5%, #ffd07a 35%, #ff9a2e 60%, #ff3e6c 105%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 0 18px rgba(255,154,46,.35));
+}
+.lede{max-width:54ch;font-size:18px;color:#f3e6cf}
+.lede strong{color:var(--brass-light)}
+/* LINEUP */
+.lineup{margin-top:18px;border-top:1px solid var(--line)}
+.lineup-head{display:flex;justify-content:space-between;align-items:center;padding:12px 0 4px;font-size:13.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--brass-light)}
+.lineup-head a{color:var(--cream);text-underline-offset:4px}
+.act{
+  display:grid;grid-template-columns:56px 1fr auto;
+  gap:16px;align-items:center;
+  padding:11px 6px;border-top:1px solid var(--line);
+  text-decoration:none;border-left:3px solid transparent;transition:.18s;
+}
+.act:hover{background:rgba(255,180,58,.07);border-left-color:var(--brass);padding-left:12px}
+.act:last-child{border-bottom:1px solid var(--line)}
+.num{font-family:"Fraunces",serif;font-style:italic;color:var(--brass);font-size:20px}
+.act-name{font-weight:700;font-size:18.5px;line-height:1.2;letter-spacing:.01em}
+.act-name small{display:block;font-weight:400;font-size:14.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--cream-dim);margin-top:3px}
+.act-meta{text-align:right}
+.act-meta .day{display:inline-block;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;padding:5px 11px;border-radius:999px;border:1px solid var(--line);margin-bottom:6px}
+.act-meta .day.fri{border-color:rgba(45,225,194,.6);color:#aef3e3}
+.act-meta .day.sat{border-color:rgba(255,180,58,.6);color:var(--brass-light)}
+.act-meta .day.sun{border-color:rgba(255,62,108,.6);color:#ff9db3}
+.act-meta time{display:block;font-size:15px;color:var(--cream)}
+/* CTA ROW */
+.cta-row{display:flex;align-items:center;gap:18px;margin-top:18px;flex-wrap:wrap}
+.btn-big{
+  display:inline-flex;align-items:center;gap:14px;
+  background:linear-gradient(180deg,#ffd07a,#ffb43a 60%,#f08a1e);
+  color:#1c0a04;text-decoration:none;font-weight:800;font-size:18px;
+  padding:16px 26px;border-radius:16px;
+  box-shadow:0 10px 30px rgba(255,154,46,.35), inset 0 1px 0 rgba(255,255,255,.7);
+  border:1px solid #6b2d0c;transition:.2s;
+}
+.btn-big:hover{transform:translateY(-2px);box-shadow:0 16px 40px rgba(255,62,108,.35),0 10px 30px rgba(255,154,46,.45)}
+.btn-big .arrow{background:#140507;color:var(--brass);width:32px;height:32px;border-radius:50%;display:grid;place-items:center;font-size:18px}
+.btn-ghost{
+  display:inline-flex;align-items:center;gap:8px;color:var(--cream);
+  text-decoration:none;font-weight:600;font-size:16px;padding:15px 6px;
+  border-bottom:2px solid rgba(255,180,58,.5);
+}
+.urgency{margin-top:14px;max-width:520px}
+.bar{height:10px;border-radius:999px;background:rgba(255,246,232,.14);overflow:hidden;border:1px solid rgba(255,246,232,.18)}
+.bar i{display:block;height:100%;width:72%;background:linear-gradient(90deg,var(--teal),var(--brass),var(--neon));border-radius:999px;box-shadow:0 0 14px rgba(255,180,58,.7)}
+.urgency p{font-size:15.5px;margin-top:8px;color:var(--cream-dim)}
+.urgency p b{color:var(--cream)}
+#count{color:var(--brass-light);font-weight:700}
+/* VISUAL */
+.visual-col{position:relative;display:flex}
+.arch{
+  position:relative;flex:1;overflow:hidden;
+  background:linear-gradient(180deg,#fff9e9 0%, #ffedd0 38%, #ffcf87 72%, #e8993a 100%);
+  color:#1c0a04;border-radius:240px 240px 22px 22px;
+  border:2px solid #1c0a04;
+  outline:3px solid var(--brass);outline-offset:6px;
+  box-shadow:0 30px 80px rgba(0,0,0,.55), 0 0 70px rgba(255,62,108,.25);
+  display:flex;flex-direction:column;align-items:center;
+  padding:22px 26px 148px;min-height:620px;
+}
+.sunburst{
+  position:absolute;top:-40px;left:50%;transform:translateX(-50%);
+  width:560px;height:560px;border-radius:50%;pointer-events:none;
+  background:repeating-conic-gradient(from -90deg at 50% 50%, rgba(139,62,10,.16) 0 5deg, transparent 5deg 10deg);
+  mask-image:radial-gradient(circle, black 55%, transparent 72%);
+}
+.live-pill{
+  position:relative;z-index:2;display:inline-flex;align-items:center;gap:9px;
+  background:#140507;color:#ffe9c2;font-size:13px;letter-spacing:.18em;text-transform:uppercase;
+  padding:9px 16px;border-radius:999px;border:1px solid #140507;
+}
+.live-pill i{width:8px;height:8px;border-radius:50%;background:#ff3e6c;box-shadow:0 0 10px #ff3e6c;animation:pulse 1.4s infinite}
+.neon-sign{
+  position:relative;z-index:2;margin-top:14px;text-align:center;line-height:1;
+  font-family:"Fraunces",serif;font-weight:900;font-style:italic;font-size:30px;letter-spacing:.02em;
+  color:#5b130f;background:#140507;padding:10px 22px;border-radius:12px;
+  border:2px solid #ff3e6c;
+  text-shadow:0 0 8px #ff3e6c,0 0 22px #ff3e6c;
+  box-shadow:0 0 22px rgba(255,62,108,.7), inset 0 0 18px rgba(255,62,108,.25);
+}
+.neon-sign span{color:#ffd99a;text-shadow:0 0 8px #ffb43a,0 0 22px #ffb43a}
+.vinyl-wrap{position:relative;z-index:2;margin-top:18px;width:310px;height:310px}
+.vinyl-wrap svg.ring{position:absolute;inset:-26px;animation:spin 18s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.vinyl{
+  width:100%;height:100%;border-radius:50%;
+  background:
+    radial-gradient(circle at 50% 50%, #ffcf7a 0 18%, #1a0a05 18.5% 19.5%, #231014 19.5% 100%),
+    repeating-radial-gradient(circle at 50% 50%, #1e0d10 0 2px, #2e1519 2px 4px);
+  border:6px solid #140507;
+  box-shadow:0 18px 40px rgba(20,5,7,.45), 0 0 0 8px rgba(20,5,7,.08);
+  display:grid;place-items:center;position:relative;overflow:hidden;
+}
+.vinyl::after{
+  content:"";position:absolute;inset:0;border-radius:50%;
+  background:conic-gradient(from 200deg, transparent 0 40deg, rgba(255,255,255,.28) 50deg 70deg, transparent 80deg 200deg, rgba(255,255,255,.14) 280deg 295deg, transparent 305deg);
+  pointer-events:none;
+}
+.label{
+  width:132px;height:132px;border-radius:50%;text-align:center;
+  background:radial-gradient(circle at 30% 30%, #ffe9b8, #ffb43a 55%, #9a3d0e 100%);
+  border:3px solid #140507;display:flex;flex-direction:column;justify-content:center;align-items:center;
+  font-size:11px;letter-spacing:.18em;text-transform:uppercase;line-height:1.3;color:#1c0a04;font-weight:700;
+}
+.label strong{font-family:"Fraunces",serif;font-size:20px;letter-spacing:0}
+.label em{font-style:normal;font-size:10px;border-top:1px solid #1c0a04;padding-top:4px;margin-top:4px}
+.hole{width:14px;height:14px;background:#140507;border-radius:50%;margin:6px auto 0;border:2px solid #fff3d0}
+.sax{
+  position:absolute;z-index:3;right:-8px;top:58px;width:132px;filter:drop-shadow(0 10px 18px rgba(0,0,0,.4)) drop-shadow(0 0 18px rgba(255,180,58,.8));
+  transform:rotate(10deg);
+}
+.eq{display:flex;align-items:flex-end;gap:7px;height:44px;margin-top:18px;z-index:2}
+.eq span{width:10px;border-radius:6px;background:#140507;animation:eq 1.1s ease-in-out infinite}
+.eq span:nth-child(1){height:60%}.eq span:nth-child(2){height:100%;animation-delay:.1s;background:#7a1e2e}
+.eq span:nth-child(3){height:45%;animation-delay:.2s}.eq span:nth-child(4){height:85%;animation-delay:.3s;background:#b35a14}
+.eq span:nth-child(5){height:55%;animation-delay:.15s}.eq span:nth-child(6){height:95%;animation-delay:.25s}
+.eq span:nth-child(7){height:40%;animation-delay:.35s}.eq span:nth-child(8){height:70%;animation-delay:.05s;background:#7a1e2e}
+@keyframes eq{0%,100%{transform:scaleY(.4)}50%{transform:scaleY(1)}}
+.eq-caption{z-index:2;font-size:13px;letter-spacing:.22em;text-transform:uppercase;margin-top:8px;font-weight:700}
+.badge-circle{
+  position:absolute;z-index:4;left:18px;top:300px;width:96px;height:96px;border-radius:50%;
+  background:#140507;color:#ffd99a;display:grid;place-items:center;text-align:center;
+  font-size:12px;letter-spacing:.12em;text-transform:uppercase;line-height:1.25;
+  transform:rotate(-12deg);border:2px dashed #ffb43a;box-shadow:0 10px 24px rgba(0,0,0,.35);
+}
+.badge-price{
+  position:absolute;z-index:4;right:18px;top:360px;background:#2de1c2;color:#06231e;
+  font-weight:800;padding:10px 14px;border-radius:12px;transform:rotate(8deg);
+  border:2px solid #06231e;box-shadow:4px 4px 0 #140507;font-size:15px;
+}
+/* ticket */
+.ticket{
+  position:absolute;left:16px;right:16px;bottom:16px;z-index:5;
+  background:#140507;color:#fff2d6;border-radius:16px;
+  display:grid;grid-template-columns:1fr 132px;overflow:hidden;
+  border:1px solid rgba(255,180,58,.5);box-shadow:0 16px 34px rgba(0,0,0,.45);
+}
+.ticket-left{padding:16px 18px}
+.ticket-left .t-top{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#ffb43a;margin-bottom:6px}
+.ticket-left strong{font-family:"Fraunces",serif;font-size:22px;line-height:1;display:block}
+.ticket-left p{font-size:14.5px;color:#e9d4b5;margin-top:4px}
+.ticket-left .row{display:flex;gap:10px;margin-top:10px}
+.ticket-left .row span{font-size:13px;letter-spacing:.08em;text-transform:uppercase;border:1px solid rgba(255,242,214,.3);padding:6px 10px;border-radius:999px}
+.ticket-right{
+  border-left:2px dashed rgba(255,180,58,.6);padding:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;
+  background:rgba(255,180,58,.08);
+}
+.barcode{width:92px;height:44px;background:repeating-linear-gradient(90deg,#fff2d6 0 2px,transparent 2px 5px,#fff2d6 5px 6px,transparent 6px 10px);border-radius:4px}
+.ticket-right b{font-size:22px;color:#ffb43a}
+.ticket-right small{font-size:11px;letter-spacing:.18em;text-transform:uppercase}
+/* TICKER */
+.ticker{
+  margin-top:auto;border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  background:linear-gradient(90deg, rgba(255,62,108,.14), rgba(255,180,58,.12));
+  overflow:hidden;white-space:nowrap;
+}
+.ticker-inner{display:inline-flex;gap:0;animation:marq 26s linear infinite;padding:12px 0;font-size:14.5px;letter-spacing:.18em;text-transform:uppercase}
+.ticker-inner span{padding:0 18px}
+.ticker-inner span b{color:var(--brass)}
+@keyframes marq{to{transform:translateX(-50%)}}
+:focus-visible{outline:3px solid var(--teal);outline-offset:3px;border-radius:6px}
+@media (max-width:1020px){
+  .nav a{display:none}
+  .hero{grid-template-columns:1fr;padding:22px 22px}
+  header{padding:16px 22px}
+  .arch{min-height:560px;padding-bottom:160px}
+  h1{font-size:64px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important}
+}
+</style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <div class="brand">
+      <div class="brand-mark" aria-hidden="true">♫</div>
+      <div class="brand-text"><strong>MIDNIGHT BRASS</strong><span>November Jazz Fest ’26</span></div>
+    </div>
+    <nav class="nav" aria-label="Primary">
+      <a href="#lineup">Line-up</a>
+      <a href="#tickets">Tickets</a>
+      <a href="#venue">Venue</a>
+      <span class="date-pill"><i></i> Nov 20–22 • Troxy London</span>
+      <a class="btn-small" href="#tickets">Early-Bird £49</a>
+    </nav>
+  </header>
+
+  <main class="hero">
+    <section aria-labelledby="fest-title">
+      <div class="eyebrow">
+        <span class="script">three smoky nights of</span>
+      </div>
+      <h1 id="fest-title"><span class="outline">Midnight</span><span class="solid">Brass &amp; Neon</span></h1>
+      <p class="lede">London’s late-night jazz weekender returns to <strong>Troxy, Limehouse</strong> — a listed Art Deco palace turned neon speakeasy. <strong>Five acts, three nights,</strong> one brass-soaked dancefloor. Vinyl-only bars, midnight jam, pancakes at 1am.</p>
+
+      <div class="lineup-head"><span id="lineup">★ Full line-up — 5 acts</span><a href="#tickets">Doors 7pm / Curfew 2am</a></div>
+      <div class="lineup" role="list">
+        <a class="act" href="#tickets" role="listitem">
+          <span class="num">01</span>
+          <span class="act-name">Nadia Cole Quintet<small>Soul-bop • Headline + strings</small></span>
+          <span class="act-meta"><span class="day fri">Fri • Nov 20</span><time>9:30pm — Main Hall</time></span>
+        </a>
+        <a class="act" href="#tickets" role="listitem">
+          <span class="num">02</span>
+          <span class="act-name">The Copper Tones<small>New Orleans brass • 8-piece</small></span>
+          <span class="act-meta"><span class="day fri">Fri • Nov 20</span><time>7:45pm — Main Hall</time></span>
+        </a>
+        <a class="act" href="#tickets" role="listitem">
+          <span class="num">03</span>
+          <span class="act-name">Eli Marlowe Trio<small>Late piano • Blue Hour set</small></span>
+          <span class="act-meta"><span class="day sat">Sat • Nov 21</span><time>8:15pm — Circle Bar</time></span>
+        </a>
+        <a class="act" href="#tickets" role="listitem">
+          <span class="num">04</span>
+          <span class="act-name">Zola James &amp; Velvet Horns<small>Big-band soul • 14 players</small></span>
+          <span class="act-meta"><span class="day sat">Sat • Nov 21</span><time>10:00pm — Main Hall</time></span>
+        </a>
+        <a class="act" href="#tickets" role="listitem">
+          <span class="num">05</span>
+          <span class="act-name">After Midnight All-Stars<small>Festival jam • All 5 acts</small></span>
+          <span class="act-meta"><span class="day sun">Sun • Nov 22</span><time>11:00pm — Finale</time></span>
+        </a>
+      </div>
+
+      <div class="cta-row" id="tickets">
+        <a class="btn-big" href="#tickets" aria-label="Get early bird tickets for 49 pounds">Get Early-Bird — £49 <span class="arrow">→</span></a>
+        <a class="btn-ghost" href="#venue">Full schedule &amp; day tickets</a>
+      </div>
+      <div class="urgency">
+        <div class="bar" role="progressbar" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100" aria-label="Early bird tickets claimed"><i></i></div>
+        <p><b>Save £30</b> before <b>Nov 8</b> — <b>72%</b> of early-birds claimed. <span id="count">5 days left.</span> Weekend + afterparty included.</p>
+      </div>
+    </section>
+
+    <div class="visual-col">
+      <div class="arch" role="img" aria-label="Art deco poster with vinyl record, neon jazz sign and brass saxophone for Midnight Brass festival">
+        <div class="sunburst" aria-hidden="true"></div>
+        <div class="live-pill"><i></i> Live • 3 Nights • Troxy E1</div>
+        <div class="neon-sign">JAZZ <span>after dark</span></div>
+
+        <div class="vinyl-wrap">
+          <svg class="ring" viewBox="0 0 360 360" aria-hidden="true">
+            <defs><path id="circ" d="M180,180 m-158,0 a158,158 0 1,1 316,0 a158,158 0 1,1 -316,0"/></defs>
+            <text font-size="15.5" letter-spacing="3.5" fill="#1c0a04" font-weight="700" font-family="Space Grotesk, sans-serif"><textPath href="#circ">MIDNIGHT BRASS • NOV 20–22 • TROXY LONDON • WARM BRASS • NEON NIGHTS • </textPath></text>
+          </svg>
+          <div class="vinyl">
+            <div class="label"><span>Side A • 33⅓</span><strong>BRASS</strong><em>Midnight • Live</em><div class="hole"></div></div>
+          </div>
+          <svg class="sax" viewBox="0 0 140 170" aria-hidden="true">
+            <defs><linearGradient id="brassG" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffe9b8"/><stop offset=".45" stop-color="#ffb43a"/><stop offset="1" stop-color="#7a2b0e"/></linearGradient></defs>
+            <path d="M45 10 C 45 50, 48 85, 72 105 C 95 124, 108 118, 110 100 L 122 102 C 120 128, 92 150, 58 132 C 28 114, 22 70, 22 12 Z" fill="url(#brassG)" stroke="#140507" stroke-width="4" stroke-linejoin="round"/>
+            <ellipse cx="98" cy="78" rx="26" ry="20" fill="url(#brassG)" stroke="#140507" stroke-width="4" transform="rotate(-15 98 78)"/>
+            <ellipse cx="102" cy="78" rx="14" ry="10" fill="#140507"/>
+            <rect x="34" y="4" width="32" height="14" rx="7" fill="#140507"/>
+            <circle cx="50" cy="62" r="7" fill="#140507" stroke="#ffd99a" stroke-width="2"/><circle cx="55" cy="82" r="7" fill="#140507" stroke="#ffd99a" stroke-width="2"/><circle cx="64" cy="101" r="7" fill="#140507" stroke="#ffd99a" stroke-width="2"/>
+          </svg>
+        </div>
+
+        <div class="eq" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+        <div class="eq-caption">Warm brass • Live all night</div>
+
+        <div class="badge-circle">5 acts<br><b>1 stage</b></div>
+        <div class="badge-price">£49 ★ Early</div>
+
+        <div class="ticket" id="venue">
+          <div class="ticket-left">
+            <div class="t-top">Admit weekend • Nov 20–22</div>
+            <strong>Troxy, Limehouse E1</strong>
+            <p>490 Commercial Rd, London • Step-free • 18+</p>
+            <div class="row"><span>3 nights</span><span>Late bar till 2am</span></div>
+          </div>
+          <div class="ticket-right"><small>Early-bird</small><b>£49</b><div class="barcode" aria-hidden="true"></div></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-inner">
+      <span><b>✦</b> Early-bird ends Nov 8</span><span><b>✦</b> Nadia Cole Quintet</span><span><b>✦</b> Copper Tones</span><span><b>✦</b> Eli Marlowe Trio</span><span><b>✦</b> Zola James</span><span><b>✦</b> Midnight Jam till 2am</span>
+      <span><b>✦</b> Early-bird ends Nov 8</span><span><b>✦</b> Nadia Cole Quintet</span><span><b>✦</b> Copper Tones</span><span><b>✦</b> Eli Marlowe Trio</span><span><b>✦</b> Zola James</span><span><b>✦</b> Midnight Jam till 2am</span>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  var end = new Date('2026-11-08T23:59:00Z');
+  var now = new Date('2026-11-03T00:00:00Z');
+  var diff = Math.max(0, Math.ceil((end - now)/86400000));
+  var el = document.getElementById('count');
+  if(el) el.textContent = diff + ' days left.';
+})();
+</script>
+</body>
+</html>

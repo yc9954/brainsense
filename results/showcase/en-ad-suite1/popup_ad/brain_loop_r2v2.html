@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@500;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0e0805;display:flex;align-items:center;justify-content:center;min-height:100vh;font-family:Inter,sans-serif}
+.stage{width:1280px;height:720px;background:#FFF6E8;color:#230F08;position:relative;overflow:hidden;flex-shrink:0;border-radius:18px}
+.topbar{position:absolute;top:0;left:0;right:0;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 32px;z-index:20;background:#230F08;color:#FFF6E8}
+.logo{font-family:"Archivo Black";font-size:18px;letter-spacing:.5px;display:flex;align-items:center;gap:12px}
+.logo i{font-style:normal;background:#FF2342;color:#fff;padding:5px 10px;border-radius:100px;font-size:14px}
+.datepill{font-weight:900;font-size:15px;background:#FFC93C;color:#230F08;padding:9px 18px;border-radius:100px;letter-spacing:.6px}
+.scene{position:absolute;inset:64px 0 56px 0;padding:0;visibility:hidden;opacity:0}
+.hook{background:#FFF6E8;animation:showHook 12s linear infinite}
+.product{background:#230F08;color:#FFF6E8;animation:showProduct 12s linear infinite}
+.offer{background:#FFC93C;animation:showOffer 12s linear infinite}
+@keyframes showHook{0%{opacity:1;visibility:visible;transform:translateX(0)}26%{opacity:1;visibility:visible;transform:translateX(0)}32.5%{opacity:0;visibility:hidden;transform:translateX(-80px)}91%{opacity:0;visibility:hidden;transform:translateX(80px)}95%,100%{opacity:1;visibility:visible;transform:translateX(0)}}
+@keyframes showProduct{0%,30%{opacity:0;visibility:hidden;transform:translateX(80px)}34%{opacity:1;visibility:visible;transform:translateX(0)}59%{opacity:1;visibility:visible;transform:translateX(0)}65%{opacity:0;visibility:hidden;transform:translateX(-80px)}100%{opacity:0;visibility:hidden;transform:translateX(80px)}}
+@keyframes showOffer{0%,62%{opacity:0;visibility:hidden;transform:translateY(60px)}66.5%{opacity:1;visibility:visible;transform:translateY(0)}90%{opacity:1;visibility:visible;transform:translateY(0)}94%,100%{opacity:0;visibility:hidden;transform:translateY(-40px)}}
+/* HOOK LAYOUT */
+.hook-inner{display:flex;height:100%;align-items:center;padding:18px 40px 0 72px;gap:10px}
+.hook-copy{width:560px}
+.eyebrow{display:inline-block;font-weight:900;font-size:16px;letter-spacing:2px;background:#230F08;color:#FFF6E8;padding:8px 16px;border-radius:100px;animation:popTitle 12s linear infinite}
+.hook-copy h1{font-family:"Archivo Black";font-size:132px;line-height:.88;letter-spacing:-3px;margin:14px 0 12px;animation:popTitle 12s linear infinite}
+.hook-copy h1 span{color:#FF2342}
+.hook-copy p{font-size:20px;font-weight:700;line-height:1.35;animation:popTitle 12s linear infinite}
+@keyframes popTitle{0%{opacity:0;transform:translateY(50px) scale(.96)}2%{opacity:1;transform:translateY(0) scale(1)}26%{opacity:1;transform:translateY(0) scale(1)}31%{opacity:0;transform:translateY(-30px)}92%{opacity:0;transform:translateY(50px)}95%,100%{opacity:1;transform:translateY(0) scale(1)}}
+.hero{position:relative;width:560px;height:560px;display:flex;align-items:center;justify-content:center}
+.halo{position:absolute;width:500px;height:500px;background:#FFE0C2;border-radius:50%;border:6px solid #230F08}
+.halo2{position:absolute;width:440px;height:440px;background:#fff;border-radius:50%;border:4px dashed #230F08;animation:spinHalo 12s linear infinite}
+@keyframes spinHalo{0%{transform:rotate(0)}26%{transform:rotate(90deg)}100%{transform:rotate(360deg)}}
+.berry{position:relative;width:360px;height:420px;background:radial-gradient(circle at 30% 25%,#FF7A90 0%,#FF2342 38%,#C40028 78%,#8A001C 100%);border-radius:48% 48% 50% 50%/38% 38% 62% 62%;border:7px solid #230F08;animation:berryBounce 12s ease-in-out infinite;z-index:2}
+@keyframes berryBounce{0%{transform:scale(0) rotate(-18deg)}3.5%{transform:scale(1.12) rotate(5deg)}6%{transform:scale(1) rotate(0)}12%{transform:scale(1) translateY(0) rotate(-2deg)}16%{transform:scale(1.03) translateY(-22px) rotate(2deg)}20%,28%{transform:scale(1) translateY(0) rotate(-2deg)}32%,92%{transform:scale(.7) translateY(60px)}95%,100%{transform:scale(0) rotate(-18deg)}}
+.leaf{position:absolute;top:-28px;left:50%;width:92px;height:58px;background:#0E7A4F;border:6px solid #230F08;border-radius:60% 10% 60% 10%;transform-origin:bottom center}
+.leaf.l1{transform:translateX(-50%) rotate(-32deg)}.leaf.l2{transform:translateX(-50%) rotate(0)}.leaf.l3{transform:translateX(-50%) rotate(32deg);background:#17A863}
+.seed{position:absolute;width:18px;height:26px;background:#FFF6E8;border:3px solid #230F08;border-radius:50% 50% 50% 50%/60% 60% 40% 40%}
+.shine{position:absolute;left:48px;top:90px;width:56px;height:130px;background:#fff;border-radius:50%;opacity:.85;transform:rotate(18deg);animation:shineSweep 12s linear infinite}
+@keyframes shineSweep{0%,6%{opacity:0;transform:rotate(18deg) translateX(-20px)}8%{opacity:.9}14%,100%{opacity:.85;transform:rotate(18deg) translateX(0)}}
+.berry-tag{position:absolute;bottom:44px;right:8px;background:#230F08;color:#fff;font-weight:900;font-size:18px;padding:12px 18px;border-radius:16px;transform:rotate(-6deg);z-index:3;border:3px solid #fff;box-shadow:0 8px 0 #FF2342;animation:tagPop 12s linear infinite}
+@keyframes tagPop{0%{opacity:0;transform:rotate(-6deg) scale(0)}4%{opacity:1;transform:rotate(-6deg) scale(1.15)}6%,26%{opacity:1;transform:rotate(-6deg) scale(1)}32%,100%{opacity:0;transform:rotate(-6deg) scale(.8)}}
+/* PRODUCT */
+.product-inner{display:flex;height:100%;align-items:center;padding:28px 50px;gap:36px}
+.p-copy{width:620px;background:#FFF6E8;color:#230F08;border-radius:28px;padding:30px 36px;border:5px solid #000;position:relative}
+.p-copy h2{font-family:"Archivo Black";font-size:66px;line-height:.95;letter-spacing:-1px;animation:pIn 12s linear infinite}
+.p-copy h2 em{font-style:normal;background:#FF2342;color:#fff;padding:0 12px;border-radius:12px;display:inline-block;transform:rotate(-2deg)}
+.benefits{list-style:none;margin:16px 0;display:flex;gap:12px}
+.benefits li{flex:1;background:#230F08;color:#FFF6E8;border-radius:18px;padding:14px 14px;text-align:center}
+.benefits b{display:block;font-family:"Archivo Black";font-size:34px;color:#FFC93C}
+.benefits span{font-size:14px;font-weight:800;line-height:1.2;display:block;margin-top:4px}
+.price-row{display:flex;align-items:center;gap:14px}
+.price{font-family:"Archivo Black";font-size:34px}
+.price s{font-size:20px;opacity:.55}
+.save{background:#0E7A4F;color:#fff;font-weight:900;padding:8px 14px;border-radius:100px;font-size:16px}
+@keyframes pIn{0%,30%{opacity:0;transform:translateY(60px)}34%,59%{opacity:1;transform:translateY(0)}65%,100%{opacity:0;transform:translateY(-30px)}}
+.parfait-zone{flex:1;display:flex;justify-content:center;position:relative}
+.glass{width:280px;height:380px;position:relative;animation:glassUp 12s ease-in-out infinite}
+@keyframes glassUp{0%,30%{opacity:0;transform:translateY(120px) scale(.8)}35%{opacity:1;transform:translateY(0) scale(1.05)}37%,59%{opacity:1;transform:translateY(-12px) scale(1)}65%,100%{opacity:0;transform:translateY(80px) scale(.9)}}
+.cup{position:absolute;bottom:0;left:0;right:0;height:260px;background:linear-gradient(#fff 0 22%,#FF2342 22% 48%,#FFF6E8 48% 72%,#FF9AAE 72% 100%);border:7px solid #FFF6E8;border-top:none;border-radius:0 0 60px 60px;overflow:hidden}
+.cup-rim{position:absolute;top:96px;left:-10px;right:-10px;height:32px;background:#fff;border:7px solid #FFF6E8;border-radius:16px}
+.cream{position:absolute;top:10px;left:30px;right:30px;height:110px;background:#fff;border:7px solid #FFF6E8;border-radius:40px 40px 20px 20px}
+.cream::after{content:"";position:absolute;bottom:-22px;left:30px;width:32px;height:32px;background:#fff;border-radius:50%;box-shadow:60px 6px 0 #fff,120px 0 0 #fff}
+.topberry{position:absolute;top:-38px;left:50%;width:110px;height:125px;background:radial-gradient(circle at 30% 25%,#FF7A90,#FF2342 55%,#8A001C);border:6px solid #fff;border-radius:48% 48% 50% 50%/38% 38% 62% 62%;transform:translateX(-50%) rotate(-8deg)}
+.p-label{position:absolute;top:0;right:-30px;background:#FFC93C;color:#230F08;font-weight:900;padding:10px 14px;border-radius:14px;transform:rotate(8deg);border:3px solid #fff}
+/* OFFER */
+.offer-inner{display:flex;height:100%;align-items:center;padding:24px 48px;gap:28px}
+.o-card{background:#230F08;color:#FFF6E8;border-radius:28px;padding:28px 32px;width:560px}
+.o-card h2{font-family:"Archivo Black";font-size:64px;line-height:.92;animation:oIn 12s linear infinite}
+.o-card h2 span{color:#FFC93C}
+.dates{display:flex;gap:12px;margin:16px 0}
+.dbox{flex:1;background:#FFF6E8;color:#230F08;border-radius:16px;text-align:center;padding:10px}
+.dbox b{font-family:"Archivo Black";font-size:28px;display:block}
+.dbox span{font-weight:800;font-size:13px;letter-spacing:1px}
+.venue{font-size:17px;font-weight:700;line-height:1.4}
+.cta-zone{flex:1;text-align:center}
+.cta{ display:inline-block;background:#FF2342;color:#fff;font-family:"Archivo Black";font-size:38px;padding:22px 48px;border-radius:100px;border:6px solid #230F08;box-shadow:0 10px 0 #230F08;text-decoration:none;animation:ctaPulse 12s linear infinite}
+@keyframes ctaPulse{0%,62%{opacity:0;transform:scale(.6)}67%{opacity:1;transform:scale(1.12)}69%,78%{opacity:1;transform:scale(1)}80%{opacity:1;transform:scale(1.07)}82%{opacity:1;transform:scale(1)}84%{opacity:1;transform:scale(1.07)}86%,90%{opacity:1;transform:scale(1)}94%,100%{opacity:0;transform:scale(.7)}}
+@keyframes oIn{0%,62%{opacity:0;transform:translateY(40px)}67%,90%{opacity:1;transform:translateY(0)}94%,100%{opacity:0;transform:translateY(-20px)}}
+.social{margin-top:14px;background:#fff;border:4px solid #230F08;border-radius:18px;padding:12px 16px;font-weight:800;font-size:16px;animation:oIn 12s linear infinite}
+.scarc{margin-top:10px;font-weight:900;font-size:15px;letter-spacing:.5px;animation:oIn 12s linear infinite}
+.bar{height:14px;background:#fff;border:3px solid #230F08;border-radius:100px;overflow:hidden;margin-top:8px}
+.bar i{display:block;height:100%;width:88%;background:#FF2342;border-radius:100px;animation:fillBar 12s linear infinite}
+@keyframes fillBar{0%,64%{transform:translateX(-100%)}72%,90%{transform:translateX(0)}94%,100%{transform:translateX(0)}}
+/* GLOBAL FACE - human cue gazing at hero/CTA */
+.face-global{position:absolute;left:28px;bottom:72px;width:132px;z-index:30;animation:faceBob 12s ease-in-out infinite}
+@keyframes faceBob{0%{transform:translateY(0) rotate(-2deg)}6%{transform:translateY(-8px) rotate(2deg)}12%,100%{transform:translateY(0) rotate(-2deg)}}
+.face-head{width:132px;height:132px;background:#FFD9B8;border:5px solid #230F08;border-radius:50%;position:relative;overflow:hidden}
+.haircap{position:absolute;top:-8px;left:-8px;right:-8px;height:62px;background:#230F08;border-radius:50% 50% 30% 30%}
+.eye{position:absolute;top:62px;width:30px;height:34px;background:#fff;border:3px solid #230F08;border-radius:50%;overflow:hidden}
+.eye.e1{left:26px}.eye.e2{right:26px}
+.pupil{position:absolute;top:10px;left:7px;width:14px;height:14px;background:#230F08;border-radius:50%;animation:pupils 12s linear infinite}
+.pupil::after{content:"";position:absolute;top:2px;left:2px;width:5px;height:5px;background:#fff;border-radius:50%}
+@keyframes pupils{0%,26%{transform:translate(8px,-2px) scale(1.2)}32%,59%{transform:translate(7px,2px)}64%,90%{transform:translate(9px,6px) scale(1.3)}95%,100%{transform:translate(8px,-2px) scale(1.2)}}
+.blush{position:absolute;top:92px;width:20px;height:12px;background:#FF7A90;border-radius:50%;opacity:.8}
+.smile{position:absolute;bottom:16px;left:50%;width:36px;height:18px;border:4px solid #230F08;border-top:none;border-radius:0 0 30px 30px;transform:translateX(-50%)}
+.face-tag{margin-top:8px;background:#230F08;color:#fff;font-size:12px;font-weight:800;text-align:center;padding:6px 8px;border-radius:10px;letter-spacing:.4px}
+/* TIMELINE */
+.timeline{position:absolute;bottom:0;left:0;right:0;height:56px;background:#230F08;display:flex;align-items:center;gap:18px;padding:0 28px;color:#FFF6E8;z-index:20}
+.tlabel{font-weight:900;font-size:13px;letter-spacing:1.5px;white-space:nowrap}
+.track{flex:1;height:10px;background:#ffffff2a;border-radius:100px;overflow:hidden}
+.fill{height:100%;width:100%;background:linear-gradient(90deg,#FF2342,#FFC93C);border-radius:100px;transform-origin:left;animation:prog 12s linear infinite}
+@keyframes prog{0%{transform:scaleX(0)}100%{transform:scaleX(1)}}
+.phases{display:flex;gap:8px;font-size:12px;font-weight:900}
+.phases span{padding:6px 12px;border-radius:100px;background:#ffffff1e}
+.phases span:nth-child(1){animation:ph1 12s linear infinite}
+.phases span:nth-child(2){animation:ph2 12s linear infinite}
+.phases span:nth-child(3){animation:ph3 12s linear infinite}
+@keyframes ph1{0%,26%{background:#FF2342;color:#fff}32%,100%{background:#ffffff1e;color:#FFF6E8}}
+@keyframes ph2{0%,30%,59%{background:#ffffff1e}34%,59%{background:#FF2342;color:#fff}65%,100%{background:#ffffff1e;color:#FFF6E8}}
+@keyframes ph3{0%,62%{background:#ffffff1e;color:#FFF6E8}66%,90%{background:#FF2342;color:#fff}94%,100%{background:#ffffff1e;color:#FFF6E8}}
+</style>
+</head>
+<body>
+<div class="stage">
+<div class="topbar"><div class="logo"><i>★</i> SWEETSPOT × YEONNAM ROASTERY</div><div class="datepill">FRI NOV 14 — SUN NOV 16 • SEONGSU</div></div>
+<section class="scene hook"><div class="hook-inner">
+<div class="hook-copy"><div class="eyebrow">● 3 DAYS ONLY • SEONGSU POP-UP</div><h1>STRAW-<br>BERRY<br><span>DIVE!</span></h1><p>Jeju strawberries + single-origin latte.<br>Fresh shortcake bar in Seongsu.</p></div>
+<div class="hero"><div class="halo"></div><div class="halo2"></div><div class="berry"><div class="leaf l1"></div><div class="leaf l2"></div><div class="leaf l3"></div><div class="shine"></div><div class="seed" style="left:60px;top:110px"></div><div class="seed" style="left:150px;top:90px"></div><div class="seed" style="left:240px;top:110px"></div><div class="seed" style="left:105px;top:190px"></div><div class="seed" style="left:200px;top:180px"></div><div class="seed" style="left:285px;top:190px"></div><div class="seed" style="left:150px;top:270px"></div><div class="seed" style="left:230px;top:270px"></div><div class="seed" style="left:190px;top:340px"></div></div><div class="berry-tag">JEJU • 2× JUICY ↓</div></div>
+</div></section>
+<section class="scene product"><div class="product-inner">
+<div class="p-copy"><h2>TASTE <em>WARM & COLD</em></h2><ul class="benefits"><li><b>300</b><span>parfaits / day fresh at 11AM</span></li><li><b>100%</b><span>Jeju strawberries single farm</span></li><li><b>4.9★</b><span>loved by 2,300 tasters</span></li></ul><div class="price-row"><div class="price"><s>₩13,500</s> ₩9,500</div><div class="save">30% POP-UP ONLY</div></div><div style="font-weight:800;margin-top:8px;font-size:15px">Ichigo shortcake + Yeonnam house latte • take-home box included</div></div>
+<div class="parfait-zone"><div class="glass"><div class="topberry"></div><div class="cream"></div><div class="cup-rim"></div><div class="cup"></div><div class="p-label">LOOK AT THE LAYERS!</div></div></div>
+</div></section>
+<section class="scene offer"><div class="offer-inner">
+<div class="o-card"><h2>FIND US IN <span>SEONGSU</span></h2><div class="dates"><div class="dbox"><b>14 FRI</b><span>11AM-8PM</span></div><div class="dbox"><b>15 SAT</b><span>11AM-8PM</span></div><div class="dbox"><b>16 SUN</b><span>11AM-6PM</span></div></div><div class="venue">📍 23 Seongsui-ro, Seongdong-gu<br>2 min from Seongsu Station Exit 4 • Blue door, strawberry flag</div></div>
+<div class="cta-zone"><a class="cta" href="#">RESERVE A SLOT →</a><div class="social">★★★★★ 4.9 • 2,347 already reserved</div><div class="scarc">⚠ ONLY 90 SLOTS LEFT • FREE BERRY DRINK FOR FIRST 50/DAY<div class="bar"><i></i></div></div></div>
+</div></section>
+<div class="face-global"><div class="face-head"><div class="haircap"></div><div class="eye e1"><div class="pupil"></div></div><div class="eye e2"><div class="pupil"></div></div><div class="blush" style="left:18px"></div><div class="blush" style="right:18px"></div><div class="smile"></div></div><div class="face-tag">BARISTA MINA IS WAITING →</div></div>
+<div class="timeline"><div class="tlabel">12s LOOP</div><div class="track"><div class="fill"></div></div><div class="phases"><span>01 HOOK</span><span>02 TASTE</span><span>03 RESERVE</span></div></div>
+</div>
+</body>
+</html>

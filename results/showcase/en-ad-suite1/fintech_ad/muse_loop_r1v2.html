@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%}
+body{background:#0a0a0a;display:flex;align-items:center;justify-content:center;min-height:100vh;font-family:'Inter',sans-serif}
+.stage{width:1280px;height:720px;flex-shrink:0;position:relative;overflow:hidden;background:#FFF6E9;color:#0E2A1D;border-radius:18px;box-shadow:0 30px 120px rgba(0,0,0,.6)}
+.bg-lines{position:absolute;inset:0;opacity:.09;background-image:linear-gradient(#0E2A1D 1px,transparent 1px),linear-gradient(90deg,#0E2A1D 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(800px 500px at 50% 45%,black 60%,transparent 100%)}
+.blob{position:absolute;border-radius:50%;filter:blur(2px)}
+.b1{width:720px;height:720px;left:-180px;top:-260px;background:radial-gradient(circle,#00C97B 0%,transparent 68%);opacity:.22;animation:drift1 12s linear infinite}
+.b2{width:640px;height:640px;right:-160px;bottom:-240px;background:radial-gradient(circle,#FFB800 0%,transparent 68%);opacity:.28;animation:drift2 12s linear infinite}
+@keyframes drift1{0%,100%{opacity:.22;transform:translate(0,0) scale(1)}15%{opacity:.28;transform:translate(20px,18px) scale(1.04)}30%,92%{opacity:.22;transform:translate(0,0) scale(1)}}
+@keyframes drift2{0%,100%{opacity:.28;transform:translate(0,0) scale(1)}50%{opacity:.28;transform:translate(0,0) scale(1)}78%{opacity:.34;transform:translate(-18px,-16px) scale(1.05)}92%,100%{opacity:.28;transform:translate(0,0) scale(1)}}
+.top{position:absolute;top:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;padding:26px 44px;z-index:10}
+.logo{display:flex;align-items:center;gap:12px;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:22px;letter-spacing:-.02em}
+.mark{width:38px;height:38px;border-radius:12px;background:#0E2A1D;color:#FFF6E9;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:700}
+.pills{display:flex;gap:10px}
+.pill{font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:10px 16px;border-radius:100px;border:2px solid #0E2A1D}
+.pill.dark{background:#0E2A1D;color:#FFF6E9}
+.pill.light{background:#fff;color:#0E2A1D}
+.scene{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:90px 80px 90px;z-index:5}
+.s1{animation:s1Vis 12s linear infinite}
+.s2{animation:s2Vis 12s linear infinite}
+.s3{animation:s3Vis 12s linear infinite}
+@keyframes s1Vis{0%,29%{opacity:1;visibility:visible;transform:translateY(0)}32%,92%{opacity:0;visibility:hidden;transform:translateY(-26px)}96%,100%{opacity:1;visibility:visible;transform:translateY(0)}}
+@keyframes s2Vis{0%,33%{opacity:0;visibility:hidden;transform:translateY(26px)}37%,62%{opacity:1;visibility:visible;transform:translateY(0)}66%,100%{opacity:0;visibility:hidden;transform:translateY(-26px)}}
+@keyframes s3Vis{0%,66%{opacity:0;visibility:hidden;transform:translateY(26px)}70%,92%{opacity:1;visibility:visible;transform:translateY(0)}96%,100%{opacity:0;visibility:hidden;transform:translateY(-18px)}}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;background:#0E2A1D;color:#7CFFC4;font-weight:800;font-size:15px;letter-spacing:.14em;text-transform:uppercase;padding:12px 20px;border-radius:100px}
+.dotlive{width:9px;height:9px;border-radius:50%;background:#00E68A;box-shadow:0 0 12px #00E68A}
+h1,h2{font-family:'Space Grotesk',sans-serif;font-weight:700;letter-spacing:-.04em;line-height:.95}
+.coin{width:168px;height:168px;border-radius:50%;background:radial-gradient(circle at 32% 28%,#FFE9A8 0%,#FFC93C 28%,#E89A00 68%,#9A5E00 100%);border:8px solid #0E2A1D;box-shadow:0 14px 0 #0E2A1D,0 24px 60px rgba(0,0,0,.25);display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:64px;color:#0E2A1D;position:relative;animation:coinIn 12s linear infinite}
+.coin:after{content:"";position:absolute;inset:12px;border:3px dashed rgba(14,42,29,.45);border-radius:50%}
+@keyframes coinIn{0%{opacity:0;transform:translateY(-140px) scale(.6) rotate(-14deg)}2.5%{opacity:1;transform:translateY(0) scale(1.05) rotate(0)}4.5%{opacity:1;transform:translateY(-14px) scale(1)}6.5%{opacity:1;transform:translateY(0) scale(1)}27%{opacity:1;transform:translateY(0) scale(1)}31%,92%{opacity:0;transform:translateY(-36px) scale(.88)}96%,100%{opacity:0;transform:translateY(-140px) scale(.6)}}
+.hook-title{font-size:92px;margin-top:26px;white-space:nowrap;animation:up1 12s linear infinite}
+@keyframes up1{0%{opacity:0;transform:translateY(50px)}3%{opacity:1;transform:translateY(0)}27%{opacity:1;transform:translateY(0)}31%,100%{opacity:0;transform:translateY(-30px)}}
+.hook-title em{font-style:normal;background:#00C97B;padding:0 18px;border-radius:18px;border:4px solid #0E2A1D;display:inline-block;transform:rotate(-1.5deg)}
+.hook-sub{margin-top:16px;font-size:24px;font-weight:600;opacity:.85;animation:up1b 12s linear infinite}
+@keyframes up1b{0%,2%{opacity:0;transform:translateY(30px)}5%{opacity:.9;transform:translateY(0)}27%{opacity:.9;transform:translateY(0)}31%,100%{opacity:0;transform:translateY(-20px)}}
+.pieWrap{position:relative;width:250px;height:250px;animation:pieIn 12s linear infinite}
+@keyframes pieIn{0%,33%{opacity:0;transform:scale(.7) rotate(-18deg)}37%{opacity:1;transform:scale(1.05) rotate(0)}39.5%{opacity:1;transform:scale(1) rotate(0)}60%{opacity:1;transform:scale(1) rotate(8deg)}65%,100%{opacity:0;transform:scale(.85) translateY(-20px)}}
+.pie{width:250px;height:250px;border-radius:50%;background:conic-gradient(#0E2A1D 0 38%,#00C97B 38% 62%,#0E2A1D 62% 78%,#FFB800 78% 88%,#0E2A1D 88% 100%);border:8px solid #0E2A1D;position:relative;box-shadow:0 16px 0 #0E2A1D}
+.pie:after{content:"$1 SLICE";position:absolute;left:50%;top:50%;width:128px;height:128px;transform:translate(-50%,-50%);background:#FFF6E9;border:5px solid #0E2A1D;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:20px;text-align:center;line-height:1}
+.pop{position:absolute;right:-86px;top:18px;background:#0E2A1D;color:#fff;font-weight:800;font-size:18px;padding:14px 18px;border-radius:16px;box-shadow:0 8px 0 rgba(14,42,29,.2);white-space:nowrap;animation:popIn 12s linear infinite}
+.pop b{color:#FFC93C}
+@keyframes popIn{0%,38%{opacity:0;transform:translateX(-16px) scale(.8)}42%,60%{opacity:1;transform:translateX(0) scale(1)}65%,100%{opacity:0;transform:translateX(10px) scale(.9)}}
+.benefit-title{font-size:72px;margin-top:28px;white-space:nowrap;animation:up2 12s linear infinite}
+@keyframes up2{0%,35%{opacity:0;transform:translateY(40px)}39%{opacity:1;transform:translateY(0)}60%{opacity:1;transform:translateY(0)}65%,100%{opacity:0;transform:translateY(-24px)}}
+.benefit-sub{margin-top:12px;font-size:22px;font-weight:600;background:#fff;border:2px solid #0E2A1D;border-radius:100px;padding:10px 22px;animation:up2b 12s linear infinite}
+@keyframes up2b{0%,37%{opacity:0;transform:translateY(24px)}41%{opacity:1;transform:translateY(0)}60%{opacity:1;transform:translateY(0)}65%,100%{opacity:0;transform:translateY(-16px)}}
+.offerCard{background:#0E2A1D;color:#FFF6E9;border-radius:32px;padding:42px 64px 34px;width:760px;box-shadow:0 18px 0 #00C97B,0 30px 80px rgba(0,0,0,.3);animation:cardIn 12s linear infinite}
+@keyframes cardIn{0%,66%{opacity:0;transform:translateY(60px) scale(.94)}70%{opacity:1;transform:translateY(0) scale(1.02)}72%{opacity:1;transform:translateY(0) scale(1)}91%{opacity:1;transform:translateY(0) scale(1)}95%,100%{opacity:0;transform:translateY(-24px) scale(.97)}}
+.offerCard .eyebrow{background:#7CFFC4;color:#0E2A1D;border:none}
+.offer-title{font-size:74px;margin-top:16px;white-space:nowrap}
+.offer-title span{color:#FFC93C}
+.ctaRow{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:22px}
+.cta{background:#FFC93C;color:#0E2A1D;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:32px;padding:18px 54px;border-radius:100px;border:none;box-shadow:0 0 0 6px rgba(255,201,60,.25);animation:ctaPulse 12s linear infinite}
+@keyframes ctaPulse{0%,70%{opacity:1;transform:scale(1)}75%{transform:scale(1.07)}79%{transform:scale(1)}83%{transform:scale(1.07)}87%,100%{opacity:1;transform:scale(1)}}
+.mins{font-weight:800;font-size:18px;line-height:1.2;text-align:left}
+.mins big{font-size:32px;display:block}
+.trust{margin-top:20px;display:flex;justify-content:center;gap:18px;font-size:16px;font-weight:600;opacity:.92}
+.trust i{font-style:normal;color:#7CFFC4}
+.fine{margin-top:10px;font-size:13px;opacity:.6}
+.progress{position:absolute;left:44px;right:44px;bottom:28px;display:flex;gap:10px;z-index:10}
+.seg{flex:1;height:8px;border-radius:100px;background:rgba(14,42,29,.15);overflow:hidden;position:relative}
+.seg:after{content:"";position:absolute;inset:0;background:#0E2A1D;border-radius:100px;transform-origin:left;transform:scaleX(0)}
+.seg.sA:after{animation:fillA 12s linear infinite}
+.seg.sB:after{animation:fillB 12s linear infinite}
+.seg.sC:after{animation:fillC 12s linear infinite}
+@keyframes fillA{0%{transform:scaleX(0)}25%,100%{transform:scaleX(1)}}
+@keyframes fillB{0%,33.33%{transform:scaleX(0)}58%,100%{transform:scaleX(1)}}
+@keyframes fillC{0%,66.66%{transform:scaleX(0)}91%,100%{transform:scaleX(1)}}
+.label{position:absolute;bottom:46px;right:50px;font-size:12px;font-weight:800;letter-spacing:.12em;opacity:.55;z-index:10;animation:labelSwap 12s linear infinite}
+@keyframes labelSwap{0%,32%{opacity:.55}33%,100%{opacity:.55}}
+</style>
+</head>
+<body>
+<div class="stage" role="img" aria-label="Invest from $1 ad">
+<div class="bg-lines"></div>
+<div class="blob b1"></div><div class="blob b2"></div>
+<div class="top">
+<div class="logo"><span class="mark">◐</span> Slicevest</div>
+<div class="pills"><span class="pill light">SIPC Insured ✓</span><span class="pill dark">3-min sign-up</span></div>
+</div>
+<!-- SCENE 1 HOOK 0-4s : ONE focal -->
+<div class="scene s1">
+<div class="coin">$1</div>
+<div class="eyebrow"><span class="dotlive"></span> Fractional shares • From $1</div>
+<h1 class="hook-title">Big stocks <em>from $1.</em></h1>
+<p class="hook-sub">Stop watching. Start owning a piece of it.</p>
+</div>
+<!-- SCENE 2 PRODUCT 4-8s : ONE focal -->
+<div class="scene s2">
+<div class="pieWrap"><div class="pie"></div><div class="pop">AMZN $187.42 → <b>Yours $1</b></div></div>
+<h2 class="benefit-title">A slice beats the whole.</h2>
+<div class="benefit-sub">Own fractions of 2,000+ stocks &amp; ETFs — diversify with $5</div>
+</div>
+<!-- SCENE 3 OFFER+CTA 8-12s : ONE focal -->
+<div class="scene s3">
+<div class="offerCard">
+<div class="eyebrow"><span class="dotlive"></span> 3-minute sign-up • No minimum</div>
+<div class="offer-title">Start now with <span>$1.</span></div>
+<div class="ctaRow"><button class="cta">Start now →</button><div class="mins"><big>3 min</big>to first<br>investment</div></div>
+<div class="trust"><span><i>★</i> 4.8 Rated</span><span><i>✓</i> SIPC insured</span><span><i>✓</i> Bank-grade encryption</span></div>
+<div class="fine">Investing involves risk. Fractional shares powered by Slicevest.</div>
+</div>
+</div>
+<div class="progress"><div class="seg sA"></div><div class="seg sB"></div><div class="seg sC"></div></div>
+</div>
+</body>
+</html>

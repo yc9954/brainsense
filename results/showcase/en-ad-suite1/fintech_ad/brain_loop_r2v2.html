@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,800;9..144,900&family=Inter:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0E0E0E;display:flex;align-items:center;justify-content:center;min-height:100vh;font-family:Inter,sans-serif}
+.stage{width:1280px;height:720px;background:#FFF6E8;color:#15211C;position:relative;overflow:hidden;display:flex;flex-shrink:0;border-radius:18px}
+.left{width:540px;height:100%;position:relative}
+.right{width:740px;height:100%;position:relative}
+.topbar{position:absolute;top:0;left:0;right:0;height:84px;display:flex;align-items:center;justify-content:space-between;padding:0 48px;z-index:20}
+.logo{display:flex;align-items:center;gap:12px;font-weight:800;font-size:22px;letter-spacing:-.02em}
+.logomark{width:38px;height:38px;background:#15211C;color:#FFF6E8;border-radius:12px;display:flex;align-items:center;justify-content:center;font-family:Fraunces,serif;font-size:24px}
+.top-pills{display:flex;gap:10px}
+.pill{font-size:13px;font-weight:700;letter-spacing:.06em;padding:9px 16px;border-radius:100px;background:#15211C;color:#FFF6E8}
+.pill.light{background:#fff;border:2px solid #15211C;color:#15211C}
+.person{position:absolute;left:56px;top:92px;width:430px;height:560px}
+.shoulders{position:absolute;bottom:18px;left:22px;width:386px;height:234px;background:#12302B;border-radius:190px 190px 36px 36px}
+.collar{position:absolute;bottom:178px;left:164px;width:102px;height:68px;background:#fff;border-radius:0 0 52px 52px}
+.collar:after{content:"";position:absolute;left:46px;top:0;width:10px;height:68px;background:#FF5A1F}
+.neck{position:absolute;left:188px;top:348px;width:64px;height:62px;background:#EAB086;border-radius:18px}
+.head{position:absolute;left:70px;top:58px;width:300px;height:324px;background:#F7C39D;border-radius:148px 148px 132px 132px}
+.hair{position:absolute;left:52px;top:18px;width:336px;height:220px;background:#1E1A17;border-radius:170px 170px 90px 90px}
+.hair:after{content:"";position:absolute;left:28px;top:88px;width:280px;height:140px;background:#F7C39D;border-radius:120px 120px 80px 80px}
+.fringe{position:absolute;left:78px;top:72px;width:284px;height:86px;background:#1E1A17;border-radius:0 0 120px 120px;transform:rotate(-6deg)}
+.eye{position:absolute;top:206px;width:62px;height:62px;background:#fff;border-radius:50%;overflow:hidden}
+.eye.l{left:112px}.eye.r{left:212px}
+.pupil{position:absolute;left:17px;top:18px;width:28px;height:28px;background:#15211C;border-radius:50%;animation:pupils 12s linear infinite}
+.pupil:after{content:"";position:absolute;left:7px;top:6px;width:9px;height:9px;background:#fff;border-radius:50%}
+.brow{position:absolute;top:178px;width:56px;height:12px;background:#1E1A17;border-radius:10px}
+.brow.l{left:114px;transform:rotate(-6deg)}.brow.r{left:214px;transform:rotate(6deg)}
+.blush{position:absolute;top:262px;width:44px;height:22px;background:#F09A7B;opacity:.7;border-radius:20px}
+.blush.l{left:84px}.blush.r{left:258px}
+.smile{position:absolute;left:168px;top:276px;width:72px;height:38px;border:7px solid #15211C;border-top:0;border-left:0;border-right:0;border-radius:0 0 80px 80px}
+.arm{position:absolute;right:-18px;top:390px;width:210px;height:86px;background:#12302B;border-radius:60px;transform-origin:20% 50%;animation:arm 12s linear infinite}
+.hand{position:absolute;right:-28px;top:-8px;width:102px;height:102px;background:#F7C39D;border-radius:50%}
+.hand:after{content:"→";position:absolute;left:18px;top:8px;font-size:52px;font-weight:800;color:#15211C}
+.coin{position:absolute;left:332px;top:258px;width:204px;height:204px;background:#FF5A1F;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 22px 50px rgba(255,90,31,.38), inset 0 0 0 10px #FFF6E8, inset 0 0 0 14px #FF5A1F;z-index:5;animation:coin 12s linear infinite}
+.coin span{font-family:Fraunces,serif;font-weight:900;font-size:92px;color:#fff;letter-spacing:-.05em}
+.coin i{position:absolute;top:28px;left:52px;width:64px;height:22px;background:rgba(255,255,255,.7);border-radius:20px;transform:rotate(-22deg)}
+.receipt{position:absolute;left:22px;top:178px;background:#fff;border:3px solid #15211C;border-radius:18px;padding:14px 18px;display:flex;gap:12px;align-items:center;box-shadow:0 16px 30px rgba(21,33,28,.14);z-index:6;animation:receipt 12s linear infinite}
+.check{width:36px;height:36px;background:#0B7A55;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:20px}
+.receipt b{font-size:16px;display:block;line-height:1.1}
+.receipt small{font-size:13px;font-weight:600;color:#0B7A55}
+.growth{position:absolute;left:36px;bottom:74px;background:#15211C;color:#fff;border-radius:100px;padding:12px 20px;font-weight:800;font-size:18px;display:flex;gap:10px;align-items:center;z-index:6;animation:growth 12s linear infinite}
+.growth em{font-style:normal;background:#0B7A55;padding:4px 12px;border-radius:100px}
+.scene{position:absolute;inset:92px 48px 86px 0;display:flex;flex-direction:column;justify-content:center}
+.eyebrow{font-size:15px;font-weight:800;letter-spacing:.18em;margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.dot{width:12px;height:12px;border-radius:50%;background:#FF5A1F;display:inline-block}
+h1{font-family:Fraunces,serif;font-weight:900;line-height:.92;letter-spacing:-.04em}
+.hook h1{font-size:112px}
+.hook h1 span{color:#FF5A1F}
+.sub{font-size:22px;line-height:1.4;font-weight:500;margin-top:18px;max-width:560px;color:#2E3D36}
+.fromline{display:inline-block;margin-top:16px;background:#15211C;color:#FFF6E8;font-weight:800;font-size:22px;padding:12px 22px;border-radius:100px}
+.product h1{font-size:86px}
+.benefitrow{display:flex;gap:14px;margin-top:24px}
+.bcard{background:#fff;border:3px solid #15211C;border-radius:18px;padding:16px 18px;flex:1}
+.bcard b{font-size:44px;font-family:Fraunces,serif;display:block;line-height:1}
+.bcard span{font-size:15px;font-weight:700}
+.phonebar{margin-top:22px;background:#fff;border:3px solid #15211C;border-radius:20px;padding:18px 22px;display:flex;align-items:center;gap:18px}
+.track{flex:1;height:16px;background:#EADFC6;border-radius:100px;position:relative;overflow:hidden}
+.fill{position:absolute;inset:0;width:72%;background:#0B7A55;border-radius:100px;animation:fill 12s linear infinite}
+.knob{width:44px;height:44px;background:#FF5A1F;border:3px solid #15211C;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800}
+.offer h1{font-size:84px}
+.cta{margin-top:26px;display:flex;align-items:center;gap:18px;animation:ctapulse 12s linear infinite}
+.ctabtn{background:#12302B;color:#FFF6E8;font-size:36px;font-weight:800;padding:22px 54px;border-radius:100px;border:0;letter-spacing:-.02em;box-shadow:0 18px 44px rgba(18,48,43,.35)}
+.ctaarrow{width:76px;height:76px;background:#FF5A1F;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:40px;color:#fff;font-weight:800}
+.trust{margin-top:20px;display:flex;gap:12px;align-items:center;font-size:15px;font-weight:700}
+.trust s{text-decoration:none;background:#fff;border:2px solid #15211C;padding:8px 14px;border-radius:100px}
+.bottombar{position:absolute;bottom:0;left:0;right:0;height:58px;display:flex;align-items:center;gap:18px;padding:0 48px;font-size:13px;font-weight:700;letter-spacing:.08em;z-index:20}
+.bar{flex:1;height:8px;background:#EADFC6;border-radius:100px;overflow:hidden}
+.bar i{display:block;height:100%;background:#FF5A1F;transform-origin:left;animation:progress 12s linear infinite}
+.hook{animation:showHook 12s linear infinite}
+.product{animation:showProduct 12s linear infinite}
+.offer{animation:showOffer 12s linear infinite}
+@keyframes showHook{0%{opacity:1;transform:translateY(0)}27%{opacity:1;transform:translateY(0)}32.5%{opacity:0;transform:translateY(-36px)}33.5%,93%{opacity:0;transform:translateY(36px)}96%,100%{opacity:1;transform:translateY(0)}}
+@keyframes showProduct{0%,32%{opacity:0;transform:translateY(46px)}36%,61%{opacity:1;transform:translateY(0)}65.5%,100%{opacity:0;transform:translateY(-36px)}}
+@keyframes showOffer{0%,64%{opacity:0;transform:translateY(46px)}69%,96%{opacity:1;transform:translateY(0)}98.5%,100%{opacity:0;transform:translateY(-20px)}}
+@keyframes coin{0%,8%{transform:scale(.4) rotate(-14deg);opacity:0}13%,28%{transform:scale(1) rotate(0);opacity:1}30%,33%{transform:scale(1.12)}33.5%,100%{transform:scale(1);opacity:1}}
+@keyframes receipt{0%,13%{opacity:0;transform:translateY(18px) scale(.7)}17%,28%{opacity:1;transform:translateY(0) scale(1)}31%,100%{opacity:0;transform:translateY(-14px) scale(.95)}}
+@keyframes pupils{0%{transform:translate(8px,-2px)}20%{transform:translate(10px,0)}35%,60%{transform:translate(12px,3px)}72%,94%{transform:translate(14px,10px)}100%{transform:translate(8px,-2px)}}
+@keyframes arm{0%,30%{transform:rotate(-4deg)}36%,62%{transform:rotate(2deg) translateY(-6px)}69%,96%{transform:rotate(6deg) translateY(8px)}100%{transform:rotate(-4deg)}}
+@keyframes growth{0%,36%{opacity:0;transform:translateY(16px)}40%,60%{opacity:1;transform:translateY(0)}64%,100%{opacity:0}}
+@keyframes fill{0%,34%{width:8%}48%,60%{width:72%}64%,100%{width:72%}}
+@keyframes ctapulse{0%,68%{transform:scale(1)}74%{transform:scale(1.05)}79%{transform:scale(1)}85%{transform:scale(1.05)}90%{transform:scale(1)}95%{transform:scale(1.06)}100%{transform:scale(1)}}
+@keyframes progress{0%{transform:scaleX(0)}100%{transform:scaleX(1)}}
+</style>
+</head>
+<body>
+<div class="stage">
+<div class="topbar">
+<div class="logo"><div class="logomark">P</div> Pebble</div>
+<div class="top-pills"><div class="pill light">SIPC-INSURED</div><div class="pill">3-MIN SIGN-UP</div></div>
+</div>
+<div class="left">
+<div class="person">
+<div class="shoulders"></div><div class="collar"></div><div class="neck"></div>
+<div class="hair"></div><div class="head"></div><div class="fringe"></div>
+<div class="brow l"></div><div class="brow r"></div>
+<div class="eye l"><div class="pupil"></div></div><div class="eye r"><div class="pupil"></div></div>
+<div class="blush l"></div><div class="blush r"></div><div class="smile"></div>
+<div class="arm"><div class="hand"></div></div>
+<div class="coin"><i></i><span>$1</span></div>
+<div class="receipt"><div class="check">✓</div><div><b>Bought 0.083 AAPL</b><small>● $1.00 • just now</small></div></div>
+<div class="growth"><em>▲ +18.4%</em> $214.60 growth</div>
+</div>
+</div>
+<div class="right">
+<div class="scene hook">
+<div class="eyebrow"><span class="dot"></span> FRACTIONAL SHARES &nbsp;•&nbsp; FROM $1</div>
+<h1>Own Apple<br><span>from $1.</span></h1>
+<p class="sub">No whole share needed. Buy a slice of real stock and watch it grow.</p>
+<div><span class="fromline">Start investing from $1 in one line</span></div>
+</div>
+<div class="scene product">
+<div class="eyebrow"><span class="dot"></span> 3-MINUTE START • NO MINIMUMS</div>
+<h1>Sign up in<br>3 minutes.</h1>
+<div class="phonebar"><div class="knob">$</div><div class="track"><div class="fill"></div></div><div style="font-weight:800;font-size:22px">$1 → 0.25 share</div></div>
+<div class="benefitrow"><div class="bcard"><b>1</b><span>Verify ID</span></div><div class="bcard"><b>2</b><span>Add $1</span></div><div class="bcard"><b>3</b><span>Own stock</span></div></div>
+</div>
+<div class="scene offer">
+<div class="eyebrow"><span class="dot"></span> SAFE • SIPC-INSURED • ENCRYPTED</div>
+<h1>Start now with<br>just $1.</h1>
+<div class="cta"><button class="ctabtn">Start now</button><div class="ctaarrow">→</div><div style="font-weight:800;font-size:20px;line-height:1.2">from $1<br><span style="color:#0B7A55">cancel anytime</span></div></div>
+<div class="trust"><s>✓ SIPC-insured</s><s>✓ 256-bit encryption</s><s>★ 4.9 (120k reviews)</s></div>
+</div>
+</div>
+<div class="bottombar"><span>0:00</span><div class="bar"><i></i></div><span>0:12 LOOP • BANK-GRADE SAFETY</span></div>
+</div>
+</body>
+</html>

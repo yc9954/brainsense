@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;0,9..144,900;1,9..144,800&family=Inter:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%}
+body{background:#111;display:flex;align-items:center;justify-content:center;min-height:100vh;font-family:'Inter',sans-serif}
+.stage{width:1280px;height:720px;flex-shrink:0;position:relative;overflow:hidden;background:#FFF6E9;color:#241105;display:flex}
+.bg-watermark{position:absolute;left:-20px;bottom:-70px;font-family:'Fraunces',serif;font-weight:900;font-size:360px;line-height:1;color:#F5E0C6;letter-spacing:-12px;opacity:.9;pointer-events:none;animation:waterPan 12s ease-in-out infinite}
+@keyframes waterPan{0%,100%{transform:translateX(0)}50%{transform:translateX(28px)}}
+.blob{position:absolute;border-radius:50%;filter:blur(70px);pointer-events:none;animation:blobFloat 12s ease-in-out infinite}
+.blob.b1{width:620px;height:620px;left:-160px;top:-220px;background:#FFD9B3;opacity:.9}
+.blob.b2{width:520px;height:520px;right:-120px;top:-140px;background:#FFC53D;opacity:.45}
+.blob.b3{width:600px;height:420px;left:220px;bottom:-220px;background:#FFB59E;opacity:.55}
+@keyframes blobFloat{0%,100%{transform:translate(0,0) scale(1)}25%{transform:translate(20px,18px) scale(1.04)}50%{transform:translate(0,30px) scale(1)}75%{transform:translate(-18px,12px) scale(1.03)}}
+.grain{position:absolute;inset:0;opacity:.08;background-image:radial-gradient(#7C2D12 1px,transparent 1px);background-size:14px 14px;pointer-events:none}
+.left{width:660px;height:100%;padding:30px 10px 34px 56px;position:relative;z-index:5;display:flex;flex-direction:column}
+.topbar{display:flex;align-items:center;gap:16px}
+.logo{font-weight:800;letter-spacing:3px;font-size:18px}
+.logo span{font-family:'Fraunces',serif;font-style:italic;letter-spacing:.5px;font-weight:800}
+.pill-new{font-size:12.5px;font-weight:800;letter-spacing:1.4px;background:#241105;color:#FFEFD6;border-radius:100px;padding:9px 16px}
+.mini-cta{margin-left:auto;background:#B93A0E;color:#fff;text-decoration:none;font-weight:800;font-size:15px;padding:12px 22px;border-radius:100px;box-shadow:0 10px 26px rgba(185,58,14,.35);animation:ctaPulse 12s ease-in-out infinite;white-space:nowrap}
+@keyframes ctaPulse{0%,100%{transform:scale(1)}8%{transform:scale(1.06)}12%{transform:scale(1)}42%{transform:scale(1)}46%{transform:scale(1.05)}50%{transform:scale(1)}88%{transform:scale(1.07)}92%{transform:scale(1)}}
+.scene{position:absolute;left:56px;right:20px;top:122px;opacity:0}
+.scene-hook{animation:hookVis 12s ease-in-out infinite}
+.scene-benefit{animation:benefitVis 12s ease-in-out infinite}
+.scene-offer{animation:offerVis 12s ease-in-out infinite}
+@keyframes hookVis{0%{opacity:1;transform:translateY(0)}27%{opacity:1;transform:translateY(0)}33.33%{opacity:0;transform:translateY(-28px)}95%{opacity:0;transform:translateY(28px)}100%{opacity:1;transform:translateY(0)}}
+@keyframes benefitVis{0%,29%{opacity:0;transform:translateY(28px)}33.33%,60%{opacity:1;transform:translateY(0)}66.66%,100%{opacity:0;transform:translateY(-28px)}}
+@keyframes offerVis{0%,60%{opacity:0;transform:translateY(28px)}66.66%,95%{opacity:1;transform:translateY(0)}100%{opacity:0;transform:translateY(-18px)}}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:800;letter-spacing:2.2px;color:#9A3412}
+.eyebrow i{width:28px;height:3px;background:#E85D2A;display:block;border-radius:2px}
+h1{font-family:'Fraunces',serif;font-weight:900;font-size:68px;line-height:.95;letter-spacing:-2px;margin:14px 0 16px;color:#1F0E06}
+h1 em{font-style:italic;font-weight:800;color:#B93A0E}
+h2{font-family:'Fraunces',serif;font-weight:900;font-size:62px;line-height:.95;letter-spacing:-1.5px;color:#1F0E06}
+h2 em{font-style:italic;color:#B93A0E}
+.sub{font-size:19px;line-height:1.45;color:#5B3520;font-weight:500;max-width:520px}
+.stars{display:flex;align-items:center;gap:12px;margin-top:18px}
+.stars b{color:#B93A0E;letter-spacing:3px;font-size:18px}
+.stars p{font-size:14.5px;font-weight:700;color:#1F0E06}
+.stars p small{font-weight:600;color:#7A4A2E}
+.bullets{list-style:none;margin-top:18px;display:grid;gap:12px}
+.bullets li{display:flex;gap:13px;align-items:center;background:#fff;border:2px solid #1F0E06;border-radius:16px;padding:12px 16px;font-weight:700;font-size:17px;box-shadow:5px 5px 0 #1F0E06;opacity:0;animation:bulletIn 12s ease-in-out infinite}
+.bullets li:nth-child(1){animation-delay:0s}.bullets li:nth-child(2){animation-delay:0s}.bullets li:nth-child(3){animation-delay:0s}
+.bullets li:nth-child(1){--d:36%}.bullets li:nth-child(2){--d:39%}.bullets li:nth-child(3){--d:42%}
+@keyframes bulletIn{0%,33%{opacity:0;transform:translateX(-24px)}36%,60%{opacity:1;transform:translateX(0)}66.66%,100%{opacity:0;transform:translateX(0)}}
+.bullets li:nth-child(2){animation-name:bulletIn2}.bullets li:nth-child(3){animation-name:bulletIn3}
+@keyframes bulletIn2{0%,36%{opacity:0;transform:translateX(-24px)}39%,60%{opacity:1;transform:translateX(0)}66.66%,100%{opacity:0}}
+@keyframes bulletIn3{0%,39%{opacity:0;transform:translateX(-24px)}42%,60%{opacity:1;transform:translateX(0)}66.66%,100%{opacity:0}}
+.tick{width:30px;height:30px;flex-shrink:0;border-radius:50%;background:#1F8A4C;color:#fff;display:grid;place-items:center;font-size:17px;font-weight:800}
+.offer-badge-row{display:flex;align-items:center;gap:18px;margin:14px 0 10px}
+.big30{font-family:'Fraunces',serif;font-weight:900;font-size:88px;line-height:.9;background:#1F0E06;color:#FFD66B;padding:10px 22px;border-radius:20px;transform:rotate(-3deg);box-shadow:7px 7px 0 #E85D2A}
+.offer-copy h2{font-size:44px}
+.price{font-size:22px;font-weight:800;margin-top:10px;color:#1F0E06}
+.price s{color:#9A7A60;font-weight:600}
+.price span{background:#FFD66B;padding:3px 10px;border-radius:8px;border:2px solid #1F0E06}
+.cta-row{display:flex;align-items:center;gap:16px;margin-top:16px}
+.btn-buy{background:#1F0E06;color:#FFF6E9;text-decoration:none;font-weight:800;font-size:24px;letter-spacing:.5px;padding:18px 54px;border-radius:100px;box-shadow:0 16px 34px rgba(31,14,6,.3);animation:ctaPulse 12s ease-in-out infinite}
+.urgency{font-size:14px;font-weight:700;line-height:1.4;color:#7A2E0E}
+.foot{margin-top:auto;display:flex;align-items:center;gap:16px}
+.progress{flex:1;height:10px;background:#EAD3B8;border-radius:100px;overflow:hidden;border:1.5px solid #241105}
+.progress i{display:block;height:100%;width:100%;background:linear-gradient(90deg,#E85D2A,#FFB627);transform-origin:left;animation:prog 12s linear infinite}
+@keyframes prog{0%{transform:scaleX(0)}100%{transform:scaleX(1)}}
+.timestamps{display:flex;gap:10px;font-size:11px;font-weight:800;letter-spacing:1.2px}
+.timestamps span{padding:6px 10px;border-radius:100px;border:1.5px solid #241105;color:#8A5A3A}
+.timestamps span.on1{animation:tab1 12s ease-in-out infinite}.timestamps span.on2{animation:tab2 12s ease-in-out infinite}.timestamps span.on3{animation:tab3 12s ease-in-out infinite}
+@keyframes tab1{0%,29%{background:#241105;color:#fff}33.33%,100%{background:transparent;color:#8A5A3A}}
+@keyframes tab2{0%,29%,66.66%,100%{background:transparent;color:#8A5A3A}33.33%,60%{background:#241105;color:#fff}}
+@keyframes tab3{0%,60%{background:transparent;color:#8A5A3A}66.66%,95%{background:#241105;color:#fff}100%{background:transparent;color:#8A5A3A}}
+.right{width:620px;height:100%;position:relative;z-index:4;display:flex;align-items:center;justify-content:center}
+.halo{position:absolute;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,#FFD66B 0%,#FFB46B 38%,rgba(255,180,107,0) 68%);animation:haloPulse 12s ease-in-out infinite}
+@keyframes haloPulse{0%,100%{transform:scale(1);opacity:.95}50%{transform:scale(1.08);opacity:1}}
+.slice{position:absolute;width:460px;height:460px;border-radius:50%;background:radial-gradient(circle,#FFF6E9 0 18%,#FF9D2E 18% 20%,#FFC53D 20% 32%,#fff 32% 34%,#FFB627 34% 46%,#E85D2A 46% 48%,#7C2D12 48% 50%,transparent 50%),conic-gradient(from 0deg,#FFD66B 0 36deg,#FF9D2E 36deg 40deg,#FFD66B 40deg 76deg,#FF9D2E 76deg 80deg,#FFD66B 80deg 116deg,#FF9D2E 116deg 120deg,#FFD66B 120deg 156deg,#FF9D2E 156deg 160deg,#FFD66B 160deg 196deg,#FF9D2E 196deg 200deg,#FFD66B 200deg 236deg,#FF9D2E 236deg 240deg,#FFD66B 240deg 276deg,#FF9D2E 276deg 280deg,#FFD66B 280deg 316deg,#FF9D2E 316deg 320deg,#FFD66B 320deg 356deg,#FF9D2E 356deg 360deg);box-shadow:0 30px 80px rgba(185,58,14,.35),inset 0 0 0 10px #fff;animation:sliceSpin 12s ease-in-out infinite}
+@keyframes sliceSpin{0%,100%{transform:rotate(-8deg) scale(1)}50%{transform:rotate(8deg) scale(1.04)}}
+.podium{position:absolute;bottom:88px;width:380px;height:64px;background:radial-gradient(ellipse,#3A1E0E 0%,rgba(58,30,14,0) 70%);opacity:.35;animation:haloPulse 12s ease-in-out infinite}
+.bottle-wrap{position:relative;z-index:3;animation:bottleFloat 12s ease-in-out infinite;filter:drop-shadow(0 30px 40px rgba(60,20,0,.35))}
+@keyframes bottleFloat{0%,100%{transform:translateY(0) rotate(-1.5deg)}25%{transform:translateY(-16px) rotate(0deg)}50%{transform:translateY(0) rotate(1.5deg)}75%{transform:translateY(-10px) rotate(0deg)}}
+.cap{width:84px;height:92px;margin:0 auto;background:linear-gradient(90deg,#1A0D06,#4A2A18 30%,#1A0D06 55%,#000);border-radius:14px 14px 8px 8px;position:relative}
+.cap:after{content:"";position:absolute;left:12px;top:10px;bottom:10px;width:10px;background:linear-gradient(#fff,rgba(255,255,255,0));opacity:.35;border-radius:10px}
+.dropper-glass{width:46px;height:28px;margin:0 auto;background:linear-gradient(90deg,rgba(255,255,255,.9),rgba(255,255,255,.2));border:2px solid #1A0D06;border-bottom:0}
+.bottle{width:220px;height:340px;background:linear-gradient(90deg,#7A2E0E 0%,#E48A2E 18%,#FFD08A 32%,#FF9D2E 50%,#B93A0E 78%,#5B1E08 100%);border-radius:28px 28px 34px 34px;border:3px solid #1F0E06;position:relative;overflow:hidden}
+.bottle:before{content:"";position:absolute;left:18px;top:18px;bottom:18px;width:22px;background:linear-gradient(rgba(255,255,255,.9),rgba(255,255,255,.05));border-radius:20px;opacity:.85}
+.label{position:absolute;left:18px;right:18px;top:84px;background:#FFFBF2;border:2.5px solid #1F0E06;border-radius:14px;padding:14px 12px 12px;text-align:center}
+.label small{font-size:10px;font-weight:800;letter-spacing:2.5px;color:#B93A0E}
+.label h4{font-family:'Fraunces',serif;font-size:30px;line-height:1;letter-spacing:.5px}
+.label p{font-size:11px;font-weight:700;letter-spacing:.8px;margin-top:6px;background:#1F0E06;color:#FFD66B;border-radius:100px;padding:6px 8px}
+.shine{position:absolute;top:-20%;bottom:-20%;width:70px;background:linear-gradient(100deg,transparent,rgba(255,255,255,.9),transparent);transform:skewX(-18deg);left:-100px;animation:shineMove 12s ease-in-out infinite}
+@keyframes shineMove{0%,28%{left:-100px;opacity:0}35%{opacity:1}48%,100%{left:260px;opacity:0}}
+.spark{position:absolute;background:#fff;border-radius:50%;box-shadow:0 0 12px #FFD66B;animation:sparkle 12s ease-in-out infinite}
+.spark.s1{width:14px;height:14px;left:90px;top:150px}
+.spark.s2{width:10px;height:10px;right:110px;top:220px}
+.spark.s3{width:18px;height:18px;right:90px;bottom:180px}
+.spark.s4{width:8px;height:8px;left:120px;bottom:220px}
+@keyframes sparkle{0%,100%{opacity:0;transform:scale(.4)}12%{opacity:1;transform:scale(1.2)}20%{opacity:0;transform:scale(.6)}48%{opacity:0}56%{opacity:1;transform:scale(1.3)}64%{opacity:0}84%{opacity:1;transform:scale(1.1)}92%,100%{opacity:0}}
+.drop{position:absolute;width:18px;height:24px;background:linear-gradient(#FFB627,#E85D2A);border-radius:50% 50% 50% 50%/55% 55% 45% 45%;border-radius:50%;clip-path:ellipse(50% 55% at 50% 55%);animation:dropFall 12s ease-in infinite}
+.drop.d1{left:140px;top:80px}.drop.d2{right:150px;top:120px;width:12px;height:16px}
+@keyframes dropFall{0%,10%{opacity:0;transform:translateY(0)}18%{opacity:1}32%{opacity:0;transform:translateY(220px)}100%{opacity:0;transform:translateY(0)}}
+.badge-30{position:absolute;right:58px;top:92px;width:142px;height:142px;background:#B93A0E;color:#fff;border-radius:50%;border:4px solid #1F0E06;display:grid;place-items:center;text-align:center;transform:rotate(10deg);box-shadow:0 14px 30px rgba(0,0,0,.25);z-index:6;animation:badgePop 12s ease-in-out infinite}
+.badge-30 b{font-family:'Fraunces',serif;font-size:38px;line-height:.9}
+.badge-30 small{font-size:12px;font-weight:800;letter-spacing:1.5px}
+@keyframes badgePop{0%,62%{opacity:0;transform:rotate(10deg) scale(.4)}68%,92%{opacity:1;transform:rotate(10deg) scale(1)}95%,100%{opacity:0;transform:rotate(10deg) scale(1.1)}}
+.launch-tag{position:absolute;left:50%;bottom:44px;transform:translateX(-50%);background:#1F0E06;color:#FFEFD6;font-size:13px;font-weight:700;letter-spacing:1px;padding:10px 20px;border-radius:100px;white-space:nowrap;z-index:6}
+</style>
+</head>
+<body>
+<div class="stage">
+<div class="bg-watermark">glow</div>
+<div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+<div class="grain"></div>
+<div class="left">
+<div class="topbar"><div class="logo"><span>Lumière</span> • PARIS</div><div class="pill-new">FOR LATE-20s SKIN</div><a class="mini-cta" href="#">Buy now • 30% off</a></div>
+<div class="scene scene-hook">
+<div class="eyebrow"><i></i> NEW • 15% VITAMIN C SERUM</div>
+<h1>Get the lit-from-within <em>glow</em> your late-20s skin has been missing.</h1>
+<p class="sub">Dullness, dark spots and first fine lines — one citrus-bright drop, morning and night.</p>
+<div class="stars"><b>★★★★★</b><p>4.9 Loved by 12,000+ women <small>• 7-day glow promise</small></p></div>
+</div>
+<div class="scene scene-benefit">
+<div class="eyebrow"><i></i> WHY IT WORKS</div>
+<h2>One drop, <em>triple</em> power.</h2>
+<ul class="bullets">
+<li><span class="tick">✓</span> 15% stabilized Vitamin C fades dark spots</li>
+<li><span class="tick">✓</span> Vitamin E + Hyaluronic plumps fine lines</li>
+<li><span class="tick">✓</span> Dermatologist tested for sensitive skin</li>
+</ul>
+</div>
+<div class="scene scene-offer">
+<div class="eyebrow"><i></i> LAUNCH OFFER • ENDS SUNDAY</div>
+<div class="offer-badge-row"><div class="big30">30%<br><span style="font-size:22px;letter-spacing:2px">OFF</span></div><div class="offer-copy"><h2>Your glow, for less.</h2><div class="price"><s>$59.00</s> &nbsp; $41.30 <span>CODE: GLOW30</span></div></div></div>
+<div class="cta-row"><a class="btn-buy" href="#">Buy now</a><div class="urgency">30% launch discount<br>Free shipping • 30-day returns</div></div>
+</div>
+<div class="foot"><div class="progress"><i></i></div><div class="timestamps"><span class="on1">00 HOOK</span><span class="on2">04 GLOW</span><span class="on3">08 30% OFF</span></div></div>
+</div>
+<div class="right">
+<div class="halo"></div><div class="slice"></div><div class="podium"></div>
+<div class="spark s1"></div><div class="spark s2"></div><div class="spark s3"></div><div class="spark s4"></div>
+<div class="drop d1"></div><div class="drop d2"></div>
+<div class="badge-30"><div><small>LAUNCH</small><br><b>30%<br>OFF</b></div></div>
+<div class="bottle-wrap"><div class="cap"></div><div class="dropper-glass"></div><div class="bottle"><div class="label"><small>VITAMIN C 15%</small><h4>Lumière</h4><p>BRIGHTENING SERUM 30ml</p></div><div class="shine"></div></div></div>
+<div class="launch-tag">Free shipping on launch orders • 30% off applied at checkout</div>
+</div>
+</div>
+</body>
+</html>

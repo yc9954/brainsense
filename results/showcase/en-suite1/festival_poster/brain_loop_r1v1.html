@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>After Dark — November Jazz Festival | Nov 20–22 • Meridian Hall Chicago</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Instrument+Serif:ital@0;1&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+--night:#0E0717;
+--night2:#1A0C2B;
+--cream:#FFF6E9;
+--cream-dim:#E8D8BF;
+--brass:#E9B44C;
+--brass-deep:#B67A1E;
+--tangerine:#FF7A29;
+--neon:#FF3EB5;
+--neon-blue:#5EE8FF;
+--line:rgba(255,246,233,.14);
+}
+html,body{height:100%}
+body{
+font-family:"Outfit",system-ui,sans-serif;
+background:var(--night);
+color:var(--cream);
+font-size:16px;line-height:1.5;
+min-height:100vh;
+overflow-x:hidden;
+-webkit-font-smoothing:antialiased;
+}
+body::before{
+content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+background:
+radial-gradient(900px 500px at 8% 0%,rgba(255,62,181,.22),transparent 60%),
+radial-gradient(800px 600px at 85% 15%,rgba(255,122,41,.18),transparent 60%),
+radial-gradient(1000px 700px at 50% 110%,rgba(233,180,76,.18),transparent 60%),
+linear-gradient(180deg,#150A27 0%,#0E0717 55%,#070410 100%);
+}
+body::after{
+content:"";position:fixed;inset:0;z-index:0;opacity:.09;pointer-events:none;
+background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.9'/%3E%3C/svg%3E");
+}
+a{color:inherit}
+.wrap{position:relative;z-index:1;max-width:1280px;margin:0 auto;height:100vh;min-height:800px;display:flex;flex-direction:column;padding:20px 32px 0}
+header{display:flex;align-items:center;justify-content:space-between;border:1px solid var(--line);border-radius:999px;padding:10px 10px 10px 20px;background:rgba(255,246,233,.06);backdrop-filter:blur(12px)}
+.brand{display:flex;align-items:center;gap:12px;font-weight:700;letter-spacing:.14em;font-size:13px}
+.brand-mark{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;color:#0E0717;font-size:19px;background:conic-gradient(from 0deg,var(--brass),var(--tangerine),var(--neon),var(--brass));box-shadow:0 0 18px rgba(255,62,181,.6),0 0 32px rgba(233,180,76,.4)}
+nav{display:flex;gap:26px;font-size:13.5px;letter-spacing:.14em;font-weight:600;color:var(--cream-dim)}
+nav a{text-decoration:none;opacity:.9}nav a:hover{color:var(--brass)}
+.head-right{display:flex;align-items:center;gap:14px}
+.date-pill{font-size:12.5px;letter-spacing:.12em;font-weight:700;color:var(--cream);border:1px dashed rgba(233,180,76,.6);padding:8px 14px;border-radius:999px;white-space:nowrap}
+.btn-early{border:0;cursor:pointer;text-decoration:none;background:linear-gradient(92deg,var(--brass) 0%,var(--tangerine) 55%,var(--neon) 130%);color:#160A05;font-weight:800;letter-spacing:.06em;font-size:14px;padding:12px 20px;border-radius:999px;display:inline-flex;align-items:center;gap:8px;box-shadow:0 6px 28px rgba(255,122,41,.45),0 0 0 1px rgba(255,255,255,.35) inset;transition:.2s}
+.btn-early:hover{transform:translateY(-1px);box-shadow:0 10px 36px rgba(255,62,181,.55)}
+main{flex:1;display:grid;grid-template-columns:1.08fr .92fr;gap:32px;align-items:stretch;padding:22px 0 0;min-height:0}
+.left{display:flex;flex-direction:column;min-height:0}
+.eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.live-dot{width:9px;height:9px;border-radius:50%;background:#4ADE80;box-shadow:0 0 12px #4ADE80;animation:pulse 1.8s infinite}
+@keyframes pulse{50%{opacity:.4}}
+.eyebrow p{font-size:13px;letter-spacing:.22em;font-weight:700;color:var(--brass)}
+.eyebrow span{color:var(--cream-dim);letter-spacing:.12em}
+h1{font-family:"Bebas Neue",sans-serif;line-height:.86;letter-spacing:.01em;text-transform:uppercase}
+.h1-small{display:block;font-size:22px;letter-spacing:.42em;color:var(--cream-dim);font-family:"Outfit";font-weight:600;margin-bottom:6px}
+.h1-main{display:block;font-size:clamp(68px,7.8vw,112px);color:var(--cream);text-shadow:0 2px 0 rgba(0,0,0,.6)}
+.h1-accent{display:block;font-size:clamp(70px,8.2vw,118px);line-height:.9;background:linear-gradient(92deg,#FFF6E9 5%,var(--brass) 38%,var(--tangerine) 62%,var(--neon) 95%);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 18px rgba(255,62,181,.45)) drop-shadow(0 0 34px rgba(255,122,41,.25))}
+.h1-accent em{font-family:"Instrument Serif",serif;font-style:italic;font-weight:400;letter-spacing:-.02em}
+.sub{margin:14px 0 16px;max-width:560px;font-size:17px;color:#F3E6D2;line-height:1.55}
+.sub strong{color:var(--brass)}
+.cta-row{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.btn-big{font-size:17px;padding:16px 26px}
+.btn-ghost{border:1px solid rgba(255,246,233,.28);color:var(--cream);text-decoration:none;padding:15px 22px;border-radius:999px;font-weight:600;font-size:15px;background:rgba(255,255,255,.04)}
+.btn-ghost:hover{border-color:var(--brass);color:var(--brass)}
+.under-cta{font-size:13.5px;letter-spacing:.04em;color:var(--cream-dim);margin-top:10px}
+.under-cta b{color:var(--cream)} .under-cta i{color:var(--neon-blue);font-style:normal}
+.count{display:flex;gap:10px;margin-top:4px}
+.count div{background:rgba(0,0,0,.45);border:1px solid var(--line);border-radius:12px;min-width:68px;text-align:center;padding:7px 6px}
+.count strong{font-size:20px;display:block;line-height:1}
+.count span{font-size:11px;letter-spacing:.18em;color:var(--brass);font-weight:700}
+/* lineup */
+.lineup{margin-top:16px;border-top:1px solid var(--line);flex:1;min-height:0}
+.lineup-head{display:flex;justify-content:space-between;align-items:center;padding:10px 0 6px}
+.lineup-head h2{font-size:12px;letter-spacing:.28em;font-weight:800;color:var(--cream-dim)}
+.lineup-head a{font-size:12px;letter-spacing:.18em;color:var(--brass);text-decoration:none;font-weight:700}
+.act{list-style:none}
+.act li{display:grid;grid-template-columns:44px 1fr auto;gap:12px;align-items:center;padding:9px 10px;border-radius:14px;border:1px solid transparent}
+.act li+li{border-top:1px solid rgba(255,246,233,.09)}
+.act li:hover,.act li.featured{background:linear-gradient(90deg,rgba(233,180,76,.14),rgba(255,62,181,.08));border-color:rgba(233,180,76,.28)}
+.num{font-family:"Bebas Neue";font-size:22px;color:transparent;-webkit-text-stroke:1px var(--brass);line-height:1}
+.act-name{font-weight:700;font-size:16.5px;line-height:1.2}
+.act-name small{display:block;font-weight:500;font-size:13.5px;color:var(--cream-dim);letter-spacing:.02em}
+.day{font-size:11.5px;font-weight:800;letter-spacing:.12em;padding:6px 10px;border-radius:999px;white-space:nowrap}
+.fri{background:rgba(94,232,255,.14);color:var(--neon-blue);border:1px solid rgba(94,232,255,.4)}
+.sat{background:rgba(255,62,181,.14);color:#FF8ACB;border:1px solid rgba(255,62,181,.45)}
+.sun{background:rgba(233,180,76,.16);color:var(--brass);border:1px solid rgba(233,180,76,.5)}
+.time{font-size:13px;color:var(--cream-dim);text-align:right;margin-top:2px}
+/* RIGHT STAGE */
+.right{position:relative;min-height:0;display:flex}
+.stage-frame{position:relative;flex:1;border-radius:28px 28px 22px 22px;padding:12px;background:linear-gradient(180deg,rgba(255,246,233,.14),rgba(255,246,233,.04));border:1px solid rgba(233,180,76,.35);box-shadow:0 0 0 1px rgba(255,62,181,.25),0 20px 80px rgba(0,0,0,.6),0 0 60px rgba(255,62,181,.18)}
+.arch{position:relative;height:100%;min-height:620px;border-radius:200px 200px 18px 18px;overflow:hidden;background:linear-gradient(180deg,#2B0F3A 0%,#160A2A 38%,#080512 72%);border:2px solid var(--brass);box-shadow:0 0 0 6px #0E0717,0 0 0 8px rgba(255,62,181,.85),0 0 38px rgba(255,62,181,.7),0 0 90px rgba(233,180,76,.35) inset}
+.arch::after{content:"";position:absolute;inset:8px;border-radius:190px 190px 12px 12px;border:1px solid rgba(233,180,76,.55);pointer-events:none}
+.spot{position:absolute;top:-20px;width:170px;height:420px;filter:blur(18px);opacity:.75;mix-blend-mode:screen;pointer-events:none}
+.s1{left:8%;background:linear-gradient(180deg,rgba(94,232,255,.7),transparent 75%);transform:rotate(16deg)}
+.s2{left:38%;background:linear-gradient(180deg,rgba(233,180,76,.85),transparent 75%)}
+.s3{right:8%;background:linear-gradient(180deg,rgba(255,62,181,.7),transparent 75%);transform:rotate(-16deg)}
+.stage-top{text-align:center;padding:34px 20px 0;position:relative;z-index:2}
+.stage-top .kicker{font-size:11px;letter-spacing:.34em;color:var(--neon-blue);font-weight:800}
+.stage-top h3{font-family:"Instrument Serif",serif;font-style:italic;font-size:32px;line-height:1;color:var(--cream);margin-top:6px}
+.moon{position:absolute;top:86px;left:50%;transform:translateX(-50%);width:148px;height:148px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#FFF9E8,#E9B44C 55%,#7A3A12 100%);box-shadow:0 0 40px rgba(233,180,76,.9),0 0 90px rgba(255,122,41,.6);z-index:1}
+.moon::after{content:"";position:absolute;inset:0;border-radius:50%;background:repeating-linear-gradient(90deg,transparent 0 10px,rgba(0,0,0,.12) 10px 12px)}
+.skyline{position:absolute;top:210px;left:0;right:0;height:90px;opacity:.9;z-index:2}
+.band{position:absolute;bottom:132px;left:0;right:0;z-index:3;display:flex;justify-content:center}
+.floor{position:absolute;bottom:0;left:0;right:0;height:142px;background:linear-gradient(180deg,rgba(233,180,76,.28),rgba(0,0,0,.7) 60%),repeating-linear-gradient(90deg,rgba(233,180,76,.18) 0 2px,transparent 2px 46px);z-index:2;border-top:1px solid rgba(233,180,76,.5)}
+.floor::before{content:"NOV 20 • 21 • 22 — MERIDIAN HALL";position:absolute;top:12px;left:0;right:0;text-align:center;font-size:11px;letter-spacing:.32em;font-weight:800;color:rgba(255,246,233,.85)}
+.venue-card{position:absolute;left:18px;right:18px;bottom:14px;z-index:4;background:rgba(14,7,23,.82);backdrop-filter:blur(14px);border:1px solid rgba(255,246,233,.18);border-radius:16px;padding:12px 14px;display:flex;align-items:center;gap:14px}
+.venue-card .pin{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;font-size:22px;background:linear-gradient(135deg,var(--brass),var(--tangerine));flex-shrink:0}
+.venue-card strong{display:block;font-size:15px;line-height:1.2}
+.venue-card span{display:block;font-size:13px;color:var(--cream-dim)}
+.venue-card a{margin-left:auto;flex-shrink:0;background:var(--cream);color:#0E0717;font-weight:800;font-size:13px;padding:10px 16px;border-radius:999px;text-decoration:none}
+.badge-rotate{position:absolute;top:52px;right:-18px;width:118px;height:118px;z-index:5;display:grid;place-items:center}
+.badge-rotate svg{position:absolute;inset:0;animation:spin 12s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.badge-center{width:58px;height:58px;border-radius:50%;background:#0E0717;border:2px solid var(--brass);display:grid;place-items:center;font-size:26px;box-shadow:0 0 22px rgba(233,180,76,.7)}
+.ticket-flag{position:absolute;top:88px;left:-14px;z-index:5;background:var(--cream);color:#0E0717;font-weight:800;font-size:12px;letter-spacing:.12em;padding:10px 14px;border-radius:4px 12px 12px 4px;box-shadow:6px 8px 0 #FF3EB5;transform:rotate(-4deg)}
+.marquee{border-top:1px solid var(--line);margin-top:14px;padding:10px 0 14px;overflow:hidden;white-space:nowrap;font-size:12.5px;letter-spacing:.22em;font-weight:700;color:var(--cream-dim)}
+.marquee span{color:var(--brass);margin:0 10px}
+.marquee-inner{display:inline-block;animation:mar 22s linear infinite}
+@keyframes mar{to{transform:translateX(-50%)}}
+:focus-visible{outline:3px solid var(--neon-blue);outline-offset:3px}
+@media(max-width:980px){
+.wrap{height:auto;min-height:100vh}main{grid-template-columns:1fr}nav{display:none}.arch{min-height:520px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<div class="brand"><span class="brand-mark">♫</span> EMBER &amp; BRASS <span style="color:var(--brass);font-weight:400">— JAZZ FEST</span></div>
+<nav aria-label="Primary"><a href="#lineup">LINE-UP</a><a href="#venue">VENUE</a><a href="#tickets">TICKETS</a><a href="#faq">FAQ</a></nav>
+<div class="head-right"><span class="date-pill">NOV 20–22 • 2026 • CHICAGO</span><a class="btn-early" href="#tickets">EARLY BIRD $89 →</a></div>
+</header>
+<main>
+<section class="left" aria-label="Festival poster">
+<div class="eyebrow"><span class="live-dot" aria-hidden="true"></span><p>NOVEMBER NOCTURNE — 4TH ANNUAL <span>&nbsp;• 3 NIGHTS / 5 ACTS / ONE STAGE</span></p></div>
+<h1><span class="h1-small">THE MERIDIAN HALL PRESENTS</span><span class="h1-main">JAZZ AFTER</span><span class="h1-accent">DARK <em>’til late</em></span></h1>
+<p class="sub">When the frost hits Fulton Market, we turn the lights low and the brass up. <strong>Five boundary-pushing acts</strong>, late sets till 2AM, vinyl listening bar &amp; smoked-honey cocktails — all under one neon arch.</p>
+<div class="cta-row" id="tickets">
+<a class="btn-early btn-big" href="#checkout">Get Early-Bird — $89 →</a>
+<a class="btn-ghost" href="#lineup">▸ Explore line-up</a>
+<div class="count" aria-label="Early bird ends in"><div><strong id="d">47</strong><span>DAYS</span></div><div><strong id="h">09</strong><span>HRS</span></div><div><strong id="m">42</strong><span>MIN</span></div></div>
+</div>
+<p class="under-cta"><b>Save $50</b> vs door ($139) • Ends Oct 31 • 3-night pass + after-party <i>★ 82% claimed</i></p>
+<div class="lineup" id="lineup">
+<div class="lineup-head"><h2>★ THE LINE-UP — FIRST SCREEN</h2><a href="#full">FULL SCHEDULE →</a></div>
+<ol class="act">
+<li class="featured"><span class="num">01</span><div class="act-name">Nia Soleil &amp; The Midnight Horns <small>Soul-jazz • velvet voice + 4-piece brass</small></div><div><span class="day fri">FRI 8:00P</span><div class="time">Headline opener</div></div></li>
+<li><span class="num">02</span><div class="act-name">The Copperline Five <small>Hard bop • Chicago homecoming</small></div><div><span class="day fri">FRI 10:30P</span><div class="time">Late set till 1AM</div></div></li>
+<li><span class="num">03</span><div class="act-name">Thea Marlowe Quintet <small>Vocal noir • Blue Note alum</small></div><div><span class="day sat">SAT 8:00P</span><div class="time">Album preview</div></div></li>
+<li><span class="num">04</span><div class="act-name">Django’s Ghost Trio <small>Gypsy swing • hot club guitars</small></div><div><span class="day sat">SAT 10:00P</span><div class="time">Dance floor open</div></div></li>
+<li><span class="num">05</span><div class="act-name">Marcus Vale 18-Piece Big Band <small>Finale • brass inferno + choir</small></div><div><span class="day sun">SUN 7:30P</span><div class="time">Closing night</div></div></li>
+</ol>
+</div>
+<div class="marquee" aria-hidden="true"><div class="marquee-inner">HARD BOP <span>●</span> SOUL-JAZZ <span>●</span> GYPSY SWING <span>●</span> VOCAL NOIR <span>●</span> BIG BAND FINALE <span>●</span> HARD BOP <span>●</span> SOUL-JAZZ <span>●</span> GYPSY SWING <span>●</span> VOCAL NOIR <span>●</span> BIG BAND FINALE <span>●</span></div></div>
+</section>
+<aside class="right" aria-label="Stage visual and venue">
+<div class="stage-frame">
+<div class="ticket-flag">★ EARLY-BIRD −35%</div>
+<div class="badge-rotate" aria-hidden="true">
+<svg viewBox="0 0 100 100"><defs><path id="c" d="M50,50 m-38,0 a38,38 0 1,1 76,0 a38,38 0 1,1 -76,0"/></defs><text style="font-size:10.5px;font-weight:800;letter-spacing:2px;fill:#E9B44C"><textPath href="#c">5 ACTS • 3 NIGHTS • LIVE TILL 2AM • </textPath></text></svg>
+<div class="badge-center">🎺</div>
+</div>
+<div class="arch">
+<div class="spot s1"></div><div class="spot s2"></div><div class="spot s3"></div>
+<div class="stage-top"><div class="kicker">NEON • BRASS • MIDNIGHT</div><h3>under the arch</h3></div>
+<div class="moon" aria-hidden="true"></div>
+<svg class="skyline" viewBox="0 0 400 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0 90 V55 H28 V40 H42 V55 H70 V30 H84 V22 H92 V30 H108 V48 H135 V38 H150 V55 H178 V25 H192 V55 H220 V42 H245 V60 H270 V35 H285 V55 H310 V48 H335 V60 H360 V40 H375 V55 H400 V90 Z" fill="#06030D" opacity=".95"/><g fill="#E9B44C" opacity=".9"><rect x="82" y="34" width="4" height="6"/><rect x="190" y="34" width="4" height="6"/><rect x="278" y="43" width="4" height="6"/></g></svg>
+<div class="band" aria-hidden="true">
+<svg width="360" height="170" viewBox="0 0 360 170" role="img" aria-label="Silhouette of jazz trio on stage">
+<ellipse cx="180" cy="152" rx="130" ry="12" fill="#E9B44C" opacity=".35"/>
+<!-- bass player -->
+<g fill="#06030D" stroke="#E9B44C" stroke-width="1.2">
+<ellipse cx="82" cy="78" rx="26" ry="34" />
+<rect x="78" y="18" width="7" height="62" rx="3" transform="rotate(8 82 48)"/>
+<circle cx="52" cy="58" r="11"/><path d="M42 72 Q52 110 68 140 L84 140 Q72 110 66 72 Z"/>
+<path d="M62 82 Q92 92 108 118" fill="none" stroke-linecap="round" stroke-width="4"/>
+</g>
+<!-- center sax -->
+<g fill="#06030D" stroke="#FF8ACB" stroke-width="1.2">
+<circle cx="178" cy="52" r="13"/><path d="M162 68 Q178 112 174 142 L196 142 Q196 108 202 68 Z"/>
+<path d="M188 78 Q214 96 200 128 Q192 138 184 132" fill="none" stroke-width="7" stroke-linecap="round"/>
+<ellipse cx="183" cy="134" rx="10" ry="7" fill="#E9B44C" stroke="none"/>
+</g>
+<!-- trumpet -->
+<g fill="#06030D" stroke="#5EE8FF" stroke-width="1.2">
+<circle cx="278" cy="60" r="11"/><path d="M266 74 Q276 112 272 140 L294 140 Q292 110 300 74 Z"/>
+<path d="M288 74 L328 66 L328 78 L288 84 Z"/>
+<path d="M322 62 L330 62 L330 82 L322 82 Z" fill="#E9B44C" stroke="none"/>
+</g>
+<g fill="#E9B44C" opacity=".9"><circle cx="120" cy="30" r="2"/><circle cx="240" cy="24" r="2.5"/><circle cx="300" cy="38" r="1.8"/><circle cx="60" cy="36" r="1.6"/></g>
+</svg>
+</div>
+<div class="floor"></div>
+<div class="venue-card" id="venue"><div class="pin">📍</div><div><strong>Meridian Hall • 1420 W Fulton</strong><span>Nov 20–22, 2026 • Doors 7PM • 18+ • CTA Green Line</span></div><a href="#tickets">Map →</a></div>
+</div>
+</div>
+</aside>
+</main>
+</div>
+<script>
+(function(){const end=new Date('2026-10-31T23:59:59');function u(){const n=new Date();let s=Math.max(0,(end-n)/1000);const d=Math.floor(s/86400);s%=86400;const h=Math.floor(s/3600),m=Math.floor(s%3600/60);document.getElementById('d').textContent=String(d).padStart(2,'0');document.getElementById('h').textContent=String(h).padStart(2,'0');document.getElementById('m').textContent=String(m).padStart(2,'0');}u();setInterval(u,30000);})();
+</script>
+</body>
+</html>

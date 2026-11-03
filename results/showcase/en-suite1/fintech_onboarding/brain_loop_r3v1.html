@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<title>Slice — Own a slice of every stock you love</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#E9E2D2;font-family:'Inter',system-ui,sans-serif;color:#111A14;-webkit-font-smoothing:antialiased}
+.stage{width:1280px;max-width:100%;height:800px;margin:14px auto;background:#FFFBEE;border-radius:28px;overflow:hidden;display:flex;flex-direction:column;border:1px solid #111a14;box-shadow:0 30px 80px rgba(0,0,0,.25)}
+header{height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 32px;border-bottom:1.5px solid #111A14;background:#FFFBEE;flex-shrink:0}
+.logo{display:flex;align-items:center;gap:11px}
+.mark{width:36px;height:36px;background:#0B3D2E;border-radius:11px;display:grid;place-items:center;border:1.5px solid #111A14}
+.nav{display:flex;gap:28px;font-size:14.5px;font-weight:600;color:#2B342D}
+.nav span{cursor:pointer}
+.actions{display:flex;align-items:center;gap:14px}
+.login{font-size:15px;font-weight:700;text-decoration:underline;text-underline-offset:4px}
+.btn-top{background:#111A14;color:#fff;border:none;border-radius:100px;padding:11px 22px;font-weight:700;font-size:15px;cursor:pointer}
+main{flex:1;display:grid;grid-template-columns:560px 1fr;gap:0}
+.copy{padding:38px 36px 20px 40px;background:#FFFBEE;display:flex;flex-direction:column;justify-content:center}
+.pill{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1.5px solid #111A14;border-radius:100px;padding:7px 14px;font-size:13px;font-weight:800;letter-spacing:.02em;width:fit-content;box-shadow:3px 3px 0 #111A14}
+.dot{width:9px;height:9px;background:#1AAE5A;border-radius:50%;box-shadow:0 0 0 4px #D6F44F}
+h1{font-family:'Fraunces',serif;font-weight:900;font-size:64px;line-height:.95;letter-spacing:-.03em;margin:18px 0 14px;color:#0E1A13}
+h1 em{font-style:normal;background:#D6F44F;padding:0 12px;border-radius:12px;border:2px solid #111A14;display:inline-block;transform:rotate(-1.5deg)}
+.sub{font-size:18px;line-height:1.5;color:#33413A;max-width:460px}
+.sub strong{color:#0B3D2E}
+.cta-row{display:flex;align-items:center;gap:16px;margin-top:22px}
+.cta-main{background:#D6F44F;border:2px solid #111A14;border-radius:16px;padding:16px 24px;font-size:17px;font-weight:800;color:#111A14;box-shadow:5px 5px 0 #111A14;cursor:pointer;line-height:1.2}
+.cta-main small{display:block;font-size:13px;font-weight:700;opacity:.7}
+.cta-sec{font-size:15px;font-weight:700;color:#0B3D2E;display:flex;gap:8px;align-items:center}
+.mini{display:flex;gap:10px;margin-top:20px}
+.mini div{flex:1;background:#fff;border:1.5px solid #111A14;border-radius:14px;padding:10px 12px;text-align:center}
+.mini b{display:block;font-size:18px}
+.mini span{font-size:12.5px;font-weight:600;color:#5A6660}
+.trust{display:flex;align-items:center;gap:14px;margin-top:18px;padding-top:16px;border-top:1px dashed #B9B09A}
+.stars{color:#0B3D2E;font-size:15px;font-weight:800;letter-spacing:.02em}
+.trust small{font-size:13px;line-height:1.4;color:#4A5650;font-weight:500}
+/* RIGHT */
+.visual{background:#0B3D2E;position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px 20px 14px;border-left:2px solid #111A14}
+.visual:before{content:"";position:absolute;left:-80px;top:-40px;width:560px;height:140px;background:#D6F44F;transform:rotate(-16deg);border-top:2px solid #111A14;border-bottom:2px solid #111A14}
+.visual:after{content:"";position:absolute;right:-120px;bottom:90px;width:520px;height:78px;background:transparent;border-top:2px dashed rgba(214,244,79,.5);transform:rotate(-16deg)}
+.kicker{position:relative;z-index:3;background:#FFFBEE;border:1.5px solid #111A14;border-radius:100px;padding:6px 14px;font-size:12.5px;font-weight:800;letter-spacing:.08em;margin-bottom:14px}
+.hero-object{position:relative;z-index:2;display:flex;align-items:center;justify-content:center;width:100%}
+.phone{width:272px;height:528px;background:#fff;border-radius:42px;border:3px solid #0F0F0F;box-shadow:0 0 0 8px #111A14,18px 24px 0 rgba(0,0,0,.35);overflow:hidden;position:relative;flex-shrink:0}
+.notch{position:absolute;top:12px;left:50%;transform:translateX(-50%);width:110px;height:24px;background:#111A14;border-radius:100px}
+.screen{padding:46px 18px 14px}
+.row-top{display:flex;justify-content:space-between;align-items:center}
+.row-top p{font-size:12px;font-weight:700;color:#6B7671;letter-spacing:.06em}
+.row-top h3{font-size:28px;font-weight:800;letter-spacing:-.03em}
+.chip{font-size:12px;font-weight:800;background:#DEF9C7;color:#0B5A2E;border-radius:100px;padding:5px 10px}
+.chart{margin:12px 0;background:#0B3D2E;border-radius:16px;padding:12px 12px 6px;color:#D6F44F}
+.holding{display:flex;align-items:center;justify-content:space-between;background:#F5F1E3;border-radius:12px;padding:9px 10px;margin-top:8px;border:1px solid #E2DCC8}
+.holding b{font-size:13.5px}
+.holding span{font-size:12px;color:#666}
+.buy{margin-top:10px;background:#111A14;color:#D6F44F;text-align:center;border-radius:12px;padding:12px;font-weight:800;font-size:14.5px}
+.float{position:absolute;background:#FFFBEE;border:2px solid #111A14;border-radius:16px;padding:12px 14px;box-shadow:6px 6px 0 #111A14;z-index:4;animation:bob 3.2s ease-in-out infinite}
+.float.f1{left:24px;top:178px;transform:rotate(-6deg);width:175px}
+.float.f2{right:26px;top:250px;transform:rotate(5deg);width:180px;animation-delay:.7s}
+.float.f3{right:54px;bottom:148px;transform:rotate(-3deg);display:flex;gap:10px;align-items:center}
+.float b{font-size:15px;display:block;line-height:1.1}
+.float small{font-size:12px;font-weight:600;color:#5A6660}
+@keyframes bob{0%,100%{margin-top:0}50%{margin-top:-10px}}
+.value-line{position:relative;z-index:3;margin-top:16px;background:#D6F44F;border:2px solid #111A14;border-radius:14px;padding:10px 18px;font-size:15px;font-weight:800;color:#111A14;box-shadow:4px 4px 0 rgba(0,0,0,.4)}
+.value-line span{font-weight:600}
+.safe{display:flex;gap:18px;margin-top:12px;position:relative;z-index:3;color:#CDE8C9;font-size:12.5px;font-weight:600}
+.safe i{font-style:normal;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);width:22px;height:22px;display:inline-grid;place-items:center;border-radius:50%;margin-right:6px}
+footer{height:66px;background:#FFFBEE;border-top:1.5px solid #111A14;display:flex;align-items:center;justify-content:space-between;padding:0 32px;font-size:13px;font-weight:600}
+footer div{display:flex;gap:22px;align-items:center}
+</style>
+</head>
+<body>
+<div class="stage">
+<header>
+<div class="logo"><div class="mark"><svg width="20" height="20" viewBox="0 0 20 20"><path d="M10 1 L18 17 L2 17 Z" fill="#D6F44F"/><circle cx="10" cy="12" r="3.2" fill="#fff" stroke="#111" stroke-width="1.2"/></svg></div><b style="font-size:22px;letter-spacing:-.04em">Slice.</b><span style="font-size:12px;font-weight:700;background:#111A14;color:#D6F44F;border-radius:100px;padding:3px 9px">FRACTIONAL</span></div>
+<div class="nav"><span>How it works</span><span>Pricing: $0 commission</span><span>Safety</span><span>Stocks</span></div>
+<div class="actions"><span class="login">Log in</span><button class="btn-top">Get started</button></div>
+</header>
+<main>
+<div class="copy">
+<div class="pill"><span class="dot"></span> SEC-REGISTERED &nbsp;•&nbsp; SIPC INSURED TO $500K</div>
+<h1>Own a slice<br>of <em>Apple.</em></h1>
+<p class="sub"><strong>Big stocks, small slices — start from $1.</strong> Buy fractions of 2,300+ US stocks with $0 commission. Real shares, real dividends.</p>
+<div class="cta-row">
+<button class="cta-main">Claim your $10 slice → <small>✓ 3-minute sign-up • No minimum</small></button>
+<div class="cta-sec"><span style="width:36px;height:36px;border:1.5px solid #111A14;border-radius:50%;display:grid;place-items:center;background:#fff">▶</span> See how<br>it works (45s)</div>
+</div>
+<div class="mini"><div><b>$1</b><span>minimum to start</span></div><div><b>$0</b><span>commission</span></div><div><b>2,300+</b><span>US stocks & ETFs</span></div></div>
+<div class="trust"><div class="stars">★★★★★ 4.8 <span style="font-weight:500;color:#4A5650">• 42k reviews</span></div><small>🔒 256-bit encryption<br>🏦 Partner banks • SIPC member</small></div>
+</div>
+<div class="visual">
+<div class="kicker">● LIVE FRACTIONAL ORDER — FILLED IN 0.8S</div>
+<div class="hero-object">
+<div class="float f1"><small>YOU BOUGHT FOR</small><b>$1 = 0.0043 AAPL 🍏</b><small style="color:#1AAE5A;font-weight:800">✓ Order filled</small></div>
+<div class="phone"><div class="notch"></div><div class="screen">
+<div class="row-top"><div><p>MY SLICES</p><h3>$1,284.32</h3></div><div class="chip">+12.4% ▲</div></div>
+<div class="chart"><div style="font-size:11px;font-weight:800;letter-spacing:.08em;opacity:.8">PORTFOLIO • 6 MO</div><svg viewBox="0 0 220 70" width="100%" height="64"><path d="M0 55 L30 48 L60 52 L90 35 L120 38 L150 22 L180 18 L220 6" fill="none" stroke="#D6F44F" stroke-width="3.5" stroke-linecap="round"/><circle cx="220" cy="6" r="5" fill="#D6F44F" stroke="#0B3D2E" stroke-width="2"/></svg></div>
+<div class="holding"><div><b>🍏 AAPL • 0.42 sh</b><br><span>$98.12 • +2.1%</span></div><b style="color:#0B5A2E">▲</b></div>
+<div class="holding"><div><b>⚡ TSLA • 0.18 sh</b><br><span>$44.20 • +5.4%</span></div><b style="color:#0B5A2E">▲</b></div>
+<div class="holding"><div><b>📦 AMZN • 0.09 sh</b><br><span>$16.50 • +1.2%</span></div><b style="color:#0B5A2E">▲</b></div>
+<div class="buy">Buy $1 of AAPL →</div>
+</div></div>
+<div class="float f2"><small>DIVIDEND RECEIVED</small><b>+$2.14 from KO 💵</b><small>Auto-reinvested • 9:41 AM</small></div>
+<div class="float f3"><div style="width:36px;height:36px;background:#0B3D2E;color:#D6F44F;border-radius:50%;display:grid;place-items:center;font-weight:800">%</div><div><b>Diversified</b><small>10 slices = $10</small></div></div>
+</div>
+<div class="value-line">Diversify across 10 stocks with $10 <span>— from $1 / slice • $10 bonus on signup</span></div>
+<div class="safe"><span><i>🛡</i>SIPC $500k</span><span><i>🔒</i>256-bit encryption</span><span><i>✓</i>FINRA-member broker</span></div>
+</div>
+</main>
+<footer><div><span>© 2026 Slice Securities LLC</span><span style="opacity:.6">Investing involves risk. SIPC protects to $500k incl. $250k cash.</span></div><div><span>🔒 Bank-grade security</span><span>⭐ Featured in Forbes • NerdWallet</span></div></footer>
+</div>
+</body>
+</html>

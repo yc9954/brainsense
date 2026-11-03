@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Recap — Pricing that pays for itself</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,ital,wght@9..144,0,600;9..144,1,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+--bone:#F6F2E8;
+--paper:#FFFEF9;
+--ink:#131311;
+--muted:#6B675E;
+--line:#E7DFCC;
+--forest:#0E2E25;
+--forest2:#123A2E;
+--lime:#D8FF3E;
+--lime-d:#BFE800;
+--coral:#FF4D2E;
+}
+body{background:var(--bone);color:var(--ink);font-family:Inter,system-ui,sans-serif;font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(600px 400px at 15% 0%,#fff 0%,transparent 60%),radial-gradient(800px 500px at 95% 10%,#E9E4D2 0%,transparent 60%)}
+.wrap{max-width:1280px;margin:0 auto;padding:18px 28px 16px;position:relative}
+/* NAV */
+.nav{display:flex;align-items:center;justify-content:space-between;padding:6px 2px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.02em;font-size:20px}
+.mark{width:34px;height:34px;border-radius:11px;background:var(--ink);display:grid;place-items:center;color:var(--lime);font-weight:800}
+.links{display:flex;gap:26px;font-size:15px;font-weight:500;color:#2B2B28}
+.links a{color:inherit;text-decoration:none}
+.links a.active{background:var(--ink);color:#fff;padding:6px 14px;border-radius:999px;font-weight:600}
+.nav-cta{display:flex;align-items:center;gap:12px}
+.btn{font:inherit;font-weight:700;border-radius:999px;padding:11px 20px;border:1.5px solid var(--ink);cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:.15s}
+.btn-dark{background:var(--ink);color:#fff}
+.btn-dark:hover{transform:translateY(-1px);box-shadow:0 8px 20px rgba(0,0,0,.18)}
+.btn-light{background:#fff;color:var(--ink)}
+.sign{font-weight:600;color:var(--ink);text-decoration:none;font-size:15px}
+/* LAYOUT */
+.layout{display:grid;grid-template-columns:384px 1fr;gap:18px;margin-top:14px;align-items:stretch}
+/* LEFT */
+.pitch{background:var(--forest);color:#EAF3E8;border-radius:26px;padding:28px 28px 22px;position:relative;overflow:hidden;display:flex;flex-direction:column}
+.pitch:after{content:"";position:absolute;width:520px;height:520px;right:-180px;top:-180px;background:radial-gradient(circle at center, #1E5C4A 0%, #1A4E3F 22%, transparent 68%);opacity:.9;pointer-events:none}
+.wave{position:absolute;left:-10px;right:-10px;bottom:178px;opacity:.22}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--lime);border:1px solid rgba(216,255,62,.35);padding:7px 12px;border-radius:999px;width:fit-content;position:relative;z-index:2}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--lime);box-shadow:0 0 12px var(--lime)}
+.pitch h1{font-family:Fraunces,serif;font-weight:600;font-size:46px;line-height:.95;letter-spacing:-.03em;margin:16px 0 12px;position:relative;z-index:2}
+.pitch h1 em{font-style:italic;font-weight:600;color:var(--lime)}
+.pitch p.sub{color:#C8D8C6;font-size:16.5px;line-height:1.55;position:relative;z-index:2;max-width:32ch}
+.toggle{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:999px;padding:5px;display:flex;gap:4px;margin:18px 0 6px;position:relative;z-index:2}
+.toggle button{flex:1;border:0;background:transparent;color:#BFD0BE;font:inherit;font-weight:700;font-size:14px;padding:10px;border-radius:999px;cursor:pointer}
+.toggle button.on{background:var(--lime);color:#0E2E25}
+.save{font-size:12px;background:#fff;color:#0E2E25;border-radius:999px;padding:2px 7px;margin-left:6px;font-weight:800}
+.bill-note{font-size:13px;color:#9AB5A6;z-index:2;position:relative;margin-bottom:6px}
+.guarantee{display:flex;gap:12px;background:#0A211B;border:1px solid rgba(216,255,62,.22);border-radius:16px;padding:13px 14px;margin-top:14px;position:relative;z-index:2}
+.guarantee strong{display:block;font-size:14px;color:#fff}
+.guarantee span{font-size:13.5px;color:#B9CDB9;line-height:1.45}
+.shield{flex:0 0 36px;width:36px;height:36px;border-radius:50%;background:var(--lime);display:grid;place-items:center}
+.logos{margin-top:auto;padding-top:18px;border-top:1px dashed rgba(255,255,255,.18);position:relative;z-index:2}
+.logos small{font-size:11px;letter-spacing:.14em;font-weight:800;color:#8AA898}
+.logo-row{display:flex;flex-wrap:wrap;gap:14px 18px;margin-top:10px;font-weight:800;font-size:15px;color:#DDE9DD;opacity:.9}
+.rating{display:flex;align-items:center;gap:10px;margin-top:14px;font-size:13.5px;color:#C8D8C6}
+.avatars{display:flex}
+.avatars i{width:28px;height:28px;border-radius:50%;border:2px solid var(--forest);margin-left:-8px;display:grid;place-items:center;font-style:normal;font-size:13px;font-weight:800;color:#0E2E25}
+.avatars i:first-child{margin-left:0}
+/* RIGHT */
+.tiers{display:flex;flex-direction:column;gap:12px}
+.tier{background:var(--paper);border:1.5px solid var(--line);border-radius:20px;padding:16px 20px;display:grid;grid-template-columns:220px 1fr 190px;gap:18px;align-items:center;position:relative}
+.tier-name{font-size:13px;font-weight:800;letter-spacing:.12em}
+.tier h3{font-size:22px;letter-spacing:-.02em;margin:2px 0 4px}
+.tier p.desc{font-size:14.5px;color:var(--muted);line-height:1.45}
+.feats{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:7px 14px;font-size:14px;font-weight:500}
+.feats li{display:flex;gap:8px;align-items:flex-start;color:#2E2E2B}
+.check{flex:0 0 20px;width:20px;height:20px;border-radius:50%;display:grid;place-items:center;font-size:12px;font-weight:900}
+.c-light{background:#EFE9D7}
+.pricebox{text-align:right;border-left:1px solid var(--line);padding-left:18px}
+.price{font-size:34px;font-weight:800;letter-spacing:-.04em;line-height:1}
+.per{font-size:13px;color:var(--muted);font-weight:600}
+.tier .btn{width:100%;margin-top:10px;font-size:14.5px;padding:11px 10px}
+/* PRO */
+.tier.pro{background:#131311;color:#fff;border-color:#131311;box-shadow:7px 7px 0 var(--lime), 7px 7px 0 8.5px #131311;padding:20px 20px;grid-template-columns:240px 1fr 205px}
+.tier.pro p.desc{color:#CFCFC7}
+.tier.pro .feats li{color:#EDEDE6}
+.tier.pro .pricebox{border-left-color:rgba(255,255,255,.14)}
+.tier.pro .per{color:#A9A9A0}
+.badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--lime);color:#111;border:1.5px solid #111;font-size:12px;font-weight:800;letter-spacing:.08em;padding:6px 14px;border-radius:999px;box-shadow:0 4px 0 #111;white-space:nowrap}
+.pro-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(216,255,62,.14);border:1px solid rgba(216,255,62,.4);color:var(--lime);font-size:12px;font-weight:800;letter-spacing:.08em;padding:5px 10px;border-radius:999px}
+.tier.pro h3{font-size:26px}
+.btn-lime{background:var(--lime);color:#111;border-color:#111;box-shadow:0 3px 0 #000}
+.btn-lime:hover{background:#E6FF70}
+.trial{font-size:12.5px;color:#A9A9A0;margin-top:8px;font-weight:600}
+.tier.pro .check{background:var(--lime);color:#111}
+.trustbar{display:flex;align-items:center;justify-content:space-between;background:#fff;border:1.5px solid var(--line);border-radius:14px;padding:10px 18px;font-size:13.5px;font-weight:600;color:#3A3A36}
+.trustbar b{color:var(--ink)}
+.stars{color:#111;letter-spacing:2px}
+@media(max-width:1020px){
+.layout{grid-template-columns:1fr}
+.tier,.tier.pro{grid-template-columns:1fr;text-align:left}
+.pricebox{text-align:left;border-left:0;border-top:1px solid var(--line);padding-left:0;padding-top:12px}
+.pitch h1{font-size:40px}
+.links{display:none}
+}
+:focus-visible{outline:3px solid var(--coral);outline-offset:2px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="nav" aria-label="Main">
+<div class="brand"><span class="mark" aria-hidden="true">≋</span> Recap</div>
+<nav class="links" aria-label="Sections">
+<a href="#">Product</a><a href="#" class="active">Pricing</a><a href="#">Security</a><a href="#">Changelog</a><a href="#">Customers</a>
+</nav>
+<div class="nav-cta"><a class="sign" href="#">Sign in</a><a class="btn btn-dark" href="#">Get started →</a></div>
+</header>
+
+<main class="layout">
+<!-- LEFT PITCH -->
+<section class="pitch" aria-labelledby="h1">
+<div class="eyebrow"><span class="dot"></span> PRICING • SIMPLE & FAIR</div>
+<h1 id="h1">Great meetings <em>don’t need notes.</em></h1>
+<p class="sub">Recap joins your calls, writes perfect summaries, and pushes actions to where work happens. Cancel anytime.</p>
+
+<div class="toggle" role="group" aria-label="Billing period">
+<button id="bM" class="on" aria-pressed="true">Monthly</button>
+<button id="bA" aria-pressed="false">Annual <span class="save">−25%</span></button>
+</div>
+<div class="bill-note" id="billNote">Billed monthly. Switch to annual and Pro drops to $9/mo.</div>
+
+<svg class="wave" viewBox="0 0 400 60" fill="none" aria-hidden="true"><path d="M0 30 Q25 5 50 30 T100 30 T150 30 T200 30 T250 30 T300 30 T350 30 T400 30" stroke="#D8FF3E" stroke-width="2.5"/></svg>
+
+<div class="guarantee">
+<div class="shield" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2l8 3v6c0 5-3.5 8.5-8 11-4.5-2.5-8-6-8-11V5l8-3z" fill="#0E2E25"/><path d="M8.5 12l2.5 2.5 4.5-5" stroke="#D8FF3E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+<div><strong>30-day money-back guarantee</strong><span>No forms, no calls. If Recap doesn't save you 5+ hrs/month, we refund you.</span></div>
+</div>
+
+<div class="logos">
+<small>TRUSTED BY 4,000+ BUSY TEAMS</small>
+<div class="logo-row" aria-label="Customer logos">
+<span>▲ HELIX</span><span>◍ Lumen</span><span>⬢ Framely</span><span>⎔ KAVO</span><span>● Northloop</span>
+</div>
+<div class="rating"><div class="avatars" aria-hidden="true"><i style="background:#D8FF3E">J</i><i style="background:#FFCFC2">A</i><i style="background:#fff">M</i><i style="background:#111;color:#D8FF3E">+9</i></div><span><b style="color:#fff">4.9/5</b> from 2,300+ reviews • SOC 2 • GDPR</span></div>
+</div>
+</section>
+
+<!-- RIGHT TIERS -->
+<section class="tiers" aria-label="Plans">
+<!-- FREE -->
+<article class="tier">
+<div><div class="tier-name">FREE</div><h3>Starter — $0</h3><p class="desc">For trying AI notes on a few calls a month.</p></div>
+<ul class="feats"><li><span class="check c-light">✓</span>10 AI meetings / mo</li><li><span class="check c-light">✓</span>45 min per meeting</li><li><span class="check c-light">✓</span>Auto summary + chapters</li><li><span class="check c-light">✓</span>1 calendar integration</li></ul>
+<div class="pricebox"><div class="price">$0</div><div class="per">free forever</div><a class="btn btn-light" href="#">Start for free</a></div>
+</article>
+
+<!-- PRO -->
+<article class="tier pro" aria-label="Pro plan, most popular">
+<div class="badge">★ MOST POPULAR — LOVED BY 32,000 PROS</div>
+<div><div class="pro-tag">● PRO</div><h3>Unlimited recall</h3><p class="desc">For back-to-back calendars. Never take a note again.</p></div>
+<ul class="feats"><li><span class="check">✓</span><span><b>Unlimited</b> meetings, 6-hr length</span></li><li><span class="check">✓</span><span><b>Ask AI:</b> chat with any meeting</span></li><li><span class="check">✓</span><span>Auto actions to Notion, Slack, HubSpot</span></li><li><span class="check">✓</span><span>63 languages + custom vocab</span></li></ul>
+<div class="pricebox"><div class="price"><span id="proPrice">$12</span><span style="font-size:16px;font-weight:700">/mo</span></div><div class="per" id="proPer">billed monthly • cancel anytime</div><a class="btn btn-lime" href="#">Start 14-day free trial →</a><div class="trial">No credit card • Set up in 47 sec</div></div>
+</article>
+
+<!-- TEAM -->
+<article class="tier">
+<div><div class="tier-name">TEAM</div><h3>Company brain</h3><p class="desc">Shared memory + controls for orgs that live in meetings.</p></div>
+<ul class="feats"><li><span class="check c-light">✓</span>Everything in Pro</li><li><span class="check c-light">✓</span>SSO, retention & audit log</li><li><span class="check c-light">✓</span>Team ask + deal tracking</li><li><span class="check c-light">✓</span>Dedicated success manager</li></ul>
+<div class="pricebox"><div class="price"><span id="teamPrice">$29</span><span style="font-size:15px">/user/mo</span></div><div class="per" id="teamPer">billed monthly</div><a class="btn btn-dark" href="#">Talk to sales</a></div>
+</article>
+
+<div class="trustbar"><span><span class="stars">★★★★★</span> <b>4.9/5 on G2</b> • “Saves me 6 hrs a week” — Priya, PM @ Lumen</span><span>🔒 SOC 2 Type II &nbsp; • &nbsp; 🇪🇺 EU data residency &nbsp; • &nbsp; Cancel in 1 click</span></div>
+</section>
+</main>
+</div>
+<script>
+const bM=document.getElementById('bM'),bA=document.getElementById('bA'),
+proPrice=document.getElementById('proPrice'),teamPrice=document.getElementById('teamPrice'),
+proPer=document.getElementById('proPer'),teamPer=document.getElementById('teamPer'),
+billNote=document.getElementById('billNote');
+function setMode annual(){
+const a=annual==='a';
+bM.classList.toggle('on',!a);bA.classList.toggle('on',a);
+bM.setAttribute('aria-pressed',!a);bA.setAttribute('aria-pressed',a);
+proPrice.textContent=a?'$9':'$12';
+teamPrice.textContent=a?'$23':'$29';
+proPer.textContent=a?'billed $108/yr • 2 months free':'billed monthly • cancel anytime';
+teamPer.textContent=a?'billed annually per user':'billed monthly';
+billNote.textContent=a?'Annual billing active — you save $36/yr on Pro.':'Billed monthly. Switch to annual and Pro drops to $9/mo.';
+}
+bM.onclick=()=>setMode('m');bA.onclick=()=>setMode('a');
+</script>
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1280, height=720">
+<title>SLIVER — Own it all from $1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:100%;height:100%;background:#000;display:flex;align-items:center;justify-content:center;overflow:hidden;font-family:'Inter',sans-serif}
+.stage{width:1280px;height:720px;flex-shrink:0;position:relative;overflow:hidden;background:#080D0A;color:#FFFEF5;
+background-image:radial-gradient(900px 500px at 85% 15%,rgba(200,255,46,.14),transparent 60%),radial-gradient(800px 600px at 0% 100%,rgba(15,229,168,.14),transparent 60%),linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:auto,auto,64px 64px,64px 64px}
+.topbar{position:absolute;top:0;left:0;right:0;height:76px;display:flex;align-items:center;justify-content:space-between;padding:0 48px;z-index:20}
+.logo{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:.14em;font-size:18px}
+.logo-mark{width:38px;height:38px;background:#C8FF2E;color:#080D0A;display:flex;align-items:center;justify-content:center;font-family:'Anton';font-size:24px;border-radius:9px;line-height:1}
+.trust-pill{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:100px;padding:10px 20px;font-size:12px;font-weight:800;letter-spacing:.16em}
+.dot{width:9px;height:9px;border-radius:50%;background:#0FE5A8;box-shadow:0 0 12px #0FE5A8}
+.bg-ticker{position:absolute;top:108px;left:0;right:0;overflow:hidden;opacity:.14;white-space:nowrap;z-index:0}
+.bg-ticker2{position:absolute;bottom:66px;left:0;right:0;overflow:hidden;opacity:.10;white-space:nowrap;z-index:0}
+.ticker-track{display:inline-block;font-family:'Anton';font-size:42px;letter-spacing:.04em;color:transparent;-webkit-text-stroke:1px #FFFEF5;padding-right:40px;animation:tickerMove 12s linear infinite}
+@keyframes tickerMove{0%{opacity:.14;transform:translateX(0)}100%{opacity:.14;transform:translateX(-50%)}}
+.scene{position:absolute;inset:0;padding:96px 48px 70px 48px;z-index:5}
+.scene.hook{animation:hookScene 12s linear infinite}
+.scene.mid{animation:midScene 12s linear infinite}
+.scene.end{animation:endScene 12s linear infinite}
+@keyframes hookScene{0%{opacity:0;transform:scale(1.02)}2.5%{opacity:1;transform:scale(1)}29%{opacity:1;transform:scale(1)}33.33%{opacity:0;transform:scale(1.03)}100%{opacity:0;transform:scale(1.03)}}
+@keyframes midScene{0%,33.33%{opacity:0;transform:translateX(60px)}36%{opacity:1;transform:translateX(0)}62%{opacity:1;transform:translateX(0)}66.66%{opacity:0;transform:translateX(-60px)}100%{opacity:0;transform:translateX(-60px)}}
+@keyframes endScene{0%,66.66%{opacity:0;transform:scale(.96)}69.5%{opacity:1;transform:scale(1)}96%{opacity:1;transform:scale(1)}99.5%{opacity:0;transform:scale(1.02)}100%{opacity:0;transform:scale(1.02)}}
+.hook-grid{display:flex;align-items:center;gap:30px;height:100%}
+.hook-left{flex:1}
+.kicker{display:inline-flex;align-items:center;gap:10px;background:#C8FF2E;color:#080D0A;font-weight:900;font-size:14px;letter-spacing:.18em;padding:10px 18px;border-radius:100px;animation:hookKicker 12s ease infinite}
+@keyframes hookKicker{0%{opacity:0;transform:translateY(30px)}3%{opacity:1;transform:translateY(0)}27%{opacity:1;transform:translateY(0)}31%{opacity:0;transform:translateY(-30px)}100%{opacity:0;transform:translateY(30px)}}
+.hook-h1{font-family:'Anton';line-height:.92;margin:22px 0 18px;text-transform:uppercase}
+.line1{display:block;font-size:88px;letter-spacing:.01em;animation:hookLine1 12s ease infinite}
+.line2{display:block;font-size:104px;background:#C8FF2E;color:#080D0A;padding:6px 22px 10px 22px;margin-top:10px;white-space:nowrap;width:max-content;max-width:100%;border-radius:14px;transform:rotate(-1.5deg);animation:hookLine2 12s ease infinite}
+@keyframes hookLine1{0%{opacity:0;transform:translateY(90px)}4%{opacity:1;transform:translateY(0)}27%{opacity:1;transform:translateY(0)}31.5%{opacity:0;transform:translateY(-70px)}100%{opacity:0;transform:translateY(90px)}}
+@keyframes hookLine2{0%{opacity:0;transform:translateY(90px) rotate(-1.5deg) scale(.9)}5.5%{opacity:1;transform:translateY(0) rotate(-1.5deg) scale(1)}27%{opacity:1;transform:translateY(0) rotate(-1.5deg) scale(1)}31.5%{opacity:0;transform:translateY(-70px) rotate(-1.5deg)}100%{opacity:0;transform:translateY(90px) rotate(-1.5deg)}}
+.hook-sub{font-size:20px;line-height:1.5;color:rgba(255,254,245,.88);max-width:620px;font-weight:600;animation:hookSub 12s ease infinite}
+@keyframes hookSub{0%,6%{opacity:0;transform:translateY(30px)}9%{opacity:1;transform:translateY(0)}27%{opacity:1;transform:translateY(0)}31.5%{opacity:0;transform:translateY(-30px)}100%{opacity:0;transform:translateY(30px)}}
+.hook-right{width:460px;display:flex;justify-content:center;align-items:center;position:relative}
+.coin-wrap{position:relative;width:380px;height:380px;animation:hookCoin 12s ease infinite}
+@keyframes hookCoin{0%{opacity:0;transform:translateY(120px) scale(.6) rotate(-12deg)}5%{opacity:1;transform:translateY(0) scale(1) rotate(0)}9%{opacity:1;transform:translateY(-14px) scale(1.03) rotate(2deg)}12%{opacity:1;transform:translateY(0) scale(1) rotate(0)}27%{opacity:1;transform:translateY(0) scale(1) rotate(0)}31.5%{opacity:0;transform:translateY(-80px) scale(1.1) rotate(8deg)}100%{opacity:0;transform:translateY(120px) scale(.6)}}
+.coin-ring{position:absolute;inset:-22px;border:2px dashed rgba(200,255,46,.7);border-radius:50%;animation:coinRing 12s linear infinite}
+@keyframes coinRing{0%{opacity:0;transform:rotate(0)}5%{opacity:1;transform:rotate(0)}27%{opacity:1;transform:rotate(180deg)}31.5%{opacity:0;transform:rotate(200deg)}100%{opacity:0;transform:rotate(360deg)}}
+.coin{position:absolute;inset:0;background:#C8FF2E;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#080D0A;box-shadow:0 30px 80px rgba(200,255,46,.35)}
+.coin-dollar{font-family:'Anton';font-size:170px;line-height:.9}
+.coin-label{font-weight:900;letter-spacing:.22em;font-size:15px;margin-top:4px}
+.chip{position:absolute;background:#FFFEF5;color:#080D0A;border-radius:14px;padding:10px 14px;font-weight:900;font-size:14px;box-shadow:0 12px 30px rgba(0,0,0,.4);display:flex;gap:8px;align-items:center}
+.chip1{top:30px;left:-40px;animation:chip1 12s ease infinite}
+.chip2{bottom:40px;right:-30px;animation:chip2 12s ease infinite}
+.chip b{background:#080D0A;color:#C8FF2E;padding:3px 8px;border-radius:7px}
+@keyframes chip1{0%,4%{opacity:0;transform:translateY(20px) scale(.8)}8%{opacity:1;transform:translateY(0) scale(1)}27%{opacity:1;transform:translateY(-10px) scale(1)}31.5%{opacity:0;transform:translateY(-30px)}100%{opacity:0;transform:translateY(20px)}}
+@keyframes chip2{0%,6%{opacity:0;transform:translateY(20px) scale(.8)}10%{opacity:1;transform:translateY(0) scale(1)}27%{opacity:1;transform:translateY(10px) scale(1)}31.5%{opacity:0;transform:translateY(-30px)}100%{opacity:0;transform:translateY(20px)}}
+.mid-grid{display:flex;gap:56px;align-items:center;height:100%}
+.phone{width:310px;height:540px;background:#111915;border:1px solid rgba(255,255,255,.18);border-radius:38px;padding:18px;box-shadow:0 40px 100px rgba(0,0,0,.6);position:relative;flex-shrink:0;animation:midPhone 12s ease infinite}
+@keyframes midPhone{0%,33.33%{opacity:0;transform:translateX(120px) rotate(4deg)}37%{opacity:1;transform:translateX(0) rotate(-1.5deg)}62%{opacity:1;transform:translateX(0) rotate(-1.5deg)}66.66%{opacity:0;transform:translateX(-80px) rotate(0)}100%{opacity:0;transform:translateX(120px)}}
+.phone-top{display:flex;justify-content:space-between;align-items:center;font-size:11px;font-weight:800;letter-spacing:.14em;color:rgba(255,255,255,.7)}
+.phone-bal{margin:16px 0 6px;font-size:12px;letter-spacing:.16em;font-weight:800;color:#0FE5A8}
+.phone-num{font-family:'Anton';font-size:44px;line-height:1}
+.phone-chart{margin:14px 0;background:rgba(200,255,46,.1);border:1px solid rgba(200,255,46,.25);border-radius:16px;padding:12px}
+.phone-row{display:flex;justify-content:space-between;align-items:center;background:rgba(255,255,255,.07);border-radius:12px;padding:10px 12px;margin-top:8px;font-size:13px;font-weight:700}
+.phone-row span:last-child{color:#C8FF2E}
+.phone-btn{margin-top:12px;background:#C8FF2E;color:#080D0A;text-align:center;font-weight:900;font-size:15px;padding:14px;border-radius:14px}
+.mid-copy{flex:1}
+.mid-kicker{font-size:13px;font-weight:900;letter-spacing:.22em;color:#C8FF2E;animation:midKicker 12s ease infinite}
+@keyframes midKicker{0%,33.33%{opacity:0;transform:translateY(20px)}36.5%{opacity:1;transform:translateY(0)}62%{opacity:1;transform:translateY(0)}66%{opacity:0;transform:translateY(-20px)}100%{opacity:0;transform:translateY(20px)}}
+.mid-title{font-family:'Anton';font-size:72px;line-height:.95;margin:12px 0 22px;text-transform:uppercase;animation:midTitle 12s ease infinite}
+@keyframes midTitle{0%,34%{opacity:0;transform:translateY(50px)}38%{opacity:1;transform:translateY(0)}62%{opacity:1;transform:translateY(0)}66%{opacity:0;transform:translateY(-30px)}100%{opacity:0;transform:translateY(50px)}}
+.benefit{display:flex;gap:16px;align-items:center;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:14px 18px;margin-bottom:12px;max-width:640px}
+.benefit-n{width:44px;height:44px;flex-shrink:0;border-radius:12px;background:#C8FF2E;color:#080D0A;font-family:'Anton';font-size:20px;display:flex;align-items:center;justify-content:center}
+.benefit p{font-size:17px;font-weight:600;line-height:1.35}
+.benefit p strong{color:#C8FF2E}
+.r1{animation:row1 12s ease infinite}.r2{animation:row2 12s ease infinite}.r3{animation:row3 12s ease infinite}
+@keyframes row1{0%,38%{opacity:0;transform:translateX(70px)}42%{opacity:1;transform:translateX(0)}62%{opacity:1;transform:translateX(0)}66%{opacity:0;transform:translateX(-30px)}100%{opacity:0;transform:translateX(70px)}}
+@keyframes row2{0%,41%{opacity:0;transform:translateX(70px)}45%{opacity:1;transform:translateX(0)}62%{opacity:1;transform:translateX(0)}66%{opacity:0;transform:translateX(-30px)}100%{opacity:0;transform:translateX(70px)}}
+@keyframes row3{0%,44%{opacity:0;transform:translateX(70px)}48%{opacity:1;transform:translateX(0)}62%{opacity:1;transform:translateX(0)}66%{opacity:0;transform:translateX(-30px)}100%{opacity:0;transform:translateX(70px)}}
+.end-wrap{display:flex;align-items:center;justify-content:center;height:100%}
+.end-card{width:900px;background:#FFFEF5;color:#080D0A;border-radius:28px;padding:40px 56px;text-align:center;position:relative;border:6px solid #C8FF2E;box-shadow:0 40px 120px rgba(200,255,46,.25);animation:endCard 12s ease infinite}
+@keyframes endCard{0%,66.66%{opacity:0;transform:scale(.85) translateY(60px)}70.5%{opacity:1;transform:scale(1) translateY(0)}96%{opacity:1;transform:scale(1) translateY(0)}99.5%{opacity:0;transform:scale(1.04) translateY(-20px)}100%{opacity:0;transform:scale(.85)}}
+.end-badge{display:inline-block;background:#080D0A;color:#C8FF2E;font-weight:900;letter-spacing:.18em;font-size:13px;padding:10px 22px;border-radius:100px;animation:endBadge 12s ease infinite}
+@keyframes endBadge{0%,68%{opacity:0;transform:scale(.8)}71%{opacity:1;transform:scale(1)}96%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(1)}}
+.end-title{font-family:'Anton';font-size:74px;line-height:.95;margin:16px 0 10px;text-transform:uppercase;animation:endTitle 12s ease infinite}
+@keyframes endTitle{0%,69%{opacity:0;transform:translateY(40px)}73%{opacity:1;transform:translateY(0)}96%{opacity:1;transform:translateY(0)}100%{opacity:0;transform:translateY(0)}}
+.end-sub{font-size:19px;font-weight:600;color:rgba(8,13,10,.75);max-width:680px;margin:0 auto;animation:endSub 12s ease infinite}
+@keyframes endSub{0%,71%{opacity:0;transform:translateY(20px)}74.5%{opacity:1;transform:translateY(0)}96%{opacity:1;transform:translateY(0)}100%{opacity:0;transform:translateY(0)}}
+.cta-row{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:24px}
+.cta-btn{background:#080D0A;color:#C8FF2E;font-weight:900;font-size:28px;letter-spacing:.02em;padding:20px 66px;border-radius:100px;border:0;animation:endBtn 12s ease infinite}
+@keyframes endBtn{0%,73%{opacity:0;transform:scale(.8)}76%{opacity:1;transform:scale(1)}80%{opacity:1;transform:scale(1.06)}83%{opacity:1;transform:scale(1)}87%{opacity:1;transform:scale(1.06)}90%{opacity:1;transform:scale(1)}96%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(1)}}
+.cta-note{font-weight:800;font-size:15px;background:#C8FF2E;padding:12px 18px;border-radius:12px;animation:endTrust 12s ease infinite}
+.end-trust{display:flex;justify-content:center;gap:28px;margin-top:22px;font-size:12px;font-weight:900;letter-spacing:.16em;color:rgba(8,13,10,.7);animation:endTrust 12s ease infinite}
+@keyframes endTrust{0%,75%{opacity:0;transform:translateY(16px)}79%{opacity:1;transform:translateY(0)}96%{opacity:1;transform:translateY(0)}100%{opacity:0;transform:translateY(0)}}
+.glow{position:absolute;inset:-18px;background:#C8FF2E;border-radius:36px;z-index:-1;animation:endGlow 12s ease infinite}
+@keyframes endGlow{0%,73%{opacity:0;transform:scale(.9)}78%{opacity:.55;transform:scale(1)}82%{opacity:.2;transform:scale(1.04)}86%{opacity:.55;transform:scale(1)}90%{opacity:.2;transform:scale(1.04)}96%{opacity:.45;transform:scale(1)}100%{opacity:0;transform:scale(1)}}
+.progress{position:absolute;left:48px;right:48px;bottom:28px;height:6px;background:rgba(255,255,255,.15);border-radius:100px;overflow:hidden;z-index:20}
+.progress-fill{width:100%;height:100%;background:#C8FF2E;border-radius:100px;transform-origin:left;animation:progressFill 12s linear infinite}
+@keyframes progressFill{0%{opacity:1;transform:scaleX(0)}100%{opacity:1;transform:scaleX(1)}}
+.timeline{position:absolute;left:48px;bottom:44px;display:flex;gap:10px;align-items:center;z-index:20;font-size:11px;font-weight:900;letter-spacing:.2em;color:rgba(255,255,255,.6)}
+.pip{width:34px;height:5px;border-radius:100px;background:rgba(255,255,255,.2);position:relative;overflow:hidden}
+.pip i{position:absolute;inset:0;background:#C8FF2E;border-radius:100px}
+.p1 i{animation:pip1 12s linear infinite}.p2 i{animation:pip2 12s linear infinite}.p3 i{animation:pip3 12s linear infinite}
+@keyframes pip1{0%{opacity:0;transform:scaleX(0)}2%{opacity:1;transform:scaleX(0)}30%{opacity:1;transform:scaleX(1)}33.33%,100%{opacity:0;transform:scaleX(1)}}
+@keyframes pip2{0%,33.33%{opacity:0;transform:scaleX(0)}36%{opacity:1;transform:scaleX(0)}63%{opacity:1;transform:scaleX(1)}66.66%,100%{opacity:0;transform:scaleX(1)}}
+@keyframes pip3{0%,66.66%{opacity:0;transform:scaleX(0)}69%{opacity:1;transform:scaleX(0)}97%{opacity:1;transform:scaleX(1)}100%{opacity:0;transform:scaleX(1)}}
+.time{position:absolute;right:48px;bottom:40px;font-size:12px;font-weight:800;letter-spacing:.18em;color:rgba(255,255,255,.55);z-index:20}
+</style>
+</head>
+<body>
+<div class="stage">
+<div class="bg-ticker"><span class="ticker-track">AAPL +2.4% &nbsp;•&nbsp; TSLA +3.1% &nbsp;•&nbsp; NVDA +5.2% &nbsp;•&nbsp; AMZN +1.8% &nbsp;•&nbsp; META +2.9% &nbsp;•&nbsp; AAPL +2.4% &nbsp;•&nbsp; TSLA +3.1% &nbsp;•&nbsp; NVDA +5.2% &nbsp;•&nbsp; AMZN +1.8% &nbsp;•&nbsp; META +2.9% &nbsp;•&nbsp;</span></div>
+<div class="bg-ticker2"><span class="ticker-track">OWN THE SLICE &nbsp;•&nbsp; FROM $1 &nbsp;•&nbsp; 3-MINUTE SIGN-UP &nbsp;•&nbsp; OWN THE SLICE &nbsp;•&nbsp; FROM $1 &nbsp;•&nbsp; 3-MINUTE SIGN-UP &nbsp;•&nbsp; OWN THE SLICE &nbsp;•&nbsp; FROM $1 &nbsp;•&nbsp;</span></div>
+<header class="topbar">
+<div class="logo"><div class="logo-mark">S</div> SLIVER</div>
+<div class="trust-pill"><span class="dot"></span> SIPC INSURED • 2M+ INVESTORS</div>
+</header>
+<section class="scene hook">
+<div class="hook-grid">
+<div class="hook-left">
+<div class="kicker">FRACTIONAL SHARES • NO COMMISSIONS</div>
+<h1 class="hook-h1"><span class="line1">Stop watching.</span><span class="line2">Own it all from $1.</span></h1>
+<p class="hook-sub">Stop watching Apple, Tesla and Nvidia climb. Own a real slice of 4,000+ stocks starting with a single dollar.</p>
+</div>
+<div class="hook-right">
+<div class="coin-wrap">
+<div class="coin-ring"></div>
+<div class="coin"><div class="coin-dollar">$1</div><div class="coin-label">ONE DOLLAR SLICE</div></div>
+<div class="chip chip1"><b>AAPL</b> 0.054 slice ✓</div>
+<div class="chip chip2"><b>TSLA</b> 0.041 slice ✓</div>
+</div>
+</div>
+</div>
+</section>
+<section class="scene mid">
+<div class="mid-grid">
+<div class="phone">
+<div class="phone-top"><span>9:41</span><span>SLIVER ●●●</span></div>
+<div class="phone-bal">PORTFOLIO VALUE</div>
+<div class="phone-num">$1,248.32</div>
+<div class="phone-chart"><svg viewBox="0 0 260 70" width="100%" height="62"><polyline points="0,55 30,48 60,52 90,38 120,42 150,28 180,32 210,14 240,18 260,6" fill="none" stroke="#C8FF2E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+<div class="phone-row"><span>AAPL • 0.0842 sh</span><span>$18.42</span></div>
+<div class="phone-row"><span>NVDA • 0.0210 sh</span><span>$19.05</span></div>
+<div class="phone-row"><span>TSLA • 0.052 sh</span><span>$12.80</span></div>
+<div class="phone-btn">Buy slice — from $1</div>
+</div>
+<div class="mid-copy">
+<div class="mid-kicker">HOW SLIVER WORKS</div>
+<h2 class="mid-title">Slices,<br>not whole shares.</h2>
+<div class="benefit r1"><div class="benefit-n">01</div><p><strong>$1 minimum.</strong> Buy 0.005 of any stock. Diversify instantly.</p></div>
+<div class="benefit r2"><div class="benefit-n">02</div><p><strong>Sign up in 3 minutes.</strong> ID + bank link, done. Start today.</p></div>
+<div class="benefit r3"><div class="benefit-n">03</div><p><strong>Protected.</strong> SIPC insured to $500K, 256-bit encryption.</p></div>
+</div>
+</div>
+</section>
+<section class="scene end">
+<div class="end-wrap">
+<div class="end-card">
+<div class="glow"></div>
+<div class="end-badge">3-MINUTE SIGN-UP • $1 MINIMUM • $5 BONUS SLICE</div>
+<h2 class="end-title">Your first slice is waiting.</h2>
+<p class="end-sub">Get a <strong>$5 bonus slice</strong> when you make your first $1 investment. Join 2M+ investors in 3 minutes. SIPC insured.</p>
+<div class="cta-row"><div class="cta-btn">Start now →</div><div class="cta-note">Free to<br>download</div></div>
+<div class="end-trust"><span>✓ SIPC INSURED</span><span>✓ 256-BIT ENCRYPTION</span><span>✓ NO COMMISSIONS</span></div>
+</div>
+</div>
+</section>
+<div class="timeline"><span>01 HOOK</span><div class="pip p1"><i></i></div><span>02 SLICES</span><div class="pip p2"><i></i></div><span>03 START</span><div class="pip p3"><i></i></div></div>
+<div class="time">12S LOOP • 1280×720</div>
+<div class="progress"><div class="progress-fill"></div></div>
+</div>
+</body>
+</html>

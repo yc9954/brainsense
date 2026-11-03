@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Slice — Own big stocks from $1</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,system-ui,sans-serif;background:#E9E2D1;color:#142219;font-size:16px;-webkit-font-smoothing:antialiased;display:flex;justify-content:center;min-height:100vh}
+.page{width:1280px;max-width:100%;min-height:800px;background:#FBF6EC;position:relative;overflow:hidden;display:flex;flex-direction:column;border-left:1px solid #ddd6c2;border-right:1px solid #ddd6c2}
+.page:before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(700px 380px at 50% -80px,#C6F135 0%,rgba(198,241,53,.35) 45%,transparent 70%),radial-gradient(500px 400px at 95% 20%,rgba(231,111,81,.12),transparent 60%),radial-gradient(500px 400px at 5% 15%,rgba(18,55,42,.08),transparent 60%)}
+.dots{position:absolute;inset:0;opacity:.5;pointer-events:none;background-image:radial-gradient(#14221922 1.3px,transparent 1.3px);background-size:22px 22px;mask-image:linear-gradient(to bottom,black 0 220px,transparent 320px)}
+.nav{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;padding:18px 40px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.02em;font-size:22px}
+.mark{width:36px;height:36px;border-radius:11px;background:#12372A;color:#C6F135;display:grid;place-items:center;font-size:20px;transform:rotate(-6deg);box-shadow:0 4px 0 #12372A22}
+.brand small{font-weight:600;font-size:11px;letter-spacing:.14em;background:#12372A;color:#fff;padding:4px 7px;border-radius:100px;margin-left:2px}
+.links{display:flex;gap:26px;font-size:15px;font-weight:500;color:#33463a}
+.links a{text-decoration:none;color:inherit}
+.actions{display:flex;align-items:center;gap:14px}
+.login{font-weight:600;font-size:15px;text-decoration:none;color:#142219}
+.btn{display:inline-flex;align-items:center;gap:10px;border-radius:999px;border:0;cursor:pointer;text-decoration:none;font-weight:700}
+.btn-dark{background:#12372A;color:#fff;padding:12px 22px;font-size:15px;box-shadow:0 8px 20px rgba(18,55,42,.25)}
+.btn-dark:hover{background:#1a4d3b}
+.hero{position:relative;z-index:2;text-align:center;padding:14px 40px 0;max-width:880px;margin:0 auto}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1.5px solid #142219;border-radius:999px;padding:7px 14px;font-size:12.5px;font-weight:700;letter-spacing:.12em;box-shadow:3px 3px 0 #142219}
+.eyebrow i{width:8px;height:8px;border-radius:50%;background:#1A9E6B;display:inline-block;box-shadow:0 0 0 4px #1A9E6B22}
+h1{font-family:Fraunces,serif;font-weight:900;letter-spacing:-.03em;line-height:.95;font-size:66px;margin:18px 0 12px;color:#142219}
+h1 em{font-style:italic;font-weight:600}
+.hl{display:inline-block;background:#C6F135;border:2px solid #142219;border-radius:12px;padding:0 14px 4px;transform:rotate(-2deg);box-shadow:4px 4px 0 #142219;margin:0 4px}
+.sub{font-size:18px;line-height:1.55;color:#43564a;max-width:640px;margin:0 auto}
+.cta-row{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:20px}
+.btn-big{background:#12372A;color:#fff;padding:17px 28px;font-size:17px;border:3px solid #12372A;box-shadow:5px 5px 0 #C6F135,5px 5px 0 8px #12372A}
+.btn-big:hover{transform:translate(-1px,-1px);box-shadow:6px 6px 0 #C6F135,6px 6px 0 8px #12372A}
+.btn-big .clock{background:#C6F135;color:#12372A;border-radius:999px;padding:3px 8px;font-size:13px;font-weight:800}
+.ghost{font-weight:600;color:#142219;font-size:15px;text-decoration:none;border-bottom:2px solid #C6F135;padding-bottom:2px}
+.micro{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:14px;font-size:14px;color:#4a5f52;font-weight:500}
+.avatars{display:flex}
+.avatars span{width:28px;height:28px;border-radius:50%;border:2px solid #FBF6EC;display:grid;place-items:center;font-size:12px;font-weight:800;color:#fff;margin-left:-8px}
+.avatars span:first-child{margin-left:0}
+.stars{color:#E69B00;letter-spacing:2px;font-size:14px}
+.micro b{color:#142219}
+/* FOCAL CARD - single focus */
+.focal-wrap{position:relative;z-index:2;padding:22px 40px 0}
+.focal{background:#fff;border:2px solid #142219;border-radius:22px;box-shadow:8px 8px 0 #142219,0 24px 60px rgba(18,55,42,.14);display:grid;grid-template-columns:300px 1fr 310px;overflow:hidden;max-width:1040px;margin:0 auto}
+.f-col{padding:22px 22px}
+.f-col + .f-col{border-left:1.5px dashed #D8D0B8}
+.label{font-size:11.5px;font-weight:800;letter-spacing:.14em;color:#7a8a7e;margin-bottom:12px}
+.stock{display:flex;align-items:center;gap:12px;padding:11px 12px;border-radius:14px;border:1.5px solid transparent;margin-bottom:8px}
+.stock.active{border-color:#12372A;background:#F5F9E8;box-shadow:2px 2px 0 #12372A}
+.ticker{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;font-size:20px;flex-shrink:0}
+.stock b{font-size:15px;display:block;line-height:1}
+.stock small{font-size:13px;color:#63766a}
+.price{margin-left:auto;text-align:right}
+.price b{font-size:14px}
+.up{font-size:12px;font-weight:700;color:#0B7A4B;background:#DDF5E6;padding:2px 7px;border-radius:999px}
+.mid-top{display:flex;align-items:end;justify-content:space-between}
+.big-input{font-family:Fraunces,serif;font-size:54px;font-weight:900;letter-spacing:-.04em;line-height:1}
+.big-input span{font-size:28px;vertical-align:top;margin-right:2px}
+.shares-pill{background:#12372A;color:#C6F135;font-size:13px;font-weight:700;padding:7px 12px;border-radius:999px}
+.slider{margin:16px 0 8px;height:12px;background:#EEE8D4;border-radius:999px;position:relative;border:1px solid #D8D0B8}
+.slider-fill{position:absolute;left:0;top:0;bottom:0;width:28%;background:linear-gradient(90deg,#1A9E6B,#C6F135);border-radius:999px}
+.knob{position:absolute;left:28%;top:50%;transform:translate(-50%,-50%);width:28px;height:28px;background:#fff;border:2.5px solid #12372A;border-radius:50%;box-shadow:2px 2px 0 #12372A;display:grid;place-items:center;font-size:12px}
+.ticks{display:flex;justify-content:space-between;font-size:12px;font-weight:700;color:#8a9a8e;margin-bottom:14px}
+.buy{width:100%;background:#E76F51;border:2px solid #142219;border-radius:14px;padding:14px;font-size:16px;font-weight:800;color:#fff;box-shadow:3px 3px 0 #142219;cursor:pointer}
+.buy small{display:block;font-weight:600;font-size:12px;opacity:.9;margin-top:2px}
+.fine{font-size:12.5px;color:#7b8d80;margin-top:10px;text-align:center}
+.dark{background:#12372A;color:#EAF3DF;border-radius:0;position:relative}
+.dark .label{color:#9AB0A3}
+.donut-wrap{display:flex;align-items:center;gap:14px}
+.legend b{font-size:28px;font-family:Fraunces,serif;line-height:1}
+.legend p{font-size:13.5px;line-height:1.5;color:#B9C9BE;margin-top:6px}
+.bar{height:8px;background:#ffffff22;border-radius:999px;margin:14px 0 12px;overflow:hidden}
+.bar i{display:block;height:100%;width:72%;background:#C6F135;border-radius:999px}
+.shield{display:flex;gap:10px;align-items:flex-start;background:#ffffff10;border:1px solid #ffffff2a;border-radius:12px;padding:10px 12px;font-size:12.5px;line-height:1.5}
+.trust{position:relative;z-index:2;margin-top:auto;display:flex;align-items:center;justify-content:center;gap:0;padding:16px 40px 12px;font-size:12.5px;font-weight:700;letter-spacing:.08em;color:#4c5f53}
+.trust div{padding:0 18px;border-right:1px solid #CFC6A8;display:flex;align-items:center;gap:8px;white-space:nowrap}
+.trust div:last-child{border:0}
+.disc{text-align:center;font-size:11.5px;color:#8a9a8e;padding:0 40px 14px;position:relative;z-index:2}
+@media(max-width:900px){h1{font-size:44px}.focal{grid-template-columns:1fr}.f-col+.f-col{border-left:0;border-top:1.5px dashed #D8D0B8}.links{display:none}}
+</style>
+</head>
+<body>
+<div class="page">
+<div class="dots"></div>
+<header class="nav">
+<div class="brand"><div class="mark">◫</div> Slice <small>SEC ✓</small></div>
+<nav class="links"><a href="#">Invest</a><a href="#">Retirement</a><a href="#">Learn</a><a href="#">Pricing</a></nav>
+<div class="actions"><a class="login" href="#">Log in</a><a class="btn btn-dark" href="#">Get started</a></div>
+</header>
+
+<main class="hero">
+<div class="eyebrow"><i></i> FRACTIONAL INVESTING • NO MINIMUMS</div>
+<h1>Big stocks. <em>Tiny slices.</em> Start with <span class="hl">$1</span></h1>
+<p class="sub">Buy fractions of 4,000+ US stocks &amp; ETFs — own Apple, Nvidia and Amazon for the price of coffee. Real shares, real ownership.</p>
+<div class="cta-row">
+<a class="btn btn-big" href="#"><span class="clock">⏱ 3-MIN</span> Start investing now &nbsp;→</a>
+<a class="ghost" href="#">▶ How slicing works (45s)</a>
+</div>
+<div class="micro">
+<div class="avatars"><span style="background:#E76F51">J</span><span style="background:#12372A">M</span><span style="background:#1A9E6B">A</span><span style="background:#E9B44C">+</span></div>
+<div><span class="stars">★★★★★</span> <b>4.9</b> · 128k reviews</div>
+<div style="opacity:.4">|</div>
+<div>🔒 No commission · Cancel anytime</div>
+</div>
+</main>
+
+<section class="focal-wrap" aria-label="Try fractional investing">
+<div class="focal">
+<div class="f-col">
+<div class="label">1 — PICK A SLICE</div>
+<div class="stock active"><div class="ticker" style="background:#142219">🍏</div><div><b>AAPL · Apple</b><small>$232.14 per share</small></div><div class="price"><b>$232.14</b><br><span class="up">+1.2%</span></div></div>
+<div class="stock"><div class="ticker" style="background:#E8F5B8;border:1px solid #cbd99a">◢</div><div><b>NVDA · Nvidia</b><small>$131.88 per share</small></div><div class="price"><b>$131.88</b><br><span class="up">+2.4%</span></div></div>
+<div class="stock"><div class="ticker" style="background:#FFE6D6">📦</div><div><b>AMZN · Amazon</b><small>$197.12 per share</small></div><div class="price"><b>$197.12</b><br><span class="up">+0.8%</span></div></div>
+</div>
+<div class="f-col">
+<div class="label">2 — YOU INVEST $1+</div>
+<div class="mid-top"><div class="big-input"><span>$</span>25.00</div><div class="shares-pill">= 0.1076 shares</div></div>
+<div class="slider"><div class="slider-fill"></div><div class="knob">↔</div></div>
+<div class="ticks"><span>$1</span><span>$25</span><span>$100</span><span>$500</span></div>
+<button class="buy">Buy my slice → <small>No commission · Fractional custody by Apex</small></button>
+<div class="fine">Even $1 buys you real, dividend-earning stock.</div>
+</div>
+<div class="f-col dark">
+<div class="label">3 — YOU OWN IT</div>
+<div class="donut-wrap">
+<svg width="98" height="98" viewBox="0 0 98 98"><circle cx="49" cy="49" r="38" fill="none" stroke="#ffffff22" stroke-width="14"/><circle cx="49" cy="49" r="38" fill="none" stroke="#C6F135" stroke-width="14" stroke-linecap="round" stroke-dasharray="172 238" transform="rotate(-90 49 49)"/><text x="49" y="54" text-anchor="middle" fill="#fff" font-size="16" font-weight="800">$25</text></svg>
+<div class="legend"><b>10.76%</b><p>of 1 AAPL share<br>in your name</p></div>
+</div>
+<div class="bar"><i></i></div>
+<div class="shield"><span style="font-size:18px">🛡️</span><span><b style="color:#fff">SIPC insured to $500k.</b><br>256-bit TLS, 2FA &amp; biometric lock. Your slices held separately.</span></div>
+</div>
+</div>
+</section>
+
+<footer class="trust" aria-label="Trust signals">
+<div>🏦 SIPC MEMBER</div><div>✔ FINRA REGULATED</div><div>🔐 256-BIT ENCRYPTION</div><div>👆 2FA + FACE ID</div><div>💰 $2.1B SAFEGUARDED</div>
+</footer>
+<div class="disc">Brokerage services by Slice Securities LLC. Investing involves risk. Fractional shares are real, SEC-regulated securities.</div>
+</div>
+</body>
+</html>
