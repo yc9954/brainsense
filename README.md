@@ -31,13 +31,13 @@ Ask any assistant "what do you think of this photo?" and it says "looks great". 
 <tr>
 <td width="25%"><img src="docs/img/cortex-profile.png" alt="Live cortex inside the head, lateral"></td>
 <td width="25%"><img src="docs/img/card-analysis.png" alt="Analysis: per-head drivers and per-second brain response"></td>
-<td width="25%"><img src="docs/img/lab-memory.png" alt="Lab: learning curve and learned rules"></td>
+<td width="25%"><img src="docs/img/lab-memory-live.png" alt="Lab: memory written live, learning curve and learned rules"></td>
 <td width="25%"><img src="docs/img/about-numbers.png" alt="About: measured numbers"></td>
 </tr>
 <tr>
 <td><b>The brain lights up first.</b> TRIBE v2's per-vertex prediction plays on the fsaverage5 cortex inside a bust, second by second, red where the cortex responds.</td>
 <td><b>Then the numbers.</b> Four calibrated heads with crowd score, confidence and percentile, the regions that drove each one, and the 1 Hz response per region.</td>
-<td><b>It learns you.</b> Like / dislike → sleep → rules in plain English, a crowd-vs-you learning curve, and a one-line reflex on anything it has seen before.</td>
+<td><b>It learns you, in front of you.</b> Every like or dislike is written to memory while you watch: trace stored, outcome written, your head refit against the crowd head. Sleep turns the answers into rules in plain English; a one-line reflex fires on anything it has seen before.</td>
 <td><b>Honest about itself.</b> Every score carries a confidence, and the About tab shows the AUROCs and the latency we actually measured.</td>
 </tr>
 </table>
@@ -60,6 +60,8 @@ Same brief, same Muse Spark, same budget. Only the feedback differs: the left co
 <td><img src="results/showcase/en-ad-suite1/popup_ad/brain_loop_r2v1.png" alt="12 s popup ad clip, brain loop (contact sheet)"></td>
 </tr>
 <tr><td colspan="2" align="center"><sub>12-second ad clip, frames at 1 / 5 / 9 s. On video the brain loop wins every pairwise verdict (P ≥ 0.85): the critique reads the cortex <em>time course</em> (hook, hold, call to action) that a screenshot judge never sees.</sub></td></tr>
+<tr><td colspan="2"><img src="docs/ad_timecourse.svg" alt="Predicted dorsal attention and early visual cortex per second: the one-shot ad peaks in its first second and fades, the brain-loop ad builds through the clip" width="100%"></td></tr>
+<tr><td colspan="2" align="center"><sub>The same two clips, second by second, in the predicted cortex. The one-shot ad grabs attention for one second and loses it; the brain-loop ad was told "the hook is too slow, hold attention after 2 s" and builds instead.</sub></td></tr>
 <tr>
 <td><img src="results/showcase/redesign/en-craigslist/r0.png" alt="craigslist.org/about/sites, live page"></td>
 <td><img src="results/showcase/redesign/en-craigslist/r1.png" alt="craigslist.org/about/sites, brain-guided redesign"></td>
