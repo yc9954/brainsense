@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1280">
+<title>craigslist &gt; sites</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,800;9..144,900&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Inter,Arial,sans-serif;background:#fbf9ff;color:#1a1030;width:1280px;height:800px;overflow:hidden;margin:0 auto}
+a{color:#2f2bff;text-decoration:none}
+a:hover{text-decoration:underline}
+.top{display:flex;align-items:center;gap:18px;padding:14px 28px 12px;background:#fff;border-bottom:2px solid #ece6ff}
+.logo{font-family:Fraunces,serif;font-weight:900;font-size:52px;color:#4b0e8a;letter-spacing:-2px;line-height:1}
+.logo sup{font-size:14px;vertical-align:super}
+.nav{display:flex;gap:18px;font-weight:800;font-size:15px;margin-left:10px}
+.nav a{color:#2f4bff}.nav a.on{color:#4b0e8a;border-bottom:3px solid #4b0e8a;padding-bottom:2px}
+.search{margin-left:auto;display:flex;align-items:center;background:#fff;border:2px solid #4b0e8a;border-radius:999px;padding:4px 4px 4px 14px;width:300px}
+.search input{border:0;outline:0;flex:1;font-size:13px}
+.search button{background:#4b0e8a;color:#fff;border:0;border-radius:999px;padding:7px 16px;font-weight:800;cursor:pointer}
+.hero{display:grid;grid-template-columns:400px 1fr;gap:0;position:relative}
+.left{padding:18px 18px 0 28px;position:relative;z-index:2}
+.diag{position:absolute;left:-80px;top:78px;width:560px;height:92px;background:#d9c9f5;transform:rotate(-8deg);z-index:-1}
+.diag2{position:absolute;left:-80px;top:168px;width:560px;height:14px;background:#4b0e8a;transform:rotate(-8deg);z-index:-1}
+.badge{display:inline-flex;align-items:center;gap:8px;background:#1a1030;color:#fff;font-size:11px;font-weight:800;letter-spacing:1.5px;border-radius:999px;padding:7px 14px}
+.dot{width:9px;height:9px;background:#00e99a;border-radius:50%;box-shadow:0 0 8px #00e99a}
+h1{font-family:Fraunces,serif;font-size:54px;line-height:.92;letter-spacing:-1.5px;margin:12px 0 10px;color:#131124}
+h1 i{color:#4b0e8a}
+.sub{font-size:15px;line-height:1.45;color:#3d3656}
+.pills{display:flex;flex-wrap:wrap;gap:7px;margin:12px 0 10px}
+.pills a{border:1.5px solid #d6ccff;background:#fff;border-radius:999px;padding:6px 12px;font-size:13px;font-weight:800}
+.pills a.dark{background:#4b0e8a;color:#fff;border-color:#4b0e8a}
+.crumbs{font-size:12px;color:#5b5575;line-height:1.5}
+.ticker{margin-top:10px;background:#1a1030;color:#fff;border-radius:12px;overflow:hidden;white-space:nowrap;padding:8px 0;font-size:12px;font-weight:700;letter-spacing:.3px}
+.ticker span{display:inline-block;animation:slide 18s linear infinite}
+@keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.right{position:relative;padding:14px 28px 0 10px}
+.browser{background:#1a1030;border-radius:22px;padding:10px 10px 12px;transform:rotate(1.2deg);box-shadow:12px 12px 0 #4b0e8a;position:relative;z-index:1}
+.bar{display:flex;align-items:center;gap:6px;background:#1a1030;padding:2px 6px 10px}
+.bar i{width:12px;height:12px;border-radius:50%;display:block}
+.url{flex:1;background:#fff;border-radius:999px;font-size:12px;padding:5px 12px;margin-left:8px;color:#555}
+.map{position:relative;height:360px;border-radius:14px;background:linear-gradient(180deg,#5db9ff 0%,#3a8dde 60%,#2f7acb 100%);overflow:hidden}
+.blob{position:absolute;background:linear-gradient(180deg,#c6e8a3,#a8cc84);border-radius:50%;box-shadow:inset -8px -10px 0 rgba(0,0,0,.12)}
+.pin{position:absolute;width:28px;height:28px;background:#ddd6ff;border:2px solid #fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:14px;box-shadow:0 4px 12px rgba(0,0,0,.35);animation:float 3s ease-in-out infinite}
+.pin.hot{background:#ffe600}.pin.pink{background:#ff1e8a;color:#fff}
+.pin::after{content:'';position:absolute;inset:-8px;border-radius:50%;border:2px solid rgba(255,255,255,.7);animation:pulse 2s infinite}
+@keyframes pulse{0%{transform:scale(.7);opacity:1}100%{transform:scale(1.2);opacity:0}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+.giant{position:absolute;right:-8px;top:-48px;width:168px;height:220px;z-index:5;filter:drop-shadow(8px 10px 0 #1a1030);animation:float 3.5s ease-in-out infinite}
+.credit{position:absolute;right:10px;bottom:10px;background:#fff;border-radius:8px;font-size:10px;padding:4px 8px;font-weight:600}
+.bottom{display:grid;grid-template-columns:1fr 1fr 1fr 1fr 300px;gap:16px;padding:12px 28px;background:#fff;border-top:2px solid #ece6ff;height:228px}
+.bottom h4{font-size:12px;letter-spacing:1px;margin-bottom:6px;border-bottom:1px solid #e8e2ff;padding-bottom:4px}
+.bottom p{font-size:12.5px;line-height:1.65;color:#2f2bff}
+.bottom b{color:#111}
+.cta{background:#1d1236;color:#fff;border-radius:0;padding:14px 16px;margin:-12px -28px -12px 0}
+.cta h3{font-size:24px;line-height:1.05}.cta h3 em{color:#4dff9e;font-style:normal}
+.cta p{font-size:13px;color:#d8d0ff;margin:8px 0 10px;line-height:1.4}
+.stats{display:flex;gap:8px}
+.stat{background:#fff;color:#111;border-radius:10px;padding:8px 6px;flex:1;text-align:center;font-size:11px;font-weight:800;line-height:1.2}
+.btn{background:linear-gradient(90deg,#7a1fff,#4b0e8a);border-radius:12px;padding:11px 12px;font-weight:800;font-size:13px;display:flex;justify-content:space-between;align-items:center;margin-top:10px}
+.arrow{background:#fff;color:#111;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+</style>
+</head>
+<body>
+<div class="top">
+<div class="logo">craigslist<sup>®</sup></div>
+<div class="nav"><a class="on" href="#">US</a><a href="#">Canada</a><a href="#">Europe</a><a href="#">Asia/Pacific/Middle East</a><a href="#">Oceania</a><a href="#">Latin America</a><a href="#">Africa</a></div>
+<div class="search">🔍 <input value="find your city… e.g. chicago"><button>Go</button></div>
+</div>
+<div class="hero">
+<div class="left">
+<div class="diag"></div><div class="diag2"></div>
+<div class="badge"><span class="dot"></span> 700+ LOCAL SITES WORLDWIDE</div>
+<h1>craigslist <i>sites</i> worldwide</h1>
+<p class="sub">Pick your city for jobs, housing, for sale & community.<br>Start with the <b>US</b> below — or jump to a continent.</p>
+<div class="pills"><a class="dark" href="#">US</a><a href="#">Canada</a><a href="#">Europe</a><a href="#">Asia / Pacific</a><a href="#">Oceania</a><a href="#">Latin America</a><a href="#">Africa</a></div>
+<p class="crumbs">📍 <b>US</b> &nbsp; Alabama · Alaska · Arizona · Arkansas · California → scroll for all 50</p>
+<div class="ticker"><span>✦ austin &nbsp;•&nbsp; dallas &nbsp;•&nbsp; houston &nbsp;•&nbsp; atlanta &nbsp;•&nbsp; chicago &nbsp;•&nbsp; los angeles &nbsp;•&nbsp; miami / dade &nbsp;•&nbsp; seattle &nbsp;•&nbsp; denver &nbsp;•&nbsp; boston &nbsp;•&nbsp; portland &nbsp;✦ austin &nbsp;•&nbsp; dallas &nbsp;•&nbsp; houston &nbsp;•&nbsp; atlanta &nbsp;•&nbsp; chicago &nbsp;•&nbsp; los angeles &nbsp;•&nbsp; miami / dade &nbsp;•&nbsp; seattle &nbsp;•&nbsp; denver &nbsp;•&nbsp; boston &nbsp;•&nbsp; portland &nbsp;</span></div>
+</div>
+<div class="right">
+<svg class="giant" viewBox="0 0 120 160"><path d="M60 155 C60 155 10 95 10 55 C10 25 32 5 60 5 C88 5 110 25 110 55 C110 95 60 155 60 155Z" fill="#ff2a8a" stroke="#1a1030" stroke-width="6"/><circle cx="60" cy="55" r="32" fill="#fff" stroke="#1a1030" stroke-width="6"/><text x="60" y="67" text-anchor="middle" font-size="32" font-weight="900">+</text></svg>
+<div class="browser">
+<div class="bar"><i style="background:#ff5a5a"></i><i style="background:#ffbd2e"></i><i style="background:#28c840"></i><div class="url">🔒 craigslist.org/sites 🌐 ▾</div></div>
+<div class="map">
+<div class="blob" style="left:40px;top:50px;width:230px;height:250px"></div>
+<div class="blob" style="left:300px;top:140px;width:80px;height:110px"></div>
+<div class="blob" style="left:310px;top:30px;width:130px;height:180px"></div>
+<div class="blob" style="left:470px;top:30px;width:220px;height:230px"></div>
+<div class="pin" style="left:135px;top:35px">+</div><div class="pin hot" style="left:175px;top:110px">+</div><div class="pin" style="left:250px;top:75px">+</div><div class="pin" style="left:245px;top:200px">+</div><div class="pin pink" style="left:400px;top:95px">+</div><div class="pin" style="left:360px;top:60px">+</div><div class="pin" style="left:395px;top:210px">+</div><div class="pin" style="left:480px;top:135px">+</div><div class="pin" style="left:540px;top:110px">+</div><div class="pin hot" style="left:600px;top:155px">+</div><div class="pin" style="left:590px;top:235px">+</div>
+<div class="credit">© craigslist – Map data Natural Earth</div>
+</div>
+</div>
+</div>
+</div>
+<div class="bottom">
+<div><h4>US</h4><p><b>Alabama</b><br><a>auburn</a> <a>birmingham</a> <a>dothan</a> <a>florence / muscle shoals</a> <a>mobile</a><br><b>Alaska</b><br><a>anchorage / mat-su</a> <a>fairbanks</a></p></div>
+<div><h4>CALIFORNIA</h4><p><a>bakersfield</a> <a>chico</a> <a>fresno / madera</a> <a>los angeles</a> <a>orange county</a> <a>sacramento</a> <a>san diego</a> <a>san francisco bay area</a><br><b>Colorado</b><br><a>boulder</a> <a>denver</a></p></div>
+<div><h4>FLORIDA</h4><p><a>miami / dade</a> <a>orlando</a> <a>tampa bay</a> <a>area</a> <a>jacksonville</a> <a>tallahassee</a></p><h4 style="margin-top:8px">ILLINOIS</h4><p><a>chicago</a> <a>peoria</a> <a>springfield</a></p></div>
+<div><h4>TEXAS & EAST →</h4><p><a>austin</a> <a>dallas</a> <a>houston</a> <a>atlanta</a> <a>washington</a> <a>new york</a> <a>maine</a> <a>hawaii</a></p><p style="margin-top:6px;color:#4b0e8a;font-weight:800">+ view all 50 states ↓</p></div>
+<div class="cta"><h3>One map. <em>Every neighborhood.</em></h3><p>Tap a glowing dot to jump straight to your local craigslist — jobs, housing, for sale.</p><div class="stats"><div class="stat">🇺🇸 400+<br>US cities</div><div class="stat">🌍 70+<br>countries</div><div class="stat">📍 700+<br>total sites</div></div><div class="btn">Enter your city → <span class="arrow">↗</span></div></div>
+</div>
+</body>
+</html>

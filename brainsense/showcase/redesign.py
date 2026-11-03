@@ -124,7 +124,7 @@ def run(source: str = typer.Argument(..., help="URL or local HTML file"), rounds
                **_score(png, f"rd_{stamp}_{slug}_r{r}", brief, kind)}
         steps.append(rec)
         print(f"  r{r}: ui {rec['ui_score']:.3f} · brain {rec['brain_only']:.3f} · judge {rec['judge'].get('judge_score', 0):.2f} · {len(changes)} changes")
-    best = max(steps[1:], key=lambda s: s["ui_score"]) if len(steps) > 1 else steps[0]
+    best = max(steps, key=lambda s: s["ui_score"])          # the live page wins if no round beats it
     report = {"source": source, "brief": brief, "kind": kind, "steps": steps, "best_round": best["round"]}
     (d / "report.json").write_text(json.dumps(report, ensure_ascii=False, indent=1), encoding="utf-8")
     if best["html"]:
@@ -159,7 +159,7 @@ def build_page(d: Path) -> Path:
 h2{{font-size:15px;margin:28px 0 8px}}ul{{font-size:13px;line-height:1.6;color:#ddd}}.k{{color:#8b8b96}}.big{{font-size:28px;font-weight:700;color:{'#7ee787' if delta > 0 else '#ff7b72'}}}</style></head><body>
 <h1>The first screen, redesigned by a brain — {e(rep['source'])}</h1>
 <div class=big>ui_score {o['ui_score']:.3f} → {b['ui_score']:.3f} ({delta:+.3f})</div>
-<div class=row>{card(o, 'BEFORE · the live site')}{card(b, f'AFTER · BrainSense loop r{b["round"]}')}</div>
+<div class=row>{card(o, 'BEFORE · the live site')}{card(b if b is not o else max(steps[1:], key=lambda s: s['ui_score']), f'AFTER · BrainSense loop r{(b if b is not o else max(steps[1:], key=lambda s: s['ui_score']))["round"]}' + (' — did not beat the live page; original kept' if b is o else ''))}</div>
 <h2>What the brain read on the original → directives</h2><ul>{directives}</ul>
 <h2>What Muse actually changed (directive ↔ change)</h2><ul>{changes or '<li>(no change list)</li>'}</ul>
 <h2>Per round</h2><ul>{''.join(f"<li>r{s['round']}: ui {s['ui_score']:.3f} · brain {s['brain_only']:.3f} · judge {s['judge'].get('judge_score', 0):.2f}</li>" for s in steps)}</ul>

@@ -158,15 +158,16 @@ Reading: on static pages a brain in the loop beats "just ask the model" and the 
 
 Four of five briefs improve, the fifth keeps Muse's first draft instead of being made worse, and the ledger shows per round what was tried and why it was kept or rejected. The photo gate rejected every Commons candidate in this run (relevance 1–3/10), so the gains come from the critique, not from stock photos; a better free image source is the obvious next upgrade. (The earlier Korean runs `hz-suite1/2/3` improved 3 of 5 and taught the gate: every round that inserted an ungated Commons photo scored lower.)
 
-**Brain-guided redesign of live sites (`brainsense/showcase/redesign.py`, `results/showcase/redesign/*/index.html`):** screenshot the real page → TRIBE cortex → `read_brain` directives → Muse rebuilds the first screen *keeping brand and copy* (it must list each directive ↔ concrete change; every claim is checked against the page's own text) → score again, 2 rounds, best kept. Before/after pages show the diagnosis, the directives, what changed and the per-round scores.
+**Brain-guided redesign of live sites (`brainsense/showcase/redesign.py`, `results/showcase/redesign/*/index.html`):** screenshot the real page → TRIBE cortex → `read_brain` directives → Muse rebuilds the first screen *keeping brand and copy* (it must list each directive ↔ concrete change; every claim is checked against the page's own text) → score again, 2 rounds, the live page wins if nothing beats it. Before/after pages show the diagnosis, the directives, what changed and the per-round scores.
 
-| site | ui_score | brain-only | Muse judge | what the brain asked for → what changed |
+| site (English runs) | ui_score | brain-only | Muse judge | what the brain asked for → what changed |
 |---|---|---|---|---|
-| sweetspot.co.kr | 0.663 → 0.740 | 0.91 → 0.82 | 0.44 → 0.72 | no face/gaze cue → two expert faces looking at the CTA; reward signal with nothing to attach to → one benefit line (누적 8,700건 · A to Z) under the H1; no object silhouette → pop-up store box hero |
-| news.ycombinator.com | 0.475 → 0.558 | 0.75 → 0.41 | 0.28 → 0.69 | no object silhouette + dlPFC effort → 22 rows cut to 5 ranked cards, one nav level, terminal-window hero |
-| craigslist.org/about/sites | 0.486 → 0.656 | 0.66 → 0.61 | 0.33 → 0.75 | no silhouette + attention decays after 2 s → globe hero, benefit line, region cards + city ticker as the second discovery |
+| news.ycombinator.com | 0.445 → **0.584** | 0.77 → 0.53 | 0.19 → 0.67 | no object silhouette + dlPFC effort → dense rows cut to ranked cards, one nav level, one hero object |
+| craigslist.org/about/sites | 0.473 → **0.594** | 0.66 → 0.70 | 0.31 → 0.53 | no silhouette + attention decays after 2 s → globe hero, benefit line, second discovery block |
+| cerebralvalley.ai | 0.567 → kept | 0.57 → 0.34 | 0.58 → 0.69 | the judge liked the rewrite, the brain did not; neither round beat the blend, so the live page stays |
+| sweetspot.co.kr (Korean run) | 0.663 → **0.740** | 0.91 → 0.82 | 0.44 → 0.72 | no face/gaze cue → two faces looking at the CTA; benefit line under the H1; pop-up box hero |
 
-Honest note: on Hacker News the photo-trained brain heads rate the dense original as "top 20 % aesthetic" and the redesign lower, while the judge goes the other way — the brain's *diagnosis* (which regions are silent) transfers to screenshots much better than its *score* does, which is why ui_score blends the two and why the pages show both numbers.
+Honest note: the photo-trained brain heads rate the dense Hacker News original "top 20 % aesthetic" and the redesign lower, while the judge goes the other way — the brain's *diagnosis* (which regions are silent) transfers to screenshots much better than its *score* does, which is why ui_score blends the two and why every page shows both numbers.
 
 ## OpenMuse integration (2026-11-03): the agent's own brain
 BrainSense is wired into OpenMuse's own agent loop, not a side tab:

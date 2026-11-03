@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1280, initial-scale=1">
+<title>AI Community & Hackathons – Cerebral Valley</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#000;color:#F2F5F8;font-family:'Inter',system-ui,sans-serif;display:flex;justify-content:center}
+.screen{width:1280px;min-width:1280px;height:800px;background:radial-gradient(900px 500px at 78% 35%,#14202e 0%,#070b10 55%,#04060a 100%),#04060a;position:relative;overflow:hidden;display:flex;flex-direction:column;border-left:1px solid #111;border-right:1px solid #111}
+nav{height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;z-index:10}
+.logo{display:flex;align-items:center;gap:10px;font-family:'Space Grotesk';font-weight:700;letter-spacing:.02em}
+.logo-mark{width:32px;height:32px;display:grid;place-items:center}
+.nav-btns{display:flex;gap:10px}
+.btn{font-size:14px;font-weight:600;padding:10px 18px;border-radius:12px;border:1px solid transparent;cursor:pointer;text-decoration:none}
+.btn-ghost{background:#151a20;color:#fff}
+.btn-white{background:#fff;color:#111}
+.hero{flex:1;display:grid;grid-template-columns:500px 1fr;padding:8px 40px 0 40px;gap:20px;position:relative}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:11px;letter-spacing:.14em;font-weight:700;color:#9be29b;background:rgba(80,255,150,.08);border:1px solid rgba(120,255,170,.22);padding:7px 12px;border-radius:100px}
+.dot-live{width:8px;height:8px;background:#3dff7a;border-radius:50%;box-shadow:0 0 12px #3dff7a;animation:pulse 1.6s infinite}
+@keyframes pulse{50%{opacity:.4}}
+h1{font-family:'Space Grotesk';font-size:54px;line-height:.98;letter-spacing:-.03em;margin:18px 0 14px}
+h1 span{background:linear-gradient(90deg,#fff,#9ecbff);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.sub{color:#a8b3bf;font-size:16px;line-height:1.5;max-width:420px}
+.cta-row{display:flex;gap:12px;margin:22px 0 24px;align-items:center}
+.cta-main{background:#fff;color:#000;font-weight:700;font-size:15px;padding:14px 22px;border-radius:14px;text-decoration:none;display:inline-flex;gap:8px;align-items:center;box-shadow:0 8px 30px rgba(255,255,255,.25)}
+.cta-sec{color:#fff;text-decoration:none;font-weight:600;font-size:15px;padding:14px 18px;border:1px solid #2a333d;border-radius:14px;background:rgba(255,255,255,.04)}
+.gaze-hint{font-size:12px;color:#8a96a3;display:flex;align-items:center;gap:6px;margin-top:-12px;margin-bottom:8px}
+.stats{display:flex;gap:28px;border-top:1px solid #1b232d;padding-top:18px;margin-top:6px}
+.stat label{font-size:13px;color:#8b96a3;display:block;margin-bottom:4px}
+.stat strong{font-size:28px;letter-spacing:-.02em}
+.stat strong i{font-style:normal;color:#5aa9ff}
+.stat small{display:block;font-size:12px;color:#6b7886}
+/* RIGHT VISUAL */
+.visual{position:relative;height:600px}
+.beam{position:absolute;left:-60px;top:80px;width:860px;height:120px;background:linear-gradient(90deg,transparent,rgba(60,180,255,.28),rgba(255,80,60,.32),transparent);transform:rotate(-18deg);filter:blur(1px);pointer-events:none}
+.beam2{position:absolute;left:-40px;top:130px;width:860px;height:2px;background:linear-gradient(90deg,transparent,#4ab3ff,#ff5a3c,transparent);transform:rotate(-18deg);opacity:.8}
+.map{position:absolute;inset:0 0 0 0;opacity:.9}
+.arc{fill:none;stroke-width:1.5;stroke-dasharray:6 6;opacity:.7;animation:dash 4s linear infinite}
+@keyframes dash{to{stroke-dashoffset:-48}}
+.ticket{position:absolute;left:250px;top:38px;width:350px;height:472px;background:linear-gradient(180deg,#141c26 0%,#0b1118 100%);border:1px solid #2a3746;border-radius:26px;transform:rotate(6deg);box-shadow:0 30px 80px rgba(0,0,0,.6),0 0 0 8px rgba(255,255,255,.04),0 0 60px rgba(70,150,255,.25);overflow:hidden}
+.ticket-top{padding:18px 20px 14px;background:linear-gradient(135deg,#1a2740,#0f1928);border-bottom:1px solid #243145}
+.tag{font-size:11px;font-weight:800;letter-spacing:.12em;color:#ffb9ad;background:rgba(255,80,50,.15);border:1px solid rgba(255,90,60,.4);padding:5px 10px;border-radius:100px}
+.ticket h3{font-family:'Space Grotesk';font-size:26px;margin:12px 0 4px;line-height:1}
+.ticket p{font-size:13px;color:#9aa8b8}
+.progress{height:8px;background:#1e2a3a;border-radius:100px;margin:14px 0 6px;overflow:hidden}
+.progress span{display:block;width:78%;height:100%;background:linear-gradient(90deg,#4ab3ff,#7dff9a)}
+.faces{display:flex;align-items:center;margin:14px 0 6px}
+.face{width:46px;height:46px;border-radius:50%;border:2px solid #0b1118;margin-left:-10px;position:relative;overflow:hidden;flex-shrink:0}
+.face:first-child{margin-left:0}
+.f1{background:linear-gradient(#f2c69b,#e0a06e)} .f2{background:linear-gradient(#8a5a3b,#6b3f26)} .f3{background:linear-gradient(#ffe0bd,#f0b88a)} .f4{background:linear-gradient(#c6865a,#9a5e36)}
+.eye{position:absolute;top:19px;width:7px;height:9px;background:#111;border-radius:50%}
+.eye:after{content:'';position:absolute;left:-2px;top:2px;width:3px;height:3px;background:#fff;border-radius:50%}
+.eL{left:11px} .eR{left:25px}
+.mouth{position:absolute;left:15px;top:32px;width:16px;height:6px;border:2px solid rgba(0,0,0,.55);border-top:0;border-left:0;border-right:0;border-radius:0 0 20px 20px}
+.join{background:#fff;border-radius:12px;text-align:center;font-weight:800;padding:12px;margin:10px 18px;color:#000;font-size:14px}
+.mini{position:absolute;background:rgba(13,20,28,.92);border:1px solid #2b3a4e;border-radius:16px;padding:12px 14px;backdrop-filter:blur(8px);box-shadow:0 16px 40px rgba(0,0,0,.5)}
+.mini b{font-size:13px} .mini span{font-size:12px;color:#8b98a8;display:block}
+.m1{left:80px;top:90px;transform:rotate(-6deg)}
+.m2{left:560px;top:300px}
+.builders-card{left:70px;top:380px;display:flex;gap:10px;align-items:center;transform:rotate(-4deg)}
+.pins{position:absolute;inset:0}
+.pin{position:absolute;font-size:10px}
+.legend{position:absolute;right:10px;bottom:58px;font-size:12px;color:#9aa8b8;display:flex;gap:12px}
+/* BOTTOM DISCOVERY */
+.discover{position:absolute;left:0;right:0;bottom:0;height:132px;background:linear-gradient(180deg,transparent,#05080c 30%),#05080c;border-top:1px solid #1a232e;display:flex;align-items:center;gap:18px;padding:0 40px;z-index:5}
+.trusted{font-size:11px;letter-spacing:.12em;color:#7d8895;font-weight:700;line-height:1.4;min-width:140px}
+.logos{display:flex;gap:8px;min-width:300px}
+.logos span{font-size:12px;font-weight:700;background:#111922;border:1px solid #223041;padding:7px 11px;border-radius:100px;color:#cbd6e2}
+.pills{display:flex;gap:10px;overflow:hidden}
+.pill{min-width:210px;background:#0e151e;border:1px solid #223041;border-radius:14px;padding:10px 14px;display:flex;justify-content:space-between;align-items:center}
+.pill b{font-size:13px;display:block} .pill i{font-style:normal;font-size:11px;color:#7dff9a}
+.pill em{font-style:normal;background:#ff4a2e;color:#fff;font-size:11px;font-weight:800;padding:6px 10px;border-radius:100px}
+</style>
+</head>
+<body>
+<div class="screen">
+<nav><a class="skip" href="#" style="position:absolute;left:-999px">Skip to Main Content</a>
+<div class="logo"><span class="logo-mark"><svg width="28" height="22" viewBox="0 0 28 22" fill="none"><path d="M2 20 L14 2 L18 10 L14 20 L11 14 L14 8 L6 20 H2 Z M18 10 L22 2 L26 20 L23 20 L20 8 Z" fill="white"/></svg></span> CEREBRAL VALLEY</div>
+<div class="nav-btns"><a class="btn btn-ghost" href="#">Find Events</a><a class="btn btn-white" href="#">Get in Touch</a></div>
+</nav>
+<div class="hero">
+<div>
+<div class="eyebrow"><span class="dot-live"></span> AI COMMUNITY & HACKATHONS • 16 HUBS LIVE</div>
+<h1>Cerebral Valley is <span>AI's global ecosystem</span></h1>
+<p class="sub">We bring together leading AI labs and builders for events around the world.</p>
+<div class="cta-row"><a class="cta-main" href="#">Find Events →</a><a class="cta-sec" href="#">Get in Touch</a></div>
+<div class="gaze-hint">← 2,400 builders are looking this way — join them</div>
+<div class="stats">
+<div class="stat"><label>Hubs</label><strong>16</strong><small>global cities</small></div>
+<div class="stat"><label>Top builders</label><strong>177,983</strong><small>▲ +12k this month</small></div>
+<div class="stat"><label>Our ecosystem has raised</label><strong><i>$</i>3,300,000,000+</strong><small>by community startups</small></div>
+</div>
+</div>
+<div class="visual">
+<div class="beam"></div><div class="beam2"></div>
+<svg class="map" viewBox="0 0 700 420"><path class="arc" d="M95 200 Q250 80 360 140 T620 180" stroke="#4ab3ff"/><path class="arc" d="M95 210 Q300 260 420 200 T620 190" stroke="#ff5a3c"/><g font-size="11"><text x="90" y="195">🔵</text><text x="355" y="145">🔵</text><text x="615" y="185">🔵</text><text x="200" y="180">🔺</text><text x="230" y="200">🔺</text><text x="260" y="170">🔺</text><text x="380" y="170">🔺</text><text x="410" y="190">🔺</text><text x="440" y="160">🔺</text><text x="480" y="200">🔺</text><text x="530" y="210">🔺</text><text x="150" y="230">🔺</text><text x="300" y="240">🔺</text><text x="350" y="260">🔺</text><text x="500" y="260">🔺</text></g></svg>
+<div class="mini m1"><b>✨ Gemini 3 Asia Tour</b><span>Tokyo • Seoul • Singapore</span></div>
+<div class="ticket">
+<div class="ticket-top"><span class="tag">● LIVE • SF + GLOBAL</span><h3>GPT-5 Launch Hackathon</h3><p>2 days • $50k prizes • OpenAI + CV</p><div class="progress"><span></span></div><p style="font-size:12px">78% full — 1,842 builders in</p></div>
+<div style="padding:14px 18px"><div style="font-size:12px;color:#8b98a8">👀 BUILDERS STARING AT “FIND EVENTS”</div>
+<div class="faces">
+<div class="face f1"><div class="eye eL"></div><div class="eye eR"></div><div class="mouth"></div></div>
+<div class="face f2"><div class="eye eL"></div><div class="eye eR"></div><div class="mouth"></div></div>
+<div class="face f3"><div class="eye eL"></div><div class="eye eR"></div><div class="mouth"></div></div>
+<div class="face f4"><div class="eye eL"></div><div class="eye eR"></div><div class="mouth"></div></div>
+<span style="font-size:12px;margin-left:10px;color:#cbd6e2">+177k →</span>
+</div>
+<div style="display:flex;gap:8px;margin-top:10px"><span style="font-size:12px;background:#1a2534;padding:6px 10px;border-radius:100px">🤖 AI hackathons</span><span style="font-size:12px;background:#1a2534;padding:6px 10px;border-radius:100px">🏢 Enterprise</span><span style="font-size:12px;background:#1a2534;padding:6px 10px;border-radius:100px">⚙️ Infra</span></div>
+</div>
+<div class="join">Claim your spot →</div>
+</div>
+<div class="mini m2"><b>⚡ Claude Opus 4.7 Hackathon</b><span>Starts Friday • 340 teams</span></div>
+<div class="mini builders-card"><div style="font-size:28px">🧑‍💻</div><div><b>177,983 top builders</b><span>Cities ■ Builders ▲</span></div></div>
+<div class="legend"><span>■ Cities</span><span style="color:#ff6a4a">▲ Builders</span></div>
+</div>
+</div>
+<div class="discover">
+<div class="trusted">TRUSTED PARTNER<br>OF THE WORLD'S BEST</div>
+<div class="logos"><span>OpenAI</span><span>Gemini</span><span>Anthropic</span><span>Llama 3</span></div>
+<div class="pills">
+<div class="pill"><div><b>GPT-5 Launch</b><i>● SF • 1.8k going</i></div><em>Join</em></div>
+<div class="pill"><div><b>Gemini 3 Asia Tour</b><i>● Tokyo • 900 going</i></div><em style="background:#1a73ff">Join</em></div>
+<div class="pill"><div><b>Llama 3 Impact</b><i>● NYC • 640 going</i></div><em style="background:#222">Join</em></div>
+<div class="pill"><div><b>Le Chat Launch</b><i>● Paris • 520 going</i></div><em style="background:#222">Join</em></div>
+</div>
+</div>
+</div>
+</body>
+</html>

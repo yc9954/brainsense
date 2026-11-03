@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1280, initial-scale=1">
+<title>Hacker News</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#F6F1E8;color:#111;font-family:'Inter',system-ui,sans-serif;width:1280px;min-height:800px;margin:0 auto;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.topbar{background:#FF6600;color:#000;display:flex;align-items:center;gap:10px;padding:0 18px;height:38px;font-size:14px;font-weight:600;border-bottom:2px solid #000}
+.logo{display:flex;align-items:center;gap:8px;font-weight:900}
+.ybox{width:22px;height:22px;background:#000;color:#FF6600;display:grid;place-items:center;font-weight:900;font-size:15px;border:1px solid #000}
+.topbar nav{font-weight:500}
+.topbar nav b{font-weight:700}
+.login{margin-left:auto;font-weight:600}
+.wrap{display:grid;grid-template-columns:600px 580px;gap:32px;padding:22px 32px 0 32px;position:relative}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:1.5px;font-weight:700}
+.dot{width:9px;height:9px;background:#00A35C;border-radius:50%;box-shadow:0 0 0 5px #00a35c22}
+h1{font-size:68px;line-height:.9;letter-spacing:-3px;font-weight:900;margin:8px 0 10px}
+h1 span{color:#FF6600}
+.benefit{font-size:17px;line-height:1.35;font-weight:600;max-width:540px}
+.benefit em{font-style:normal;background:#111;color:#fff;padding:1px 7px;border-radius:20px;font-size:14px}
+.sub{font-family:'JetBrains Mono',monospace;font-size:12.5px;color:#5A554A;margin-top:8px}
+.left-panel{background:#fff;border:2px solid #111;border-radius:14px;margin-top:16px;overflow:hidden;box-shadow:6px 6px 0 #111}
+.row{display:grid;grid-template-columns:32px 24px 1fr auto;gap:6px;align-items:start;padding:11px 14px;border-bottom:1px solid #E8E0CE;font-size:14px}
+.row:last-child{border-bottom:none}
+.row.feature{background:#FFF6E8;border-bottom:2px solid #111}
+.num{font-family:'JetBrains Mono',monospace;color:#9A958A;font-size:13px;padding-top:2px}
+.up{color:#FF6600;font-size:16px;line-height:1}
+.up.dim{color:#B8B2A3}
+.t{font-weight:700;line-height:1.25}
+.d{color:#8A8578;font-weight:400;font-size:12.5px}
+.meta{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:#6B665C;margin-top:3px}
+.meta b{color:#111}
+.badge{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;background:#111;color:#fff;border-radius:20px;padding:4px 8px;white-space:nowrap}
+.badge.o{background:#FF6600;color:#000;border:1px solid #000}
+/* HERO OBJECT */
+.hero-zone{position:relative;display:flex;justify-content:center;padding-top:6px}
+.diag{position:absolute;top:-20px;right:40px;width:220px;height:640px;background:#FF6600;border-left:3px solid #111;border-right:3px solid #111;transform:rotate(12deg);z-index:0}
+.diag2{position:absolute;top:-20px;right:110px;width:16px;height:640px;background:#111;transform:rotate(12deg);z-index:0}
+.browser{position:relative;z-index:2;width:460px;background:#fff;border:4px solid #111;border-radius:22px;box-shadow:14px 14px 0 #111;transform:rotate(2.5deg);overflow:hidden}
+.b-bar{background:#111;color:#fff;display:flex;align-items:center;gap:8px;padding:10px 14px;font-family:'JetBrains Mono',monospace;font-size:12px}
+.dots{display:flex;gap:6px}.dots i{width:11px;height:11px;border-radius:50%;display:block}
+.url-pill{background:#2A2A2A;border-radius:20px;padding:5px 12px;flex:1;text-align:center}
+.b-body{padding:20px 20px 18px}
+.kicker{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:1.5px;color:#FF6600;font-weight:700}
+.h-title{font-size:36px;line-height:.95;letter-spacing:-1.5px;font-weight:900;margin:8px 0 12px}
+.h-title u{text-decoration:none;border-bottom:8px solid #FF6600}
+.vote-row{display:flex;align-items:center;gap:12px;margin:10px 0}
+.big-up{width:68px;height:68px;background:#FF6600;border:3px solid #111;border-radius:16px;display:grid;place-items:center;font-size:28px;box-shadow:4px 4px 0 #111}
+.points{font-family:'JetBrains Mono',monospace;font-size:13px}
+.discuss{border:2px solid #111;border-radius:14px;padding:12px;background:#FFFBF0}
+.comment-bar{height:10px;background:#E8E0CE;border-radius:10px;margin-top:8px}
+.cta{margin-top:14px;background:#111;color:#fff;border-radius:12px;display:flex;align-items:center;justify-content:space-between;padding:12px 12px 12px 16px;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;letter-spacing:.5px}
+.cta b{background:#FF6600;color:#000;padding:10px 16px;border-radius:8px}
+.float{position:absolute;z-index:3;background:#fff;border:2px solid #111;border-radius:12px;box-shadow:4px 4px 0 #111;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;padding:8px 12px}
+.f1{top:6px;right:0;transform:rotate(2deg)}
+.f2{bottom:180px;left:-10px;transform:rotate(-4deg)}
+.value-under{text-align:center;margin-top:16px;position:relative;z-index:2;background:#111;color:#fff;display:inline-block;padding:8px 16px;border-radius:20px;font-family:'JetBrains Mono',monospace;font-size:12px}
+.footer{font-family:'JetBrains Mono',monospace;font-size:11px;color:#8A8578;padding:10px 32px}
+</style>
+</head>
+<body>
+<div class="topbar"><div class="logo"><span class="ybox">Y</span> Hacker News</div><nav><b>new</b> | past | comments | ask | show | jobs | submit</nav><span class="login">login</span></div>
+<div class="wrap">
+<div>
+<div class="eyebrow"><span class="dot"></span> LIVE — TOP 5 IN LAST 20H • FIRST SCREEN</div>
+<h1>Hacker <span>News.</span></h1>
+<p class="benefit">What hackers are reading right now. <em>Scan the top 5 in 30 seconds</em> — ranked by points, freshest debate first.</p>
+<p class="sub">No redesign of the signal — just faster scanning. Same links, same threads.</p>
+<div class="left-panel">
+<div class="row feature"><span class="num">1.</span><span class="up">▲</span><div><div class="t">Astra can read and write weights to improve Qwen <span class="d">(rikiyat.github.io)</span></div><div class="meta"><b>2604 points</b> by dbreunig 15 hours ago | hide | <b>791 comments</b></div></div><span class="badge o">▲ 2604 PTS</span></div>
+<div class="row"><span class="num">2.</span><span class="up dim">▲</span><div><div class="t">Nvidia – open-source auto-ontology <span class="d">(github.com/nvidia)</span></div><div class="meta">53 points by campervans 2 hours ago | hide | 5 comments</div></div></div>
+<div class="row"><span class="num">3.</span><span class="up dim">▲</span><div><div class="t">Show HN: Hacker Times, a New York Times-inspired version of Hacker News <span class="d">(hackertimes.ca)</span></div><div class="meta">257 points by polpenn 7 hours ago | hide | 79 comments</div></div></div>
+<div class="row"><span class="num">4.</span><span class="up dim">▲</span><div><div class="t">DiscImageStudio: burn visible artwork onto CDs, DVDs and Blu-ray discs <span class="d">(github.com/jiafeimiao-k-cat)</span></div><div class="meta">194 points by bpierre 8 hours ago | hide | 46 comments</div></div></div>
+<div class="row"><span class="num">5.</span><span class="up dim">▲</span><div><div class="t">Show HN: Subvocal – Talk to your computer without making noise</div><div class="meta"><b>688 points</b> by aarushyadav 16 hours ago | hide | <b>338 comments</b></div></div><span class="badge">338 💬</span></div>
+</div>
+</div>
+<div class="hero-zone">
+<div class="diag"></div><div class="diag2"></div>
+<div class="float f1">▲ +2604 🚀</div>
+<div class="float f2">◉ 791 comments 💬</div>
+<div>
+<div class="browser">
+<div class="b-bar"><span class="dots"><i style="background:#FF5F57"></i><i style="background:#FFBD2E"></i><i style="background:#28C840"></i></span><span class="url-pill">▲ news.ycombinator.com — #1 trending</span></div>
+<div class="b-body">
+<div class="kicker">▲ #1 • 2604 POINTS • 791 COMMENTS</div>
+<div class="h-title">Astra can read and write <u>weights</u> to improve Qwen</div>
+<div class="vote-row"><div class="big-up">▲</div><div class="points"><b style="font-size:18px">2,604 ↑</b> by dbreunig • 15h ago • rikiyat.github.io</div></div>
+<div class="discuss"><div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700">◉ DISCUSSION 791 &nbsp; <span style="background:#FF6600;border:1px solid #000;border-radius:12px;padding:2px 8px;">↗ GITHUB.IO</span> &nbsp; hide</div><div style="font-size:13px;font-weight:700;margin-top:8px">dbreunig + 791 comments →</div><div class="comment-bar" style="width:92%"></div><div class="comment-bar" style="width:68%"></div></div>
+<div class="cta"><span>▲ UPVOTE TO PUSH TO #1 ★</span><b>VOTE ▲</b></div>
+</div>
+</div>
+<div style="text-align:center"><span class="value-under">★ Most upvoted in 15h — join the 791-comment debate →</span></div>
+</div>
+</div>
+</div>
+<div class="footer">Y Hacker Times ↗ 257pts • Toit v2.0.0 • European RISC-V 105pts — scroll for past | comments | ask</div>
+</body>
+</html>

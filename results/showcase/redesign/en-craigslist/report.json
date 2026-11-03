@@ -1,0 +1,316 @@
+{
+ "source": "https://www.craigslist.org/about/sites",
+ "brief": "Redesign the first screen of https://www.craigslist.org/about/sites so it reads faster and feels more desirable, keeping brand and copy.",
+ "kind": "app",
+ "steps": [
+  {
+   "round": 0,
+   "png": "results/showcase/redesign/en-craigslist/r0.png",
+   "html": null,
+   "changes": [],
+   "ui_score": 0.47255634422784776,
+   "heads": {
+    "aesthetic": {
+     "score": 0.7161432504653931,
+     "percentile": 83.4450402144772,
+     "confidence": 0.43228650093078613,
+     "top": "▼ R_23d, ▲ L_31a"
+    },
+    "attention": {
+     "score": 0.505099892616272,
+     "percentile": 47.94520547945205,
+     "confidence": 0.010199785232543945,
+     "top": "▲ 움직임·형태 평균, ▲ 움직임·형태 최대"
+    }
+   },
+   "judge": {
+    "aesthetic": 0.222,
+    "clarity": 0.556,
+    "attention": 0.333,
+    "brief_fit": 0.111,
+    "judge_score": 0.306,
+    "reason": "It functions as a dense directory but shows no redesign polish, hierarchy, or desirability."
+   },
+   "brain_only": 0.657,
+   "critique": {
+    "kind": "app",
+    "ranking": [
+     [
+      "scene_place",
+      1.2631400135298438
+     ],
+     [
+      "value_vmpfc",
+      0.81898986044475
+     ],
+     [
+      "visual_early",
+      0.3186321197483913
+     ],
+     [
+      "control_dlpfc",
+      0.2952122915770309
+     ],
+     [
+      "attention_dorsal",
+      0.29052832594275874
+     ],
+     [
+      "face_body",
+      -0.20652308607058437
+     ],
+     [
+      "language",
+      -0.40021884141724745
+     ],
+     [
+      "default_mode",
+      -0.5900572133003924
+     ],
+     [
+      "visual_motion",
+      -1.7897034704545478
+     ]
+    ],
+    "hook": {
+     "attention_early": 0.41258695982408417,
+     "attention_late": 0.22949900900209613,
+     "visual_early": 1.0044197940838742,
+     "visual_late": -0.024261717419350196
+    },
+    "diagnosis": [
+     "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+     "Attention drops after the first 2 s (+0.41 → +0.23): nothing to look at after the first impression"
+    ],
+    "directives": [
+     "Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion.",
+     "Add a second discovery after the hero (a detail reveal, micro-illustration, or a strong secondary block) so interest holds past 2 s."
+    ],
+    "cited_areas": [
+     "▼ R mind-wandering (23d) [aesthetic]",
+     "▲ L 31a [aesthetic]",
+     "▲ object shape & motion (MT/LO) mean [attention]",
+     "▲ object shape & motion (MT/LO) max [attention]"
+    ],
+    "groups": [
+     "visual_motion",
+     ""
+    ],
+    "prompt_block": "BRAIN CRITIQUE (TRIBE v2 predicted human cortex while looking at the last render; values are relative within this image):\n- most driven regions: places & scenes (PPA/RSC) +1.26, reward & value (OFC/vmPFC) +0.82, early vision (V1–V4) +0.32; least: default mode (mind-wandering) -0.59, object shape & motion (MT/LO) -1.79\n- first-2s hook vs later: attention +0.41 → +0.23, visual drive +1.00 → -0.02\n- areas the aesthetic head cites: ▼ R mind-wandering (23d) [aesthetic]; ▲ L 31a [aesthetic]; ▲ object shape & motion (MT/LO) mean [attention]; ▲ object shape & motion (MT/LO) max [attention]\n- diagnosis: Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette / Attention drops after the first 2 s (+0.41 → +0.23): nothing to look at after the first impression\n- DO NEXT (highest priority first): (1) Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion. (2) Add a second discovery after the hero (a detail reveal, micro-illustration, or a strong secondary block) so interest holds past 2 s."
+   }
+  },
+  {
+   "round": 1,
+   "png": "results/showcase/redesign/en-craigslist/r1.png",
+   "html": "results/showcase/redesign/en-craigslist/r1.html",
+   "changes": [
+    {
+     "directive": "Add one dominant object silhouette or diagonal that implies motion",
+     "change": "Built large tilted browser-frame hero object containing stylized world map with glowing pins + giant 3D location pin silhouette on top + thick diagonal violet motion band behind it"
+    },
+    {
+     "directive": "Add a second discovery after the hero so interest holds past 2s",
+     "change": "Added contrasting bottom discovery strip: 4-column live US site list + dark secondary block with counts, micro-illustration and hover reveals"
+    }
+   ],
+   "based_on": 0,
+   "ui_score": 0.5936323395899221,
+   "heads": {
+    "aesthetic": {
+     "score": 0.7221932411193848,
+     "percentile": 84.58445040214477,
+     "confidence": 0.44438648223876953,
+     "top": "▼ L_a24, ▼ R_23d"
+    },
+    "attention": {
+     "score": 0.5324002504348755,
+     "percentile": 54.52054794520548,
+     "confidence": 0.06480050086975098,
+     "top": "▲ 움직임·형태 평균, ▲ 움직임·형태 최대"
+    }
+   },
+   "judge": {
+    "aesthetic": 0.556,
+    "clarity": 0.667,
+    "attention": 0.333,
+    "brief_fit": 0.556,
+    "judge_score": 0.528,
+    "reason": "Hero improves desirability but overlapping stripe, cartoon map, and competing CTAs hurt polish, focus, and fast scanning."
+   },
+   "brain_only": 0.696,
+   "critique": {
+    "kind": "app",
+    "ranking": [
+     [
+      "scene_place",
+      1.1885803293880646
+     ],
+     [
+      "value_vmpfc",
+      0.7427870230691257
+     ],
+     [
+      "attention_dorsal",
+      0.39637604289695844
+     ],
+     [
+      "control_dlpfc",
+      0.354858622052354
+     ],
+     [
+      "visual_early",
+      0.08499538656242595
+     ],
+     [
+      "face_body",
+      -0.10754165260442651
+     ],
+     [
+      "language",
+      -0.29255365924319454
+     ],
+     [
+      "default_mode",
+      -0.5413987004305416
+     ],
+     [
+      "visual_motion",
+      -1.8261033916907667
+     ]
+    ],
+    "hook": {
+     "attention_early": 0.5284533379588559,
+     "attention_late": 0.3303373953660097,
+     "visual_early": 0.8569599303917875,
+     "visual_late": -0.3009868853522548
+    },
+    "diagnosis": [
+     "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+     "Attention drops after the first 2 s (+0.53 → +0.33): nothing to look at after the first impression"
+    ],
+    "directives": [
+     "Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion.",
+     "Add a second discovery after the hero (a detail reveal, micro-illustration, or a strong secondary block) so interest holds past 2 s."
+    ],
+    "cited_areas": [
+     "▼ L affect, conflict (a24) [aesthetic]",
+     "▼ R mind-wandering (23d) [aesthetic]",
+     "▲ object shape & motion (MT/LO) mean [attention]",
+     "▲ object shape & motion (MT/LO) max [attention]"
+    ],
+    "groups": [
+     "visual_motion",
+     ""
+    ],
+    "prompt_block": "BRAIN CRITIQUE (TRIBE v2 predicted human cortex while looking at the last render; values are relative within this image):\n- most driven regions: places & scenes (PPA/RSC) +1.19, reward & value (OFC/vmPFC) +0.74, visual attention (IPS/FEF) +0.40; least: default mode (mind-wandering) -0.54, object shape & motion (MT/LO) -1.83\n- first-2s hook vs later: attention +0.53 → +0.33, visual drive +0.86 → -0.30\n- areas the aesthetic head cites: ▼ L affect, conflict (a24) [aesthetic]; ▼ R mind-wandering (23d) [aesthetic]; ▲ object shape & motion (MT/LO) mean [attention]; ▲ object shape & motion (MT/LO) max [attention]\n- diagnosis: Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette / Attention drops after the first 2 s (+0.53 → +0.33): nothing to look at after the first impression\n- DO NEXT (highest priority first): (1) Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion. (2) Add a second discovery after the hero (a detail reveal, micro-illustration, or a strong secondary block) so interest holds past 2 s."
+   }
+  },
+  {
+   "round": 2,
+   "png": "results/showcase/redesign/en-craigslist/r2.png",
+   "html": "results/showcase/redesign/en-craigslist/r2.html",
+   "changes": [
+    {
+     "directive": "Add one dominant object silhouette or diagonal that implies motion",
+     "change": "Added oversized browser device frame as hero object + giant 3D map-pin silhouette overlapping corner + full-width diagonal purple motion stripe behind headline"
+    },
+    {
+     "directive": "Add a second discovery after the hero so interest holds past 2s",
+     "change": "Added bottom discovery strip with scrolling city ticker, 3 stat cards, hover-glow city links and dark Every-neighborhood CTA panel with animated Enter button"
+    }
+   ],
+   "based_on": 1,
+   "ui_score": 0.5861030460459218,
+   "heads": {
+    "aesthetic": {
+     "score": 0.6975488066673279,
+     "percentile": 81.76943699731903,
+     "confidence": 0.39509761333465576,
+     "top": "▼ L_a24, ▼ R_23d"
+    },
+    "attention": {
+     "score": 0.5364525318145752,
+     "percentile": 55.342465753424655,
+     "confidence": 0.07290506362915039,
+     "top": "▲ 움직임·형태 평균, ▲ 움직임·형태 최대"
+    }
+   },
+   "judge": {
+    "aesthetic": 0.556,
+    "clarity": 0.667,
+    "attention": 0.333,
+    "brief_fit": 0.556,
+    "judge_score": 0.528,
+    "reason": "Lively modern system elevates desirability but abstract blob map, oversized pin, and dense pill and link lists fragment focus and slow instant comprehension."
+   },
+   "brain_only": 0.686,
+   "critique": {
+    "kind": "app",
+    "ranking": [
+     [
+      "scene_place",
+      1.1686885323965666
+     ],
+     [
+      "value_vmpfc",
+      0.7215529307120891
+     ],
+     [
+      "attention_dorsal",
+      0.4119575895573697
+     ],
+     [
+      "control_dlpfc",
+      0.35772001512205004
+     ],
+     [
+      "visual_early",
+      0.07822782532856058
+     ],
+     [
+      "face_body",
+      -0.10472667216857047
+     ],
+     [
+      "language",
+      -0.2892382292188685
+     ],
+     [
+      "default_mode",
+      -0.5500457043743531
+     ],
+     [
+      "visual_motion",
+      -1.7941362873548439
+     ]
+    ],
+    "hook": {
+     "attention_early": 0.557542657778491,
+     "attention_late": 0.339165055446809,
+     "visual_early": 0.8580551515397359,
+     "visual_late": -0.3116858377770271
+    },
+    "diagnosis": [
+     "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+     "Attention drops after the first 2 s (+0.56 → +0.34): nothing to look at after the first impression"
+    ],
+    "directives": [
+     "Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion.",
+     "Add a second discovery after the hero (a detail reveal, micro-illustration, or a strong secondary block) so interest holds past 2 s."
+    ],
+    "cited_areas": [
+     "▼ L affect, conflict (a24) [aesthetic]",
+     "▼ R mind-wandering (23d) [aesthetic]",
+     "▲ object shape & motion (MT/LO) mean [attention]",
+     "▲ object shape & motion (MT/LO) max [attention]"
+    ],
+    "groups": [
+     "visual_motion",
+     ""
+    ],
+    "prompt_block": "BRAIN CRITIQUE (TRIBE v2 predicted human cortex while looking at the last render; values are relative within this image):\n- most driven regions: places & scenes (PPA/RSC) +1.17, reward & value (OFC/vmPFC) +0.72, visual attention (IPS/FEF) +0.41; least: default mode (mind-wandering) -0.55, object shape & motion (MT/LO) -1.79\n- first-2s hook vs later: attention +0.56 → +0.34, visual drive +0.86 → -0.31\n- areas the aesthetic head cites: ▼ L affect, conflict (a24) [aesthetic]; ▼ R mind-wandering (23d) [aesthetic]; ▲ object shape & motion (MT/LO) mean [attention]; ▲ object shape & motion (MT/LO) max [attention]\n- diagnosis: Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette / Attention drops after the first 2 s (+0.56 → +0.34): nothing to look at after the first impression\n- DO NEXT (highest priority first): (1) Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion. (2) Add a second discovery after the hero (a detail reveal, micro-illustration, or a strong secondary block) so interest holds past 2 s."
+   }
+  }
+ ],
+ "best_round": 1
+}
