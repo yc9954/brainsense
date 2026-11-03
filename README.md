@@ -72,8 +72,8 @@ Same brief, same Muse Spark, same budget. Only the feedback differs: the left co
 </tr>
 <tr><td colspan="2" align="center"><sub>Not only pages: a parametric Blender room, re-rendered each round from the cortex critique, 0.257 → 0.470 in six rounds (<a href="results/showcase/interior/room3/timelapse.gif">timelapse</a>).</sub></td></tr>
 <tr>
-<td><img src="results/showcase/studio/living2/r0.png" alt="Photoreal studio, round 0: an empty room"></td>
-<td><img src="results/showcase/studio/living2/best_hero.png" alt="Photoreal studio, best round: furnished living room chosen by the brain score"></td>
+<td><img src="results/showcase/studio/living5/r0.png" alt="Photoreal studio, round 0: an empty room"></td>
+<td><img src="results/showcase/studio/living5/best_hero.png" alt="Photoreal studio, best round: furnished living room chosen by the brain score"></td>
 </tr>
 <tr><td colspan="2" align="center"><sub>The same loop with a photoreal Blender studio (Poly Haven assets): the agent places furniture, textures and light from a JSON spec, renders, reads the cortex, and keeps the round the brain liked most.</sub></td></tr>
 </table>
