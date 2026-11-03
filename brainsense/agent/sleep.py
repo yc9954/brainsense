@@ -32,6 +32,37 @@ GROUP_KO = {"visual_early": "기본 시각", "visual_motion": "움직임·형태
             "control_dlpfc": "집중·통제"}
 
 
+def _label(area: str, group_ko: str) -> str:
+    """Plain-words label for an HCP-MMP1 area code; the showcase's area_label knows the long tail."""
+    if group_ko:
+        return group_ko
+    try:
+        from ..showcase.skills import area_label
+        return area_label(area.split("_", 1)[-1])
+    except Exception:
+        return area
+
+
+def _loo_auroc(personal: PersonalHead, X: np.ndarray, y: np.ndarray) -> float | None:
+    """Leave-one-out AUROC of the personal head (small n: the temporal holdout is too small to rank)."""
+    if len(y) < 6 or len(set(y.tolist())) < 2 or len(y) > 60:
+        return None
+    from sklearn.linear_model import LogisticRegression
+    Z = personal._embed(X)
+    crowd_p = personal.crowd.predict(X)
+    preds = np.zeros(len(y))
+    for i in range(len(y)):
+        m = np.arange(len(y)) != i
+        Xa = np.vstack([Z[m], Z[m], Z[m]]); ya = np.concatenate([y[m], np.ones(m.sum()), np.zeros(m.sum())])
+        w = np.concatenate([np.ones(m.sum()), personal.prior_strength / m.sum() * crowd_p[m], personal.prior_strength / m.sum() * (1 - crowd_p[m])])
+        try:
+            clf = LogisticRegression(C=0.5, max_iter=2000).fit(Xa, (ya >= 0.5).astype(int), sample_weight=w)
+            preds[i] = clf.predict_proba(Z[i:i + 1])[0, 1]
+        except Exception:
+            preds[i] = crowd_p[i]
+    return _auroc(y, preds)
+
+
 def _area_names(personal: PersonalHead) -> list[str]:
     names = personal.crowd.cfg.feature_names or [f"area{i}" for i in range(360)]
     return [str(n).replace("__mean", "") for n in names[:360]]
@@ -78,7 +109,7 @@ def phrase_rules(rules: list[dict[str, Any]], owner: str) -> list[str]:
     template = []
     for r in rules:
         side = "더 켜질 때" if r["direction"] == "higher" else "더 조용할 때"
-        template.append(f"{r['group_ko']} 영역({r['area']})이 {side} 네가 좋아할 확률이 높다 "
+        template.append(f"{_label(r['area'], r['group_ko'])} 영역({r['area']})이 {side} 네가 좋아할 확률이 높다 "
                         f"(효과 크기 d={r['d']}, 좋아 {r['n_liked']}개 vs 별로 {r['n_disliked']}개).")
     if os.environ.get("BRAINSENSE_LLM_MOCK") == "1" or not os.environ.get("BRAINSENSE_LLM_API_KEY"):
         return template
@@ -113,7 +144,6 @@ def sleep(store: EngramStore, personal: PersonalHead | None, *, owner: str = "lo
         return report
 
     # 1. surprise = |current prediction − outcome| (before refit), stored on the engram
-    before = personal(X[0]) if False else None  # placeholder to keep structure explicit
     p_before = np.array([
         (personal(x)["personal"] or {}).get("score", float(personal.crowd.predict(x[None])[0])) for x in X
     ])
@@ -137,6 +167,7 @@ def sleep(store: EngramStore, personal: PersonalHead | None, *, owner: str = "lo
     personal._refit()
     p_after = np.array([(personal(x)["personal"] or {}).get("score", 0.5) for x in X]) if personal.model is not None else p_before
     auroc_after = _auroc(y[hold], p_after[hold])
+    loo = _loo_auroc(personal, X, y)
 
     # 3. rules
     names = _area_names(personal)
@@ -160,7 +191,8 @@ def sleep(store: EngramStore, personal: PersonalHead | None, *, owner: str = "lo
     active = store.rules(owner)
     md = [f"# USER_TASTE — {owner}", "", f"_consolidated {time.strftime('%Y-%m-%d %H:%M')} · {len(ids)} labeled brain states · "
           f"personal head AUROC {auroc_before if auroc_before is None else round(auroc_before, 3)} → "
-          f"{auroc_after if auroc_after is None else round(auroc_after, 3)} on the newest {n_hold}_", ""]
+          f"{auroc_after if auroc_after is None else round(auroc_after, 3)} on the newest {n_hold}; leave-one-out "
+          f"{loo if loo is None else round(loo, 3)} vs crowd {_auroc(y, personal.crowd.predict(X)) if len(y) else None}_", ""]
     for r in active:
         md.append(f"- {r['text']}  _(confidence {r['confidence']})_")
     retired = [r for r in store.rules(owner, include_retired=True) if r["retired_at"]]
@@ -168,7 +200,8 @@ def sleep(store: EngramStore, personal: PersonalHead | None, *, owner: str = "lo
         md += ["", "## retired", ""] + [f"- ~~{r['text']}~~" for r in retired[-10:]]
     (out_dir / "USER_TASTE.md").write_text("\n".join(md) + "\n")
 
-    report.update({"auroc_before": auroc_before, "auroc_after": auroc_after, "holdout": int(n_hold),
+    report.update({"auroc_before": auroc_before, "auroc_after": auroc_after, "holdout": int(n_hold), "loo_auroc": loo,
+                   "crowd_loo_auroc": _auroc(y, personal.crowd.predict(X)),
                    "high_surprise": int((surprise > 0.5).sum()), "rules_new": new_rules,
                    "rules_active": [r["text"] for r in active], "seconds": round(time.time() - t0, 2)})
     store.log_consolidation(owner, report["n_engrams"], len(ids), auroc_before, auroc_after, report)

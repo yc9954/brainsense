@@ -66,7 +66,10 @@ class FeatureCache:
 
 def build_registry(heads_dir: Path, cache: FeatureCache, personal_store: Path) -> ToolRegistry:
     heads = {n: Head.load(heads_dir / n) for n in CROWD_HEADS if (heads_dir / n).exists()}
-    personal = PersonalHead(heads["appeal"], personal_store) if "appeal" in heads else None
+    # The personal organ grows on the strongest area head (aesthetic, 360 areas → PCA-54), the same
+    # space the engram store indexes; appeal (54-d groups) is the fallback for old workspaces.
+    prior = heads.get("aesthetic") if heads.get("aesthetic") and heads["aesthetic"].cfg.pca_dim else heads.get("appeal")
+    personal = PersonalHead(prior, personal_store) if prior is not None else None
     reg = ToolRegistry()
 
     def features_for(head: Head, item_id: str) -> np.ndarray:

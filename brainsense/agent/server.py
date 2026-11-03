@@ -22,6 +22,7 @@ from pydantic import BaseModel
 
 from .loop import Agent
 from .engram import EngramStore
+from .home import Home
 from .service import HEADS_BY_KIND, FeatureCache, build_registry
 
 load_dotenv()  # .env in the project root (never committed)
@@ -134,6 +135,46 @@ def _migrate_engrams() -> int:
 
 
 _migrated = _migrate_engrams()
+HOME = Home()   # SOUL.md / MEMORY.md / USER.md / skills — the inspectable half of the agent
+
+
+def _after_sleep(report: dict[str, Any], owner: str) -> None:
+    """Mirror the mined rules into USER.md's taste section (the prompt reads it from there)."""
+    rules_ = ENGRAMS.rules(owner)
+    line = ""
+    if report.get("loo_auroc") is not None or report.get("auroc_after") is not None:
+        line = (f"_{report.get('n_labeled', 0)} labeled brain states · personal head leave-one-out AUROC "
+                f"{report.get('loo_auroc')} vs crowd {report.get('crowd_loo_auroc')}_")
+    HOME.set_taste_section(rules_, line)
+
+
+class _AutoSleep:
+    """Hermes-style cron, minimal: consolidate after every N new outcomes, checked in the background."""
+    EVERY = int(os.environ.get("BRAINSENSE_SLEEP_EVERY", "10"))
+
+    def __init__(self) -> None:
+        import threading
+        self.lock = threading.Lock()
+        threading.Thread(target=self._loop, daemon=True).start()
+
+    def _loop(self) -> None:
+        import time as _t
+        while True:
+            _t.sleep(120)
+            try:
+                pending = ENGRAMS.db.execute("SELECT COUNT(*) FROM outcomes WHERE consolidated=0").fetchone()[0]
+                if pending >= self.EVERY and self.lock.acquire(blocking=False):
+                    try:
+                        from .sleep import sleep as _sleep
+                        rep = _sleep(ENGRAMS, getattr(registry, "_personal", None))
+                        _after_sleep(rep, "local-user")
+                    finally:
+                        self.lock.release()
+            except Exception as e:  # never kill the server from a cron
+                print(f"[auto-sleep] {type(e).__name__}: {e}")
+
+
+_AUTO_SLEEP = _AutoSleep()
 
 
 class AnalyzeIn(BaseModel):
@@ -280,7 +321,69 @@ def sleep_now(owner: str = "local-user") -> dict[str, Any]:
     """L3 consolidation: surprise-weighted personal refit, rule mining, USER_TASTE.md, AUROC report."""
     from .sleep import sleep as _sleep
     personal = getattr(registry, "_personal", None)
-    return _sleep(ENGRAMS, personal, owner=owner)
+    rep = _sleep(ENGRAMS, personal, owner=owner)
+    _after_sleep(rep, owner)
+    return rep
+
+
+@app.get("/prompt")
+def prompt() -> dict[str, Any]:
+    """The top of the voice's system prompt: SOUL + memory + user + taste + skills index (cached 60 s)."""
+    return HOME.prompt({"memory_counts": ENGRAMS.count()})
+
+
+class MemoryIn(BaseModel):
+    action: str                 # add | replace | remove
+    target: str = "memory"      # memory | user
+    content: str | None = None
+    old_text: str | None = None
+
+
+@app.post("/memory")
+def memory_write(inp: MemoryIn) -> dict[str, Any]:
+    return HOME.memory(inp.action, inp.target, inp.content, inp.old_text)
+
+
+@app.get("/skills")
+def skills_list() -> dict[str, Any]:
+    return {"skills": HOME.skills_index()}
+
+
+@app.get("/skills/{name}")
+def skill_view(name: str) -> dict[str, Any]:
+    return HOME.skill_view(name)
+
+
+class SkillIn(BaseModel):
+    action: str                 # create | patch | archive
+    name: str
+    content: str | None = None
+    category: str = "learned"
+    old_text: str | None = None
+
+
+@app.post("/skills/manage")
+def skill_manage(inp: SkillIn) -> dict[str, Any]:
+    return HOME.skill_manage(inp.action, inp.name, inp.content, inp.category, inp.old_text)
+
+
+@app.post("/memory/reset")
+def memory_reset(owner: str = "local-user", keep_engrams: bool = True) -> dict[str, Any]:
+    """Start a taste from zero: drop outcomes, rules, consolidations and the personal head (engrams stay)."""
+    ENGRAMS.db.execute("DELETE FROM outcomes"); ENGRAMS.db.execute("DELETE FROM rules WHERE owner=?", (owner,))
+    ENGRAMS.db.execute("DELETE FROM consolidations WHERE owner=?", (owner,)); ENGRAMS.db.execute("UPDATE engrams SET surprise=0")
+    if not keep_engrams:
+        ENGRAMS.db.execute("DELETE FROM engrams WHERE owner=?", (owner,))
+    ENGRAMS.db.commit()
+    personal = getattr(registry, "_personal", None)
+    if personal is not None:
+        personal.X, personal.y, personal.ids, personal.model = [], [], [], None
+        if personal.store_path.exists():
+            personal.store_path.unlink()
+    f = Path("state/rules") / owner / "USER_TASTE.md"
+    if f.exists():
+        f.unlink()
+    return {"ok": True, **ENGRAMS.count()}
 
 
 @app.get("/rules")

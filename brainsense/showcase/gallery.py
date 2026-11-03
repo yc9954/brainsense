@@ -77,6 +77,32 @@ a{color:#ffb38a} .k{color:#8b8b96}</style></head><body><h1>BrainSense showcase �
                              f"<td>{v['baseline_ui']:.3f} → <b>{v['best_ui']:.3f}</b> ({v['best_ui'] - v['baseline_ui']:+.3f})</td><td>r{v['best_round']}</td>"
                              f"<td>{v['issues_fixed']}/{v['issues']}</td><td>{v['photos']}</td></tr>")
         parts.append("</table>")
+    extra = []
+    inter = out_dir / "interior"
+    for c in (sorted((p for p in inter.iterdir() if (p / "report.json").exists()), key=lambda p: p.stat().st_mtime, reverse=True) if inter.exists() else []):
+        r = json.loads((c / "report.json").read_text(encoding="utf-8"))
+        h0, hb = r["history"][0], r["best"]
+        extra.append(f"<tr><td><a href='interior/{c.name}/index.html'>Blender interior · {html.escape(c.name)}</a></td><td>{h0['ui_score']:.3f} → <b>{hb['ui_score']:.3f}</b> ({hb['ui_score'] - h0['ui_score']:+.3f})</td>"
+                     f"<td>{h0['brain_only']:.3f} → {hb['brain_only']:.3f}</td><td>{(h0['judge'] or 0):.2f} → {hb['judge'].get('judge_score', 0):.2f}</td><td class=k>best r{r['best_round']} of {len(r['history']) - 1}</td></tr>")
+    shop = out_dir / "shop"
+    for c in (sorted((p for p in shop.iterdir() if (p / "items.json").exists()), key=lambda p: p.stat().st_mtime, reverse=True) if shop.exists() else []):
+        items = [i for i in json.loads((c / "items.json").read_text(encoding="utf-8")) if i.get("heads")]
+        top = max(items, key=lambda i: -i["heads"].get("appeal", {}).get("percentile", 50)) if items else None
+        verdicts = {}
+        for i in items:
+            verdicts[i.get("rational", {}).get("verdict", "?")] = verdicts.get(i.get("rational", {}).get("verdict", "?"), 0) + 1
+        extra.append(f"<tr><td><a href='shop/{c.name}/index.html'>Brain-curated shop · {html.escape(c.name)}</a></td><td>{len(items)} products</td>"
+                     f"<td>crowd #1: {html.escape((top or {}).get('name', '')[:40])}</td><td>{html.escape(str(verdicts))}</td><td class=k>👍/👎 trains the personal head live</td></tr>")
+    if extra:
+        parts.append("<h1 style='margin-top:36px'>Beyond web pages — a brain steering Blender, and curating a real shop</h1><table><tr><th>case</th><th>ui_score</th><th>brain</th><th>judge</th><th></th></tr>" + "".join(extra) + "</table>")
+    bench = out_dir / "bench"
+    brows = []
+    for c in (sorted(p for p in bench.iterdir() if (p / "numbers.json").exists()) if bench.exists() else []):
+        nums = json.loads((c / "numbers.json").read_text(encoding="utf-8"))
+        cells = " · ".join(f"{html.escape(k)} {v['auroc']:.3f}" for k, v in nums.items())
+        brows.append(f"<tr><td><a href='bench/{c.name}/index.html'>{html.escape(c.name)}</a></td><td class=k>{cells}</td></tr>")
+    if brows:
+        parts.append("<h1 style='margin-top:36px'>Benchmarks — does the predicted cortex know what people like? (5-fold out-of-fold AUROC)</h1><table><tr><th>dataset</th><th>features → AUROC</th></tr>" + "".join(brows) + "</table>")
     rd = out_dir / "redesign"
     cases = sorted((p for p in rd.iterdir() if (p / "report.json").exists()), key=lambda p: p.stat().st_mtime, reverse=True) if rd.exists() else []
     if cases:

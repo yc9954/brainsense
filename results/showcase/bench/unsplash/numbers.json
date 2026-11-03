@@ -1,0 +1,14 @@
+{
+ "brain (TRIBE 9 groups \u00d7 6 stats, 54-d)": {
+  "auroc": 0.564,
+  "spearman_vs_log_downloads_per_view": 0.12
+ },
+ "raw vision embedding (1408-d \u2192 PCA-54)": {
+  "auroc": 0.566,
+  "spearman_vs_log_downloads_per_view": 0.136
+ },
+ "raw vision embedding (1408-d)": {
+  "auroc": 0.568,
+  "spearman_vs_log_downloads_per_view": 0.128
+ }
+}

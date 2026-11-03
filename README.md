@@ -169,6 +169,8 @@ Four of five briefs improve, the fifth keeps Muse's first draft instead of being
 
 Honest note: the photo-trained brain heads rate the dense Hacker News original "top 20 % aesthetic" and the redesign lower, while the judge goes the other way — the brain's *diagnosis* (which regions are silent) transfers to screenshots much better than its *score* does, which is why ui_score blends the two and why every page shows both numbers.
 
+**Benchmark pages (`brainsense/showcase/bench.py`, `results/showcase/bench/{aadb,unsplash}/index.html`):** 5-fold out-of-fold AUROC, 3 seeds, with the photos the brain ranks highest/lowest next to what people actually did. AADB (2,500 human-rated photos): brain 9-group pooling 0.673 → brain 360 areas → PCA-54 0.715; raw vision embedding 0.703 (1,408-d) / 0.744 (PCA-54). Unsplash Lite popularity (1,500 photos, log downloads/views): ≈ 0.56 for every feature set — popularity is mostly placement noise. Reading: the cortex features land in the same league as the raw embedding; what they add is that every call names the brain areas behind it.
+
 ## OpenMuse integration (2026-11-03): the agent's own brain
 BrainSense is wired into OpenMuse's own agent loop, not a side tab:
 - **Server tool `brain_eval`** (`apps/server/src/engine/conversation.ts`): takes `artifact_id` of a photo/clip attached in chat (OpenMuse's file store now accepts images and video, sniffed by magic bytes) or `brain_item_id` from agent context; calls this server's `/analyze` + `/eval`; returns heads, percentiles, confidence, top cortical areas, the 1 Hz region series, the per-vertex cortex time series and a Korean summary. Muse Spark calls it on its own when the user asks "이거 어때?" / attaches an image.

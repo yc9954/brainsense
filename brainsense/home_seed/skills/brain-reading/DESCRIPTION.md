@@ -1,0 +1,1 @@
+Skills for reading a predicted cortex pattern (TRIBE v2 → nine region groups + calibrated heads) and turning it into a concrete creative directive. Load the one that matches the diagnosis; each ends with what counts as done.
