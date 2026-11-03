@@ -1,0 +1,130 @@
+[
+ {
+  "idx": 0,
+  "run": "en-suite1",
+  "brief_key": "skincare_ad",
+  "champ": "brain_loop",
+  "other": "muse_loop",
+  "champ_wins": false
+ },
+ {
+  "idx": 1,
+  "run": "en-ad-suite1",
+  "brief_key": "fintech_ad",
+  "champ": "brain_loop",
+  "other": "oneshot",
+  "champ_wins": true
+ },
+ {
+  "idx": 2,
+  "run": "en-suite1",
+  "brief_key": "festival_poster",
+  "champ": "brain_loop",
+  "other": "muse_loop",
+  "champ_wins": false
+ },
+ {
+  "idx": 3,
+  "run": "en-suite1",
+  "brief_key": "fintech_onboarding",
+  "champ": "brain_loop",
+  "other": "muse_loop",
+  "champ_wins": true
+ },
+ {
+  "idx": 4,
+  "run": "en-ad-suite1",
+  "brief_key": "popup_ad",
+  "champ": "brain_loop",
+  "other": "muse_loop",
+  "champ_wins": true
+ },
+ {
+  "idx": 5,
+  "run": "en-ad-suite1",
+  "brief_key": "serum",
+  "champ": "brain_loop",
+  "other": "muse_loop",
+  "champ_wins": true
+ },
+ {
+  "idx": 6,
+  "run": "en-suite1",
+  "brief_key": "saas_pricing",
+  "champ": "brain_loop",
+  "other": "oneshot",
+  "champ_wins": true
+ },
+ {
+  "idx": 7,
+  "run": "en-suite1",
+  "brief_key": "saas_pricing",
+  "champ": "brain_loop",
+  "other": "muse_loop",
+  "champ_wins": true
+ },
+ {
+  "idx": 8,
+  "run": "en-ad-suite1",
+  "brief_key": "popup_ad",
+  "champ": "brain_loop",
+  "other": "oneshot",
+  "champ_wins": false
+ },
+ {
+  "idx": 9,
+  "run": "en-suite1",
+  "brief_key": "fintech_onboarding",
+  "champ": "brain_loop",
+  "other": "oneshot",
+  "champ_wins": true
+ },
+ {
+  "idx": 10,
+  "run": "en-suite1",
+  "brief_key": "popup",
+  "champ": "brain_loop",
+  "other": "muse_loop",
+  "champ_wins": true
+ },
+ {
+  "idx": 11,
+  "run": "en-suite1",
+  "brief_key": "popup",
+  "champ": "brain_loop",
+  "other": "oneshot",
+  "champ_wins": true
+ },
+ {
+  "idx": 12,
+  "run": "en-ad-suite1",
+  "brief_key": "fintech_ad",
+  "champ": "brain_loop",
+  "other": "muse_loop",
+  "champ_wins": true
+ },
+ {
+  "idx": 13,
+  "run": "en-suite1",
+  "brief_key": "festival_poster",
+  "champ": "brain_loop",
+  "other": "oneshot",
+  "champ_wins": false
+ },
+ {
+  "idx": 14,
+  "run": "en-suite1",
+  "brief_key": "skincare_ad",
+  "champ": "brain_loop",
+  "other": "oneshot",
+  "champ_wins": true
+ },
+ {
+  "idx": 15,
+  "run": "en-ad-suite1",
+  "brief_key": "serum",
+  "champ": "brain_loop",
+  "other": "oneshot",
+  "champ_wins": false
+ }
+]
