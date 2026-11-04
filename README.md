@@ -94,8 +94,8 @@ Real sites first. The agent keeps brand, copy and information architecture, read
 <td><img src="results/showcase/studio/living5/r0.png" alt="Photoreal studio, first pass: an empty room"></td>
 <td><img src="results/showcase/studio/living5/best_hero.png" alt="Photoreal studio, round chosen by the brain score"></td>
 </tr>
-<tr><td colspan="2"><img src="docs/img/trail-living5.png" alt="Decision trail: six columns from the empty first plan to the kept round; each shows what the agent changed in Blender, the render, what the predicted cortex read in it, and the brain and judge scores" width="100%"></td></tr>
-<tr><td colspan="2" align="center"><sub>3D, with the decision trail. The agent models the room in Blender (Poly Haven props, Cycles), the cortex reads each render ("reward circuit on but what is good isn't legible", "no object silhouette"), and the agent answers with a concrete change: a sofa-table-rug hero, real sun through the window, an armchair turned to face the hero. Brain score 0.32 → 0.49 over eight rounds (<a href="results/showcase/studio/living5/timelapse.gif">timelapse</a>).</sub></td></tr>
+<tr><td colspan="2"><img src="docs/img/trail-living5.png" alt="Decision trail, narrated by the brain: six columns from the empty first plan to the kept round; each shows what the agent changed in Blender, the render, what the brain felt looking at it, and the brain and judge scores" width="100%"></td></tr>
+<tr><td colspan="2" align="center"><sub>3D, with the brain narrating. The agent models the room in Blender (Poly Haven props, Cycles); after each render the brain says what it felt ("a warm little buzz but I cannot tell what earns it", "my wallet stayed fast asleep"), and the agent answers with a concrete change. Brain score 0.32 → 0.49 over eight rounds (<a href="results/showcase/studio/living5/timelapse.gif">timelapse</a>).</sub></td></tr>
 <tr>
 <td><img src="results/showcase/en-suite1/skincare_ad/oneshot_r1v1.png" alt="Skincare ad page, Muse one shot"></td>
 <td><img src="results/showcase/en-suite1/skincare_ad/brain_loop_r3v1.png" alt="Skincare ad page, brain loop round 3"></td>
@@ -118,6 +118,19 @@ Writing, all five tasks (chatbot draft → Muse asked once to "make it human" �
 Two of five by the judge when the loop chases the head alone; with Muse's own review as a gate it is two wins, one tie, one loss. A text can score "human" by sounding hesitant, so in the product the brain is the critic and never the only judge. On fresh page briefs where Muse writes both sides, the one-shot is already strong: the loop wins 3 of 5 pages (+1 tie) and 3 of 3 clips by the judge, and loses to Muse's own self-critique loop by Muse's own judge. Every number, including the losses, is in [docs/SHOWCASE.md](docs/SHOWCASE.md).
 
 
+
+## What the brain said, step by step
+
+Every loop in this repo keeps a decision trail, and the brain narrates it in its own words. Read one left to right: what the brain said about the page, what the agent did about it, the result, what the brain felt when it looked again, and the two scores. The red column is the one that was kept. The narration is Muse rewriting the cortex critique in plain words; the numbers underneath are the model outputs as they are.
+
+| | the page as it is | what the brain said | what the agent did | the kept result | brain | judge |
+|---|---|---|---|---|---|---|
+| Blender room (`results/showcase/studio/living5`) | an empty room, first plan | "I read lots of words but found nothing to hold" | modelled a sofa, table and rug, real sun through the window, a chair turned to face the hero | round 7 | 0.32 → **0.49** | 0.13 → **0.40** |
+| 12-second pop-up ad (`results/showcase/en-ad-suite1/popup_ad`) | Muse's one-shot clip: attention peaks in the first second and fades | "the hook is too slow; nothing holds me after two seconds" | rebuilt the clip as a vertical story with one focal point per beat and a late call to action | round 2 | attention builds through 12 s | **P = 0.92** |
+| Hacker News (`results/showcase/evolve/hackernews`) | the live front page | "my object and motion sense stayed quiet: a text-first screen with nothing to grab" | tried a 3D monitor hero, then a typographic hero for story #1, then a real photo | the live page | 0.61 vs 0.50 to 0.54 | live page kept |
+| craigslist sites (`results/showcase/evolve/craigslist`) | the live directory with its world map | "the scene region is quiet, the reader cannot picture where this is" | kept the real map, restyled the frame around it, set a brutalist type block | rejected: the gate found invented numbers in every round | 0.45 → 0.54 (not accepted) | not accepted |
+
+The last two rows are the point of the gates: a round that scores higher on the brain but adds a "700+ sites" badge the live page never had, or that a blind judge prefers less than the original, is not a win and is not shown as one. The trails for every run are rendered by `brainsense/showcase/trail.py` from each `report.json`.
 
 ## Use cases
 

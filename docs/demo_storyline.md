@@ -18,6 +18,9 @@ VO: "Every assistant will tell you your photo looks great. None of them looked, 
 
 VO lines, one per contrast: "It looks first, then speaks." · "What judges can also build." · "It learns your taste as rules you can read." · "Photos, clips, copy, sound: one brain." · "On your face, not in a text box."
 
+## Narration rule for every contrast
+Whenever a loop runs on screen, the brain narrates it in its own words, over the time-lapse: "I read lots of words but found nothing to hold" → the agent models a sofa → "a warm little buzz but I cannot tell what earns it" → the agent brings real sun through the window → "now my wallet woke up". The decision-trail strip (`brainsense/showcase/trail.py`) is the on-screen graphic for this; the voice reads the "brain said" lines.
+
 ## 1:40–2:05 Why this is new (the architecture, three cards, 8 s each, over `docs/architecture.svg`)
 Show the architecture figure and sweep left to right: Meta's open models (V-JEPA2, DINOv2, Llama 3.2, wav2vec-BERT → TRIBE v2 → predicted cortex) in grey, then the red part we built: calibrated heads with confidence, Engram memory, the Muse Spark agent that only ever sees head outputs, and the dashed loop where renders go back in as input.
 1. **Grounded, not improvised.** The opinion is a measurement: a predicted human cortex, heads calibrated on real ratings, confidence included. Low confidence is said out loud.

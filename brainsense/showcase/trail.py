@@ -18,7 +18,7 @@ from pathlib import Path
 TOOL_WORDS = {
     "blender_render": "Modelled it in 3D", "render": "Modelled it in 3D", "typography": "Reset the type", "reflow": "Moved things around",
     "photo": "Found a real photo", "restyle_asset": "Kept the real one, restyled it", "keep_asset": "Kept the real one",
-    "copy": "Re-flowed the words", "rebuild": "Rebuilt the page", "live page": "The page as it is", "first plan": "The first plan",
+    "copy": "Re-flowed the words", "rebuild": "Rebuilt the page", "rerender": "Re-modelled the room", "live page": "The page as it is", "first plan": "The first plan",
 }
 
 
@@ -133,7 +133,7 @@ def _rounds(rep: dict, root: Path) -> list[dict]:
         jscore = judge.get("judge_score") if isinstance(judge, dict) else judge
         out.append({
             "round": s.get("round", i),
-            "tool": s.get("tool") or s.get("action") or (("live page" if rep.get("source") else "first plan") if i == 0 else "rebuild"),
+            "tool": s.get("tool") or s.get("action") or (("live page" if rep.get("source") else "first plan") if i == 0 else ("rebuild" if rep.get("source") else "rerender")),
             "why": s.get("why") or s.get("reason") or "",
             "critique": s.get("critique_line") or s.get("critique") or "",   # what the cortex said BEFORE this round (v2 trail)
             "read": (s.get("diagnosis", [""])[0] if isinstance(s.get("diagnosis"), list) else s.get("diagnosis") or ""),   # what it says about this round's result
