@@ -50,6 +50,12 @@ BRIEFS: dict[str, dict] = {
 DRAFT_SYSTEM = "You are a helpful assistant."
 REWRITE_SYSTEM = ("You are an experienced writer. Rewrite the given text so that a real person seems to have written it, "
                   "for the stated reader. Keep every fact. Output ONLY the rewritten text, no preamble, no quotes, no title.")
+REVIEW_PROMPT = """You are a strict editor. Rate this text, written for the reader below, on how much it reads like a real person wrote it AND how well it would land with that reader (clear, specific, right tone, not generic, not forced).
+Reader: {reader}
+Task: {task}
+Text:
+{text}
+Reply ONLY with JSON: {{"score": 0.0-1.0, "reason": "one sentence"}}"""
 JUDGE_PROMPT = """Two versions of the same piece were written for this reader: {reader}.
 Task: {task}
 Which version reads more like a real person wrote it AND would land better with that reader (clear, specific, not generic, right tone)?
@@ -124,6 +130,19 @@ def judge_pair(a: str, b: str, cfg: dict) -> dict:
     return {"p_first": round((p1 + (1 - p2)) / 2, 3), "order_ab": round(p1, 3), "order_ba": round(1 - p2, 3), "reason": f"{r1} | swapped: {r2}"}
 
 
+def review(text: str, cfg: dict) -> dict:
+    """Muse's own single-text review (0-1), used only for selection in --select blend, never as the verdict."""
+    r = _client().chat.completions.create(model=MODEL, temperature=0, max_tokens=2000,
+                                          messages=[{"role": "user", "content": REVIEW_PROMPT.format(reader=cfg["reader"], task=cfg["task"], text=text)}])
+    t = r.choices[0].message.content or ""
+    m = re.search(r"\{.*\}", t, re.S)
+    try:
+        d = json.loads(m.group(0)) if m else {}
+    except json.JSONDecodeError:
+        d = {}
+    return {"score": max(0.0, min(1.0, float(d.get("score", 0.5)))), "reason": str(d.get("reason", t[:200]))}
+
+
 def speak_and_hear(text: str, out: Path, item_id: str, voice: str = "Samantha") -> dict | None:
     """Read the text aloud with the system voice, send the audio through TRIBE's audio pathway."""
     aiff, wav = out.with_suffix(".aiff"), out.with_suffix(".wav")
@@ -149,14 +168,14 @@ def speak_and_hear(text: str, out: Path, item_id: str, voice: str = "Samantha") 
         return None
 
 
-def run_brief(key: str, cfg: dict, out: Path, rounds: int, variants: int, stamp: str) -> dict:
+def run_brief(key: str, cfg: dict, out: Path, rounds: int, variants: int, stamp: str, select: str = "head") -> dict:
     out.mkdir(parents=True, exist_ok=True)
     task = f"Write {cfg['task']}. Reader: {cfg['reader']}."
     t0 = time.time()
     source = _chat(DRAFT_SYSTEM, task, temperature=0.7)
     rewrite_user = f"Reader: {cfg['reader']}\nTask it was written for: {cfg['task']}\n\nText:\n{source}"
     oneshot = _chat(REWRITE_SYSTEM, rewrite_user)
-    rec: dict = {"key": key, "cfg": cfg, "source": {"text": source}, "oneshot": {"text": oneshot}, "brain_loop": {"history": []}}
+    rec: dict = {"key": key, "cfg": cfg, "select": select, "source": {"text": source}, "oneshot": {"text": oneshot}, "brain_loop": {"history": []}}
     rec["source"] |= brain_read(source, f"tx_{stamp}_{key}_source")
     rec["oneshot"] |= brain_read(oneshot, f"tx_{stamp}_{key}_oneshot")
     history: list[dict] = []
@@ -168,6 +187,10 @@ def run_brief(key: str, cfg: dict, out: Path, rounds: int, variants: int, stamp:
             text = _chat(REWRITE_SYSTEM, user)
             h = {"tag": tag, "round": r, "variant": v, "text": text, "critique_in": critique}
             h |= brain_read(text, f"tx_{stamp}_{key}_{tag}")
+            if select == "blend":
+                # brain as critic, Muse review as a sanity gate: the head alone can be gamed into forced casualness
+                h["review"] = review(text, cfg)
+                h["select_score"] = round(0.5 * h["select_score"] + 0.5 * h["review"]["score"], 4)
             history.append(h)
             print(f"[dim]{key}/{tag}: humanlike {h['humanlike_pct']:.0f} pct, attention {h['attention_pct']:.0f} pct[/]")
     best = max(history, key=lambda h: h["select_score"])
@@ -186,7 +209,7 @@ def run_brief(key: str, cfg: dict, out: Path, rounds: int, variants: int, stamp:
 
 
 @app.command()
-def run(rounds: int = 3, variants: int = 2, only: str = "", name: str = "") -> None:
+def run(rounds: int = 3, variants: int = 2, only: str = "", name: str = "", select: str = "head") -> None:
     stamp = name or time.strftime("%m%d-%H%M")
     root = Path("results/showcase/text") / stamp
     root.mkdir(parents=True, exist_ok=True)
@@ -194,10 +217,10 @@ def run(rounds: int = 3, variants: int = 2, only: str = "", name: str = "") -> N
     results = []
     for k in keys:
         try:
-            results.append(run_brief(k, BRIEFS[k], root / k, rounds, variants, stamp))
+            results.append(run_brief(k, BRIEFS[k], root / k, rounds, variants, stamp, select))
         except Exception as e:  # noqa: BLE001
             print(f"[red]{k} failed: {escape(str(e)[:300])}[/]")
-    summary = {"run": stamp, "rounds": rounds, "variants": variants, "briefs": [
+    summary = {"run": stamp, "rounds": rounds, "variants": variants, "select": select, "briefs": [
         {"key": r["key"], "humanlike_pct": {a: r[a]["humanlike_pct"] for a in ("source", "oneshot", "brain_loop")},
          "attention_pct": {a: r[a]["attention_pct"] for a in ("source", "oneshot", "brain_loop")},
          "p_brain_over_oneshot": r["pairwise"]["brain_vs_oneshot"]["p_first"], "p_brain_over_source": r["pairwise"]["brain_vs_source"]["p_first"],

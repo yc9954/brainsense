@@ -1,0 +1,36 @@
+{
+  "expo": {
+    "name": "NeuroMuse",
+    "slug": "brainsense",
+    "scheme": "brainsense",
+    "version": "0.1.0",
+    "icon": "./assets/neuromuse-icon.png",
+    "orientation": "default",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "app.openmuse.mobile"
+    },
+    "android": {
+      "package": "app.openmuse.mobile"
+    },
+    "web": {
+      "bundler": "metro",
+      "name": "NeuroMuse — an opinion it can justify"
+    },
+    "plugins": [
+      "expo-document-picker",
+      "@config-plugins/react-native-blob-util",
+      "@config-plugins/react-native-pdf",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "NeuroMuse uses the camera as a stand-in for the glasses: it keeps the last few seconds of what you look at so Muse can react to it.",
+          "microphonePermission": "Used only while recording short clips in glasses mode.",
+          "recordAudioAndroid": false
+        }
+      ]
+    ]
+  }
+}
