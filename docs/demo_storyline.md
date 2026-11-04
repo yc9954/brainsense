@@ -33,6 +33,9 @@ AADB aesthetics AUROC: 360 areas → PCA 0.75, raw embedding 0.73, 9 regions poo
 ## 2:35–3:00 Close
 Glasses POV once more, one spoken answer. End card: "An opinion it can justify." Stack: Meta Model API (Muse Spark 1.3), TRIBE v2 (open weights), OpenMuse, Modal, Wearables DAT flow. Built during the hackathon.
 
+## If the brain service is down on recording day
+The Modal workspace can be disabled (spend limit). Then only already-analysed items answer: the six Lab samples, the showcase runs, and every clip in `results/`. Record contrasts 1 to 4 from the Lab samples and the recorded GIFs (`docs/video/`), skip a live glasses clip, and say on screen that the clip was pre-analysed. Nothing in the storyline needs a fresh GPU call except the live glasses ask in contrast 5.
+
 ## Production notes
 - Split screens: record the left side once (plain Muse via the chat with brain tools disabled, or a stock chat UI), the right side from the real app. Time-lapse everything 3–6× except the two seconds when the cortex lights up.
 - Pre-record assets: Blender timelapse GIF (results/showcase/interior/room3), A/B leaderboard, redesign before/after, Lab rules screen after a fresh reset + 6 ratings.
