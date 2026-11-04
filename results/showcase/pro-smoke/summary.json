@@ -1,0 +1,334 @@
+{
+ "rounds": 1,
+ "variants": 1,
+ "briefs": {
+  "fintech_landing": {
+   "brief": "Landing page first screen for a Series-A fintech, 'Ledger' — a treasury platform that lets finance teams see every bank account, card and payout in one place. Audience: CFOs and controllers at 50–500 person companies. Must feel trustworthy, precise, fast.",
+   "kind": "landing",
+   "lang": "saas",
+   "photos": [
+    {
+     "path": "assets/sydney-skyline-at-dusk-dec-2008-jpg.jpg",
+     "title": "Sydney skyline at dusk - Dec 2008.jpg",
+     "license": "CC BY-SA 3.0",
+     "author": "Diliff",
+     "source": "https://commons.wikimedia.org/wiki/File:Sydney_skyline_at_dusk_-_Dec_2008.jpg",
+     "query": "city skyline dusk",
+     "w": 1600,
+     "h": 634,
+     "gate": "8/10 Professional high-resolution city skyline at dusk, clean with no water"
+    }
+   ],
+   "arms": {
+    "oneshot": {
+     "arm": "oneshot",
+     "best": "oneshot_r1v1",
+     "best_png": "results/showcase/pro-smoke/fintech_landing/oneshot_r1v1.png",
+     "history": [
+      {
+       "arm": "oneshot",
+       "round": 1,
+       "variant": 1,
+       "tag": "oneshot_r1v1",
+       "png": "results/showcase/pro-smoke/fintech_landing/oneshot_r1v1.png",
+       "select_score": null
+      }
+     ]
+    },
+    "brain_loop": {
+     "arm": "brain_loop",
+     "best": "brain_loop_r1v1",
+     "best_png": "results/showcase/pro-smoke/fintech_landing/brain_loop_r1v1.png",
+     "history": [
+      {
+       "arm": "brain_loop",
+       "round": 1,
+       "variant": 1,
+       "tag": "brain_loop_r1v1",
+       "png": "results/showcase/pro-smoke/fintech_landing/brain_loop_r1v1.png",
+       "select_score": 0.6552722164481992,
+       "heads": {
+        "aesthetic": {
+         "score": 0.4850335121154785,
+         "percentile": 51.67560321715817,
+         "confidence": 0.02993297576904297,
+         "top": "▲ L_31a, ▼ L_a24"
+        },
+        "attention": {
+         "score": 0.565737247467041,
+         "percentile": 62.19178082191781,
+         "confidence": 0.13147449493408203,
+         "top": "▲ 움직임·형태 평균, ▲ 기본 시각 평균"
+        },
+        "judge": {
+         "aesthetic": 0.778,
+         "clarity": 0.889,
+         "attention": 0.556,
+         "brief_fit": 0.889,
+         "judge_score": 0.778,
+         "reason": "Polished trustworthy treasury story with instant clarity, but the live ticker, badge, and dense dashboard compete with the headline for focus."
+        }
+       },
+       "explanation": "aesthetic: 상위 48% (확신 0.03; ▲ L_31a, ▼ L_a24) · attention: 상위 38% (확신 0.13; ▲ 움직임·형태 평균, ▲ 기본 시각 평균) · judge 0.78 (미학 0.78, 명확성 0.89, 주목 0.56, 브리프 0.89): Polished trustworthy treasury story with instant clarity, but the live ticker, badge, and dense dashboard compete with the headline for focus.",
+       "critique": {
+        "kind": "landing",
+        "ranking": [
+         [
+          "scene_place",
+          1.2428873953642172
+         ],
+         [
+          "value_vmpfc",
+          0.7326532829125626
+         ],
+         [
+          "attention_dorsal",
+          0.4882925133816618
+         ],
+         [
+          "control_dlpfc",
+          0.39176173535026765
+         ],
+         [
+          "face_body",
+          0.05804104558459073
+         ],
+         [
+          "language",
+          -0.3305642865475074
+         ],
+         [
+          "default_mode",
+          -0.40034224895305814
+         ],
+         [
+          "visual_early",
+          -0.5638929671605344
+         ],
+         [
+          "visual_motion",
+          -1.618836469932199
+         ]
+        ],
+        "hook": {
+         "attention_early": 0.6013714247898664,
+         "attention_late": 0.4317530576775595,
+         "visual_early": 0.22076435712322653,
+         "visual_late": -0.9562216293024148
+        },
+        "diagnosis": [
+         "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+         "Place areas (PPA/RSC) dominate: the background scene swallows the message",
+         "Attention drops after the first 2 s (+0.60 → +0.43): nothing to look at after the first impression"
+        ],
+        "directives": [
+         "Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion.",
+         "Simplify the environment: crop or blur the scene, put copy on a solid panel, let one subject own the frame.",
+         "Add a second discovery after the hero (a detail reveal, micro-illustration, or a strong secondary block) so interest holds past 2 s."
+        ],
+        "cited_areas": [
+         "▲ L 31a [aesthetic]",
+         "▼ L affect, conflict (a24) [aesthetic]",
+         "▲ object shape & motion (MT/LO) mean [attention]",
+         "▲ early vision (V1–V4) mean [attention]"
+        ],
+        "groups": [
+         "visual_motion",
+         "scene_place",
+         ""
+        ],
+        "prompt_block": "BRAIN CRITIQUE (TRIBE v2 predicted human cortex while looking at the last render; values are relative within this image):\n- most driven regions: places & scenes (PPA/RSC) +1.24, reward & value (OFC/vmPFC) +0.73, visual attention (IPS/FEF) +0.49; least: early vision (V1–V4) -0.56, object shape & motion (MT/LO) -1.62\n- first-2s hook vs later: attention +0.60 → +0.43, visual drive +0.22 → -0.96\n- areas the aesthetic head cites: ▲ L 31a [aesthetic]; ▼ L affect, conflict (a24) [aesthetic]; ▲ object shape & motion (MT/LO) mean [attention]; ▲ early vision (V1–V4) mean [attention]\n- diagnosis: Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette / Place areas (PPA/RSC) dominate: the background scene swallows the message / Attention drops after the first 2 s (+0.60 → +0.43): nothing to look at after the first impression\n- DO NEXT (highest priority first): (1) Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion. (2) Simplify the environment: crop or blur the scene, put copy on a solid panel, let one subject own the frame. (3) Add a second discovery after the hero (a detail reveal, micro-illustration, or a strong secondary block) so interest holds past 2 s."
+       },
+       "seconds": 121.2
+      }
+     ]
+    }
+   },
+   "final": {
+    "oneshot": {
+     "tag": "oneshot_r1v1",
+     "png": "results/showcase/pro-smoke/fintech_landing/oneshot_r1v1.png",
+     "png_2x": "results/showcase/pro-smoke/fintech_landing/oneshot_r1v1@2x.png",
+     "png_full": "results/showcase/pro-smoke/fintech_landing/oneshot_r1v1_full.png",
+     "brain_ui_score": 0.6140933446588813,
+     "heads": {
+      "aesthetic": {
+       "score": 0.6397549510002136,
+       "percentile": 74.79892761394102,
+       "confidence": 0.27950990200042725,
+       "top": "▲ L_31a, ▼ R_23d"
+      },
+      "attention": {
+       "score": 0.5475557446479797,
+       "percentile": 58.63013698630137,
+       "confidence": 0.09511148929595947,
+       "top": "▲ 움직임·형태 평균, ▲ 기본 시각 평균"
+      }
+     },
+     "critique": {
+      "kind": "landing",
+      "ranking": [
+       [
+        "scene_place",
+        1.277706012205561
+       ],
+       [
+        "value_vmpfc",
+        0.6228210952405572
+       ],
+       [
+        "attention_dorsal",
+        0.33983922676549994
+       ],
+       [
+        "control_dlpfc",
+        0.31830799764239776
+       ],
+       [
+        "face_body",
+        0.08454036716300271
+       ],
+       [
+        "visual_early",
+        -0.283727538747719
+       ],
+       [
+        "language",
+        -0.29295520837190564
+       ],
+       [
+        "default_mode",
+        -0.4338868899049381
+       ],
+       [
+        "visual_motion",
+        -1.6326450619924577
+       ]
+      ],
+      "hook": {
+       "attention_early": 0.48943932521822286,
+       "attention_late": 0.26503917753913847,
+       "visual_early": 0.563260682211716,
+       "visual_late": -0.7072216492274365
+      },
+      "diagnosis": [
+       "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+       "Attention drops after the first 2 s (+0.49 → +0.27): nothing to look at after the first impression"
+      ],
+      "directives": [
+       "Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion.",
+       "Add a second discovery after the hero (a detail reveal, micro-illustration, or a strong secondary block) so interest holds past 2 s."
+      ],
+      "cited_areas": [
+       "▲ L 31a [aesthetic]",
+       "▼ R mind-wandering (23d) [aesthetic]",
+       "▲ object shape & motion (MT/LO) mean [attention]",
+       "▲ early vision (V1–V4) mean [attention]"
+      ],
+      "groups": [
+       "visual_motion",
+       ""
+      ]
+     }
+    },
+    "brain_loop": {
+     "tag": "brain_loop_r1v1",
+     "png": "results/showcase/pro-smoke/fintech_landing/brain_loop_r1v1.png",
+     "png_2x": "results/showcase/pro-smoke/fintech_landing/brain_loop_r1v1@2x.png",
+     "png_full": "results/showcase/pro-smoke/fintech_landing/brain_loop_r1v1_full.png",
+     "brain_ui_score": 0.5327666551186206,
+     "heads": {
+      "aesthetic": {
+       "score": 0.4850335121154785,
+       "percentile": 51.67560321715817,
+       "confidence": 0.02993297576904297,
+       "top": "▲ L_31a, ▼ L_a24"
+      },
+      "attention": {
+       "score": 0.565737247467041,
+       "percentile": 62.19178082191781,
+       "confidence": 0.13147449493408203,
+       "top": "▲ 움직임·형태 평균, ▲ 기본 시각 평균"
+      }
+     },
+     "critique": {
+      "kind": "landing",
+      "ranking": [
+       [
+        "scene_place",
+        1.2428873953642172
+       ],
+       [
+        "value_vmpfc",
+        0.7326532829125626
+       ],
+       [
+        "attention_dorsal",
+        0.4882925133816618
+       ],
+       [
+        "control_dlpfc",
+        0.39176173535026765
+       ],
+       [
+        "face_body",
+        0.05804104558459073
+       ],
+       [
+        "language",
+        -0.3305642865475074
+       ],
+       [
+        "default_mode",
+        -0.40034224895305814
+       ],
+       [
+        "visual_early",
+        -0.5638929671605344
+       ],
+       [
+        "visual_motion",
+        -1.618836469932199
+       ]
+      ],
+      "hook": {
+       "attention_early": 0.6013714247898664,
+       "attention_late": 0.4317530576775595,
+       "visual_early": 0.22076435712322653,
+       "visual_late": -0.9562216293024148
+      },
+      "diagnosis": [
+       "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+       "Place areas (PPA/RSC) dominate: the background scene swallows the message",
+       "Attention drops after the first 2 s (+0.60 → +0.43): nothing to look at after the first impression"
+      ],
+      "directives": [
+       "Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion.",
+       "Simplify the environment: crop or blur the scene, put copy on a solid panel, let one subject own the frame.",
+       "Add a second discovery after the hero (a detail reveal, micro-illustration, or a strong secondary block) so interest holds past 2 s."
+      ],
+      "cited_areas": [
+       "▲ L 31a [aesthetic]",
+       "▼ L affect, conflict (a24) [aesthetic]",
+       "▲ object shape & motion (MT/LO) mean [attention]",
+       "▲ early vision (V1–V4) mean [attention]"
+      ],
+      "groups": [
+       "visual_motion",
+       "scene_place",
+       ""
+      ]
+     }
+    }
+   },
+   "pairwise": {
+    "brain_loop_vs_oneshot": {
+     "p_first": 0.835,
+     "order_ab": 0.85,
+     "order_ba": 0.82,
+     "reason": "A delivers instant clarity with one strong headline, one primary CTA and a precise trustworthy dashboard while B splits attention across competing banners, CTAs and floating cards. | swapped: B delivers instant 3-second clarity with one focal headline and a calm, precise treasury view that feels trustworthy and fast for CFOs, while A is cluttered with competing CTAs, toasts, and highlights that dilute focus."
+    }
+   }
+  }
+ }
+}
