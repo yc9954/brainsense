@@ -122,6 +122,22 @@ a{color:#ffb38a} .k{color:#8b8b96}</style></head><body><h1>BrainSense showcase �
                          f"<td>{o['brain_only']:.3f} → {b['brain_only']:.3f}</td><td>{o['judge'].get('judge_score', 0):.2f} → {b['judge'].get('judge_score', 0):.2f}</td>"
                          f"<td class=k>{html.escape(o['critique']['diagnosis'][0][:90]) if o['critique']['diagnosis'] else ''}</td></tr>")
         parts.append("</table>")
+    ev = out_dir / "evolve"
+    ecases = sorted((p for p in ev.iterdir() if (p / "report.json").exists()), key=lambda p: p.stat().st_mtime, reverse=True) if ev.exists() else []
+    if ecases:
+        parts.append("<h1 style='margin-top:36px'>Evolve — brain-directed art direction on live sites (real assets kept, facts checked, Blender heroes)</h1>"
+                     "<table><tr><th>site</th><th>ui_score before → after</th><th>P(after better) blind</th><th>tools used</th><th>first diagnosis</th></tr>")
+        for c in ecases:
+            r = json.loads((c / "report.json").read_text(encoding="utf-8"))
+            o = r["steps"][0]
+            b = next(s for s in r["steps"] if s["round"] == r["best_round"])
+            tools = ", ".join(sorted({t["tool"] for t in r.get("trail", []) if t.get("accepted")}))
+            pw = r.get("pairwise_after_vs_before")
+            parts.append(f"<tr><td><a href='evolve/{c.name}/index.html'>{html.escape(r['source'])}</a></td>"
+                         f"<td>{o['ui_score']:.3f} → <b>{b['ui_score']:.3f}</b> ({b['ui_score'] - o['ui_score']:+.3f})</td>"
+                         f"<td>{'' if pw is None else f'{pw:.2f}'}</td><td class=k>{html.escape(tools)}</td>"
+                         f"<td class=k>{html.escape(o['critique']['diagnosis'][0][:90]) if o['critique']['diagnosis'] else ''}</td></tr>")
+        parts.append("</table>")
     parts.append("</body></html>")
     out = out_dir / "index.html"
     out.write_text("\n".join(parts), encoding="utf-8")

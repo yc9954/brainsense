@@ -34,8 +34,12 @@ W, D, HGT = float(R.get("w", 5.0)), float(R.get("d", 5.0)), float(R.get("h", 2.8
 
 
 def hex_rgb(h, a=1.0):
+    """#rrggbb (sRGB) → linear RGBA for Blender colour sockets (sRGB fed directly renders washed out)."""
     h = (h or "#cccccc").lstrip("#")
-    return (int(h[0:2], 16) / 255, int(h[2:4], 16) / 255, int(h[4:6], 16) / 255, a)
+    def lin(c):
+        c = c / 255
+        return c / 12.92 if c <= 0.04045 else ((c + 0.055) / 1.055) ** 2.4
+    return (lin(int(h[0:2], 16)), lin(int(h[2:4], 16)), lin(int(h[4:6], 16)), a)
 
 
 def kelvin_rgb(k):
