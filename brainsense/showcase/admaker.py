@@ -110,7 +110,16 @@ def _round(d: Path, stamp: str, key: str, html: str, round_no: int, brief_text: 
     (d / f"r{round_no}.html").write_text(html, encoding="utf-8")
     mp4 = render_video(html, d / f"r{round_no}.mp4")
     sheet = contact_sheet(mp4, d / f"r{round_no}.png")
-    sc = score_video(mp4, f"ad_{stamp}_{key}_r{round_no}")
+    sc = None
+    for attempt in range(4):   # the brain server and the GPU endpoint are shared and restart now and then
+        try:
+            sc = score_video(mp4, f"ad_{stamp}_{key}_r{round_no}")
+            break
+        except Exception as e:  # noqa: BLE001
+            typer.echo(f"  score retry {attempt + 1}: {str(e)[:100]}")
+            time.sleep(30)
+    if sc is None:
+        raise RuntimeError("brain scoring failed four times")
     jd = _ad_judge(sheet, brief_text)
     brain = _brain_score(sc)
     sel = round((1 - judge_w) * brain + judge_w * float(jd.get("judge_score", 0.5)), 4)
