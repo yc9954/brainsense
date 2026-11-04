@@ -133,6 +133,7 @@ a{color:#ffb38a} .k{color:#8b8b96}</style></head><body><h1>BrainSense showcase â
             b = next(s for s in r["steps"] if s["round"] == r["best_round"])
             tools = ", ".join(sorted({t["tool"] for t in r.get("trail", []) if t.get("accepted")}))
             pw = r.get("pairwise_after_vs_before")
+            pw = pw.get("p_first") if isinstance(pw, dict) else pw
             parts.append(f"<tr><td><a href='evolve/{c.name}/index.html'>{html.escape(r['source'])}</a></td>"
                          f"<td>{o['ui_score']:.3f} â†’ <b>{b['ui_score']:.3f}</b> ({b['ui_score'] - o['ui_score']:+.3f})</td>"
                          f"<td>{'' if pw is None else f'{pw:.2f}'}</td><td class=k>{html.escape(tools)}</td>"

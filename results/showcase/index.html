@@ -4,6 +4,8 @@ h1{font-weight:600;font-size:22px} table{border-collapse:collapse;font-size:13px
 a{color:#ffb38a} .k{color:#8b8b96}</style></head><body><h1>BrainSense showcase — runs</h1>
 <p class=k>brain_loop = TRIBE v2 predicted cortex → expert critique → Muse revises. Win rates are from a blind pairwise judge asked in both image orders. Runs prefixed <b>en-</b> use English briefs; earlier runs were Korean.</p>
 <table><tr><th>run</th><th>briefs</th><th>vs Muse one-shot</th><th>vs Muse self-loop</th><th>brain score (oneshot / muse / brain)</th></tr>
+<tr><td><a href='pro-1/index.html'>pro-1</a></td><td>3</td><td>33% (P 0.40, n=3)</td><td>—</td><td>0.583 / nan / 0.590</td></tr>
+<tr><td><a href='pro-smoke/index.html'>pro-smoke</a></td><td>1</td><td>100% (P 0.83, n=1)</td><td>—</td><td>0.614 / nan / 0.533</td></tr>
 <tr><td><a href='en-ad-suite1/index.html'>en-ad-suite1</a></td><td>3</td><td>100% (P 0.89, n=3)</td><td>100% (P 0.89, n=3)</td><td>0.376 / 0.331 / 0.382</td></tr>
 <tr><td><a href='en-suite1/index.html'>en-suite1</a></td><td>5</td><td>60% (P 0.64, n=5)</td><td>20% (P 0.33, n=5)</td><td>0.436 / 0.477 / 0.554</td></tr>
 <tr><td><a href='ad-suite1/index.html'>ad-suite1</a></td><td>3</td><td>100% (P 0.89, n=3)</td><td>67% (P 0.50, n=3)</td><td>0.363 / 0.340 / 0.349</td></tr>
@@ -39,5 +41,13 @@ a{color:#ffb38a} .k{color:#8b8b96}</style></head><body><h1>BrainSense showcase �
 <tr><td><a href='redesign/craigslist/index.html'>https://www.craigslist.org/about/sites</a></td><td>0.486 → <b>0.656</b> (+0.170)</td><td>0.657 → 0.610</td><td>0.33 → 0.75</td><td class=k>물체 형태(LO)·움직임(MT) 반응이 낮음: 뚜렷한 사물 실루엣이 없는 텍스트 위주 화면</td></tr>
 <tr><td><a href='redesign/hackernews/index.html'>https://news.ycombinator.com</a></td><td>0.475 → <b>0.558</b> (+0.082)</td><td>0.753 → 0.412</td><td>0.28 → 0.69</td><td class=k>물체 형태(LO)·움직임(MT) 반응이 낮음: 뚜렷한 사물 실루엣이 없는 텍스트 위주 화면</td></tr>
 <tr><td><a href='redesign/sweetspot/index.html'>https://www.sweetspot.co.kr</a></td><td>0.663 → <b>0.740</b> (+0.077)</td><td>0.909 → 0.816</td><td>0.44 → 0.72</td><td class=k>얼굴 영역(FFA/STS)이 조용함: 사람·시선 단서가 없음</td></tr>
+</table>
+<h1 style='margin-top:36px'>Evolve — brain-directed art direction on live sites (real assets kept, facts checked, Blender heroes)</h1><table><tr><th>site</th><th>ui_score before → after</th><th>P(after better) blind</th><th>tools used</th><th>first diagnosis</th></tr>
+<tr><td><a href='evolve/craigslist/index.html'>https://www.craigslist.org/about/sites</a></td><td>0.484 → <b>0.484</b> (+0.000)</td><td></td><td class=k></td><td class=k>Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object </td></tr>
+<tr><td><a href='evolve/sqlite/index.html'>https://www.sqlite.org</a></td><td>0.528 → <b>0.528</b> (+0.000)</td><td></td><td class=k></td><td class=k>Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object </td></tr>
+<tr><td><a href='evolve/pydocs/index.html'>https://docs.python.org/3/</a></td><td>0.677 → <b>0.677</b> (+0.000)</td><td></td><td class=k></td><td class=k>Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object </td></tr>
+<tr><td><a href='evolve/hackernews/index.html'>https://news.ycombinator.com</a></td><td>0.574 → <b>0.574</b> (+0.000)</td><td></td><td class=k></td><td class=k>Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object </td></tr>
+<tr><td><a href='evolve/berkshire/index.html'>https://www.berkshirehathaway.com</a></td><td>0.608 → <b>0.608</b> (+0.000)</td><td></td><td class=k></td><td class=k>Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object </td></tr>
+<tr><td><a href='evolve/algonauts/index.html'>https://algonautsproject.com/</a></td><td>0.762 → <b>0.742</b> (-0.020)</td><td>0.90</td><td class=k>photo, restyle_asset</td><td class=k>Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object </td></tr>
 </table>
 </body></html>
