@@ -10,9 +10,9 @@ A model of the human cortex (Meta TRIBE v2) sits in front of the language model,
 
 Meta Global AI Developer Hackathon 2026 · Indie track
 
-<img src="docs/img/glasses-answer.png" alt="Glasses mode: a landscape first-person frame looking at a pop-up kiosk; the brain answers in captions, naming the region that fired and the percentile, then asks for a thumbs up or down" width="100%">
+<img src="docs/video/glasses.gif" alt="Glasses mode, recorded: the landscape first-person frame looks at a pop-up kiosk, the user asks what the brain thinks, and the answer arrives as spoken captions naming the regions that fired and the percentiles" width="100%">
 
-<sub>Glasses mode. "What do you think?" of a mall pop-up: the answer names the region that fired, quotes the percentile, admits the other signals are faint, and asks to learn your taste.</sub>
+<sub>Glasses mode, as recorded (the wait for the GPU is cut). A landscape first-person frame like the Meta glasses; the phone turns sideways and stands in for them. "What do you think?" of a mall pop-up: the answer names the regions that fired, quotes the percentiles, and says what is faint. <a href="docs/video/glasses.mp4">mp4</a></sub>
 
 </div>
 
@@ -32,6 +32,17 @@ Meta Global AI Developer Hackathon 2026 · Indie track
 <td><b>Then the numbers.</b> Calibrated heads with score, confidence and percentile, the regions that drove each one, the response per second.</td>
 <td><b>Learns you, in front of you.</b> Every like or dislike is written to memory while you watch; sleep turns answers into rules in plain English.</td>
 <td><b>Made for glasses.</b> A landscape first-person frame, a rolling 6-second clip, voice in, spoken captions out. Real stimuli in the Lab.</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<td width="50%" align="center"><img src="docs/video/chat.gif" alt="Chat, recorded: a menu-board photo is attached, the cortex card lights up second by second, the heads score it, and the brain answers in the first person" width="300"></td>
+<td width="50%" align="center"><img src="docs/video/lab.gif" alt="Lab, recorded: a bakery display is scored, the user taps Like, and the memory panel writes the trace, the outcome and the personal-head refit live" width="300"></td>
+</tr>
+<tr>
+<td align="center"><sub>In the chat: attach a photo, the cortex lights up, the heads score it, the brain answers. <a href="docs/video/chat.mp4">mp4</a></sub></td>
+<td align="center"><sub>In the Lab: score a stimulus, tap Like, watch memory being written and your head refit. <a href="docs/video/lab.mp4">mp4</a></sub></td>
 </tr>
 </table>
 
