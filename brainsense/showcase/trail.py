@@ -63,7 +63,8 @@ def _rounds(rep: dict, root: Path) -> list[dict]:
             "round": s.get("round", i),
             "tool": s.get("tool") or s.get("action") or ("live page" if i == 0 else "rebuild"),
             "why": s.get("why") or s.get("reason") or "",
-            "critique": s.get("critique_line") or s.get("critique") or (s.get("diagnosis", [""])[0] if isinstance(s.get("diagnosis"), list) else ""),
+            "critique": s.get("critique_line") or s.get("critique") or "",   # what the cortex said BEFORE this round (v2 trail)
+            "read": (s.get("diagnosis", [""])[0] if isinstance(s.get("diagnosis"), list) else s.get("diagnosis") or ""),   # what it says about this round's result
             "score": float(score) if isinstance(score, (int, float)) else None,
             "judge": float(jscore) if isinstance(jscore, (int, float)) else None,
             "thumb": p,
@@ -94,22 +95,24 @@ def render(root: Path) -> Path:
     for i, r in enumerate(rounds):
         win = (r["round"] == best_i) or (i == best_i)
         crit = r["critique"] if isinstance(r["critique"], str) else " / ".join(r["critique"])
-        said = (f'<div class="said"><b>Brain read:</b> {html.escape(crit[:150])}</div>' if crit else "") + \
-               (f'<div class="said"><b>Why:</b> {html.escape(str(r["why"])[:140])}</div>' if r["why"] else "")
+        read = r["read"] if isinstance(r["read"], str) else " / ".join(r["read"])
+        before = f'<div class="said"><b>Brain said:</b> {html.escape(crit[:150])}</div>' if crit else ""
+        did = f'<div class="said"><b>Agent:</b> {html.escape(str(r["why"])[:150])}</div>' if r["why"] else ""
+        after = f'<div class="said"><b>Brain read:</b> {html.escape(read[:150])}</div>' if read else ""
         sc = ""
         if r["score"] is not None:
             sc = f'<div class="sc"><span>brain</span><span class="bar"><i style="width:{min(100, r["score"] / smax * 100):.0f}%"></i></span><span class="v">{r["score"]:.2f}</span></div>'
         if r["judge"] is not None:
             sc += f'<div class="sc"><span>judge</span><span class="bar"><i style="width:{min(100, r["judge"] * 100):.0f}%"></i></span><span class="v">{r["judge"]:.2f}</span></div>'
         tool_cls = "tool keep" if i == 0 else "tool"
-        cols.append(f'<div class="col{" win" if win else ""}">{_img(r["thumb"])}<div class="r">{"live page" if i == 0 else f"round {r["round"]}"}</div>'
-                    f'<span class="{tool_cls}">{html.escape(str(r["tool"]))}</span>{said}{sc}</div>')
+        cols.append(f'<div class="col{" win" if win else ""}"><div class="r">{("live page" if rep.get("source") else "first plan") if i == 0 else f"round {r["round"]}"}</div>'
+                    f'<span class="{tool_cls}">{html.escape(str(r["tool"]))}</span>{before}{did}{_img(r["thumb"])}{after}{sc}</div>')
     src = rep.get("source", root.name)
     first, last = rounds[0], rounds[best_i if best_i < len(rounds) else -1]
     delta = f'brain score {first["score"]:.2f} → {last["score"]:.2f}' if first["score"] is not None and last["score"] is not None else ""
     page = (f'<!doctype html><meta charset="utf-8"><style>{CSS}</style><div class="card"><div class="k">brain-directed redesign · decision trail</div>'
             f'<h1>{html.escape(str(src))}</h1><div class="row">{"".join(cols)}</div>'
-            f'<div class="foot">Each round: what the predicted cortex said about the previous page, which craft tool the agent chose and why, the result, and the scores. The red column is the round that was kept. {html.escape(delta)}</div></div>')
+            f'<div class="foot">Each column: the craft tool the agent chose and what it changed, the render, what the predicted cortex read in it, and the brain and judge scores. The red column is the round that was kept. {html.escape(delta)}</div></div>')
     out = root / "trail.html"
     out.write_text(page, encoding="utf-8")
     return out

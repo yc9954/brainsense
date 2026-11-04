@@ -94,7 +94,8 @@ Real sites first. The agent keeps brand, copy and information architecture, read
 <td><img src="results/showcase/studio/living5/r0.png" alt="Photoreal studio, first pass: an empty room"></td>
 <td><img src="results/showcase/studio/living5/best_hero.png" alt="Photoreal studio, round chosen by the brain score"></td>
 </tr>
-<tr><td colspan="2" align="center"><sub>3D: a photoreal Blender room, re-rendered each round from the cortex critique (0.316 → 0.485, <a href="results/showcase/studio/living5/timelapse.gif">timelapse</a>).</sub></td></tr>
+<tr><td colspan="2"><img src="docs/img/trail-living5.png" alt="Decision trail: six columns from the empty first plan to the kept round; each shows what the agent changed in Blender, the render, what the predicted cortex read in it, and the brain and judge scores" width="100%"></td></tr>
+<tr><td colspan="2" align="center"><sub>3D, with the decision trail. The agent models the room in Blender (Poly Haven props, Cycles), the cortex reads each render ("reward circuit on but what is good isn't legible", "no object silhouette"), and the agent answers with a concrete change: a sofa-table-rug hero, real sun through the window, an armchair turned to face the hero. Brain score 0.32 → 0.49 over eight rounds (<a href="results/showcase/studio/living5/timelapse.gif">timelapse</a>).</sub></td></tr>
 <tr>
 <td><img src="results/showcase/en-suite1/skincare_ad/oneshot_r1v1.png" alt="Skincare ad page, Muse one shot"></td>
 <td><img src="results/showcase/en-suite1/skincare_ad/brain_loop_r3v1.png" alt="Skincare ad page, brain loop round 3"></td>
