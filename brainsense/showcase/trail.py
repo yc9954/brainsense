@@ -43,6 +43,18 @@ def _img(p: Path | None) -> str:
 
 def _rounds(rep: dict, root: Path) -> list[dict]:
     raw = rep.get("trail") or rep.get("steps") or rep.get("rounds") or rep.get("history") or []
+    if rep.get("trail") and rep.get("steps"):
+        # evolve.py: `steps` carry the scores per round, `trail` the art-director decisions (several per round)
+        by_round: dict = {}
+        for st in rep["steps"]:
+            by_round[st.get("round")] = dict(st)
+        for t in rep["trail"]:
+            d = by_round.setdefault(t.get("round"), {"round": t.get("round")})
+            d["tool"] = " + ".join([x for x in [d.get("tool"), t.get("tool")] if x])
+            d["why"] = " ".join([x for x in [d.get("why"), t.get("why")] if x])
+            if t.get("critique_line") or t.get("critique"):
+                d["critique_line"] = t.get("critique_line") or t.get("critique")
+        raw = [by_round[k] for k in sorted(by_round, key=lambda r: int(r or 0))]
     out = []
     for i, s in enumerate(raw):
         thumb = s.get("thumbnail") or s.get("thumb") or s.get("png")
