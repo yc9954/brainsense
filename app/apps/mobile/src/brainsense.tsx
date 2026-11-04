@@ -225,15 +225,13 @@ export function BrainCard({ data }: { data: BrainEval }) {
   const mode = data.kind === "text" ? "read" : data.kind === "audio" ? "listen" : "look";
   return (
     <Card style={{ gap: 18, padding: 18 }}>
-      <View style={[s.between, { alignItems: "flex-start" }]}>
-        <View style={{ gap: 2 }}>
-          <Text style={s.label}>Brain {mode} · TRIBE v2 → calibrated heads</Text>
-          <Text style={{ color: colors.text, fontSize: 18, fontWeight: "600", letterSpacing: -0.3 }}>
-            What my brain saw first
-          </Text>
-        </View>
+      <View style={{ gap: 4 }}>
+        <Text style={s.label}>Brain {mode} · TRIBE v2 → calibrated heads</Text>
+        <Text style={{ color: colors.text, fontSize: 18, fontWeight: "600", letterSpacing: -0.3 }}>
+          What my brain saw first
+        </Text>
         <Text style={{ color: best ? colors.text : colors.muted, fontSize: 13 }}>
-          {best ? `${HEAD_KO[best[0]]?.title} ${topLabel(best[1].percentile)}` : "weak signal"}
+          {best ? `Strongest signal: ${HEAD_KO[best[0]]?.title}, ${topLabel(best[1].percentile)}` : "Weak signal on every head"}
         </Text>
       </View>
       {data.vertex_ts || (data.brain_frames && data.brain_frames.length > 0) ? (

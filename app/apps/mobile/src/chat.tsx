@@ -20,6 +20,7 @@ import {
   Upload,
   Volume2,
   X,
+  Paperclip,
 } from "lucide-react-native";
 import { useCallback, useEffect, useRef, useState, useSyncExternalStore } from "react";
 import {
@@ -761,9 +762,31 @@ export function ChatScreen({
                     }}
                   >
                     {user ? (
-                      <Text selectable style={[s.text, { fontSize: 16, lineHeight: 24 }]}>
-                        {text}
-                      </Text>
+                      (() => {
+                        // the attachment line is for the agent (artifact ids); people see a chip per file instead
+                        const m = text.match(/\n\nAttached (?:files|documents): ([\s\S]*)$/);
+                        const shown = m ? text.slice(0, m.index) : text;
+                        const names = m ? Array.from(m[1].matchAll(/([^,(]+?) \((?:photo\/clip, )?artifact ID: [^)]+\)/g)).map((x) => x[1].trim()) : [];
+                        return (
+                          <View style={{ gap: 8 }}>
+                            {shown.trim() ? (
+                              <Text selectable style={[s.text, { fontSize: 16, lineHeight: 24 }]}>
+                                {shown.trim()}
+                              </Text>
+                            ) : null}
+                            {names.length ? (
+                              <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 6 }}>
+                                {names.map((n) => (
+                                  <View key={n} style={{ flexDirection: "row", alignItems: "center", gap: 5, paddingHorizontal: 9, paddingVertical: 4, borderRadius: 999, borderWidth: 1, borderColor: colors.line }}>
+                                    <Paperclip size={11} color={colors.muted} />
+                                    <Text style={{ color: colors.muted, fontSize: 12.5 }}>{n}</Text>
+                                  </View>
+                                ))}
+                              </View>
+                            ) : null}
+                          </View>
+                        );
+                      })()
                     ) : (
                       <AssistantResponse content={text} />
                     )}
