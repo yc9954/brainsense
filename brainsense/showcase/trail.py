@@ -106,7 +106,10 @@ def render(root: Path) -> Path:
     cols = []
     for i, r in enumerate(rounds):
         win = (r["round"] == best_i) or (i == best_i)
-        crit = r["critique"] if isinstance(r["critique"], str) else " / ".join(r["critique"])
+        c = r["critique"]
+        if isinstance(c, dict):   # a full read_brain critique: take its diagnosis
+            c = c.get("diagnosis") or c.get("prompt_block") or ""
+        crit = c if isinstance(c, str) else " / ".join(str(x) for x in c)
         read = r["read"] if isinstance(r["read"], str) else " / ".join(r["read"])
         before = f'<div class="said"><b>Brain said:</b> {html.escape(crit[:150])}</div>' if crit else ""
         did = f'<div class="said"><b>Agent:</b> {html.escape(str(r["why"])[:150])}</div>' if r["why"] else ""
