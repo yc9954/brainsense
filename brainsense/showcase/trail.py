@@ -7,10 +7,70 @@ agent did Y, the score moved Z", with the round's thumbnail. Reads a redesign re
 from __future__ import annotations
 
 import base64
+import hashlib
 import html
 import json
+import os
+import re
 import sys
 from pathlib import Path
+
+TOOL_WORDS = {
+    "blender_render": "Modelled it in 3D", "render": "Modelled it in 3D", "typography": "Reset the type", "reflow": "Moved things around",
+    "photo": "Found a real photo", "restyle_asset": "Kept the real one, restyled it", "keep_asset": "Kept the real one",
+    "copy": "Re-flowed the words", "rebuild": "Rebuilt the page", "live page": "The page as it is", "first plan": "The first plan",
+}
+
+
+def _tool_words(tool: str) -> str:
+    return " + ".join(TOOL_WORDS.get(t.strip(), t.strip().replace("_", " ")) for t in str(tool).split("+"))
+
+
+NARRATE_PROMPT = """You are the brain inside NeuroMuse, a model of a human viewer's cortex, narrating one step of a design loop for a general reader.
+Write STRICT JSON with three short sentences, plain everyday words, no brain-area codes, no emoji, a little wit, each under 22 words. "said" and "read" are in the brain's first person; "did" is about the agent:
+"said": what I (the brain) said about the page before this step, based on: {before}
+"did": what the agent then did, in the third person, starting with a past-tense verb (e.g. "Modelled a sofa and a rug in 3D and lit it with real sun"), based on the tool "{tool}" and this note: {did}
+"read": what I (the brain) felt when I looked at the result, based on: {after}
+If a field has no basis, return "" for it."""
+
+
+def _narrate(before: str, tool: str, did: str, after: str, cache: dict) -> dict:
+    """Muse rewrites the technical trail into the brain's own voice; cached next to the report, regex fallback."""
+    key = hashlib.sha1(f"{before}|{tool}|{did}|{after}".encode()).hexdigest()[:16]
+    if key in cache:
+        return cache[key]
+    out = {"said": "", "did": "", "read": ""}
+    try:
+        from ..loop.generate import _client
+        d: dict = {}
+        for attempt in range(3):   # Muse counts reasoning against max_tokens; an empty reply just means try again
+            r = _client().chat.completions.create(model=os.environ.get("BRAINSENSE_LLM_MODEL", "muse-spark-1.3"), temperature=0.4, max_tokens=4000,
+                                                  messages=[{"role": "user", "content": NARRATE_PROMPT.format(before=before[:400] or "(nothing)", tool=tool, did=did[:400] or "(nothing)", after=after[:400] or "(nothing)")}])
+            t = r.choices[0].message.content or ""
+            m = re.search(r"\{.*\}", t, re.S)
+            try:
+                d = json.loads(m.group(0)) if m else {}
+            except json.JSONDecodeError:
+                d = {}
+            if any(str(d.get(k, "")).strip() for k in out):
+                break
+        out = {k: str(d.get(k, "")).strip() for k in out}
+        if not any(out.values()):
+            out = {"said": _plain(before), "did": did, "read": _plain(after)}
+    except Exception:  # noqa: BLE001
+        out = {"said": _plain(before), "did": did, "read": _plain(after)}
+    cache[key] = out
+    return out
+
+
+def _plain(diag: str) -> str:
+    """Regex fallback for the most common read_brain lines."""
+    d = diag
+    d = re.sub(r"Object-shape \(LO\) and motion \(MT\) areas are low", "my object and motion sense stayed quiet", d)
+    d = re.sub(r"Reward/value areas \(OFC/vmPFC\) are low", "my reward circuit stayed flat", d)
+    d = re.sub(r"Reward circuit \(OFC/vmPFC\) is on", "my reward circuit lit up", d)
+    d = re.sub(r"\((LO|MT|OFC/vmPFC|FFA|PPA|V1|V1-V4)\)", "", d)
+    return d.strip()
 
 CSS = """
 body{margin:0;background:#000;color:#fff;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif}
@@ -84,9 +144,11 @@ def _rounds(rep: dict, root: Path) -> list[dict]:
     return out
 
 
-def render(root: Path) -> Path:
+def render(root: Path, narrate: bool = True) -> Path:
     rep = json.loads((root / "report.json").read_text())
     rounds = _rounds(rep, root)
+    cache_p = root / "trail_text.json"
+    cache = json.loads(cache_p.read_text()) if cache_p.exists() else {}
     if not rounds:
         raise SystemExit("no rounds in report.json")
     best_i = rep.get("best_round")
@@ -111,15 +173,20 @@ def render(root: Path) -> Path:
             c = c.get("diagnosis") or c.get("prompt_block") or ""
         crit = c if isinstance(c, str) else " / ".join(str(x) for x in c)
         read = r["read"] if isinstance(r["read"], str) else " / ".join(r["read"])
-        before = f'<div class="said"><b>Brain said:</b> {html.escape(crit[:150])}</div>' if crit else ""
-        did = f'<div class="said"><b>Agent:</b> {html.escape(str(r["why"])[:150])}</div>' if r["why"] else ""
-        after = f'<div class="said"><b>Brain read:</b> {html.escape(read[:150])}</div>' if read else ""
+        # the live page / first plan has no "before" and no agent action: only what the brain read
+        if i == 0:
+            crit = ""
+        n = _narrate(crit, str(r["tool"]), str(r["why"]), read, cache) if narrate else {"said": crit, "did": str(r["why"]), "read": read}
+        before = f'<div class="said"><b>The brain said</b> {html.escape(n["said"][:170])}</div>' if n["said"] else ""
+        did = f'<div class="said"><b>So the agent</b> {html.escape(n["did"][:170])}</div>' if n["did"] and i > 0 else ""
+        after = f'<div class="said"><b>Then the brain read</b> {html.escape(n["read"][:170])}</div>' if n["read"] else ""
         sc = ""
         if r["score"] is not None:
             sc = f'<div class="sc"><span>brain</span><span class="bar"><i style="width:{min(100, r["score"] / smax * 100):.0f}%"></i></span><span class="v">{r["score"]:.2f}</span></div>'
         if r["judge"] is not None:
             sc += f'<div class="sc"><span>judge</span><span class="bar"><i style="width:{min(100, r["judge"] * 100):.0f}%"></i></span><span class="v">{r["judge"]:.2f}</span></div>'
         tool_cls = "tool keep" if i == 0 else "tool"
+        r["tool"] = _tool_words(r["tool"])
         cols.append(f'<div class="col{" win" if win else ""}"><div class="r">{("live page" if rep.get("source") else "first plan") if i == 0 else f"round {r["round"]}"}</div>'
                     f'<span class="{tool_cls}">{html.escape(str(r["tool"]))}</span>{before}{did}{_img(r["thumb"])}{after}{sc}</div>')
     src = rep.get("source", root.name)
@@ -127,9 +194,11 @@ def render(root: Path) -> Path:
     delta = f'brain score {first["score"]:.2f} → {last["score"]:.2f}' if first["score"] is not None and last["score"] is not None else ""
     page = (f'<!doctype html><meta charset="utf-8"><style>{CSS}</style><div class="card"><div class="k">brain-directed redesign · decision trail</div>'
             f'<h1>{html.escape(str(src))}</h1><div class="row">{"".join(cols)}</div>'
-            f'<div class="foot">Each column: the craft tool the agent chose and what it changed, the render, what the predicted cortex read in it, and the brain and judge scores. The red column is the round that was kept. {html.escape(delta)}</div></div>')
+            f'<div class="foot">Read left to right: what the brain said about the page, what the agent did about it, the result, what the brain felt when it looked again, and the brain and judge scores. The red column is the one that was kept. {html.escape(delta)}</div></div>')
     out = root / "trail.html"
     out.write_text(page, encoding="utf-8")
+    if narrate:
+        cache_p.write_text(json.dumps(cache, indent=1, ensure_ascii=False), encoding="utf-8")
     return out
 
 
