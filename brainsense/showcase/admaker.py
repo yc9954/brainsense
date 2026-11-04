@@ -145,6 +145,9 @@ def run(brief: str = typer.Option("serum"), rounds: int = typer.Option(3), name:
     steps = [_round(d, stamp, key, html0, 0, brief_text, judge_w)]
     steps[0]["why"] = "one shot: Muse wrote the ad once, no feedback"
     steps[0]["accepted"] = True
+    steps[0]["facts"] = fact_check(html0, brief_text + " " + json.dumps(cb.get("must_say", [])))   # reported, not gated: this is the baseline as the model gives it
+    if not steps[0]["facts"].get("ok", True):
+        typer.echo(f"  r0 one-shot invents facts: numbers {steps[0]['facts'].get('numbers')} names {steps[0]['facts'].get('names')}")
     best = steps[0]
     trail: list[dict] = []
     typer.echo(f"  r0 one-shot: brain {best['brain_score']:.2f} judge {best['judge'].get('judge_score', 0):.2f} select {best['ui_score']:.2f} · peak {best['attention_peak_s']} s")
@@ -154,11 +157,15 @@ def run(brief: str = typer.Option("serum"), rounds: int = typer.Option(3), name:
         ad = _art_direct(cb, crit, best["judge"].get("reason", ""), trail, r)
         actions = []
         for i, a in enumerate(ad.get("actions", [])[:2]):
+            if a.get("tool") == "blender_render":
+                a.setdefault("params", {})
+                a["params"].setdefault("camera", "macro")          # the ad needs the product large; macro fills the frame
+                a["params"].setdefault("glass", "frosted")
             res = run_tool(a, cb, d, r, i)
             actions.append(res)
             typer.echo(f"  r{r} tool {res.get('tool')}: {res.get('desc') or res.get('error') or json.dumps(res.get('params'))[:80]}")
         direction = "\n".join(f"- {a['tool']}: {a.get('desc') or json.dumps(a.get('params'), ensure_ascii=False)} — because {a.get('why', '')}"
-                              + (f" → USE <img src=\"{a['output']}\"> (or as a background) as the HERO of the product scene, large, real, never redrawn" if a.get("output") else "") for a in actions)
+                              + (f" → USE <img src=\"{a['output']}\"> as the HERO: full-bleed or cropped with object-fit: cover and a transform scale so the product fills at least 60% of the frame height in the product beat; never a small inset or a framed thumbnail; never redrawn" if a.get("output") else "") for a in actions)
         critique_in = (f"{crit}\n\nART DIRECTION FOR THIS ROUND (apply exactly):\n{direction}\nHero after this round: {ad.get('hero', '')}\n"
                        "Keep every fact from the brief and ADD NONE: no new numbers, names, dates, awards, counts or badges. Local image files listed above are the only imagery; no placeholders.")
         try:
