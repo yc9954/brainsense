@@ -1,0 +1,569 @@
+{
+ "source": "https://news.ycombinator.com",
+ "brief": {
+  "audience": "developers, hackers, founders and technical obsessives who want dense signal fast",
+  "primary_task": "scan the ranked top 30 stories in 3s and jump to article or comments",
+  "tone": "terse, utilitarian, insider-technical, no-nonsense",
+  "lang": "brutalist",
+  "brand": {
+   "primary": "#ff6600",
+   "secondary": "#f6f6ef",
+   "accent": "#828282",
+   "text": "Hacker News"
+  },
+  "must_keep": [
+   {
+    "id": "k1",
+    "kind": "logo",
+    "ref": "assets/img_1df306319e.svg",
+    "why": "iconic orange Y mark - instant trust and identity, must stay pixel-crisp"
+   },
+   {
+    "id": "k2",
+    "kind": "text",
+    "ref": "Hacker News",
+    "why": "wordmark in header bar, core brand anchor next to Y"
+   },
+   {
+    "id": "k3",
+    "kind": "nav",
+    "ref": "new | past | comments | ask | show | jobs | submit",
+    "why": "primary wayfinding for feeds and submission, defines utility"
+   },
+   {
+    "id": "k4",
+    "kind": "nav",
+    "ref": "login",
+    "why": "sole auth entry, must remain one-click visible top-right"
+   },
+   {
+    "id": "k5",
+    "kind": "text",
+    "ref": "Residential proxies detected on White House network",
+    "why": "represents 30-item ranked title + domain pattern (layer3intel.com) that is the product"
+   },
+   {
+    "id": "k6",
+    "kind": "number",
+    "ref": "485 points by Rasbora 2 hours ago | hide | 142 comments",
+    "why": "points/author/age/hide/comments metadata line - core ranking and social proof"
+   },
+   {
+    "id": "k7",
+    "kind": "number",
+    "ref": "1008 points by pseudolus 11 hours ago | hide | 607 comments",
+    "why": "breakout high-velocity story proving scale of voting and discussion"
+   },
+   {
+    "id": "k8",
+    "kind": "text",
+    "ref": "Ask HN: What Cryptography book do you recommend for reading",
+    "why": "Ask HN community Q&A format, key participatory content type"
+   },
+   {
+    "id": "k9",
+    "kind": "text",
+    "ref": "Show HN: After a decade of reversing, I got co-op working in DOS Wing Commander",
+    "why": "Show HN launch format, key maker content type to preserve"
+   },
+   {
+    "id": "k10",
+    "kind": "nav",
+    "ref": "More",
+    "why": "pagination to older ranks, essential for endless scanning"
+   },
+   {
+    "id": "k11",
+    "kind": "nav",
+    "ref": "Guidelines | FAQ | Lists | API | Security | Legal | Apply to YC | Contact",
+    "why": "footer trust and policy links plus YC funnel"
+   },
+   {
+    "id": "k12",
+    "kind": "widget",
+    "ref": "Search:",
+    "why": "bottom search box for archive lookup, power-user utility"
+   }
+  ],
+  "missing_imagery": [
+   {
+    "what": "16px source favicons next to domains",
+    "why": "top agency would add scannability without breaking density"
+   },
+   {
+    "what": "vote-velocity sparkline / mini bar for points-per-hour",
+    "why": "makes 1008pts vs 19pts instantly comparable while staying brutalist"
+   },
+   {
+    "what": "subtle read / visited state and comment-count heat",
+    "why": "helps scanning 30 rows in 3s, no photos needed"
+   }
+  ],
+  "weak_imagery": [],
+  "page_class": "utility",
+  "physical_subject": null,
+  "_mode_css": true,
+  "_allowed_text": "TITLE: Hacker News\nHEADINGS: \nTEXT: Hacker News new | past | comments | ask | show | jobs | submit login 1. Residential proxies detected on White House network ( layer3intel.com ) 485 points by Rasbora 2 hours ago | hide | 142&nbsp;comments 2. Ripple-65B Preview: U.S. Open-Weight SOTA on Agentic Coding ( ricursive.com ) 191 points by Philpax 4 hours ago | hide | 67&nbsp;comments 3. Insects don&#x27;t swarm at LED lights ( birdsoutsidemywindow.org ) 140 points by speckx 3 hours ago | hide | 81&nbsp;comments 4. AI is forcing us to pay off 40 years of technical debt ( ieee.org ) 1008 points by pseudolus 11 hours ago | hide | 607&nbsp;comments 5. A new Go API for JSON ( go.dev ) 196 points by olexsmir 5 hours ago | hide | 82&nbsp;comments 6. Hacking the Xbox 360 Hypervisor Part 3: Bad Update Improvements ( icode4.coffee ) 31 points by muricula 1 hour ago | hide | 2&nbsp;comments 7. Qualcomm Cloud AI 100 Ultra – 150W AI Accelerator Card with 128GB at 548GB&#x2F;s ( qualcomm.com ) 78 points by peter_d_sherman 3 hours ago | hide | 36&nbsp;comments 8. Conductor is joining Meta ( conductor.build ) 78 points by kenrose 5 hours ago | hide | 127&nbsp;comments 9. Progress on provable inference for large language models ( anthropic.com ) 163 points by ltononro 6 hours ago | hide | 82&nbsp;comments 10. Less Popular Than Coal ( argmin.net ) 19 points by _delirium 1 hour ago | hide | 3&nbsp;comments 11. Show HN: After a decade of reversing, I got co-op working in DOS Wing Commander ( fireflyk64.github.io ) 90 points by daniel_rh 4 hours ago | hide | 11&nbsp;comments 12. Is Curiosity Good for Us? ( lrb.co.uk ) 9 points by NaOH 1 hour ago | hide | 1&nbsp;comment 13. Nvidia RTX Spark encrypted firmware slows inference speed to 35% on Linux ( mindstudio.ai ) 578 points by novaRom 14 hours ago | hide | 266&nbsp;comments 14. Successful People (2013) ( samaltman.com ) 8 points by epestr 39 minutes ago | hide | 7&nbsp;comments 15. Ask HN: What Cryptography book do you recommend for reading with 10 year olds? 35 points by mike_richards 3 hours ago | hide | 39&nbsp;comments 16. AI poisoning: are we using AI, or is AI using us? ( sparkcan.com ) 3 points by bstefanovic 16 minutes ago | hide | discuss 17. OpenAI to acquire Pierre Computer Company ( openai.com ) 153 points by itunpredictable 8 hours ago | hide | 52&nbsp;comments 18. Launch HN: Kino AI (YC S23) – AI media manager and video editor 62 points by lukeigel 6 hours ago | hide | 26&nbsp;comments 19. Tencent Hy4 ( tencent.ai ) 1 \tHacker Newsnew | past | comments | ask | show | jobs | submit\tlogin\n\n\n\n1.\t\n\tResidential proxies detected on White House network (layer3intel.com)\n\t485 points by Rasbora 2 hours ago | hide | 142 comments\n\n2.\t\n\tRipple-65B Preview: U.S. Open-Weight SOTA on Agentic Coding (ricursive.com)\n\t191 points by Philpax 4 hours ago | hide | 67 comments\n\n3.\t\n\tInsects don't swarm at LED lights (birdsoutsidemywindow.org)\n\t140 points by speckx 3 hours ago | hide | 81 comments\n\n4.\t\n\tAI is forcing us to pay off 40 years of technical debt (ieee.org)\n\t1008 points by pseudolus 11 hours ago | hide | 607 comments\n\n5.\t\n\tA new Go API for JSON (go.dev)\n\t196 points by olexsmir 5 hours ago | hide | 82 comments\n\n6.\t\n\tHacking the Xbox 360 Hypervisor Part 3: Bad Update Improvements (icode4.coffee)\n\t31 points by muricula 1 hour ago | hide | 2 comments\n\n7.\t\n\tQualcomm Cloud AI 100 Ultra – 150W AI Accelerator Card with 128GB at 548GB/s (qualcomm.com)\n\t78 points by peter_d_sherman 3 hours ago | hide | 36 comments\n\n8.\t\n\tConductor is joining Meta (conductor.build)\n\t78 points by kenrose 5 hours ago | hide | 127 comments\n\n9.\t\n\tProgress on provable inference for large language models (anthropic.com)\n\t163 points by ltononro 6 hours ago | hide | 82 comments\n\n10.\t\n\tLess Popular Than Coal (argmin.net)\n\t19 points by _delirium 1 hour ago | hide | 3 comments\n\n11.\t\n\tShow HN: After a decade of reversing, I got co-op working in DOS Wing Commander (fireflyk64.github.io)\n\t90 points by daniel_rh 4 hours ago | hide | 11 comments\n\n12.\t\n\tIs Curiosity Good for Us? (lrb.co.uk)\n\t9 points by NaOH 1 hour ago | hide | 1 comment\n\n13.\t\n\tNvidia RTX Spark encrypted firmware slows inference speed to 35% on Linux (mindstudio.ai)\n\t578 points by novaRom 14 hours ago | hide | 266 comments\n\n14.\t\n\tSuccessful People (2013) (samaltman.com)\n\t8 points by epestr 39 minutes ago | hide | 7 comments\n\n15.\t\n\tAsk HN: What Cryptography book do you recommend for reading with 10 year olds?\n\t35 points by mike_richards 3 hours ago | hide | 39 comments\n\n16.\t\n\tAI poisoning: are we using AI, or is AI using us? (sparkcan.com)\n\t3 points by bstefanovic 16 minutes ago | hide | discuss\n\n17.\t\n\tOpenAI to acquire Pierre Computer Company (openai.com)\n\t153 points by itunpredictable 8 hours ago | hide | 52 comments\n\n18.\t\n\tLaunch HN: Kino AI (YC S23) – AI media manager and video editor\n\t62 points by lukeigel 6 hours ago | hide | 26 comments\n\n19.\t\n\tTencent Hy4 (tencent.ai)\n\t163 points by Philpax 9 hours ago | hide | 53 comments\n\n20.\t\n\tAMD expects to outsell Intel in Q4 for the first time in history (tomshardware.com)\n\t434 points by rbanffy 8 hours ago | hide | 149 comments\n\n21.\t\n\tAsk HN: What your experience with the monthly \"who wants to be hired\" thread?\n\t41 points by newswangerd 1 hour ago | hide | 33 comments\n\n22.\t\n\tShow HN: The DNA of DOOM – How code structure survives across 44 ports (squid-protocol.github.io)\n\t9 points by joe-esquibel 2 hours ago | hide | 10 comments\n\n23.\t\n\tVerification Is Not Knowledge: Science needs more than answers (cosmos-institute.org)\n\t220 points by ersinesen 14 hours ago | hide | 129 comments\n\n24.\t\n\tShow HN: Gauge – Open-Source CLI to recursively improve your docs (github.com/gauge-sh)\n\t4 points by 0x63_Problems 1 hour ago | hide | 1 comment\n\n25.\t\n\tDeath Comes for XSLT (dbushell.com)\n\t20 points by colejohnson66 2 hours ago | hide | 2 comments\n\n26.\t\n\tIncident with Pull Requests, Git Operations and Issues (githubstatus.com)\n\t251 points by kevcampb 13 hours ago | hide | 126 comments\n\n27.\t\n\tNorth Korean fake job interview led to $6.3B Binance heist (theregister.com)\n\t558 points by smalltech 9 hours ago | hide | 343 comments\n\n28.\t\n\tFrom wild to mild: Friendly foxes show changes in brain region (cornell.edu)\n\t36 points by gmays 5 hours ago | hide | 6 comments\n\n29.\t\n\tTell HN: Gemini trains on chat history, even for subscribers (personal accounts)\n\t617 points by jameslk 13 hours ago | hide | 157 comments\n\n30.\t\n\tKimi K3.1 Pro model weights are out (huggingface.co)\n\t316 points by abrarthought 8 hours ago | hide | 85 comments\n\n\n\tMore\n\n\n\n\nGuidelines | FAQ | Lists | API | Security | Legal | Apply to YC | Contact\n\n\nSearch:  {\"title\": \"Hacker News\", \"headings\": [], \"nav\": [], \"sections\": [], \"height\": 1217, \"bodyBg\": \"rgba(0, 0, 0, 0)\", \"font\": \"Verdana, Geneva, sans-serif\"}  Hacker News"
+ },
+ "brief_text": "Evolve https://news.ycombinator.com for developers, hackers, founders and technical obsessives who want dense signal fast: primary task 'scan the ranked top 30 stories in 3s and jump to article or comments', tone terse, utilitarian, insider-technical, no-nonsense. Penalise any information or element present on the live page that is missing here.",
+ "manifest": {
+  "url": "https://news.ycombinator.com",
+  "images": [
+   {
+    "kind": "img",
+    "w": 20,
+    "h": 20,
+    "top": 10,
+    "left": 105,
+    "alt": "",
+    "cls": " ",
+    "inHeader": false,
+    "path": "assets/img_1df306319e.svg",
+    "src": "https://news.ycombinator.com/y18.svg",
+    "bytes": 315
+   }
+  ],
+  "svgs": [],
+  "widgets": [],
+  "logo": null,
+  "live_html": "live.html",
+  "text": "\tHacker Newsnew | past | comments | ask | show | jobs | submit\tlogin\n\n\n\n1.\t\n\tResidential proxies detected on White House network (layer3intel.com)\n\t485 points by Rasbora 2 hours ago | hide | 142 comments\n\n2.\t\n\tRipple-65B Preview: U.S. Open-Weight SOTA on Agentic Coding (ricursive.com)\n\t191 points by Philpax 4 hours ago | hide | 67 comments\n\n3.\t\n\tInsects don't swarm at LED lights (birdsoutsidemywindow.org)\n\t140 points by speckx 3 hours ago | hide | 81 comments\n\n4.\t\n\tAI is forcing us to pay off 40 years of technical debt (ieee.org)\n\t1008 points by pseudolus 11 hours ago | hide | 607 comments\n\n5.\t\n\tA new Go API for JSON (go.dev)\n\t196 points by olexsmir 5 hours ago | hide | 82 comments\n\n6.\t\n\tHacking the Xbox 360 Hypervisor Part 3: Bad Update Improvements (icode4.coffee)\n\t31 points by muricula 1 hour ago | hide | 2 comments\n\n7.\t\n\tQualcomm Cloud AI 100 Ultra – 150W AI Accelerator Card with 128GB at 548GB/s (qualcomm.com)\n\t78 points by peter_d_sherman 3 hours ago | hide | 36 comments\n\n8.\t\n\tConductor is joining Meta (conductor.build)\n\t78 points by kenrose 5 hours ago | hide | 127 comments\n\n9.\t\n\tProgress on provable inference for large language models (anthropic.com)\n\t163 points by ltononro 6 hours ago | hide | 82 comments\n\n10.\t\n\tLess Popular Than Coal (argmin.net)\n\t19 points by _delirium 1 hour ago | hide | 3 comments\n\n11.\t\n\tShow HN: After a decade of reversing, I got co-op working in DOS Wing Commander (fireflyk64.github.io)\n\t90 points by daniel_rh 4 hours ago | hide | 11 comments\n\n12.\t\n\tIs Curiosity Good for Us? (lrb.co.uk)\n\t9 points by NaOH 1 hour ago | hide | 1 comment\n\n13.\t\n\tNvidia RTX Spark encrypted firmware slows inference speed to 35% on Linux (mindstudio.ai)\n\t578 points by novaRom 14 hours ago | hide | 266 comments\n\n14.\t\n\tSuccessful People (2013) (samaltman.com)\n\t8 points by epestr 39 minutes ago | hide | 7 comments\n\n15.\t\n\tAsk HN: What Cryptography book do you recommend for reading with 10 year olds?\n\t35 points by mike_richards 3 hours ago | hide | 39 comments\n\n16.\t\n\tAI poisoning: are we using AI, or is AI using us? (sparkcan.com)\n\t3 points by bstefanovic 16 minutes ago | hide | discuss\n\n17.\t\n\tOpenAI to acquire Pierre Computer Company (openai.com)\n\t153 points by itunpredictable 8 hours ago | hide | 52 comments\n\n18.\t\n\tLaunch HN: Kino AI (YC S23) – AI media manager and video editor\n\t62 points by lukeigel 6 hours ago | hide | 26 comments\n\n19.\t\n\tTencent Hy4 (tencent.ai)\n\t163 points by Philpax 9 hours ago | hide | 53 comments\n\n20.\t\n\tAMD expects to outsell Intel in Q4 for the first time in history (tomshardware.com)\n\t434 points by rbanffy 8 hours ago | hide | 149 comments\n\n21.\t\n\tAsk HN: What your experience with the monthly \"who wants to be hired\" thread?\n\t41 points by newswangerd 1 hour ago | hide | 33 comments\n\n22.\t\n\tShow HN: The DNA of DOOM – How code structure survives across 44 ports (squid-protocol.github.io)\n\t9 points by joe-esquibel 2 hours ago | hide | 10 comments\n\n23.\t\n\tVerification Is Not Knowledge: Science needs more than answers (cosmos-institute.org)\n\t220 points by ersinesen 14 hours ago | hide | 129 comments\n\n24.\t\n\tShow HN: Gauge – Open-Source CLI to recursively improve your docs (github.com/gauge-sh)\n\t4 points by 0x63_Problems 1 hour ago | hide | 1 comment\n\n25.\t\n\tDeath Comes for XSLT (dbushell.com)\n\t20 points by colejohnson66 2 hours ago | hide | 2 comments\n\n26.\t\n\tIncident with Pull Requests, Git Operations and Issues (githubstatus.com)\n\t251 points by kevcampb 13 hours ago | hide | 126 comments\n\n27.\t\n\tNorth Korean fake job interview led to $6.3B Binance heist (theregister.com)\n\t558 points by smalltech 9 hours ago | hide | 343 comments\n\n28.\t\n\tFrom wild to mild: Friendly foxes show changes in brain region (cornell.edu)\n\t36 points by gmays 5 hours ago | hide | 6 comments\n\n29.\t\n\tTell HN: Gemini trains on chat history, even for subscribers (personal accounts)\n\t617 points by jameslk 13 hours ago | hide | 157 comments\n\n30.\t\n\tKimi K3.1 Pro model weights are out (huggingface.co)\n\t316 points by abrarthought 8 hours ago | hide | 85 comments\n\n\n\tMore\n\n\n\n\nGuidelines | FAQ | Lists | API | Security | Legal | Apply to YC | Contact\n\n\nSearch: "
+ },
+ "steps": [
+  {
+   "round": 0,
+   "png": "results/showcase/evolve/hackernews/before.png",
+   "html": null,
+   "accepted": true,
+   "ui_score": 0.5743980471510394,
+   "heads": {
+    "aesthetic": {
+     "score": 0.7012230157852173,
+     "percentile": 82.10455764075067,
+     "confidence": 0.40244603157043457,
+     "top": "▼ L_pOFC, ▼ L_a24"
+    },
+    "attention": {
+     "score": 0.6139140129089355,
+     "percentile": 69.58904109589041,
+     "confidence": 0.2278280258178711,
+     "top": "▲ 기본 시각 평균, ▲ 움직임·형태 평균"
+    }
+   },
+   "judge": {
+    "aesthetic": 0.222,
+    "clarity": 0.889,
+    "attention": 0.333,
+    "brief_fit": 0.667,
+    "judge_score": 0.528,
+    "reason": "Faithful utilitarian HN list is instantly scannable but visually dated with no clear focal point and only 22 of 30 stories visible in 800px height."
+   },
+   "brain_only": 0.758,
+   "critique": {
+    "kind": "landing",
+    "ranking": [
+     [
+      "value_vmpfc",
+      0.9986473672947781
+     ],
+     [
+      "scene_place",
+      0.823508857514622
+     ],
+     [
+      "control_dlpfc",
+      0.7816871273658381
+     ],
+     [
+      "attention_dorsal",
+      0.6531774431538664
+     ],
+     [
+      "language",
+      0.1564442498158212
+     ],
+     [
+      "default_mode",
+      -0.012445035919114297
+     ],
+     [
+      "face_body",
+      -0.27250889810867795
+     ],
+     [
+      "visual_early",
+      -1.0682434265334306
+     ],
+     [
+      "visual_motion",
+      -2.060267684583701
+     ]
+    ],
+    "hook": {
+     "attention_early": 0.6831416712681291,
+     "attention_late": 0.638195329096735,
+     "visual_early": -0.6945718759320365,
+     "visual_late": -1.2550792018341277
+    },
+    "diagnosis": [
+     "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette"
+    ],
+    "directives": [
+     "Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion."
+    ],
+    "cited_areas": [
+     "▼ L reward value, liking (pOFC) [aesthetic]",
+     "▼ L affect, conflict (a24) [aesthetic]",
+     "▲ early vision (V1–V4) mean [attention]",
+     "▲ object shape & motion (MT/LO) mean [attention]"
+    ],
+    "groups": [
+     "visual_motion"
+    ],
+    "prompt_block": "BRAIN CRITIQUE (TRIBE v2 predicted human cortex while looking at the last render; values are relative within this image):\n- most driven regions: reward & value (OFC/vmPFC) +1.00, places & scenes (PPA/RSC) +0.82, cognitive control (dlPFC) +0.78; least: early vision (V1–V4) -1.07, object shape & motion (MT/LO) -2.06\n- first-2s hook vs later: attention +0.68 → +0.64, visual drive -0.69 → -1.26\n- areas the aesthetic head cites: ▼ L reward value, liking (pOFC) [aesthetic]; ▼ L affect, conflict (a24) [aesthetic]; ▲ early vision (V1–V4) mean [attention]; ▲ object shape & motion (MT/LO) mean [attention]\n- diagnosis: Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette\n- DO NEXT (highest priority first): (1) Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion."
+   }
+  },
+  {
+   "round": 1,
+   "png": "results/showcase/evolve/hackernews/r1.png",
+   "html": "results/showcase/evolve/hackernews/r1.html",
+   "changes": [
+    {
+     "directive": "typography",
+     "change": "IBM Plex Mono 13px body + JetBrains Mono tabular 26px rank gutter for scan silhouette"
+    },
+    {
+     "directive": "reflow",
+     "change": "sticky orange top bar + 48px rank gutter with continuous orange spine"
+    },
+    {
+     "directive": "motion-object",
+     "change": "diagonal wash + enlarged vote triangles as geometric motion cue"
+    }
+   ],
+   "actions": [
+    {
+     "tool": "typography",
+     "params": {
+      "display": "JetBrains Mono",
+      "body": "IBM Plex Mono",
+      "scale": "13px body / 28px rank numerals",
+      "grid": "8pt with 48px rank gutter"
+     },
+     "why": "Tabular oversized rank numerals create repeatable object silhouettes and scannability without adding imagery.",
+     "critique_line": "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+     "desc": "{\"display\": \"JetBrains Mono\", \"body\": \"IBM Plex Mono\", \"scale\": \"13px body / 28px rank numerals\", \"grid\": \"8pt with 48px rank gutter\"}"
+    },
+    {
+     "tool": "reflow",
+     "params": {
+      "move": "lock header to sticky top bar and pull rank numbers into fixed left gutter forming a continuous vertical motion line, keeping every word and all 30 rows dense"
+     },
+     "why": "Vertical gutter implies motion and gives a clear focal spine for 3s scanning.",
+     "critique_line": "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+     "desc": "{\"move\": \"lock header to sticky top bar and pull rank numbers into fixed left gutter forming a continuous vertical motion line, keeping every word and all 30 ro"
+    }
+   ],
+   "fidelity": {
+    "missing_paths": [],
+    "missing": [],
+    "missing_text": [],
+    "illegible": [],
+    "defects": [],
+    "density_ok": true,
+    "density_note": "candidate first screen shows 14 stories vs live 22 (~64%), larger more legible type but retains majority; full page shows all 30 stories",
+    "ok": true,
+    "facts": {
+     "numbers": [],
+     "names": [],
+     "claims": [],
+     "ok": true
+    }
+   },
+   "accepted": false,
+   "based_on": 0,
+   "ui_score": 0.5665030037947343,
+   "heads": {
+    "aesthetic": {
+     "score": 0.6586818099021912,
+     "percentile": 77.4798927613941,
+     "confidence": 0.3173636198043823,
+     "top": "▼ L_a24, ▲ L_31a"
+    },
+    "attention": {
+     "score": 0.6158906817436218,
+     "percentile": 69.58904109589041,
+     "confidence": 0.23178136348724365,
+     "top": "▲ 기본 시각 평균, ▲ 움직임·형태 평균"
+    }
+   },
+   "judge": {
+    "aesthetic": 0.667,
+    "clarity": 0.778,
+    "attention": 0.333,
+    "brief_fit": 0.333,
+    "judge_score": 0.528,
+    "reason": "Polished HN list reads instantly but oversized ranks, airy spacing, and decorative chrome cut density to ~14 stories and scatter focus, failing the 3s top-30 scan and terse utilitarian brief."
+   },
+   "brain_only": 0.735,
+   "critique": {
+    "kind": "landing",
+    "ranking": [
+     [
+      "value_vmpfc",
+      0.9631929803332238
+     ],
+     [
+      "scene_place",
+      0.8350734595117081
+     ],
+     [
+      "control_dlpfc",
+      0.7336332897079454
+     ],
+     [
+      "attention_dorsal",
+      0.6015558431859941
+     ],
+     [
+      "language",
+      0.23288239368243416
+     ],
+     [
+      "default_mode",
+      -0.028780472068601345
+     ],
+     [
+      "face_body",
+      -0.23429942880975083
+     ],
+     [
+      "visual_early",
+      -0.90773315724687
+     ],
+     [
+      "visual_motion",
+      -2.195524908296084
+     ]
+    ],
+    "hook": {
+     "attention_early": 0.6231045497772558,
+     "attention_late": 0.5907814898903632,
+     "visual_early": -0.4798374120775294,
+     "visual_late": -1.12168102983154
+    },
+    "diagnosis": [
+     "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette"
+    ],
+    "directives": [
+     "Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion."
+    ],
+    "cited_areas": [
+     "▼ L affect, conflict (a24) [aesthetic]",
+     "▲ L 31a [aesthetic]",
+     "▲ early vision (V1–V4) mean [attention]",
+     "▲ object shape & motion (MT/LO) mean [attention]"
+    ],
+    "groups": [
+     "visual_motion"
+    ],
+    "prompt_block": "BRAIN CRITIQUE (TRIBE v2 predicted human cortex while looking at the last render; values are relative within this image):\n- most driven regions: reward & value (OFC/vmPFC) +0.96, places & scenes (PPA/RSC) +0.84, cognitive control (dlPFC) +0.73; least: early vision (V1–V4) -0.91, object shape & motion (MT/LO) -2.20\n- first-2s hook vs later: attention +0.62 → +0.59, visual drive -0.48 → -1.12\n- areas the aesthetic head cites: ▼ L affect, conflict (a24) [aesthetic]; ▲ L 31a [aesthetic]; ▲ early vision (V1–V4) mean [attention]; ▲ object shape & motion (MT/LO) mean [attention]\n- diagnosis: Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette\n- DO NEXT (highest priority first): (1) Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion."
+   },
+   "p_vs_best": 0.075,
+   "p_vs_best_reason": "B preserves the authentic ultra-dense terse utilitarian list showing 22 stories in the same viewport where A shows only 14 with heavy chrome, so B alone supports the scan-top-30-in-3s task and no-nonsense insider fit. | swapped: A preserves HN's dense terse utilitarian list showing 22 stories for instant 3s scanning while B's oversized chrome and spacing shows only ~14 and slows signal."
+  },
+  {
+   "round": 2,
+   "png": "results/showcase/evolve/hackernews/r2.png",
+   "html": "results/showcase/evolve/hackernews/r2.html",
+   "changes": [
+    {
+     "directive": "diagonal texture + object silhouette",
+     "change": "brutalist duotone diagonal wash on body + rank gutter and bold offset-shadow logo block + enlarged votearrow triangles for LO/MT motion drive"
+    },
+    {
+     "directive": "scan density + hierarchy",
+     "change": "kept Verdana 13px titles / 10px subtext, tightened rank/title/subtext rhythm, zebra hover rule and mono rank/scores for 3s scan"
+    },
+    {
+     "directive": "header/footer + affordance",
+     "change": "sticky #ff6600 header with diagonal cut, black pagetop links, underline + orange hover, 4.5:1 subtext grays and strong focus outlines"
+    }
+   ],
+   "actions": [
+    {
+     "tool": "photo",
+     "params": {
+      "query": "brutalist concrete diagonal shadow texture",
+      "treatment": "duotone"
+     },
+     "why": "Adds early-vision texture and diagonal motion as CSS background wash behind rank gutter without breaking 30-item scan density.",
+     "critique_line": "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+     "error": "no photo passed the gate"
+    }
+   ],
+   "fidelity": {
+    "missing_paths": [],
+    "missing": [],
+    "missing_text": [],
+    "illegible": [],
+    "defects": [],
+    "density_ok": true,
+    "density_note": "candidate first screen shows 17 stories vs live 22 (~77%), same story category, larger type still scannable; full page retains all 30",
+    "ok": true,
+    "facts": {
+     "numbers": [],
+     "names": [],
+     "claims": [],
+     "ok": true
+    }
+   },
+   "accepted": false,
+   "based_on": 0,
+   "ui_score": 0.7228295152331428,
+   "heads": {
+    "aesthetic": {
+     "score": 0.6789078116416931,
+     "percentile": 79.62466487935657,
+     "confidence": 0.35781562328338623,
+     "top": "▼ L_a24, ▲ L_31a"
+    },
+    "attention": {
+     "score": 0.5943859219551086,
+     "percentile": 66.3013698630137,
+     "confidence": 0.18877184391021729,
+     "top": "▲ 기본 시각 평균, ▲ 움직임·형태 평균"
+    }
+   },
+   "judge": {
+    "aesthetic": 0.667,
+    "clarity": 0.889,
+    "attention": 0.556,
+    "brief_fit": 0.889,
+    "judge_score": 0.75,
+    "reason": "Dense ranked list with points and comments preserves instant HN scannability, though striped background and pill badges add polish at the cost of some utilitarian focus."
+   },
+   "brain_only": 0.73,
+   "critique": {
+    "kind": "landing",
+    "ranking": [
+     [
+      "value_vmpfc",
+      0.9725675312570791
+     ],
+     [
+      "scene_place",
+      0.8682235595726873
+     ],
+     [
+      "control_dlpfc",
+      0.7355935714678279
+     ],
+     [
+      "attention_dorsal",
+      0.577663313120217
+     ],
+     [
+      "language",
+      0.1698732430584751
+     ],
+     [
+      "default_mode",
+      -0.002514312570708263
+     ],
+     [
+      "face_body",
+      -0.25740274942625563
+     ],
+     [
+      "visual_early",
+      -0.9079811270970115
+     ],
+     [
+      "visual_motion",
+      -2.1560230293823115
+     ]
+    ],
+    "hook": {
+     "attention_early": 0.599034969971237,
+     "attention_late": 0.566977484694707,
+     "visual_early": -0.4560334425122062,
+     "visual_late": -1.1339549693894142
+    },
+    "diagnosis": [
+     "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette"
+    ],
+    "directives": [
+     "Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion."
+    ],
+    "cited_areas": [
+     "▼ L affect, conflict (a24) [aesthetic]",
+     "▲ L 31a [aesthetic]",
+     "▲ early vision (V1–V4) mean [attention]",
+     "▲ object shape & motion (MT/LO) mean [attention]"
+    ],
+    "groups": [
+     "visual_motion"
+    ],
+    "prompt_block": "BRAIN CRITIQUE (TRIBE v2 predicted human cortex while looking at the last render; values are relative within this image):\n- most driven regions: reward & value (OFC/vmPFC) +0.97, places & scenes (PPA/RSC) +0.87, cognitive control (dlPFC) +0.74; least: early vision (V1–V4) -0.91, object shape & motion (MT/LO) -2.16\n- first-2s hook vs later: attention +0.60 → +0.57, visual drive -0.46 → -1.13\n- areas the aesthetic head cites: ▼ L affect, conflict (a24) [aesthetic]; ▲ L 31a [aesthetic]; ▲ early vision (V1–V4) mean [attention]; ▲ object shape & motion (MT/LO) mean [attention]\n- diagnosis: Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette\n- DO NEXT (highest priority first): (1) Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion."
+   },
+   "p_vs_best": 0.065,
+   "p_vs_best_reason": "B preserves the terse dense utilitarian scan of 22 stories while A adds distracting stripes pills and spacing that slows 3-second scanning and betrays the no-nonsense brief. | swapped: A preserves the dense, terse, instantly scannable HN list while B adds striped background, shadows and pill badges that create visual noise and slow the 3s scan, violating the utilitarian no-nonsense brief."
+  }
+ ],
+ "trail": [
+  {
+   "round": 1,
+   "tool": "typography",
+   "why": "Tabular oversized rank numerals create repeatable object silhouettes and scannability without adding imagery.",
+   "critique_line": "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+   "desc": "{\"display\": \"JetBrains Mono\", \"body\": \"IBM Plex Mono\", \"scale\": \"13px body / 28px rank numerals\", \"grid\": \"8pt with 48px rank gutter\"}",
+   "brain_delta": -0.023,
+   "judge_delta": 0.0,
+   "score_before": 0.5743980471510394,
+   "score_after": 0.5665030037947343,
+   "accepted": false,
+   "fidelity": {
+    "missing_paths": [],
+    "missing": []
+   },
+   "page_thumb": "trail/r1_page.jpg"
+  },
+  {
+   "round": 1,
+   "tool": "reflow",
+   "why": "Vertical gutter implies motion and gives a clear focal spine for 3s scanning.",
+   "critique_line": "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+   "desc": "{\"move\": \"lock header to sticky top bar and pull rank numbers into fixed left gutter forming a continuous vertical motion line, keeping every word and all 30 ro",
+   "brain_delta": -0.023,
+   "judge_delta": 0.0,
+   "score_before": 0.5743980471510394,
+   "score_after": 0.5665030037947343,
+   "accepted": false,
+   "fidelity": {
+    "missing_paths": [],
+    "missing": []
+   },
+   "page_thumb": "trail/r1_page.jpg"
+  },
+  {
+   "round": 2,
+   "tool": "photo",
+   "why": "Adds early-vision texture and diagonal motion as CSS background wash behind rank gutter without breaking 30-item scan density.",
+   "critique_line": "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+   "desc": "",
+   "brain_delta": -0.028,
+   "judge_delta": 0.222,
+   "score_before": 0.5743980471510394,
+   "score_after": 0.7228295152331428,
+   "accepted": false,
+   "fidelity": {
+    "missing_paths": [],
+    "missing": []
+   },
+   "page_thumb": "trail/r2_page.jpg"
+  }
+ ],
+ "best_round": 0,
+ "pairwise_after_vs_before": null
+}

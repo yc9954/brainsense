@@ -1,0 +1,108 @@
+{
+ "audience": "Biological and artificial intelligence researchers, neuroscientists, ML scientists and open-science collaborators",
+ "primary_task": "Grasp the brain-AI mission in 3s and click Explore the Initiatives",
+ "tone": "Visionary, scientific, open and collaborative",
+ "lang": "editorial",
+ "brand": {
+  "primary": "#2B0A4A",
+  "secondary": "#6D28D9",
+  "accent": "#38E1FF",
+  "text": "The Algonauts Project"
+ },
+ "must_keep": [
+  {
+   "id": "k1",
+   "kind": "logo",
+   "ref": "assets/img_6aea352d61.png",
+   "why": "Header wordmark + gear-brain mark, core brand identity"
+  },
+  {
+   "id": "k2",
+   "kind": "asset",
+   "ref": "assets/img_ab90c30b3e.png",
+   "why": "Large hero gear-brain logo, central visual metaphor for algorithmic exploration"
+  },
+  {
+   "id": "k3",
+   "kind": "nav",
+   "ref": "About | Initiatives | News | Team | Contact | Stay Updated",
+   "why": "Primary navigation group for the whole single-page site"
+  },
+  {
+   "id": "k4",
+   "kind": "text",
+   "ref": "Promoting initiatives at the intersection of biological and artificial intelligence research.",
+   "why": "Hero value proposition that explains the project in one line"
+  },
+  {
+   "id": "k5",
+   "kind": "offer",
+   "ref": "Explore the Initiatives",
+   "why": "Primary CTA driving visitors to challenges and toolkits"
+  },
+  {
+   "id": "k6",
+   "kind": "number",
+   "ref": "first launched in 2019",
+   "why": "Founding year establishing credibility and continuity"
+  },
+  {
+   "id": "k7",
+   "kind": "offer",
+   "ref": "The Algonauts Project Challenges",
+   "why": "Flagship competitive benchmarking initiative"
+  },
+  {
+   "id": "k8",
+   "kind": "offer",
+   "ref": "Net2Brain | BERG | BMD | THINGS EEG2",
+   "why": "Toolkit suite of models, benchmarks and datasets for brain-AI comparison"
+  },
+  {
+   "id": "k9",
+   "kind": "text",
+   "ref": "An Algorithmic Exploration | Faster Innovation | Collaborative Science | The Future",
+   "why": "Mission pillars explaining why brains and models should be compared openly"
+  },
+  {
+   "id": "k10",
+   "kind": "text",
+   "ref": "Founders | Current Collaborators | Past Collaborators",
+   "why": "Team structure showing leadership and open community"
+  },
+  {
+   "id": "k11",
+   "kind": "asset",
+   "ref": "assets/img_e989ddde00.png",
+   "why": "Founder portrait set - Radoslaw Cichy, Gemma Roig, Aude Oliva - human trust signal, keep all headshots"
+  },
+  {
+   "id": "k12",
+   "kind": "text",
+   "ref": "News | Contact",
+   "why": "Updates and contact entry points for joining and following science"
+  }
+ ],
+ "missing_imagery": [
+  {
+   "what": "Brain vs model comparison visualization",
+   "why": "Top agency would show fMRI/EEG aligned to DNN layers to make abstract mission tangible"
+  },
+  {
+   "what": "Researchers collaborating / lab and conference photography",
+   "why": "Humanizes open-science community beyond small headshots"
+  },
+  {
+   "what": "Challenge dataset preview and leaderboard graphic",
+   "why": "Proves active competition and gives visitors a reason to join"
+  }
+ ],
+ "weak_imagery": [
+  "assets/img_23c92b0a50.png",
+  "assets/img_a8b438a062.png",
+  "assets/img_64510cf602.jpg",
+  "assets/img_1bc874c261.png"
+ ],
+ "page_class": "marketing",
+ "physical_subject": null
+}

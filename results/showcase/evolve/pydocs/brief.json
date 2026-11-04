@@ -1,0 +1,97 @@
+{
+ "audience": "Python developers, students, and contributors looking up language reference and guides",
+ "primary_task": "Identify current version (3.15.2) and jump to the right doc section or search in under 3s",
+ "tone": "clear, technical, welcoming, utilitarian",
+ "lang": "saas",
+ "brand": {
+  "primary": "#3776AB",
+  "secondary": "#306998",
+  "accent": "#FFD43B",
+  "text": "Python"
+ },
+ "must_keep": [
+  {
+   "id": "k1",
+   "kind": "logo",
+   "ref": "Python logo + Python wordmark in top bar",
+   "why": "Core brand trust for official documentation"
+  },
+  {
+   "id": "k2",
+   "kind": "widget",
+   "ref": "Quick search + Go | modules | index",
+   "why": "Primary 3-second task: search and jump to modules/index"
+  },
+  {
+   "id": "k3",
+   "kind": "widget",
+   "ref": "English language selector + 3.15.2 version selector + Theme Auto Light Dark",
+   "why": "Critical context controls for versioned translated docs"
+  },
+  {
+   "id": "k4",
+   "kind": "nav",
+   "ref": "Download these documents",
+   "why": "Offline access entry point"
+  },
+  {
+   "id": "k5",
+   "kind": "nav",
+   "ref": "Docs by version: Python 3.16 (in development), Python 3.15 (stable), Python 3.14 (stable), Python 3.13 to 3.11 (security-fixes), Python 3.10 to 2.6 (EOL), All versions",
+   "why": "Version switching is core docs navigation"
+  },
+  {
+   "id": "k6",
+   "kind": "nav",
+   "ref": "Other resources: PEP Index, Beginner's Guide, Book List, Audio/Visual Talks, Python Developer's Guide",
+   "why": "Secondary learning ecosystem links"
+  },
+  {
+   "id": "k7",
+   "kind": "text",
+   "ref": "Python 3.15.2 documentation + Welcome! This is the official documentation for Python 3.15.2.",
+   "why": "Confirms correct version and official source"
+  },
+  {
+   "id": "k8",
+   "kind": "nav",
+   "ref": "Documentation sections: What's new in Python 3.15?, Tutorial, Built-ins reference, Library reference, Language reference, Python setup and usage, Python HOWTOs, Installing Python modules, Extending and embedding, Python's C API, FAQs, Deprecations",
+   "why": "Main content discovery grid"
+  },
+  {
+   "id": "k9",
+   "kind": "nav",
+   "ref": "Other resources: Python developer's guide, Python Packaging User Guide, Audio/visual talks, Python Enhancement Proposals, Static Typing with Python",
+   "why": "Contributor and advanced-topic pathways"
+  },
+  {
+   "id": "k10",
+   "kind": "nav",
+   "ref": "Indices, glossary, and search: Global module index, General index, Glossary, Search page, Complete table of contents",
+   "why": "Lookup tools for reference use"
+  },
+  {
+   "id": "k11",
+   "kind": "text",
+   "ref": "Project information: Reporting issues, Contributing to docs, Download the documentation, History and license of Python, Copyright, About the documentation + footer license",
+   "why": "Trust, maintenance and legal provenance"
+  }
+ ],
+ "missing_imagery": [
+  {
+   "what": "Section icons / visual cards for Tutorial, Library, Language, HOWTOs",
+   "why": "Top agency would add scannable iconography to break wall-of-links and speed wayfinding"
+  },
+  {
+   "what": "Live code snippet preview with syntax highlighting",
+   "why": "Signals what Python docs contain and helps beginners orient instantly"
+  },
+  {
+   "what": "Prominent Python two-snake brand mark illustration",
+   "why": "Adds brand warmth to otherwise text-only utility page"
+  }
+ ],
+ "weak_imagery": [],
+ "page_class": "utility",
+ "physical_subject": null
+}

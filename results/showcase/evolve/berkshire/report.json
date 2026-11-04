@@ -1,0 +1,570 @@
+{
+ "source": "https://www.berkshirehathaway.com",
+ "brief": {
+  "audience": "Existing and prospective Berkshire shareholders, value investors, financial journalists, analysts and operating-company stakeholders seeking primary source documents",
+  "primary_task": "scan the link directory and open the correct shareholder letter, Annual & Interim Report, SEC filing, news release, or Annual Meeting info in 3 seconds",
+  "tone": "plain-spoken, reverent, trustworthy Midwestern stewardship",
+  "lang": "editorial",
+  "brand": {
+   "primary": "#0A1E7A",
+   "secondary": "#FFFFFF",
+   "accent": "#6A0DAD",
+   "text": "BERKSHIRE HATHAWAY INC."
+  },
+  "must_keep": [
+   {
+    "id": "k1",
+    "kind": "logo",
+    "ref": "BERKSHIRE HATHAWAY INC.",
+    "why": "Heritage serif wordmark with oversized B-H initials is the sole brand identifier, must be preserved and refined not replaced"
+   },
+   {
+    "id": "k2",
+    "kind": "nav",
+    "ref": "A Message from Warren E. Buffett",
+    "why": "Foundational voice-of-owner entry point, top user destination"
+   },
+   {
+    "id": "k3",
+    "kind": "nav",
+    "ref": "Annual & Interim Reports Updated August 8, 2026",
+    "why": "Core investor task with freshness date proving currency"
+   },
+   {
+    "id": "k4",
+    "kind": "nav",
+    "ref": "News Releases from Berkshire Hathaway and from Warren Buffett Updated November 4, 2026",
+    "why": "Most recently updated item, critical for press and shareholders"
+   },
+   {
+    "id": "k5",
+    "kind": "nav",
+    "ref": "Link to SEC Filings",
+    "why": "Compliance and due-diligence gateway"
+   },
+   {
+    "id": "k6",
+    "kind": "nav",
+    "ref": "Annual Meeting Information Updated April 20, 2026",
+    "why": "Major pilgrimage event driver for tens of thousands of shareholders"
+   },
+   {
+    "id": "k7",
+    "kind": "nav",
+    "ref": "Warren Buffett's Letters to Berkshire Shareholders Updated February 22, 2025",
+    "why": "Iconic historical archive, succession context"
+   },
+   {
+    "id": "k8",
+    "kind": "nav",
+    "ref": "Greg Abel's Letters to Berkshire Shareholders Updated February 28, 2026",
+    "why": "Succession leadership signal, must sit alongside Buffett letters"
+   },
+   {
+    "id": "k9",
+    "kind": "nav",
+    "ref": "Special Letters from Warren & Charlie RE:Past, Present and Future",
+    "why": "Unique legacy content including Charlie Munger's Letters to Wesco Shareholders"
+   },
+   {
+    "id": "k10",
+    "kind": "nav",
+    "ref": "Links to Berkshire Operating Companies",
+    "why": "Directory to 60+ subsidiaries, key discovery function"
+   },
+   {
+    "id": "k11",
+    "kind": "nav",
+    "ref": "Corporate Governance | Common Stock Information | Sustainability | Berkshire Hathaway Energy Investor Presentations",
+    "why": "Governance and ESG compliance cluster required by institutional investors"
+   },
+   {
+    "id": "k12",
+    "kind": "offer",
+    "ref": "FOR A FREE CAR INSURANCE RATE QUOTE THAT COULD SAVE YOU SUBSTANTIAL MONEY WWW.GEICO.COM OR CALL 1-888-395-6349, 24 HOURS A DAY",
+    "why": "Only commercial CTA on page, historic GEICO cross-promotion must be retained"
+   },
+   {
+    "id": "k13",
+    "kind": "text",
+    "ref": "3555 Farnam Street Omaha, NE 68131 Official Home Page",
+    "why": "Physical address establishes authenticity and Omaha roots"
+   },
+   {
+    "id": "k14",
+    "kind": "text",
+    "ref": "Fraudulent Claims Regarding Mr. Buffett's Endorsements of Investment Products and Political Candidates",
+    "why": "Trust and safety warning critical to brand protection"
+   }
+  ],
+  "missing_imagery": [
+   {
+    "what": "Black-and-white heritage portrait of Warren Buffett and Charlie Munger in study",
+    "why": "Humanizes austere text list and reinforces stewardship without selling"
+   },
+   {
+    "what": "Architectural photo of 3555 Farnam Street Omaha HQ and Annual Meeting arena crowd",
+    "why": "Grounds abstract holding company in real place and scale of ownership community"
+   },
+   {
+    "what": "Subtle mosaic / crest strip of operating company marks (GEICO, BNSF, Dairy Queen, See's)",
+    "why": "Visualizes breadth of portfolio that text links alone cannot convey"
+   }
+  ],
+  "weak_imagery": [],
+  "page_class": "utility",
+  "physical_subject": null,
+  "_mode_css": true,
+  "_allowed_text": "TITLE: BERKSHIRE HATHAWAY INC.\nHEADINGS: \nTEXT: B ERKSHIRE H ATHAWAY INC. 3555 Farnam Street Omaha, NE 68131 Official Home Page &nbsp; A Message from Warren E. Buffett Fraudulent Claims Regarding Mr. Buffett's Endorsements of Investment Products and Political Candidates Annual &amp; Interim Reports Updated August 8, 2026 News Releases from Berkshire Hathaway and from Warren Buffett Updated November 4, 2026 Link to SEC Filings Annual Meeting Information Updated April 20, 2026 Warren Buffett's Letters to Berkshire Shareholders Updated February 22, 2025 Greg Abel's Letters to Berkshire Shareholders Updated February 28, 2026 Special Letters from Warren & Charlie RE:Past, Present and Future Charlie Munger's Letters to Wesco Shareholders Links to Berkshire Operating Companies Berkshire Hathaway Energy Investor Presentations Corporate Governance Common Stock Information Sustainability FOR A FREE CAR INSURANCE RATE QUOTE THAT COULD SAVE YOU SUBSTANTIAL MONEY WWW.GEICO.COM OR CALL 1-888-395-6349, 24 HOURS A DAY If you have any comments about our WEB page, you can write us at the address shown above. However, due to the limited number of personnel in our corporate office, we are unable to provide a direct response. Legal Disclaimer Copyright &copy; 1977-2026 Berkshire Hathaway Inc. BERKSHIRE HATHAWAY INC.\n3555 Farnam Street\nOmaha, NE 68131\nOfficial Home Page \n\nA Message from Warren E. Buffett\n\t\nFraudulent Claims Regarding Mr. Buffett's Endorsements of Investment Products and Political Candidates\n\n\nAnnual & Interim Reports\nUpdated August 8, 2026\n\n\t\nNews Releases from Berkshire Hathaway and from Warren Buffett\nUpdated November 4, 2026\n\n\nLink to SEC Filings\n\t\nAnnual Meeting Information\nUpdated April 20, 2026\n\n\n\nWarren Buffett's Letters to Berkshire Shareholders\nUpdated February 22, 2025\n\n\t\nGreg Abel's Letters to Berkshire Shareholders\nUpdated February 28, 2026\n\n\n\n\nSpecial Letters from Warren & Charlie RE:Past, Present and Future\n\t\nCharlie Munger's Letters to Wesco Shareholders\n\n\n\nLinks to Berkshire Operating Companies\n\n\n\t\nBerkshire Hathaway Energy Investor Presentations\n\n\nCorporate Governance\n\n\n\t\nCommon Stock Information\n\n\nSustainability\n\t\n\n\nFOR A FREE CAR INSURANCE RATE QUOTE THAT COULD SAVE YOU SUBSTANTIAL MONEY\nWWW.GEICO.COM OR CALL 1-888-395-6349, 24 HOURS A DAY\n\nIf you have any comments about our WEB page, you can write us at the address shown above. However, due to the limited number of personnel in our corporate office, we are unable to provide a direct response.\n\nLegal Disclaimer\n\nCopyright © 1977-2026 Berkshire Hathaway Inc. {\"title\": \"BERKSHIRE HATHAWAY INC.\", \"headings\": [], \"nav\": [], \"sections\": [], \"height\": 803, \"bodyBg\": \"rgb(255, 255, 255)\", \"font\": \"Times\"}  BERKSHIRE HATHAWAY INC."
+ },
+ "brief_text": "Evolve https://www.berkshirehathaway.com for Existing and prospective Berkshire shareholders, value investors, financial journalists, analysts and operating-company stakeholders seeking primary source documents: primary task 'scan the link directory and open the correct shareholder letter, Annual & Interim Report, SEC filing, news release, or Annual Meeting info in 3 seconds', tone plain-spoken, reverent, trustworthy Midwestern stewardship. Penalise any information or element present on the live page that is missing here.",
+ "manifest": {
+  "url": "https://www.berkshirehathaway.com",
+  "images": [],
+  "svgs": [],
+  "widgets": [],
+  "logo": null,
+  "live_html": "live.html",
+  "text": "BERKSHIRE HATHAWAY INC.\n3555 Farnam Street\nOmaha, NE 68131\nOfficial Home Page \n\nA Message from Warren E. Buffett\n\t\nFraudulent Claims Regarding Mr. Buffett's Endorsements of Investment Products and Political Candidates\n\n\nAnnual & Interim Reports\nUpdated August 8, 2026\n\n\t\nNews Releases from Berkshire Hathaway and from Warren Buffett\nUpdated November 4, 2026\n\n\nLink to SEC Filings\n\t\nAnnual Meeting Information\nUpdated April 20, 2026\n\n\n\nWarren Buffett's Letters to Berkshire Shareholders\nUpdated February 22, 2025\n\n\t\nGreg Abel's Letters to Berkshire Shareholders\nUpdated February 28, 2026\n\n\n\n\nSpecial Letters from Warren & Charlie RE:Past, Present and Future\n\t\nCharlie Munger's Letters to Wesco Shareholders\n\n\n\nLinks to Berkshire Operating Companies\n\n\n\t\nBerkshire Hathaway Energy Investor Presentations\n\n\nCorporate Governance\n\n\n\t\nCommon Stock Information\n\n\nSustainability\n\t\n\n\nFOR A FREE CAR INSURANCE RATE QUOTE THAT COULD SAVE YOU SUBSTANTIAL MONEY\nWWW.GEICO.COM OR CALL 1-888-395-6349, 24 HOURS A DAY\n\nIf you have any comments about our WEB page, you can write us at the address shown above. However, due to the limited number of personnel in our corporate office, we are unable to provide a direct response.\n\nLegal Disclaimer\n\nCopyright © 1977-2026 Berkshire Hathaway Inc."
+ },
+ "steps": [
+  {
+   "round": 0,
+   "png": "results/showcase/evolve/berkshire/before.png",
+   "html": null,
+   "accepted": true,
+   "ui_score": 0.6082062345297727,
+   "heads": {
+    "aesthetic": {
+     "score": 0.7889756560325623,
+     "percentile": 90.14745308310992,
+     "confidence": 0.5779513120651245,
+     "top": "▼ L_a24, ▲ L_31a"
+    },
+    "attention": {
+     "score": 0.5986823439598083,
+     "percentile": 67.12328767123287,
+     "confidence": 0.1973646879196167,
+     "top": "▲ 움직임·형태 평균, ▲ 기본 시각 평균"
+    }
+   },
+   "judge": {
+    "aesthetic": 0.111,
+    "clarity": 0.889,
+    "attention": 0.222,
+    "brief_fit": 1.0,
+    "judge_score": 0.556,
+    "reason": "Faithful plain directory preserves all live links and stewardship tone despite dated visuals and flat hierarchy."
+   },
+   "brain_only": 0.786,
+   "critique": {
+    "kind": "landing",
+    "ranking": [
+     [
+      "scene_place",
+      1.395343726452434
+     ],
+     [
+      "value_vmpfc",
+      0.8086862276144101
+     ],
+     [
+      "control_dlpfc",
+      0.5128691107927935
+     ],
+     [
+      "attention_dorsal",
+      0.4087558186678235
+     ],
+     [
+      "language",
+      -0.09688043754139987
+     ],
+     [
+      "default_mode",
+      -0.15540683885065645
+     ],
+     [
+      "face_body",
+      -0.25633502070029274
+     ],
+     [
+      "visual_early",
+      -0.5678786195063693
+     ],
+     [
+      "visual_motion",
+      -2.049153966928744
+     ]
+    ],
+    "hook": {
+     "attention_early": 0.39382561425219675,
+     "attention_late": 0.4162209208756368,
+     "visual_early": -0.036164272917851494,
+     "visual_late": -0.8337357928006284
+    },
+    "diagnosis": [
+     "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette"
+    ],
+    "directives": [
+     "Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion."
+    ],
+    "cited_areas": [
+     "▼ L affect, conflict (a24) [aesthetic]",
+     "▲ L 31a [aesthetic]",
+     "▲ object shape & motion (MT/LO) mean [attention]",
+     "▲ early vision (V1–V4) mean [attention]"
+    ],
+    "groups": [
+     "visual_motion"
+    ],
+    "prompt_block": "BRAIN CRITIQUE (TRIBE v2 predicted human cortex while looking at the last render; values are relative within this image):\n- most driven regions: places & scenes (PPA/RSC) +1.40, reward & value (OFC/vmPFC) +0.81, cognitive control (dlPFC) +0.51; least: early vision (V1–V4) -0.57, object shape & motion (MT/LO) -2.05\n- first-2s hook vs later: attention +0.39 → +0.42, visual drive -0.04 → -0.83\n- areas the aesthetic head cites: ▼ L affect, conflict (a24) [aesthetic]; ▲ L 31a [aesthetic]; ▲ object shape & motion (MT/LO) mean [attention]; ▲ early vision (V1–V4) mean [attention]\n- diagnosis: Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette\n- DO NEXT (highest priority first): (1) Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion."
+   }
+  },
+  {
+   "round": 1,
+   "png": "results/showcase/evolve/berkshire/r1.png",
+   "html": "results/showcase/evolve/berkshire/r1.html",
+   "changes": [
+    {
+     "directive": "heritage masthead silhouette + diagonal motion",
+     "change": "64px Cormorant B-H masthead on tinted gradient with oversized diagonal navy wash and double rule; 2-col table kept as table with accent left-rules and pill freshness badges; Inter 17px links with hover/focus affordance"
+    }
+   ],
+   "actions": [
+    {
+     "tool": "typography",
+     "params": {
+      "display": "Cormorant Garamond heritage serif",
+      "body": "Inter system sans",
+      "scale": "masthead 64px / section 13px caps / links 17px",
+      "grid": "12-col/8pt"
+     },
+     "why": "Creates a dominant oversized B-H typographic silhouette and high-contrast hierarchy to anchor scanning in 3 seconds.",
+     "critique_line": "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+     "desc": "{\"display\": \"Cormorant Garamond heritage serif\", \"body\": \"Inter system sans\", \"scale\": \"masthead 64px / section 13px caps / links 17px\", \"grid\": \"12-col/8pt\"}"
+    },
+    {
+     "tool": "reflow",
+     "params": {
+      "move": "masthead centered top with rule; links into 2-column grouped grid with freshness dates as right-aligned badges, keeping every word"
+     },
+     "why": "Adds rhythm and implied diagonal flow via grouped grid and accent rules without adding a hero panel.",
+     "critique_line": "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+     "desc": "{\"move\": \"masthead centered top with rule; links into 2-column grouped grid with freshness dates as right-aligned badges, keeping every word\"}"
+    }
+   ],
+   "fidelity": {
+    "missing_paths": [],
+    "missing": [],
+    "missing_text": [],
+    "illegible": [],
+    "defects": [],
+    "density_ok": true,
+    "density_note": "candidate first screen shows 12 of 15 live link items (~80%); all primary categories preserved, remaining Corporate Governance/Common Stock/Sustainability visible in full page below fold",
+    "ok": true,
+    "facts": {
+     "numbers": [],
+     "names": [],
+     "claims": [],
+     "ok": true
+    }
+   },
+   "accepted": false,
+   "based_on": 0,
+   "ui_score": 0.6200331419744068,
+   "heads": {
+    "aesthetic": {
+     "score": 0.7725584506988525,
+     "percentile": 88.73994638069705,
+     "confidence": 0.5451169013977051,
+     "top": "▼ L_a24, ▲ L_31a"
+    },
+    "attention": {
+     "score": 0.5602275729179382,
+     "percentile": 61.64383561643836,
+     "confidence": 0.12045514583587646,
+     "top": "▲ 움직임·형태 평균, ▲ 기본 시각 평균"
+    }
+   },
+   "judge": {
+    "aesthetic": 0.667,
+    "clarity": 0.778,
+    "attention": 0.444,
+    "brief_fit": 0.444,
+    "judge_score": 0.583,
+    "reason": "Polished cards with updated badges aid scanning but create twelve competing focal points and push lower live-page links like Corporate Governance and Sustainability below the 800px fold, breaking the one-screen plain-spoken directory."
+   },
+   "brain_only": 0.752,
+   "critique": {
+    "kind": "landing",
+    "ranking": [
+     [
+      "scene_place",
+      1.40528350831563
+     ],
+     [
+      "value_vmpfc",
+      0.8028783329349295
+     ],
+     [
+      "control_dlpfc",
+      0.4389428079766729
+     ],
+     [
+      "attention_dorsal",
+      0.3713517644556967
+     ],
+     [
+      "language",
+      -0.16979902773411915
+     ],
+     [
+      "visual_early",
+      -0.22281575249588495
+     ],
+     [
+      "face_body",
+      -0.2910404620498703
+     ],
+     [
+      "default_mode",
+      -0.2923077941158887
+     ],
+     [
+      "visual_motion",
+      -2.0424933772871667
+     ]
+    ],
+    "hook": {
+     "attention_early": 0.3795894228848157,
+     "attention_late": 0.3672329352411372,
+     "visual_early": 0.37325276255472417,
+     "visual_late": -0.5208500100211896
+    },
+    "diagnosis": [
+     "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette"
+    ],
+    "directives": [
+     "Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion."
+    ],
+    "cited_areas": [
+     "▼ L affect, conflict (a24) [aesthetic]",
+     "▲ L 31a [aesthetic]",
+     "▲ object shape & motion (MT/LO) mean [attention]",
+     "▲ early vision (V1–V4) mean [attention]"
+    ],
+    "groups": [
+     "visual_motion"
+    ],
+    "prompt_block": "BRAIN CRITIQUE (TRIBE v2 predicted human cortex while looking at the last render; values are relative within this image):\n- most driven regions: places & scenes (PPA/RSC) +1.41, reward & value (OFC/vmPFC) +0.80, cognitive control (dlPFC) +0.44; least: default mode (mind-wandering) -0.29, object shape & motion (MT/LO) -2.04\n- first-2s hook vs later: attention +0.38 → +0.37, visual drive +0.37 → -0.52\n- areas the aesthetic head cites: ▼ L affect, conflict (a24) [aesthetic]; ▲ L 31a [aesthetic]; ▲ object shape & motion (MT/LO) mean [attention]; ▲ early vision (V1–V4) mean [attention]\n- diagnosis: Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette\n- DO NEXT (highest priority first): (1) Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion."
+   },
+   "p_vs_best": 0.05,
+   "p_vs_best_reason": "B preserves the complete live-page directory including Corporate Governance, Common Stock, Sustainability plus GEICO and legal footers in the trusted plain aesthetic while A omits those elements and adds card chrome that harms 3-second scannability. | swapped: A preserves the complete scannable link directory and plain-spoken Midwestern trust while B omits Corporate Governance, Sustainability, Common Stock and footer elements and adds distracting card chrome."
+  },
+  {
+   "round": 2,
+   "png": "results/showcase/evolve/berkshire/r2.png",
+   "html": "results/showcase/evolve/berkshire/r2.html",
+   "changes": [
+    {
+     "directive": "Add dominant object silhouette + diagonal motion",
+     "change": "Duotone Downtown Omaha photo as header texture with diagonal clipped bottom edge and angled accent rule"
+    },
+    {
+     "directive": "3-second scannable directory",
+     "change": "Kept table 2-col but styled cells as bordered cards with marker, badge dates, strong link hierarchy and hover"
+    },
+    {
+     "directive": "Trustworthy stewardship system",
+     "change": "Libre Baskerville + Inter pairing, navy #0A1E7A + accent #6A0DAD, high-contrast links, focus-visible, dignified footer"
+    }
+   ],
+   "actions": [
+    {
+     "tool": "photo",
+     "params": {
+      "query": "Omaha Nebraska downtown skyline",
+      "treatment": "duotone crop"
+     },
+     "why": "Adds a real architectural silhouette as subtle duotone header texture to lift LO/MT without adding a hero panel or removing links.",
+     "critique_line": "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+     "output": "assets/photo_r2_0.jpg",
+     "credit": {
+      "title": "Downtown Omaha, Nebraska.jpg",
+      "author": "civilengtiger",
+      "license": "CC BY 2.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Downtown_Omaha,_Nebraska.jpg"
+     },
+     "desc": "CC photo 'Downtown Omaha, Nebraska.jpg' (CC BY 2.0), treatment duotone crop"
+    }
+   ],
+   "fidelity": {
+    "missing_paths": [],
+    "missing": [],
+    "missing_text": [],
+    "illegible": [],
+    "defects": [],
+    "density_ok": true,
+    "density_note": "candidate first screen shows 12 fully visible link items vs live 15 (80%); full page preserves all 15 links with no category dropped, larger cards still show most of list",
+    "ok": true,
+    "facts": {
+     "numbers": [],
+     "names": [],
+     "claims": [],
+     "ok": true
+    }
+   },
+   "accepted": false,
+   "based_on": 0,
+   "ui_score": 0.502758091569182,
+   "heads": {
+    "aesthetic": {
+     "score": 0.6640473008155823,
+     "percentile": 77.94906166219839,
+     "confidence": 0.32809460163116455,
+     "top": "▼ L_a24, ▼ R_10r"
+    },
+    "attention": {
+     "score": 0.5632129311561584,
+     "percentile": 62.19178082191781,
+     "confidence": 0.1264258623123169,
+     "top": "▲ 움직임·형태 평균, ▲ 움직임·형태 최대"
+    }
+   },
+   "judge": {
+    "aesthetic": 0.556,
+    "clarity": 0.667,
+    "attention": 0.333,
+    "brief_fit": 0.222,
+    "judge_score": 0.444,
+    "reason": "Card polish is decent but purple gradient violates reverent Midwestern stewardship, twelve equal cards create no focal point, and critical live-page items like Common Stock Information, Governance/Code/Policies, Sustainability, BYD facts, pledge letters, and copyright footer are missing."
+   },
+   "brain_only": 0.701,
+   "critique": {
+    "kind": "landing",
+    "ranking": [
+     [
+      "scene_place",
+      1.5113040148572001
+     ],
+     [
+      "value_vmpfc",
+      0.7786019611895171
+     ],
+     [
+      "control_dlpfc",
+      0.46894913822764234
+     ],
+     [
+      "attention_dorsal",
+      0.26188489594787334
+     ],
+     [
+      "visual_early",
+      0.02188251405110721
+     ],
+     [
+      "default_mode",
+      -0.13062793448801016
+     ],
+     [
+      "language",
+      -0.22738371961293946
+     ],
+     [
+      "face_body",
+      -0.5806109564431337
+     ],
+     [
+      "visual_motion",
+      -2.103999913729255
+     ]
+    ],
+    "hook": {
+     "attention_early": 0.28075570510344466,
+     "attention_late": 0.2524494913700877,
+     "visual_early": 0.4778698843739125,
+     "visual_late": -0.20611117111029545
+    },
+    "diagnosis": [
+     "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+     "Face areas (FFA/STS) are silent: no human or gaze cue"
+    ],
+    "directives": [
+     "Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion.",
+     "Introduce a human cue: a portrait or illustrated face whose gaze points at the CTA/product (faces win attention fastest)."
+    ],
+    "cited_areas": [
+     "▼ L affect, conflict (a24) [aesthetic]",
+     "▼ R subjective value / wanting (10r) [aesthetic]",
+     "▲ object shape & motion (MT/LO) mean [attention]",
+     "▲ object shape & motion (MT/LO) max [attention]"
+    ],
+    "groups": [
+     "visual_motion",
+     "face_body"
+    ],
+    "prompt_block": "BRAIN CRITIQUE (TRIBE v2 predicted human cortex while looking at the last render; values are relative within this image):\n- most driven regions: places & scenes (PPA/RSC) +1.51, reward & value (OFC/vmPFC) +0.78, cognitive control (dlPFC) +0.47; least: faces & people (FFA/STS) -0.58, object shape & motion (MT/LO) -2.10\n- first-2s hook vs later: attention +0.28 → +0.25, visual drive +0.48 → -0.21\n- areas the aesthetic head cites: ▼ L affect, conflict (a24) [aesthetic]; ▼ R subjective value / wanting (10r) [aesthetic]; ▲ object shape & motion (MT/LO) mean [attention]; ▲ object shape & motion (MT/LO) max [attention]\n- diagnosis: Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette / Face areas (FFA/STS) are silent: no human or gaze cue\n- DO NEXT (highest priority first): (1) Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion. (2) Introduce a human cue: a portrait or illustrated face whose gaze points at the CTA/product (faces win attention fastest)."
+   },
+   "p_vs_best": 0.05,
+   "p_vs_best_reason": "B preserves the complete plain-spoken directory including Governance, Common Stock, Sustainability, GEICO and legal footer for instant 3-second scanning, while A adds distracting gradient/cards and omits critical live-page elements. | swapped: A preserves the complete familiar link directory with GEICO, disclaimer and plain-spoken stewardship tone for instant 3-second scanning, while B adds a distracting hero banner and omits/hides key links and footer elements below the fold."
+  }
+ ],
+ "trail": [
+  {
+   "round": 1,
+   "tool": "typography",
+   "why": "Creates a dominant oversized B-H typographic silhouette and high-contrast hierarchy to anchor scanning in 3 seconds.",
+   "critique_line": "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+   "desc": "{\"display\": \"Cormorant Garamond heritage serif\", \"body\": \"Inter system sans\", \"scale\": \"masthead 64px / section 13px caps / links 17px\", \"grid\": \"12-col/8pt\"}",
+   "brain_delta": -0.034,
+   "judge_delta": 0.027,
+   "score_before": 0.6082062345297727,
+   "score_after": 0.6200331419744068,
+   "accepted": false,
+   "fidelity": {
+    "missing_paths": [],
+    "missing": []
+   },
+   "page_thumb": "trail/r1_page.jpg"
+  },
+  {
+   "round": 1,
+   "tool": "reflow",
+   "why": "Adds rhythm and implied diagonal flow via grouped grid and accent rules without adding a hero panel.",
+   "critique_line": "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+   "desc": "{\"move\": \"masthead centered top with rule; links into 2-column grouped grid with freshness dates as right-aligned badges, keeping every word\"}",
+   "brain_delta": -0.034,
+   "judge_delta": 0.027,
+   "score_before": 0.6082062345297727,
+   "score_after": 0.6200331419744068,
+   "accepted": false,
+   "fidelity": {
+    "missing_paths": [],
+    "missing": []
+   },
+   "page_thumb": "trail/r1_page.jpg"
+  },
+  {
+   "round": 2,
+   "tool": "photo",
+   "why": "Adds a real architectural silhouette as subtle duotone header texture to lift LO/MT without adding a hero panel or removing links.",
+   "critique_line": "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+   "desc": "CC photo 'Downtown Omaha, Nebraska.jpg' (CC BY 2.0), treatment duotone crop",
+   "brain_delta": -0.085,
+   "judge_delta": -0.112,
+   "score_before": 0.6082062345297727,
+   "score_after": 0.502758091569182,
+   "accepted": false,
+   "fidelity": {
+    "missing_paths": [],
+    "missing": []
+   },
+   "thumb": "trail/r2_photo.jpg",
+   "page_thumb": "trail/r2_page.jpg"
+  }
+ ],
+ "best_round": 0,
+ "pairwise_after_vs_before": null
+}

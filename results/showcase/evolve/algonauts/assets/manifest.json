@@ -1,0 +1,536 @@
+{
+ "url": "https://algonautsproject.com/",
+ "images": [
+  {
+   "kind": "img",
+   "w": 40,
+   "h": 40,
+   "top": 16,
+   "left": 72,
+   "alt": "Algonauts Logo",
+   "cls": " ",
+   "inHeader": true,
+   "path": "assets/img_6aea352d61.png",
+   "src": "https://algonautsproject.com/img/2024/logo_icon_light.png",
+   "bytes": 191544
+  },
+  {
+   "kind": "img",
+   "w": 549,
+   "h": 400,
+   "top": 95,
+   "left": 366,
+   "alt": "Algonauts Logo",
+   "cls": " ",
+   "inHeader": true,
+   "path": "assets/img_ab90c30b3e.png",
+   "src": "https://algonautsproject.com/img_AP/logo_text_dark.png",
+   "bytes": 252777
+  },
+  {
+   "kind": "img",
+   "w": 60,
+   "h": 60,
+   "top": 1224,
+   "left": 178,
+   "alt": "Algonauts Icon",
+   "cls": " ",
+   "inHeader": false,
+   "path": "assets/img_a8b438a062.png",
+   "src": "https://algonautsproject.com/img/2024/logo_icon_light_cropped.png",
+   "bytes": 214046
+  },
+  {
+   "kind": "img",
+   "w": 160,
+   "h": 160,
+   "top": 4807,
+   "left": 220,
+   "alt": "Radoslaw Cichy",
+   "cls": " ",
+   "inHeader": false,
+   "path": "assets/img_e989ddde00.png",
+   "src": "https://algonautsproject.com/img/2024/team/radek.png",
+   "bytes": 210828
+  },
+  {
+   "kind": "img",
+   "w": 160,
+   "h": 160,
+   "top": 4807,
+   "left": 560,
+   "alt": "Gemma Roig",
+   "cls": " ",
+   "inHeader": false,
+   "path": "assets/img_4b05664fa8.png",
+   "src": "https://algonautsproject.com/img/2024/team/gemma_new.png",
+   "bytes": 233775
+  },
+  {
+   "kind": "img",
+   "w": 160,
+   "h": 160,
+   "top": 4807,
+   "left": 900,
+   "alt": "Aude Oliva",
+   "cls": " ",
+   "inHeader": false,
+   "path": "assets/img_e87cbf23ce.jpg",
+   "src": "https://algonautsproject.com/img/2024/team/aude.jpg",
+   "bytes": 31364
+  },
+  {
+   "kind": "img",
+   "w": 140,
+   "h": 140,
+   "top": 5318,
+   "left": 162,
+   "alt": "Alessandro Gifford",
+   "cls": " ",
+   "inHeader": false,
+   "path": "assets/img_c295ec9c76.png",
+   "src": "https://algonautsproject.com/img/2024/team/ale.png",
+   "bytes": 300547
+  },
+  {
+   "kind": "img",
+   "w": 140,
+   "h": 140,
+   "top": 5318,
+   "left": 434,
+   "alt": "Domenic Bersch",
+   "cls": " ",
+   "inHeader": false,
+   "path": "assets/img_bfdbbe7934.png",
+   "src": "https://algonautsproject.com/img/2024/team/domenic_2.png",
+   "bytes": 85586
+  },
+  {
+   "kind": "img",
+   "w": 140,
+   "h": 140,
+   "top": 5318,
+   "left": 706,
+   "alt": "Marie St-Laurent",
+   "cls": " ",
+   "inHeader": false,
+   "path": "assets/img_4c505ba61b.png",
+   "src": "https://algonautsproject.com/img/2024/team/marie.png",
+   "bytes": 48793
+  },
+  {
+   "kind": "img",
+   "w": 140,
+   "h": 140,
+   "top": 5318,
+   "left": 978,
+   "alt": "Basile Pinsard",
+   "cls": " ",
+   "inHeader": false,
+   "path": "assets/img_7bef745f0d.jpg",
+   "src": "https://algonautsproject.com/img/2024/team/basile.jpg",
+   "bytes": 65782
+  },
+  {
+   "kind": "img",
+   "w": 140,
+   "h": 140,
+   "top": 5668,
+   "left": 434,
+   "alt": "Julie Boyle",
+   "cls": " ",
+   "inHeader": false,
+   "path": "assets/img_92f2770202.png",
+   "src": "https://algonautsproject.com/img/2024/team/julie.png",
+   "bytes": 10946
+  },
+  {
+   "kind": "img",
+   "w": 140,
+   "h": 140,
+   "top": 5668,
+   "left": 706,
+   "alt": "Lune Bellec",
+   "cls": " ",
+   "inHeader": false,
+   "path": "assets/img_855ae374ea.jpeg",
+   "src": "https://algonautsproject.com/img/2024/team/lune.jpeg",
+   "bytes": 33082
+  },
+  {
+   "kind": "img",
+   "w": 100,
+   "h": 100,
+   "top": 6113,
+   "left": 182,
+   "alt": "Kendrick Kay",
+   "cls": " ",
+   "inHeader": false,
+   "path": "assets/img_64510cf602.jpg",
+   "src": "https://algonautsproject.com/img/speakers/kkay.jpg",
+   "bytes": 36531
+  },
+  {
+   "kind": "img",
+   "w": 100,
+   "h": 100,
+   "top": 6113,
+   "left": 386,
+   "alt": "Apurva Ratan Murty",
+   "cls": " ",
+   "inHeader": false,
+   "path": "assets/img_879ae103d4.jpg",
+   "src": "https://algonautsproject.com/img/team/ratan.jpg",
+   "bytes": 117315
+  },
+  {
+   "kind": "img",
+   "w": 100,
+   "h": 100,
+   "top": 6113,
+   "left": 590,
+   "alt": "Yalda Mohsenzadeh",
+   "cls": " ",
+   "inHeader": false,
+   "path": "assets/img_dc5d29a83f.jpg",
+   "src": "https://algonautsproject.com/img/team/yalda.jpg",
+   "bytes": 15213
+  },
+  {
+   "kind": "img",
+   "w": 100,
+   "h": 100,
+   "top": 6113,
+   "left": 794,
+   "alt": "Benjamin Lahner",
+   "cls": " ",
+   "inHeader": false,
+   "path": "assets/img_97ae8cf5fe.jpg",
+   "src": "https://algonautsproject.com/img/team/ben.jpg",
+   "bytes": 69746
+  },
+  {
+   "kind": "img",
+   "w": 100,
+   "h": 100,
+   "top": 6113,
+   "left": 998,
+   "alt": "Alex Andonian",
+   "cls": " ",
+   "inHeader": false,
+   "path": "assets/img_4e00e9cdd7.jpg",
+   "src": "https://algonautsproject.com/img/team/alex.jpg",
+   "bytes": 55103
+  },
+  {
+   "kind": "img",
+   "w": 100,
+   "h": 100,
+   "top": 6376,
+   "left": 182,
+   "alt": "Kandan Ramakrishnan",
+   "cls": " ",
+   "inHeader": false,
+   "path": "assets/img_64083e0759.jpg",
+   "src": "https://algonautsproject.com/img/team/kandan.jpg",
+   "bytes": 1815417
+  },
+  {
+   "kind": "img",
+   "w": 100,
+   "h": 100,
+   "top": 6376,
+   "left": 386,
+   "alt": "Polina Iamshchinina",
+   "cls": " ",
+   "inHeader": false,
+   "path": "assets/img_1bb69cbcce.jpg",
+   "src": "https://algonautsproject.com/img/team/polina.jpg",
+   "bytes": 192165
+  },
+  {
+   "kind": "img",
+   "w": 100,
+   "h": 100,
+   "top": 6376,
+   "left": 590,
+   "alt": "Sari Saba-Sadiya",
+   "cls": " ",
+   "inHeader": false,
+   "path": "assets/img_70444f32ed.jpg",
+   "src": "https://algonautsproject.com/img/team/sari512.jpg",
+   "bytes": 64749
+  },
+  {
+   "kind": "img",
+   "w": 100,
+   "h": 100,
+   "top": 6376,
+   "left": 794,
+   "alt": "Martina Vilas",
+   "cls": " ",
+   "inHeader": false,
+   "path": "assets/img_1bc874c261.png",
+   "src": "https://algonautsproject.com/img/team/martina_vilas.png",
+   "bytes": 195239
+  },
+  {
+   "kind": "img",
+   "w": 100,
+   "h": 100,
+   "top": 6376,
+   "left": 998,
+   "alt": "Kshitij Dwivedi",
+   "cls": " ",
+   "inHeader": false,
+   "path": "assets/img_6768a239d1.jpg",
+   "src": "https://algonautsproject.com/img/team/kshitij.jpg",
+   "bytes": 84307
+  },
+  {
+   "kind": "img",
+   "w": 100,
+   "h": 100,
+   "top": 6639,
+   "left": 488,
+   "alt": "Alex Lascelles",
+   "cls": " ",
+   "inHeader": false,
+   "path": "assets/img_f9cb3abd4a.jpg",
+   "src": "https://algonautsproject.com/img/team/alex_lascelles.jpg",
+   "bytes": 420212
+  },
+  {
+   "kind": "img",
+   "w": 100,
+   "h": 100,
+   "top": 6639,
+   "left": 692,
+   "alt": "Monika Graumann",
+   "cls": " ",
+   "inHeader": false,
+   "path": "assets/img_9152938be4.jpg",
+   "src": "https://algonautsproject.com/img/team/monika.jpg",
+   "bytes": 54637
+  },
+  {
+   "kind": "img",
+   "w": 57,
+   "h": 50,
+   "top": 7354,
+   "left": 578,
+   "alt": "Bluesky Logo",
+   "cls": " ",
+   "inHeader": true,
+   "path": "assets/img_23c92b0a50.png",
+   "src": "https://algonautsproject.com/img/2024/bluesky_logo.png",
+   "bytes": 18689
+  },
+  {
+   "kind": "img",
+   "w": 49,
+   "h": 50,
+   "top": 7354,
+   "left": 654,
+   "alt": "X Logo",
+   "cls": " ",
+   "inHeader": true,
+   "path": "assets/img_9e816da681.png",
+   "src": "https://algonautsproject.com/img/2024/x_logo.png",
+   "bytes": 102327
+  },
+  {
+   "kind": "bg",
+   "w": 1280,
+   "h": 800,
+   "top": 0,
+   "left": 0,
+   "alt": "",
+   "cls": "landing-hero ",
+   "inHeader": false,
+   "path": "assets/bg_c3a730007b.png",
+   "src": "https://algonautsproject.com/img_AP/geo_banner_smaller.png",
+   "bytes": 722388
+  },
+  {
+   "kind": "bg",
+   "w": 350,
+   "h": 200,
+   "top": 2055,
+   "left": 73,
+   "alt": "",
+   "cls": "landing-project-image ",
+   "inHeader": false,
+   "path": "assets/bg_d48c51184d.png",
+   "src": "https://algonautsproject.com/img_AP/algonauts_challenge_banner_text.png",
+   "bytes": 4321053
+  },
+  {
+   "kind": "bg",
+   "w": 350,
+   "h": 200,
+   "top": 2055,
+   "left": 465,
+   "alt": "",
+   "cls": "landing-project-image ",
+   "inHeader": false,
+   "path": "assets/bg_4b9e9b20fe.png",
+   "src": "https://algonautsproject.com/img_AP/Net2Brain.png",
+   "bytes": 47201
+  },
+  {
+   "kind": "bg",
+   "w": 350,
+   "h": 200,
+   "top": 2055,
+   "left": 857,
+   "alt": "",
+   "cls": "landing-project-image ",
+   "inHeader": false,
+   "path": "assets/bg_b060e5d018.png",
+   "src": "https://algonautsproject.com/img_AP/berg_logo_logo_v1.png",
+   "bytes": 4045
+  },
+  {
+   "kind": "bg",
+   "w": 350,
+   "h": 200,
+   "top": 2773,
+   "left": 73,
+   "alt": "",
+   "cls": "landing-project-image ",
+   "inHeader": false,
+   "path": "assets/bg_4b19e97fd9.png",
+   "src": "https://algonautsproject.com/img_AP/bold_moments.png",
+   "bytes": 609537
+  },
+  {
+   "kind": "bg",
+   "w": 350,
+   "h": 200,
+   "top": 2773,
+   "left": 465,
+   "alt": "",
+   "cls": "landing-project-image ",
+   "inHeader": false,
+   "path": "assets/bg_1c591116bc.jpg",
+   "src": "https://algonautsproject.com/img_AP/things_eeg2.jpg",
+   "bytes": 577508
+  }
+ ],
+ "svgs": [],
+ "widgets": [],
+ "logo": "assets/img_6aea352d61.png",
+ "outline": {
+  "title": "The Algonauts Project",
+  "headings": [
+   {
+    "tag": "H2",
+    "text": "Mission"
+   },
+   {
+    "tag": "H2",
+    "text": "Initiatives"
+   },
+   {
+    "tag": "H3",
+    "text": "The Algonauts Project Challenges"
+   },
+   {
+    "tag": "H3",
+    "text": "Net2Brain"
+   },
+   {
+    "tag": "H3",
+    "text": "BERG"
+   },
+   {
+    "tag": "H3",
+    "text": "BMD"
+   },
+   {
+    "tag": "H3",
+    "text": "THINGS EEG2"
+   },
+   {
+    "tag": "H3",
+    "text": "More Initiatives Coming Soon"
+   },
+   {
+    "tag": "H2",
+    "text": "News"
+   },
+   {
+    "tag": "H2",
+    "text": "Team"
+   },
+   {
+    "tag": "H3",
+    "text": "Founders"
+   },
+   {
+    "tag": "H3",
+    "text": "Current Collaborators"
+   },
+   {
+    "tag": "H3",
+    "text": "Past Collaborators"
+   },
+   {
+    "tag": "H2",
+    "text": "Contact"
+   }
+  ],
+  "nav": [
+   "The Algonauts Project",
+   "About",
+   "Initiatives",
+   "News",
+   "Team",
+   "Contact",
+   "Stay Updated",
+   "About",
+   "Initiatives",
+   "News",
+   "Team",
+   "Contact",
+   "Stay Updated"
+  ],
+  "sections": [
+   {
+    "tag": "section",
+    "cls": "landing-hero",
+    "text": "Promoting initiatives at the intersection of biological and artificial intelligence research. Explore the Initiatives"
+   },
+   {
+    "tag": "section",
+    "cls": "landing-about",
+    "text": "Mission The Algonauts Project, first launched in 2019, is on a mission to bring biological and machine intelligence researchers together on a common platform to"
+   },
+   {
+    "tag": "section",
+    "cls": "landing-projects",
+    "text": "Initiatives The Algonauts Project Challenges The Algonauts Project challenges are recurrent events that aim at bringing biological and artificial researchers to"
+   },
+   {
+    "tag": "section",
+    "cls": "landing-news",
+    "text": "News AUGUST 13TH, 2025 The Algonauts Project now promotes multiple initiatives at the intersection of biological and artificial intelligence research. If you ha"
+   },
+   {
+    "tag": "section",
+    "cls": "landing-team",
+    "text": "Team Founders Radoslaw Cichy Professor at Freie Universität Berlin, Neural Dynamics of Visual Cognition Gemma Roig Professor at Goethe University Frankfurt, Com"
+   },
+   {
+    "tag": "section",
+    "cls": "landing-contact",
+    "text": "Contact For inquiries, contact us at algonauts.mit@gmail.com If you wish to stay updated on the Algonauts Project, including present and future challenges, join"
+   }
+  ],
+  "height": 7604,
+  "bodyBg": "rgb(248, 249, 250)",
+  "font": "Inter, sans-serif"
+ },
+ "text": "The Algonauts Project\nAbout\nInitiatives\nNews\nTeam\nContact\nStay Updated\n\nPromoting initiatives at the intersection of\nbiological and artificial intelligence research.\n\nExplore the Initiatives\nMission\n\nThe Algonauts Project, first launched in 2019, is on a mission to bring biological and machine intelligence researchers together on a common platform to exchange ideas and pioneer the intelligence frontier.\n\nInspired by the astronauts' exploration of space, \"algonauts\" explore biological and artificial intelligence with state-of-the-art algorithmic tools, thus advancing both fields through collaborative innovation and open science.\n\nAn Algorithmic Exploration\n\nInspired by astronauts who launched into space to explore a new frontier, the Algonauts Project aims to explore biological and machine intelligence with the latest algorithmic tools. Comparing brains and models could lead to unexpected insights into what makes intelligent systems efficient, robust and trustworthy.\n\nFaster Innovation\n\nThe brain has inspired many of the algorithms responsible for the recent and spectacular progress in artificial intelligence. Those algorithms are now critical in testing new theories about the brain. The Algonauts Project brings together intelligence researchers in both domains to accelerate the pace of innovation.\n\nCollaborative Science\n\nOpen science creates an environment for sharing and collaboration, which are important for advancing intelligence research and ensuring that results are valid and reproducible. The Algonauts Project is committed to a spirit of open collaboration.\n\nThe Future\n\nThe Algonauts Project is designed to expand to other fields, from physics and biology to the social sciences, and to complement experimental, theoretical and computational disciplines. It will grow, in content and methods, with the communities that shape this endeavor.\n\nInitiatives\nThe Algonauts Project Challenges\n\nThe Algonauts Project challenges are recurrent events that aim at bringing biological and artificial researchers together in building the most accurate models of the brain. Every challenge is unique in terms of the modelling task and data. If you want to contribute your data for future challenges, get in touch with us!\n\nExplore the Challenges\nNet2Brain\n\nNet2Brain is a toolbox for comparing brain activity with activations from over 600 pretrained deep neural networks. It helps neuroscientists explore links between artificial and biological neural representations through a user-friendly interface.\n\nExplore Net2Brain\nBERG\n\nThe Brain Encoding Response Generator (BERG) is a resource consisting of multiple pre-trained encoding models of the brain and an accompanying Python package to generate – with just a few lines of code – accurate in silico neural responses to arbitrary stimuli for large scale in silico neuroscience experimentation.\n\nExplore BERG\nBMD\n\nThe BOLD Moments Dataset (BMD) contains whole-brain fMRI responses to over 1000 short (3 s) naturalistic video clips of visual events across 10 human subjects. This dataset was used to train encoding models of the brain during the Algonauts Project 2021 challenge.\n\nExplore BMD\nTHINGS EEG2\n\nTHINGS EEG2 contains EEG responses of 10 human participants to over 16,000 images of objects on naturalistic backgrounds from the THINGS database. This large data size and stimulus richness allow building AI-based encoding and decoding models of visual processing in the brain.\n\nExplore THINGS EEG2\nMore Initiatives Coming Soon\n\nStay tuned for exciting new initiatives aimed at bridging biological and artificial intelligence.\n\nNews\nAUGUST 13TH, 2025\n\nThe Algonauts Project now promotes multiple initiatives at the intersection of biological and artificial intelligence research. If you have related ideas that you would like us to promote, please get in touch.\n\nAUGUST 13TH, 2025\n\nWe ask you to take part in a 5 minute survey, which we will use to improve future editions of the Algonauts Project challenge. Even if you did not participate in the 2025 challenge, your feedback is valuable. We look forward to your input!\n\nAUGUST 13TH, 2025\n\nThe Algonauts 2025 challenge concluding session at CCN has concluded. Thank you to all who attended the session! The session recording is available on YouTube.\n\nAUGUST 5TH, 2025\n\nWe are happy to announce the Algonauts 2025 challenge winners, who will give a talk at CCN: sdascoli (1st place), NCG (2nd place), SDA (3rd place). Congratulations! For participants: To promote faster and open scientific development, we encourage you to submit your report and code, even if the challenge is now over!\n\nJULY 13TH, 2025\n\nThe Algonauts Project 2025 challenge submission deadline has now passed. Thank you to the 60+ Teams who participated! View the results here. For participants: please post your report/code by July 25th here. We'll announce the winners on August 5th!\n\nJUNE 6TH, 2025\n\nBERG v1.0 is now officially available! The Brain Encoding Response Generator toolbox has been released on GitHub, featuring multiple pre-trained encoding models and a Python package for generating accurate in silico neural responses.\n\nMAY 6TH, 2025\n\nWe're excited to announce the official publication of the Net2Brain paper in Frontiers in Neuroinformatics!\n\nJANUARY 6TH, 2025\n\nThe Algonauts Project 2025 challenge is now open for submissions! Watch this video for an introduction to the challenge (5 min). Submit your best model predictions to the competition until July 13th, 2025.\n\nTeam\nFounders\nRadoslaw Cichy\n\nProfessor at Freie Universität Berlin, Neural Dynamics of Visual Cognition\n\nGemma Roig\n\nProfessor at Goethe University Frankfurt, Computer Vision & AI\n\nAude Oliva\n\nSenior Research Scientist at MIT CSAIL and Director of MIT-IBM Watson AI Lab\n\nCurrent Collaborators\nAlessandro Gifford\n\nPostdoc, Freie Universität Berlin\n\nDomenic Bersch\n\nPhD Student, Goethe University Frankfurt\n\nMarie St-Laurent\n\nResearch Professional, CRIUGM\n\nBasile Pinsard\n\nData Manager, CRIUGM\n\nJulie Boyle\n\nProject Manager, Université de Montréal\n\nLune Bellec\n\nAssociate Professor, Université de Montréal\n\nPast Collaborators\nKendrick Kay\nApurva Ratan Murty\nYalda Mohsenzadeh\nBenjamin Lahner\nAlex Andonian\nKandan Ramakrishnan\nPolina Iamshchinina\nSari Saba-Sadiya\nMartina Vilas\nKshitij Dwivedi\nAlex Lascelles\nMonika Graumann\nContact\n\nFor inquiries, contact us at algonauts.mit@gmail.com\n\nIf you wish to stay updated on the Algonauts Project, including present and future challenges, join our mailing list, or follow us on social media:\n\nBluesky\n\n \n\nX\n\n© 2025 The Algonauts Project. All rights reserved."
+}

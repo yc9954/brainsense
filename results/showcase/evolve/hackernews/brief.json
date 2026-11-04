@@ -1,0 +1,103 @@
+{
+ "audience": "developers, hackers, founders and technical obsessives who want dense signal fast",
+ "primary_task": "scan the ranked top 30 stories in 3s and jump to article or comments",
+ "tone": "terse, utilitarian, insider-technical, no-nonsense",
+ "lang": "brutalist",
+ "brand": {
+  "primary": "#ff6600",
+  "secondary": "#f6f6ef",
+  "accent": "#828282",
+  "text": "Hacker News"
+ },
+ "must_keep": [
+  {
+   "id": "k1",
+   "kind": "logo",
+   "ref": "assets/img_1df306319e.svg",
+   "why": "iconic orange Y mark - instant trust and identity, must stay pixel-crisp"
+  },
+  {
+   "id": "k2",
+   "kind": "text",
+   "ref": "Hacker News",
+   "why": "wordmark in header bar, core brand anchor next to Y"
+  },
+  {
+   "id": "k3",
+   "kind": "nav",
+   "ref": "new | past | comments | ask | show | jobs | submit",
+   "why": "primary wayfinding for feeds and submission, defines utility"
+  },
+  {
+   "id": "k4",
+   "kind": "nav",
+   "ref": "login",
+   "why": "sole auth entry, must remain one-click visible top-right"
+  },
+  {
+   "id": "k5",
+   "kind": "text",
+   "ref": "Residential proxies detected on White House network",
+   "why": "represents 30-item ranked title + domain pattern (layer3intel.com) that is the product"
+  },
+  {
+   "id": "k6",
+   "kind": "number",
+   "ref": "485 points by Rasbora 2 hours ago | hide | 142 comments",
+   "why": "points/author/age/hide/comments metadata line - core ranking and social proof"
+  },
+  {
+   "id": "k7",
+   "kind": "number",
+   "ref": "1008 points by pseudolus 11 hours ago | hide | 607 comments",
+   "why": "breakout high-velocity story proving scale of voting and discussion"
+  },
+  {
+   "id": "k8",
+   "kind": "text",
+   "ref": "Ask HN: What Cryptography book do you recommend for reading",
+   "why": "Ask HN community Q&A format, key participatory content type"
+  },
+  {
+   "id": "k9",
+   "kind": "text",
+   "ref": "Show HN: After a decade of reversing, I got co-op working in DOS Wing Commander",
+   "why": "Show HN launch format, key maker content type to preserve"
+  },
+  {
+   "id": "k10",
+   "kind": "nav",
+   "ref": "More",
+   "why": "pagination to older ranks, essential for endless scanning"
+  },
+  {
+   "id": "k11",
+   "kind": "nav",
+   "ref": "Guidelines | FAQ | Lists | API | Security | Legal | Apply to YC | Contact",
+   "why": "footer trust and policy links plus YC funnel"
+  },
+  {
+   "id": "k12",
+   "kind": "widget",
+   "ref": "Search:",
+   "why": "bottom search box for archive lookup, power-user utility"
+  }
+ ],
+ "missing_imagery": [
+  {
+   "what": "16px source favicons next to domains",
+   "why": "top agency would add scannability without breaking density"
+  },
+  {
+   "what": "vote-velocity sparkline / mini bar for points-per-hour",
+   "why": "makes 1008pts vs 19pts instantly comparable while staying brutalist"
+  },
+  {
+   "what": "subtle read / visited state and comment-count heat",
+   "why": "helps scanning 30 rows in 3s, no photos needed"
+  }
+ ],
+ "weak_imagery": [],
+ "page_class": "utility",
+ "physical_subject": null
+}

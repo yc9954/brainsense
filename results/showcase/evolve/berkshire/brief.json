@@ -1,0 +1,115 @@
+{
+ "audience": "Existing and prospective Berkshire shareholders, value investors, financial journalists, analysts and operating-company stakeholders seeking primary source documents",
+ "primary_task": "scan the link directory and open the correct shareholder letter, Annual & Interim Report, SEC filing, news release, or Annual Meeting info in 3 seconds",
+ "tone": "plain-spoken, reverent, trustworthy Midwestern stewardship",
+ "lang": "editorial",
+ "brand": {
+  "primary": "#0A1E7A",
+  "secondary": "#FFFFFF",
+  "accent": "#6A0DAD",
+  "text": "BERKSHIRE HATHAWAY INC."
+ },
+ "must_keep": [
+  {
+   "id": "k1",
+   "kind": "logo",
+   "ref": "BERKSHIRE HATHAWAY INC.",
+   "why": "Heritage serif wordmark with oversized B-H initials is the sole brand identifier, must be preserved and refined not replaced"
+  },
+  {
+   "id": "k2",
+   "kind": "nav",
+   "ref": "A Message from Warren E. Buffett",
+   "why": "Foundational voice-of-owner entry point, top user destination"
+  },
+  {
+   "id": "k3",
+   "kind": "nav",
+   "ref": "Annual & Interim Reports Updated August 8, 2026",
+   "why": "Core investor task with freshness date proving currency"
+  },
+  {
+   "id": "k4",
+   "kind": "nav",
+   "ref": "News Releases from Berkshire Hathaway and from Warren Buffett Updated November 4, 2026",
+   "why": "Most recently updated item, critical for press and shareholders"
+  },
+  {
+   "id": "k5",
+   "kind": "nav",
+   "ref": "Link to SEC Filings",
+   "why": "Compliance and due-diligence gateway"
+  },
+  {
+   "id": "k6",
+   "kind": "nav",
+   "ref": "Annual Meeting Information Updated April 20, 2026",
+   "why": "Major pilgrimage event driver for tens of thousands of shareholders"
+  },
+  {
+   "id": "k7",
+   "kind": "nav",
+   "ref": "Warren Buffett's Letters to Berkshire Shareholders Updated February 22, 2025",
+   "why": "Iconic historical archive, succession context"
+  },
+  {
+   "id": "k8",
+   "kind": "nav",
+   "ref": "Greg Abel's Letters to Berkshire Shareholders Updated February 28, 2026",
+   "why": "Succession leadership signal, must sit alongside Buffett letters"
+  },
+  {
+   "id": "k9",
+   "kind": "nav",
+   "ref": "Special Letters from Warren & Charlie RE:Past, Present and Future",
+   "why": "Unique legacy content including Charlie Munger's Letters to Wesco Shareholders"
+  },
+  {
+   "id": "k10",
+   "kind": "nav",
+   "ref": "Links to Berkshire Operating Companies",
+   "why": "Directory to 60+ subsidiaries, key discovery function"
+  },
+  {
+   "id": "k11",
+   "kind": "nav",
+   "ref": "Corporate Governance | Common Stock Information | Sustainability | Berkshire Hathaway Energy Investor Presentations",
+   "why": "Governance and ESG compliance cluster required by institutional investors"
+  },
+  {
+   "id": "k12",
+   "kind": "offer",
+   "ref": "FOR A FREE CAR INSURANCE RATE QUOTE THAT COULD SAVE YOU SUBSTANTIAL MONEY WWW.GEICO.COM OR CALL 1-888-395-6349, 24 HOURS A DAY",
+   "why": "Only commercial CTA on page, historic GEICO cross-promotion must be retained"
+  },
+  {
+   "id": "k13",
+   "kind": "text",
+   "ref": "3555 Farnam Street Omaha, NE 68131 Official Home Page",
+   "why": "Physical address establishes authenticity and Omaha roots"
+  },
+  {
+   "id": "k14",
+   "kind": "text",
+   "ref": "Fraudulent Claims Regarding Mr. Buffett's Endorsements of Investment Products and Political Candidates",
+   "why": "Trust and safety warning critical to brand protection"
+  }
+ ],
+ "missing_imagery": [
+  {
+   "what": "Black-and-white heritage portrait of Warren Buffett and Charlie Munger in study",
+   "why": "Humanizes austere text list and reinforces stewardship without selling"
+  },
+  {
+   "what": "Architectural photo of 3555 Farnam Street Omaha HQ and Annual Meeting arena crowd",
+   "why": "Grounds abstract holding company in real place and scale of ownership community"
+  },
+  {
+   "what": "Subtle mosaic / crest strip of operating company marks (GEICO, BNSF, Dairy Queen, See's)",
+   "why": "Visualizes breadth of portfolio that text links alone cannot convey"
+  }
+ ],
+ "weak_imagery": [],
+ "page_class": "utility",
+ "physical_subject": null
+}

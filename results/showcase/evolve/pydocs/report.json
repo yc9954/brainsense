@@ -1,0 +1,545 @@
+{
+ "source": "https://docs.python.org/3/",
+ "brief": {
+  "audience": "Python developers, students, and contributors looking up language reference and guides",
+  "primary_task": "Identify current version (3.15.2) and jump to the right doc section or search in under 3s",
+  "tone": "clear, technical, welcoming, utilitarian",
+  "lang": "saas",
+  "brand": {
+   "primary": "#3776AB",
+   "secondary": "#306998",
+   "accent": "#FFD43B",
+   "text": "Python"
+  },
+  "must_keep": [
+   {
+    "id": "k1",
+    "kind": "logo",
+    "ref": "Python logo + Python wordmark in top bar",
+    "why": "Core brand trust for official documentation"
+   },
+   {
+    "id": "k2",
+    "kind": "widget",
+    "ref": "Quick search + Go | modules | index",
+    "why": "Primary 3-second task: search and jump to modules/index"
+   },
+   {
+    "id": "k3",
+    "kind": "widget",
+    "ref": "English language selector + 3.15.2 version selector + Theme Auto Light Dark",
+    "why": "Critical context controls for versioned translated docs"
+   },
+   {
+    "id": "k4",
+    "kind": "nav",
+    "ref": "Download these documents",
+    "why": "Offline access entry point"
+   },
+   {
+    "id": "k5",
+    "kind": "nav",
+    "ref": "Docs by version: Python 3.16 (in development), Python 3.15 (stable), Python 3.14 (stable), Python 3.13 to 3.11 (security-fixes), Python 3.10 to 2.6 (EOL), All versions",
+    "why": "Version switching is core docs navigation"
+   },
+   {
+    "id": "k6",
+    "kind": "nav",
+    "ref": "Other resources: PEP Index, Beginner's Guide, Book List, Audio/Visual Talks, Python Developer's Guide",
+    "why": "Secondary learning ecosystem links"
+   },
+   {
+    "id": "k7",
+    "kind": "text",
+    "ref": "Python 3.15.2 documentation + Welcome! This is the official documentation for Python 3.15.2.",
+    "why": "Confirms correct version and official source"
+   },
+   {
+    "id": "k8",
+    "kind": "nav",
+    "ref": "Documentation sections: What's new in Python 3.15?, Tutorial, Built-ins reference, Library reference, Language reference, Python setup and usage, Python HOWTOs, Installing Python modules, Extending and embedding, Python's C API, FAQs, Deprecations",
+    "why": "Main content discovery grid"
+   },
+   {
+    "id": "k9",
+    "kind": "nav",
+    "ref": "Other resources: Python developer's guide, Python Packaging User Guide, Audio/visual talks, Python Enhancement Proposals, Static Typing with Python",
+    "why": "Contributor and advanced-topic pathways"
+   },
+   {
+    "id": "k10",
+    "kind": "nav",
+    "ref": "Indices, glossary, and search: Global module index, General index, Glossary, Search page, Complete table of contents",
+    "why": "Lookup tools for reference use"
+   },
+   {
+    "id": "k11",
+    "kind": "text",
+    "ref": "Project information: Reporting issues, Contributing to docs, Download the documentation, History and license of Python, Copyright, About the documentation + footer license",
+    "why": "Trust, maintenance and legal provenance"
+   }
+  ],
+  "missing_imagery": [
+   {
+    "what": "Section icons / visual cards for Tutorial, Library, Language, HOWTOs",
+    "why": "Top agency would add scannable iconography to break wall-of-links and speed wayfinding"
+   },
+   {
+    "what": "Live code snippet preview with syntax highlighting",
+    "why": "Signals what Python docs contain and helps beginners orient instantly"
+   },
+   {
+    "what": "Prominent Python two-snake brand mark illustration",
+    "why": "Adds brand warmth to otherwise text-only utility page"
+   }
+  ],
+  "weak_imagery": [],
+  "page_class": "utility",
+  "physical_subject": null,
+  "_mode_css": true,
+  "_allowed_text": "TITLE: Python 3.15.2 documentation\nHEADINGS: Download | Docs by version | Other resources | Navigation | Python 3.15.2 documentation | Download | Docs by version | Other resources | Navigation\nTEXT: Theme Auto Light Dark Download Download these documents Docs by version Python 3.16 (in development) Python 3.15 (stable) Python 3.14 (stable) Python 3.13 (security-fixes) Python 3.12 (security-fixes) Python 3.11 (security-fixes) Python 3.10 (EOL) Python 3.9 (EOL) Python 3.8 (EOL) Python 3.7 (EOL) Python 3.6 (EOL) Python 3.5 (EOL) Python 3.4 (EOL) Python 3.3 (EOL) Python 3.2 (EOL) Python 3.1 (EOL) Python 3.0 (EOL) Python 2.7 (EOL) Python 2.6 (EOL) All versions Other resources PEP Index Beginner's Guide Book List Audio/Visual Talks Python Developer’s Guide Navigation index modules | Python &#187; 3.15.2 documentation &#187; | Theme Auto Light Dark | Python 3.15.2 documentation Welcome! This is the official documentation for Python 3.15.2. Documentation sections: What's new in Python 3.15? Or all \"What's new\" documents since Python 2.0 Tutorial Start here: a tour of Python's syntax and features Built-ins reference Built-in functions and classes Library reference Standard library modules Language reference Syntax and language elements Python setup and usage How to install, configure, and use Python Python HOWTOs In-depth topic manuals Installing Python modules Third-party modules and PyPI.org Extending and embedding For C/C++ programmers Python's C API C API reference FAQs Frequently asked questions (with answers!) Deprecations Deprecated functionality Other resources: Python developer's guide Information on contributing to Python Python Packaging User Guide Resources relating to Python packaging Audio/visual talks Podcasts, talks, and video presentations from the community Python Enhancement Proposals Index of proposed improvements to Python Static Typing with Python Information and guides about Python type safety Indices, glossary, and search: Global module index All modules and libraries General index All functions, classes, and terms Glossary Terms explained Search page Search this documentation Complete table of contents All sections and subsections Project information: Reporting issues Contributing to docs Download the documentation History and license of Python Copyright About the documentation Download Download these documents Docs by version Python 3.16 (in development) Python 3.15 (stable) Python 3.14 (stable) Python 3.13 (security-fixes) Python 3.12 (se index\nmodules |\n Python » \nGerman | Deutsch\nGreek | Ελληνικά\nEnglish\nSpanish | español\nPersian | فارسی\nFrench | français\nItalian | italiano\nJapanese | 日本語\nKorean | 한국어\nPunjabi | ਪੰਜਾਬੀ\nPolish | polski\nBrazilian Portuguese | Português brasileiro\nRomanian | Românește\nRussian | Русский\nTurkish | Türkçe\nSimplified Chinese | 简体中文\nTraditional Chinese | 繁體中文\ndev (3.16)\n3.15.2\n3.14\n3.13\n3.12\n3.11\n3.10\n3.9\n3.8\n3.7\n3.6\n3.5\n3.4\n3.3\n3.2\n3.1\n3.0\n2.7\n2.6\n 3.15.2 documentation »\n  |\nTheme \nAuto\nLight\nDark\n |\nPython 3.15.2 documentation\n\nWelcome! This is the official documentation for Python 3.15.2.\n\nDocumentation sections:\n\nWhat's new in Python 3.15?\nOr all \"What's new\" documents since Python 2.0\nTutorial\nStart here: a tour of Python's syntax and features\nBuilt-ins reference\nBuilt-in functions and classes\nLibrary reference\nStandard library modules\nLanguage reference\nSyntax and language elements\nPython setup and usage\nHow to install, configure, and use Python\nPython HOWTOs\nIn-depth topic manuals\nInstalling Python modules\nThird-party modules and PyPI.org\nExtending and embedding\nFor C/C++ programmers\nPython's C API\nC API reference\nFAQs\nFrequently asked questions (with answers!)\nDeprecations\nDeprecated functionality\n\nOther resources:\n\nPython developer's guide\nInformation on contributing to Python\nPython Packaging User Guide\nResources relating to Python packaging\nAudio/visual talks\nPodcasts, talks, and video presentations from the community\nPython Enhancement Proposals\nIndex of proposed improvements to Python\nStatic Typing with Python\nInformation and guides about Python type safety\n\nIndices, glossary, and search:\n\nGlobal module index\nAll modules and libraries\nGeneral index\nAll functions, classes, and terms\nGlossary\nTerms explained\nSearch page\nSearch this documentation\nComplete table of contents\nAll sections and subsections\n\nProject information:\n\nReporting issues\nContributing to docs\nDownload the documentation\nHistory and license of Python\nCopyright\nAbout the documentation\nDownload\n\nDownload these documents\n\nDocs by version\nPython 3.16 (in development)\nPython 3.15 (stable)\nPython 3.14 (stable)\nPython 3.13 (security-fixes)\nPython 3.12 (security-fixes)\nPython 3.11 (security-fixes)\nPython 3.10 (EOL)\nPython 3.9 (EOL)\nPython 3.8 (EOL)\nPython 3.7 (EOL)\nPython 3.6 (EOL)\nPython 3.5 (EOL)\nPython 3.4 (EOL)\nPython 3.3 (EOL)\nPython 3.2 (EOL)\nPython 3.1 (EOL)\nPython 3.0 (EOL)\nPython 2.7 (EOL)\nPython 2.6 (EOL)\nAll versions\nOther resources\nPEP Index\nBeginner's Guide\nBook List\nAudio/Visual Talks\nPython Developer’s Guide\n«\nindex\nmodules |\n Python » \nGerman | Deutsch\nGreek | Ελληνικά\nEnglish\nSpanish | español\nPersian | فارسی\nFrench | français\nItalian | italiano\nJapanese | 日本語\nKorean | 한국어\nPunjabi | ਪੰਜਾਬੀ\nPolish | polski\nBrazilian Portuguese | Português brasileiro\nRomanian | Românește\nRussian | Русский\nTurkish | Türkçe\nSimplified Chinese | 简体中文\nTraditional Chinese | 繁體中文\ndev (3.16)\n3.15.2\n3.14\n3.13\n3.12\n3.11\n3.10\n3.9\n3.8\n3.7\n3.6\n3.5\n3.4\n3.3\n3.2\n3.1\n3.0\n2.7\n2.6\n 3.15.2 documentation »\n  |\nTheme \nAuto\nLight\nDark\n |\n© Copyright 2001 Python Software Foundation.\nThis page is licensed under the Python Software Foundation License Version 2.\nExamples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.\nSee History and License for more information.\n\nThe Python Software Foundation is a non-profit corporation. Please donate.\n\nLast updated on Nov 04, 2026 (22:17 UTC). Found a bug?\nCreated using Sphinx 9.1.1. {\"title\": \"Python 3.15.2 documentation\", \"headings\": [{\"tag\": \"H3\", \"text\": \"Download\"}, {\"tag\": \"H3\", \"text\": \"Docs by version\"}, {\"tag\": \"H3\", \"text\": \"Other resources\"}, {\"tag\": \"H3\", \"text\": \"Navigation\"}, {\"tag\": \"H1\", \"text\": \"Python 3.15.2 documentation\"}, {\"tag\": \"H3\", \"text\": \"Download\"}, {\"tag\": \"H3\", \"text\": \"Docs by version\"}, {\"tag\": \"H3\", \"text\": \"Other resources\"}, {\"tag\": \"H3\", \"text\": \"Navigation\"}], \"nav\": [\"Download these documents\", \"Python 3.16 (in development)\", \"Python 3.15 (stable)\", \"Python 3.14 (stable)\", \"Python 3.13 (security-fixes)\", \"Python 3.12 (security-fixes)\", \"Python 3.11 (security-fixes)\", \"Python 3.10 (EOL)\", \"Python 3.9 (EOL)\", \"Python 3.8 (EOL)\", \"Python 3.7 (EOL)\", \"Python 3.6 (EOL)\", \"Python 3.5 (EOL)\", \"Python 3.4 (EOL)\", \"Python 3.3 (EOL)\", \"Python 3.2 (EOL)\", \"Python 3.1 (EOL)\", \"Python 3.0 (EOL)\", \"Python 2.7 (EOL)\", \"Python 2.6 (EOL)\", \"All versions\", \"PEP Index\", \"Beginner's Guide\", \"Book List\", \"Audio/Visual Talks\", \"Python Developer’s Guide\"], \"sections\": [{\"tag\": \"div\", \"cls\": \"mobile-nav\", \"text\": \"dev (3.16)3.15.23.143.133.123.113.103.93.83.73.63.53.43.33.23.13.02.72.6 German | DeutschGreek | ΕλληνικάEnglishSpanish | españolPersian | فارسیFrench | françai\"}, {\"tag\": \"div\", \"cls\": \"related\", \"text\": \"index modules | Python » German | Deutsch Greek | Ελληνικά English Spanish | español Persian | فارسی French | français Italian | italiano Japanese | 日本語 Korean \"}, {\"tag\": \"div\", \"cls\": \"document\", \"text\": \"Python 3.15.2 documentation Welcome! This is the official documentation for Python 3.15.2. Documentation sections: What's new in Python 3.15? Or all \\\"What's new\"}, {\"tag\": \"div\", \"cls\": \"related\", \"text\": \"index modules | Python » German | Deutsch Greek | Ελληνικά English Spanish | español Persian | فارسی French | français Italian | italiano Japanese | 日本語 Korean \"}, {\"tag\": \"div\", \"cls\": \"footer\", \"text\": \"© Copyright 2001 Python Software Foundation. This page is licensed under the Python Software Foundation License Version 2. Examples, recipes, and other code in \"}], \"height\": 1580, \"bodyBg\": \"rgb(255, 255, 255)\", \"font\": \"-apple-system, \\\"system-ui\\\", \\\"avenir next\\\", avenir, \\\"segoe ui\\\", \\\"helvetica neue\\\",\"}  Python"
+ },
+ "brief_text": "Evolve https://docs.python.org/3/ for Python developers, students, and contributors looking up language reference and guides: primary task 'Identify current version (3.15.2) and jump to the right doc section or search in under 3s', tone clear, technical, welcoming, utilitarian. Penalise any information or element present on the live page that is missing here.",
+ "manifest": {
+  "url": "https://docs.python.org/3/",
+  "images": [],
+  "svgs": [],
+  "widgets": [],
+  "logo": null,
+  "live_html": "live.html",
+  "text": "index\nmodules |\n Python » \nGerman | Deutsch\nGreek | Ελληνικά\nEnglish\nSpanish | español\nPersian | فارسی\nFrench | français\nItalian | italiano\nJapanese | 日本語\nKorean | 한국어\nPunjabi | ਪੰਜਾਬੀ\nPolish | polski\nBrazilian Portuguese | Português brasileiro\nRomanian | Românește\nRussian | Русский\nTurkish | Türkçe\nSimplified Chinese | 简体中文\nTraditional Chinese | 繁體中文\ndev (3.16)\n3.15.2\n3.14\n3.13\n3.12\n3.11\n3.10\n3.9\n3.8\n3.7\n3.6\n3.5\n3.4\n3.3\n3.2\n3.1\n3.0\n2.7\n2.6\n 3.15.2 documentation »\n  |\nTheme \nAuto\nLight\nDark\n |\nPython 3.15.2 documentation\n\nWelcome! This is the official documentation for Python 3.15.2.\n\nDocumentation sections:\n\nWhat's new in Python 3.15?\nOr all \"What's new\" documents since Python 2.0\nTutorial\nStart here: a tour of Python's syntax and features\nBuilt-ins reference\nBuilt-in functions and classes\nLibrary reference\nStandard library modules\nLanguage reference\nSyntax and language elements\nPython setup and usage\nHow to install, configure, and use Python\nPython HOWTOs\nIn-depth topic manuals\nInstalling Python modules\nThird-party modules and PyPI.org\nExtending and embedding\nFor C/C++ programmers\nPython's C API\nC API reference\nFAQs\nFrequently asked questions (with answers!)\nDeprecations\nDeprecated functionality\n\nOther resources:\n\nPython developer's guide\nInformation on contributing to Python\nPython Packaging User Guide\nResources relating to Python packaging\nAudio/visual talks\nPodcasts, talks, and video presentations from the community\nPython Enhancement Proposals\nIndex of proposed improvements to Python\nStatic Typing with Python\nInformation and guides about Python type safety\n\nIndices, glossary, and search:\n\nGlobal module index\nAll modules and libraries\nGeneral index\nAll functions, classes, and terms\nGlossary\nTerms explained\nSearch page\nSearch this documentation\nComplete table of contents\nAll sections and subsections\n\nProject information:\n\nReporting issues\nContributing to docs\nDownload the documentation\nHistory and license of Python\nCopyright\nAbout the documentation\nDownload\n\nDownload these documents\n\nDocs by version\nPython 3.16 (in development)\nPython 3.15 (stable)\nPython 3.14 (stable)\nPython 3.13 (security-fixes)\nPython 3.12 (security-fixes)\nPython 3.11 (security-fixes)\nPython 3.10 (EOL)\nPython 3.9 (EOL)\nPython 3.8 (EOL)\nPython 3.7 (EOL)\nPython 3.6 (EOL)\nPython 3.5 (EOL)\nPython 3.4 (EOL)\nPython 3.3 (EOL)\nPython 3.2 (EOL)\nPython 3.1 (EOL)\nPython 3.0 (EOL)\nPython 2.7 (EOL)\nPython 2.6 (EOL)\nAll versions\nOther resources\nPEP Index\nBeginner's Guide\nBook List\nAudio/Visual Talks\nPython Developer’s Guide\n«\nindex\nmodules |\n Python » \nGerman | Deutsch\nGreek | Ελληνικά\nEnglish\nSpanish | español\nPersian | فارسی\nFrench | français\nItalian | italiano\nJapanese | 日本語\nKorean | 한국어\nPunjabi | ਪੰਜਾਬੀ\nPolish | polski\nBrazilian Portuguese | Português brasileiro\nRomanian | Românește\nRussian | Русский\nTurkish | Türkçe\nSimplified Chinese | 简体中文\nTraditional Chinese | 繁體中文\ndev (3.16)\n3.15.2\n3.14\n3.13\n3.12\n3.11\n3.10\n3.9\n3.8\n3.7\n3.6\n3.5\n3.4\n3.3\n3.2\n3.1\n3.0\n2.7\n2.6\n 3.15.2 documentation »\n  |\nTheme \nAuto\nLight\nDark\n |\n© Copyright 2001 Python Software Foundation.\nThis page is licensed under the Python Software Foundation License Version 2.\nExamples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.\nSee History and License for more information.\n\nThe Python Software Foundation is a non-profit corporation. Please donate.\n\nLast updated on Nov 04, 2026 (22:17 UTC). Found a bug?\nCreated using Sphinx 9.1.1."
+ },
+ "steps": [
+  {
+   "round": 0,
+   "png": "results/showcase/evolve/pydocs/before.png",
+   "html": null,
+   "accepted": true,
+   "ui_score": 0.6771727867140007,
+   "heads": {
+    "aesthetic": {
+     "score": 0.7613171339035034,
+     "percentile": 87.66756032171583,
+     "confidence": 0.5226342678070068,
+     "top": "▼ L_a24, ▲ L_31a"
+    },
+    "attention": {
+     "score": 0.5691178441047668,
+     "percentile": 63.013698630136986,
+     "confidence": 0.1382356882095337,
+     "top": "▲ 움직임·형태 평균, ▲ 기본 시각 평균"
+    }
+   },
+   "judge": {
+    "aesthetic": 0.444,
+    "clarity": 0.889,
+    "attention": 0.444,
+    "brief_fit": 0.889,
+    "judge_score": 0.667,
+    "reason": "Utilitarian layout clearly identifies 3.15.2 with search and section links for fast jumping, but dated typography and dense competing blue links dilute polish and focal hierarchy."
+   },
+   "brain_only": 0.753,
+   "critique": {
+    "kind": "landing",
+    "ranking": [
+     [
+      "scene_place",
+      1.155934407225376
+     ],
+     [
+      "value_vmpfc",
+      0.8895738398753279
+     ],
+     [
+      "control_dlpfc",
+      0.5101261476458049
+     ],
+     [
+      "attention_dorsal",
+      0.4560058807391993
+     ],
+     [
+      "language",
+      -0.034307582131094305
+     ],
+     [
+      "face_body",
+      -0.167184953864477
+     ],
+     [
+      "default_mode",
+      -0.2958215584148794
+     ],
+     [
+      "visual_early",
+      -0.3927533797401434
+     ],
+     [
+      "visual_motion",
+      -2.1215728013351116
+     ]
+    ],
+    "hook": {
+     "attention_early": 0.45782335238904803,
+     "attention_late": 0.45509714491427494,
+     "visual_early": 0.20216567364366428,
+     "visual_late": -0.6902129064320471
+    },
+    "diagnosis": [
+     "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette"
+    ],
+    "directives": [
+     "Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion."
+    ],
+    "cited_areas": [
+     "▼ L affect, conflict (a24) [aesthetic]",
+     "▲ L 31a [aesthetic]",
+     "▲ object shape & motion (MT/LO) mean [attention]",
+     "▲ early vision (V1–V4) mean [attention]"
+    ],
+    "groups": [
+     "visual_motion"
+    ],
+    "prompt_block": "BRAIN CRITIQUE (TRIBE v2 predicted human cortex while looking at the last render; values are relative within this image):\n- most driven regions: places & scenes (PPA/RSC) +1.16, reward & value (OFC/vmPFC) +0.89, cognitive control (dlPFC) +0.51; least: early vision (V1–V4) -0.39, object shape & motion (MT/LO) -2.12\n- first-2s hook vs later: attention +0.46 → +0.46, visual drive +0.20 → -0.69\n- areas the aesthetic head cites: ▼ L affect, conflict (a24) [aesthetic]; ▲ L 31a [aesthetic]; ▲ object shape & motion (MT/LO) mean [attention]; ▲ early vision (V1–V4) mean [attention]\n- diagnosis: Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette\n- DO NEXT (highest priority first): (1) Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion."
+   }
+  },
+  {
+   "round": 1,
+   "png": "results/showcase/evolve/pydocs/r1.png",
+   "html": "results/showcase/evolve/pydocs/r1.html",
+   "changes": [
+    {
+     "directive": "typography",
+     "change": "Inter Tight 48px hero + Inter body for scannable type silhouette"
+    },
+    {
+     "directive": "reflow",
+     "change": "Sticky top bar pins search Go modules index version selector; hero + 2-col cards grid with diagonal accent"
+    }
+   ],
+   "actions": [
+    {
+     "tool": "typography",
+     "params": {
+      "display": "Inter Tight",
+      "body": "Inter",
+      "scale": "48px",
+      "grid": "12-col/8pt"
+     },
+     "why": "Builds a strong typographic silhouette and rhythm to lift early-vision and shape drive while keeping search and version scannable in under 3s.",
+     "critique_line": "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+     "desc": "{\"display\": \"Inter Tight\", \"body\": \"Inter\", \"scale\": \"48px\", \"grid\": \"12-col/8pt\"}"
+    },
+    {
+     "tool": "reflow",
+     "params": {
+      "move": "Keep all words; pin Quick search + Go | modules | index + 3.15.2 selector into sticky top bar, stack Python 3.15.2 welcome as compact type hero, reflow Documentation sections into 12-col card grid with CSS diagonal accent to imply motion"
+     },
+     "why": "Creates a clear focal object and diagonal motion via CSS grid only, preserving density and primary jump-to-section task with no hero panel.",
+     "critique_line": "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+     "desc": "{\"move\": \"Keep all words; pin Quick search + Go | modules | index + 3.15.2 selector into sticky top bar, stack Python 3.15.2 welcome as compact type hero, reflo"
+    }
+   ],
+   "fidelity": {
+    "missing_paths": [],
+    "missing": [],
+    "missing_text": [],
+    "illegible": [],
+    "defects": [],
+    "density_ok": true,
+    "density_note": "candidate first screen shows 12 documentation section cards vs live 12 sections; sidebar Docs by version (~20 links) and Other resources preserved, ~100% parity, no category dropped",
+    "ok": true,
+    "facts": {
+     "numbers": [],
+     "names": [],
+     "claims": [],
+     "ok": true
+    }
+   },
+   "accepted": false,
+   "based_on": 0,
+   "ui_score": 0.6419574657710633,
+   "heads": {
+    "aesthetic": {
+     "score": 0.7798029780387878,
+     "percentile": 89.54423592493298,
+     "confidence": 0.5596059560775757,
+     "top": "▲ L_31a, ▼ L_a24"
+    },
+    "attention": {
+     "score": 0.567359447479248,
+     "percentile": 62.73972602739726,
+     "confidence": 0.1347188949584961,
+     "top": "▲ 움직임·형태 평균, ▲ 기본 시각 평균"
+    }
+   },
+   "judge": {
+    "aesthetic": 0.556,
+    "clarity": 0.778,
+    "attention": 0.444,
+    "brief_fit": 0.667,
+    "judge_score": 0.611,
+    "reason": "Version 3.15.2 and doc sections are immediately clear, but the crowded top bar with duplicate selectors weakens focus and polish."
+   },
+   "brain_only": 0.761,
+   "critique": {
+    "kind": "landing",
+    "ranking": [
+     [
+      "scene_place",
+      1.2804679912192456
+     ],
+     [
+      "value_vmpfc",
+      0.8264897475638744
+     ],
+     [
+      "control_dlpfc",
+      0.4802023656847061
+     ],
+     [
+      "attention_dorsal",
+      0.3054465360957777
+     ],
+     [
+      "language",
+      -0.12359729644973427
+     ],
+     [
+      "default_mode",
+      -0.15562511761670883
+     ],
+     [
+      "face_body",
+      -0.18937255334298406
+     ],
+     [
+      "visual_early",
+      -0.35961439471374823
+     ],
+     [
+      "visual_motion",
+      -2.064397278440429
+     ]
+    ],
+    "hook": {
+     "attention_early": 0.3679975156903388,
+     "attention_late": 0.27417104629849715,
+     "visual_early": 0.2551478102362338,
+     "visual_late": -0.6669954971887393
+    },
+    "diagnosis": [
+     "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette"
+    ],
+    "directives": [
+     "Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion."
+    ],
+    "cited_areas": [
+     "▲ L 31a [aesthetic]",
+     "▼ L affect, conflict (a24) [aesthetic]",
+     "▲ object shape & motion (MT/LO) mean [attention]",
+     "▲ early vision (V1–V4) mean [attention]"
+    ],
+    "groups": [
+     "visual_motion"
+    ],
+    "prompt_block": "BRAIN CRITIQUE (TRIBE v2 predicted human cortex while looking at the last render; values are relative within this image):\n- most driven regions: places & scenes (PPA/RSC) +1.28, reward & value (OFC/vmPFC) +0.83, cognitive control (dlPFC) +0.48; least: early vision (V1–V4) -0.36, object shape & motion (MT/LO) -2.06\n- first-2s hook vs later: attention +0.37 → +0.27, visual drive +0.26 → -0.67\n- areas the aesthetic head cites: ▲ L 31a [aesthetic]; ▼ L affect, conflict (a24) [aesthetic]; ▲ object shape & motion (MT/LO) mean [attention]; ▲ early vision (V1–V4) mean [attention]\n- diagnosis: Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette\n- DO NEXT (highest priority first): (1) Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion."
+   },
+   "p_vs_best": 0.075,
+   "p_vs_best_reason": "B preserves the full live-page content including Other resources with clear version and search while A omits key sections and adds confusing selectors and broken hyphenation that hurts 3-second clarity. | swapped: A keeps 3.15.2, search, and all sections instantly scannable while B duplicates language/version controls, fractures readability, and omits Other resources."
+  },
+  {
+   "round": 2,
+   "png": "results/showcase/evolve/pydocs/r2.png",
+   "html": "results/showcase/evolve/pydocs/r2.html",
+   "changes": [
+    {
+     "directive": "Add diagonal motion overlay",
+     "change": "body + header use repeating 135deg blue stripes + yellow diagonal accent behind H1 for MT/LO drive"
+    },
+    {
+     "directive": "3s version + search task",
+     "change": "sticky dark header, yellow 3.15.2 version pill, enlarged rounded quick-search with strong focus"
+    },
+    {
+     "directive": "Utility hierarchy",
+     "change": "2-col cards for doc sections, sidebar typography, brand blues #3776AB/#306998 + #FFD43B, Inter + JetBrains Mono"
+    }
+   ],
+   "actions": [
+    {
+     "tool": "photo",
+     "params": {
+      "query": "abstract blue geometric diagonal pattern",
+      "treatment": "overlay"
+     },
+     "why": "Adds subtle diagonal motion and visual rhythm behind utility content without adding a hero panel or harming 3s search task.",
+     "critique_line": "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+     "error": "no photo passed the gate"
+    }
+   ],
+   "fidelity": {
+    "missing_paths": [],
+    "missing": [],
+    "missing_text": [],
+    "illegible": [],
+    "defects": [],
+    "density_ok": true,
+    "density_note": "candidate first screen ~30 items (search+Go, modules, index, version 3.15.2, language, theme, ~12 doc section cards, ~17 version links) vs live ~30 items (same categories); all categories present, larger cards still show most of list",
+    "ok": true,
+    "facts": {
+     "numbers": [],
+     "names": [],
+     "claims": [],
+     "ok": true
+    }
+   },
+   "accepted": false,
+   "based_on": 0,
+   "ui_score": 0.546592600695075,
+   "heads": {
+    "aesthetic": {
+     "score": 0.8018442988395691,
+     "percentile": 90.88471849865952,
+     "confidence": 0.6036885976791382,
+     "top": "▼ L_a24, ▲ L_31a"
+    },
+    "attention": {
+     "score": 0.5551890134811401,
+     "percentile": 60.54794520547945,
+     "confidence": 0.11037802696228027,
+     "top": "▲ 움직임·형태 평균, ▲ 움직임·형태 최대"
+    }
+   },
+   "judge": {
+    "aesthetic": 0.333,
+    "clarity": 0.556,
+    "attention": 0.333,
+    "brief_fit": 0.667,
+    "judge_score": 0.472,
+    "reason": "Crowded header with competing yellow pills and awkward hyphenated card titles hurts polish and focus, though version 3.15.2, search, and section cards remain findable while lower-page indices from the live page are missing."
+   },
+   "brain_only": 0.757,
+   "critique": {
+    "kind": "landing",
+    "ranking": [
+     [
+      "scene_place",
+      1.272226613319846
+     ],
+     [
+      "value_vmpfc",
+      0.8361500992329622
+     ],
+     [
+      "control_dlpfc",
+      0.44720113666847255
+     ],
+     [
+      "attention_dorsal",
+      0.3052318320823391
+     ],
+     [
+      "visual_early",
+      0.05003907383866951
+     ],
+     [
+      "language",
+      -0.14883528258570755
+     ],
+     [
+      "default_mode",
+      -0.26225428624956065
+     ],
+     [
+      "face_body",
+      -0.38545079022926326
+     ],
+     [
+      "visual_motion",
+      -2.1143083960777562
+     ]
+    ],
+    "hook": {
+     "attention_early": 0.39538038499447076,
+     "attention_late": 0.26015755562627335,
+     "visual_early": 0.6159607921200335,
+     "visual_late": -0.2329217853020125
+    },
+    "diagnosis": [
+     "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette"
+    ],
+    "directives": [
+     "Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion."
+    ],
+    "cited_areas": [
+     "▼ L affect, conflict (a24) [aesthetic]",
+     "▲ L 31a [aesthetic]",
+     "▲ object shape & motion (MT/LO) mean [attention]",
+     "▲ object shape & motion (MT/LO) max [attention]"
+    ],
+    "groups": [
+     "visual_motion"
+    ],
+    "prompt_block": "BRAIN CRITIQUE (TRIBE v2 predicted human cortex while looking at the last render; values are relative within this image):\n- most driven regions: places & scenes (PPA/RSC) +1.27, reward & value (OFC/vmPFC) +0.84, cognitive control (dlPFC) +0.45; least: faces & people (FFA/STS) -0.39, object shape & motion (MT/LO) -2.11\n- first-2s hook vs later: attention +0.40 → +0.26, visual drive +0.62 → -0.23\n- areas the aesthetic head cites: ▼ L affect, conflict (a24) [aesthetic]; ▲ L 31a [aesthetic]; ▲ object shape & motion (MT/LO) mean [attention]; ▲ object shape & motion (MT/LO) max [attention]\n- diagnosis: Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette\n- DO NEXT (highest priority first): (1) Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion."
+   },
+   "p_vs_best": 0.075,
+   "p_vs_best_reason": "B preserves the live page's version identifier, search, and complete documentation plus Other resources in a clear utilitarian hierarchy, while A adds confusing duplicate language/version pills and truncates key sections. | swapped: A preserves the live page's version, search, and complete section hierarchy with one clear focal point and utilitarian clarity, while B introduces a cluttered header with duplicate selectors, distracting styling, and broken hyphenated cards that slow the 3s task and obscure lower sections."
+  }
+ ],
+ "trail": [
+  {
+   "round": 1,
+   "tool": "typography",
+   "why": "Builds a strong typographic silhouette and rhythm to lift early-vision and shape drive while keeping search and version scannable in under 3s.",
+   "critique_line": "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+   "desc": "{\"display\": \"Inter Tight\", \"body\": \"Inter\", \"scale\": \"48px\", \"grid\": \"12-col/8pt\"}",
+   "brain_delta": 0.008,
+   "judge_delta": -0.056,
+   "score_before": 0.6771727867140007,
+   "score_after": 0.6419574657710633,
+   "accepted": false,
+   "fidelity": {
+    "missing_paths": [],
+    "missing": []
+   },
+   "page_thumb": "trail/r1_page.jpg"
+  },
+  {
+   "round": 1,
+   "tool": "reflow",
+   "why": "Creates a clear focal object and diagonal motion via CSS grid only, preserving density and primary jump-to-section task with no hero panel.",
+   "critique_line": "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+   "desc": "{\"move\": \"Keep all words; pin Quick search + Go | modules | index + 3.15.2 selector into sticky top bar, stack Python 3.15.2 welcome as compact type hero, reflo",
+   "brain_delta": 0.008,
+   "judge_delta": -0.056,
+   "score_before": 0.6771727867140007,
+   "score_after": 0.6419574657710633,
+   "accepted": false,
+   "fidelity": {
+    "missing_paths": [],
+    "missing": []
+   },
+   "page_thumb": "trail/r1_page.jpg"
+  },
+  {
+   "round": 2,
+   "tool": "photo",
+   "why": "Adds subtle diagonal motion and visual rhythm behind utility content without adding a hero panel or harming 3s search task.",
+   "critique_line": "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+   "desc": "",
+   "brain_delta": 0.004,
+   "judge_delta": -0.195,
+   "score_before": 0.6771727867140007,
+   "score_after": 0.546592600695075,
+   "accepted": false,
+   "fidelity": {
+    "missing_paths": [],
+    "missing": []
+   },
+   "page_thumb": "trail/r2_page.jpg"
+  }
+ ],
+ "best_round": 0,
+ "pairwise_after_vs_before": null
+}

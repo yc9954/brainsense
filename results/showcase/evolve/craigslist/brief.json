@@ -1,0 +1,102 @@
+{
+ "audience": "Worldwide visitors trying to find and open their local Craigslist city site",
+ "primary_task": "Find and click their local city / region Craigslist site in 3 seconds",
+ "tone": "plain, utilitarian, no-frills",
+ "lang": "brutalist",
+ "brand": {
+  "primary": "#551A8B",
+  "secondary": "#F1EDF6",
+  "accent": "#0000EE",
+  "text": "craigslist"
+ },
+ "must_keep": [
+  {
+   "id": "k1",
+   "kind": "logo",
+   "ref": "craigslist",
+   "why": "Purple wordmark is the only brand signal, must be preserved for trust"
+  },
+  {
+   "id": "k2",
+   "kind": "widget",
+   "ref": "assets/widget_0_div.png",
+   "why": "Interactive world map with site pins is the primary visual wayfinding device"
+  },
+  {
+   "id": "k3",
+   "kind": "nav",
+   "ref": "US Canada Europe Asia/Pacific/Middle East Oceania Latin America Africa",
+   "why": "Top anchor nav enables 3-second jump to region, core utility"
+  },
+  {
+   "id": "k4",
+   "kind": "text",
+   "ref": "craigslist sites worldwide",
+   "why": "H1 defines page purpose as global directory index"
+  },
+  {
+   "id": "k5",
+   "kind": "text",
+   "ref": "US",
+   "why": "US state -> city link directory holds most link equity and traffic"
+  },
+  {
+   "id": "k6",
+   "kind": "text",
+   "ref": "Canada",
+   "why": "Complete Canada city directory must remain crawlable and clickable"
+  },
+  {
+   "id": "k7",
+   "kind": "text",
+   "ref": "Europe",
+   "why": "Complete Europe city directory must remain crawlable and clickable"
+  },
+  {
+   "id": "k8",
+   "kind": "text",
+   "ref": "Asia, Pacific and Middle East",
+   "why": "Complete Asia/Pacific/Middle East directory must remain crawlable"
+  },
+  {
+   "id": "k9",
+   "kind": "text",
+   "ref": "Oceania",
+   "why": "Complete Oceania directory must remain crawlable"
+  },
+  {
+   "id": "k10",
+   "kind": "text",
+   "ref": "Latin America and Caribbean",
+   "why": "Complete Latin America directory must remain crawlable"
+  },
+  {
+   "id": "k11",
+   "kind": "text",
+   "ref": "Africa",
+   "why": "Complete Africa directory must remain crawlable"
+  }
+ ],
+ "missing_imagery": [
+  {
+   "what": "Instant search / filter input with autocomplete for city",
+   "why": "700+ links unscanable without type-to-filter, top agency would add for 3s task"
+  },
+  {
+   "what": "Use-my-location / nearest-site button",
+   "why": "Removes manual scanning of map and long lists on mobile"
+  }
+ ],
+ "weak_imagery": [
+  "assets/img_6602d29849.png",
+  "assets/img_95674fa24e.png",
+  "assets/img_451c38ae60.png",
+  "assets/img_4a9537fc3b.png",
+  "assets/img_619fd57baf.png",
+  "assets/img_26c6ff9c1a.png",
+  "assets/img_0ea53de4e4.png",
+  "assets/img_b8c3cd9c5f.png"
+ ],
+ "page_class": "utility",
+ "physical_subject": null
+}

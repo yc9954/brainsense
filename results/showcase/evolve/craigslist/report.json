@@ -1,0 +1,688 @@
+{
+ "source": "https://www.craigslist.org/about/sites",
+ "brief": {
+  "audience": "Worldwide visitors trying to find and open their local Craigslist city site",
+  "primary_task": "Find and click their local city / region Craigslist site in 3 seconds",
+  "tone": "plain, utilitarian, no-frills",
+  "lang": "brutalist",
+  "brand": {
+   "primary": "#551A8B",
+   "secondary": "#F1EDF6",
+   "accent": "#0000EE",
+   "text": "craigslist"
+  },
+  "must_keep": [
+   {
+    "id": "k1",
+    "kind": "logo",
+    "ref": "craigslist",
+    "why": "Purple wordmark is the only brand signal, must be preserved for trust"
+   },
+   {
+    "id": "k2",
+    "kind": "widget",
+    "ref": "assets/widget_0_div.png",
+    "why": "Interactive world map with site pins is the primary visual wayfinding device"
+   },
+   {
+    "id": "k3",
+    "kind": "nav",
+    "ref": "US Canada Europe Asia/Pacific/Middle East Oceania Latin America Africa",
+    "why": "Top anchor nav enables 3-second jump to region, core utility"
+   },
+   {
+    "id": "k4",
+    "kind": "text",
+    "ref": "craigslist sites worldwide",
+    "why": "H1 defines page purpose as global directory index"
+   },
+   {
+    "id": "k5",
+    "kind": "text",
+    "ref": "US",
+    "why": "US state -> city link directory holds most link equity and traffic"
+   },
+   {
+    "id": "k6",
+    "kind": "text",
+    "ref": "Canada",
+    "why": "Complete Canada city directory must remain crawlable and clickable"
+   },
+   {
+    "id": "k7",
+    "kind": "text",
+    "ref": "Europe",
+    "why": "Complete Europe city directory must remain crawlable and clickable"
+   },
+   {
+    "id": "k8",
+    "kind": "text",
+    "ref": "Asia, Pacific and Middle East",
+    "why": "Complete Asia/Pacific/Middle East directory must remain crawlable"
+   },
+   {
+    "id": "k9",
+    "kind": "text",
+    "ref": "Oceania",
+    "why": "Complete Oceania directory must remain crawlable"
+   },
+   {
+    "id": "k10",
+    "kind": "text",
+    "ref": "Latin America and Caribbean",
+    "why": "Complete Latin America directory must remain crawlable"
+   },
+   {
+    "id": "k11",
+    "kind": "text",
+    "ref": "Africa",
+    "why": "Complete Africa directory must remain crawlable"
+   }
+  ],
+  "missing_imagery": [
+   {
+    "what": "Instant search / filter input with autocomplete for city",
+    "why": "700+ links unscanable without type-to-filter, top agency would add for 3s task"
+   },
+   {
+    "what": "Use-my-location / nearest-site button",
+    "why": "Removes manual scanning of map and long lists on mobile"
+   }
+  ],
+  "weak_imagery": [
+   "assets/img_6602d29849.png",
+   "assets/img_95674fa24e.png",
+   "assets/img_451c38ae60.png",
+   "assets/img_4a9537fc3b.png",
+   "assets/img_619fd57baf.png",
+   "assets/img_26c6ff9c1a.png",
+   "assets/img_0ea53de4e4.png",
+   "assets/img_b8c3cd9c5f.png"
+  ],
+  "page_class": "utility",
+  "physical_subject": null,
+  "_mode_css": true,
+  "_allowed_text": "TITLE: craigslist &gt; sites\nHEADINGS: craigslist sites worldwide | US | Canada | Europe | Asia, Pacific and Middle East | Oceania | Latin America and Caribbean | Africa\nTEXT: craigslist &reg; US Canada Europe Asia/Pacific/Middle East Oceania Latin America Africa craigslist sites worldwide US Alabama auburn birmingham dothan florence / muscle shoals gadsden-anniston huntsville / decatur mobile montgomery tuscaloosa Alaska anchorage / mat-su fairbanks kenai peninsula southeast alaska Arizona flagstaff / sedona mohave county phoenix prescott show low sierra vista tucson yuma Arkansas fayetteville fort smith jonesboro little rock texarkana California bakersfield chico fresno / madera gold country hanford-corcoran humboldt county imperial county inland empire los angeles mendocino county merced modesto monterey bay orange county palm springs redding sacramento san diego san francisco bay area san luis obispo santa barbara santa maria siskiyou county stockton susanville ventura county visalia-tulare yuba-sutter Colorado boulder colorado springs denver eastern CO fort collins / north CO high rockies pueblo western slope Connecticut eastern CT hartford new haven northwest CT Delaware delaware District of Columbia washington Florida broward county daytona beach florida keys fort lauderdale ft myers / SW florida gainesville heartland florida jacksonville lakeland miami / dade north central FL ocala okaloosa / walton orlando panama city pensacola sarasota-bradenton south florida space coast st augustine tallahassee tampa bay area treasure coast palm beach county Georgia albany athens atlanta augusta brunswick columbus macon / warner robins northwest GA savannah / hinesville statesboro valdosta Hawaii hawaii Idaho boise east idaho lewiston / clarkston twin falls Illinois bloomington-normal champaign urbana chicago decatur la salle co mattoon-charleston peoria rockford southern illinois springfield western IL Indiana bloomington evansville fort wayne indianapolis kokomo lafayette / west lafayette muncie / anderson richmond south bend / michiana terre haute Iowa ames cedar rapids des moines dubuque fort dodge iowa city mason city quad cities sioux city southeast IA waterloo / cedar falls Kansas lawrence manhattan northwest KS salina southeast KS southwest KS topeka wichita Kentucky bowling green eastern kentucky lexington louisville owensboro western KY Louisiana baton rouge central louisiana houma lafayette lake charles monroe new orleans shreveport Maine maine Maryla craigslist®\nUS Canada Europe Asia/Pacific/Middle East Oceania Latin America Africa\n+\n+\n+\n+\n+\n+\n+\n+\n+\n+\n+\n+\n+\n+\n+\n+\n+\n+\n+\n+\n+\n+\n+\n+\n+\n+\n+\n+\n+\n+\n+\n+\n+\n+\n+\n+\n© craigslist - Map data Natural Earth, © OpenStreetMap\ncraigslist sites worldwide\nUS\nAlabama\nauburn\nbirmingham\ndothan\nflorence / muscle shoals\ngadsden-anniston\nhuntsville / decatur\nmobile\nmontgomery\ntuscaloosa\nAlaska\nanchorage / mat-su\nfairbanks\nkenai peninsula\nsoutheast alaska\nArizona\nflagstaff / sedona\nmohave county\nphoenix\nprescott\nshow low\nsierra vista\ntucson\nyuma\nArkansas\nfayetteville\nfort smith\njonesboro\nlittle rock\ntexarkana\nCalifornia\nbakersfield\nchico\nfresno / madera\ngold country\nhanford-corcoran\nhumboldt county\nimperial county\ninland empire\nlos angeles\nmendocino county\nmerced\nmodesto\nmonterey bay\norange county\npalm springs\nredding\nsacramento\nsan diego\nsan francisco bay area\nsan luis obispo\nsanta barbara\nsanta maria\nsiskiyou county\nstockton\nsusanville\nventura county\nvisalia-tulare\nyuba-sutter\nColorado\nboulder\ncolorado springs\ndenver\neastern CO\nfort collins / north CO\nhigh rockies\npueblo\nwestern slope\nConnecticut\neastern CT\nhartford\nnew haven\nnorthwest CT\nDelaware\ndelaware\nDistrict of Columbia\nwashington\nFlorida\nbroward county\ndaytona beach\nflorida keys\nfort lauderdale\nft myers / SW florida\ngainesville\nheartland florida\njacksonville\nlakeland\nmiami / dade\nnorth central FL\nocala\nokaloosa / walton\norlando\npanama city\npensacola\nsarasota-bradenton\nsouth florida\nspace coast\nst augustine\ntallahassee\ntampa bay area\ntreasure coast\npalm beach county\nGeorgia\nalbany\nathens\natlanta\naugusta\nbrunswick\ncolumbus\nmacon / warner robins\nnorthwest GA\nsavannah / hinesville\nstatesboro\nvaldosta\nHawaii\nhawaii\nIdaho\nboise\neast idaho\nlewiston / clarkston\ntwin falls\nIllinois\nbloomington-normal\nchampaign urbana\nchicago\ndecatur\nla salle co\nmattoon-charleston\npeoria\nrockford\nsouthern illinois\nspringfield\nwestern IL\nIndiana\nbloomington\nevansville\nfort wayne\nindianapolis\nkokomo\nlafayette / west lafayette\nmuncie / anderson\nrichmond\nsouth bend / michiana\nterre haute\nIowa\names\ncedar rapids\ndes moines\ndubuque\nfort dodge\niowa city\nmason city\nquad cities\nsioux city\nsoutheast IA\nwaterloo / cedar falls\nKansas\nlawrence\nmanhattan\nnorthwest KS\nsalina\nsoutheast KS\nsouthwest KS\ntopeka\nwichita\nKentucky\nbowling green\neastern kentucky\nlexington\nlouisville\nowensboro\nwestern KY\nLouisiana\nbaton rouge\ncentral louisiana\nhouma\nlafayette\nlake charles\nmonroe\nnew orleans\nshreveport\nMaine\nmaine\nMaryland\nannapolis\nbaltimore\neastern shore\nfrederick\nsouthern maryland\nwestern maryland\nMassachusetts\nboston\ncape cod / islands\nsouth coast\nwestern massachusetts\nworcester / central MA\nMichigan\nann arbor\nbattle creek\ncentral michigan\ndetroit metro\nflint\ngrand rapids\nholland\njackson\nkalamazoo\nlansing\nmonroe\nmuskegon\nnorthern michigan\nport huron\nsaginaw-midland-baycity\nsouthwest michigan\nthe thumb\nupper peninsula\nMinnesota\nbemidji\nbrainerd\nduluth / superior\nmankato\nminneapolis / st paul\nrochester\nsouthwest MN\nst cloud\nMississippi\ngulfport / biloxi\nhattiesburg\njackson\nmeridian\nnorth mississippi\nsouthwest MS\nMissouri\ncolumbia / jeff city\njoplin\nkansas city\nkirksville\nlake of the ozarks\nsoutheast missouri\nspringfield\nst joseph\nst louis\nMontana\nbillings\nbozeman\nbutte\ngreat falls\nhelena\nkalispell\nmissoula\neastern montana\nNebraska\ngrand island\nlincoln\nnorth platte\nomaha / council bluffs\nscottsbluff / panhandle\nNevada\nelko\nlas vegas\nreno / tahoe\nNew Hampshire\nnew hampshire\nNew Jersey\ncentral NJ\njersey shore\nnorth jersey\nsouth jersey\nNew Mexico\nalbuquerque\nclovis / portales\nfarmington\nlas cruces\nroswell / carlsbad\nsanta fe / taos\nNew York\nalbany\nbinghamton\nbuffalo\ncatskills\nchautauqua\nelmira-corning\nfinger lakes\nglens falls\nhudson valley\nithaca\nlong island\nnew york city\noneonta\nplattsburgh-adirondacks\npotsdam-canton-massena\nrochester\nsyracuse\ntwin tiers NY/PA\nutica-rome-oneida\nwatertown\nNorth Carolina\nasheville\nboone\ncharlotte\neastern NC\nfayetteville\ngreensboro\nhickory / lenoir\njacksonville\nouter banks\nraleigh / durham / CH\nwilmington\nwinston-salem\nNorth Dakota\nbismarck\nfargo / moorhead\ngrand forks\nnorth dakota\nOhio\nakron / canton\nashtabula\nathens\nchillicothe\ncincinnati\ncleveland\ncolumbus\ndayton / springfield\nlima / findlay\nmansfield\nsandusky\ntoledo\ntuscarawas co\nyoungstown\nzanesville / cambridge\nOklahoma\nlawton\nnorthwest OK\noklahoma city\nstillwater\ntulsa\nOregon\nbend\ncorvallis/albany\neast oregon\neugene\nklamath falls\nmedford-ashland\noregon coast\nportland\nroseburg\nsalem\nPennsylvania\naltoona-johnstown\ncumberland valley\nerie\nharrisburg\nlancaster\nlehigh valley\nmeadville\nphiladelphia\npittsburgh\npoconos\nreading\nscranton / wilkes-barre\nstate college\nwilliamsport\nyork\nRhode Island\nrhode island\nSouth Carolina\ncharleston\ncolumbia\nflorence\ngreenville / upstate\nhilton head\nmyrtle beach\nSouth Dakota\nnortheast SD\npierre / central SD\nrapid city / west SD\nsioux falls / SE SD\nsouth dakota\nTennessee\nchattanooga\nclarksville\ncookeville\njackson\nknoxville\nmemphis\nnashville\ntri-cities\nTexas\nabilene\namarillo\naustin\nbeaumont / port arthur\nbrownsville\ncollege station\ncorpus christi\ndallas / fort worth\ndeep east texas\ndel rio / eagle pass\nel paso\ngalveston\nhouston\nkilleen / temple / ft hood\nlaredo\nlubbock\nmcallen / edinburg\nodessa / midland\nsan angelo\nsan antonio\nsan marcos\nsouthwest TX\ntexoma\ntyler / east TX\nvictoria\nwaco\nwichita falls\nUtah\nlogan\nogden-clearfield\nprovo / orem\nsalt lake city\nst george\nVermont\nvermont\nVirginia\ncharlottesville\ndanville\nfredericksburg\nhampton roads\nharrisonburg\nlynchburg\nnew river valley\nrichmond\nroanoke\nsouthwest VA\nwinchester\nWashington\nbellingham\nkennewick-pasco-richland\nmoses lake\nolympic peninsula\npullman / moscow\nseattle-tacoma\nskagit / island / SJI\nspokane / coeur d'alene\nwenatchee\nyakima\nWest Virginia\ncharleston\neastern panhandle\nhuntington-ashland\nmorgantown\nnorthern panhandle\nparkersburg-marietta\nsouthern WV\nwest virginia (old)\nWisconsin\nappleton-oshkosh-FDL\neau claire\ngreen bay\njanesville\nkenosha-racine\nla crosse\nmadison\nmilwaukee\nnorthern WI\nsheboygan\nwausau\nWyoming\nwyoming\nTerritories\nguam-micronesia\npuerto rico\nU.S. virgin islands\nCanada\nAlberta\ncalgary\nedmonton\nft mcmurray\nlethbridge\nmedicine hat\npeace river country\nred deer\nBritish Columbia\ncariboo\ncomox valley\nfraser valley\nkamloops\nkelowna / okanagan\nkootenays\nnanaimo\nprince george\nskeena-bulkley\nsunshine coast\nvancouver\nvictoria\nwhistler\nManitoba\nwinnipeg\nNew Brunswick\nnew brunswick\nNewfoundland and Labrador\nst john's\nNorthwest Territories\nterritories\nyellowknife\nNova Scotia\nhalifax\nOntario\nbarrie\nbelleville\nbrantford-woodstock\nchatham-kent\ncornwall\nguelph\nhamilton-burlington\nkingston\nkitchener-waterloo-cambridge\nlondon\nniagara region\nottawa-hull-gatineau\nowen sound\npeterborough\nsarnia\nsault ste marie\nsudbury\nthunder bay\ntoronto\nwindsor\nPrince Edward Island\nprince edward island\nQuebec\nmontreal\nquebec city\nsaguenay\nsherbrooke\ntrois-rivieres\nSaskatchewan\nregina\nsaskatoon\nYukon Territory\nwhitehorse\nEurope\nAustria\nvienna\nBelgium\nbelgium\nBulgaria\nbulgaria\nCroatia\ncroatia\nCzech Republic\nprague\nDenmark\ncopenhagen\nFinland\nfinland\nFrance\nbordeaux\nbrittany\ngrenoble\nlille\nloire valley\nlyon\nmarseille\nmontpellier\nnice / cote d'azur\nnormandy\nparis\nstrasbourg\ntoulouse\nGermany\nberlin\nbremen\ncologne\ndresden\ndusseldorf\nessen / ruhr\nfrankfurt\nhamburg\nhannover\nheidelberg\nkaiserslautern\nleipzig\nmunich\nnuremberg\nstuttgart\nGreece\ngreece\nHungary\nbudapest\nIceland\nreykjavik\nIreland\ndublin\nItaly\nbologna\nflorence / tuscany\ngenoa\nmilan\nnapoli / campania\nperugia\nrome\nsardinia\nsicilia\ntorino\nvenice / veneto\nLuxembourg\nluxembourg\nNetherlands\namsterdam / randstad\nNorway\nnorway\nPoland\npoland\nPortugal\nfaro / algarve\nlisbon\nporto\nRomania\nromania\nRussian Federation\nmoscow\nst petersburg\nSpain\nalicante\nbaleares\nbarcelona\nbilbao\ncadiz\ncanarias\ngranada\nmadrid\nmalaga\nsevilla\nvalencia\nSweden\nsweden\nSwitzerland\nbasel\nbern\ngeneva\nlausanne\nzurich\nTurkey\nturkey\nUkraine\nukraine\nUnited Kingdom\naberdeen\nbath\nbelfast\nbirmingham / west mids\nbrighton\nbristol\ncambridge, UK\ncardiff / wales\ncoventry\nderby\ndevon & cornwall\ndundee\neast anglia\neast midlands\nedinburgh\nessex\nglasgow\nhampshire\nkent\nleeds\nliverpool\nlondon\nmanchester\nnewcastle / NE england\nnottingham\noxford\nsheffield\nAsia, Pacific and Middle East\nBangladesh\nbangladesh\nChina\nbeijing\nchengdu\nchongqing\ndalian\nguangzhou\nhangzhou\nnanjing\nshanghai\nshenyang\nshenzhen\nwuhan\nxi'an\nGuam / Micronesia\nguam-micronesia\nHong Kong\nhong kong\nIndia\nahmedabad\nbangalore\nbhubaneswar\nchandigarh\nchennai (madras)\ndelhi\ngoa\nhyderabad\nindore\njaipur\nkerala\nkolkata (calcutta)\nlucknow\nmumbai\npune\nsurat surat\nIndonesia\nindonesia\nIran\niran\nIraq\niraq\nIsrael and Palestine\nhaifa\njerusalem\ntel aviv\nwest bank\nJapan\nfukuoka\nhiroshima\nnagoya\nokinawa\nosaka-kobe-kyoto\nsapporo\nsendai\ntokyo\nKorea\nseoul\nKuwait\nkuwait\nLebanon\nbeirut, lebanon\nMalaysia\nmalaysia\nPakistan\npakistan\nPhilippines\nbacolod\nbicol region\ncagayan de oro\ncebu\ndavao city\niloilo\nmanila\npampanga\nzamboanga\nSingapore\nsingapore\nTaiwan\ntaiwan\nThailand\nthailand\nUnited Arab Emirates\nunited arab emirates\nVietnam\nvietnam\nOceania\nAustralia\nadelaide\nbrisbane\ncairns\ncanberra\ndarwin\ngold coast\nmelbourne\nnewcastle, NSW\nperth\nsydney\ntasmania\nwollongong\nNew Zealand\nauckland\nchristchurch\ndunedin\nwellington\nLatin America and Caribbean\nArgentina\nbuenos aires\nBolivia\nbolivia\nBrazil\nbelo horizonte\nbrasilia\ncuritiba\nfortaleza\nporto alegre\nrecife\nrio de janeiro\nsalvador, bahia\nsao paulo\nCaribbean Islands\ncaribbean islands\nChile\nchile\nColombia\ncolombia\nCosta Rica\ncosta rica\nDominican Republic\ndominican republic\nEcuador\necuador\nEl Salvador\nel salvador\nGuatemala\nguatemala\nMexico\nacapulco\nbaja california sur\nchihuahua\nciudad juarez\nguadalajara\nguanajuato\nhermosillo\nmazatlan\nmexico city\nmonterrey\noaxaca\npuebla\npuerto vallarta\ntijuana\nveracruz\nyucatan\nNicaragua\nnicaragua\nPanama\npanama\nPeru\nperu\nPuerto Rico\npuerto rico\nUruguay\nmontevideo\nVenezuela\nvenezuela\nVirgin Islands, U.S.\nvirgin islands\nAfrica\nEgypt\negypt\nEthiopia\nethiopia\nGhana\nghana\nKenya\nkenya\nMorocco\nmorocco\nSouth Africa\ncape town\ndurban\njohannesburg\npretoria\nTunisia\ntunisia\nhelp\nsafety\nprivacy\nterms\nabout\napp\n© 2026 craigslist {\"title\": \"craigslist > sites\", \"headings\": [{\"tag\": \"H1\", \"text\": \"craigslist sites worldwide\"}, {\"tag\": \"H2\", \"text\": \"US\"}, {\"tag\": \"H2\", \"text\": \"Canada\"}, {\"tag\": \"H2\", \"text\": \"Europe\"}, {\"tag\": \"H2\", \"text\": \"Asia, Pacific and Middle East\"}, {\"tag\": \"H2\", \"text\": \"Oceania\"}, {\"tag\": \"H2\", \"text\": \"Latin America and Caribbean\"}, {\"tag\": \"H2\", \"text\": \"Africa\"}], \"nav\": [], \"sections\": [], \"height\": 6344, \"bodyBg\": \"rgb(255, 255, 255)\", \"font\": \"\\\"Open Sans\\\", Helvetica, Arial, sans-serif\"}         craigslist"
+ },
+ "brief_text": "Evolve https://www.craigslist.org/about/sites for Worldwide visitors trying to find and open their local Craigslist city site: primary task 'Find and click their local city / region Craigslist site in 3 seconds', tone plain, utilitarian, no-frills. Penalise any information or element present on the live page that is missing here.",
+ "manifest": {
+  "url": "https://www.craigslist.org/about/sites",
+  "images": [
+   {
+    "kind": "img",
+    "w": 256,
+    "h": 256,
+    "top": 148,
+    "left": 385,
+    "alt": "",
+    "cls": "leaflet-tile leaflet-tile-loaded ",
+    "inHeader": false,
+    "path": "assets/img_6602d29849.png",
+    "src": "https://map2.craigslist.org/lowzoom/2/1/2.png",
+    "bytes": 95345
+   },
+   {
+    "kind": "img",
+    "w": 256,
+    "h": 256,
+    "top": 148,
+    "left": 641,
+    "alt": "",
+    "cls": "leaflet-tile leaflet-tile-loaded ",
+    "inHeader": false,
+    "path": "assets/img_95674fa24e.png",
+    "src": "https://map3.craigslist.org/lowzoom/2/2/2.png",
+    "bytes": 108376
+   },
+   {
+    "kind": "img",
+    "w": 256,
+    "h": 256,
+    "top": 404,
+    "left": 385,
+    "alt": "",
+    "cls": "leaflet-tile leaflet-tile-loaded ",
+    "inHeader": false,
+    "path": "assets/img_451c38ae60.png",
+    "src": "https://map3.craigslist.org/lowzoom/2/1/1.png",
+    "bytes": 92228
+   },
+   {
+    "kind": "img",
+    "w": 256,
+    "h": 256,
+    "top": 404,
+    "left": 641,
+    "alt": "",
+    "cls": "leaflet-tile leaflet-tile-loaded ",
+    "inHeader": false,
+    "path": "assets/img_4a9537fc3b.png",
+    "src": "https://map4.craigslist.org/lowzoom/2/2/1.png",
+    "bytes": 88841
+   },
+   {
+    "kind": "img",
+    "w": 256,
+    "h": 256,
+    "top": 148,
+    "left": 129,
+    "alt": "",
+    "cls": "leaflet-tile leaflet-tile-loaded ",
+    "inHeader": false,
+    "path": "assets/img_619fd57baf.png",
+    "src": "https://map1.craigslist.org/lowzoom/2/0/2.png",
+    "bytes": 95504
+   },
+   {
+    "kind": "img",
+    "w": 256,
+    "h": 256,
+    "top": 148,
+    "left": 897,
+    "alt": "",
+    "cls": "leaflet-tile leaflet-tile-loaded ",
+    "inHeader": false,
+    "path": "assets/img_26c6ff9c1a.png",
+    "src": "https://map4.craigslist.org/lowzoom/2/3/2.png",
+    "bytes": 123466
+   },
+   {
+    "kind": "img",
+    "w": 256,
+    "h": 256,
+    "top": 404,
+    "left": 129,
+    "alt": "",
+    "cls": "leaflet-tile leaflet-tile-loaded ",
+    "inHeader": false,
+    "path": "assets/img_0ea53de4e4.png",
+    "src": "https://map2.craigslist.org/lowzoom/2/0/1.png",
+    "bytes": 77931
+   },
+   {
+    "kind": "img",
+    "w": 256,
+    "h": 256,
+    "top": 404,
+    "left": 897,
+    "alt": "",
+    "cls": "leaflet-tile leaflet-tile-loaded ",
+    "inHeader": false,
+    "path": "assets/img_b8c3cd9c5f.png",
+    "src": "https://map5.craigslist.org/lowzoom/2/3/1.png",
+    "bytes": 99161
+   }
+  ],
+  "svgs": [],
+  "widgets": [
+   {
+    "tag": "div",
+    "w": 1264,
+    "h": 412,
+    "top": 152,
+    "left": 9,
+    "cls": "leaflet-container leaflet-touch leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom map",
+    "path": "assets/widget_0_div.png"
+   }
+  ],
+  "logo": null,
+  "live_html": "live.html",
+  "text": "craigslist®\nUS Canada Europe Asia/Pacific/Middle East Oceania Latin America Africa\n+\n+\n+\n+\n+\n+\n+\n+\n+\n+\n+\n+\n+\n+\n+\n+\n+\n+\n+\n+\n+\n+\n+\n+\n+\n+\n+\n+\n+\n+\n+\n+\n+\n+\n+\n+\n© craigslist - Map data Natural Earth, © OpenStreetMap\ncraigslist sites worldwide\nUS\nAlabama\nauburn\nbirmingham\ndothan\nflorence / muscle shoals\ngadsden-anniston\nhuntsville / decatur\nmobile\nmontgomery\ntuscaloosa\nAlaska\nanchorage / mat-su\nfairbanks\nkenai peninsula\nsoutheast alaska\nArizona\nflagstaff / sedona\nmohave county\nphoenix\nprescott\nshow low\nsierra vista\ntucson\nyuma\nArkansas\nfayetteville\nfort smith\njonesboro\nlittle rock\ntexarkana\nCalifornia\nbakersfield\nchico\nfresno / madera\ngold country\nhanford-corcoran\nhumboldt county\nimperial county\ninland empire\nlos angeles\nmendocino county\nmerced\nmodesto\nmonterey bay\norange county\npalm springs\nredding\nsacramento\nsan diego\nsan francisco bay area\nsan luis obispo\nsanta barbara\nsanta maria\nsiskiyou county\nstockton\nsusanville\nventura county\nvisalia-tulare\nyuba-sutter\nColorado\nboulder\ncolorado springs\ndenver\neastern CO\nfort collins / north CO\nhigh rockies\npueblo\nwestern slope\nConnecticut\neastern CT\nhartford\nnew haven\nnorthwest CT\nDelaware\ndelaware\nDistrict of Columbia\nwashington\nFlorida\nbroward county\ndaytona beach\nflorida keys\nfort lauderdale\nft myers / SW florida\ngainesville\nheartland florida\njacksonville\nlakeland\nmiami / dade\nnorth central FL\nocala\nokaloosa / walton\norlando\npanama city\npensacola\nsarasota-bradenton\nsouth florida\nspace coast\nst augustine\ntallahassee\ntampa bay area\ntreasure coast\npalm beach county\nGeorgia\nalbany\nathens\natlanta\naugusta\nbrunswick\ncolumbus\nmacon / warner robins\nnorthwest GA\nsavannah / hinesville\nstatesboro\nvaldosta\nHawaii\nhawaii\nIdaho\nboise\neast idaho\nlewiston / clarkston\ntwin falls\nIllinois\nbloomington-normal\nchampaign urbana\nchicago\ndecatur\nla salle co\nmattoon-charleston\npeoria\nrockford\nsouthern illinois\nspringfield\nwestern IL\nIndiana\nbloomington\nevansville\nfort wayne\nindianapolis\nkokomo\nlafayette / west lafayette\nmuncie / anderson\nrichmond\nsouth bend / michiana\nterre haute\nIowa\names\ncedar rapids\ndes moines\ndubuque\nfort dodge\niowa city\nmason city\nquad cities\nsioux city\nsoutheast IA\nwaterloo / cedar falls\nKansas\nlawrence\nmanhattan\nnorthwest KS\nsalina\nsoutheast KS\nsouthwest KS\ntopeka\nwichita\nKentucky\nbowling green\neastern kentucky\nlexington\nlouisville\nowensboro\nwestern KY\nLouisiana\nbaton rouge\ncentral louisiana\nhouma\nlafayette\nlake charles\nmonroe\nnew orleans\nshreveport\nMaine\nmaine\nMaryland\nannapolis\nbaltimore\neastern shore\nfrederick\nsouthern maryland\nwestern maryland\nMassachusetts\nboston\ncape cod / islands\nsouth coast\nwestern massachusetts\nworcester / central MA\nMichigan\nann arbor\nbattle creek\ncentral michigan\ndetroit metro\nflint\ngrand rapids\nholland\njackson\nkalamazoo\nlansing\nmonroe\nmuskegon\nnorthern michigan\nport huron\nsaginaw-midland-baycity\nsouthwest michigan\nthe thumb\nupper peninsula\nMinnesota\nbemidji\nbrainerd\nduluth / superior\nmankato\nminneapolis / st paul\nrochester\nsouthwest MN\nst cloud\nMississippi\ngulfport / biloxi\nhattiesburg\njackson\nmeridian\nnorth mississippi\nsouthwest MS\nMissouri\ncolumbia / jeff city\njoplin\nkansas city\nkirksville\nlake of the ozarks\nsoutheast missouri\nspringfield\nst joseph\nst louis\nMontana\nbillings\nbozeman\nbutte\ngreat falls\nhelena\nkalispell\nmissoula\neastern montana\nNebraska\ngrand island\nlincoln\nnorth platte\nomaha / council bluffs\nscottsbluff / panhandle\nNevada\nelko\nlas vegas\nreno / tahoe\nNew Hampshire\nnew hampshire\nNew Jersey\ncentral NJ\njersey shore\nnorth jersey\nsouth jersey\nNew Mexico\nalbuquerque\nclovis / portales\nfarmington\nlas cruces\nroswell / carlsbad\nsanta fe / taos\nNew York\nalbany\nbinghamton\nbuffalo\ncatskills\nchautauqua\nelmira-corning\nfinger lakes\nglens falls\nhudson valley\nithaca\nlong island\nnew york city\noneonta\nplattsburgh-adirondacks\npotsdam-canton-massena\nrochester\nsyracuse\ntwin tiers NY/PA\nutica-rome-oneida\nwatertown\nNorth Carolina\nasheville\nboone\ncharlotte\neastern NC\nfayetteville\ngreensboro\nhickory / lenoir\njacksonville\nouter banks\nraleigh / durham / CH\nwilmington\nwinston-salem\nNorth Dakota\nbismarck\nfargo / moorhead\ngrand forks\nnorth dakota\nOhio\nakron / canton\nashtabula\nathens\nchillicothe\ncincinnati\ncleveland\ncolumbus\ndayton / springfield\nlima / findlay\nmansfield\nsandusky\ntoledo\ntuscarawas co\nyoungstown\nzanesville / cambridge\nOklahoma\nlawton\nnorthwest OK\noklahoma city\nstillwater\ntulsa\nOregon\nbend\ncorvallis/albany\neast oregon\neugene\nklamath falls\nmedford-ashland\noregon coast\nportland\nroseburg\nsalem\nPennsylvania\naltoona-johnstown\ncumberland valley\nerie\nharrisburg\nlancaster\nlehigh valley\nmeadville\nphiladelphia\npittsburgh\npoconos\nreading\nscranton / wilkes-barre\nstate college\nwilliamsport\nyork\nRhode Island\nrhode island\nSouth Carolina\ncharleston\ncolumbia\nflorence\ngreenville / upstate\nhilton head\nmyrtle beach\nSouth Dakota\nnortheast SD\npierre / central SD\nrapid city / west SD\nsioux falls / SE SD\nsouth dakota\nTennessee\nchattanooga\nclarksville\ncookeville\njackson\nknoxville\nmemphis\nnashville\ntri-cities\nTexas\nabilene\namarillo\naustin\nbeaumont / port arthur\nbrownsville\ncollege station\ncorpus christi\ndallas / fort worth\ndeep east texas\ndel rio / eagle pass\nel paso\ngalveston\nhouston\nkilleen / temple / ft hood\nlaredo\nlubbock\nmcallen / edinburg\nodessa / midland\nsan angelo\nsan antonio\nsan marcos\nsouthwest TX\ntexoma\ntyler / east TX\nvictoria\nwaco\nwichita falls\nUtah\nlogan\nogden-clearfield\nprovo / orem\nsalt lake city\nst george\nVermont\nvermont\nVirginia\ncharlottesville\ndanville\nfredericksburg\nhampton roads\nharrisonburg\nlynchburg\nnew river valley\nrichmond\nroanoke\nsouthwest VA\nwinchester\nWashington\nbellingham\nkennewick-pasco-richland\nmoses lake\nolympic peninsula\npullman / moscow\nseattle-tacoma\nskagit / island / SJI\nspokane / coeur d'alene\nwenatchee\nyakima\nWest Virginia\ncharleston\neastern panhandle\nhuntington-ashland\nmorgantown\nnorthern panhandle\nparkersburg-marietta\nsouthern WV\nwest virginia (old)\nWisconsin\nappleton-oshkosh-FDL\neau claire\ngreen bay\njanesville\nkenosha-racine\nla crosse\nmadison\nmilwaukee\nnorthern WI\nsheboygan\nwausau\nWyoming\nwyoming\nTerritories\nguam-micronesia\npuerto rico\nU.S. virgin islands\nCanada\nAlberta\ncalgary\nedmonton\nft mcmurray\nlethbridge\nmedicine hat\npeace river country\nred deer\nBritish Columbia\ncariboo\ncomox valley\nfraser valley\nkamloops\nkelowna / okanagan\nkootenays\nnanaimo\nprince george\nskeena-bulkley\nsunshine coast\nvancouver\nvictoria\nwhistler\nManitoba\nwinnipeg\nNew Brunswick\nnew brunswick\nNewfoundland and Labrador\nst john's\nNorthwest Territories\nterritories\nyellowknife\nNova Scotia\nhalifax\nOntario\nbarrie\nbelleville\nbrantford-woodstock\nchatham-kent\ncornwall\nguelph\nhamilton-burlington\nkingston\nkitchener-waterloo-cambridge\nlondon\nniagara region\nottawa-hull-gatineau\nowen sound\npeterborough\nsarnia\nsault ste marie\nsudbury\nthunder bay\ntoronto\nwindsor\nPrince Edward Island\nprince edward island\nQuebec\nmontreal\nquebec city\nsaguenay\nsherbrooke\ntrois-rivieres\nSaskatchewan\nregina\nsaskatoon\nYukon Territory\nwhitehorse\nEurope\nAustria\nvienna\nBelgium\nbelgium\nBulgaria\nbulgaria\nCroatia\ncroatia\nCzech Republic\nprague\nDenmark\ncopenhagen\nFinland\nfinland\nFrance\nbordeaux\nbrittany\ngrenoble\nlille\nloire valley\nlyon\nmarseille\nmontpellier\nnice / cote d'azur\nnormandy\nparis\nstrasbourg\ntoulouse\nGermany\nberlin\nbremen\ncologne\ndresden\ndusseldorf\nessen / ruhr\nfrankfurt\nhamburg\nhannover\nheidelberg\nkaiserslautern\nleipzig\nmunich\nnuremberg\nstuttgart\nGreece\ngreece\nHungary\nbudapest\nIceland\nreykjavik\nIreland\ndublin\nItaly\nbologna\nflorence / tuscany\ngenoa\nmilan\nnapoli / campania\nperugia\nrome\nsardinia\nsicilia\ntorino\nvenice / veneto\nLuxembourg\nluxembourg\nNetherlands\namsterdam / randstad\nNorway\nnorway\nPoland\npoland\nPortugal\nfaro / algarve\nlisbon\nporto\nRomania\nromania\nRussian Federation\nmoscow\nst petersburg\nSpain\nalicante\nbaleares\nbarcelona\nbilbao\ncadiz\ncanarias\ngranada\nmadrid\nmalaga\nsevilla\nvalencia\nSweden\nsweden\nSwitzerland\nbasel\nbern\ngeneva\nlausanne\nzurich\nTurkey\nturkey\nUkraine\nukraine\nUnited Kingdom\naberdeen\nbath\nbelfast\nbirmingham / west mids\nbrighton\nbristol\ncambridge, UK\ncardiff / wales\ncoventry\nderby\ndevon & cornwall\ndundee\neast anglia\neast midlands\nedinburgh\nessex\nglasgow\nhampshire\nkent\nleeds\nliverpool\nlondon\nmanchester\nnewcastle / NE england\nnottingham\noxford\nsheffield\nAsia, Pacific and Middle East\nBangladesh\nbangladesh\nChina\nbeijing\nchengdu\nchongqing\ndalian\nguangzhou\nhangzhou\nnanjing\nshanghai\nshenyang\nshenzhen\nwuhan\nxi'an\nGuam / Micronesia\nguam-micronesia\nHong Kong\nhong kong\nIndia\nahmedabad\nbangalore\nbhubaneswar\nchandigarh\nchennai (madras)\ndelhi\ngoa\nhyderabad\nindore\njaipur\nkerala\nkolkata (calcutta)\nlucknow\nmumbai\npune\nsurat surat\nIndonesia\nindonesia\nIran\niran\nIraq\niraq\nIsrael and Palestine\nhaifa\njerusalem\ntel aviv\nwest bank\nJapan\nfukuoka\nhiroshima\nnagoya\nokinawa\nosaka-kobe-kyoto\nsapporo\nsendai\ntokyo\nKorea\nseoul\nKuwait\nkuwait\nLebanon\nbeirut, lebanon\nMalaysia\nmalaysia\nPakistan\npakistan\nPhilippines\nbacolod\nbicol region\ncagayan de oro\ncebu\ndavao city\niloilo\nmanila\npampanga\nzamboanga\nSingapore\nsingapore\nTaiwan\ntaiwan\nThailand\nthailand\nUnited Arab Emirates\nunited arab emirates\nVietnam\nvietnam\nOceania\nAustralia\nadelaide\nbrisbane\ncairns\ncanberra\ndarwin\ngold coast\nmelbourne\nnewcastle, NSW\nperth\nsydney\ntasmania\nwollongong\nNew Zealand\nauckland\nchristchurch\ndunedin\nwellington\nLatin America and Caribbean\nArgentina\nbuenos aires\nBolivia\nbolivia\nBrazil\nbelo horizonte\nbrasilia\ncuritiba\nfortaleza\nporto alegre\nrecife\nrio de janeiro\nsalvador, bahia\nsao paulo\nCaribbean Islands\ncaribbean islands\nChile\nchile\nColombia\ncolombia\nCosta Rica\ncosta rica\nDominican Republic\ndominican republic\nEcuador\necuador\nEl Salvador\nel salvador\nGuatemala\nguatemala\nMexico\nacapulco\nbaja california sur\nchihuahua\nciudad juarez\nguadalajara\nguanajuato\nhermosillo\nmazatlan\nmexico city\nmonterrey\noaxaca\npuebla\npuerto vallarta\ntijuana\nveracruz\nyucatan\nNicaragua\nnicaragua\nPanama\npanama\nPeru\nperu\nPuerto Rico\npuerto rico\nUruguay\nmontevideo\nVenezuela\nvenezuela\nVirgin Islands, U.S.\nvirgin islands\nAfrica\nEgypt\negypt\nEthiopia\nethiopia\nGhana\nghana\nKenya\nkenya\nMorocco\nmorocco\nSouth Africa\ncape town\ndurban\njohannesburg\npretoria\nTunisia\ntunisia\nhelp\nsafety\nprivacy\nterms\nabout\napp\n© 2026 craigslist"
+ },
+ "steps": [
+  {
+   "round": 0,
+   "png": "results/showcase/evolve/craigslist/before.png",
+   "html": null,
+   "accepted": true,
+   "ui_score": 0.48353380653670863,
+   "heads": {
+    "aesthetic": {
+     "score": 0.7161432504653931,
+     "percentile": 83.4450402144772,
+     "confidence": 0.43228650093078613,
+     "top": "▼ R_23d, ▲ L_31a"
+    },
+    "attention": {
+     "score": 0.505099892616272,
+     "percentile": 47.94520547945205,
+     "confidence": 0.010199785232543945,
+     "top": "▲ 움직임·형태 평균, ▲ 움직임·형태 최대"
+    }
+   },
+   "judge": {
+    "aesthetic": 0.444,
+    "clarity": 0.444,
+    "attention": 0.556,
+    "brief_fit": 0.222,
+    "judge_score": 0.417,
+    "reason": "Map dominates but plus-markers give no clear 3-second city click and all non-US city lists from the live page are missing below the fold."
+   },
+   "brain_only": 0.657,
+   "critique": {
+    "kind": "landing",
+    "ranking": [
+     [
+      "scene_place",
+      1.2631400135298438
+     ],
+     [
+      "value_vmpfc",
+      0.81898986044475
+     ],
+     [
+      "visual_early",
+      0.3186321197483913
+     ],
+     [
+      "control_dlpfc",
+      0.2952122915770309
+     ],
+     [
+      "attention_dorsal",
+      0.29052832594275874
+     ],
+     [
+      "face_body",
+      -0.20652308607058437
+     ],
+     [
+      "language",
+      -0.40021884141724745
+     ],
+     [
+      "default_mode",
+      -0.5900572133003924
+     ],
+     [
+      "visual_motion",
+      -1.7897034704545478
+     ]
+    ],
+    "hook": {
+     "attention_early": 0.41258695982408417,
+     "attention_late": 0.22949900900209613,
+     "visual_early": 1.0044197940838742,
+     "visual_late": -0.024261717419350196
+    },
+    "diagnosis": [
+     "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+     "Attention drops after the first 2 s (+0.41 → +0.23): nothing to look at after the first impression"
+    ],
+    "directives": [
+     "Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion.",
+     "Add a second discovery after the hero (a detail reveal, micro-illustration, or a strong secondary block) so interest holds past 2 s."
+    ],
+    "cited_areas": [
+     "▼ R mind-wandering (23d) [aesthetic]",
+     "▲ L 31a [aesthetic]",
+     "▲ object shape & motion (MT/LO) mean [attention]",
+     "▲ object shape & motion (MT/LO) max [attention]"
+    ],
+    "groups": [
+     "visual_motion",
+     ""
+    ],
+    "prompt_block": "BRAIN CRITIQUE (TRIBE v2 predicted human cortex while looking at the last render; values are relative within this image):\n- most driven regions: places & scenes (PPA/RSC) +1.26, reward & value (OFC/vmPFC) +0.82, early vision (V1–V4) +0.32; least: default mode (mind-wandering) -0.59, object shape & motion (MT/LO) -1.79\n- first-2s hook vs later: attention +0.41 → +0.23, visual drive +1.00 → -0.02\n- areas the aesthetic head cites: ▼ R mind-wandering (23d) [aesthetic]; ▲ L 31a [aesthetic]; ▲ object shape & motion (MT/LO) mean [attention]; ▲ object shape & motion (MT/LO) max [attention]\n- diagnosis: Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette / Attention drops after the first 2 s (+0.41 → +0.23): nothing to look at after the first impression\n- DO NEXT (highest priority first): (1) Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion. (2) Add a second discovery after the hero (a detail reveal, micro-illustration, or a strong secondary block) so interest holds past 2 s."
+   }
+  },
+  {
+   "round": 1,
+   "png": "results/showcase/evolve/craigslist/r1.png",
+   "html": "results/showcase/evolve/craigslist/r1.html",
+   "changes": [
+    {
+     "directive": "typography",
+     "change": "Courier Black oversized wordmark + Helvetica body for brutalist silhouette"
+    },
+    {
+     "directive": "reflow",
+     "change": "sticky secondary region anchor bar above map, city lists in scan grid as second discovery"
+    },
+    {
+     "directive": "colour system",
+     "change": "primary purple headers, secondary lavender wells, blue links with strong hover"
+    },
+    {
+     "directive": "hierarchy",
+     "change": "diagonal accent on H1 and block H2s to hold attention past 2s"
+    }
+   ],
+   "actions": [
+    {
+     "tool": "typography",
+     "params": {
+      "display": "Courier New Bold",
+      "body": "Helvetica, Arial, sans-serif",
+      "scale": "28px",
+      "grid": "12-col/8pt"
+     },
+     "why": "Brutalist oversized craigslist wordmark + purple region anchors create a type-built silhouette and diagonal scan rhythm without a hero panel.",
+     "critique_line": "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+     "desc": "{\"display\": \"Courier New Bold\", \"body\": \"Helvetica, Arial, sans-serif\", \"scale\": \"28px\", \"grid\": \"12-col/8pt\"}"
+    },
+    {
+     "tool": "reflow",
+     "params": {
+      "move": "sticky top region anchor nav (US Canada Europe Asia/Pacific/Middle East Oceania Latin America Africa) above map, then US + Canada + Europe + Asia/Pacific/Middle East + Oceania + Latin America + Africa link directories into dense 3-column grid directly under map, keeping every word"
+     },
+     "why": "Puts all crawlable city lists in one scan grid as second discovery to hold attention for 3-second click task.",
+     "critique_line": "Attention drops after the first 2 s (+0.41 → +0.23): nothing to look at after the first impression",
+     "desc": "{\"move\": \"sticky top region anchor nav (US Canada Europe Asia/Pacific/Middle East Oceania Latin America Africa) above map, then US + Canada + Europe + Asia/Paci"
+    }
+   ],
+   "fidelity": {
+    "missing_paths": [],
+    "missing": [
+     "k2"
+    ],
+    "missing_text": [],
+    "illegible": [],
+    "defects": [],
+    "density_ok": false,
+    "density_note": "Live first screen has 7 region links + ~12 city links + ~50 map pin items; candidate has 7 region pills + ~5 city links and 0 map pins. Pins category entirely dropped, candidate <60% of live count, harms 3-sec find-city task.",
+    "ok": false,
+    "facts": {
+     "numbers": [],
+     "names": [],
+     "claims": [],
+     "ok": true
+    }
+   },
+   "accepted": false,
+   "based_on": 0,
+   "ui_score": 0.42958590557633836,
+   "heads": {
+    "aesthetic": {
+     "score": 0.7325165867805481,
+     "percentile": 85.52278820375335,
+     "confidence": 0.4650331735610962,
+     "top": "▼ R_23d, ▼ L_a24"
+    },
+    "attention": {
+     "score": 0.5086401700973511,
+     "percentile": 49.04109589041096,
+     "confidence": 0.01728034019470215,
+     "top": "▲ 움직임·형태 평균, ▲ 움직임·형태 최대"
+    }
+   },
+   "judge": {
+    "aesthetic": 0.444,
+    "clarity": 0.333,
+    "attention": 0.333,
+    "brief_fit": 0.222,
+    "judge_score": 0.333,
+    "reason": "The large decorative world map dominates the first screen and pushes actionable city links below the fold, violating the plain utilitarian 3-second find-and-click brief."
+   },
+   "brain_only": 0.673,
+   "critique": {
+    "kind": "landing",
+    "ranking": [
+     [
+      "scene_place",
+      1.2883283420286922
+     ],
+     [
+      "value_vmpfc",
+      0.7433322569463323
+     ],
+     [
+      "visual_early",
+      0.4338476695422487
+     ],
+     [
+      "attention_dorsal",
+      0.31021066798639435
+     ],
+     [
+      "control_dlpfc",
+      0.2464317496362285
+     ],
+     [
+      "face_body",
+      -0.2685045993384714
+     ],
+     [
+      "language",
+      -0.4755246949668787
+     ],
+     [
+      "default_mode",
+      -0.6137994810621153
+     ],
+     [
+      "visual_motion",
+      -1.6643219107724292
+     ]
+    ],
+    "hook": {
+     "attention_early": 0.46782824079438623,
+     "attention_late": 0.2314018815823984,
+     "visual_early": 1.19788774469608,
+     "visual_late": 0.05182763196533312
+    },
+    "diagnosis": [
+     "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+     "Attention drops after the first 2 s (+0.47 → +0.23): nothing to look at after the first impression"
+    ],
+    "directives": [
+     "Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion.",
+     "Add a second discovery after the hero (a detail reveal, micro-illustration, or a strong secondary block) so interest holds past 2 s."
+    ],
+    "cited_areas": [
+     "▼ R mind-wandering (23d) [aesthetic]",
+     "▼ L affect, conflict (a24) [aesthetic]",
+     "▲ object shape & motion (MT/LO) mean [attention]",
+     "▲ object shape & motion (MT/LO) max [attention]"
+    ],
+    "groups": [
+     "visual_motion",
+     ""
+    ],
+    "prompt_block": "BRAIN CRITIQUE (TRIBE v2 predicted human cortex while looking at the last render; values are relative within this image):\n- most driven regions: places & scenes (PPA/RSC) +1.29, reward & value (OFC/vmPFC) +0.74, early vision (V1–V4) +0.43; least: default mode (mind-wandering) -0.61, object shape & motion (MT/LO) -1.66\n- first-2s hook vs later: attention +0.47 → +0.23, visual drive +1.20 → +0.05\n- areas the aesthetic head cites: ▼ R mind-wandering (23d) [aesthetic]; ▼ L affect, conflict (a24) [aesthetic]; ▲ object shape & motion (MT/LO) mean [attention]; ▲ object shape & motion (MT/LO) max [attention]\n- diagnosis: Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette / Attention drops after the first 2 s (+0.47 → +0.23): nothing to look at after the first impression\n- DO NEXT (highest priority first): (1) Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion. (2) Add a second discovery after the hero (a detail reveal, micro-illustration, or a strong secondary block) so interest holds past 2 s.\nHARD REJECT — FIDELITY: missing ['k2'], defects [], density_ok False (Live first screen has 7 region links + ~12 city links + ~50 map pin items; candidate has 7 region pills + ~5 city links and 0 map pins. Pins category entirely dropped, candidate <60% of live count, harms 3-sec find-city task.). Keep every must_keep item, fix overlaps/clipping, and keep at least the live page's first-screen density."
+   },
+   "p_vs_best": null,
+   "p_vs_best_reason": null
+  },
+  {
+   "round": 2,
+   "png": "results/showcase/evolve/craigslist/r2.png",
+   "html": "results/showcase/evolve/craigslist/r2.html",
+   "changes": [
+    {
+     "directive": "dominant object silhouette + diagonal motion",
+     "change": "added duotone compass-rose SVG overlay on continent nav plus angled accent bar on H2s"
+    },
+    {
+     "directive": "second discovery + 3-second findability",
+     "change": "made jump nav sticky pill, map framed, H1/H2 region system with sticky H2s and multi-column city links with hover and focus"
+    }
+   ],
+   "actions": [
+    {
+     "tool": "photo",
+     "params": {
+      "query": "compass rose navigation vintage map",
+      "treatment": "overlay"
+     },
+     "why": "Adds a directional object silhouette as subtle duotone background texture behind anchors to imply motion without a hero panel.",
+     "critique_line": "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+     "error": "no photo passed the gate"
+    }
+   ],
+   "fidelity": {
+    "missing_paths": [],
+    "missing": [
+     "k2"
+    ],
+    "missing_text": [],
+    "illegible": [],
+    "defects": [],
+    "density_ok": false,
+    "density_note": "Candidate first screen shows ~7 city links vs ~15-16 in live and 0 map pins vs ~50+ in live (<60%); interactive map pins wayfinding missing, larger type pushes list down.",
+    "ok": false,
+    "facts": {
+     "numbers": [],
+     "names": [],
+     "claims": [],
+     "ok": true
+    }
+   },
+   "accepted": false,
+   "based_on": 0,
+   "ui_score": 0.5168274411247442,
+   "heads": {
+    "aesthetic": {
+     "score": 0.7763728499412537,
+     "percentile": 89.07506702412869,
+     "confidence": 0.5527456998825073,
+     "top": "▼ L_a24, ▼ R_23d"
+    },
+    "attention": {
+     "score": 0.519447386264801,
+     "percentile": 51.78082191780822,
+     "confidence": 0.03889477252960205,
+     "top": "▲ 움직임·형태 평균, ▲ 움직임·형태 최대"
+    }
+   },
+   "judge": {
+    "aesthetic": 0.444,
+    "clarity": 0.444,
+    "attention": 0.667,
+    "brief_fit": 0.222,
+    "judge_score": 0.444,
+    "reason": "Large world map creates a clear focal point but pushes actual city links below the fold, breaking the plain 3-second find-and-click task."
+   },
+   "brain_only": 0.704,
+   "critique": {
+    "kind": "landing",
+    "ranking": [
+     [
+      "scene_place",
+      1.2154424238651569
+     ],
+     [
+      "value_vmpfc",
+      0.8049379109708131
+     ],
+     [
+      "control_dlpfc",
+      0.3376018166716077
+     ],
+     [
+      "attention_dorsal",
+      0.3319918322410849
+     ],
+     [
+      "visual_early",
+      0.2554033491461212
+     ],
+     [
+      "face_body",
+      -0.28169168198480266
+     ],
+     [
+      "language",
+      -0.35706060324704403
+     ],
+     [
+      "default_mode",
+      -0.4819437349178128
+     ],
+     [
+      "visual_motion",
+      -1.8246813127451225
+     ]
+    ],
+    "hook": {
+     "attention_early": 0.4859005355306457,
+     "attention_late": 0.2550374805963045,
+     "visual_early": 0.9922626084769663,
+     "visual_late": -0.11302628051930139
+    },
+    "diagnosis": [
+     "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+     "Attention drops after the first 2 s (+0.49 → +0.26): nothing to look at after the first impression"
+    ],
+    "directives": [
+     "Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion.",
+     "Add a second discovery after the hero (a detail reveal, micro-illustration, or a strong secondary block) so interest holds past 2 s."
+    ],
+    "cited_areas": [
+     "▼ L affect, conflict (a24) [aesthetic]",
+     "▼ R mind-wandering (23d) [aesthetic]",
+     "▲ object shape & motion (MT/LO) mean [attention]",
+     "▲ object shape & motion (MT/LO) max [attention]"
+    ],
+    "groups": [
+     "visual_motion",
+     ""
+    ],
+    "prompt_block": "BRAIN CRITIQUE (TRIBE v2 predicted human cortex while looking at the last render; values are relative within this image):\n- most driven regions: places & scenes (PPA/RSC) +1.22, reward & value (OFC/vmPFC) +0.80, cognitive control (dlPFC) +0.34; least: default mode (mind-wandering) -0.48, object shape & motion (MT/LO) -1.82\n- first-2s hook vs later: attention +0.49 → +0.26, visual drive +0.99 → -0.11\n- areas the aesthetic head cites: ▼ L affect, conflict (a24) [aesthetic]; ▼ R mind-wandering (23d) [aesthetic]; ▲ object shape & motion (MT/LO) mean [attention]; ▲ object shape & motion (MT/LO) max [attention]\n- diagnosis: Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette / Attention drops after the first 2 s (+0.49 → +0.26): nothing to look at after the first impression\n- DO NEXT (highest priority first): (1) Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion. (2) Add a second discovery after the hero (a detail reveal, micro-illustration, or a strong secondary block) so interest holds past 2 s.\nHARD REJECT — FIDELITY: missing ['k2'], defects [], density_ok False (Candidate first screen shows ~7 city links vs ~15-16 in live and 0 map pins vs ~50+ in live (<60%); interactive map pins wayfinding missing, larger type pushes list down.). Keep every must_keep item, fix overlaps/clipping, and keep at least the live page's first-screen density."
+   },
+   "p_vs_best": null,
+   "p_vs_best_reason": null
+  }
+ ],
+ "trail": [
+  {
+   "round": 1,
+   "tool": "typography",
+   "why": "Brutalist oversized craigslist wordmark + purple region anchors create a type-built silhouette and diagonal scan rhythm without a hero panel.",
+   "critique_line": "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+   "desc": "{\"display\": \"Courier New Bold\", \"body\": \"Helvetica, Arial, sans-serif\", \"scale\": \"28px\", \"grid\": \"12-col/8pt\"}",
+   "brain_delta": 0.016,
+   "judge_delta": -0.084,
+   "score_before": 0.48353380653670863,
+   "score_after": 0.42958590557633836,
+   "accepted": false,
+   "fidelity": {
+    "missing_paths": [],
+    "missing": [
+     "k2"
+    ]
+   },
+   "page_thumb": "trail/r1_page.jpg"
+  },
+  {
+   "round": 1,
+   "tool": "reflow",
+   "why": "Puts all crawlable city lists in one scan grid as second discovery to hold attention for 3-second click task.",
+   "critique_line": "Attention drops after the first 2 s (+0.41 → +0.23): nothing to look at after the first impression",
+   "desc": "{\"move\": \"sticky top region anchor nav (US Canada Europe Asia/Pacific/Middle East Oceania Latin America Africa) above map, then US + Canada + Europe + Asia/Paci",
+   "brain_delta": 0.016,
+   "judge_delta": -0.084,
+   "score_before": 0.48353380653670863,
+   "score_after": 0.42958590557633836,
+   "accepted": false,
+   "fidelity": {
+    "missing_paths": [],
+    "missing": [
+     "k2"
+    ]
+   },
+   "page_thumb": "trail/r1_page.jpg"
+  },
+  {
+   "round": 2,
+   "tool": "photo",
+   "why": "Adds a directional object silhouette as subtle duotone background texture behind anchors to imply motion without a hero panel.",
+   "critique_line": "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+   "desc": "",
+   "brain_delta": 0.047,
+   "judge_delta": 0.027,
+   "score_before": 0.48353380653670863,
+   "score_after": 0.5168274411247442,
+   "accepted": false,
+   "fidelity": {
+    "missing_paths": [],
+    "missing": [
+     "k2"
+    ]
+   },
+   "page_thumb": "trail/r2_page.jpg"
+  }
+ ],
+ "best_round": 0,
+ "pairwise_after_vs_before": null
+}

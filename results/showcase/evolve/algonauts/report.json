@@ -1,0 +1,1222 @@
+{
+ "source": "https://algonautsproject.com/",
+ "brief": {
+  "audience": "Biological and artificial intelligence researchers, neuroscientists, ML scientists and open-science collaborators",
+  "primary_task": "Grasp the brain-AI mission in 3s and click Explore the Initiatives",
+  "tone": "Visionary, scientific, open and collaborative",
+  "lang": "editorial",
+  "brand": {
+   "primary": "#2B0A4A",
+   "secondary": "#6D28D9",
+   "accent": "#38E1FF",
+   "text": "The Algonauts Project"
+  },
+  "must_keep": [
+   {
+    "id": "k1",
+    "kind": "logo",
+    "ref": "assets/img_6aea352d61.png",
+    "why": "Header wordmark + gear-brain mark, core brand identity"
+   },
+   {
+    "id": "k2",
+    "kind": "asset",
+    "ref": "assets/img_ab90c30b3e.png",
+    "why": "Large hero gear-brain logo, central visual metaphor for algorithmic exploration"
+   },
+   {
+    "id": "k3",
+    "kind": "nav",
+    "ref": "About | Initiatives | News | Team | Contact | Stay Updated",
+    "why": "Primary navigation group for the whole single-page site"
+   },
+   {
+    "id": "k4",
+    "kind": "text",
+    "ref": "Promoting initiatives at the intersection of biological and artificial intelligence research.",
+    "why": "Hero value proposition that explains the project in one line"
+   },
+   {
+    "id": "k5",
+    "kind": "offer",
+    "ref": "Explore the Initiatives",
+    "why": "Primary CTA driving visitors to challenges and toolkits"
+   },
+   {
+    "id": "k6",
+    "kind": "number",
+    "ref": "first launched in 2019",
+    "why": "Founding year establishing credibility and continuity"
+   },
+   {
+    "id": "k7",
+    "kind": "offer",
+    "ref": "The Algonauts Project Challenges",
+    "why": "Flagship competitive benchmarking initiative"
+   },
+   {
+    "id": "k8",
+    "kind": "offer",
+    "ref": "Net2Brain | BERG | BMD | THINGS EEG2",
+    "why": "Toolkit suite of models, benchmarks and datasets for brain-AI comparison"
+   },
+   {
+    "id": "k9",
+    "kind": "text",
+    "ref": "An Algorithmic Exploration | Faster Innovation | Collaborative Science | The Future",
+    "why": "Mission pillars explaining why brains and models should be compared openly"
+   },
+   {
+    "id": "k10",
+    "kind": "text",
+    "ref": "Founders | Current Collaborators | Past Collaborators",
+    "why": "Team structure showing leadership and open community"
+   },
+   {
+    "id": "k11",
+    "kind": "asset",
+    "ref": "assets/img_e989ddde00.png",
+    "why": "Founder portrait set - Radoslaw Cichy, Gemma Roig, Aude Oliva - human trust signal, keep all headshots"
+   },
+   {
+    "id": "k12",
+    "kind": "text",
+    "ref": "News | Contact",
+    "why": "Updates and contact entry points for joining and following science"
+   }
+  ],
+  "missing_imagery": [
+   {
+    "what": "Brain vs model comparison visualization",
+    "why": "Top agency would show fMRI/EEG aligned to DNN layers to make abstract mission tangible"
+   },
+   {
+    "what": "Researchers collaborating / lab and conference photography",
+    "why": "Humanizes open-science community beyond small headshots"
+   },
+   {
+    "what": "Challenge dataset preview and leaderboard graphic",
+    "why": "Proves active competition and gives visitors a reason to join"
+   }
+  ],
+  "weak_imagery": [
+   "assets/img_23c92b0a50.png",
+   "assets/img_a8b438a062.png",
+   "assets/img_64510cf602.jpg",
+   "assets/img_1bc874c261.png"
+  ],
+  "page_class": "marketing",
+  "physical_subject": null,
+  "_allowed_text": "TITLE: The Algonauts Project\nHEADINGS: Mission | Initiatives | The Algonauts Project Challenges | Net2Brain | BERG | BMD | THINGS EEG2 | More Initiatives Coming Soon | News | Team | Founders | Current Collaborators | Past Collaborators | Contact\nTEXT: The Algonauts Project About Initiatives News Team Contact Stay Updated About Initiatives News Team Contact Stay Updated Promoting initiatives at the intersection of biological and artificial intelligence research. Explore the Initiatives Mission The Algonauts Project, first launched in 2019, is on a mission to bring biological and machine intelligence researchers together on a common platform to exchange ideas and pioneer the intelligence frontier. Inspired by the astronauts' exploration of space, \"algonauts\" explore biological and artificial intelligence with state-of-the-art algorithmic tools, thus advancing both fields through collaborative innovation and open science. An Algorithmic Exploration Inspired by astronauts who launched into space to explore a new frontier, the Algonauts Project aims to explore biological and machine intelligence with the latest algorithmic tools. Comparing brains and models could lead to unexpected insights into what makes intelligent systems efficient, robust and trustworthy. Faster Innovation The brain has inspired many of the algorithms responsible for the recent and spectacular progress in artificial intelligence. Those algorithms are now critical in testing new theories about the brain. The Algonauts Project brings together intelligence researchers in both domains to accelerate the pace of innovation. Collaborative Science Open science creates an environment for sharing and collaboration, which are important for advancing intelligence research and ensuring that results are valid and reproducible. The Algonauts Project is committed to a spirit of open collaboration. The Future The Algonauts Project is designed to expand to other fields, from physics and biology to the social sciences, and to complement experimental, theoretical and computational disciplines. It will grow, in content and methods, with the communities that shape this endeavor. Initiatives The Algonauts Project Challenges The Algonauts Project challenges are recurrent events that aim at bringing biological and artificial researchers together in building the most accurate models of the brain. Every challenge is unique in terms of the modelling task and data. If you want to contribute your data for future challe The Algonauts Project\nAbout\nInitiatives\nNews\nTeam\nContact\nStay Updated\n\nPromoting initiatives at the intersection of\nbiological and artificial intelligence research.\n\nExplore the Initiatives\nMission\n\nThe Algonauts Project, first launched in 2019, is on a mission to bring biological and machine intelligence researchers together on a common platform to exchange ideas and pioneer the intelligence frontier.\n\nInspired by the astronauts' exploration of space, \"algonauts\" explore biological and artificial intelligence with state-of-the-art algorithmic tools, thus advancing both fields through collaborative innovation and open science.\n\nAn Algorithmic Exploration\n\nInspired by astronauts who launched into space to explore a new frontier, the Algonauts Project aims to explore biological and machine intelligence with the latest algorithmic tools. Comparing brains and models could lead to unexpected insights into what makes intelligent systems efficient, robust and trustworthy.\n\nFaster Innovation\n\nThe brain has inspired many of the algorithms responsible for the recent and spectacular progress in artificial intelligence. Those algorithms are now critical in testing new theories about the brain. The Algonauts Project brings together intelligence researchers in both domains to accelerate the pace of innovation.\n\nCollaborative Science\n\nOpen science creates an environment for sharing and collaboration, which are important for advancing intelligence research and ensuring that results are valid and reproducible. The Algonauts Project is committed to a spirit of open collaboration.\n\nThe Future\n\nThe Algonauts Project is designed to expand to other fields, from physics and biology to the social sciences, and to complement experimental, theoretical and computational disciplines. It will grow, in content and methods, with the communities that shape this endeavor.\n\nInitiatives\nThe Algonauts Project Challenges\n\nThe Algonauts Project challenges are recurrent events that aim at bringing biological and artificial researchers together in building the most accurate models of the brain. Every challenge is unique in terms of the modelling task and data. If you want to contribute your data for future challenges, get in touch with us!\n\nExplore the Challenges\nNet2Brain\n\nNet2Brain is a toolbox for comparing brain activity with activations from over 600 pretrained deep neural networks. It helps neuroscientists explore links between artificial and biological neural representations through a user-friendly interface.\n\nExplore Net2Brain\nBERG\n\nThe Brain Encoding Response Generator (BERG) is a resource consisting of multiple pre-trained encoding models of the brain and an accompanying Python package to generate – with just a few lines of code – accurate in silico neural responses to arbitrary stimuli for large scale in silico neuroscience experimentation.\n\nExplore BERG\nBMD\n\nThe BOLD Moments Dataset (BMD) contains whole-brain fMRI responses to over 1000 short (3 s) naturalistic video clips of visual events across 10 human subjects. This dataset was used to train encoding models of the brain during the Algonauts Project 2021 challenge.\n\nExplore BMD\nTHINGS EEG2\n\nTHINGS EEG2 contains EEG responses of 10 human participants to over 16,000 images of objects on naturalistic backgrounds from the THINGS database. This large data size and stimulus richness allow building AI-based encoding and decoding models of visual processing in the brain.\n\nExplore THINGS EEG2\nMore Initiatives Coming Soon\n\nStay tuned for exciting new initiatives aimed at bridging biological and artificial intelligence.\n\nNews\nAUGUST 13TH, 2025\n\nThe Algonauts Project now promotes multiple initiatives at the intersection of biological and artificial intelligence research. If you have related ideas that you would like us to promote, please get in touch.\n\nAUGUST 13TH, 2025\n\nWe ask you to take part in a 5 minute survey, which we will use to improve future editions of the Algonauts Project challenge. Even if you did not participate in the 2025 challenge, your feedback is valuable. We look forward to your input!\n\nAUGUST 13TH, 2025\n\nThe Algonauts 2025 challenge concluding session at CCN has concluded. Thank you to all who attended the session! The session recording is available on YouTube.\n\nAUGUST 5TH, 2025\n\nWe are happy to announce the Algonauts 2025 challenge winners, who will give a talk at CCN: sdascoli (1st place), NCG (2nd place), SDA (3rd place). Congratulations! For participants: To promote faster and open scientific development, we encourage you to submit your report and code, even if the challenge is now over!\n\nJULY 13TH, 2025\n\nThe Algonauts Project 2025 challenge submission deadline has now passed. Thank you to the 60+ Teams who participated! View the results here. For participants: please post your report/code by July 25th here. We'll announce the winners on August 5th!\n\nJUNE 6TH, 2025\n\nBERG v1.0 is now officially available! The Brain Encoding Response Generator toolbox has been released on GitHub, featuring multiple pre-trained encoding models and a Python package for generating accurate in silico neural responses.\n\nMAY 6TH, 2025\n\nWe're excited to announce the official publication of the Net2Brain paper in Frontiers in Neuroinformatics!\n\nJANUARY 6TH, 2025\n\nThe Algonauts Project 2025 challenge is now open for submissions! Watch this video for an introduction to the challenge (5 min). Submit your best model predictions to the competition until July 13th, 2025.\n\nTeam\nFounders\nRadoslaw Cichy\n\nProfessor at Freie Universität Berlin, Neural Dynamics of Visual Cognition\n\nGemma Roig\n\nProfessor at Goethe University Frankfurt, Computer Vision & AI\n\nAude Oliva\n\nSenior Research Scientist at MIT CSAIL and Director of MIT-IBM Watson AI Lab\n\nCurrent Collaborators\nAlessandro Gifford\n\nPostdoc, Freie Universität Berlin\n\nDomenic Bersch\n\nPhD Student, Goethe University Frankfurt\n\nMarie St-Laurent\n\nResearch Professional, CRIUGM\n\nBasile Pinsard\n\nData Manager, CRIUGM\n\nJulie Boyle\n\nProject Manager, Université de Montréal\n\nLune Bellec\n\nAssociate Professor, Université de Montréal\n\nPast Collaborators\nKendrick Kay\nApurva Ratan Murty\nYalda Mohsenzadeh\nBenjamin Lahner\nAlex Andonian\nKandan Ramakrishnan\nPolina Iamshchinina\nSari Saba-Sadiya\nMartina Vilas\nKshitij Dwivedi\nAlex Lascelles\nMonika Graumann\nContact\n\nFor inquiries, contact us at algonauts.mit@gmail.com\n\nIf you wish to stay updated on the Algonauts Project, including present and future challenges, join our mailing list, or follow us on social media:\n\nBluesky\n\n \n\nX\n\n© 2025 The Algonauts Project. All rights reserved. {\"title\": \"The Algonauts Project\", \"headings\": [{\"tag\": \"H2\", \"text\": \"Mission\"}, {\"tag\": \"H2\", \"text\": \"Initiatives\"}, {\"tag\": \"H3\", \"text\": \"The Algonauts Project Challenges\"}, {\"tag\": \"H3\", \"text\": \"Net2Brain\"}, {\"tag\": \"H3\", \"text\": \"BERG\"}, {\"tag\": \"H3\", \"text\": \"BMD\"}, {\"tag\": \"H3\", \"text\": \"THINGS EEG2\"}, {\"tag\": \"H3\", \"text\": \"More Initiatives Coming Soon\"}, {\"tag\": \"H2\", \"text\": \"News\"}, {\"tag\": \"H2\", \"text\": \"Team\"}, {\"tag\": \"H3\", \"text\": \"Founders\"}, {\"tag\": \"H3\", \"text\": \"Current Collaborators\"}, {\"tag\": \"H3\", \"text\": \"Past Collaborators\"}, {\"tag\": \"H2\", \"text\": \"Contact\"}], \"nav\": [\"The Algonauts Project\", \"About\", \"Initiatives\", \"News\", \"Team\", \"Contact\", \"Stay Updated\", \"About\", \"Initiatives\", \"News\", \"Team\", \"Contact\", \"Stay Updated\"], \"sections\": [{\"tag\": \"section\", \"cls\": \"landing-hero\", \"text\": \"Promoting initiatives at the intersection of biological and artificial intelligence research. Explore the Initiatives\"}, {\"tag\": \"section\", \"cls\": \"landing-about\", \"text\": \"Mission The Algonauts Project, first launched in 2019, is on a mission to bring biological and machine intelligence researchers together on a common platform to\"}, {\"tag\": \"section\", \"cls\": \"landing-projects\", \"text\": \"Initiatives The Algonauts Project Challenges The Algonauts Project challenges are recurrent events that aim at bringing biological and artificial researchers to\"}, {\"tag\": \"section\", \"cls\": \"landing-news\", \"text\": \"News AUGUST 13TH, 2025 The Algonauts Project now promotes multiple initiatives at the intersection of biological and artificial intelligence research. If you ha\"}, {\"tag\": \"section\", \"cls\": \"landing-team\", \"text\": \"Team Founders Radoslaw Cichy Professor at Freie Universität Berlin, Neural Dynamics of Visual Cognition Gemma Roig Professor at Goethe University Frankfurt, Com\"}, {\"tag\": \"section\", \"cls\": \"landing-contact\", \"text\": \"Contact For inquiries, contact us at algonauts.mit@gmail.com If you wish to stay updated on the Algonauts Project, including present and future challenges, join\"}], \"height\": 7604, \"bodyBg\": \"rgb(248, 249, 250)\", \"font\": \"Inter, sans-serif\"} Algonauts Logo Algonauts Logo Algonauts Icon Radoslaw Cichy Gemma Roig Aude Oliva Alessandro Gifford Domenic Bersch Marie St-Laurent Basile Pinsard Julie Boyle Lune Bellec Kendrick Kay Apurva Ratan Murty Yalda Mohsenzadeh Benjamin Lahner Alex Andonian Kandan Ramakrishnan Polina Iamshchinina Sari Saba-Sadiya Martina Vilas Kshitij Dwivedi Alex Lascelles Monika Graumann Bluesky Logo X Logo       The Algonauts Project"
+ },
+ "brief_text": "Evolve https://algonautsproject.com/ for Biological and artificial intelligence researchers, neuroscientists, ML scientists and open-science collaborators: primary task 'Grasp the brain-AI mission in 3s and click Explore the Initiatives', tone Visionary, scientific, open and collaborative. Penalise any information or element present on the live page that is missing here.",
+ "manifest": {
+  "url": "https://algonautsproject.com/",
+  "images": [
+   {
+    "kind": "img",
+    "w": 40,
+    "h": 40,
+    "top": 16,
+    "left": 72,
+    "alt": "Algonauts Logo",
+    "cls": " ",
+    "inHeader": true,
+    "path": "assets/img_6aea352d61.png",
+    "src": "https://algonautsproject.com/img/2024/logo_icon_light.png",
+    "bytes": 191544
+   },
+   {
+    "kind": "img",
+    "w": 549,
+    "h": 400,
+    "top": 95,
+    "left": 366,
+    "alt": "Algonauts Logo",
+    "cls": " ",
+    "inHeader": true,
+    "path": "assets/img_ab90c30b3e.png",
+    "src": "https://algonautsproject.com/img_AP/logo_text_dark.png",
+    "bytes": 252777
+   },
+   {
+    "kind": "img",
+    "w": 60,
+    "h": 60,
+    "top": 1224,
+    "left": 178,
+    "alt": "Algonauts Icon",
+    "cls": " ",
+    "inHeader": false,
+    "path": "assets/img_a8b438a062.png",
+    "src": "https://algonautsproject.com/img/2024/logo_icon_light_cropped.png",
+    "bytes": 214046
+   },
+   {
+    "kind": "img",
+    "w": 160,
+    "h": 160,
+    "top": 4807,
+    "left": 220,
+    "alt": "Radoslaw Cichy",
+    "cls": " ",
+    "inHeader": false,
+    "path": "assets/img_e989ddde00.png",
+    "src": "https://algonautsproject.com/img/2024/team/radek.png",
+    "bytes": 210828
+   },
+   {
+    "kind": "img",
+    "w": 160,
+    "h": 160,
+    "top": 4807,
+    "left": 560,
+    "alt": "Gemma Roig",
+    "cls": " ",
+    "inHeader": false,
+    "path": "assets/img_4b05664fa8.png",
+    "src": "https://algonautsproject.com/img/2024/team/gemma_new.png",
+    "bytes": 233775
+   },
+   {
+    "kind": "img",
+    "w": 160,
+    "h": 160,
+    "top": 4807,
+    "left": 900,
+    "alt": "Aude Oliva",
+    "cls": " ",
+    "inHeader": false,
+    "path": "assets/img_e87cbf23ce.jpg",
+    "src": "https://algonautsproject.com/img/2024/team/aude.jpg",
+    "bytes": 31364
+   },
+   {
+    "kind": "img",
+    "w": 140,
+    "h": 140,
+    "top": 5318,
+    "left": 162,
+    "alt": "Alessandro Gifford",
+    "cls": " ",
+    "inHeader": false,
+    "path": "assets/img_c295ec9c76.png",
+    "src": "https://algonautsproject.com/img/2024/team/ale.png",
+    "bytes": 300547
+   },
+   {
+    "kind": "img",
+    "w": 140,
+    "h": 140,
+    "top": 5318,
+    "left": 434,
+    "alt": "Domenic Bersch",
+    "cls": " ",
+    "inHeader": false,
+    "path": "assets/img_bfdbbe7934.png",
+    "src": "https://algonautsproject.com/img/2024/team/domenic_2.png",
+    "bytes": 85586
+   },
+   {
+    "kind": "img",
+    "w": 140,
+    "h": 140,
+    "top": 5318,
+    "left": 706,
+    "alt": "Marie St-Laurent",
+    "cls": " ",
+    "inHeader": false,
+    "path": "assets/img_4c505ba61b.png",
+    "src": "https://algonautsproject.com/img/2024/team/marie.png",
+    "bytes": 48793
+   },
+   {
+    "kind": "img",
+    "w": 140,
+    "h": 140,
+    "top": 5318,
+    "left": 978,
+    "alt": "Basile Pinsard",
+    "cls": " ",
+    "inHeader": false,
+    "path": "assets/img_7bef745f0d.jpg",
+    "src": "https://algonautsproject.com/img/2024/team/basile.jpg",
+    "bytes": 65782
+   },
+   {
+    "kind": "img",
+    "w": 140,
+    "h": 140,
+    "top": 5668,
+    "left": 434,
+    "alt": "Julie Boyle",
+    "cls": " ",
+    "inHeader": false,
+    "path": "assets/img_92f2770202.png",
+    "src": "https://algonautsproject.com/img/2024/team/julie.png",
+    "bytes": 10946
+   },
+   {
+    "kind": "img",
+    "w": 140,
+    "h": 140,
+    "top": 5668,
+    "left": 706,
+    "alt": "Lune Bellec",
+    "cls": " ",
+    "inHeader": false,
+    "path": "assets/img_855ae374ea.jpeg",
+    "src": "https://algonautsproject.com/img/2024/team/lune.jpeg",
+    "bytes": 33082
+   },
+   {
+    "kind": "img",
+    "w": 100,
+    "h": 100,
+    "top": 6113,
+    "left": 182,
+    "alt": "Kendrick Kay",
+    "cls": " ",
+    "inHeader": false,
+    "path": "assets/img_64510cf602.jpg",
+    "src": "https://algonautsproject.com/img/speakers/kkay.jpg",
+    "bytes": 36531
+   },
+   {
+    "kind": "img",
+    "w": 100,
+    "h": 100,
+    "top": 6113,
+    "left": 386,
+    "alt": "Apurva Ratan Murty",
+    "cls": " ",
+    "inHeader": false,
+    "path": "assets/img_879ae103d4.jpg",
+    "src": "https://algonautsproject.com/img/team/ratan.jpg",
+    "bytes": 117315
+   },
+   {
+    "kind": "img",
+    "w": 100,
+    "h": 100,
+    "top": 6113,
+    "left": 590,
+    "alt": "Yalda Mohsenzadeh",
+    "cls": " ",
+    "inHeader": false,
+    "path": "assets/img_dc5d29a83f.jpg",
+    "src": "https://algonautsproject.com/img/team/yalda.jpg",
+    "bytes": 15213
+   },
+   {
+    "kind": "img",
+    "w": 100,
+    "h": 100,
+    "top": 6113,
+    "left": 794,
+    "alt": "Benjamin Lahner",
+    "cls": " ",
+    "inHeader": false,
+    "path": "assets/img_97ae8cf5fe.jpg",
+    "src": "https://algonautsproject.com/img/team/ben.jpg",
+    "bytes": 69746
+   },
+   {
+    "kind": "img",
+    "w": 100,
+    "h": 100,
+    "top": 6113,
+    "left": 998,
+    "alt": "Alex Andonian",
+    "cls": " ",
+    "inHeader": false,
+    "path": "assets/img_4e00e9cdd7.jpg",
+    "src": "https://algonautsproject.com/img/team/alex.jpg",
+    "bytes": 55103
+   },
+   {
+    "kind": "img",
+    "w": 100,
+    "h": 100,
+    "top": 6376,
+    "left": 182,
+    "alt": "Kandan Ramakrishnan",
+    "cls": " ",
+    "inHeader": false,
+    "path": "assets/img_64083e0759.jpg",
+    "src": "https://algonautsproject.com/img/team/kandan.jpg",
+    "bytes": 1815417
+   },
+   {
+    "kind": "img",
+    "w": 100,
+    "h": 100,
+    "top": 6376,
+    "left": 386,
+    "alt": "Polina Iamshchinina",
+    "cls": " ",
+    "inHeader": false,
+    "path": "assets/img_1bb69cbcce.jpg",
+    "src": "https://algonautsproject.com/img/team/polina.jpg",
+    "bytes": 192165
+   },
+   {
+    "kind": "img",
+    "w": 100,
+    "h": 100,
+    "top": 6376,
+    "left": 590,
+    "alt": "Sari Saba-Sadiya",
+    "cls": " ",
+    "inHeader": false,
+    "path": "assets/img_70444f32ed.jpg",
+    "src": "https://algonautsproject.com/img/team/sari512.jpg",
+    "bytes": 64749
+   },
+   {
+    "kind": "img",
+    "w": 100,
+    "h": 100,
+    "top": 6376,
+    "left": 794,
+    "alt": "Martina Vilas",
+    "cls": " ",
+    "inHeader": false,
+    "path": "assets/img_1bc874c261.png",
+    "src": "https://algonautsproject.com/img/team/martina_vilas.png",
+    "bytes": 195239
+   },
+   {
+    "kind": "img",
+    "w": 100,
+    "h": 100,
+    "top": 6376,
+    "left": 998,
+    "alt": "Kshitij Dwivedi",
+    "cls": " ",
+    "inHeader": false,
+    "path": "assets/img_6768a239d1.jpg",
+    "src": "https://algonautsproject.com/img/team/kshitij.jpg",
+    "bytes": 84307
+   },
+   {
+    "kind": "img",
+    "w": 100,
+    "h": 100,
+    "top": 6639,
+    "left": 488,
+    "alt": "Alex Lascelles",
+    "cls": " ",
+    "inHeader": false,
+    "path": "assets/img_f9cb3abd4a.jpg",
+    "src": "https://algonautsproject.com/img/team/alex_lascelles.jpg",
+    "bytes": 420212
+   },
+   {
+    "kind": "img",
+    "w": 100,
+    "h": 100,
+    "top": 6639,
+    "left": 692,
+    "alt": "Monika Graumann",
+    "cls": " ",
+    "inHeader": false,
+    "path": "assets/img_9152938be4.jpg",
+    "src": "https://algonautsproject.com/img/team/monika.jpg",
+    "bytes": 54637
+   },
+   {
+    "kind": "img",
+    "w": 57,
+    "h": 50,
+    "top": 7354,
+    "left": 578,
+    "alt": "Bluesky Logo",
+    "cls": " ",
+    "inHeader": true,
+    "path": "assets/img_23c92b0a50.png",
+    "src": "https://algonautsproject.com/img/2024/bluesky_logo.png",
+    "bytes": 18689
+   },
+   {
+    "kind": "img",
+    "w": 49,
+    "h": 50,
+    "top": 7354,
+    "left": 654,
+    "alt": "X Logo",
+    "cls": " ",
+    "inHeader": true,
+    "path": "assets/img_9e816da681.png",
+    "src": "https://algonautsproject.com/img/2024/x_logo.png",
+    "bytes": 102327
+   },
+   {
+    "kind": "bg",
+    "w": 1280,
+    "h": 800,
+    "top": 0,
+    "left": 0,
+    "alt": "",
+    "cls": "landing-hero ",
+    "inHeader": false,
+    "path": "assets/bg_c3a730007b.png",
+    "src": "https://algonautsproject.com/img_AP/geo_banner_smaller.png",
+    "bytes": 722388
+   },
+   {
+    "kind": "bg",
+    "w": 350,
+    "h": 200,
+    "top": 2055,
+    "left": 73,
+    "alt": "",
+    "cls": "landing-project-image ",
+    "inHeader": false,
+    "path": "assets/bg_d48c51184d.png",
+    "src": "https://algonautsproject.com/img_AP/algonauts_challenge_banner_text.png",
+    "bytes": 4321053
+   },
+   {
+    "kind": "bg",
+    "w": 350,
+    "h": 200,
+    "top": 2055,
+    "left": 465,
+    "alt": "",
+    "cls": "landing-project-image ",
+    "inHeader": false,
+    "path": "assets/bg_4b9e9b20fe.png",
+    "src": "https://algonautsproject.com/img_AP/Net2Brain.png",
+    "bytes": 47201
+   },
+   {
+    "kind": "bg",
+    "w": 350,
+    "h": 200,
+    "top": 2055,
+    "left": 857,
+    "alt": "",
+    "cls": "landing-project-image ",
+    "inHeader": false,
+    "path": "assets/bg_b060e5d018.png",
+    "src": "https://algonautsproject.com/img_AP/berg_logo_logo_v1.png",
+    "bytes": 4045
+   },
+   {
+    "kind": "bg",
+    "w": 350,
+    "h": 200,
+    "top": 2773,
+    "left": 73,
+    "alt": "",
+    "cls": "landing-project-image ",
+    "inHeader": false,
+    "path": "assets/bg_4b19e97fd9.png",
+    "src": "https://algonautsproject.com/img_AP/bold_moments.png",
+    "bytes": 609537
+   },
+   {
+    "kind": "bg",
+    "w": 350,
+    "h": 200,
+    "top": 2773,
+    "left": 465,
+    "alt": "",
+    "cls": "landing-project-image ",
+    "inHeader": false,
+    "path": "assets/bg_1c591116bc.jpg",
+    "src": "https://algonautsproject.com/img_AP/things_eeg2.jpg",
+    "bytes": 577508
+   }
+  ],
+  "svgs": [],
+  "widgets": [],
+  "logo": "assets/img_6aea352d61.png",
+  "text": "The Algonauts Project\nAbout\nInitiatives\nNews\nTeam\nContact\nStay Updated\n\nPromoting initiatives at the intersection of\nbiological and artificial intelligence research.\n\nExplore the Initiatives\nMission\n\nThe Algonauts Project, first launched in 2019, is on a mission to bring biological and machine intelligence researchers together on a common platform to exchange ideas and pioneer the intelligence frontier.\n\nInspired by the astronauts' exploration of space, \"algonauts\" explore biological and artificial intelligence with state-of-the-art algorithmic tools, thus advancing both fields through collaborative innovation and open science.\n\nAn Algorithmic Exploration\n\nInspired by astronauts who launched into space to explore a new frontier, the Algonauts Project aims to explore biological and machine intelligence with the latest algorithmic tools. Comparing brains and models could lead to unexpected insights into what makes intelligent systems efficient, robust and trustworthy.\n\nFaster Innovation\n\nThe brain has inspired many of the algorithms responsible for the recent and spectacular progress in artificial intelligence. Those algorithms are now critical in testing new theories about the brain. The Algonauts Project brings together intelligence researchers in both domains to accelerate the pace of innovation.\n\nCollaborative Science\n\nOpen science creates an environment for sharing and collaboration, which are important for advancing intelligence research and ensuring that results are valid and reproducible. The Algonauts Project is committed to a spirit of open collaboration.\n\nThe Future\n\nThe Algonauts Project is designed to expand to other fields, from physics and biology to the social sciences, and to complement experimental, theoretical and computational disciplines. It will grow, in content and methods, with the communities that shape this endeavor.\n\nInitiatives\nThe Algonauts Project Challenges\n\nThe Algonauts Project challenges are recurrent events that aim at bringing biological and artificial researchers together in building the most accurate models of the brain. Every challenge is unique in terms of the modelling task and data. If you want to contribute your data for future challenges, get in touch with us!\n\nExplore the Challenges\nNet2Brain\n\nNet2Brain is a toolbox for comparing brain activity with activations from over 600 pretrained deep neural networks. It helps neuroscientists explore links between artificial and biological neural representations through a user-friendly interface.\n\nExplore Net2Brain\nBERG\n\nThe Brain Encoding Response Generator (BERG) is a resource consisting of multiple pre-trained encoding models of the brain and an accompanying Python package to generate – with just a few lines of code – accurate in silico neural responses to arbitrary stimuli for large scale in silico neuroscience experimentation.\n\nExplore BERG\nBMD\n\nThe BOLD Moments Dataset (BMD) contains whole-brain fMRI responses to over 1000 short (3 s) naturalistic video clips of visual events across 10 human subjects. This dataset was used to train encoding models of the brain during the Algonauts Project 2021 challenge.\n\nExplore BMD\nTHINGS EEG2\n\nTHINGS EEG2 contains EEG responses of 10 human participants to over 16,000 images of objects on naturalistic backgrounds from the THINGS database. This large data size and stimulus richness allow building AI-based encoding and decoding models of visual processing in the brain.\n\nExplore THINGS EEG2\nMore Initiatives Coming Soon\n\nStay tuned for exciting new initiatives aimed at bridging biological and artificial intelligence.\n\nNews\nAUGUST 13TH, 2025\n\nThe Algonauts Project now promotes multiple initiatives at the intersection of biological and artificial intelligence research. If you have related ideas that you would like us to promote, please get in touch.\n\nAUGUST 13TH, 2025\n\nWe ask you to take part in a 5 minute survey, which we will use to improve future editions of the Algonauts Project challenge. Even if you did not participate in the 2025 challenge, your feedback is valuable. We look forward to your input!\n\nAUGUST 13TH, 2025\n\nThe Algonauts 2025 challenge concluding session at CCN has concluded. Thank you to all who attended the session! The session recording is available on YouTube.\n\nAUGUST 5TH, 2025\n\nWe are happy to announce the Algonauts 2025 challenge winners, who will give a talk at CCN: sdascoli (1st place), NCG (2nd place), SDA (3rd place). Congratulations! For participants: To promote faster and open scientific development, we encourage you to submit your report and code, even if the challenge is now over!\n\nJULY 13TH, 2025\n\nThe Algonauts Project 2025 challenge submission deadline has now passed. Thank you to the 60+ Teams who participated! View the results here. For participants: please post your report/code by July 25th here. We'll announce the winners on August 5th!\n\nJUNE 6TH, 2025\n\nBERG v1.0 is now officially available! The Brain Encoding Response Generator toolbox has been released on GitHub, featuring multiple pre-trained encoding models and a Python package for generating accurate in silico neural responses.\n\nMAY 6TH, 2025\n\nWe're excited to announce the official publication of the Net2Brain paper in Frontiers in Neuroinformatics!\n\nJANUARY 6TH, 2025\n\nThe Algonauts Project 2025 challenge is now open for submissions! Watch this video for an introduction to the challenge (5 min). Submit your best model predictions to the competition until July 13th, 2025.\n\nTeam\nFounders\nRadoslaw Cichy\n\nProfessor at Freie Universität Berlin, Neural Dynamics of Visual Cognition\n\nGemma Roig\n\nProfessor at Goethe University Frankfurt, Computer Vision & AI\n\nAude Oliva\n\nSenior Research Scientist at MIT CSAIL and Director of MIT-IBM Watson AI Lab\n\nCurrent Collaborators\nAlessandro Gifford\n\nPostdoc, Freie Universität Berlin\n\nDomenic Bersch\n\nPhD Student, Goethe University Frankfurt\n\nMarie St-Laurent\n\nResearch Professional, CRIUGM\n\nBasile Pinsard\n\nData Manager, CRIUGM\n\nJulie Boyle\n\nProject Manager, Université de Montréal\n\nLune Bellec\n\nAssociate Professor, Université de Montréal\n\nPast Collaborators\nKendrick Kay\nApurva Ratan Murty\nYalda Mohsenzadeh\nBenjamin Lahner\nAlex Andonian\nKandan Ramakrishnan\nPolina Iamshchinina\nSari Saba-Sadiya\nMartina Vilas\nKshitij Dwivedi\nAlex Lascelles\nMonika Graumann\nContact\n\nFor inquiries, contact us at algonauts.mit@gmail.com\n\nIf you wish to stay updated on the Algonauts Project, including present and future challenges, join our mailing list, or follow us on social media:\n\nBluesky\n\n \n\nX\n\n© 2025 The Algonauts Project. All rights reserved."
+ },
+ "steps": [
+  {
+   "round": 0,
+   "png": "results/showcase/evolve/algonauts/before.png",
+   "html": null,
+   "accepted": true,
+   "ui_score": 0.7618805149430404,
+   "heads": {
+    "aesthetic": {
+     "score": 0.5362654328346252,
+     "percentile": 59.51742627345844,
+     "confidence": 0.07253086566925049,
+     "top": "▲ L_pOFC, ▼ L_a24"
+    },
+    "attention": {
+     "score": 0.512356162071228,
+     "percentile": 49.86301369863014,
+     "confidence": 0.024712324142456055,
+     "top": "▲ 움직임·형태 평균, ▲ 움직임·형태 최대"
+    }
+   },
+   "judge": {
+    "aesthetic": 0.778,
+    "clarity": 0.889,
+    "attention": 0.889,
+    "brief_fit": 0.889,
+    "judge_score": 0.861,
+    "reason": "Polished visionary hero instantly communicates the brain-AI mission with a clear Explore CTA and a focused central composition."
+   },
+   "brain_only": 0.547,
+   "critique": {
+    "kind": "landing",
+    "ranking": [
+     [
+      "scene_place",
+      1.35303306302989
+     ],
+     [
+      "value_vmpfc",
+      1.0099507474816052
+     ],
+     [
+      "attention_dorsal",
+      0.7603523585178288
+     ],
+     [
+      "control_dlpfc",
+      0.46604426553537426
+     ],
+     [
+      "visual_early",
+      0.4512641980911833
+     ],
+     [
+      "language",
+      -0.5253287582837406
+     ],
+     [
+      "default_mode",
+      -0.7858274469876081
+     ],
+     [
+      "face_body",
+      -1.0553789270010423
+     ],
+     [
+      "visual_motion",
+      -1.67410950038349
+     ]
+    ],
+    "hook": {
+     "attention_early": 0.772915415845391,
+     "attention_late": 0.7540708298540475,
+     "visual_early": 0.7263582033961893,
+     "visual_late": 0.3137171954386802
+    },
+    "diagnosis": [
+     "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+     "Place areas (PPA/RSC) dominate: the background scene swallows the message",
+     "Face areas (FFA/STS) are silent: no human or gaze cue"
+    ],
+    "directives": [
+     "Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion.",
+     "Simplify the environment: crop or blur the scene, put copy on a solid panel, let one subject own the frame.",
+     "Introduce a human cue: a portrait or illustrated face whose gaze points at the CTA/product (faces win attention fastest)."
+    ],
+    "cited_areas": [
+     "▲ L reward value, liking (pOFC) [aesthetic]",
+     "▼ L affect, conflict (a24) [aesthetic]",
+     "▲ object shape & motion (MT/LO) mean [attention]",
+     "▲ object shape & motion (MT/LO) max [attention]"
+    ],
+    "groups": [
+     "visual_motion",
+     "scene_place",
+     "face_body"
+    ],
+    "prompt_block": "BRAIN CRITIQUE (TRIBE v2 predicted human cortex while looking at the last render; values are relative within this image):\n- most driven regions: places & scenes (PPA/RSC) +1.35, reward & value (OFC/vmPFC) +1.01, visual attention (IPS/FEF) +0.76; least: faces & people (FFA/STS) -1.06, object shape & motion (MT/LO) -1.67\n- first-2s hook vs later: attention +0.77 → +0.75, visual drive +0.73 → +0.31\n- areas the aesthetic head cites: ▲ L reward value, liking (pOFC) [aesthetic]; ▼ L affect, conflict (a24) [aesthetic]; ▲ object shape & motion (MT/LO) mean [attention]; ▲ object shape & motion (MT/LO) max [attention]\n- diagnosis: Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette / Place areas (PPA/RSC) dominate: the background scene swallows the message / Face areas (FFA/STS) are silent: no human or gaze cue\n- DO NEXT (highest priority first): (1) Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion. (2) Simplify the environment: crop or blur the scene, put copy on a solid panel, let one subject own the frame. (3) Introduce a human cue: a portrait or illustrated face whose gaze points at the CTA/product (faces win attention fastest)."
+   }
+  },
+  {
+   "round": 1,
+   "png": "results/showcase/evolve/algonauts/r1.png",
+   "html": "results/showcase/evolve/algonauts/r1.html",
+   "changes": [
+    {
+     "directive": "restyle_asset",
+     "change": "framed gear-brain mark as dominant silhouette on solid plum panel with founder gaze strip toward CTA"
+    }
+   ],
+   "actions": [
+    {
+     "tool": "restyle_asset",
+     "params": {
+      "path": "assets/img_ab90c30b3e.png",
+      "treatment": "frame"
+     },
+     "why": "Elevates gear-brain mark to one dominant object silhouette on solid panel for 3s mission read.",
+     "critique_line": "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+     "output": "assets/img_ab90c30b3e.png",
+     "desc": "keep real asset assets/img_ab90c30b3e.png and restyle around it (frame)"
+    },
+    {
+     "tool": "photo",
+     "params": {
+      "query": "diverse neuroscientists collaborating around brain data monitor",
+      "treatment": "crop"
+     },
+     "why": "Adds authentic human gaze cue toward CTA while keeping founder headshots as trust signal.",
+     "critique_line": "Face areas (FFA/STS) are silent: no human or gaze cue",
+     "error": "no photo passed the gate"
+    }
+   ],
+   "fidelity": {
+    "missing_paths": [],
+    "missing": [],
+    "missing_text": [],
+    "illegible": [],
+    "defects": [],
+    "density_ok": true,
+    "density_note": "Candidate first screen shows ~9 items (6 nav links + Explore the Initiatives + Our Mission + founders strip) vs live ~7 items (6 nav + Explore CTA); preserves mission headline and primary CTA, no category dropped.",
+    "ok": true,
+    "facts": {
+     "numbers": [],
+     "names": [],
+     "ok": true,
+     "claims": []
+    }
+   },
+   "accepted": true,
+   "based_on": 0,
+   "ui_score": 0.7422682036111166,
+   "heads": {
+    "aesthetic": {
+     "score": 0.3504795730113983,
+     "percentile": 31.099195710455763,
+     "confidence": 0.29904085397720337,
+     "top": "▼ L_a24, ▼ R_10r"
+    },
+    "attention": {
+     "score": 0.5923863649368286,
+     "percentile": 66.3013698630137,
+     "confidence": 0.18477272987365723,
+     "top": "▲ 움직임·형태 평균, ▲ 움직임·형태 최대"
+    }
+   },
+   "judge": {
+    "aesthetic": 0.889,
+    "clarity": 0.889,
+    "attention": 0.778,
+    "brief_fit": 0.889,
+    "judge_score": 0.861,
+    "reason": "Polished editorial split layout delivers the brain-AI mission and primary CTA instantly with visionary, open scientific tone."
+   },
+   "brain_only": 0.487,
+   "critique": {
+    "kind": "landing",
+    "ranking": [
+     [
+      "scene_place",
+      1.1679678647866492
+     ],
+     [
+      "value_vmpfc",
+      0.8572977071644446
+     ],
+     [
+      "control_dlpfc",
+      0.5975010446091774
+     ],
+     [
+      "attention_dorsal",
+      0.44829893654725134
+     ],
+     [
+      "language",
+      -0.13081436698151785
+     ],
+     [
+      "default_mode",
+      -0.17826948490956981
+     ],
+     [
+      "visual_early",
+      -0.2327624381235616
+     ],
+     [
+      "face_body",
+      -0.3200315956692164
+     ],
+     [
+      "visual_motion",
+      -2.2091876674236564
+     ]
+    ],
+    "hook": {
+     "attention_early": 0.48791189515668454,
+     "attention_late": 0.42849245724253476,
+     "visual_early": 0.2242946934461927,
+     "visual_late": -0.4612910039084388
+    },
+    "diagnosis": [
+     "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+     "Place areas (PPA/RSC) dominate: the background scene swallows the message",
+     "Reward circuit (OFC/vmPFC) is on but the appeal head is average: value is felt but what is good isn't legible"
+    ],
+    "directives": [
+     "Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion.",
+     "Simplify the environment: crop or blur the scene, put copy on a solid panel, let one subject own the frame.",
+     "Name the value explicitly next to what the eye lands on: one benefit line + price/offer under the hero, nothing else competing."
+    ],
+    "cited_areas": [
+     "▼ L affect, conflict (a24) [aesthetic]",
+     "▼ R subjective value / wanting (10r) [aesthetic]",
+     "▲ object shape & motion (MT/LO) mean [attention]",
+     "▲ object shape & motion (MT/LO) max [attention]"
+    ],
+    "groups": [
+     "visual_motion",
+     "scene_place",
+     "value_vmpfc"
+    ],
+    "prompt_block": "BRAIN CRITIQUE (TRIBE v2 predicted human cortex while looking at the last render; values are relative within this image):\n- most driven regions: places & scenes (PPA/RSC) +1.17, reward & value (OFC/vmPFC) +0.86, cognitive control (dlPFC) +0.60; least: faces & people (FFA/STS) -0.32, object shape & motion (MT/LO) -2.21\n- first-2s hook vs later: attention +0.49 → +0.43, visual drive +0.22 → -0.46\n- areas the aesthetic head cites: ▼ L affect, conflict (a24) [aesthetic]; ▼ R subjective value / wanting (10r) [aesthetic]; ▲ object shape & motion (MT/LO) mean [attention]; ▲ object shape & motion (MT/LO) max [attention]\n- diagnosis: Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette / Place areas (PPA/RSC) dominate: the background scene swallows the message / Reward circuit (OFC/vmPFC) is on but the appeal head is average: value is felt but what is good isn't legible\n- DO NEXT (highest priority first): (1) Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion. (2) Simplify the environment: crop or blur the scene, put copy on a solid panel, let one subject own the frame. (3) Name the value explicitly next to what the eye lands on: one benefit line + price/offer under the hero, nothing else competing."
+   },
+   "p_vs_best": 0.9,
+   "p_vs_best_reason": "A delivers the brain-AI mission in a readable headline with one clear Explore CTA and open-science trust cues, while B buries the mission under a logo-dominated dark hero with weak CTA contrast. | swapped: B grasps the brain-AI mission instantly with a visionary headline and high-contrast Explore CTA plus open-science credibility while retaining all live elements, versus A's logo-only hero with weak hierarchy and low-contrast CTA."
+  },
+  {
+   "round": 2,
+   "png": "results/showcase/evolve/algonauts/r2.png",
+   "html": "results/showcase/evolve/algonauts/r2.html",
+   "changes": [
+    {
+     "directive": "reflow",
+     "change": "hero copy on solid #2B0A4A panel left, isolated gear-brain logo as single dominant silhouette on clean panel right with diagonal accent line"
+    },
+    {
+     "directive": "typography",
+     "change": "Space Grotesk 64px display + Inter body on 12-col 8pt grid with value line + offer under hero"
+    }
+   ],
+   "actions": [
+    {
+     "tool": "reflow",
+     "params": {
+      "move": "Place hero copy on solid #2B0A4A panel left, isolate large gear-brain logo as single dominant silhouette on clean panel right with diagonal accent implying motion, keeping every word"
+     },
+     "why": "Creates one dominant object silhouette that owns the frame and calms scene dominance.",
+     "critique_line": "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette / Place areas (PPA/RSC) dominate: the background scene swallows the message",
+     "desc": "{\"move\": \"Place hero copy on solid #2B0A4A panel left, isolate large gear-brain logo as single dominant silhouette on clean panel right with diagonal accent imp"
+    },
+    {
+     "tool": "typography",
+     "params": {
+      "display": "Space Grotesk",
+      "body": "Inter",
+      "scale": "64px",
+      "grid": "12-col/8pt"
+     },
+     "why": "Names value explicitly next to eye landing with one benefit line plus offer under hero.",
+     "critique_line": "Reward circuit (OFC/vmPFC) is on but the appeal head is average: value is felt but what is good isn't legible",
+     "desc": "{\"display\": \"Space Grotesk\", \"body\": \"Inter\", \"scale\": \"64px\", \"grid\": \"12-col/8pt\"}"
+    }
+   ],
+   "fidelity": {
+    "missing_paths": [],
+    "missing": [
+     "k2"
+    ],
+    "missing_text": [],
+    "illegible": [],
+    "defects": [],
+    "density_ok": true,
+    "density_note": "Candidate first screen ~10-11 items (About, Initiatives, News, Team, Contact, Stay Updated, Explore the Initiatives, OUR MISSION, Est.2019, Open & reproducible, Led by neuroscientists strip) vs live ~7 items (About, Initiatives, News, Team, Contact, Stay Updated, Explore the Initiatives); >60% and no category dropped, mission + CTA clear in 3s.",
+    "ok": false,
+    "facts": {
+     "numbers": [],
+     "names": [],
+     "ok": true,
+     "claims": []
+    }
+   },
+   "accepted": false,
+   "based_on": 1,
+   "ui_score": 0.6868055445341645,
+   "heads": {
+    "aesthetic": {
+     "score": 0.3428110182285309,
+     "percentile": 29.959785522788202,
+     "confidence": 0.31437796354293823,
+     "top": "▼ L_a24, ▼ L_pOFC"
+    },
+    "attention": {
+     "score": 0.6225720047950745,
+     "percentile": 71.5068493150685,
+     "confidence": 0.24514400959014893,
+     "top": "▲ 움직임·형태 평균, ▲ 움직임·형태 최대"
+    }
+   },
+   "judge": {
+    "aesthetic": 0.778,
+    "clarity": 0.889,
+    "attention": 0.778,
+    "brief_fit": 0.667,
+    "judge_score": 0.778,
+    "reason": "Polished visionary-scientific split layout makes the brain-AI mission and Explore CTA instant, but omits live-page specifics like the current challenge, dates, and collaborator proof."
+   },
+   "brain_only": 0.507,
+   "critique": {
+    "kind": "landing",
+    "ranking": [
+     [
+      "scene_place",
+      1.212132819959309
+     ],
+     [
+      "value_vmpfc",
+      0.888389194484008
+     ],
+     [
+      "control_dlpfc",
+      0.6404001480382475
+     ],
+     [
+      "attention_dorsal",
+      0.45941102408323636
+     ],
+     [
+      "default_mode",
+      -0.024775082449912746
+     ],
+     [
+      "language",
+      -0.12661496463585184
+     ],
+     [
+      "visual_early",
+      -0.3990813160982329
+     ],
+     [
+      "face_body",
+      -0.40783597263702415
+     ],
+     [
+      "visual_motion",
+      -2.2420258507437807
+     ]
+    ],
+    "hook": {
+     "attention_early": 0.4615550216029404,
+     "attention_late": 0.45833902532338433,
+     "visual_early": -0.06426037010446112,
+     "visual_late": -0.5664917890951187
+    },
+    "diagnosis": [
+     "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+     "Place areas (PPA/RSC) dominate: the background scene swallows the message",
+     "Reward circuit (OFC/vmPFC) is on but the appeal head is average: value is felt but what is good isn't legible"
+    ],
+    "directives": [
+     "Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion.",
+     "Simplify the environment: crop or blur the scene, put copy on a solid panel, let one subject own the frame.",
+     "Name the value explicitly next to what the eye lands on: one benefit line + price/offer under the hero, nothing else competing."
+    ],
+    "cited_areas": [
+     "▼ L affect, conflict (a24) [aesthetic]",
+     "▼ L reward value, liking (pOFC) [aesthetic]",
+     "▲ object shape & motion (MT/LO) mean [attention]",
+     "▲ object shape & motion (MT/LO) max [attention]"
+    ],
+    "groups": [
+     "visual_motion",
+     "scene_place",
+     "value_vmpfc"
+    ],
+    "prompt_block": "BRAIN CRITIQUE (TRIBE v2 predicted human cortex while looking at the last render; values are relative within this image):\n- most driven regions: places & scenes (PPA/RSC) +1.21, reward & value (OFC/vmPFC) +0.89, cognitive control (dlPFC) +0.64; least: faces & people (FFA/STS) -0.41, object shape & motion (MT/LO) -2.24\n- first-2s hook vs later: attention +0.46 → +0.46, visual drive -0.06 → -0.57\n- areas the aesthetic head cites: ▼ L affect, conflict (a24) [aesthetic]; ▼ L reward value, liking (pOFC) [aesthetic]; ▲ object shape & motion (MT/LO) mean [attention]; ▲ object shape & motion (MT/LO) max [attention]\n- diagnosis: Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette / Place areas (PPA/RSC) dominate: the background scene swallows the message / Reward circuit (OFC/vmPFC) is on but the appeal head is average: value is felt but what is good isn't legible\n- DO NEXT (highest priority first): (1) Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion. (2) Simplify the environment: crop or blur the scene, put copy on a solid panel, let one subject own the frame. (3) Name the value explicitly next to what the eye lands on: one benefit line + price/offer under the hero, nothing else competing.\nHARD REJECT — FIDELITY: missing ['k2'], defects [], density_ok True (Candidate first screen ~10-11 items (About, Initiatives, News, Team, Contact, Stay Updated, Explore the Initiatives, OUR MISSION, Est.2019, Open & reproducible, Led by neuroscientists strip) vs live ~7 items (About, Initiatives, News, Team, Contact, Stay Updated, Explore the Initiatives); >60% and no category dropped, mission + CTA clear in 3s.). Keep every must_keep item, fix overlaps/clipping, and keep at least the live page's first-screen density."
+   },
+   "p_vs_best": null,
+   "p_vs_best_reason": null
+  },
+  {
+   "round": 3,
+   "png": "results/showcase/evolve/algonauts/r3.png",
+   "html": "results/showcase/evolve/algonauts/r3.html",
+   "changes": [
+    {
+     "directive": "restyle_asset + photo hero",
+     "change": "Cropped large gear-brain mark to one dominant centered silhouette on duotone EEG photo with solid copy panel and motion diagonal for 3s mission read + CTA"
+    }
+   ],
+   "actions": [
+    {
+     "tool": "restyle_asset",
+     "params": {
+      "path": "assets/img_ab90c30b3e.png",
+      "treatment": "crop"
+     },
+     "why": "Crops large gear-brain mark to one dominant centered silhouette that owns the hero frame.",
+     "critique_line": "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+     "output": "assets/img_ab90c30b3e.png",
+     "desc": "keep real asset assets/img_ab90c30b3e.png and restyle around it (crop)"
+    },
+    {
+     "tool": "photo",
+     "params": {
+      "query": "neuroscience EEG fMRI monitor with neural network visualization lab",
+      "treatment": "duotone"
+     },
+     "why": "Adds tangible brain-vs-model comparison visual in brand duotone kept quiet behind solid copy panel.",
+     "critique_line": "Place areas (PPA/RSC) dominate: the background scene swallows the message",
+     "output": "assets/photo_r3_1.jpg",
+     "credit": {
+      "title": "EEG Experiment.jpg",
+      "author": "Flexagoon",
+      "license": "CC0",
+      "source": "https://commons.wikimedia.org/wiki/File:EEG_Experiment.jpg"
+     },
+     "desc": "CC photo 'EEG Experiment.jpg' (CC0), treatment duotone"
+    }
+   ],
+   "fidelity": {
+    "missing_paths": [],
+    "missing": [],
+    "missing_text": [],
+    "illegible": [],
+    "defects": [],
+    "density_ok": true,
+    "density_note": "Candidate first screen ~11 items (6 nav + Stay Updated + Explore the Initiatives + Our Mission + 2 info blocks + founder card) vs live ~7 items (6 nav + Explore CTA + mission tagline); candidate exceeds 60% and drops no category.",
+    "ok": true,
+    "facts": {
+     "numbers": [],
+     "names": [],
+     "ok": false,
+     "claims": [
+      "Founder — Biological & artificial vision",
+      "Founder — Machine intelligence",
+      "Founder — Human & computational vision",
+      "Kendrick Kay Collaborator",
+      "Apurva Ratan Murty Collaborator",
+      "Yalda Mohsenzadeh Collaborator",
+      "Benjamin Lahner Collaborator",
+      "Alex Andonian Collaborator",
+      "Kandan Ramakrishnan Collaborator",
+      "Polina Iamshchinina Collaborator"
+     ]
+    }
+   },
+   "accepted": false,
+   "based_on": 1,
+   "ui_score": 0.6465183071369105,
+   "heads": {
+    "aesthetic": {
+     "score": 0.21192601323127747,
+     "percentile": 11.528150134048257,
+     "confidence": 0.5761479735374451,
+     "top": "▼ L_a24, ▼ R_23d"
+    },
+    "attention": {
+     "score": 0.5539548397064209,
+     "percentile": 60.0,
+     "confidence": 0.1079096794128418,
+     "top": "▲ 움직임·형태 평균, ▲ 움직임·형태 최대"
+    }
+   },
+   "judge": {
+    "aesthetic": 0.778,
+    "clarity": 0.889,
+    "attention": 0.778,
+    "brief_fit": 0.667,
+    "judge_score": 0.778,
+    "reason": "Polished editorial layout delivers the brain-AI mission and primary CTA instantly with strong focus, though it omits live-page challenge specifics."
+   },
+   "brain_only": 0.358,
+   "critique": {
+    "kind": "landing",
+    "ranking": [
+     [
+      "scene_place",
+      1.417667639285595
+     ],
+     [
+      "value_vmpfc",
+      0.8190879260947508
+     ],
+     [
+      "control_dlpfc",
+      0.421401404317272
+     ],
+     [
+      "attention_dorsal",
+      0.40427845522921807
+     ],
+     [
+      "visual_early",
+      0.10932962798006307
+     ],
+     [
+      "face_body",
+      -0.3585368682287355
+     ],
+     [
+      "language",
+      -0.4217229620466248
+     ],
+     [
+      "default_mode",
+      -0.4299226841451296
+     ],
+     [
+      "visual_motion",
+      -1.961582538486408
+     ]
+    ],
+    "hook": {
+     "attention_early": 0.4583001537605433,
+     "attention_late": 0.37726760596355546,
+     "visual_early": 0.6044481417515392,
+     "visual_late": -0.13822962890567497
+    },
+    "diagnosis": [
+     "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+     "Place areas (PPA/RSC) dominate: the background scene swallows the message",
+     "Reward circuit (OFC/vmPFC) is on but the appeal head is average: value is felt but what is good isn't legible"
+    ],
+    "directives": [
+     "Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion.",
+     "Simplify the environment: crop or blur the scene, put copy on a solid panel, let one subject own the frame.",
+     "Name the value explicitly next to what the eye lands on: one benefit line + price/offer under the hero, nothing else competing."
+    ],
+    "cited_areas": [
+     "▼ L affect, conflict (a24) [aesthetic]",
+     "▼ R mind-wandering (23d) [aesthetic]",
+     "▲ object shape & motion (MT/LO) mean [attention]",
+     "▲ object shape & motion (MT/LO) max [attention]"
+    ],
+    "groups": [
+     "visual_motion",
+     "scene_place",
+     "value_vmpfc"
+    ],
+    "prompt_block": "BRAIN CRITIQUE (TRIBE v2 predicted human cortex while looking at the last render; values are relative within this image):\n- most driven regions: places & scenes (PPA/RSC) +1.42, reward & value (OFC/vmPFC) +0.82, cognitive control (dlPFC) +0.42; least: default mode (mind-wandering) -0.43, object shape & motion (MT/LO) -1.96\n- first-2s hook vs later: attention +0.46 → +0.38, visual drive +0.60 → -0.14\n- areas the aesthetic head cites: ▼ L affect, conflict (a24) [aesthetic]; ▼ R mind-wandering (23d) [aesthetic]; ▲ object shape & motion (MT/LO) mean [attention]; ▲ object shape & motion (MT/LO) max [attention]\n- diagnosis: Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette / Place areas (PPA/RSC) dominate: the background scene swallows the message / Reward circuit (OFC/vmPFC) is on but the appeal head is average: value is felt but what is good isn't legible\n- DO NEXT (highest priority first): (1) Add one dominant object silhouette (product shape, device frame, bold geometric hero) or a diagonal that implies motion. (2) Simplify the environment: crop or blur the scene, put copy on a solid panel, let one subject own the frame. (3) Name the value explicitly next to what the eye lands on: one benefit line + price/offer under the hero, nothing else competing.\nHARD REJECT — INVENTED FACTS: numbers [], names [] and claims ['Founder — Biological & artificial vision', 'Founder — Machine intelligence', 'Founder — Human & computational vision', 'Kendrick Kay Collaborator', 'Apurva Ratan Murty Collaborator', 'Yalda Mohsenzadeh Collaborator', 'Benjamin Lahner Collaborator', 'Alex Andonian Collaborator', 'Kandan Ramakrishnan Collaborator', 'Polina Iamshchinina Collaborator'] do not exist on the live page. Remove them; if a slot needs proof the page does not have, leave the slot out."
+   },
+   "p_vs_best": null,
+   "p_vs_best_reason": null
+  }
+ ],
+ "trail": [
+  {
+   "round": 1,
+   "tool": "restyle_asset",
+   "why": "Elevates gear-brain mark to one dominant object silhouette on solid panel for 3s mission read.",
+   "critique_line": "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+   "desc": "keep real asset assets/img_ab90c30b3e.png and restyle around it (frame)",
+   "brain_delta": -0.06,
+   "judge_delta": 0.0,
+   "score_before": 0.7618805149430404,
+   "score_after": 0.7422682036111166,
+   "accepted": true,
+   "fidelity": {
+    "missing_paths": [],
+    "missing": []
+   },
+   "thumb": "trail/r1_restyle_asset.jpg",
+   "page_thumb": "trail/r1_page.jpg"
+  },
+  {
+   "round": 1,
+   "tool": "photo",
+   "why": "Adds authentic human gaze cue toward CTA while keeping founder headshots as trust signal.",
+   "critique_line": "Face areas (FFA/STS) are silent: no human or gaze cue",
+   "desc": "",
+   "brain_delta": -0.06,
+   "judge_delta": 0.0,
+   "score_before": 0.7618805149430404,
+   "score_after": 0.7422682036111166,
+   "accepted": true,
+   "fidelity": {
+    "missing_paths": [],
+    "missing": []
+   },
+   "page_thumb": "trail/r1_page.jpg"
+  },
+  {
+   "round": 2,
+   "tool": "reflow",
+   "why": "Creates one dominant object silhouette that owns the frame and calms scene dominance.",
+   "critique_line": "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette / Place areas (PPA/RSC) dominate: the background scene swallows the message",
+   "desc": "{\"move\": \"Place hero copy on solid #2B0A4A panel left, isolate large gear-brain logo as single dominant silhouette on clean panel right with diagonal accent imp",
+   "brain_delta": 0.02,
+   "judge_delta": -0.083,
+   "score_before": 0.7422682036111166,
+   "score_after": 0.6868055445341645,
+   "accepted": false,
+   "fidelity": {
+    "missing_paths": [],
+    "missing": [
+     "k2"
+    ]
+   },
+   "page_thumb": "trail/r2_page.jpg"
+  },
+  {
+   "round": 2,
+   "tool": "typography",
+   "why": "Names value explicitly next to eye landing with one benefit line plus offer under hero.",
+   "critique_line": "Reward circuit (OFC/vmPFC) is on but the appeal head is average: value is felt but what is good isn't legible",
+   "desc": "{\"display\": \"Space Grotesk\", \"body\": \"Inter\", \"scale\": \"64px\", \"grid\": \"12-col/8pt\"}",
+   "brain_delta": 0.02,
+   "judge_delta": -0.083,
+   "score_before": 0.7422682036111166,
+   "score_after": 0.6868055445341645,
+   "accepted": false,
+   "fidelity": {
+    "missing_paths": [],
+    "missing": [
+     "k2"
+    ]
+   },
+   "page_thumb": "trail/r2_page.jpg"
+  },
+  {
+   "round": 3,
+   "tool": "restyle_asset",
+   "why": "Crops large gear-brain mark to one dominant centered silhouette that owns the hero frame.",
+   "critique_line": "Object-shape (LO) and motion (MT) areas are low: a text-first screen with no clear object silhouette",
+   "desc": "keep real asset assets/img_ab90c30b3e.png and restyle around it (crop)",
+   "brain_delta": -0.129,
+   "judge_delta": -0.083,
+   "score_before": 0.7422682036111166,
+   "score_after": 0.6465183071369105,
+   "accepted": false,
+   "fidelity": {
+    "missing_paths": [],
+    "missing": []
+   },
+   "thumb": "trail/r3_restyle_asset.jpg",
+   "page_thumb": "trail/r3_page.jpg"
+  },
+  {
+   "round": 3,
+   "tool": "photo",
+   "why": "Adds tangible brain-vs-model comparison visual in brand duotone kept quiet behind solid copy panel.",
+   "critique_line": "Place areas (PPA/RSC) dominate: the background scene swallows the message",
+   "desc": "CC photo 'EEG Experiment.jpg' (CC0), treatment duotone",
+   "brain_delta": -0.129,
+   "judge_delta": -0.083,
+   "score_before": 0.7422682036111166,
+   "score_after": 0.6465183071369105,
+   "accepted": false,
+   "fidelity": {
+    "missing_paths": [],
+    "missing": []
+   },
+   "thumb": "trail/r3_photo.jpg",
+   "page_thumb": "trail/r3_page.jpg"
+  }
+ ],
+ "best_round": 1,
+ "pairwise_after_vs_before": {
+  "p_first": 0.9,
+  "order_ab": 0.9,
+  "order_ba": 0.9,
+  "reason": "A wins because its Where brains meet machines headline plus supporting subhead communicates the brain-AI mission in 3s with a single high-contrast Explore CTA and open-science proof points while B is logo-dominated with weaker hierarchy and a low-contrast CTA | swapped: B delivers instant brain-AI mission clarity with a memorable headline, high-contrast Explore CTA and open-science credibility cues versus A's logo-dominated low-contrast hero."
+ }
+}

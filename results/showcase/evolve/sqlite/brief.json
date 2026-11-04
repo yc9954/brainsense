@@ -1,0 +1,10 @@
+{
+ "lang": "saas",
+ "brand": {
+  "primary": "#2456ff",
+  "secondary": "#ffffff",
+  "accent": "#9fe1cf",
+  "text": "brand"
+ },
+ "must_keep": []
+}
