@@ -66,9 +66,15 @@ def _art_direct(brief: dict, critique: str, judge_reason: str, trail: list[dict]
               "PROPS: ['potted_plant_01', 'ceramic_vase_01', 'brass_vase_01']\nPrevious rounds:\n" + (hist or "-") + "\n\n"
               "Answer the critique with the 1 or 2 tools that address it; do not repeat a rejected move. Reply ONLY with JSON: "
               "{\"actions\": [{\"tool\": \"...\", \"params\": {...}, \"why\": \"one sentence\", \"critique_line\": \"the diagnosis line this answers\"}], \"hero\": \"what the hero imagery should be after this round\"}")
-    r = _client().chat.completions.create(model=MODEL, temperature=0.4, max_tokens=3000, messages=[{"role": "user", "content": prompt}])
-    d = _json(r.choices[0].message.content or "")
+    d: dict = {}
+    for attempt in range(3):   # Muse counts reasoning against max_tokens: an empty or cut reply just means ask again
+        r = _client().chat.completions.create(model=MODEL, temperature=0.4, max_tokens=6000, messages=[{"role": "user", "content": prompt}])
+        d = _json(r.choices[0].message.content or "")
+        if d.get("actions"):
+            break
     d.setdefault("actions", [])
+    if not d["actions"]:   # last resort: the one move the time course always justifies
+        d["actions"] = [{"tool": "pacing", "params": {"hook_s": "0-1", "reveal_s": "4-6", "cta_s": "8-10", "motion": "product enters in the first second"}, "why": "art director returned nothing; re-time the beats", "critique_line": "hook"}]
     return d
 
 

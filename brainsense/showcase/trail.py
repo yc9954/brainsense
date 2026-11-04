@@ -101,6 +101,33 @@ def _img(p: Path | None) -> str:
     return f'<img class="th" src="data:{mime};base64,{base64.b64encode(p.read_bytes()).decode()}">'
 
 
+def _read_of(s: dict) -> str:
+    d = s.get("diagnosis")
+    if not d and isinstance(s.get("critique"), dict):
+        d = s["critique"].get("diagnosis")
+    if isinstance(d, list):
+        return str(d[0]) if d else ""
+    return str(d or "")
+
+
+def _verdict_of(s: dict) -> str:
+    """Why a round was not kept, in a few words (evolve/admaker reports)."""
+    if s.get("accepted") is not False:
+        return ""
+    f = s.get("fidelity") or {}
+    facts = f.get("facts") or s.get("facts") or {}
+    if facts.get("numbers") or facts.get("names"):
+        return "rejected: invented " + ", ".join([*map(str, (facts.get("numbers") or [])[:2]), *map(str, (facts.get("names") or [])[:2])])
+    if f.get("missing"):
+        return "rejected: lost " + ", ".join(map(str, f["missing"][:3]))
+    if f.get("density_ok") is False:
+        return "rejected: fewer items than the live page"
+    p = s.get("p_vs_best") or s.get("pairwise", {}).get("p_first") if isinstance(s.get("pairwise"), dict) else s.get("p_vs_best")
+    if isinstance(p, (int, float)) and p < 0.5:
+        return f"not kept: the judge preferred the live page ({p:.2f})"
+    return "not kept: did not beat the best so far"
+
+
 def _rounds(rep: dict, root: Path) -> list[dict]:
     raw = rep.get("trail") or rep.get("steps") or rep.get("rounds") or rep.get("history") or []
     if rep.get("trail") and rep.get("steps"):
@@ -136,7 +163,8 @@ def _rounds(rep: dict, root: Path) -> list[dict]:
             "tool": s.get("tool") or s.get("action") or (("live page" if rep.get("source") else "first plan") if i == 0 else ("rebuild" if rep.get("source") else "rerender")),
             "why": s.get("why") or s.get("reason") or "",
             "critique": s.get("critique_line") or s.get("critique") or "",   # what the cortex said BEFORE this round (v2 trail)
-            "read": (s.get("diagnosis", [""])[0] if isinstance(s.get("diagnosis"), list) else s.get("diagnosis") or ""),   # what it says about this round's result
+            "read": _read_of(s),   # what the cortex says about this round's result
+            "verdict": _verdict_of(s),
             "score": float(score) if isinstance(score, (int, float)) else None,
             "judge": float(jscore) if isinstance(jscore, (int, float)) else None,
             "thumb": p,
@@ -180,6 +208,8 @@ def render(root: Path, narrate: bool = True) -> Path:
         before = f'<div class="said"><b>The brain said</b> {html.escape(n["said"][:170])}</div>' if n["said"] else ""
         did = f'<div class="said"><b>So the agent</b> {html.escape(n["did"][:170])}</div>' if n["did"] and i > 0 else ""
         after = f'<div class="said"><b>Then the brain read</b> {html.escape(n["read"][:170])}</div>' if n["read"] else ""
+        if r.get("verdict"):
+            after += f'<div class="said" style="color:#9AA0A6">{html.escape(r["verdict"])}</div>'
         sc = ""
         if r["score"] is not None:
             sc = f'<div class="sc"><span>brain</span><span class="bar"><i style="width:{min(100, r["score"] / smax * 100):.0f}%"></i></span><span class="v">{r["score"]:.2f}</span></div>'
