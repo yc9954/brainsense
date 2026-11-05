@@ -132,6 +132,43 @@ const panels = {
   ]),
 };
 
+// six scenes, each with its real head scores and the sentence the brain says (results/showcase/demo-samples-eval.json)
+const SC = JSON.parse(fs.readFileSync(`${OUT}/scenes.json`, "utf8"));
+const ord = (n) => n + (n % 10 === 1 && n !== 11 ? "st" : n % 10 === 2 && n !== 12 ? "nd" : n % 10 === 3 && n !== 13 ? "rd" : "th");
+const HN = [["aesthetic", "Aesthetic"], ["attention", "Attention"], ["appeal", "Desirability"], ["popularity", "Reach"]];
+cards.scenes = `<div style="position:absolute;inset:0;padding:40px 48px;display:flex;flex-direction:column;gap:18px">
+  <div style="display:flex;justify-content:space-between;align-items:baseline"><div style="font-size:40px;font-weight:700;letter-spacing:-1px">Six everyday scenes, exactly what it answers</div>
+  <div style="font-size:20px;color:#9AA0A6">percentile vs real rated photos · bar opacity = confidence · live TRIBE v2 run</div></div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px;flex:1">
+  ${SC.map((r) => `<div style="border:1px solid #2A2D31;border-radius:18px;background:#0E0F11;overflow:hidden;display:flex;flex-direction:column">
+     <div style="height:178px;position:relative"><img src="${g(`app/apps/mobile/assets/sample-${r.n}.jpg`)}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></div>
+     <div style="padding:14px 18px;display:flex;flex-direction:column;gap:8px;flex:1">
+       <div style="font-size:22px;font-weight:700">${r.label}</div>
+       ${HN.map(([k, nm]) => { const v = r.heads[k]; const p = Math.round(v.percentile); return `<div style="display:grid;grid-template-columns:120px 1fr 60px;gap:10px;align-items:center;font-size:15px;color:#9AA0A6"><span>${nm}</span><span style="height:9px;background:#2A2D31;border-radius:5px;overflow:hidden"><i style="display:block;height:100%;width:${Math.max(3, p)}%;background:#C0504D;opacity:${(0.25 + 0.75 * Math.min(1, v.confidence / 0.5)).toFixed(2)}"></i></span><span style="color:#fff;text-align:right">${ord(p)}</span></div>`; }).join("")}
+       <div style="font-size:16.5px;line-height:1.35;color:#E6E6E6;margin-top:4px">“${r.line.replace(/(\d+)th percentile/, (m, n) => ord(+n) + " percentile")}”</div>
+     </div></div>`).join("")}
+  </div></div>`;
+
+panels.pn_tune = panel("06 · Your brain", "It tunes to you.", [
+  ["What happens", "Like or dislike anything. The answer is stored with its cortex state; a personal head refits on your answers, starting from the crowd head."],
+  ["Why it is new", "<b>Sleep</b> replays the answers it got most wrong, refits, and writes your taste as falsifiable rules with effect sizes, retired, never edited."],
+  ["Result", "Rules like <i>“when your posterior insula is more active, you like it”</i> (d = 1.26). Honest: at 12 answers your head is not yet better than the crowd (0.56 vs 0.67)."],
+  ["Why a cortex", "Taste becomes a contrast between brain regions you can read, not a vibe in a prompt."],
+]);
+panels.pn_viral = panel("07 · What spreads", "Hook, hold, reach.", [
+  ["What happens", "Clips go through the cortex at 1 Hz. The Attention head is trained on <b>SnapUGC watch retention</b>; Reach on <b>Unsplash downloads per view</b>."],
+  ["Why it is new", "It shows <b>when</b> a viewer is lost: the second attention peaks and the second it fades. The brain loop moved the serum ad's peak from 12 s to 8 s."],
+  ["Result", "Attention head AUROC <b>0.65</b>; ad clips vs one shot <b>3 / 3</b> blind wins. Reach: 0.56–0.59 for every feature set, cortex or raw, so we say popularity is barely predictable."],
+  ["Why a cortex", "Retention is a brain-time quantity; a still-image judge cannot see it."],
+]);
+
+panels.pn_text = panel("08 · Writing", "It reads like a reader.", [
+  ["What happens", "Text goes through TRIBE's language pathway. A Human-likeness head and a critique say what the reader's cortex misses."],
+  ["Why it is new", "The critique is a pattern, \u201conly the language regions run high\u201d, turned into an edit a writer can act on."],
+  ["Result", "Human-likeness head AUROC <b>0.88</b> on held-out text. This support reply: blind judge <b>0.90</b> for the rewrite."],
+  ["Honest", "The head alone can be gamed by sounding hesitant, so the brain critiques and a judge decides."],
+]);
+
 // lower-third labels drawn over footage (transparent PNG)
 const label = (k, t) => `<div style="position:absolute;left:0;right:0;bottom:0;height:128px;display:flex;align-items:center;gap:26px;padding:0 64px;background:#000">
   <div style="display:inline-flex;flex:none;align-items:center;gap:12px;border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:10px 20px">

@@ -1,0 +1,182 @@
+{
+ "popup": {
+  "heads": {
+   "aesthetic": {
+    "percentile": 35.992,
+    "confidence": 0.234
+   },
+   "attention": {
+    "percentile": 38.63,
+    "confidence": 0.085
+   },
+   "appeal": {
+    "percentile": 8.571,
+    "confidence": 0.33
+   },
+   "popularity": {
+    "percentile": 42.747,
+    "confidence": 0.057
+   }
+  },
+  "top_regions": [
+   [
+    "scene_place",
+    0.1554
+   ],
+   [
+    "visual_early",
+    0.0631
+   ]
+  ]
+ },
+ "menu": {
+  "heads": {
+   "aesthetic": {
+    "percentile": 61.461,
+    "confidence": 0.098
+   },
+   "attention": {
+    "percentile": 35.342,
+    "confidence": 0.104
+   },
+   "appeal": {
+    "percentile": 10.11,
+    "confidence": 0.321
+   },
+   "popularity": {
+    "percentile": 30.879,
+    "confidence": 0.133
+   }
+  },
+  "top_regions": [
+   [
+    "scene_place",
+    0.0896
+   ],
+   [
+    "visual_early",
+    0.025
+   ]
+  ]
+ },
+ "bakery": {
+  "heads": {
+   "aesthetic": {
+    "percentile": 30.295,
+    "confidence": 0.31
+   },
+   "attention": {
+    "percentile": 33.151,
+    "confidence": 0.134
+   },
+   "appeal": {
+    "percentile": 15.385,
+    "confidence": 0.255
+   },
+   "popularity": {
+    "percentile": 49.67,
+    "confidence": 0.015
+   }
+  },
+  "top_regions": [
+   [
+    "scene_place",
+    0.1443
+   ],
+   [
+    "visual_early",
+    0.0625
+   ]
+  ]
+ },
+ "window": {
+  "heads": {
+   "aesthetic": {
+    "percentile": 34.987,
+    "confidence": 0.247
+   },
+   "attention": {
+    "percentile": 51.781,
+    "confidence": 0.037
+   },
+   "appeal": {
+    "percentile": 23.736,
+    "confidence": 0.182
+   },
+   "popularity": {
+    "percentile": 43.407,
+    "confidence": 0.055
+   }
+  },
+  "top_regions": [
+   [
+    "value_vmpfc",
+    -0.0152
+   ],
+   [
+    "attention_dorsal",
+    -0.0255
+   ]
+  ]
+ },
+ "shelf": {
+  "heads": {
+   "aesthetic": {
+    "percentile": 40.416,
+    "confidence": 0.173
+   },
+   "attention": {
+    "percentile": 39.452,
+    "confidence": 0.077
+   },
+   "appeal": {
+    "percentile": 20.0,
+    "confidence": 0.211
+   },
+   "popularity": {
+    "percentile": 38.901,
+    "confidence": 0.082
+   }
+  },
+  "top_regions": [
+   [
+    "scene_place",
+    0.1206
+   ],
+   [
+    "visual_early",
+    0.0304
+   ]
+  ]
+ },
+ "posters": {
+  "heads": {
+   "aesthetic": {
+    "percentile": 32.105,
+    "confidence": 0.284
+   },
+   "attention": {
+    "percentile": 33.151,
+    "confidence": 0.133
+   },
+   "appeal": {
+    "percentile": 13.846,
+    "confidence": 0.276
+   },
+   "popularity": {
+    "percentile": 47.473,
+    "confidence": 0.029
+   }
+  },
+  "top_regions": [
+   [
+    "visual_early",
+    0.0991
+   ],
+   [
+    "scene_place",
+    0.099
+   ]
+  ]
+ }
+}
