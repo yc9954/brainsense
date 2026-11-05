@@ -29,9 +29,39 @@ def dur(p: Path) -> float:
                                 capture_output=True, text=True).stdout.strip())
 
 
+NARRATION = ROOT / "scripts" / "demo" / "narration-elevenlabs.mp3"
+_CHUNKS: list[tuple[float, float]] = []
+
+
+def _chunks() -> list[tuple[float, float]]:
+    """Scene boundaries in the ElevenLabs narration: the 15 longest pauses (the [long pause] tags)."""
+    if _CHUNKS:
+        return _CHUNKS
+    r = subprocess.run(["ffmpeg", "-hide_banner", "-i", str(NARRATION), "-af", "silencedetect=noise=-38dB:d=0.55", "-f", "null", "-"],
+                       capture_output=True, text=True).stderr
+    import re
+    st = [float(x) for x in re.findall(r"silence_start: ([\d.]+)", r)]
+    en = [float(x) for x in re.findall(r"silence_end: ([\d.]+)", r)]
+    gaps = sorted(sorted(zip(st, en), key=lambda g: -(g[1] - g[0]))[:15])
+    total = dur(NARRATION)
+    starts = [0.0] + [e - 0.08 for _, e in gaps]
+    ends = [s0 + 0.15 for s0, _ in gaps] + [total]
+    _CHUNKS.extend(zip(starts, ends))
+    return _CHUNKS
+
+
+_voice_i = [0]
+
+
 def vo(name: str, text: str) -> tuple[Path | None, float]:
     if not text:
         return None, 0.0
+    if NARRATION.exists():
+        a, b = _chunks()[_voice_i[0]]
+        _voice_i[0] += 1
+        wav = SEG / f"{name}.wav"
+        run(["ffmpeg", "-y", "-loglevel", "error", "-ss", f"{a:.3f}", "-to", f"{b:.3f}", "-i", str(NARRATION), "-ar", "48000", "-ac", "2", str(wav)])
+        return wav, dur(wav)
     aiff, wav = SEG / f"{name}.aiff", SEG / f"{name}.wav"
     subprocess.run(["say", "-v", VOICE, "-r", RATE, "-o", str(aiff), text], check=True)
     run(["ffmpeg", "-y", "-loglevel", "error", "-i", str(aiff), "-ar", "48000", "-ac", "2", str(wav)])
@@ -150,7 +180,7 @@ def main() -> None:
     C = lambda n: CARDS / f"{n}.png"  # noqa: E731
     # (segment builder, narration)
     plan = [
-        ("s01_title", lambda d: card("s01_title", C("title"), d), "This is NeuroMuse. The Muse with a cortex.", 4.0),
+        ("s01_title", lambda d: card("s01_title", C("title"), d), "This is NeuroMuse. The Muse with a cortex.", 8.0),
         ("s02_problem", lambda d: card("s02_problem", C("problem"), d),
          "Ask any assistant what it thinks of your photo. It says: looks great. It never looked, and it can't say why.", 6.0),
         ("s03_idea", lambda d: card("s03_idea", C("idea"), d),
@@ -167,7 +197,7 @@ def main() -> None:
          "What will spread? Attention is trained on watch retention, so it shows the second a viewer is lost. Reach is barely predictable from any features, cortex or raw, and we say that too.", 13.0),
         ("s09_room", lambda d: left("s09_room", ROOT / "results/showcase/studio/living5/timelapse.gif", d, C("pn_room"), speed=1.4),
          "It also directs the work. It reads each Blender render, says what it felt, and the agent edits the room. Brain score from point three two to point four nine, and a designer judge agrees.", 12.0),
-        ("s11_site", lambda d: pair("s11_site", img / "algonauts-before.png", img / "algonauts-after.png", d, C("pn_site")),
+        ("s11_site", lambda d: card("s11_site", C("sites"), d),
          "On real websites it evolves instead of replacing, behind three gates: no invented facts, density kept, and a blind judge. Of six real sites it changed one, at point nine zero, and refused five. People preferred its work eleven times out of sixteen.", 14.0),
         ("s12_ad", lambda d: left("s12_ad", img / "trail-ad.png", d, C("pn_ad"), still=True),
          "And it goes all the way to an ad, second by second. Only a brain model sees when attention peaks and fades. It won three of three clips. On the serum ad the one shot still won, and the trail says so.", 13.0),
@@ -177,16 +207,16 @@ def main() -> None:
         ("s15_layers", lambda d: card("s15_layers", C("layers"), d), "Underneath, six layers. Only one holds memory, only one writes it, and the voice holds none.", 7.0),
         ("s16_numbers", lambda d: card("s16_numbers", C("numbers"), d),
          "Why a cortex? On twenty five hundred rated photos, cortical areas match the raw embedding's accuracy, and every score comes with its reasons. Every number here is measured, including the losses.", 11.0),
-        ("s17_close", lambda d: card("s17_close", C("close"), d), "NeuroMuse. An opinion it can justify.", 5.0),
+        ("s17_close", lambda d: card("s17_close", C("close"), d), "NeuroMuse. An opinion it can justify.", 9.0),
     ]
     segs, audio, t = [], [], 0.0
     for name, build, text, min_d in plan:
         wav, vd = vo(name, text)
-        d = max(min_d, vd + 0.8)
+        d = max(min_d * 0.6, vd + 0.6)
         print(f"{name}: {d:.1f}s (voice {vd:.1f}s)", flush=True)
         segs.append(build(d))
         if wav:
-            audio.append((wav, t + 0.45))
+            audio.append((wav, t + 0.3))
         t += d
     total = t
     lst = SEG / "concat.txt"
@@ -204,7 +234,7 @@ def main() -> None:
     for i, (wav, start) in enumerate(audio, start=1):
         ins += ["-i", str(wav)]
         ms = int(start * 1000)
-        parts.append(f"[{i}:a]adelay={ms}|{ms},volume=1.6[v{i}]")
+        parts.append(f"[{i}:a]adelay={ms}|{ms},volume=1.25[v{i}]")
     vmix = "".join(f"[v{i}]" for i in range(1, len(audio) + 1))
     fc = ";".join(parts) + f";{vmix}amix=inputs={len(audio)}:normalize=0[voice];[voice]asplit[vo1][vo2];" \
          f"[0:a][vo1]sidechaincompress=threshold=0.02:ratio=8:attack=20:release=400[duck];[duck][vo2]amix=inputs=2:normalize=0,alimiter=limit=0.95[a]"

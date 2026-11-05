@@ -11,7 +11,7 @@ NeuroMuse looks first. Meta's TRIBE v2, a model of the human cortex, sits in fro
 
 [Quick start](#quick-start) · [Meet the Muse](#meet-the-muse-with-a-cortex) · [Results](#results) · [In its own words](#in-its-own-words-what-the-brain-said-step-by-step) · [Making an ad](#making-an-ad-the-loop-taken-all-the-way) · [How it is wired](#architecture-how-the-cortex-is-wired-in) · [Memory in brain states](#memory-in-brain-states-not-words) · [Showcase](docs/SHOWCASE.md) · [Working log](docs/LOG.md) · [Demo storyline](docs/demo_storyline.md)
 
-**[▶ Watch the 3-minute demo](docs/video/neuromuse-demo.mp4)** · Meta Global AI Developer Hackathon 2026 · Indie track
+**[▶ Watch the 3-minute demo, narrated](docs/video/neuromuse-demo.mp4)** · Meta Global AI Developer Hackathon 2026 · Indie track
 
 <img src="docs/video/glasses.gif" alt="Glasses mode, recorded: the landscape first-person frame looks at a pop-up kiosk, the user asks what the brain thinks, and the answer arrives as spoken captions naming the regions that fired and the percentiles" width="100%">
 

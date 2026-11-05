@@ -169,6 +169,31 @@ panels.pn_text = panel("08 · Writing", "It reads like a reader.", [
   ["Honest", "The head alone can be gamed by sounding hesitant, so the brain critiques and a judge decides."],
 ]);
 
+// six real sites, BEFORE | AFTER, with the verdict (results/showcase/evolve/*)
+const EV = (s, f) => g(`results/showcase/evolve/${s}/${f}`);
+const SITES = [
+  ["algonauts", "algonautsproject.com", "r1.png", "ACCEPTED", "blind judge P = 0.90 · real emblem kept", true],
+  ["craigslist", "craigslist.org/about/sites", "r2.png", "REFUSED", "real map kept · first-screen density lost", false],
+  ["pydocs", "docs.python.org/3", "r1.png", "REFUSED", "blind judge preferred live (P 0.075)", false],
+  ["hackernews", "news.ycombinator.com", "r2.png", "REFUSED", "brain 0.57 → 0.72, judge still said live (0.065)", false],
+  ["sqlite", "sqlite.org", "r1.png", "REFUSED", "first screen dropped search & links (P 0.05)", false],
+  ["berkshire", "berkshirehathaway.com", "r1.png", "REFUSED", "card chrome hurt the scan (P 0.05)", false],
+];
+cards.sites = `<div style="position:absolute;inset:0;padding:34px 44px;display:flex;flex-direction:column;gap:14px">
+  <div style="display:flex;justify-content:space-between;align-items:baseline"><div style="font-size:40px;font-weight:700;letter-spacing:-1px">Six real websites · before and after</div>
+  <div style="font-size:20px;color:#9AA0A6">gates: no invented facts · density kept · blind pairwise judge</div></div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px 26px;flex:1">
+  ${SITES.map(([k, url, after, verdict, why, ok]) => `<div style="display:flex;flex-direction:column;gap:6px;min-height:0">
+     <div style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:20px;font-weight:600">${url}</span>
+       <span style="font-size:15px;letter-spacing:2px;font-weight:700;padding:4px 10px;border-radius:999px;${ok ? "background:#C0504D;color:#fff" : "border:1px solid #4A4F55;color:#9AA0A6"}">${verdict}</span></div>
+     <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;flex:1;min-height:0">
+       ${[["BEFORE · live", "before.png", false], ["AFTER · brain-directed", after, ok]].map(([t, f, w]) => `<div style="position:relative;border:${w ? "3px solid #C0504D" : "1px solid #2A2D31"};border-radius:6px;overflow:hidden;background:#111">
+          <img src="${EV(k, f)}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top">
+          <span style="position:absolute;left:8px;top:8px;font-size:13px;letter-spacing:2px;font-weight:700;padding:3px 8px;border-radius:4px;background:rgba(0,0,0,.78);color:#fff">${t}</span></div>`).join("")}
+     </div>
+     <div style="font-size:16px;color:#9AA0A6">${why}</div></div>`).join("")}
+  </div></div>`;
+
 // lower-third labels drawn over footage (transparent PNG)
 const label = (k, t) => `<div style="position:absolute;left:0;right:0;bottom:0;height:128px;display:flex;align-items:center;gap:26px;padding:0 64px;background:#000">
   <div style="display:inline-flex;flex:none;align-items:center;gap:12px;border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:10px 20px">
