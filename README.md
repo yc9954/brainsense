@@ -1,12 +1,15 @@
 <div align="center">
 
+<img src="docs/img/neuromuse-logo.png" alt="Neuro, the NeuroMuse mascot: a fluffy Muse that keeps its cortex under a glass dome" width="200">
+
 # NeuroMuse
 
-**An AI that looks before it speaks.**
+### The Muse with a cortex.
 
-A model of the human cortex (Meta TRIBE v2) sits in front of the language model, so every opinion about a photo, a clip, a line of copy or a sound comes with the brain regions and numbers behind it, and the agent learns your taste as rules you can read.
+**Ask an assistant what it thinks of your photo and it says "looks great". It never looked.**<br>
+NeuroMuse looks first. Meta's TRIBE v2, a model of the human cortex, sits in front of Muse Spark, so every opinion about a photo, a clip, a line of copy or a sound comes with the brain regions and the numbers behind it, and it learns your taste as rules you can read.
 
-[Quick start](#quick-start) · [What it does](#what-it-does) · [Results](#results) · [What the brain said](#what-the-brain-said-step-by-step) · [Making an ad](#making-an-ad-the-loop-taken-all-the-way) · [Architecture](#architecture) · [Showcase](docs/SHOWCASE.md) · [Working log](docs/LOG.md) · [Demo storyline](docs/demo_storyline.md)
+[Quick start](#quick-start) · [Meet the Muse](#meet-the-muse-with-a-cortex) · [Results](#results) · [In its own words](#in-its-own-words-what-the-brain-said-step-by-step) · [Making an ad](#making-an-ad-the-loop-taken-all-the-way) · [How it is wired](#architecture-how-the-cortex-is-wired-in) · [Showcase](docs/SHOWCASE.md) · [Working log](docs/LOG.md) · [Demo storyline](docs/demo_storyline.md)
 
 Meta Global AI Developer Hackathon 2026 · Indie track
 
@@ -18,11 +21,13 @@ Meta Global AI Developer Hackathon 2026 · Indie track
 
 > Built with the **Meta Model API** (Muse Spark 1.3, tool calling), **TRIBE v2** (open weights, on Modal), the **CopilotKit** agent runtime, and the **Wearables Device Access Toolkit** glasses flow.
 
-## Why
+## Why a Muse needs a cortex
 
-Ask any assistant "what do you think of this photo?" and it says "looks great". It never looked, and it cannot say why. People who make visual decisions for a living, popup-store owners, marketers, creators, want an opinion that can say *why*, admit when it does not know, and learn what *they* like. NeuroMuse answers from a predicted human cortex instead of improvising: the response is a measurement first, words second.
+Ask any assistant "what do you think of this photo?" and it says "looks great". It never looked, and it cannot say why. Its taste is improvised: words about a picture, not a response to it. People who make visual decisions for a living, popup-store owners, marketers, creators, want an opinion that can say *why*, admit when it does not know, and learn what *they* like. NeuroMuse answers from a predicted human cortex instead of improvising: the response is a measurement first, words second.
 
-## What it does
+Meet **Neuro**, the mascot: a fluffy Muse that keeps its cortex under a glass dome, so you can always see what it is thinking with. That is the whole idea of the project in one picture. The language model is the voice; the cortex in the dome is where the opinion comes from.
+
+## Meet the Muse with a cortex
 
 <table>
 <tr>
@@ -50,9 +55,14 @@ Ask any assistant "what do you think of this photo?" and it says "looks great". 
 </tr>
 </table>
 
-The agent speaks as its own brain, in the first person: *"My early visual cortex lit up in the top 12%, which means the colour contrast is doing real work. But my reward circuit stayed quiet: pleasing to look at, not something I'd want to own."* Ask "why?" and it cites percentiles and regions in everyday words. Raw area codes never reach the user; raw brain vectors never reach the language model.
+<table>
+<tr>
+<td width="72" valign="top"><img src="docs/img/neuromuse-mark.png" alt="Neuro" width="64"></td>
+<td><i>"My early visual cortex lit up in the top 12%, which means the colour contrast is doing real work. But my reward circuit stayed quiet: pleasing to look at, not something I'd want to own."</i><br><sub>Neuro speaks as its own brain, in the first person. Ask "why?" and it cites percentiles and regions in everyday words. Raw area codes never reach the user; raw brain vectors never reach the language model.</sub></td>
+</tr>
+</table>
 
-## Features
+## What the cortex adds
 
 - **Looks before it speaks.** Photos, clips, text and audio go through Meta's TRIBE v2 first; the opinion is a measurement of a predicted human cortex (20,484 vertices, 1 Hz), words second.
 - **Five calibrated heads, each with a confidence.** Aesthetic appeal, Attention capture, Desirability, Reach, Human-likeness (text), trained on real outcomes: AADB ratings, SnapUGC watch retention, Unsplash downloads and views, HC3 human-vs-model text. Human-likeness measures "reads like a person wrote it" (it was trained on Q&A answers), not quality: marketing copy already scores high. Audio has no labelled set, so two tracks are compared region by region, never scored. Below 0.3 confidence the agent says "I'm not sure".
@@ -89,9 +99,9 @@ Only results that passed the gates are shown here: facts are the page's or the b
 
 The ad, from brief to finished 12-second clip with a Blender product render the brain asked for, has its own section: [Making an ad](#making-an-ad-the-loop-taken-all-the-way).
 
-## What the brain said, step by step
+## In its own words: what the brain said, step by step
 
-Every loop in this repo keeps a decision trail, and the brain narrates it in its own words. Read one left to right: what the brain said about the page, what the agent did about it, the result, what the brain felt when it looked again, and the two scores. The red column is the one that was kept. The narration is Muse rewriting the cortex critique in plain words; the numbers underneath are the model outputs as they are.
+Every loop in this repo keeps a decision trail, and Neuro narrates it in its own words: what it felt, what the agent changed, and whether that helped. Sometimes the answer is "my wallet stayed fast asleep", and the round is thrown away. Read one left to right: what the brain said about the page, what the agent did about it, the result, what the brain felt when it looked again, and the two scores. The red column is the one that was kept. The narration is Muse rewriting the cortex critique in plain words; the numbers underneath are the model outputs as they are.
 
 | | the page as it is | what the brain said | what the agent did | the kept result | brain | judge |
 |---|---|---|---|---|---|---|
@@ -146,7 +156,7 @@ The honest result: on this brief the brain-directed loop has not yet beaten Muse
 </tr>
 </table>
 
-## Architecture
+## Architecture: how the cortex is wired in
 
 <img src="docs/architecture.svg" alt="Inputs → Meta open models (V-JEPA2, DINOv2, Llama 3.2, wav2vec-BERT → TRIBE v2 → predicted cortex) → calibrated heads, Engram memory, Muse Spark agent → spoken opinion, numbers, taste, design loops" width="100%">
 
@@ -157,7 +167,7 @@ The honest result: on this brief the brain-directed loop has not yet beaten Muse
 5. **Memory in brain-state space.** Every percept is a cortex state with its outcome; sleep refits a personal head and mines rules with bootstrap confidence intervals; recall cites precedents (cosine in cortex space, above 0.85); above 0.9 a reflex answers in one line. The workspace around it follows Hermes Agent's conventions (SOUL, MEMORY, USER, skills).
 6. **It already behaves like glasses.** A rolling 6-second clip, `look_at` sees what it is, `brain_eval` measures it, the answer comes back spoken. 14 s per clip on a Modal L40S.
 
-## Numbers
+## Numbers, including the losses
 
 | what | result |
 |---|---|
@@ -199,4 +209,4 @@ The TRIBE v2 service runs on Modal (`modal deploy brainsense/tribe/modal_app.py`
 
 ## Credits and licenses
 
-TRIBE v2 (Meta, open weights) · head bust from the Meta TRIBE v2 demo (non-commercial use) · brain mesh fsaverage5 (FreeSurfer) · the app runtime is built on CopilotKit's MIT-licensed OpenMuse agent app (`app/LICENSE`) · sample photos are Creative Commons (`app/apps/mobile/assets/CREDITS.md`) · Blender studio assets Poly Haven CC0.
+Neuro, the mascot, is the project's own character (`docs/img/neuromuse-logo.png`, also the app icon) · TRIBE v2 (Meta, open weights) · head bust from the Meta TRIBE v2 demo (non-commercial use) · brain mesh fsaverage5 (FreeSurfer) · the app runtime is built on CopilotKit's MIT-licensed OpenMuse agent app (`app/LICENSE`) · sample photos are Creative Commons (`app/apps/mobile/assets/CREDITS.md`) · Blender studio assets Poly Haven CC0.
