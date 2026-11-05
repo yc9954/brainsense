@@ -18,7 +18,7 @@ NeuroMuse puts Meta's TRIBE v2, a model of the human cortex, in front of Muse Sp
 
 ## Links
 - Code: https://github.com/yc9954/neuromuse
-- Demo video (2:53): https://github.com/yc9954/neuromuse/blob/main/docs/video/neuromuse-demo.mp4
+- Demo video (2:56): https://github.com/yc9954/neuromuse/blob/main/docs/video/neuromuse-demo.mp4
 
 ---
 

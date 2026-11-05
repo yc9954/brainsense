@@ -51,11 +51,18 @@ def _chunks() -> list[tuple[float, float]]:
 
 
 _voice_i = [0]
+# lines voiced separately (same ElevenLabs voice): name -> (file, end seconds, tempo)
+EXTRA_VO = {"s14_arch": (ROOT / "scripts" / "demo" / "narration-arch.mp3", 20.95, 1.08)}
 
 
 def vo(name: str, text: str) -> tuple[Path | None, float]:
     if not text:
         return None, 0.0
+    if name in EXTRA_VO:
+        src, end, tempo = EXTRA_VO[name]
+        wav = SEG / f"{name}.wav"
+        run(["ffmpeg", "-y", "-loglevel", "error", "-t", f"{end:.3f}", "-i", str(src), "-af", f"atempo={tempo}", "-ar", "48000", "-ac", "2", str(wav)])
+        return wav, dur(wav)
     if NARRATION.exists():
         a, b = _chunks()[_voice_i[0]]
         _voice_i[0] += 1
@@ -204,6 +211,8 @@ def main() -> None:
         ("s125_text", lambda d: left("s125_text", img / "text-support.png", d, C("pn_text"), still=True),
          "Writing goes through the same brain. A chatbot's support reply, rewritten with the reader's cortex as critic: the blind judge prefers the rewrite, at point nine zero.", 11.0),
         ("s13_grid", lambda d: card("s13_grid", C("grid"), d), "One brain, many tasks: real websites, 3D rooms, ads, and the everyday scenes you look at.", 7.5),
+        ("s14_arch", lambda d: card("s14_arch", C("arch"), d),
+         "Here is the whole system. Glasses clips, photos, text and audio pass through Meta's open encoders into TRIBE v2, which predicts the cortex. Our calibrated heads score it, engram memory keeps it as a brain state, and Muse Spark speaks only from those outputs. And the same score that judges also steers: every render goes back in.", 12.0),
         ("s15_layers", lambda d: card("s15_layers", C("layers"), d), "Underneath, six layers. Only one holds memory, only one writes it, and the voice holds none.", 7.0),
         ("s16_numbers", lambda d: card("s16_numbers", C("numbers"), d),
          "Why a cortex? On twenty five hundred rated photos, cortical areas match the raw embedding's accuracy, and every score comes with its reasons. Every number here is measured, including the losses.", 11.0),
@@ -212,7 +221,7 @@ def main() -> None:
     segs, audio, t = [], [], 0.0
     for name, build, text, min_d in plan:
         wav, vd = vo(name, text)
-        d = max(min_d * 0.6, vd + 0.6)
+        d = max(min_d * 0.6, vd + 0.4)
         print(f"{name}: {d:.1f}s (voice {vd:.1f}s)", flush=True)
         segs.append(build(d))
         if wav:
