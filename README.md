@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="docs/img/neuromuse-logo.png" alt="Neuro, the NeuroMuse mascot: a fluffy Muse that keeps its cortex under a glass dome" width="200">
+<img src="docs/img/neuromuse-logo-dark.png" alt="Neuro, the NeuroMuse mascot: a fluffy Muse that keeps its cortex under a glass dome" width="220">
 
 # NeuroMuse
 
@@ -9,7 +9,7 @@
 **Ask an assistant what it thinks of your photo and it says "looks great". It never looked.**<br>
 NeuroMuse looks first. Meta's TRIBE v2, a model of the human cortex, sits in front of Muse Spark, so every opinion about a photo, a clip, a line of copy or a sound comes with the brain regions and the numbers behind it, and it learns your taste as rules you can read.
 
-[Quick start](#quick-start) · [Meet the Muse](#meet-the-muse-with-a-cortex) · [Results](#results) · [In its own words](#in-its-own-words-what-the-brain-said-step-by-step) · [Making an ad](#making-an-ad-the-loop-taken-all-the-way) · [How it is wired](#architecture-how-the-cortex-is-wired-in) · [Showcase](docs/SHOWCASE.md) · [Working log](docs/LOG.md) · [Demo storyline](docs/demo_storyline.md)
+[Quick start](#quick-start) · [Meet the Muse](#meet-the-muse-with-a-cortex) · [Results](#results) · [In its own words](#in-its-own-words-what-the-brain-said-step-by-step) · [Making an ad](#making-an-ad-the-loop-taken-all-the-way) · [How it is wired](#architecture-how-the-cortex-is-wired-in) · [Memory in brain states](#memory-in-brain-states-not-words) · [Showcase](docs/SHOWCASE.md) · [Working log](docs/LOG.md) · [Demo storyline](docs/demo_storyline.md)
 
 Meta Global AI Developer Hackathon 2026 · Indie track
 
@@ -167,6 +167,31 @@ The honest result: on this brief the brain-directed loop has not yet beaten Muse
 5. **Memory in brain-state space.** Every percept is a cortex state with its outcome; sleep refits a personal head and mines rules with bootstrap confidence intervals; recall cites precedents (cosine in cortex space, above 0.85); above 0.9 a reflex answers in one line. The workspace around it follows Hermes Agent's conventions (SOUL, MEMORY, USER, skills).
 6. **It already behaves like glasses.** A rolling 6-second clip, `look_at` sees what it is, `brain_eval` measures it, the answer comes back spoken. 14 s per clip on a Modal L40S.
 
+## Memory in brain states, not words
+
+Every agent framework people copy right now remembers in **words**. OpenClaw keeps Markdown notes and consolidates its logs while idle; Hermes keeps `MEMORY.md` and `USER.md` and writes its own skills as Markdown; Instinct keeps git-tracked Markdown found with grep and turns each failure into a written self-reflection. All three learn by writing better notes to themselves: the model never changes, the world is stored as text, and "taste" is whatever the language model can put into words.
+
+NeuroMuse remembers in **brain states**. Every photo, clip, track or paragraph it has looked at is stored as the cortex TRIBE v2 predicts for it, with what happened next (you liked it, picked it over another, it sold, the copy got replies). It learns by fitting small organs, the heads, on those states; not by retraining the language model, and not by piling up prose. Muse Spark is the voice and the router, never the memory.
+
+<img src="docs/layers.svg" alt="Six layers: L0 senses (TRIBE v2), L1 organs (calibrated heads), L2 engram store (the only state), L3 sleep (the only writer) and L4 cortex in the loop, L5 voice and router (Muse Spark, no memory, reflex path)" width="100%">
+
+Three things fall out of that, which a text-memory agent cannot do:
+
+1. **Perceptual recall.** "What have I seen that *felt* like this?" is a nearest-neighbour query in cortex space. It groups a poster and a storefront that share a reward-and-scene pattern even though no caption would ever link them.
+2. **Learning without drift.** A like or dislike refits a logistic head in milliseconds. Nothing is appended to a prompt, so a thousand answers cost the same context as none, and the agent cannot talk itself into a false rule.
+3. **Explanations by construction.** Every score is a weighted sum of named cortical areas, so "why" is a back-projection, not a story the model tells afterwards.
+
+| | OpenClaw | Hermes | Instinct | NeuroMuse |
+|---|---|---|---|---|
+| memory unit | Markdown note | Markdown note + skill file | git-tracked Markdown | predicted cortex state + outcome |
+| learns by | consolidating logs ("dreaming") | writing and refining skills | written self-reflection | fitting heads; rules are a derived mirror |
+| similarity | vector or text search | full-text search | grep | cosine in cortex space |
+| explanation | whatever the model says | whatever the model says | whatever the model says | named cortical areas, back-projected |
+| cost of 1,000 memories | context tokens | context tokens | context tokens | zero tokens; a millisecond refit |
+| failure mode | prompt drift, stale notes | skill rot | reflection loops | heads need labels; TRIBE predicts an average viewer from passive viewing |
+
+The inspectable half is borrowed on purpose: the brain home follows Hermes Agent's conventions (a user-editable `SOUL.md`, budgeted `MEMORY.md` and `USER.md` with a declarative-fact write gate, agentskills `SKILL.md` files loaded on demand), and the Markdown files are *derived mirrors* of the brain-state memory rather than the memory itself. Honest status: the layers all run, but the only learning-curve numbers so far come from 12 synthetic outcomes (personal head 0.56 vs crowd 0.67), so the claim today is the architecture, not yet the personal accuracy. Full design: [docs/architecture.md](docs/architecture.md).
+
 ## Numbers, including the losses
 
 | what | result |
@@ -209,4 +234,4 @@ The TRIBE v2 service runs on Modal (`modal deploy brainsense/tribe/modal_app.py`
 
 ## Credits and licenses
 
-Neuro, the mascot, is the project's own character (`docs/img/neuromuse-logo.png`, also the app icon) · TRIBE v2 (Meta, open weights) · head bust from the Meta TRIBE v2 demo (non-commercial use) · brain mesh fsaverage5 (FreeSurfer) · the app runtime is built on CopilotKit's MIT-licensed OpenMuse agent app (`app/LICENSE`) · sample photos are Creative Commons (`app/apps/mobile/assets/CREDITS.md`) · Blender studio assets Poly Haven CC0.
+Neuro, the mascot, is the project's own character (`docs/img/neuromuse-logo-dark.png`, also the app icon) · TRIBE v2 (Meta, open weights) · head bust from the Meta TRIBE v2 demo (non-commercial use) · brain mesh fsaverage5 (FreeSurfer) · the app runtime is built on CopilotKit's MIT-licensed OpenMuse agent app (`app/LICENSE`) · sample photos are Creative Commons (`app/apps/mobile/assets/CREDITS.md`) · Blender studio assets Poly Haven CC0.

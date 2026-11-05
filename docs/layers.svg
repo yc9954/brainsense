@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="660" viewBox="0 0 1240 660" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="none" stroke="#fff" stroke-width="1.2"/></marker>
+    <marker id="r" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="none" stroke="#C0504D" stroke-width="1.2"/></marker>
+  </defs>
+  <rect width="1240" height="660" fill="#000"/>
+  <text x="40" y="40" fill="#fff" font-size="18" font-weight="600">An agent with a cortex and a hippocampus</text>
+  <text x="40" y="62" fill="#9AA0A6" font-size="12.5">Six layers. Each has one input type and one output type. Only L2 holds state; only L3 writes head weights and rules; the voice holds no memory at all.</text>
+
+  <!-- stimulus -->
+  <rect x="40" y="96" width="150" height="64" rx="14" fill="none" stroke="#fff"/>
+  <text x="115" y="124" fill="#fff" font-size="14" font-weight="600" text-anchor="middle">Stimulus</text>
+  <text x="115" y="143" fill="#9AA0A6" font-size="11" text-anchor="middle">photo · clip · text · sound</text>
+  <line x1="190" y1="128" x2="236" y2="128" stroke="#fff" marker-end="url(#a)"/>
+
+  <!-- L0 -->
+  <rect x="240" y="88" width="720" height="80" rx="14" fill="#0E0F11" stroke="#fff"/>
+  <text x="262" y="116" fill="#9AA0A6" font-size="12" letter-spacing="1.5">L0 · SENSES</text>
+  <text x="262" y="140" fill="#fff" font-size="15" font-weight="600">TRIBE v2 on Modal: 20,484-vertex cortex at 1 Hz → 360 cortical area features</text>
+  <text x="262" y="158" fill="#9AA0A6" font-size="11.5">pure function, cached by content hash · image, video, audio and text pathways</text>
+  <line x1="600" y1="168" x2="600" y2="190" stroke="#fff" marker-end="url(#a)"/>
+
+  <!-- L1 -->
+  <rect x="240" y="194" width="720" height="80" rx="14" fill="#0E0F11" stroke="#fff"/>
+  <text x="262" y="222" fill="#9AA0A6" font-size="12" letter-spacing="1.5">L1 · ORGANS</text>
+  <text x="262" y="246" fill="#fff" font-size="15" font-weight="600">Calibrated heads on area features: five crowd heads + your personal head</text>
+  <text x="262" y="264" fill="#9AA0A6" font-size="11.5">pure given their weights · every score is a weighted sum of named cortical areas, so "why" is a back-projection</text>
+  <line x1="600" y1="274" x2="600" y2="296" stroke="#fff" marker-end="url(#a)"/>
+
+  <!-- L2 -->
+  <rect x="240" y="300" width="720" height="92" rx="14" fill="#2A1614" stroke="#C0504D"/>
+  <text x="262" y="328" fill="#C0504D" font-size="12" letter-spacing="1.5">L2 · ENGRAM STORE · the only state</text>
+  <text x="262" y="352" fill="#fff" font-size="15" font-weight="600">One row per percept: cortex vector, 1 Hz time course, stimulus, outcomes, surprise, note</text>
+  <text x="262" y="372" fill="#9AA0A6" font-size="11.5">SQLite, inspectable · recall = cosine in cortex space ("what felt like this?") · contrast(A, B) · drift(you vs crowd)</text>
+
+  <!-- L3 / L4 -->
+  <line x1="420" y1="392" x2="300" y2="430" stroke="#fff" marker-end="url(#a)"/>
+  <line x1="780" y1="392" x2="900" y2="430" stroke="#fff" marker-end="url(#a)"/>
+  <rect x="40" y="434" width="560" height="96" rx="14" fill="#2A1614" stroke="#C0504D"/>
+  <text x="62" y="462" fill="#C0504D" font-size="12" letter-spacing="1.5">L3 · SLEEP · the only writer</text>
+  <text x="62" y="486" fill="#fff" font-size="14.5" font-weight="600">Prioritized replay → refit the personal head → mine rules</text>
+  <text x="62" y="506" fill="#9AA0A6" font-size="11.5">area contrasts with bootstrap CIs, written as falsifiable English into a ledger</text>
+  <text x="62" y="522" fill="#9AA0A6" font-size="11.5">(retired, never edited) · runs after every 10 outcomes · CPU, seconds</text>
+  <rect x="640" y="434" width="560" height="96" rx="14" fill="#0E0F11" stroke="#fff"/>
+  <text x="662" y="462" fill="#9AA0A6" font-size="12" letter-spacing="1.5">L4 · CORTEX IN THE LOOP</text>
+  <text x="662" y="486" fill="#fff" font-size="14.5" font-weight="600">Anything the agent makes is read by L0–L1 before it is shown</text>
+  <text x="662" y="506" fill="#9AA0A6" font-size="11.5">critique → art direction → revision · pages, ads, rooms, writing</text>
+  <text x="662" y="522" fill="#9AA0A6" font-size="11.5">gated by facts, density and a blind judge</text>
+
+  <!-- L5 -->
+  <line x1="320" y1="530" x2="420" y2="562" stroke="#fff" marker-end="url(#a)"/>
+  <line x1="920" y1="530" x2="820" y2="562" stroke="#fff" marker-end="url(#a)"/>
+  <rect x="240" y="566" width="720" height="72" rx="14" fill="#0E0F11" stroke="#fff"/>
+  <text x="262" y="592" fill="#9AA0A6" font-size="12" letter-spacing="1.5">L5 · VOICE + ROUTER · Muse Spark</text>
+  <text x="262" y="614" fill="#fff" font-size="14.5" font-weight="600">Picks the sense and the heads, speaks as the brain, holds no memory</text>
+  <text x="262" y="630" fill="#9AA0A6" font-size="11.5">reads L2 through tools · reflex: precedent ≥ 0.9 + confident personal head + rule → one sentence, no reasoning pass</text>
+</svg>
