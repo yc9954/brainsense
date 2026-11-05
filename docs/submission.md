@@ -17,8 +17,8 @@ The Muse with a cortex: opinions it can justify.
 NeuroMuse puts Meta's TRIBE v2, a model of the human cortex, in front of Muse Spark, so every opinion comes with the brain regions behind it.
 
 ## Links
-- Code: https://github.com/yc9954/brainsense
-- Demo video (2:53): https://github.com/yc9954/brainsense/blob/main/docs/video/neuromuse-demo.mp4
+- Code: https://github.com/yc9954/neuromuse
+- Demo video (2:53): https://github.com/yc9954/neuromuse/blob/main/docs/video/neuromuse-demo.mp4
 
 ---
 

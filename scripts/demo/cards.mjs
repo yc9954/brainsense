@@ -79,7 +79,7 @@ const cards = {
     </div></div>`,
   close: `<div class="c"><img src="${NEURO}" style="width:330px;margin-bottom:26px">
     <div style="font-size:84px;font-weight:700;letter-spacing:-2px">An opinion it can justify.</div>
-    <div style="font-size:34px;color:#9AA0A6;margin-top:22px">NeuroMuse · TRIBE v2 × Muse Spark · github.com/yc9954/brainsense</div>
+    <div style="font-size:34px;color:#9AA0A6;margin-top:22px">NeuroMuse · TRIBE v2 × Muse Spark · github.com/yc9954/neuromuse</div>
     <div style="font-size:24px;color:#5f6368;margin-top:14px">Meta Global AI Developer Hackathon 2026 · Indie track</div></div>`,
 };
 
