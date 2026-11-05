@@ -34,21 +34,48 @@ const cards = {
   sec_lab: `<div class="c" style="gap:22px"><div class="k">02 · Looks first, then speaks</div><div style="font-size:92px;font-weight:700;letter-spacing:-2px">Evidence before opinion.</div></div>`,
   sec_loop: `<div class="c" style="gap:22px"><div class="k">03 · The brain directs the craft</div><div style="font-size:92px;font-weight:700;letter-spacing:-2px">It critiques. Then it makes.</div></div>`,
   sec_memory: `<div class="c" style="gap:22px"><div class="k">04 · Memory in brain states</div><div style="font-size:92px;font-weight:700;letter-spacing:-2px">It remembers how things felt.</div></div>`,
-  numbers: `<div class="c" style="gap:40px">
-    <div class="k">Honest numbers</div>
-    <div style="font-size:30px;color:#D9D9D9;max-width:1500px;line-height:1.4">Why a cortex is a sound choice: on 2,500 rated photos, <b>360 cortical areas → 54 dims score 0.753 AUROC</b> vs the raw vision embedding 0.728 and 9 pooled regions 0.669. Same accuracy class, and every score names the areas behind it.</div>
-    <div style="display:grid;grid-template-columns:repeat(3,480px);gap:28px">
-      ${[
-        ["0.88", "Human-likeness head", "holdout AUROC, HC3 text"],
-        ["14 s", "per 6-second clip", "TRIBE v2 on a Modal L40S"],
-        ["11 / 16", "human blind vote", "for the brain loop"],
-        ["0.90", "blind judge, real site", "Algonauts: the one change accepted"],
-        ["5 / 6", "live pages kept", "the gates refused worse redesigns"],
-        ["0", "invented facts shipped", "every round is fact-checked"],
-      ].map(([n, a, b]) => `<div style="border:1px solid #2A2D31;border-radius:22px;padding:30px 30px 28px;text-align:left;background:#0E0F11">
-          <div style="font-size:72px;font-weight:700;letter-spacing:-2px" class="${n === "0" || n === "5 / 6" ? "red" : ""}">${n}</div>
-          <div style="font-size:28px;font-weight:600;margin-top:8px">${a}</div>
-          <div style="font-size:22px;color:#9AA0A6;margin-top:6px">${b}</div></div>`).join("")}
+  numbers: `<div style="position:absolute;inset:0;padding:54px 64px;display:flex;flex-direction:column;gap:26px">
+    <div><div class="k" style="color:#C0504D">Results · every number from a saved run</div>
+      <div style="font-size:46px;font-weight:700;letter-spacing:-1px;margin-top:10px">Measured, including the losses</div></div>
+    <div style="display:grid;grid-template-columns:640px 1fr;gap:44px;flex:1">
+      <div style="border:1px solid #2A2D31;border-radius:20px;background:#0B0C0F;padding:28px 30px;display:flex;flex-direction:column">
+        <div style="font-size:15px;letter-spacing:3px;color:#9AA0A6;font-weight:600">FIG. 1 · WHY A CORTEX</div>
+        <div style="font-size:22px;font-weight:600;margin-top:8px;line-height:1.3">Aesthetics on 2,500 AADB photos, 5-fold AUROC</div>
+        <div style="position:relative;flex:1;margin-top:26px">
+          ${(() => {
+            const lo = 0.6, hi = 0.8, H = 500, bw = 120;
+            const y = (v) => H - ((v - lo) / (hi - lo)) * H;
+            const bars = [["9 regions\npooled", 0.669, "#4A4F55"], ["raw vision\nembedding", 0.728, "#9AA0A6"], ["360 cortical areas\n→ PCA-54", 0.753, "#C0504D"]];
+            const ticks = [0.6, 0.65, 0.7, 0.75, 0.8];
+            return `<svg width="580" height="${H + 90}" style="overflow:visible">
+              ${ticks.map((t) => `<line x1="50" x2="570" y1="${y(t)}" y2="${y(t)}" stroke="#1f2125"/><text x="40" y="${y(t) + 5}" fill="#6b7076" font-size="14" text-anchor="end">${t.toFixed(2)}</text>`).join("")}
+              ${bars.map(([l, v, c], i) => { const x = 90 + i * 165; return `<rect x="${x}" y="${y(v)}" width="${bw}" height="${H - y(v)}" rx="6" fill="${c}"/>
+                <text x="${x + bw / 2}" y="${y(v) - 12}" fill="#fff" font-size="24" font-weight="700" text-anchor="middle">${v.toFixed(3)}</text>
+                ${l.split("\n").map((ln, k) => `<text x="${x + bw / 2}" y="${H + 30 + k * 20}" fill="#9AA0A6" font-size="15" text-anchor="middle">${ln}</text>`).join("")}`; }).join("")}
+              <line x1="50" x2="570" y1="${H}" y2="${H}" stroke="#3A3D42"/>
+            </svg>`;
+          })()}
+        </div>
+        <div style="font-size:17px;color:#9AA0A6;line-height:1.45">Same accuracy class as the raw embedding, and every score names the cortical areas behind it. Explanation, not an accuracy trick.</div>
+      </div>
+      <div style="display:flex;flex-direction:column">
+        <div style="display:grid;grid-template-columns:1.25fr .8fr 1.25fr;font-size:15px;letter-spacing:2.5px;color:#6b7076;font-weight:600;padding:0 6px 12px;border-bottom:1px solid #3A3D42">
+          <span>METRIC</span><span>RESULT</span><span>PROTOCOL</span></div>
+        ${[
+          ["Human-likeness head", "0.88", "holdout AUROC · HC3 · n = 230"],
+          ["Aesthetic appeal head", "0.72", "holdout AUROC · ECE 0.041"],
+          ["Latency per 6 s clip", "14 s", "TRIBE v2, L40S · was 43 s"],
+          ["Ad clips vs one shot", "3 / 3", "blind pairwise judge · P ≥ 0.85"],
+          ["Human blind vote", "11 / 16", "6/8 vs self-loop · 5/8 vs one shot"],
+          ["Real sites changed", "1 / 6", "accepted at P = 0.90 · 5 refused"],
+          ["Invented facts shipped", "0", "fact gate on every round"],
+          ["Reach (Unsplash)", "0.56", "any features, cortex or raw · limit", true],
+        ].map(([m, r, p, lim]) => `<div style="display:grid;grid-template-columns:1.25fr .8fr 1.25fr;align-items:center;padding:15px 6px;border-bottom:1px solid #1f2125">
+            <span style="font-size:22px;font-weight:600;color:${lim ? "#9AA0A6" : "#fff"}">${m}</span>
+            <span style="font-size:32px;font-weight:700;letter-spacing:-.5px;color:${lim ? "#9AA0A6" : "#C0504D"};font-variant-numeric:tabular-nums">${r}</span>
+            <span style="font-size:16.5px;color:#9AA0A6">${p}</span></div>`).join("")}
+        <div style="font-size:15px;color:#6b7076;margin-top:14px">Blind judge = Muse multimodal, both orders averaged, never the arm that made the work. Human vote: one voter (the author), 16 pairs.</div>
+      </div>
     </div></div>`,
   close: `<div class="c"><img src="${NEURO}" style="width:330px;margin-bottom:26px">
     <div style="font-size:84px;font-weight:700;letter-spacing:-2px">An opinion it can justify.</div>
