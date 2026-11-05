@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="docs/img/neuromuse-logo-dark.png" alt="Neuro, the NeuroMuse mascot: a fluffy Muse that keeps its cortex under a glass dome" width="220">
+<img src="docs/img/neuro.png" alt="Neuro, the NeuroMuse mascot: a fluffy Muse that keeps its cortex under a glass dome" width="220">
 
 # NeuroMuse
 
@@ -234,4 +234,4 @@ The TRIBE v2 service runs on Modal (`modal deploy brainsense/tribe/modal_app.py`
 
 ## Credits and licenses
 
-Neuro, the mascot, is the project's own character (`docs/img/neuromuse-logo-dark.png`, also the app icon) · TRIBE v2 (Meta, open weights) · head bust from the Meta TRIBE v2 demo (non-commercial use) · brain mesh fsaverage5 (FreeSurfer) · the app runtime is built on CopilotKit's MIT-licensed OpenMuse agent app (`app/LICENSE`) · sample photos are Creative Commons (`app/apps/mobile/assets/CREDITS.md`) · Blender studio assets Poly Haven CC0.
+Neuro, the mascot, is the project's own character (`docs/img/neuro.png`, also the app icon) · TRIBE v2 (Meta, open weights) · head bust from the Meta TRIBE v2 demo (non-commercial use) · brain mesh fsaverage5 (FreeSurfer) · the app runtime is built on CopilotKit's MIT-licensed OpenMuse agent app (`app/LICENSE`) · sample photos are Creative Commons (`app/apps/mobile/assets/CREDITS.md`) · Blender studio assets Poly Haven CC0.
