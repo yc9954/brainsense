@@ -44,8 +44,10 @@ export function BarChart({
       <View style={{ borderLeftWidth: 1, borderLeftColor: colors.text, paddingLeft: 12, gap: 18 }}>
         {rows.map((row) => (
           <View key={row.label} style={{ flexDirection: "row", gap: 12 }}>
-            <View style={{ width: 64, justifyContent: "center" }}>
-              <Text style={{ color: colors.text, fontSize: 14, fontWeight: "600" }}>{row.label}</Text>
+            <View style={{ width: 84, justifyContent: "center" }}>
+              <Text style={{ color: colors.text, fontSize: 13.5, fontWeight: "600" }} numberOfLines={2}>
+                {row.label}
+              </Text>
               {row.sub ? <Text style={{ color: colors.muted, fontSize: 11 }}>{row.sub}</Text> : null}
             </View>
             <View style={{ flex: 1, gap: 6 }}>
