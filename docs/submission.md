@@ -1,35 +1,89 @@
-# NeuroMuse (BrainSense) — submission write-up (draft, 2026-11-03)
+# NeuroMuse — submission text
 
-**Track:** Indie · **Theme:** Push the Frontier · **Team:** Yuchan Lee (solo)
+Copy each block into the matching field. Every number below comes from a saved run in the repository.
 
-## Problem
-AI taste advice is ungrounded: ask any assistant "is this nice?" and it improvises. People who make visual decisions for a living (popup-store operators, creative marketers, shoppers) want an opinion that can say *why*, admit when it doesn't know, and learn what *you* like.
+---
 
-## What we built
-A grounded-opinion agent for Meta AI glasses. You look at something and ask "What do you think?". The 6-second clip goes to a Modal GPU service running **TRIBE v2**, Meta's open-weights brain foundation model, which predicts how an average human cortex responds (20,484 vertices, 1 Hz). We pool that into 9 functional regions (visual attention, reward/value, faces, scenes, language, ...), feed small **calibrated heads** trained on real outcome data (AADB human aesthetic ratings; Snap watch-retention; Unsplash downloads-per-view), and hand only the head outputs, percentiles, confidences and top contributing regions to a **Muse Spark 1.3** agent with tool calling. The agent speaks a 2-3 sentence opinion in English through the glasses, cites the numbers when asked "why", and refits a **personal head** from your 👍/👎 so it can say "the crowd would like it, you wouldn't".
+## Project name
+NeuroMuse
 
-**Where it lives:** inside [OpenMuse](https://github.com/CopilotKit/openmuse) (CopilotKit's open personal-agent app) running on Muse Spark. The brain is a tool the agent reaches for on its own mid-conversation when you attach a photo or ask "What do you think?"; it answers *as its own brain* ("my orbitofrontal cortex just lit up in the top 12%…") and shows a live 3D cortex, Meta's fsaverage5 surface with TRIBE's per-vertex predictions lighting up second by second, in the chat.
+## Track
+Indie
 
-**It reads and listens too.** TRIBE v2 is tri-modal, so the same brain reads a paragraph (Word events through the Llama pathway) and listens to a track (w2v-BERT pathway). Muse routes: a photo gets the visual heads, copy gets Human-likeness (trained on human-vs-ChatGPT answers) and Attention capture, music gets region-by-region comparison of two hooks. The signature demo is the agent rewriting its own copy through its brain: draft → read → "reward and scene networks are quiet" → rewrite → before/after percentiles.
+## Tagline (short, ≤ 60 characters)
+The Muse with a cortex: opinions it can justify.
 
-## Meta tooling
-- **Meta Model API — Muse Spark 1.3** with tool calling (`brain_eval`, `compare`, `web_lookup`, `record_feedback`). Opinions are constrained to tool outputs by the system prompt; low confidence → "I'm not sure".
-- **TRIBE v2** (open weights, CC-BY-NC) as the perception prior, with its V-JEPA2 / DINOv2 / w2v-BERT / Llama-3.2-3B backbones.
-- **Wearables Device Access Toolkit** for capture on Ray-Ban Meta; the Mock Device Kit streams the phone camera or a video file through the same SDK for judging without hardware.
-- **OpenMuse (CopilotKit)** as the agent shell: tool calling, agent context and inline tool cards; our `brain_eval` tool and brain persona are additions, the rest is upstream.
-- Modal for the GPU service (L40S) and batch feature extraction.
+## Tagline (≤ 140 characters)
+NeuroMuse puts Meta's TRIBE v2, a model of the human cortex, in front of Muse Spark, so every opinion comes with the brain regions behind it.
 
-## What's measured (not claimed)
-- **Latency:** 43 s → **14 s** per fresh 6 s clip on L40S by skipping transcription on speech-free clips and bf16 autocast; fusion model alone is 2.4 s; backbone extraction is the remaining cost.
-- **Ablation (brain features vs. raw V-JEPA2 embedding), linear heads, 5-fold on AADB:** 9-region pooled TRIBE features 0.669, raw V-JEPA2 1408-d 0.728, raw PCA-54 0.722, **360 HCP-MMP1 area means → PCA-54 0.753**. Pooling into 9 regions lost signal; at matched dimensionality the brain features are on par with or slightly above the raw embedding, and they come with named cortical areas. The shipped aesthetic head (2,500 AADB images, area features) scores holdout AUROC 0.721, ECE 0.041. Attention 0.65, appeal 0.58 and popularity 0.59 on their own labels: weak, and the heads are calibrated to say so.
-- **Evaluation-driven UI loop:** Muse Spark writes pages, headless Chrome renders them, the brain heads and a Muse multimodal judge score them, the critique feeds the next round. Last run (2 rounds × 3 variants): round 2 best 0.654 vs round 1 best 0.603.
-- **Live transcript** with real Muse Spark and real TRIBE features is in the README.
+## Links
+- Code: https://github.com/yc9954/brainsense
+- Demo video (2:53): https://github.com/yc9954/brainsense/blob/main/docs/video/neuromuse-demo.mp4
 
-## Built during the hackathon
-Everything in this repo and the OpenMuse fork: Modal TRIBE service with per-vertex output, ROI and 360-area pooling, heads + calibration + ablation harness, agent + server, data pipelines for three datasets (4,587 items extracted through TRIBE), the OpenMuse integration (brain_eval tool, brain persona, photo attachments, live 3D cortex card), the UI evaluation loop, iOS skeleton, docs.
+---
 
-## Limits
-TRIBE v2 is an *encoder* trained on passive viewing (no decisions), predicts an average subject, and is CC-BY-NC. Image inputs are stills, so its temporal module adds nothing there. Our outcome datasets are small; the aesthetic head is the only one with signal today.
+## Elevator pitch (≈ 80 words)
+Ask any assistant what it thinks of your photo and it says "looks great". It never looked, and it cannot say why. NeuroMuse looks first. Meta's TRIBE v2 predicts how a human cortex responds, 20,484 points every second; calibrated heads turn that response into scores with a confidence; Muse Spark speaks only from those scores, in the first person. It works through glasses, learns your personal taste as readable rules, and can direct real creative work, from a website to a 3D room to a 12-second ad.
 
-## Next
-Sweetspot popup-store outcomes as real-world appeal labels; SAM 3.1 to isolate the product in view; keep the backbones resident to get under 8 s; on-lens percentile bars on Ray-Ban Display.
+---
+
+## Inspiration
+People who make visual decisions for a living, pop-up store operators, marketers, creators, ask AI for taste every day and get improvised answers. A language model has no eyes of its own; its taste is words about a picture, not a response to it. Meta released TRIBE v2, a foundation model that predicts human brain activity from video, audio and text. We wanted to know what an assistant becomes when its opinions have to come from a predicted human brain instead of from prose.
+
+## What it does
+NeuroMuse is an agent with a cortex and a hippocampus.
+
+- **It looks before it speaks.** A photo, a 6-second glasses clip, a paragraph or a sound goes through TRIBE v2 first. Five calibrated heads score the predicted cortex: Aesthetic appeal, Attention capture, Desirability, Reach, and Human-likeness for text. Each score carries a percentile and a confidence.
+- **It answers as its own brain, in plain words.** "My place-mapping side lights up first: I'm mapping the room, not the bottles. My desirability sits at the very bottom, and I'm 93% sure of that." Below a confidence of 0.3 it says the signal is faint and asks you instead of guessing. Raw brain vectors never reach the language model.
+- **It works like glasses.** A landscape first-person view keeps a rolling 6-second clip; you ask by voice and the answer is spoken back.
+- **It tunes to your brain.** Every like or dislike is stored with its cortex state. A sleep pass replays the answers the model got most wrong, refits a personal head, and writes your taste as falsifiable rules with effect sizes ("when your posterior insula is more active, you tend to like it", d = 1.26). The Lab shows every memory write live.
+- **It directs real work.** In a design loop the cortex critiques each version, an art director picks a craft tool (keep and restyle a real asset, fetch a real photo, model the product or room in Blender, reset the type, re-time an ad), and the agent rebuilds. It has evolved real websites, furnished a 3D room and made a 12-second ad.
+- **It refuses to cheat.** Nothing counts as a win unless the facts are the page's or brief's own, the page keeps its density, and a blind judge that wrote neither side prefers the result. Refusals are logged with the reason.
+
+## How we built it
+- **Perception (L0).** TRIBE v2 runs on a Modal L40S behind a FastAPI service. It returns the per-vertex cortex time course (20,484 fsaverage5 vertices at 1 Hz) and 360 HCP-MMP1 area features. Image, video, audio and text pathways are all wired in. Latency for a never-seen 6-second clip went from 43 s to 14 s (no transcription for silent clips, bf16).
+- **Organs (L1).** 360 area means are reduced to 54 dimensions and fed to logistic heads calibrated on real outcomes: AADB aesthetic ratings, SnapUGC watch retention, Unsplash downloads per view, and HC3 human-versus-model text. Every score is a weighted sum of named cortical areas, so "why" is a back-projection, not a story.
+- **Memory (L2, L3).** An engram store keeps one row per percept (cortex vector, 1 Hz series, stimulus, outcomes, surprise) in SQLite; recall is cosine similarity in cortex space. Sleep is the only writer: prioritized replay, a personal-head refit, area-contrast rule mining with bootstrap confidence intervals, and a rule ledger that is retired, never edited. The agent's workspace follows Hermes Agent's conventions (SOUL.md, budgeted MEMORY.md and USER.md, on-demand skills).
+- **Voice and router (L5).** Muse Spark 1.3 on the Meta Model API, with tool calling (brain_eval, look_at, brain_recall, brain_rules, skills), runs inside an agent app built on CopilotKit's open-source OpenMuse. It decides which sense and which heads to use and holds no memory itself.
+- **Cortex in the loop (L4).** Generators for pages, 12-second ad clips, Blender scenes (Poly Haven assets, Cycles) and writing, each scored by the brain, gated for invented facts and density, and judged blind in both orders. Every run writes a decision trail that the brain narrates in its own words.
+- **Client.** A React Native and Expo app (web, iOS, Android): chat with a live 3D cortex card, a landscape glasses mode, a Lab for testing your own brain, and an About tab with the measured numbers.
+
+## Meta tools used
+- **Meta Model API, Muse Spark 1.3**: the agent's voice and router, tool calling, multimodal judging.
+- **TRIBE v2** (open weights): the perception layer, with its V-JEPA2, DINOv2, wav2vec-BERT and Llama 3.2 backbones.
+- **Wearables Device Access Toolkit flow**: the glasses capture path, emulated on a phone over HTTPS for judging without hardware.
+
+## Results (measured, including the losses)
+- **Why a cortex:** on 2,500 AADB photos (5-fold), 360 cortical areas reduced to 54 dimensions score 0.753 AUROC, against 0.728 for the raw vision embedding and 0.669 for 9 pooled regions. A second, out-of-fold protocol puts the raw embedding slightly ahead; either way the cortex features are in the same accuracy class, and every score names the areas behind it.
+- **Heads, holdout AUROC:** Human-likeness 0.88 (n = 230, HC3); Aesthetic appeal 0.72 (ECE 0.041); Attention 0.65; Desirability 0.58; Reach 0.59.
+- **Brain loop versus one shot, blind pairwise judge:** 12-second ad clips 3 of 3 (P ≥ 0.85); pages 3 of 5 plus a tie.
+- **Human blind vote:** 11 of 16 pairs for the brain loop (6 of 8 against Muse's own self-critique loop, 5 of 8 against one shot; one voter).
+- **Real websites:** of six live sites, the loop accepted one change (Algonauts Project, blind P = 0.90) and refused five where the original was better. Zero invented facts shipped.
+- **3D room:** brain score 0.32 → 0.49 and designer judge 0.13 → 0.40 over eight Blender rounds.
+- **Limits we report:** Reach is barely predictable from any features, cortex or raw (≈ 0.56 AUROC). The personal head has only 12 synthetic answers so far and is not yet better than the crowd head (0.56 vs 0.67). On the serum ad, the one-shot version still won.
+
+## Challenges we ran into
+- **A good-looking score is easy to fake.** Our first redesigns raised the brain score while inventing client logos, version badges and counts. We built three gates (a fact check against the page's own text, a density check, and blind pairwise acceptance) and reran everything; most "wins" disappeared, and the one that survived is real.
+- **The judge rewards invented specifics.** Muse's one-shot ad scored higher partly because it made up a price, a pH and a guarantee. We now fact-check the baseline too and report it.
+- **Text heads can be gamed.** Selecting rewrites by Human-likeness alone produced hesitant, forced-casual prose; the head is now a critic and never the only judge.
+- **Infrastructure.** Our Modal workspace was disabled overnight by a spend limit; the cached analyses kept the demo working, and every run resumed once it was re-enabled.
+
+## Accomplishments we're proud of
+- An assistant whose opinions are measurements, with a confidence it actually respects.
+- Memory in brain states rather than words: a thousand memories cost zero prompt tokens, and taste is written as rules a person can read and dispute.
+- A creative loop where the brain is the critic, a blind judge is the verdict, and refusals are shown as plainly as wins.
+- Every number in the README and the demo traces to a saved run in the repository.
+
+## What we learned
+The brain buys explanation more than accuracy. At matched width, cortex features land beside the raw embedding, but they turn "embedding dimension 731" into "your reward circuit stayed quiet", which is what a person can act on. Honest gates matter more than clever generators: a loop that cannot invent facts or game its own score is the only kind worth trusting.
+
+## What's next
+- Real outcome labels from pop-up store sales to train the Desirability and Reach heads on the decisions that matter.
+- More personal answers per user, to show the personal head overtaking the crowd head.
+- Keeping the backbones resident to bring a clip under 8 seconds, and running on Ray-Ban Display with on-lens percentile bars.
+
+## Built with
+Meta Model API (Muse Spark 1.3) · TRIBE v2 · V-JEPA2 · DINOv2 · Llama 3.2 · wav2vec-BERT · Wearables Device Access Toolkit · Modal · FastAPI · Python · scikit-learn · SQLite · React Native · Expo · TypeScript · Hono · CopilotKit (OpenMuse) · three.js · Blender (Cycles) · Poly Haven · Playwright · ffmpeg
+
+## Credits
+TRIBE v2 (Meta, open weights). Head bust from the Meta TRIBE v2 demo (non-commercial use). Brain mesh fsaverage5 (FreeSurfer). The app runtime builds on CopilotKit's MIT-licensed OpenMuse. Sample photos are Creative Commons; Blender assets are Poly Haven CC0. Demo narration voiced with ElevenLabs v4 and the first-person store clip generated with Seedance 2.0, both through Higgsfield.
