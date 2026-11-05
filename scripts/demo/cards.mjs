@@ -36,6 +36,7 @@ const cards = {
   sec_memory: `<div class="c" style="gap:22px"><div class="k">04 · Memory in brain states</div><div style="font-size:92px;font-weight:700;letter-spacing:-2px">It remembers how things felt.</div></div>`,
   numbers: `<div class="c" style="gap:40px">
     <div class="k">Honest numbers</div>
+    <div style="font-size:30px;color:#D9D9D9;max-width:1500px;line-height:1.4">Why a cortex is a sound choice: on 2,500 rated photos, <b>360 cortical areas → 54 dims score 0.753 AUROC</b> vs the raw vision embedding 0.728 and 9 pooled regions 0.669. Same accuracy class, and every score names the areas behind it.</div>
     <div style="display:grid;grid-template-columns:repeat(3,480px);gap:28px">
       ${[
         ["0.88", "Human-likeness head", "holdout AUROC, HC3 text"],
@@ -92,6 +93,45 @@ cards.grid = `<div class="grid">
     <div class="side">one brain<br><span class="r">five heads</span><br>each with a confidence</div></div>
 </div>`;
 
+// evidence panels: the right third of the frame, next to each example (paper-figure style)
+const panel = (k, title, rows) => `<div style="position:absolute;top:0;right:0;width:610px;height:1080px;background:#050506;border-left:1px solid #1f2125;padding:58px 46px 40px;display:flex;flex-direction:column;gap:22px">
+  <div style="font-size:19px;letter-spacing:4px;text-transform:uppercase;color:#C0504D">${k}</div>
+  <div style="font-size:40px;font-weight:700;letter-spacing:-1px;line-height:1.12">${title}</div>
+  ${rows.map(([h, t]) => `<div><div style="font-size:16px;letter-spacing:3px;text-transform:uppercase;color:#9AA0A6;margin-bottom:6px">${h}</div><div style="font-size:24px;line-height:1.38;color:#E6E6E6">${t}</div></div>`).join("")}
+</div>`;
+const panels = {
+  pn_glasses: panel("01 · Glasses", "It looks before it speaks.", [
+    ["What happens", "The last 6 s of what you see go to <b>TRIBE v2</b>: a predicted human cortex, 20,484 points, every second. Calibrated heads score it; Muse Spark speaks from the scores."],
+    ["Why it is new", "The opinion is a <b>measurement</b>, not a caption. It names the region that fired and its percentile, and says when the signal is faint."],
+    ["Result", "<b>14 s</b> per clip on an L40S (from 43 s). Five heads, holdout AUROC <b>0.58–0.88</b>, each with a confidence."],
+    ["Why a cortex", "One representation for video, sound and text, and an answer that can say <i>why</i>."],
+  ]),
+  pn_phones: panel("02 · Chat and Lab", "Evidence first, then opinion.", [
+    ["What happens", "The cortex plays second by second, then the heads score it. Every like is stored as a brain state and your taste model refits."],
+    ["Why it is new", "Memory in <b>brain states, not words</b>: recall is cosine similarity in cortex space, and learning costs zero prompt tokens."],
+    ["Result", "Aesthetic head AUROC <b>0.72</b> (ECE 0.04). Personal head so far: 12 synthetic answers, 0.56 vs crowd 0.67, reported as is."],
+    ["Why a cortex", "Features are <b>360 named cortical areas</b>, so every score back-projects to regions a person can understand."],
+  ]),
+  pn_room: panel("03 · Blender", "The brain directs the craft.", [
+    ["What happens", "The agent builds a room in Blender. The cortex reads each render and says what it felt; the agent changes the scene."],
+    ["Why it is new", "Perception in the loop for 3D: the critique is a brain pattern (\u201cobject regions quiet\u201d), turned into a concrete edit."],
+    ["Result", "Brain score <b>0.32 → 0.49</b>, designer judge <b>0.13 → 0.40</b> over 8 rounds."],
+    ["Why a cortex", "A reward that is the same signal people's brains give, not the model grading its own taste."],
+  ]),
+  pn_site: panel("04 · A real website", "Evolve, don't replace.", [
+    ["What happens", "The live page is harvested (real logo, map, photos), critiqued by the cortex and rebuilt around its own assets."],
+    ["Why it is new", "Three gates before any win: <b>no invented facts</b>, density kept, and a <b>blind judge</b> that wrote neither side."],
+    ["Result", "Six real sites: <b>one accepted</b> (blind P = 0.90), five refused. Human blind vote on generated pages and ads: <b>11 / 16</b> for the brain loop."],
+    ["Why a cortex", "The brain is the critic, the blind judge the verdict, so the loop cannot game its own score."],
+  ]),
+  pn_ad: panel("05 · A 12-second ad", "Second by second.", [
+    ["What happens", "Brief → one-shot ad → the cortex watches each clip at 1 Hz → an art director picks a tool (a Blender product render, pacing, type) → rebuild."],
+    ["Why it is new", "Only a brain model gives a <b>time course</b>: when attention peaks, when it fades, where the hook lands."],
+    ["Result", "Ad clips vs one shot: <b>3 / 3</b> blind wins (P ≥ 0.85). Serum maker: attention peak <b>12 s → 8 s</b>, zero invented facts; the one-shot was still kept, and we say so."],
+    ["Why a cortex", "A stills judge cannot see time. The cortex can."],
+  ]),
+};
+
 // lower-third labels drawn over footage (transparent PNG)
 const label = (k, t) => `<div style="position:absolute;left:0;right:0;bottom:0;height:128px;display:flex;align-items:center;gap:26px;padding:0 64px;background:#000">
   <div style="display:inline-flex;flex:none;align-items:center;gap:12px;border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:10px 20px">
@@ -115,7 +155,7 @@ for (const [name, body] of Object.entries(cards)) {
   await page.waitForTimeout(150);
   await page.screenshot({ path: `${OUT}/${name}.png` });
 }
-for (const [name, body] of Object.entries(labels)) {
+for (const [name, body] of Object.entries({ ...labels, ...panels })) {
   await page.setContent(`<html><head><style>${CSS} body{background:transparent}</style></head><body>${body}</body></html>`);
   await page.waitForTimeout(100);
   await page.screenshot({ path: `${OUT}/${name}.png`, omitBackground: true });

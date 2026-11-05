@@ -45,7 +45,7 @@ def fades(d: float) -> str:
     return f"fade=t=in:st=0:d={FADE},fade=t=out:st={d - FADE:.2f}:d={FADE}"
 
 
-def card(name: str, png: Path, d: float, zoom: bool = True) -> Path:
+def card(name: str, png: Path, d: float, zoom: bool = False) -> Path:
     out = SEG / f"{name}.mp4"
     n = int(d * FPS)
     z = f"zoompan=z='1+0.035*on/{n}':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d={n}:s=1920x1080:fps={FPS}," if zoom else ""
@@ -68,36 +68,64 @@ def clip(name: str, src: Path, d: float, label: Path | None, speed: float = 1.0,
     return out
 
 
+LEFT_W = 1270
+
+
+def left(name: str, src: Path, d: float, panel: Path, speed: float = 1.0, still: bool = False) -> Path:
+    """Footage or a still fitted into the left 2/3, the evidence panel on the right third."""
+    out = SEG / f"{name}.mp4"
+    inp = ["-loop", "1", "-framerate", str(FPS), "-i", str(src)] if still else ["-i", str(src)]
+    v = (f"[0:v]setpts=(PTS-STARTPTS)/{speed},fps={FPS},scale={LEFT_W}:1000:force_original_aspect_ratio=decrease,"
+         f"pad=1920:1080:24+({LEFT_W}-iw)/2:(1080-ih)/2:black,tpad=stop_mode=clone:stop_duration=60,trim=duration={d:.2f}")
+    fc = f"{v}[v];[v][1:v]overlay=0:0,{fades(d)}[o]"
+    run(["ffmpeg", "-y", "-loglevel", "error", *inp, "-i", str(panel), "-filter_complex", fc, "-map", "[o]", "-t", f"{d:.2f}", *ENC, str(out)])
+    return out
+
+
+def pair(name: str, a: Path, b: Path, d: float, panel: Path) -> Path:
+    """Before and after side by side on the left, the panel on the right; the kept side framed in red."""
+    out = SEG / f"{name}.mp4"
+    w = 620
+    h = int(800 * w / 1280)
+    y = (1080 - h) // 2
+    fc = (f"color=c=black:s=1920x1080:r={FPS}:d={d:.2f}[bg];[0:v]scale={w}:{h}[a];[1:v]scale={w}:{h}[b];"
+          f"[bg][a]overlay=24:{y}[t1];[t1][b]overlay={24 + w + 24}:{y}[t2];"
+          f"[t2]drawbox=x={24 + w + 24}:y={y}:w={w}:h={h}:color=0xC0504D@1:t=4[t3];[t3][2:v]overlay=0:0,{fades(d)}[o]")
+    run(["ffmpeg", "-y", "-loglevel", "error", "-loop", "1", "-i", str(a), "-loop", "1", "-i", str(b), "-i", str(panel),
+         "-filter_complex", fc, "-map", "[o]", "-t", f"{d:.2f}", *ENC, str(out)])
+    return out
+
+
 def phones(name: str, left: Path, right: Path, d: float, lspeed: float, rspeed: float, lab: Path) -> Path:
     """Two phone recordings side by side on black, each with a small caption above."""
     out = SEG / f"{name}.mp4"
     h = 900
     w = int(430 * h / 860)
     h = 890
-    xl, xr = 1920 // 2 - w - 70, 1920 // 2 + 70
-    y = 150
+    xl, xr = 1310 // 2 - w - 24, 1310 // 2 + 24
+    y = 95
     fc = (f"color=c=black:s=1920x1080:r={FPS}:d={d:.2f}[bg];"
           f"[0:v]setpts=PTS/{lspeed},fps={FPS},scale={w}:{h}:force_original_aspect_ratio=increase,crop={w}:{h}:0:0,tpad=stop_mode=clone:stop_duration=60,trim=duration={d:.2f}[a];"
           f"[1:v]setpts=PTS/{rspeed},fps={FPS},scale={w}:{h}:force_original_aspect_ratio=increase,crop={w}:{h}:0:0,tpad=stop_mode=clone:stop_duration=60,trim=duration={d:.2f}[b];"
           f"[bg][a]overlay={xl}:{y}[t1];[t1][b]overlay={xr}:{y}[t2];"
-          f"[2:v]scale=1920:1080[l1];[t2][l1]overlay=0:0,{fades(d)}[o]")
+          f"[t2][2:v]overlay=0:0,{fades(d)}[o]")
     run(["ffmpeg", "-y", "-loglevel", "error", "-i", str(left), "-i", str(right), "-i", str(lab),
          "-filter_complex", fc, "-map", "[o]", "-t", f"{d:.2f}", *ENC, str(out)])
     return out
 
 
 def pan(name: str, png: Path, d: float, label: Path | None) -> Path:
-    """A wide figure eased across the frame: fit to height, slow push and drift."""
+    """A wide figure drifting sideways at a constant speed (crop on an upscaled frame; no zoom, so no jitter)."""
     out = SEG / f"{name}.mp4"
-    n = int(d * FPS)
     H = 940 if label else 1080
-    vf = (f"[0:v]scale=1920:{H}:force_original_aspect_ratio=decrease,pad=1920:{H}:(ow-iw)/2:(oh-ih)/2:black,scale=2400:-2,"
-          f"zoompan=z='1.0+0.06*on/{n}':x='(iw-iw/zoom)*on/{n}':y='(ih-ih/zoom)/2':d={n}:s=1920x{H}:fps={FPS},pad=1920:1080:0:8:black")
+    W2 = 2160                                   # 240 px of travel over the whole shot
+    vf = (f"[0:v]scale=1920:{H}:force_original_aspect_ratio=decrease,pad=1920:{H}:(ow-iw)/2:(oh-ih)/2:black,"
+          f"scale={W2}:-2:flags=lanczos,fps={FPS},crop=1920:{H}:x='({W2}-1920)*t/{d:.2f}':y='(ih-{H})/2',pad=1920:1080:0:8:black")
     if label:
         fc = f"{vf}[v];[v][1:v]overlay=0:0,{fades(d)}[o]"
-        run(["ffmpeg", "-y", "-loglevel", "error", "-loop", "1", "-i", str(png), "-i", str(label), "-filter_complex", fc, "-map", "[o]", "-t", f"{d:.2f}", *ENC, str(out)])
+        run(["ffmpeg", "-y", "-loglevel", "error", "-loop", "1", "-framerate", str(FPS), "-i", str(png), "-i", str(label), "-filter_complex", fc, "-map", "[o]", "-t", f"{d:.2f}", *ENC, str(out)])
     else:
-        run(["ffmpeg", "-y", "-loglevel", "error", "-loop", "1", "-i", str(png), "-filter_complex", f"{vf},{fades(d)}[o]", "-map", "[o]", "-t", f"{d:.2f}", *ENC, str(out)])
+        run(["ffmpeg", "-y", "-loglevel", "error", "-loop", "1", "-framerate", str(FPS), "-i", str(png), "-filter_complex", f"{vf},{fades(d)}[o]", "-map", "[o]", "-t", f"{d:.2f}", *ENC, str(out)])
     return out
 
 
@@ -117,6 +145,8 @@ def split(name: str, a: Path, b: Path, d: float, label: Path) -> Path:
 
 def main() -> None:
     img, vid = ROOT / "docs" / "img", ROOT / "docs" / "video"
+    GLASSES = vid / "glasses-pov.mp4" if (vid / "glasses-pov.mp4").exists() else vid / "glasses.mp4"
+    GLASSES_SPEED = 1.0 if GLASSES.name == "glasses-pov.mp4" else 1.7
     C = lambda n: CARDS / f"{n}.png"  # noqa: E731
     # (segment builder, narration)
     plan = [
@@ -125,24 +155,20 @@ def main() -> None:
          "Ask any assistant what it thinks of your photo. It says: looks great. It never looked, and it can't say why.", 6.0),
         ("s03_idea", lambda d: card("s03_idea", C("idea"), d),
          "So we gave it a cortex. Meta's TRIBE v2 predicts how a human brain responds, every second. Muse Spark speaks only from that.", 6.0),
-        ("s04_sec", lambda d: card("s04_sec", C("sec_glasses"), d, zoom=False), "", 1.4),
-        ("s05_glasses", lambda d: clip("s05_glasses", vid / "glasses.mp4", d, C("lb_glasses"), speed=1.9),
-         "Point your glasses at anything and ask. The brain answers in its own words: what fired, how strongly, and what stayed faint.", 12.0),
-        ("s06_sec", lambda d: card("s06_sec", C("sec_lab"), d, zoom=False), "", 1.4),
-        ("s07_phones", lambda d: phones("s07_phones", vid / "chat.mp4", vid / "lab.mp4", d, 3.3, 1.7, C("lb_phones")),
-         "The cortex lights up first, then five calibrated heads score it, each with a confidence. Every like is stored as a brain state, and your taste model refits on the spot.", 12.0),
-        ("s08_sec", lambda d: card("s08_sec", C("sec_loop"), d, zoom=False), "", 1.4),
-        ("s09_room", lambda d: clip("s09_room", ROOT / "results/showcase/studio/living5/timelapse.gif", d, C("lb_trail"), speed=1.7),
-         "It also directs the work. It looks at a render, says what it felt, and the agent changes the room in Blender.", 8.0),
-        ("s10_trail", lambda d: pan("s10_trail", img / "trail-living5.png", d, None), "Every step is logged in the brain's own words.", 4.5),
-        ("s11_site", lambda d: split("s11_site", img / "algonauts-before.png", img / "algonauts-after.png", d, C("lb_algo")),
-         "On real websites it evolves instead of replacing. Facts are checked, and a blind judge decides. Of six real sites, it changed one and refused the rest.", 8.0),
-        ("s12_ad", lambda d: pan("s12_ad", img / "trail-ad.png", d, C("lb_ad")),
-         "It goes all the way to a twelve-second ad, with the product modelled in 3D. When its version loses, it says so.", 7.0),
+        ("s05_glasses", lambda d: left("s05_glasses", GLASSES, d, C("pn_glasses"), speed=GLASSES_SPEED),
+         "Point your glasses at anything and ask. The clip goes through a predicted human cortex, and the answer names the region that fired and its percentile. Fourteen seconds per clip, five calibrated heads, each with a confidence.", 15.0),
+        ("s07_phones", lambda d: phones("s07_phones", vid / "chat.mp4", vid / "lab.mp4", d, 3.3, 1.7, C("pn_phones")),
+         "The cortex plays first, then the heads score it. Every like is stored as a brain state, not as words, so recall means: what felt like this. And every score names the cortical areas behind it.", 14.0),
+        ("s09_room", lambda d: left("s09_room", ROOT / "results/showcase/studio/living5/timelapse.gif", d, C("pn_room"), speed=1.4),
+         "It also directs the work. It reads each Blender render, says what it felt, and the agent edits the room. Brain score from point three two to point four nine, and a designer judge agrees.", 12.0),
+        ("s11_site", lambda d: pair("s11_site", img / "algonauts-before.png", img / "algonauts-after.png", d, C("pn_site")),
+         "On real websites it evolves instead of replacing, behind three gates: no invented facts, density kept, and a blind judge. Of six real sites it changed one, at point nine zero, and refused five. People preferred its work eleven times out of sixteen.", 14.0),
+        ("s12_ad", lambda d: left("s12_ad", img / "trail-ad.png", d, C("pn_ad"), still=True),
+         "And it goes all the way to an ad, second by second. Only a brain model sees when attention peaks and fades. It won three of three clips. On the serum ad the one shot still won, and the trail says so.", 13.0),
         ("s13_grid", lambda d: card("s13_grid", C("grid"), d), "One brain, many tasks: real websites, 3D rooms, ads, and the everyday scenes you look at.", 7.5),
-        ("s14_sec", lambda d: card("s14_sec", C("sec_memory"), d, zoom=False), "", 1.4),
-        ("s15_layers", lambda d: card("s15_layers", C("layers"), d), "Underneath, it remembers in brain states, not words. Recall means: what have I seen that felt like this.", 7.0),
-        ("s16_numbers", lambda d: card("s16_numbers", C("numbers"), d), "Every number is measured. Including the losses.", 5.5),
+        ("s15_layers", lambda d: card("s15_layers", C("layers"), d), "Underneath, six layers. Only one holds memory, only one writes it, and the voice holds none.", 7.0),
+        ("s16_numbers", lambda d: card("s16_numbers", C("numbers"), d),
+         "Why a cortex? On twenty five hundred rated photos, cortical areas match the raw embedding's accuracy, and every score comes with its reasons. Every number here is measured, including the losses.", 11.0),
         ("s17_close", lambda d: card("s17_close", C("close"), d), "NeuroMuse. An opinion it can justify.", 5.0),
     ]
     segs, audio, t = [], [], 0.0
