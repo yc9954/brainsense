@@ -157,13 +157,13 @@ What we learned, and changed: the judge rewards invented specifics, so the basel
 
 | what | result |
 |---|---|
-| AADB aesthetics, 2,500 photos, 5-fold AUROC | 9 regions pooled 0.669 · raw V-JEPA2 0.728 · **360 areas → PCA-54 0.753** |
+| AADB aesthetics, 2,500 photos, 5-fold AUROC (ablation) | 9 regions pooled 0.669 · raw V-JEPA2 0.728 · 360 areas → PCA-54 0.753; the out-of-fold benchmark page on the same photos orders them the other way (raw → PCA-54 0.744, areas → PCA-54 0.715, 9 groups 0.673): at matched width the cortex features land beside the raw embedding, not above it |
 | Shipped heads (five), holdout AUROC | aesthetic appeal 0.72 · attention capture 0.65 · desirability 0.58 · reach 0.59 · human-likeness (text) **0.88**; audio compared region by region, no head |
 | Latency, one never-seen 6 s clip, L40S | 43 s → **14 s**; 4 s per cached clip |
 | Brain loop vs one shot, blind pairwise judge (Muse) | pages 3/5 + 1 tie · 12 s ad clips **3/3** · writing 2/5 (head only), 2 wins 1 tie 1 loss (head + review) |
 | Brain loop, human blind vote (16 pairs, one voter, the author) | **11/16**: 6/8 against Muse's own self-critique loop, 5/8 against one shot. By Muse's judge the self-loop wins those pages; by the human it loses them |
-| Benchmark pages, out-of-fold AUROC (`results/showcase/bench`) | AADB: 360 areas → PCA-54 0.715 vs raw embedding → PCA-54 0.744 · Unsplash downloads per view: 0.56 for every feature set, i.e. no signal in anyone's features |
-| Brain-guided redesign of live sites | first harness: 3 of 4 improved (ui_score +0.08 to +0.14); with fact, density and blind-judge gates: iconic utility pages keep the live page, Algonauts redesign wins P 0.90 |
+| Unsplash downloads per view, out-of-fold AUROC (`results/showcase/bench`) | 0.56 for every feature set, cortex or raw: popularity is not in the cortex, and the Reach head is reported with that in mind |
+| Brain-guided redesign of live sites, with fact, density and blind-judge gates | six real sites: one accepted (Algonauts, blind P 0.90, while its brain-only score fell 0.59 → 0.49: the brain is the critic, the blind judge is the verdict), five iconic utility pages kept their live page. Earlier pre-gate redesigns raised ui_score but invented facts and are not counted |
 | Ad maker, serum brief | one-shot invents 5 to 8 facts per clip; brain loop: attention peak 12 s → 8 s, facts clean, blind judge still prefers the one-shot in run 1 (0.12) |
 | Personal head after 12 synthetic outcomes | LOO AUROC 0.56 vs crowd 0.67, i.e. no personal signal yet at n = 12 (reported as is) |
 | Text pathway, Human-likeness head by domain | finance 0.91 · medicine 0.95 · open-QA 0.89 · Reddit ELI5 0.91 · Wikipedia-CS 0.75 (n = 230, ECE 0.077) |
