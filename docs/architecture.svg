@@ -55,15 +55,15 @@
   <text x="870" y="176" fill="#fff" font-size="14" font-weight="600" text-anchor="middle">Calibrated heads</text>
   <text x="870" y="194" fill="#9AA0A6" font-size="11" text-anchor="middle">360 area means → PCA-54 → logistic, with confidence</text>
   <text x="870" y="216" fill="#fff" font-size="12" text-anchor="middle">Aesthetic appeal · Attention capture</text>
-  <text x="870" y="234" fill="#fff" font-size="12" text-anchor="middle">Desirability · Reach · Human-likeness · Hook</text>
-  <text x="870" y="264" fill="#9AA0A6" font-size="11" text-anchor="middle">trained on AADB · SnapUGC · Unsplash · HC3</text>
+  <text x="870" y="234" fill="#fff" font-size="12" text-anchor="middle">Desirability · Reach · Human-likeness</text>
+  <text x="870" y="264" fill="#9AA0A6" font-size="11" text-anchor="middle">trained on AADB · SnapUGC · Unsplash · HC3 · audio compared, not scored</text>
   <line x1="870" y1="136" x2="870" y2="150" stroke="#fff" marker-end="url(#a)"/>
   <!-- memory -->
   <rect x="716" y="296" width="308" height="100" rx="12" fill="#2A1614" stroke="#C0504D"/>
   <text x="870" y="320" fill="#fff" font-size="14" font-weight="600" text-anchor="middle">Engram memory</text>
   <text x="870" y="338" fill="#9AA0A6" font-size="11" text-anchor="middle">every percept as a brain state · like/dislike outcomes</text>
   <text x="870" y="356" fill="#fff" font-size="12" text-anchor="middle">sleep → personal head + rules in plain English</text>
-  <text x="870" y="374" fill="#fff" font-size="12" text-anchor="middle">recall precedents · one-line reflex</text>
+  <text x="870" y="374" fill="#fff" font-size="12" text-anchor="middle">recall precedents (0.85) · one-line reflex (0.9)</text>
   <line x1="870" y1="280" x2="870" y2="294" stroke="#fff" marker-end="url(#a)"/>
   <!-- agent -->
   <rect x="716" y="412" width="308" height="132" rx="12" fill="#0E0F11" stroke="#fff"/>
