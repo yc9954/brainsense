@@ -2,6 +2,8 @@
 
 The long version of the README: why, what it feels like, every before/after pair with its numbers, the writing and voice runs, and the use cases. Raw outputs live under `results/showcase/`.
 
+> **Read with the dates in mind.** The page and ad pairs below come from the first harness (2026-11-03), before the fact, density and blind-judge gates existed; several of their "after" pages invent facts (badges, counts, client names) and their live-site redesigns redraw real assets (the craigslist map became an illustration). They are kept here as the record of what the loop did before the gates, not as results. The gated results, and only those, are in the README.
+
 ## Why
 
 Ask any assistant "what do you think of this photo?" and it says "looks great". It never looked, and it cannot say why. People who make visual decisions for a living, popup-store owners, marketers, creators, want an opinion that can say *why*, admit when it does not know, and learn what *they* like. NeuroMuse answers from a predicted human cortex instead of improvising: the response is a measurement first, words second.
