@@ -156,7 +156,7 @@ def main() -> None:
         ("s03_idea", lambda d: card("s03_idea", C("idea"), d),
          "So we gave it a cortex. Meta's TRIBE v2 predicts how a human brain responds, every second. Muse Spark speaks only from that.", 6.0),
         ("s05_glasses", lambda d: left("s05_glasses", GLASSES, d, C("pn_glasses"), speed=GLASSES_SPEED),
-         "Point your glasses at anything and ask. The clip goes through a predicted human cortex, and the answer names the region that fired and its percentile. Fourteen seconds per clip, five calibrated heads, each with a confidence.", 15.0),
+         "Point your glasses at anything and ask. The clip goes through a predicted human cortex. Here it says the room's layout dominates, and desirability is at the bottom, with ninety three percent confidence. Where the signal is faint, it does not pretend.", 15.0),
         ("s07_phones", lambda d: phones("s07_phones", vid / "chat.mp4", vid / "lab.mp4", d, 3.3, 1.7, C("pn_phones")),
          "The cortex plays first, then the heads score it. Every like is stored as a brain state, not as words, so recall means: what felt like this. And every score names the cortical areas behind it.", 14.0),
         ("s09_room", lambda d: left("s09_room", ROOT / "results/showcase/studio/living5/timelapse.gif", d, C("pn_room"), speed=1.4),

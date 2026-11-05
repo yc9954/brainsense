@@ -103,7 +103,7 @@ const panels = {
   pn_glasses: panel("01 · Glasses", "It looks before it speaks.", [
     ["What happens", "The last 6 s of what you see go to <b>TRIBE v2</b>: a predicted human cortex, 20,484 points, every second. Calibrated heads score it; Muse Spark speaks from the scores."],
     ["Why it is new", "The opinion is a <b>measurement</b>, not a caption. It names the region that fired and its percentile, and says when the signal is faint."],
-    ["Result", "<b>14 s</b> per clip on an L40S (from 43 s). Five heads, holdout AUROC <b>0.58–0.88</b>, each with a confidence."],
+    ["Result on this clip", "Scene regions dominate; desirability at the bottom with <b>0.93</b> confidence; aesthetic bottom quarter; attention unsure (0.09), so it does not claim it. 14 s per clip warm."],
     ["Why a cortex", "One representation for video, sound and text, and an answer that can say <i>why</i>."],
   ]),
   pn_phones: panel("02 · Chat and Lab", "Evidence first, then opinion.", [
