@@ -18,7 +18,7 @@ from pathlib import Path
 TOOL_WORDS = {
     "blender_render": "Modelled it in 3D", "render": "Modelled it in 3D", "typography": "Reset the type", "reflow": "Moved things around",
     "photo": "Found a real photo", "restyle_asset": "Kept the real one, restyled it", "keep_asset": "Kept the real one",
-    "copy": "Re-flowed the words", "rebuild": "Rebuilt the page", "rerender": "Re-modelled the room", "live page": "The page as it is", "first plan": "The first plan",
+    "copy": "Re-flowed the words", "rebuild": "Rebuilt the page", "rerender": "Re-modelled the room", "one shot": "Muse, asked once", "pacing": "Re-timed the beats", "live page": "The page as it is", "first plan": "The first plan",
 }
 
 
@@ -105,6 +105,8 @@ def _read_of(s: dict) -> str:
     d = s.get("diagnosis")
     if not d and isinstance(s.get("critique"), dict):
         d = s["critique"].get("diagnosis")
+    if not d and isinstance(s.get("critique"), list):   # admaker: the step's own diagnosis list
+        d = s["critique"]
     if isinstance(d, list):
         return str(d[0]) if d else ""
     return str(d or "")
@@ -155,14 +157,14 @@ def _rounds(rep: dict, root: Path) -> list[dict]:
                 if cand.exists():
                     p = cand
                     break
-        score = s.get("ui_score", s.get("score", s.get("brain")))
+        score = s.get("brain_score", s.get("ui_score", s.get("score", s.get("brain"))))   # the brain's own score when the run keeps it apart from the blend
         judge = s.get("judge", {})
         jscore = judge.get("judge_score") if isinstance(judge, dict) else judge
         out.append({
             "round": s.get("round", i),
-            "tool": s.get("tool") or s.get("action") or (("live page" if rep.get("source") else "first plan") if i == 0 else ("rebuild" if rep.get("source") else "rerender")),
+            "tool": s.get("tool") or s.get("action") or ((("one shot" if rep.get("kind") == "ad" else "live page" if rep.get("source") else "first plan")) if i == 0 else ("rebuild" if rep.get("source") else "rerender")),
             "why": s.get("why") or s.get("reason") or "",
-            "critique": s.get("critique_line") or s.get("critique") or "",   # what the cortex said BEFORE this round (v2 trail)
+            "critique": s.get("critique_line") or (s.get("critique") if isinstance(s.get("critique"), (str, dict)) else "") or "",   # what the cortex said BEFORE this round
             "read": _read_of(s),   # what the cortex says about this round's result
             "verdict": _verdict_of(s),
             "score": float(score) if isinstance(score, (int, float)) else None,
@@ -217,9 +219,11 @@ def render(root: Path, narrate: bool = True) -> Path:
             sc += f'<div class="sc"><span>judge</span><span class="bar"><i style="width:{min(100, r["judge"] * 100):.0f}%"></i></span><span class="v">{r["judge"]:.2f}</span></div>'
         tool_cls = "tool keep" if i == 0 else "tool"
         r["tool"] = _tool_words(r["tool"])
-        cols.append(f'<div class="col{" win" if win else ""}"><div class="r">{("live page" if rep.get("source") else "first plan") if i == 0 else f"round {r["round"]}"}</div>'
+        cols.append(f'<div class="col{" win" if win else ""}"><div class="r">{("one shot" if rep.get("kind") == "ad" else "live page" if rep.get("source") else "first plan") if i == 0 else f"round {r["round"]}"}</div>'
                     f'<span class="{tool_cls}">{html.escape(str(r["tool"]))}</span>{before}{did}{_img(r["thumb"])}{after}{sc}</div>')
-    src = rep.get("source", root.name)
+    src = rep.get("source") or ((rep.get("creative_brief") or {}).get("product") or {}).get("name") or root.name
+    if rep.get("kind") == "ad":
+        src = f"12-second ad · {src}"
     first, last = rounds[0], rounds[best_i if best_i < len(rounds) else -1]
     delta = f'brain score {first["score"]:.2f} → {last["score"]:.2f}' if first["score"] is not None and last["score"] is not None else ""
     page = (f'<!doctype html><meta charset="utf-8"><style>{CSS}</style><div class="card"><div class="k">brain-directed redesign · decision trail</div>'

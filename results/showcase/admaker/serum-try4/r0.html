@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0b0b0b;display:flex;align-items:center;justify-content:center;min-height:100vh;font-family:'Inter',sans-serif}
+.stage{width:1280px;height:720px;background:#FAF5E9;color:#111;position:relative;overflow:hidden;flex-shrink:0;display:flex;flex-direction:column;border:1px solid #111}
+.topbar{height:54px;border-bottom:1px solid #111;display:flex;align-items:center;justify-content:space-between;padding:0 36px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.18em;z-index:20;background:#FAF5E9}
+.topbar b{font-weight:700;letter-spacing:.22em}
+.topbar .dot{width:8px;height:8px;background:#8B2E00;border-radius:50%;display:inline-block;margin:0 10px;vertical-align:middle}
+.main{flex:1;position:relative;overflow:hidden}
+.scene{position:absolute;inset:0;padding:0 72px;display:flex;align-items:center}
+.s1{z-index:3;background:#FAF5E9;animation-name:showHook;animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:ease;opacity:0}
+.s2{z-index:4;background:#FAF5E9;animation-name:showProduct;animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:ease;opacity:0}
+.s3{z-index:5;background:#7A2600;color:#FAF5E9;animation-name:showOffer;animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:ease;opacity:0}
+@keyframes showHook{0%{opacity:0;transform:translateY(24px)}2%{opacity:1;transform:translateY(0)}28%{opacity:1;transform:translateY(0)}33.3%{opacity:0;transform:translateY(-28px)}100%{opacity:0;transform:translateY(-28px)}}
+@keyframes showProduct{0%{opacity:0;transform:translateY(24px)}33.3%{opacity:0;transform:translateY(24px)}36%{opacity:1;transform:translateY(0)}61%{opacity:1;transform:translateY(0)}66.6%{opacity:0;transform:translateY(-28px)}100%{opacity:0;transform:translateY(-28px)}}
+@keyframes showOffer{0%{opacity:0;transform:translateY(24px)}66.6%{opacity:0;transform:translateY(24px)}69.5%{opacity:1;transform:translateY(0)}96%{opacity:1;transform:translateY(0)}100%{opacity:0;transform:translateY(0)}}
+.eyebrow{font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.28em;line-height:1}
+.h-serif{font-family:'Cormorant Garamond',serif;font-weight:500;line-height:.92;letter-spacing:-.02em}
+.s1-left{width:700px;position:relative;z-index:2}
+.s1 .eyebrow{color:#8B2E00;animation-name:fadeUpA;animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:ease}
+.s1 h1{font-size:142px;margin:18px 0 18px -6px;animation-name:fadeUpB;animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:ease}
+.s1 h1 em{font-style:italic;font-weight:400}
+.s1 .sub{font-size:19px;line-height:1.5;max-width:480px;color:#222;animation-name:fadeUpC;animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:ease}
+.s1 .rule{height:1px;background:#111;margin-top:26px;width:520px;transform-origin:left;animation-name:ruleGrow;animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:ease}
+.s1 .rule-note{display:flex;gap:28px;margin-top:14px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.16em;animation-name:fadeUpC;animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:ease}
+@keyframes fadeUpA{0%{opacity:0;transform:translateY(18px)}3%{opacity:1;transform:translateY(0)}28%{opacity:1;transform:translateY(0)}32%{opacity:0;transform:translateY(-12px)}100%{opacity:0;transform:translateY(-12px)}}
+@keyframes fadeUpB{0%{opacity:0;transform:translateY(34px)}4%{opacity:0;transform:translateY(34px)}7%{opacity:1;transform:translateY(0)}28%{opacity:1;transform:translateY(0)}32%{opacity:0;transform:translateY(-14px)}100%{opacity:0;transform:translateY(-14px)}}
+@keyframes fadeUpC{0%{opacity:0;transform:translateY(20px)}6%{opacity:0;transform:translateY(20px)}10%{opacity:1;transform:translateY(0)}28%{opacity:1;transform:translateY(0)}32%{opacity:0;transform:translateY(-10px)}100%{opacity:0;transform:translateY(0)}}
+@keyframes ruleGrow{0%{opacity:0;transform:scaleX(0)}8%{opacity:1;transform:scaleX(0)}14%{opacity:1;transform:scaleX(1)}28%{opacity:1;transform:scaleX(1)}32%{opacity:0;transform:scaleX(1)}100%{opacity:0;transform:scaleX(0)}}
+.sun-wrap{position:absolute;right:22px;top:50%;transform:translateY(-50%);width:560px;height:560px;z-index:1}
+.sun{width:560px;height:560px;background:radial-gradient(circle at 35% 30%,#D87A2B 0%,#A6460F 38%,#7A2600 72%,#5A1C00 100%);border-radius:50%;animation-name:sunIn;animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:ease;box-shadow:0 30px 80px rgba(122,38,0,.35)}
+.sun-ring{position:absolute;inset:-22px;border:1px solid #111;border-radius:50%;opacity:.9;animation-name:ringIn;animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:ease}
+.sun-label{position:absolute;right:64px;bottom:66px;background:#111;color:#FAF5E9;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;padding:10px 14px;animation-name:fadeUpB;animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:ease}
+@keyframes sunIn{0%{opacity:0;transform:scale(.82) translateY(30px)}2%{opacity:1;transform:scale(1) translateY(0)}28%{opacity:1;transform:scale(1) translateY(-8px)}33%{opacity:0;transform:scale(1.06) translateY(-20px)}100%{opacity:0;transform:scale(.82)}}
+@keyframes ringIn{0%{opacity:0;transform:scale(.9) rotate(-10deg)}3%{opacity:1;transform:scale(1) rotate(0)}28%{opacity:1;transform:scale(1) rotate(8deg)}33%{opacity:0;transform:scale(1.05)}100%{opacity:0;transform:scale(.9)}}
+.s2-grid{display:flex;width:100%;align-items:center;gap:40px}
+.s2-text{width:620px}
+.s2-text h2{font-size:88px;margin:16px 0 20px -4px}
+.s2-text h2 em{font-style:italic}
+.ing{border-top:1px solid #111}
+.ing-row{display:flex;justify-content:space-between;align-items:baseline;padding:13px 0;border-bottom:1px solid #111;font-size:16px}
+.ing-row strong{font-weight:700}
+.ing-row span{font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.08em;text-align:right;color:#333}
+.ing-row.a{animation-name:listA;animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:ease}
+.ing-row.b{animation-name:listB;animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:ease}
+.ing-row.c{animation-name:listC;animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:ease}
+.ing-row.d{animation-name:listD;animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:ease}
+@keyframes listA{0%,35%{opacity:0;transform:translateX(-22px)}38%,60%{opacity:1;transform:translateX(0)}64%,100%{opacity:0;transform:translateX(0)}}
+@keyframes listB{0%,37%{opacity:0;transform:translateX(-22px)}40%,60%{opacity:1;transform:translateX(0)}64%,100%{opacity:0;transform:translateX(0)}}
+@keyframes listC{0%,39%{opacity:0;transform:translateX(-22px)}42%,60%{opacity:1;transform:translateX(0)}64%,100%{opacity:0;transform:translateX(0)}}
+@keyframes listD{0%,41%{opacity:0;transform:translateX(-22px)}44%,60%{opacity:1;transform:translateX(0)}64%,100%{opacity:0;transform:translateX(0)}}
+.s2-note{margin-top:18px;font-size:15px;color:#333;line-height:1.5;animation-name:listD;animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:ease}
+.bottle-stage{flex:1;display:flex;align-items:center;justify-content:center;position:relative;height:560px}
+.bottle-anim{animation-name:bottleIn;animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:ease}
+@keyframes bottleIn{0%,33%{opacity:0;transform:translateY(60px) scale(.96)}37%{opacity:1;transform:translateY(0) scale(1)}45%{opacity:1;transform:translateY(-10px) scale(1)}52%{opacity:1;transform:translateY(6px) scale(1)}60%{opacity:1;transform:translateY(-4px) scale(1)}64%,100%{opacity:0;transform:translateY(-30px) scale(1)}}
+.pedestal{width:340px;height:340px;background:#111;border-radius:50%;position:absolute;bottom:18px;opacity:.06}
+.bottle{width:210px;position:relative;filter:drop-shadow(0 30px 30px rgba(0,0,0,.25))}
+.cap{width:84px;height:72px;background:#111;margin:0 auto;border-radius:8px 8px 4px 4px;position:relative}
+.cap:after{content:"";position:absolute;left:12px;right:12px;top:14px;bottom:14px;border-left:1px solid #444;border-right:1px solid #444;opacity:.8}
+.neck{width:66px;height:22px;background:linear-gradient(#E8D9B8,#C9A86A);margin:0 auto}
+.shoulder{width:150px;height:32px;background:linear-gradient(#D9A25A,#9A4A12);margin:0 auto;border-radius:6px 6px 0 0}
+.body{width:210px;height:320px;background:linear-gradient(105deg,#E9B86B 0%,#C67A24 18%,#8B3005 52%,#5E1E00 78%,#3E1300 100%);border-radius:18px 18px 28px 28px;position:relative;overflow:hidden;border:1px solid rgba(0,0,0,.6)}
+.body:before{content:"";position:absolute;left:18px;top:18px;bottom:18px;width:28px;background:linear-gradient(rgba(255,255,255,.85),rgba(255,255,255,.15));border-radius:20px;opacity:.9}
+.body:after{content:"";position:absolute;right:18px;top:18px;bottom:18px;width:10px;background:rgba(255,255,255,.35);border-radius:10px}
+.label{position:absolute;left:16px;right:16px;top:86px;background:#FAF5E9;color:#111;text-align:center;padding:22px 10px 18px;border:1px solid #111}
+.label small{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.28em}
+.label h4{font-family:'Cormorant Garamond',serif;font-size:44px;line-height:1;margin:6px 0 2px}
+.label p{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;line-height:1.6}
+.drop{position:absolute;left:50%;top:-18px;width:22px;height:30px;background:#FFD88A;border-radius:50% 50% 50% 50% / 60% 60% 40% 40%;transform:translateX(-50%) rotate(180deg);border:1px solid #111}
+.s3-inner{width:100%;display:flex;align-items:center;gap:60px}
+.s3-left{flex:1}
+.s3-right{width:460px;height:520px;background:#FAF5E9;color:#111;border:1px solid #FAF5E9;position:relative;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:40px;animation-name:cardIn;animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:ease}
+.s3 .eyebrow{color:#FFD9A0}
+.s3 h2{font-size:132px;line-height:.9;margin:14px 0 10px -6px}
+.s3 h2 span{font-style:italic;font-weight:400}
+.s3 .offer-sub{font-size:19px;line-height:1.55;max-width:560px;color:#F7E8C9}
+.s3 .thin{height:1px;background:#FAF5E9;margin:24px 0;opacity:.7;transform-origin:left;animation-name:ruleGrow2;animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:ease}
+@keyframes ruleGrow2{0%,69%{opacity:0;transform:scaleX(0)}73%,95%{opacity:.8;transform:scaleX(1)}100%{opacity:0;transform:scaleX(1)}}
+@keyframes cardIn{0%,68%{opacity:0;transform:translateY(40px) scale(.97)}72%,95%{opacity:1;transform:translateY(0) scale(1)}100%{opacity:0;transform:translateY(-10px) scale(1)}}
+.cta{animation-name:ctaNudge;animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:ease;background:#111;color:#FAF5E9;font-weight:700;font-size:16px;letter-spacing:.14em;padding:20px 36px;margin-top:24px;width:100%}
+@keyframes ctaNudge{0%,72%{opacity:1;transform:scale(1)}78%{opacity:1;transform:scale(1.04)}84%,100%{opacity:1;transform:scale(1)}}
+.mini-bottle{width:92px;height:148px;background:linear-gradient(105deg,#E9B86B,#8B3005 60%,#3E1300);border-radius:12px 12px 18px 18px;position:relative;margin-bottom:18px;border:1px solid #111}
+.mini-bottle:before{content:"noon";font-family:'Cormorant Garamond',serif;font-size:30px;position:absolute;left:0;right:0;top:44px;text-align:center;background:#FAF5E9;padding:8px 0;border-top:1px solid #111;border-bottom:1px solid #111}
+.mini-cap{width:38px;height:32px;background:#111;margin:0 auto 4px;border-radius:5px 5px 0 0}
+.price{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;margin-top:16px;line-height:1.8}
+.price s{opacity:.6}
+.bottombar{height:52px;border-top:1px solid #111;display:flex;align-items:center;gap:20px;padding:0 36px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.18em;z-index:20;background:#FAF5E9}
+.bottombar.s3b{background:#7A2600;color:#FAF5E9;border-top-color:#FAF5E9;animation-name:bottomSwap;animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:ease}
+@keyframes bottomSwap{0%,66.6%{opacity:0}69%,96%{opacity:1}100%{opacity:0}}
+.track{flex:1;height:2px;background:rgba(0,0,0,.15);position:relative;overflow:hidden}
+.track.dark{background:rgba(255,255,255,.25)}
+.fill{position:absolute;inset:0;background:#111;transform-origin:left;animation-name:fillBar;animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:linear}
+.dark .fill{background:#FAF5E9}
+@keyframes fillBar{0%{opacity:1;transform:scaleX(0)}100%{opacity:1;transform:scaleX(1)}}
+.ticks{display:flex;gap:18px}
+</style>
+</head>
+<body>
+<div class="stage">
+<div class="topbar"><div><b>NOON</b><span class="dot"></span>VITAMIN C + CERAMIDE</div><div>30 ML — pH 5.5 — N°01</div></div>
+<div class="main">
+<!-- HOOK 0-4s -->
+<div class="scene s1">
+<div class="s1-left">
+<div class="eyebrow">N°01 — STABILIZED VITAMIN C SERUM</div>
+<h1 class="h-serif">Light does<br><em>the work.</em></h1>
+<p class="sub">15% vitamin C + ceramide. One dropper at noon, nothing to decode. Calm skin, clear label.</p>
+<div class="rule"></div>
+<div class="rule-note"><span>FRAGRANCE-FREE</span><span>VEGAN</span><span>DERM TESTED</span></div>
+</div>
+<div class="sun-wrap"><div class="sun"></div><div class="sun-ring"></div><div class="sun-label">AMBER HOUR — 12:00</div></div>
+</div>
+<!-- PRODUCT 4-8s -->
+<div class="scene s2">
+<div class="s2-grid">
+<div class="s2-text">
+<div class="eyebrow" style="color:#8B2E00">WHAT'S INSIDE — READ IT YOURSELF</div>
+<h2 class="h-serif">Precise to <em>the decimal.</em></h2>
+<div class="ing">
+<div class="ing-row a"><strong>15% 3-O-Ethyl Ascorbic Acid</strong><span>BRIGHTENS / EVENS TONE</span></div>
+<div class="ing-row b"><strong>Ceramide NP + AP</strong><span>SEALS MOISTURE BARRIER</span></div>
+<div class="ing-row c"><strong>Ferulic + Vitamin E</strong><span>STABILIZES VITAMIN C</span></div>
+<div class="ing-row d"><strong>pH 5.5 Base</strong><span>NO FRAGRANCE / NO DYE</span></div>
+</div>
+<p class="s2-note">Frosted amber glass protects potency. 30 ml — 3 months of mornings. One dropper, pressed, not rubbed.</p>
+</div>
+<div class="bottle-stage"><div class="pedestal"></div><div class="bottle-anim"><div class="bottle"><div class="cap"></div><div class="neck"></div><div class="shoulder"></div><div class="body"><div class="label"><div class="drop"></div><small>NOON N°01</small><h4>noon</h4><p>C + CERAMIDE<br>30 ml e 1.0 FL OZ</p></div></div></div></div></div>
+</div>
+</div>
+<!-- OFFER 8-12s -->
+<div class="scene s3">
+<div class="s3-inner">
+<div class="s3-left">
+<div class="eyebrow">LAUNCH WEEK — FIRST 7 DAYS ONLY</div>
+<h2 class="h-serif"><span>20%</span> off</h2>
+<p class="offer-sub">Noon Serum N°01. Frosted amber glass, 30 ml.<br><strong style="color:#fff">$68 now $54.40.</strong> New customers, one per order.<br>30-day returns. Ships in 48 hours.</p>
+<div class="thin"></div>
+<p class="offer-sub" style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.2em">USE CODE: FIRSTLIGHT — NOON.SKIN</p>
+</div>
+<div class="s3-right">
+<div class="mini-cap"></div><div class="mini-bottle"></div>
+<div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.26em">NOON N°01 — 30 ML</div>
+<div style="font-family:'Cormorant Garamond',serif;font-size:38px;line-height:1;margin-top:6px">Calm. Clear. Noon.</div>
+<div class="cta">SHOP NOON — $54.40</div>
+<div class="price"><s>$68.00</s> &nbsp; SAVE $13.60 &nbsp; • &nbsp; ENDS IN 7 DAYS</div>
+</div>
+</div>
+</div>
+</div>
+<div class="bottombar"><span>00</span><div class="track"><div class="fill"></div></div><span>04</span><div class="track"><div class="fill"></div></div><span>08</span><div class="track"><div class="fill"></div></div><span>12 LOOP</span></div>
+<div class="bottombar s3b" style="position:absolute;bottom:0;left:0;right:0"><span style="color:#FAF5E9">20% OFF</span><div class="track dark"><div class="fill"></div></div><div class="ticks"><span>SHOP NOW</span><span>NOON.SKIN</span></div></div>
+</div>
+</body>
+</html>

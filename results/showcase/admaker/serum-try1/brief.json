@@ -1,0 +1,30 @@
+{
+ "product": {
+  "name": "Noon",
+  "what": "vitamin-C and ceramide serum",
+  "form": "bottle",
+  "colour": "frosted amber"
+ },
+ "audience": "women 25 to 35 who read ingredient lists",
+ "promise": "Calm, precise radiance in every drop.",
+ "must_say": [
+  "Noon",
+  "vitamin-C and ceramide serum",
+  "frosted amber glass bottle",
+  "30 ml",
+  "20% off for the first week"
+ ],
+ "tone": "calm, precise, expensive",
+ "brand": {
+  "primary": "#7A3E0E",
+  "secondary": "#F6F1E7",
+  "accent": "#000000",
+  "text": "Noon"
+ },
+ "physical_subject": {
+  "what": "frosted amber glass bottle (30 ml)",
+  "why_3d": "frosted amber glass material, bottle shape and 30 ml scale",
+  "shown_by_assets": false
+ },
+ "_allowed_text": "A 12-second feed ad for 'Noon', a vitamin-C and ceramide serum in a frosted amber glass bottle (30 ml) from a premium direct-to-consumer skincare brand. Launch offer: 20% off for the first week. Audience: women 25 to 35 who read ingredient lists. Tone: calm, precise, expensive. Brand colours: deep amber, bone white, a thin black line."
+}

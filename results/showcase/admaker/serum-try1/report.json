@@ -1,0 +1,1078 @@
+{
+ "source": null,
+ "brief": "A 12-second feed ad for 'Noon', a vitamin-C and ceramide serum in a frosted amber glass bottle (30 ml) from a premium direct-to-consumer skincare brand. Launch offer: 20% off for the first week. Audience: women 25 to 35 who read ingredient lists. Tone: calm, precise, expensive. Brand colours: deep amber, bone white, a thin black line.",
+ "creative_brief": {
+  "product": {
+   "name": "Noon",
+   "what": "vitamin-C and ceramide serum",
+   "form": "bottle",
+   "colour": "frosted amber"
+  },
+  "audience": "women 25 to 35 who read ingredient lists",
+  "promise": "Calm, precise radiance in every drop.",
+  "must_say": [
+   "Noon",
+   "vitamin-C and ceramide serum",
+   "frosted amber glass bottle",
+   "30 ml",
+   "20% off for the first week"
+  ],
+  "tone": "calm, precise, expensive",
+  "brand": {
+   "primary": "#7A3E0E",
+   "secondary": "#F6F1E7",
+   "accent": "#000000",
+   "text": "Noon"
+  },
+  "physical_subject": {
+   "what": "frosted amber glass bottle (30 ml)",
+   "why_3d": "frosted amber glass material, bottle shape and 30 ml scale",
+   "shown_by_assets": false
+  }
+ },
+ "steps": [
+  {
+   "round": 0,
+   "html": "results/showcase/admaker/serum-try1/r0.html",
+   "mp4": "results/showcase/admaker/serum-try1/r0.mp4",
+   "png": "results/showcase/admaker/serum-try1/r0.png",
+   "brain": {
+    "item_id": "ad_try1_serum_r0",
+    "heads": {
+     "aesthetic": {
+      "score": 0.016746651381254196,
+      "percentile": 0.0,
+      "confidence": 0.9665066972374916
+     },
+     "attention": {
+      "score": 0.5892850160598755,
+      "percentile": 65.75342465753424,
+      "confidence": 0.17857003211975098
+     },
+     "appeal": {
+      "score": 0.32739147543907166,
+      "percentile": 7.802197802197802,
+      "confidence": 0.3452170491218567
+     },
+     "popularity": {
+      "score": 0.7193931937217712,
+      "percentile": 98.02197802197801,
+      "confidence": 0.4387863874435425
+     }
+    },
+    "roi_ts": {
+     "visual_early": [
+      -0.0328,
+      -0.0143,
+      -0.0011,
+      0.0219,
+      0.0321,
+      0.0497,
+      0.052,
+      0.0552,
+      0.065,
+      0.0678,
+      0.0401,
+      0.0569
+     ],
+     "visual_motion": [
+      -0.0423,
+      -0.0386,
+      -0.0386,
+      -0.0008,
+      0.0165,
+      0.0524,
+      0.0743,
+      0.1022,
+      0.1114,
+      0.1028,
+      0.0098,
+      0.0194
+     ],
+     "face_body": [
+      -0.0645,
+      -0.0575,
+      -0.0645,
+      -0.0266,
+      -0.0248,
+      -0.0017,
+      0.0315,
+      0.0525,
+      0.0414,
+      0.0609,
+      0.1105,
+      0.1166
+     ],
+     "scene_place": [
+      0.032,
+      0.0339,
+      0.0374,
+      0.0601,
+      0.0663,
+      0.0848,
+      0.0902,
+      0.0889,
+      0.0966,
+      0.0776,
+      0.0288,
+      0.0416
+     ],
+     "attention_dorsal": [
+      0.0309,
+      0.019,
+      0.0226,
+      0.0297,
+      0.0412,
+      0.0576,
+      0.0642,
+      0.0797,
+      0.092,
+      0.0802,
+      0.0831,
+      0.102
+     ],
+     "value_vmpfc": [
+      -0.0064,
+      -0.004,
+      -0.0026,
+      -0.0022,
+      -0.0006,
+      0.0053,
+      0.0077,
+      0.0076,
+      0.0117,
+      0.0073,
+      -0.0018,
+      0.0013
+     ],
+     "language": [
+      -0.1123,
+      -0.1049,
+      -0.1004,
+      -0.0792,
+      -0.0806,
+      -0.0748,
+      -0.0455,
+      -0.0278,
+      -0.0426,
+      -0.0122,
+      0.0809,
+      0.0944
+     ],
+     "default_mode": [
+      -0.0682,
+      -0.0746,
+      -0.0777,
+      -0.0756,
+      -0.0699,
+      -0.0478,
+      -0.0267,
+      -0.0248,
+      -0.017,
+      -0.0196,
+      -0.0156,
+      -0.0222
+     ],
+     "control_dlpfc": [
+      -0.0139,
+      -0.0193,
+      -0.0141,
+      -0.0185,
+      -0.0102,
+      0.0029,
+      0.0087,
+      0.0132,
+      0.0184,
+      0.0117,
+      0.0237,
+      0.0316
+     ]
+    },
+    "hook_delta": -0.033,
+    "attention_peak_s": 12,
+    "visual_peak_s": 10,
+    "critique": {
+     "kind": "video",
+     "ranking": [
+      [
+       "scene_place",
+       0.9036619061311947
+      ],
+      [
+       "attention_dorsal",
+       0.8479546003763131
+      ],
+      [
+       "visual_early",
+       0.3687170283683448
+      ],
+      [
+       "visual_motion",
+       0.3315788245317571
+      ],
+      [
+       "face_body",
+       0.03029514590743872
+      ],
+      [
+       "control_dlpfc",
+       -0.18572540640871363
+      ],
+      [
+       "value_vmpfc",
+       -0.2025923406511639
+      ],
+      [
+       "language",
+       -1.0200970526040527
+      ],
+      [
+       "default_mode",
+       -1.0737927056511192
+      ]
+     ],
+     "hook": {
+      "attention_early": 0.22465174598558144,
+      "attention_late": 0.9726151712544594,
+      "visual_early": -0.6759496970516725,
+      "visual_late": 0.5776503734523483
+     },
+     "diagnosis": [
+      "Place areas (PPA/RSC) dominate: the background scene swallows the message",
+      "Weak hook in the first 2 s (+0.22 → +0.97)",
+      "Attention network (IPS/FEF) is busy: several candidates compete for the eye",
+      "Reward/value areas (OFC/vmPFC) are low: no 'I want this' signal"
+     ],
+     "directives": [
+      "Simplify the environment: crop or blur the scene, put copy on a solid panel, let one subject own the frame.",
+      "Front-load the hook: the single strongest visual must be visible immediately at the top-left/center, not after a scroll or animation.",
+      "Make a single focal point: one hero element 2–3× larger than anything else; demote secondary cards and badges.",
+      "Make the benefit concrete and desirable: show the outcome (before/after, real numbers, price or scarcity), warm highlight color on the offer, social proof near the CTA."
+     ],
+     "cited_areas": [
+      "▲ R sound (predicted even for stills) (A1) [aesthetic]",
+      "▲ L reward value, liking (pOFC) [aesthetic]",
+      "▲ object shape & motion (MT/LO) mean [attention]",
+      "▲ object shape & motion (MT/LO) max [attention]"
+     ],
+     "groups": [
+      "scene_place",
+      "",
+      "attention_dorsal",
+      "value_vmpfc"
+     ],
+     "prompt_block": "BRAIN CRITIQUE (TRIBE v2 predicted human cortex while looking at the last render; values are relative within this image):\n- most driven regions: places & scenes (PPA/RSC) +0.90, visual attention (IPS/FEF) +0.85, early vision (V1–V4) +0.37; least: language (Broca/STG) -1.02, default mode (mind-wandering) -1.07\n- first-2s hook vs later: attention +0.22 → +0.97, visual drive -0.68 → +0.58\n- areas the aesthetic head cites: ▲ R sound (predicted even for stills) (A1) [aesthetic]; ▲ L reward value, liking (pOFC) [aesthetic]; ▲ object shape & motion (MT/LO) mean [attention]; ▲ object shape & motion (MT/LO) max [attention]\n- diagnosis: Place areas (PPA/RSC) dominate: the background scene swallows the message / Weak hook in the first 2 s (+0.22 → +0.97) / Attention network (IPS/FEF) is busy: several candidates compete for the eye / Reward/value areas (OFC/vmPFC) are low: no 'I want this' signal\n- DO NEXT (highest priority first): (1) Simplify the environment: crop or blur the scene, put copy on a solid panel, let one subject own the frame. (2) Front-load the hook: the single strongest visual must be visible immediately at the top-left/center, not after a scroll or animation. (3) Make a single focal point: one hero element 2–3× larger than anything else; demote secondary cards and badges. (4) Make the benefit concrete and desirable: show the outcome (before/after, real numbers, price or scarcity), warm highlight color on the offer, social proof near the CTA."
+    }
+   },
+   "judge": {
+    "aesthetic": 0.8888888888888888,
+    "clarity": 0.6666666666666666,
+    "attention": 0.6666666666666666,
+    "brief_fit": 0.8888888888888888,
+    "judge_score": 0.7777777777777777,
+    "reason": "Elegant amber-bone system delivers formula transparency and launch offer with premium calm but final frame layers type over bottle hurting focus and instant clarity"
+   },
+   "brain_score": 0.3399,
+   "ui_score": 0.5588,
+   "critique": [
+    "Place areas (PPA/RSC) dominate: the background scene swallows the message",
+    "Weak hook in the first 2 s (+0.22 → +0.97)",
+    "Attention network (IPS/FEF) is busy: several candidates compete for the eye",
+    "Reward/value areas (OFC/vmPFC) are low: no 'I want this' signal"
+   ],
+   "attention_peak_s": 12,
+   "hook_delta": -0.033,
+   "why": "one shot: Muse wrote the ad once, no feedback",
+   "accepted": true
+  },
+  {
+   "round": 1,
+   "html": "results/showcase/admaker/serum-try1/r1.html",
+   "mp4": "results/showcase/admaker/serum-try1/r1.mp4",
+   "png": "results/showcase/admaker/serum-try1/r1.png",
+   "brain": {
+    "item_id": "ad_try1_serum_r1",
+    "heads": {
+     "aesthetic": {
+      "score": 0.026842288672924042,
+      "percentile": 0.0,
+      "confidence": 0.9463154226541519
+     },
+     "attention": {
+      "score": 0.6538087129592896,
+      "percentile": 76.43835616438356,
+      "confidence": 0.3076174259185791
+     },
+     "appeal": {
+      "score": 0.420274019241333,
+      "percentile": 26.813186813186814,
+      "confidence": 0.15945196151733398
+     },
+     "popularity": {
+      "score": 0.6000008583068848,
+      "percentile": 81.53846153846153,
+      "confidence": 0.20000171661376953
+     }
+    },
+    "roi_ts": {
+     "visual_early": [
+      -0.0755,
+      -0.071,
+      -0.0683,
+      -0.0469,
+      -0.0267,
+      -0.008,
+      0.0061,
+      0.0376,
+      0.0162,
+      -0.0075,
+      -0.0461,
+      -0.0676
+     ],
+     "visual_motion": [
+      0.0224,
+      0.034,
+      0.0259,
+      0.0515,
+      0.0728,
+      0.0798,
+      0.0908,
+      0.1045,
+      0.0717,
+      0.0301,
+      -0.0902,
+      -0.109
+     ],
+     "face_body": [
+      -0.056,
+      -0.0449,
+      -0.0434,
+      -0.0161,
+      0.0001,
+      0.0048,
+      0.035,
+      0.0516,
+      0.0425,
+      0.0385,
+      0.0674,
+      0.0708
+     ],
+     "scene_place": [
+      0.0197,
+      0.019,
+      0.0127,
+      0.0241,
+      0.0329,
+      0.0481,
+      0.0619,
+      0.077,
+      0.0647,
+      0.0475,
+      0.0072,
+      -0.0017
+     ],
+     "attention_dorsal": [
+      0.0373,
+      0.0359,
+      0.0392,
+      0.0443,
+      0.0534,
+      0.0628,
+      0.0602,
+      0.0696,
+      0.0642,
+      0.0424,
+      0.0401,
+      0.0423
+     ],
+     "value_vmpfc": [
+      -0.0189,
+      -0.0169,
+      -0.0177,
+      -0.0192,
+      -0.0178,
+      -0.0123,
+      -0.0097,
+      -0.0084,
+      -0.0082,
+      -0.0122,
+      -0.0203,
+      -0.0259
+     ],
+     "language": [
+      -0.1213,
+      -0.11,
+      -0.0963,
+      -0.0853,
+      -0.0811,
+      -0.0809,
+      -0.057,
+      -0.0479,
+      -0.0466,
+      -0.0273,
+      0.0528,
+      0.0775
+     ],
+     "default_mode": [
+      -0.044,
+      -0.0547,
+      -0.0689,
+      -0.0782,
+      -0.0815,
+      -0.0698,
+      -0.0521,
+      -0.0438,
+      -0.0343,
+      -0.0447,
+      -0.0281,
+      -0.057
+     ],
+     "control_dlpfc": [
+      -0.0055,
+      -0.0058,
+      -0.0038,
+      -0.0123,
+      -0.0119,
+      -0.0041,
+      -0.0036,
+      0.0003,
+      0.0035,
+      -0.0094,
+      0.0053,
+      -0.003
+     ]
+    },
+    "hook_delta": -0.01,
+    "attention_peak_s": 8,
+    "visual_peak_s": 8,
+    "critique": {
+     "kind": "video",
+     "ranking": [
+      [
+       "attention_dorsal",
+       1.0290270691516803
+      ],
+      [
+       "scene_place",
+       0.7368887214319376
+      ],
+      [
+       "visual_motion",
+       0.6897801860773544
+      ],
+      [
+       "face_body",
+       0.3070233363213644
+      ],
+      [
+       "control_dlpfc",
+       -0.0211006981275738
+      ],
+      [
+       "value_vmpfc",
+       -0.2455205262751028
+      ],
+      [
+       "visual_early",
+       -0.5239188845164253
+      ],
+      [
+       "language",
+       -0.9585278374231198
+      ],
+      [
+       "default_mode",
+       -1.0136513666401146
+      ]
+     ],
+     "hook": {
+      "attention_early": 0.7795808315970286,
+      "attention_late": 1.0789163166626106,
+      "visual_early": -1.3766160886950467,
+      "visual_late": -0.35337944368070096
+     },
+     "diagnosis": [
+      "Attention network (IPS/FEF) is busy: several candidates compete for the eye",
+      "Place areas (PPA/RSC) dominate: the background scene swallows the message",
+      "Weak hook in the first 2 s (+0.78 → +1.08)",
+      "Reward/value areas (OFC/vmPFC) are low: no 'I want this' signal"
+     ],
+     "directives": [
+      "Make a single focal point: one hero element 2–3× larger than anything else; demote secondary cards and badges.",
+      "Simplify the environment: crop or blur the scene, put copy on a solid panel, let one subject own the frame.",
+      "Front-load the hook: the single strongest visual must be visible immediately at the top-left/center, not after a scroll or animation.",
+      "Make the benefit concrete and desirable: show the outcome (before/after, real numbers, price or scarcity), warm highlight color on the offer, social proof near the CTA."
+     ],
+     "cited_areas": [
+      "▲ R sound (predicted even for stills) (A1) [aesthetic]",
+      "▼ L reward value, liking (pOFC) [aesthetic]",
+      "▲ early vision (V1–V4) mean [attention]",
+      "▲ object shape & motion (MT/LO) max [attention]"
+     ],
+     "groups": [
+      "attention_dorsal",
+      "scene_place",
+      "",
+      "value_vmpfc"
+     ],
+     "prompt_block": "BRAIN CRITIQUE (TRIBE v2 predicted human cortex while looking at the last render; values are relative within this image):\n- most driven regions: visual attention (IPS/FEF) +1.03, places & scenes (PPA/RSC) +0.74, object shape & motion (MT/LO) +0.69; least: language (Broca/STG) -0.96, default mode (mind-wandering) -1.01\n- first-2s hook vs later: attention +0.78 → +1.08, visual drive -1.38 → -0.35\n- areas the aesthetic head cites: ▲ R sound (predicted even for stills) (A1) [aesthetic]; ▼ L reward value, liking (pOFC) [aesthetic]; ▲ early vision (V1–V4) mean [attention]; ▲ object shape & motion (MT/LO) max [attention]\n- diagnosis: Attention network (IPS/FEF) is busy: several candidates compete for the eye / Place areas (PPA/RSC) dominate: the background scene swallows the message / Weak hook in the first 2 s (+0.78 → +1.08) / Reward/value areas (OFC/vmPFC) are low: no 'I want this' signal\n- DO NEXT (highest priority first): (1) Make a single focal point: one hero element 2–3× larger than anything else; demote secondary cards and badges. (2) Simplify the environment: crop or blur the scene, put copy on a solid panel, let one subject own the frame. (3) Front-load the hook: the single strongest visual must be visible immediately at the top-left/center, not after a scroll or animation. (4) Make the benefit concrete and desirable: show the outcome (before/after, real numbers, price or scarcity), warm highlight color on the offer, social proof near the CTA."
+    }
+   },
+   "judge": {
+    "aesthetic": 0.8888888888888888,
+    "clarity": 0.7777777777777778,
+    "attention": 0.6666666666666666,
+    "brief_fit": 1.0,
+    "judge_score": 0.8333333333333333,
+    "reason": "Exquisitely calm, precise and expensive system perfectly casts the bottle, ingredients and offer, though showing all three frames together splits the focal point."
+   },
+   "brain_score": 0.3773,
+   "ui_score": 0.6053,
+   "critique": [
+    "Attention network (IPS/FEF) is busy: several candidates compete for the eye",
+    "Place areas (PPA/RSC) dominate: the background scene swallows the message",
+    "Weak hook in the first 2 s (+0.78 → +1.08)",
+    "Reward/value areas (OFC/vmPFC) are low: no 'I want this' signal"
+   ],
+   "attention_peak_s": 8,
+   "hook_delta": -0.01,
+   "why": "",
+   "actions": [],
+   "facts": {
+    "numbers": [],
+    "names": [],
+    "ok": true
+   },
+   "accepted": true
+  },
+  {
+   "round": 2,
+   "html": "results/showcase/admaker/serum-try1/r2.html",
+   "mp4": "results/showcase/admaker/serum-try1/r2.mp4",
+   "png": "results/showcase/admaker/serum-try1/r2.png",
+   "brain": {
+    "item_id": "ad_try1_serum_r2",
+    "heads": {
+     "aesthetic": {
+      "score": 0.007634489331394434,
+      "percentile": 0.0,
+      "confidence": 0.9847310213372111
+     },
+     "attention": {
+      "score": 0.6277583241462708,
+      "percentile": 72.32876712328768,
+      "confidence": 0.2555166482925415
+     },
+     "appeal": {
+      "score": 0.1518402397632599,
+      "percentile": 0.10989010989010989,
+      "confidence": 0.6963195204734802
+     },
+     "popularity": {
+      "score": 0.5059686899185181,
+      "percentile": 53.62637362637363,
+      "confidence": 0.011937379837036133
+     }
+    },
+    "roi_ts": {
+     "visual_early": [
+      -0.0602,
+      -0.0743,
+      -0.0915,
+      -0.0924,
+      -0.0902,
+      -0.0716,
+      -0.0598,
+      -0.0379,
+      -0.0472,
+      -0.0608,
+      -0.0829,
+      -0.1159
+     ],
+     "visual_motion": [
+      -0.0215,
+      -0.0319,
+      -0.0592,
+      -0.0425,
+      -0.0312,
+      -0.0048,
+      0.015,
+      0.0458,
+      0.0436,
+      0.0064,
+      -0.094,
+      -0.1582
+     ],
+     "face_body": [
+      -0.0653,
+      -0.0644,
+      -0.0652,
+      -0.0552,
+      -0.0406,
+      -0.0222,
+      0.0214,
+      0.0425,
+      0.0461,
+      0.0525,
+      0.0835,
+      0.063
+     ],
+     "scene_place": [
+      0.02,
+      0.0088,
+      -0.0057,
+      -0.0016,
+      0.0013,
+      0.0179,
+      0.0319,
+      0.0404,
+      0.0319,
+      0.0145,
+      -0.017,
+      -0.0281
+     ],
+     "attention_dorsal": [
+      0.0226,
+      0.0176,
+      0.014,
+      0.0169,
+      0.0254,
+      0.0372,
+      0.0335,
+      0.0455,
+      0.0487,
+      0.0254,
+      0.0314,
+      0.024
+     ],
+     "value_vmpfc": [
+      -0.0166,
+      -0.0144,
+      -0.0166,
+      -0.0199,
+      -0.0196,
+      -0.0142,
+      -0.013,
+      -0.0127,
+      -0.0111,
+      -0.0158,
+      -0.022,
+      -0.0271
+     ],
+     "language": [
+      -0.1248,
+      -0.1176,
+      -0.0987,
+      -0.1008,
+      -0.0869,
+      -0.0819,
+      -0.0541,
+      -0.0425,
+      -0.0371,
+      -0.0085,
+      0.0657,
+      0.0835
+     ],
+     "default_mode": [
+      -0.0462,
+      -0.0526,
+      -0.0647,
+      -0.0767,
+      -0.0785,
+      -0.0555,
+      -0.0389,
+      -0.032,
+      -0.0199,
+      -0.031,
+      -0.014,
+      -0.05
+     ],
+     "control_dlpfc": [
+      -0.0119,
+      -0.0089,
+      -0.0063,
+      -0.0154,
+      -0.0119,
+      -0.0008,
+      -0.0042,
+      -0.0003,
+      0.0053,
+      -0.0086,
+      0.0098,
+      -0.0013
+     ]
+    },
+    "hook_delta": -0.011,
+    "attention_peak_s": 9,
+    "visual_peak_s": 8,
+    "critique": {
+     "kind": "video",
+     "ranking": [
+      [
+       "attention_dorsal",
+       1.0312024039115582
+      ],
+      [
+       "scene_place",
+       0.6295199269548966
+      ],
+      [
+       "face_body",
+       0.4211879007316523
+      ],
+      [
+       "control_dlpfc",
+       0.33200346310985734
+      ],
+      [
+       "value_vmpfc",
+       0.07026652661111119
+      ],
+      [
+       "visual_motion",
+       -0.15798218232213876
+      ],
+      [
+       "default_mode",
+       -0.5589596439616319
+      ],
+      [
+       "language",
+       -0.6359825673622727
+      ],
+      [
+       "visual_early",
+       -1.1312558276730316
+      ]
+     ],
+     "hook": {
+      "attention_early": 0.8531860363265523,
+      "attention_late": 1.0668056774285593,
+      "visual_early": -0.9943066023130815,
+      "visual_late": -1.1586456727450216
+     },
+     "diagnosis": [
+      "Attention network (IPS/FEF) is busy: several candidates compete for the eye",
+      "Place areas (PPA/RSC) dominate: the background scene swallows the message",
+      "Weak hook in the first 2 s (+0.85 → +1.07)",
+      "Reward/value areas (OFC/vmPFC) are low: no 'I want this' signal"
+     ],
+     "directives": [
+      "Make a single focal point: one hero element 2–3× larger than anything else; demote secondary cards and badges.",
+      "Simplify the environment: crop or blur the scene, put copy on a solid panel, let one subject own the frame.",
+      "Front-load the hook: the single strongest visual must be visible immediately at the top-left/center, not after a scroll or animation.",
+      "Make the benefit concrete and desirable: show the outcome (before/after, real numbers, price or scarcity), warm highlight color on the offer, social proof near the CTA."
+     ],
+     "cited_areas": [
+      "▲ R sound (predicted even for stills) (A1) [aesthetic]",
+      "▼ L reward value, liking (pOFC) [aesthetic]",
+      "▲ early vision (V1–V4) mean [attention]",
+      "▲ object shape & motion (MT/LO) mean [attention]"
+     ],
+     "groups": [
+      "attention_dorsal",
+      "scene_place",
+      "",
+      "value_vmpfc"
+     ],
+     "prompt_block": "BRAIN CRITIQUE (TRIBE v2 predicted human cortex while looking at the last render; values are relative within this image):\n- most driven regions: visual attention (IPS/FEF) +1.03, places & scenes (PPA/RSC) +0.63, faces & people (FFA/STS) +0.42; least: language (Broca/STG) -0.64, early vision (V1–V4) -1.13\n- first-2s hook vs later: attention +0.85 → +1.07, visual drive -0.99 → -1.16\n- areas the aesthetic head cites: ▲ R sound (predicted even for stills) (A1) [aesthetic]; ▼ L reward value, liking (pOFC) [aesthetic]; ▲ early vision (V1–V4) mean [attention]; ▲ object shape & motion (MT/LO) mean [attention]\n- diagnosis: Attention network (IPS/FEF) is busy: several candidates compete for the eye / Place areas (PPA/RSC) dominate: the background scene swallows the message / Weak hook in the first 2 s (+0.85 → +1.07) / Reward/value areas (OFC/vmPFC) are low: no 'I want this' signal\n- DO NEXT (highest priority first): (1) Make a single focal point: one hero element 2–3× larger than anything else; demote secondary cards and badges. (2) Simplify the environment: crop or blur the scene, put copy on a solid panel, let one subject own the frame. (3) Front-load the hook: the single strongest visual must be visible immediately at the top-left/center, not after a scroll or animation. (4) Make the benefit concrete and desirable: show the outcome (before/after, real numbers, price or scarcity), warm highlight color on the offer, social proof near the CTA."
+    }
+   },
+   "judge": {
+    "aesthetic": 0.8888888888888888,
+    "clarity": 0.7777777777777778,
+    "attention": 0.7777777777777778,
+    "brief_fit": 0.8888888888888888,
+    "judge_score": 0.8333333333333333,
+    "reason": "A calm, expensive system executes the hook-product-CTA arc perfectly, though headline and bottle split focus slightly."
+   },
+   "brain_score": 0.2956,
+   "ui_score": 0.5645,
+   "critique": [
+    "Attention network (IPS/FEF) is busy: several candidates compete for the eye",
+    "Place areas (PPA/RSC) dominate: the background scene swallows the message",
+    "Weak hook in the first 2 s (+0.85 → +1.07)",
+    "Reward/value areas (OFC/vmPFC) are low: no 'I want this' signal"
+   ],
+   "attention_peak_s": 9,
+   "hook_delta": -0.011,
+   "why": "",
+   "actions": [],
+   "facts": {
+    "numbers": [],
+    "names": [],
+    "ok": true
+   },
+   "accepted": false
+  },
+  {
+   "round": 3,
+   "html": "results/showcase/admaker/serum-try1/r3.html",
+   "mp4": "results/showcase/admaker/serum-try1/r3.mp4",
+   "png": "results/showcase/admaker/serum-try1/r3.png",
+   "brain": {
+    "item_id": "ad_try1_serum_r3",
+    "heads": {
+     "aesthetic": {
+      "score": 0.008228580467402935,
+      "percentile": 0.0,
+      "confidence": 0.9835428390651941
+     },
+     "attention": {
+      "score": 0.6252322196960449,
+      "percentile": 72.05479452054794,
+      "confidence": 0.25046443939208984
+     },
+     "appeal": {
+      "score": 0.16284579038619995,
+      "percentile": 0.21978021978021978,
+      "confidence": 0.6743084192276001
+     },
+     "popularity": {
+      "score": 0.6343930959701538,
+      "percentile": 89.12087912087912,
+      "confidence": 0.2687861919403076
+     }
+    },
+    "roi_ts": {
+     "visual_early": [
+      -0.0453,
+      -0.0662,
+      -0.0732,
+      -0.0684,
+      -0.0549,
+      -0.0278,
+      -0.0223,
+      -0.0006,
+      -0.0105,
+      -0.0272,
+      -0.0572,
+      -0.0822
+     ],
+     "visual_motion": [
+      -0.0136,
+      -0.0398,
+      -0.0502,
+      -0.0275,
+      -0.0176,
+      0.0191,
+      0.0195,
+      0.0442,
+      0.0365,
+      -0.0083,
+      -0.1139,
+      -0.1569
+     ],
+     "face_body": [
+      -0.0627,
+      -0.0635,
+      -0.0582,
+      -0.0366,
+      -0.0291,
+      -0.0001,
+      0.0336,
+      0.0515,
+      0.0513,
+      0.0544,
+      0.0895,
+      0.0756
+     ],
+     "scene_place": [
+      0.0115,
+      -0.0008,
+      -0.0097,
+      -0.0029,
+      0.0082,
+      0.0314,
+      0.0455,
+      0.054,
+      0.0471,
+      0.0281,
+      -0.0063,
+      -0.0192
+     ],
+     "attention_dorsal": [
+      0.0224,
+      0.0181,
+      0.0168,
+      0.0183,
+      0.0255,
+      0.0394,
+      0.0318,
+      0.043,
+      0.0457,
+      0.0228,
+      0.028,
+      0.0258
+     ],
+     "value_vmpfc": [
+      -0.0162,
+      -0.0145,
+      -0.0159,
+      -0.0201,
+      -0.0174,
+      -0.0106,
+      -0.0086,
+      -0.0074,
+      -0.0053,
+      -0.0085,
+      -0.0154,
+      -0.0188
+     ],
+     "language": [
+      -0.1246,
+      -0.1151,
+      -0.0964,
+      -0.0915,
+      -0.0872,
+      -0.0769,
+      -0.0502,
+      -0.0396,
+      -0.0372,
+      -0.008,
+      0.0703,
+      0.0902
+     ],
+     "default_mode": [
+      -0.051,
+      -0.0596,
+      -0.0692,
+      -0.0819,
+      -0.077,
+      -0.047,
+      -0.0288,
+      -0.0213,
+      -0.0093,
+      -0.0172,
+      0.0001,
+      -0.0354
+     ],
+     "control_dlpfc": [
+      -0.0142,
+      -0.0119,
+      -0.0089,
+      -0.0203,
+      -0.0147,
+      0.0003,
+      -0.002,
+      0.0026,
+      0.0085,
+      -0.0013,
+      0.016,
+      0.0066
+     ]
+    },
+    "hook_delta": -0.009,
+    "attention_peak_s": 9,
+    "visual_peak_s": 8,
+    "critique": {
+     "kind": "video",
+     "ranking": [
+      [
+       "attention_dorsal",
+       0.9127749309005652
+      ],
+      [
+       "scene_place",
+       0.638536036990006
+      ],
+      [
+       "face_body",
+       0.49077095281258476
+      ],
+      [
+       "control_dlpfc",
+       0.22690473106718967
+      ],
+      [
+       "value_vmpfc",
+       0.009624545712705634
+      ],
+      [
+       "visual_motion",
+       -0.26297655785598534
+      ],
+      [
+       "default_mode",
+       -0.6070945063529111
+      ],
+      [
+       "visual_early",
+       -0.6766096075299736
+      ],
+      [
+       "language",
+       -0.7319305257441809
+      ]
+     ],
+     "hook": {
+      "attention_early": 0.7406249682997763,
+      "attention_late": 0.9472049234207228,
+      "visual_early": -0.9190025781264333,
+      "visual_late": -0.6281310134106819
+     },
+     "diagnosis": [
+      "Attention network (IPS/FEF) is busy: several candidates compete for the eye",
+      "Place areas (PPA/RSC) dominate: the background scene swallows the message",
+      "Weak hook in the first 2 s (+0.74 → +0.95)",
+      "Reward/value areas (OFC/vmPFC) are low: no 'I want this' signal"
+     ],
+     "directives": [
+      "Make a single focal point: one hero element 2–3× larger than anything else; demote secondary cards and badges.",
+      "Simplify the environment: crop or blur the scene, put copy on a solid panel, let one subject own the frame.",
+      "Front-load the hook: the single strongest visual must be visible immediately at the top-left/center, not after a scroll or animation.",
+      "Make the benefit concrete and desirable: show the outcome (before/after, real numbers, price or scarcity), warm highlight color on the offer, social proof near the CTA."
+     ],
+     "cited_areas": [
+      "▲ R sound (predicted even for stills) (A1) [aesthetic]",
+      "▲ R effort (p9-46v) [aesthetic]",
+      "▲ early vision (V1–V4) mean [attention]",
+      "▲ object shape & motion (MT/LO) mean [attention]"
+     ],
+     "groups": [
+      "attention_dorsal",
+      "scene_place",
+      "",
+      "value_vmpfc"
+     ],
+     "prompt_block": "BRAIN CRITIQUE (TRIBE v2 predicted human cortex while looking at the last render; values are relative within this image):\n- most driven regions: visual attention (IPS/FEF) +0.91, places & scenes (PPA/RSC) +0.64, faces & people (FFA/STS) +0.49; least: early vision (V1–V4) -0.68, language (Broca/STG) -0.73\n- first-2s hook vs later: attention +0.74 → +0.95, visual drive -0.92 → -0.63\n- areas the aesthetic head cites: ▲ R sound (predicted even for stills) (A1) [aesthetic]; ▲ R effort (p9-46v) [aesthetic]; ▲ early vision (V1–V4) mean [attention]; ▲ object shape & motion (MT/LO) mean [attention]\n- diagnosis: Attention network (IPS/FEF) is busy: several candidates compete for the eye / Place areas (PPA/RSC) dominate: the background scene swallows the message / Weak hook in the first 2 s (+0.74 → +0.95) / Reward/value areas (OFC/vmPFC) are low: no 'I want this' signal\n- DO NEXT (highest priority first): (1) Make a single focal point: one hero element 2–3× larger than anything else; demote secondary cards and badges. (2) Simplify the environment: crop or blur the scene, put copy on a solid panel, let one subject own the frame. (3) Front-load the hook: the single strongest visual must be visible immediately at the top-left/center, not after a scroll or animation. (4) Make the benefit concrete and desirable: show the outcome (before/after, real numbers, price or scarcity), warm highlight color on the offer, social proof near the CTA."
+    }
+   },
+   "judge": {
+    "aesthetic": 0.7777777777777778,
+    "clarity": 0.6666666666666666,
+    "attention": 0.7777777777777778,
+    "brief_fit": 0.8888888888888888,
+    "judge_score": 0.7777777777777778,
+    "reason": "Elegant premium system nails the brief but the poetic hook delays instant comprehension and splits focus between headline and bottle."
+   },
+   "brain_score": 0.2983,
+   "ui_score": 0.538,
+   "critique": [
+    "Attention network (IPS/FEF) is busy: several candidates compete for the eye",
+    "Place areas (PPA/RSC) dominate: the background scene swallows the message",
+    "Weak hook in the first 2 s (+0.74 → +0.95)",
+    "Reward/value areas (OFC/vmPFC) are low: no 'I want this' signal"
+   ],
+   "attention_peak_s": 9,
+   "hook_delta": -0.009,
+   "why": "",
+   "actions": [],
+   "facts": {
+    "numbers": [],
+    "names": [],
+    "ok": true
+   },
+   "accepted": false
+  }
+ ],
+ "trail": [],
+ "best_round": 1,
+ "pairwise_best_vs_oneshot": {
+  "p_first": 0.12,
+  "order_ab": 0.12,
+  "order_ba": 0.12,
+  "reason": "B wins because it delivers instant clarity, specific ingredient credibility, a desirable result and urgent offer in a premium visual while A is too vague and undifferentiated to stop and convert. | swapped: A wins on 3-second clarity, premium desirability and conversion power with one hero focal point, specific ingredient proof and urgent 20%-off offer versus B's sparse generic layout"
+ },
+ "kind": "ad"
+}

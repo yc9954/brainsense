@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%}
+body{background:#0E0D0B;display:flex;align-items:center;justify-content:center;min-height:100vh;overflow:auto}
+.ad{width:1280px;height:720px;background:#F6F1E6;position:relative;overflow:hidden;flex-shrink:0}
+.frame{position:absolute;inset:18px;border:1px solid #131313;z-index:30;pointer-events:none}
+.frame::after{content:"";position:absolute;left:0;right:0;top:0;height:1px;background:#131313;opacity:.12}
+/* warm glow behind hero */
+.glow-pos{position:absolute;left:50%;top:46%;width:720px;height:720px;transform:translate(-50%,-50%);z-index:1}
+.glow{width:100%;height:100%;border-radius:50%;background:radial-gradient(circle at 50% 48%, #E9A94E 0%, #D57E1A 18%, rgba(213,126,26,.28) 38%, rgba(246,241,230,0) 68%);animation:glowP 12s ease-in-out infinite}
+@keyframes glowP{0%,100%{opacity:.62;transform:scale(1)}50%{opacity:.92;transform:scale(1.06)}}
+/* HOOK top-left */
+.hookA{position:absolute;left:66px;top:62px;z-index:5;font-family:"Cormorant Garamond",serif;font-weight:600;font-size:140px;line-height:.84;letter-spacing:-.03em;color:#131210;white-space:nowrap;animation:hookA 12s linear infinite}
+.hookB{position:absolute;left:70px;top:228px;z-index:5;font-family:"Cormorant Garamond",serif;font-style:italic;font-weight:500;font-size:78px;line-height:1;letter-spacing:-.02em;color:#2B1A08;white-space:nowrap;animation:hookB 12s linear infinite}
+.hook-rule{position:absolute;left:70px;top:338px;width:120px;height:2px;background:#131313;z-index:5;animation:hookB 12s linear infinite}
+@keyframes hookA{0%{opacity:1;transform:translateY(0)}15%{opacity:1;transform:translateY(0)}20%{opacity:0;transform:translateY(-26px)}99%{opacity:0;transform:translateY(-26px)}100%{opacity:1;transform:translateY(0)}}
+@keyframes hookB{0%,15%{opacity:0;transform:translateY(26px)}19%{opacity:1;transform:translateY(0)}29%{opacity:1;transform:translateY(0)}32.5%{opacity:0;transform:translateY(-18px)}100%{opacity:0;transform:translateY(-18px)}}
+/* HERO bottle centered */
+.bottle-pos{position:absolute;left:50%;top:47%;transform:translate(-50%,-50%);z-index:4;width:320px;height:600px}
+.bottle-float{width:100%;height:100%;position:relative;animation:floatB 12s ease-in-out infinite}
+@keyframes floatB{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+.cap{position:absolute;left:50%;top:18px;transform:translateX(-50%);width:98px;height:108px;background:linear-gradient(90deg,#0A0A0B 0%,#232426 18%,#3A3B3E 32%,#101112 58%,#000 100%);border-radius:10px 10px 4px 4px;box-shadow:inset 2px 0 6px rgba(255,255,255,.22)}
+.cap::after{content:"";position:absolute;left:14px;top:10px;bottom:10px;width:8px;background:linear-gradient(rgba(255,255,255,.35),rgba(255,255,255,0));border-radius:4px;opacity:.7}
+.neck{position:absolute;left:50%;top:126px;transform:translateX(-50%);width:62px;height:24px;background:linear-gradient(90deg,#4A2203,#9A5310 40%,#D99A4E 50%,#7A3E0A 70%,#3A1A02)}
+.b-body{position:absolute;left:50%;top:150px;transform:translateX(-50%);width:242px;height:372px;border-radius:30px 30px 38px 38px;background:linear-gradient(90deg,#451F02 0%,#7A3E0A 10%,#B66A18 24%,#EAC087 36%,#F3D29A 42%,#D68E2E 55%,#8A4A0D 76%,#4A2203 100%);box-shadow:0 30px 60px rgba(62,28,2,.28), inset 0 2px 8px rgba(255,255,255,.55), inset 0 -18px 30px rgba(40,18,0,.45);overflow:hidden;border:1px solid rgba(20,10,0,.35)}
+.frost{position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,250,238,.38) 0%,rgba(255,250,238,.08) 28%,rgba(60,25,0,.12) 78%,rgba(30,12,0,.28) 100%)}
+.shine{position:absolute;top:-10px;bottom:-10px;left:28px;width:34px;background:linear-gradient(180deg,rgba(255,255,255,.95),rgba(255,255,255,.15));filter:blur(.4px);opacity:.8;animation:shineS 12s linear infinite}
+.shine.s2{left:66px;width:10px;opacity:.7}
+@keyframes shineS{0%{opacity:0;transform:translateX(-70px) skewX(-12deg)}7%{opacity:.9;transform:translateX(-20px) skewX(-12deg)}24%{opacity:.9;transform:translateX(90px) skewX(-12deg)}34%,100%{opacity:0;transform:translateX(90px) skewX(-12deg)}}
+.label{position:absolute;left:50%;top:50%;transform:translate(-50%,-46%);width:174px;height:172px;background:#FCFAF2;border:1px solid #131313;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:12px 10px}
+.label-noon{font-family:"Cormorant Garamond",serif;font-size:42px;line-height:1;color:#111;font-weight:600;letter-spacing:.02em}
+.label-line{width:44px;height:1px;background:#111;margin:10px 0 9px}
+.label-form{font-family:Inter,sans-serif;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:#111;line-height:1.5}
+.label-ml{font-family:Inter,sans-serif;font-size:11px;letter-spacing:.22em;color:#111;margin-top:8px}
+.b-shadow{position:absolute;left:50%;bottom:18px;transform:translateX(-50%);width:240px;height:28px;background:radial-gradient(ellipse at center,rgba(20,10,0,.38) 0%,rgba(20,10,0,0) 68%);filter:blur(1px)}
+/* BENEFIT lower-left, sequential, max 3 words each */
+.benefit{position:absolute;left:70px;top:398px;z-index:6;width:430px}
+.b{font-family:"Cormorant Garamond",serif;font-size:62px;line-height:.95;letter-spacing:-.02em;color:#131210;white-space:nowrap}
+.b small{display:block;font-family:Inter,sans-serif;font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:#6B4A22;margin-bottom:10px}
+.b1{animation:b1 12s linear infinite}
+.b2{animation:b2 12s linear infinite}
+.b3{animation:b3 12s linear infinite}
+@keyframes b1{0%,33%{opacity:0;transform:translateY(20px)}36%,44%{opacity:1;transform:translateY(0)}46.5%,100%{opacity:0;transform:translateY(-16px)}}
+@keyframes b2{0%,46.5%{opacity:0;transform:translateY(20px)}49%,56%{opacity:1;transform:translateY(0)}58.5%,100%{opacity:0;transform:translateY(-16px)}}
+@keyframes b3{0%,58.5%{opacity:0;transform:translateY(20px)}61%,66.5%{opacity:1;transform:translateY(0)}69%,100%{opacity:0;transform:translateY(-16px)}}
+/* OFFER bottom amber bar */
+.offer-wrap{position:absolute;left:18px;right:18px;bottom:18px;height:172px;background:#7A3408;border-top:1px solid #131313;z-index:10;display:flex;align-items:center;justify-content:center;gap:28px;animation:offerW 12s linear infinite}
+@keyframes offerW{0%,66%{opacity:0;transform:translateY(72px)}70%,97%{opacity:1;transform:translateY(0)}100%{opacity:1;transform:translateY(0)}}
+.offer{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:84px;letter-spacing:-.02em;line-height:1;color:#F9F3E6;white-space:nowrap}
+.offer-arrow{width:58px;height:58px;border:1px solid #F9F3E6;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#F9F3E6;font-family:Inter,sans-serif;font-size:28px;line-height:1}
+/* progress hairline */
+.progress{position:absolute;left:18px;right:18px;bottom:18px;height:3px;z-index:11;pointer-events:none}
+.progress span{display:block;height:100%;background:#131313;transform-origin:left center;animation:prog 12s linear infinite}
+@keyframes prog{0%{transform:scaleX(0)}100%{transform:scaleX(1)}}
+</style>
+</head>
+<body>
+<div class="ad">
+<div class="glow-pos"><div class="glow"></div></div>
+<div class="hookA">Precise Calm</div>
+<div class="hookB">for Label Readers</div>
+<div class="hook-rule"></div>
+<div class="bottle-pos"><div class="bottle-float">
+<div class="cap"></div><div class="neck"></div>
+<div class="b-body"><div class="frost"></div><div class="shine"></div><div class="shine s2"></div>
+<div class="label"><div class="label-noon">Noon</div><div class="label-line"></div><div class="label-form">vitamin-C + ceramide</div><div class="label-ml">30 ml</div></div>
+</div>
+<div class="b-shadow"></div>
+</div></div>
+<div class="benefit b b1"><small>serum</small>vitamin-C ceramide serum</div>
+<div class="benefit b b2"><small>in</small>frosted amber glass</div>
+<div class="benefit b b3"><small>bottle</small>bottle — 30 ml</div>
+<div class="offer-wrap"><div class="offer">20% Off First Week</div><div class="offer-arrow">→</div></div>
+<div class="progress"><span></span></div>
+<div class="frame"></div>
+</div>
+</body>
+</html>

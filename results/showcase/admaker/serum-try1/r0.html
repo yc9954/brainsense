@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<title>Noon — Light, bottled. 12s</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%;background:#0f0e0c;display:flex;align-items:center;justify-content:center;overflow:auto}
+.stage{width:1280px;height:720px;flex:0 0 1280px;position:relative;overflow:hidden;background:#F9F4E8;color:#131110;font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased}
+.frame{position:absolute;inset:20px;border:1px solid #131110;z-index:20;pointer-events:none}
+.frame::after{content:"";position:absolute;inset:6px;border:1px solid rgba(19,17,16,.14)}
+.bgwash{position:absolute;inset:0;background:linear-gradient(180deg,#FDFBF3 0%,#F9F4E8 42%,#EFE5CF 100%)}
+.sun{position:absolute;left:50%;top:232px;width:560px;height:560px;transform:translate(-50%,0);border-radius:50%;background:radial-gradient(circle at 50% 38%,#F8CE8A 0%,#E49A43 26%,#9A4A12 58%,#5E2508 82%,#3D1604 100%);box-shadow:0 40px 120px rgba(122,47,11,.35),inset 0 -40px 80px rgba(0,0,0,.35);animation:sunPulse 12s infinite linear;z-index:1}
+.sun::after{content:"";position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle at 50% 115%,rgba(249,244,232,.9) 0%,rgba(249,244,232,0) 55%)}
+.ring{position:absolute;left:50%;top:512px;width:680px;height:680px;transform:translate(-50%,-50%);border:1px solid rgba(19,17,16,.28);border-radius:50%;z-index:1;animation:ringSpin 12s infinite linear}
+.ring::before{content:"NOON • VITAMIN C • CERAMIDE • NOON • VITAMIN C • CERAMIDE •";position:absolute;inset:-1px;display:flex;align-items:flex-start;justify-content:center;padding-top:14px;font-size:11px;letter-spacing:.42em;font-weight:600;opacity:.55}
+.ring i{position:absolute;left:50%;top:-4px;width:8px;height:8px;background:#131110;border-radius:50%;transform:translateX(-50%)}
+.horizon{position:absolute;left:0;right:0;top:511px;height:1px;background:#131110;z-index:6}
+.horizon::after{content:"12.00 — HIGH NOON";position:absolute;right:52px;top:-22px;font-size:10px;letter-spacing:.28em;font-weight:600;background:#F9F4E8;padding:0 10px}
+.top{position:absolute;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:36px 52px;z-index:10;font-size:11px;letter-spacing:.26em;font-weight:600}
+.top span:last-child{border:1px solid #131110;border-radius:100px;padding:8px 16px}
+.bottom{position:absolute;bottom:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:34px 52px;z-index:10;font-size:10px;letter-spacing:.24em;font-weight:500;opacity:.85}
+.scene{position:absolute;inset:0;z-index:7}
+.scene-1{animation:s1 12s infinite linear;display:flex;flex-direction:column;align-items:center;text-align:center;padding-top:118px}
+.eyebrow{font-size:11px;letter-spacing:.34em;font-weight:700;border:1px solid #131110;border-radius:100px;padding:10px 20px 10px 22px;background:#F9F4E8;animation:s1Up 12s infinite linear}
+.scene-1 h1{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:168px;line-height:.88;letter-spacing:-.04em;margin-top:18px;animation:s1Title 12s infinite linear}
+.scene-1 h1 em{font-style:italic;font-weight:400}
+.scene-1 .sub{margin-top:14px;font-size:15px;letter-spacing:.04em;max-width:560px;line-height:1.5;animation:s1Sub 12s infinite linear}
+.scene-1 .sub strong{font-weight:700}
+.thinline{width:1px;height:56px;background:#131110;margin:18px auto 0;transform-origin:top;animation:s1Line 12s infinite linear}
+.scene-2{animation:s2 12s infinite linear;z-index:8}
+.s2-left{position:absolute;left:84px;top:168px;width:320px;animation:s2L 12s infinite linear}
+.s2-right{position:absolute;right:84px;top:168px;width:320px;text-align:right;animation:s2R 12s infinite linear}
+.kicker{font-size:11px;letter-spacing:.3em;font-weight:700;margin-bottom:12px}
+.s2-left h3,.s2-right h3{font-family:'Cormorant Garamond',serif;font-size:42px;line-height:.95;font-weight:500;letter-spacing:-.02em}
+.ing{list-style:none;margin-top:18px;border-top:1px solid #131110}
+.ing li{display:flex;justify-content:space-between;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(19,17,16,.25);font-size:12px;letter-spacing:.06em}
+.ing li b{font-size:13px}
+.ing li span{opacity:.7}
+.benefit{margin-top:18px;border-top:1px solid #131110;font-size:13px;line-height:1.6}
+.benefit div{padding:10px 0;border-bottom:1px solid rgba(19,17,16,.25)}
+.stars{margin-top:12px;font-size:12px;letter-spacing:.12em;font-weight:700}
+.bottle-wrap{position:absolute;left:50%;bottom:148px;width:210px;height:500px;z-index:9;transform:translateX(-50%);animation:bottleIn 12s infinite linear}
+.bottle-inner{position:relative;width:100%;height:100%;animation:bottleFloat 12s infinite linear}
+.b-cap{width:76px;height:88px;background:#131110;border-radius:9px 9px 4px 4px;margin:0 auto;position:relative;box-shadow:inset 8px 0 14px rgba(255,255,255,.18)}
+.b-cap::after{content:"NOON";position:absolute;bottom:12px;left:50%;transform:translateX(-50%);color:#F9F4E8;font-size:10px;letter-spacing:.32em;font-weight:600;margin-left:.16em}
+.b-neck{width:56px;height:20px;margin:0 auto;background:linear-gradient(90deg,#2A0E02,#8A3A10 50%,#2A0E02)}
+.b-shoulder{width:166px;height:34px;margin:0 auto;background:linear-gradient(90deg,#3D1604,#C67A2E 32%,#F3C789 50%,#C67A2E 68%,#3D1604);clip-path:polygon(30% 0,70% 0,100% 100%,0 100%)}
+.b-body{width:166px;height:298px;margin:0 auto;border-radius:16px 16px 30px 30px;background:linear-gradient(102deg,#2A0E02 0%,#6B2808 14%,#A64E16 30%,#D98A3D 44%,#F6CC8D 50%,#D98A3D 56%,#8A3A10 74%,#3A1403 100%);position:relative;overflow:hidden;border:1px solid rgba(0,0,0,.55);box-shadow:inset 0 0 42px rgba(0,0,0,.5),0 34px 60px rgba(62,22,2,.4)}
+.b-body::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,251,238,.32),rgba(255,251,238,0) 42%,rgba(0,0,0,.32) 100%)}
+.b-shine{position:absolute;left:18px;top:14px;bottom:14px;width:22px;border-radius:20px;background:linear-gradient(180deg,rgba(255,255,255,.9),rgba(255,255,255,.05));animation:shineMove 12s infinite linear}
+.b-shine.s2{left:46px;width:7px;opacity:.6}
+.b-label{position:absolute;left:50%;top:52%;transform:translate(-50%,-50%);width:120px;height:176px;background:#F9F4E8;border:1px solid #131110;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:10px 8px}
+.b-label-noon{font-family:'Cormorant Garamond',serif;font-size:32px;letter-spacing:.08em;line-height:1}
+.b-label-sub{font-size:7.5px;letter-spacing:.18em;font-weight:700;margin-top:6px}
+.b-label-rule{width:28px;height:1px;background:#131110;margin:10px 0}
+.b-label-small{font-size:8px;letter-spacing:.12em;line-height:1.7;opacity:.85}
+.b-shadow{position:absolute;bottom:-18px;left:50%;transform:translateX(-50%);width:220px;height:30px;background:radial-gradient(ellipse at center,rgba(0,0,0,.5),transparent 68%);animation:shadowPulse 12s infinite linear}
+.drop{position:absolute;right:-44px;top:120px;width:34px;height:48px;background:linear-gradient(180deg,#F3C789,#9A4A12);border-radius:50% 50% 50% 50% / 62% 62% 38% 38%;border:1px solid rgba(0,0,0,.4);animation:dropFloat 12s infinite linear}
+.drop::after{content:"";position:absolute;left:7px;top:10px;width:8px;height:16px;background:rgba(255,255,255,.85);border-radius:20px}
+.scene-3{animation:s3 12s infinite linear;display:flex;flex-direction:column;align-items:center;text-align:center;padding-top:132px;z-index:10}
+.s3-eyebrow{font-size:11px;letter-spacing:.34em;font-weight:700;background:#131110;color:#F9F4E8;border-radius:100px;padding:10px 22px;animation:s3Up 12s infinite linear}
+.scene-3 h2{font-family:'Cormorant Garamond',serif;font-size:132px;line-height:.9;letter-spacing:-.04em;font-weight:300;margin-top:12px;animation:s3Title 12s infinite linear}
+.scene-3 h2 em{font-style:italic;font-weight:500}
+.price{display:flex;align-items:center;gap:14px;margin-top:10px;font-size:14px;letter-spacing:.08em;animation:s3Up 12s infinite linear}
+.price s{opacity:.55}
+.price b{background:#8A3A10;color:#F9F4E8;padding:6px 14px;border-radius:100px;letter-spacing:.14em}
+.cta{margin-top:22px;display:flex;align-items:center;gap:18px;animation:ctaIn 12s infinite linear}
+.btn{background:#131110;color:#F9F4E8;font-weight:700;font-size:15px;letter-spacing:.22em;padding:22px 52px;border-radius:100px;border:1px solid #131110;display:flex;align-items:center;gap:12px}
+.btn span:last-child{font-size:20px}
+.micro{font-size:11px;letter-spacing:.18em;opacity:.8;line-height:1.8;text-align:left}
+.progress{position:absolute;left:52px;right:52px;bottom:66px;height:2px;background:rgba(19,17,16,.15);z-index:21;overflow:hidden}
+.progress-fill{position:absolute;inset:0;background:#131110;transform-origin:left;transform:scaleX(0);animation:prog 12s infinite linear}
+@keyframes s1{0%,28%{opacity:1;visibility:visible}32.5%,92%{opacity:0;visibility:hidden}96%,100%{opacity:1;visibility:visible}}
+@keyframes s1Title{0%{opacity:0;transform:translateY(70px) scale(.98)}4%{opacity:1;transform:translateY(0) scale(1)}26%{opacity:1;transform:translateY(0) scale(1)}31%{opacity:0;transform:translateY(-50px) scale(1)}92%,100%{opacity:0;transform:translateY(70px) scale(.98)}}
+@keyframes s1Up{0%{opacity:0;transform:translateY(30px)}3%{opacity:1;transform:translateY(0)}24%{opacity:1;transform:translateY(0)}30%{opacity:0;transform:translateY(-20px)}92%,100%{opacity:0;transform:translateY(30px)}}
+@keyframes s1Sub{0%{opacity:0;transform:translateY(30px)}5%{opacity:0;transform:translateY(30px)}8%{opacity:1;transform:translateY(0)}25%{opacity:1;transform:translateY(0)}31%{opacity:0;transform:translateY(-20px)}92%,100%{opacity:0;transform:translateY(30px)}}
+@keyframes s1Line{0%{opacity:0;transform:scaleY(0)}4%{opacity:1;transform:scaleY(1)}26%{opacity:1;transform:scaleY(1)}31%,92%,100%{opacity:0;transform:scaleY(0)}}
+@keyframes s2{0%,30%{opacity:0;visibility:hidden}34%,60%{opacity:1;visibility:visible}65%,100%{opacity:0;visibility:hidden}}
+@keyframes s2L{0%,31%{opacity:0;transform:translateX(-40px)}37%,57%{opacity:1;transform:translateX(0)}62%,100%{opacity:0;transform:translateX(-40px)}}
+@keyframes s2R{0%,31%{opacity:0;transform:translateX(40px)}37%,57%{opacity:1;transform:translateX(0)}62%,100%{opacity:0;transform:translateX(40px)}}
+@keyframes bottleIn{0%,30%{opacity:0;visibility:hidden;transform:translateX(-50%) translateY(120px) scale(.96)}36%{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0) scale(1)}92%{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0) scale(1)}96%,100%{opacity:0;visibility:hidden;transform:translateX(-50%) translateY(120px) scale(.96)}}
+@keyframes bottleFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+@keyframes shadowPulse{0%,100%{opacity:.9;transform:translateX(-50%) scale(1)}50%{opacity:.6;transform:translateX(-50%) scale(.88)}}
+@keyframes shineMove{0%,36%,62%,100%{opacity:0;transform:translateX(-18px)}46%,54%{opacity:.9;transform:translateX(10px)}}
+@keyframes dropFloat{0%,34%,64%,100%{opacity:0;transform:translateY(20px)}42%,58%{opacity:1;transform:translateY(-10px)}}
+@keyframes s3{0%,62%{opacity:0;visibility:hidden}67%,92%{opacity:1;visibility:visible}97%,100%{opacity:0;visibility:hidden}}
+@keyframes s3Up{0%,64%{opacity:0;transform:translateY(30px)}70%{opacity:1;transform:translateY(0)}89%{opacity:1;transform:translateY(0)}93%,100%{opacity:0;transform:translateY(30px)}}
+@keyframes s3Title{0%,64%{opacity:0;transform:translateY(60px) scale(.98)}71%{opacity:1;transform:translateY(0) scale(1)}89%{opacity:1;transform:translateY(0) scale(1)}93%,100%{opacity:0;transform:translateY(60px) scale(.98)}}
+@keyframes ctaIn{0%,68%{opacity:0;transform:translateY(26px) scale(.96)}74%,89%{opacity:1;transform:translateY(0) scale(1)}93%,100%{opacity:0;transform:translateY(26px) scale(.96)}}
+@keyframes sunPulse{0%,100%{transform:translate(-50%,0) scale(1);opacity:.96}50%{transform:translate(-50%,-12px) scale(1.045);opacity:1}}
+@keyframes ringSpin{0%{transform:translate(-50%,-50%) rotate(0)}100%{transform:translate(-50%,-50%) rotate(360deg)}}
+@keyframes prog{0%{transform:scaleX(0)}100%{transform:scaleX(1)}}
+</style>
+</head>
+<body>
+<div class="stage">
+<div class="bgwash"></div>
+<div class="sun"></div>
+<div class="ring"><i></i></div>
+<div class="frame"></div>
+<header class="top"><span>NOON — SKINCARE</span><span>30 ML / VIT C + CERAMIDE</span></header>
+<div class="horizon"></div>
+<section class="scene scene-1">
+<div class="eyebrow">NEW &nbsp;·&nbsp; VITAMIN C + CERAMIDE &nbsp;·&nbsp; 30 ML</div>
+<h1>Light,<br><em>bottled.</em></h1>
+<p class="sub"><strong>12% ethyl vitamin C + ceramides.</strong> Brightening without the sting, the stain, or the smell.</p>
+<div class="thinline"></div>
+</section>
+<section class="scene scene-2">
+<div class="s2-left">
+<div class="kicker">01 — FORMULA</div>
+<h3>Reads clean.<br>Works hard.</h3>
+<ul class="ing">
+<li><b>12% 3-O-Ethyl C</b><span>brightens</span></li>
+<li><b>Ceramide NP + AP</b><span>barrier</span></li>
+<li><b>Ferulic + Vit E</b><span>stabilizes</span></li>
+<li><b>pH 5.8 · Vegan</b><span>fragrance-free</span></li>
+</ul>
+</div>
+<div class="s2-right">
+<div class="kicker">02 — RESULT</div>
+<h3>Bright in 14 days. Calm always.</h3>
+<div class="benefit">
+<div>Fades dark spots · Evens tone · Firms barrier</div>
+<div>Layers clean under SPF + makeup</div>
+</div>
+<div class="stars">★★★★★ &nbsp; 4.8 — 2,140 REVIEWS</div>
+</div>
+</section>
+<div class="bottle-wrap">
+<div class="bottle-inner">
+<div class="b-cap"></div>
+<div class="b-neck"></div>
+<div class="b-shoulder"></div>
+<div class="b-body">
+<div class="b-shine"></div>
+<div class="b-shine s2"></div>
+<div class="b-label">
+<div class="b-label-noon">NOON</div>
+<div class="b-label-sub">VITAMIN C + CERAMIDE</div>
+<div class="b-label-rule"></div>
+<div class="b-label-small">BRIGHTENING SERUM<br>30 ml e 1.0 fl oz</div>
+</div>
+</div>
+<div class="drop"></div>
+<div class="b-shadow"></div>
+</div>
+</div>
+<section class="scene scene-3">
+<div class="s3-eyebrow">LAUNCH WEEK · FIRST 7 DAYS ONLY</div>
+<h2><em>20% off</em> Noon.</h2>
+<div class="price"><b>SAVE $13</b><span>$52 — was $65 · 30 ml / 2-month supply</span></div>
+<div class="cta">
+<div class="btn"><span>SHOP NOON</span><span>→</span></div>
+<div class="micro">FREE SHIPPING<br>30-DAY RETURNS<br>ENDS SUNDAY MIDNIGHT</div>
+</div>
+</section>
+<footer class="bottom"><span>DERMATOLOGIST TESTED · FRAGRANCE FREE</span><span>00:00 — 00:12 · LOOP 01</span></footer>
+<div class="progress"><div class="progress-fill"></div></div>
+</div>
+</body>
+</html>

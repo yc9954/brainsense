@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1280, height=720">
+<title>Noon — Bare skin, calm.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:100%;height:100%}
+body{background:#140B04;display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;overflow:hidden}
+.stage{width:1280px;height:720px;background:#F7F1E6;position:relative;overflow:hidden;display:flex;flex-direction:column;flex-shrink:0;box-shadow:0 30px 120px rgba(0,0,0,.6)}
+/* ===== HERO PORTRAIT — single dominant visual, visible at 0s ===== */
+.portrait{position:relative;height:490px;width:100%;overflow:hidden;background:#3A1F0A;flex-shrink:0}
+.skin{position:absolute;inset:-8% -6%;animation-name:heroZoom;animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:linear;
+background:
+radial-gradient(ellipse 520px 420px at 38% 58%, rgba(255,244,226,.85) 0%, rgba(255,244,226,0) 62%),
+radial-gradient(ellipse 900px 980px at 36% 18%, #F4D9B6 0%, #E9C097 26%, #CF9E6E 48%, #8A542E 70%, #40210C 88%, #241204 100%);
+}
+.duotone{position:absolute;inset:0;background:linear-gradient(100deg, rgba(58,31,10,.42) 0%, rgba(58,31,10,.05) 42%, rgba(247,241,230,.18) 68%, rgba(58,31,10,.32) 100%);mix-blend-mode:multiply}
+.warmveil{position:absolute;inset:0;background:linear-gradient(180deg, rgba(255,195,122,0) 52%, rgba(58,31,10,.38) 100%)}
+.cheek{position:absolute;left:90px;top:-120px;width:760px;height:980px;border-radius:50%;background:radial-gradient(ellipse at 42% 38%, #FFEED6 0%, #F0C99D 32%, #D2A276 58%, rgba(210,162,118,0) 72%);filter:blur(1px);opacity:.92}
+.shadow{position:absolute;left:640px;top:-80px;width:620px;height:900px;border-radius:50%;background:radial-gradient(ellipse at 30% 40%, rgba(36,18,4,.55) 0%, rgba(36,18,4,0) 62%)}
+.eyebrowHair{position:absolute;left:178px;top:200px;width:270px;height:54px;border-top:14px solid #1E1006;border-radius:50%;transform:rotate(-6deg);opacity:.92}
+.eye{position:absolute;left:200px;top:300px;width:190px;height:44px;border-bottom:5px solid #170C04;border-radius:0 0 120px 120px;transform:rotate(-4deg)}
+.underGlow{position:absolute;left:180px;top:375px;width:420px;height:140px;background:radial-gradient(ellipse at center, rgba(255,238,214,.65) 0%, rgba(255,238,214,0) 68%);filter:blur(6px)}
+.noseCurve{position:absolute;left:520px;top:140px;width:220px;height:520px;border-left:3px solid rgba(23,12,4,.28);border-radius:50%;filter:blur(1px)}
+.sheen{position:absolute;top:-20%;bottom:-20%;left:0;width:360px;background:linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,247,230,.65) 50%, rgba(255,255,255,0) 100%);transform:translateX(-700px) skewX(-12deg);opacity:0;animation-name:sheenMove;animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:linear}
+.topbar{position:absolute;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:22px 36px;z-index:5}
+.brand{font-weight:700;letter-spacing:.34em;font-size:22px;color:#F7F1E6}
+.brand small{font-weight:600;letter-spacing:.22em;font-size:11px;display:block;margin-top:6px;color:#FFD9A8}
+.topnote{font-size:11px;letter-spacing:.24em;font-weight:600;color:#F7F1E6;border:1px solid rgba(247,241,230,.7);padding:9px 14px;border-radius:100px}
+.bigword{position:absolute;right:48px;bottom:28px;font-family:'Cormorant Garamond',serif;font-size:132px;line-height:.9;color:#F7F1E6;opacity:.96;letter-spacing:-.02em;z-index:4;text-shadow:0 4px 40px rgba(20,10,2,.45)}
+.bigword em{font-style:italic;font-weight:500}
+/* thin black line */
+.rule{height:2px;background:#111;flex-shrink:0;z-index:6}
+/* ===== SOLID BONE PANEL ===== */
+.panel{flex:1;background:#F7F1E6;display:flex;align-items:stretch;gap:0;position:relative}
+.bottleZone{width:300px;display:flex;align-items:center;justify-content:center;border-right:1px solid #111;position:relative;background:#EFE6D3}
+.bottleWrap{animation-name:bottleFocus;animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:ease-in-out;display:flex;flex-direction:column;align-items:center}
+.bottle{width:112px;position:relative;display:flex;flex-direction:column;align-items:center}
+.cap{width:46px;height:30px;background:#111;border-radius:4px 4px 2px 2px}
+.neck{width:46px;height:14px;background:linear-gradient(90deg, #111 0 8px, #C99A5E 8px 38px, #111 38px 46px)}
+.body{width:112px;height:142px;border:1.5px solid #111;border-radius:14px 14px 18px 18px;background:linear-gradient(180deg, #D9A86A 0%, #9A5A1E 28%, #6B3710 60%, #3A1F0A 100%);position:relative;overflow:hidden;box-shadow:inset 0 0 0 6px rgba(247,241,230,.28), inset 18px 0 28px rgba(255,255,255,.28), inset -18px 0 28px rgba(0,0,0,.35)}
+.frost{position:absolute;inset:0;background:linear-gradient(105deg, rgba(255,255,255,.42) 0%, rgba(255,255,255,.08) 30%, rgba(255,255,255,0) 55%)}
+.label{position:absolute;left:10px;right:10px;top:42px;background:#F7F1E6;border:1px solid #111;padding:8px 6px;text-align:center}
+.label b{display:block;font-size:13px;letter-spacing:.28em}
+.label span{display:block;font-size:7.5px;letter-spacing:.12em;margin-top:5px;line-height:1.5;font-weight:600}
+.label i{display:block;font-size:7.5px;font-style:normal;margin-top:5px;letter-spacing:.14em;font-weight:700}
+.bottleCap{font-size:10px;letter-spacing:.2em;font-weight:700;margin-top:12px}
+.copy{flex:1;position:relative;overflow:hidden;padding:26px 38px 18px 38px}
+.block{position:absolute;left:38px;right:38px;top:24px;animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:ease-in-out}
+.hook{animation-name:hookCopy}
+.product{animation-name:productCopy}
+.offer{animation-name:offerCopy}
+.eyebrow{font-size:11px;letter-spacing:.28em;font-weight:700;color:#7A3A12;margin-bottom:10px}
+h1{font-family:'Cormorant Garamond',serif;font-size:74px;line-height:.95;letter-spacing:-.02em;color:#111;font-weight:600}
+h1 em{font-style:italic;font-weight:500}
+.sub{margin-top:12px;font-size:16px;line-height:1.45;color:#222;max-width:560px}
+.sub strong{color:#111}
+.highlight{background:#FFC37A;padding:2px 10px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.ctaSide{width:322px;border-left:1px solid #111;display:flex;flex-direction:column;justify-content:center;padding:24px 30px;gap:14px;background:#F7F1E6}
+.cta{animation-name:ctaShow;animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:ease-in-out}
+.btn{display:block;text-align:center;background:#111;color:#F7F1E6;text-decoration:none;font-weight:700;letter-spacing:.18em;font-size:15px;padding:18px 10px;border-radius:100px}
+.micro{font-size:12px;line-height:1.6;color:#333}
+.micro b{color:#111}
+.premium{font-size:10px;letter-spacing:.2em;font-weight:600;color:#5A5A5A;border-top:1px solid #111;padding-top:12px}
+.progress{position:absolute;left:0;right:0;bottom:0;height:6px;background:rgba(17,17,17,.12);z-index:10}
+.fill{height:100%;background:#111;transform-origin:left;animation-name:fillBar;animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:linear}
+.seg{position:absolute;bottom:14px;right:30px;display:flex;gap:8px;align-items:center;font-size:10px;letter-spacing:.22em;font-weight:700;color:#111}
+.dot{width:28px;height:3px;background:#111;opacity:.18;animation-duration:12s;animation-iteration-count:infinite}
+.d1{animation-name:dot1}.d2{animation-name:dot2}.d3{animation-name:dot3}
+/* ===== TIMELINE 0-4 HOOK / 4-8 PRODUCT / 8-12 OFFER ===== */
+@keyframes heroZoom{0%{transform:scale(1)}50%{transform:scale(1.07)}100%{transform:scale(1)}}
+@keyframes sheenMove{0%{transform:translateX(-700px) skewX(-12deg);opacity:0}4%{opacity:.55}28%{transform:translateX(900px) skewX(-12deg);opacity:0}100%{transform:translateX(-700px) skewX(-12deg);opacity:0}}
+@keyframes hookCopy{0%{opacity:1;transform:translateY(0)}26%{opacity:1;transform:translateY(0)}32.5%{opacity:0;transform:translateY(-18px)}33.5%{opacity:0;transform:translateY(18px)}92%{opacity:0;transform:translateY(18px)}97%{opacity:1;transform:translateY(0)}100%{opacity:1;transform:translateY(0)}}
+@keyframes productCopy{0%{opacity:0;transform:translateY(18px)}30%{opacity:0;transform:translateY(18px)}36%{opacity:1;transform:translateY(0)}59%{opacity:1;transform:translateY(0)}65.5%{opacity:0;transform:translateY(-18px)}100%{opacity:0;transform:translateY(-18px)}}
+@keyframes offerCopy{0%{opacity:0;transform:translateY(18px)}63%{opacity:0;transform:translateY(18px)}69%{opacity:1;transform:translateY(0)}92%{opacity:1;transform:translateY(0)}96.5%{opacity:0;transform:translateY(-18px)}100%{opacity:0;transform:translateY(18px)}}
+@keyframes bottleFocus{0%{transform:scale(.96);opacity:.9}32%{transform:scale(.96);opacity:.9}42%{transform:scale(1.05);opacity:1}59%{transform:scale(1.05);opacity:1}68%{transform:scale(.96);opacity:.9}100%{transform:scale(.96);opacity:.9}}
+@keyframes ctaShow{0%{opacity:0;transform:translateY(14px)}64%{opacity:0;transform:translateY(14px)}71%{opacity:1;transform:translateY(0)}92%{opacity:1;transform:translateY(0)}97%{opacity:0;transform:translateY(-10px)}100%{opacity:0;transform:translateY(14px)}}
+@keyframes fillBar{0%{transform:scaleX(0)}100%{transform:scaleX(1)}}
+@keyframes dot1{0%,100%{opacity:1}26%{opacity:1}33%{opacity:.18}92%{opacity:.18}97%{opacity:1}}
+@keyframes dot2{0%{opacity:.18}30%{opacity:.18}36%{opacity:1}59%{opacity:1}66%{opacity:.18}100%{opacity:.18}}
+@keyframes dot3{0%{opacity:.18}63%{opacity:.18}69%{opacity:1}92%{opacity:1}97%{opacity:.18}100%{opacity:.18}}
+</style>
+</head>
+<body>
+<div class="stage" role="img" aria-label="Noon vitamin C and ceramide serum, frosted amber glass bottle 30 ml, 20 percent off the first week">
+<div class="portrait">
+<div class="skin"></div>
+<div class="cheek"></div>
+<div class="shadow"></div>
+<div class="duotone"></div>
+<div class="warmveil"></div>
+<div class="eyebrowHair"></div>
+<div class="eye"></div>
+<div class="underGlow"></div>
+<div class="noseCurve"></div>
+<div class="sheen"></div>
+<div class="topbar">
+<div class="brand">NOON<small>VITAMIN C + CERAMIDE SERUM</small></div>
+<div class="topnote">FROSTED AMBER GLASS &nbsp;·&nbsp; 30 ML</div>
+</div>
+<div class="bigword">calm <em>skin</em></div>
+</div>
+<div class="rule"></div>
+<div class="panel">
+<div class="bottleZone">
+<div class="bottleWrap">
+<div class="bottle">
+<div class="cap"></div>
+<div class="neck"></div>
+<div class="body"><div class="frost"></div><div class="label"><b>NOON</b><span>VITAMIN C<br>+ CERAMIDE</span><i>30 ml</i></div></div>
+</div>
+<div class="bottleCap">NOON · 30 ML</div>
+</div>
+</div>
+<div class="copy">
+<div class="block hook">
+<div class="eyebrow">NOON — VITAMIN C + CERAMIDE</div>
+<h1>Bare skin, <em>calm.</em></h1>
+<p class="sub"><strong>A serum for the look of steady, even skin.</strong> Calm, precise, and made to read well.</p>
+</div>
+<div class="block product">
+<div class="eyebrow">THE SERUM</div>
+<h1>Vitamin C <em>+ ceramide.</em></h1>
+<p class="sub"><strong>Frosted amber glass bottle — 30 ml.</strong> A simple formula, stated plainly on the label.</p>
+</div>
+<div class="block offer">
+<div class="eyebrow">LAUNCH OFFER</div>
+<h1><span class="highlight">20% off</span> the first week.</h1>
+<p class="sub"><strong>Noon serum in frosted amber glass, 30 ml.</strong> Calm skin to begin with.</p>
+</div>
+</div>
+<div class="ctaSide">
+<div class="cta">
+<a class="btn" href="#">SHOP NOW</a>
+<p class="micro"><b>20% off — first week.</b><br>Noon vitamin C + ceramide serum.</p>
+</div>
+<div class="premium">PREMIUM SKINCARE — DIRECT FROM NOON</div>
+</div>
+</div>
+<div class="seg"><span class="dot d1"></span><span class="dot d2"></span><span class="dot d3"></span> NOON</div>
+<div class="progress"><div class="fill"></div></div>
+</div>
+</body>
+</html>

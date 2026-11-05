@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1280, height=720">
+<title>Noon — Vitamin C + Ceramide Serum</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%;background:#0F0D0A}
+body{display:flex;align-items:center;justify-content:center;min-height:100vh}
+.stage{width:1280px;height:720px;flex-shrink:0;background:#FAF6EB;color:#14110D;position:relative;overflow:hidden;display:flex;font-family:'Inter',sans-serif}
+.frame{position:absolute;inset:18px;border:1.5px solid #14110D;pointer-events:none;z-index:20}
+.glow{position:absolute;left:620px;top:20px;width:620px;height:680px;background:radial-gradient(ellipse at 50% 48%, #FFD89A 0%, #E9A94E 22%, #C67A1E 38%, rgba(198,122,30,0) 70%);opacity:.85;animation:glowPulse 12s linear infinite;z-index:1}
+@keyframes glowPulse{0%,26%{opacity:.85;transform:scale(1)}36%,60%{opacity:.95;transform:scale(1.06)}65%,93%{opacity:1;transform:scale(1.08)}97%,100%{opacity:.85;transform:scale(1)}}
+.giant{position:absolute;left:50%;top:52%;transform:translate(-50%,-50%);font-family:'Fraunces',serif;font-weight:300;font-size:420px;letter-spacing:-.04em;color:transparent;-webkit-text-stroke:1.5px rgba(20,17,13,.14);opacity:1;white-space:nowrap;animation:giantFade 12s linear infinite;z-index:1;user-select:none}
+@keyframes giantFade{0%,26%{opacity:.55;transform:translate(-50%,-50%)}36%,65%{opacity:.35;transform:translate(-50%,-50.6%)}70%,93%{opacity:.5;transform:translate(-50%,-50%)}100%{opacity:.55;transform:translate(-50%,-50%)}}
+.header{position:absolute;top:38px;left:56px;right:56px;display:flex;justify-content:space-between;align-items:center;z-index:10;border-bottom:1.5px solid #14110D;padding-bottom:16px}
+.wordmark{font-family:'Fraunces',serif;font-size:38px;letter-spacing:.28em;font-weight:500;padding-left:6px}
+.header-right{font-size:12.5px;letter-spacing:.22em;font-weight:600;text-align:right;line-height:1.7}
+.copy{position:absolute;left:76px;top:168px;width:540px;bottom:110px;z-index:10}
+.eyebrow{font-size:12.5px;letter-spacing:.26em;font-weight:600;margin-bottom:18px;display:flex;align-items:center;gap:14px}
+.eyebrow::after{content:"";height:1.5px;width:92px;background:#14110D;display:inline-block}
+h1,h2{font-family:'Fraunces',serif;font-weight:400;line-height:.95;letter-spacing:-.02em}
+.hook,.benefit,.offer{position:absolute;left:0;top:0;width:100%}
+.hook{animation:hookCycle 12s linear infinite}
+@keyframes hookCycle{0%{opacity:1;transform:translateY(0)}26%{opacity:1;transform:translateY(0)}31%{opacity:0;transform:translateY(-24px)}97%{opacity:0;transform:translateY(-24px)}100%{opacity:1;transform:translateY(0)}}
+.benefit{animation:benefitCycle 12s linear infinite}
+@keyframes benefitCycle{0%,31%{opacity:0;transform:translateY(26px)}36.5%,59%{opacity:1;transform:translateY(0)}64%,100%{opacity:0;transform:translateY(-18px)}}
+.offer{animation:offerCycle 12s linear infinite}
+@keyframes offerCycle{0%,64%{opacity:0;transform:translateY(26px)}70%,93%{opacity:1;transform:translateY(0)}97%,100%{opacity:0;transform:translateY(-12px)}}
+.hook h1{font-size:108px}
+.hook h1 em{font-style:italic;font-weight:300}
+.hook-sub{margin-top:20px;font-size:19px;line-height:1.55;max-width:440px;color:#2B241C}
+.thinrule{height:1.5px;background:#14110D;margin:26px 0 18px;width:100%}
+.hook-meta{font-size:12.5px;letter-spacing:.2em;font-weight:600}
+.benefit h2{font-size:74px}
+.benefit h2 em{font-style:italic;font-weight:300;color:#6B2E0B}
+.benefit-list{margin-top:24px;border-top:1.5px solid #14110D}
+.benefit-row{display:flex;justify-content:space-between;align-items:baseline;padding:15px 2px;border-bottom:1.5px solid #14110D;font-size:16.5px}
+.benefit-row strong{font-weight:600;letter-spacing:.02em}
+.benefit-row span{font-family:'Fraunces',serif;font-style:italic;color:#5C2A08;font-size:17px}
+.offer-pill{display:inline-block;background:#6B2E0B;color:#FAF6EB;font-size:13px;letter-spacing:.24em;font-weight:600;padding:11px 18px 10px;margin-bottom:18px;box-shadow:0 0 0 6px rgba(232,155,58,.32), 0 14px 34px rgba(107,46,11,.35)}
+.offer h2{font-size:84px;line-height:.92}
+.offer h2 em{font-style:italic;font-weight:300;background:linear-gradient(transparent 62%, #F2B45A 62%, #F2B45A 96%, transparent 96%)}
+.offer-sub{margin-top:18px;font-size:18.5px;line-height:1.55;max-width:460px}
+.cta-row{margin-top:28px;display:flex;align-items:center;gap:20px}
+.cta{background:#14110D;color:#FAF6EB;text-decoration:none;font-size:14px;letter-spacing:.22em;font-weight:600;padding:20px 46px;display:inline-block}
+.cta-line{font-size:12.5px;letter-spacing:.18em;font-weight:600;border-bottom:1.5px solid #14110D;padding-bottom:4px}
+.bottle-wrap{position:absolute;left:770px;top:88px;width:380px;height:560px;z-index:9;animation:bottleFloat 12s linear infinite}
+@keyframes bottleFloat{0%,26%{opacity:1;transform:translateY(0) scale(1)}36%,60%{opacity:1;transform:translateY(-10px) scale(1.015)}70%,93%{opacity:1;transform:translateY(-6px) scale(1.02)}100%{opacity:1;transform:translateY(0) scale(1)}}
+.shadow{position:absolute;bottom:18px;left:50%;width:300px;height:36px;transform:translateX(-50%);background:radial-gradient(ellipse at center, rgba(20,12,4,.42) 0%, rgba(20,12,4,0) 68%)}
+.bottle{position:absolute;left:50%;bottom:48px;transform:translateX(-50%);width:244px}
+.cap{width:96px;height:72px;margin:0 auto;background:linear-gradient(90deg,#0D0D0D 0%,#2B2B2B 22%,#0D0D0D 55%,#000 100%);border-radius:6px 6px 2px 2px;position:relative}
+.cap::after{content:"";position:absolute;left:14px;top:8px;bottom:8px;width:10px;background:linear-gradient(rgba(255,255,255,.28),rgba(255,255,255,0));border-radius:4px}
+.neck{width:62px;height:30px;margin:0 auto;background:linear-gradient(90deg,#2E1404,#8A4A15 50%,#2E1404)}
+.shoulder{width:244px;height:44px;background:linear-gradient(90deg,#3A1E06,#A35A1D 28%,#E8B86A 50%,#A35A1D 72%,#301706);clip-path:polygon(28% 0,72% 0,100% 100%,0% 100%)}
+.body{width:244px;height:368px;background:linear-gradient(102deg,#2B1304 0%,#6E3710 16%,#D99A4A 30%,#F3D29A 38%,#C67F2A 46%,#5A2B0B 64%,#2B1304 88%);border-radius:14px 14px 22px 22px;position:relative;overflow:hidden;box-shadow:inset 0 0 0 1.5px rgba(0,0,0,.55), inset 18px 0 34px rgba(255,235,200,.22), inset -22px 0 38px rgba(0,0,0,.45)}
+.body::before{content:"";position:absolute;inset:0;background:linear-gradient(rgba(250,246,235,.18),rgba(250,246,235,0) 45%);pointer-events:none}
+.sheen{position:absolute;top:-10%;bottom:-10%;left:0;width:72px;background:linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,.75),rgba(255,255,255,0));transform:skewX(-14deg);animation:sheenSweep 12s linear infinite}
+@keyframes sheenSweep{0%,8%{opacity:0;transform:translateX(-40px) skewX(-14deg)}14%{opacity:1}22%,46%{opacity:1;transform:translateX(300px) skewX(-14deg)}30%{opacity:1}52%,100%{opacity:0;transform:translateX(300px) skewX(-14deg)}}
+.label{position:absolute;left:50%;top:50%;transform:translate(-50%,-46%);width:192px;height:216px;background:#FAF6EB;border:1.5px solid #14110D;text-align:center;padding:18px 12px 14px}
+.label-top{font-size:10px;letter-spacing:.28em;font-weight:600}
+.label-noon{font-family:'Fraunces',serif;font-size:56px;line-height:1;margin:6px 0 8px;letter-spacing:.04em}
+.label-line{height:1.5px;background:#14110D;margin:0 18px 10px}
+.label-mid{font-size:11px;letter-spacing:.18em;line-height:1.7;font-weight:600}
+.label-bot{margin-top:10px;font-size:11px;letter-spacing:.22em;font-weight:500}
+.footer{position:absolute;left:56px;right:56px;bottom:36px;z-index:10;display:flex;align-items:center;gap:18px}
+.footer-label{font-size:11.5px;letter-spacing:.24em;font-weight:600;white-space:nowrap}
+.track{flex:1;height:2px;background:rgba(20,17,13,.18);position:relative;overflow:hidden}
+.fill{position:absolute;inset:0;background:#14110D;transform-origin:left center;animation:progressFill 12s linear infinite}
+@keyframes progressFill{0%{transform:scaleX(0)}100%{transform:scaleX(1)}}
+.footer-offer{font-size:11.5px;letter-spacing:.24em;font-weight:600;background:#6B2E0B;color:#FAF6EB;padding:7px 12px;white-space:nowrap}
+</style>
+</head>
+<body>
+<div class="stage">
+<div class="glow"></div>
+<div class="giant">NOON</div>
+<div class="frame"></div>
+<div class="header">
+<div class="wordmark">NOON</div>
+<div class="header-right">VITAMIN C + CERAMIDE SERUM<br>FROSTED AMBER GLASS — 30 ML</div>
+</div>
+<div class="copy">
+<div class="hook">
+<div class="eyebrow">VITAMIN C + CERAMIDE — 30 ML</div>
+<h1>Noon<br><em>holds the light.</em></h1>
+<p class="hook-sub">A vitamin-C and ceramide serum in frosted amber glass. Calm, precise, expensive.</p>
+<div class="thinrule"></div>
+<div class="hook-meta">FOR READERS OF INGREDIENT LISTS</div>
+</div>
+<div class="benefit">
+<div class="eyebrow">WHAT IS INSIDE</div>
+<h2>Precise on<br>the label. <em>Calm</em><br>on skin.</h2>
+<div class="benefit-list">
+<div class="benefit-row"><strong>Vitamin C</strong><span>for even glow</span></div>
+<div class="benefit-row"><strong>Ceramide</strong><span>for barrier support</span></div>
+<div class="benefit-row"><strong>Frosted amber glass</strong><span>30 ml</span></div>
+</div>
+</div>
+<div class="offer">
+<div class="offer-pill">20% OFF — FIRST WEEK</div>
+<h2>20% off<br>for the <em>first week.</em></h2>
+<p class="offer-sub">Noon vitamin-C and ceramide serum. Frosted amber glass, 30 ml.</p>
+<div class="cta-row"><a class="cta" href="#">SHOP NOW</a><span class="cta-line">CALM · PRECISE</span></div>
+</div>
+</div>
+<div class="bottle-wrap">
+<div class="shadow"></div>
+<div class="bottle">
+<div class="cap"></div>
+<div class="neck"></div>
+<div class="shoulder"></div>
+<div class="body">
+<div class="sheen"></div>
+<div class="label">
+<div class="label-top">NOON</div>
+<div class="label-noon">Noon</div>
+<div class="label-line"></div>
+<div class="label-mid">VITAMIN C<br>+ CERAMIDE</div>
+<div class="label-bot">30 ML</div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer">
+<span class="footer-label">NOON SERUM</span>
+<div class="track"><div class="fill"></div></div>
+<span class="footer-offer">20% OFF — FIRST WEEK</span>
+</div>
+</div>
+</body>
+</html>

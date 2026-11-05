@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%;background:#0e0c09;display:flex;align-items:center;justify-content:center}
+.stage{width:1280px;height:720px;background:#FAF6EE;position:relative;overflow:hidden;display:flex;flex-shrink:0}
+.left{width:640px;height:100%;padding:52px 0 0 72px;position:relative;z-index:5}
+.right{width:640px;height:100%;position:relative;display:flex;align-items:center;justify-content:center;z-index:5}
+.eyebrow{font:600 13px/1 Inter,sans-serif;letter-spacing:.28em;color:#2B1403;border-bottom:1px solid #111;display:inline-block;padding-bottom:12px;animation:eyebrowIn 12s linear infinite}
+.eyebrow small{font-weight:400;letter-spacing:.18em}
+.copy{position:absolute;left:72px;top:132px;width:520px}
+.copy h1,.copy h2{font-family:"Cormorant Garamond",serif;font-weight:500;color:#221002;line-height:.92;letter-spacing:-.02em}
+.hook{animation:showHook 12s linear infinite}
+.hook h1{font-size:118px}
+.hook h1 em{font-style:italic;font-weight:400}
+.hook p{font:400 18px/1.5 Inter,sans-serif;color:#3D2510;margin-top:18px;max-width:430px}
+.product{animation:showProduct 12s linear infinite}
+.product h2{font-size:86px}
+.product h2 em{font-style:italic}
+.product p{font:400 17px/1.6 Inter,sans-serif;color:#3D2510;margin-top:18px;max-width:440px}
+.product .rule{width:64px;height:1px;background:#111;margin:20px 0 16px 0;animation:ruleGrow 12s linear infinite}
+.product ul{list-style:none;font:500 13px/1 Inter,sans-serif;letter-spacing:.18em;color:#221002;display:flex;gap:18px}
+.product ul span{border-left:1px solid #111;padding-left:18px}
+.product ul span:first-child{border:0;padding:0}
+.offer{animation:showOffer 12s linear infinite}
+.badge{display:inline-flex;align-items:center;gap:10px;background:#FFB84D;color:#221002;font:700 15px/1 Inter,sans-serif;letter-spacing:.14em;padding:14px 20px;border-radius:100px;border:1px solid #111;animation:badgePulse 12s linear infinite}
+.offer h2{font-size:84px;margin-top:16px}
+.offer h2 em{font-style:italic}
+.offer p{font:400 17px/1.5 Inter,sans-serif;color:#3D2510;margin-top:12px}
+.cta{margin-top:26px;display:flex;align-items:center;gap:18px}
+.btn{background:#111;color:#FAF6EE;font:600 15px/1 Inter,sans-serif;letter-spacing:.16em;padding:22px 44px;border-radius:100px;text-transform:uppercase}
+.meta{font:500 12px/1.6 Inter,sans-serif;letter-spacing:.18em;color:#221002}
+.thinline{position:absolute;left:72px;right:72px;top:0;height:100%;pointer-events:none;z-index:2}
+.thinline:before{content:"";position:absolute;left:0;right:0;top:108px;height:1px;background:#111;opacity:.9}
+.thinline:after{content:"";position:absolute;left:50%;top:36px;bottom:72px;width:1px;background:#111;opacity:.9}
+.giant{position:absolute;left:52px;bottom:-36px;font-family:"Cormorant Garamond",serif;font-size:260px;line-height:1;letter-spacing:-.04em;color:transparent;-webkit-text-stroke:1px #221002;opacity:.12;z-index:1;animation:giantDrift 12s linear infinite}
+.bottle-stage{width:360px;height:600px;position:relative;animation:bottleFloat 12s linear infinite}
+.cap{width:112px;height:92px;background:#111;border-radius:10px 10px 4px 4px;margin:0 auto;position:relative;z-index:3}
+.cap:after{content:"NOON";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#FAF6EE;font:600 13px/1 Inter,sans-serif;letter-spacing:.34em;padding-left:.34em}
+.neck{width:72px;height:28px;background:linear-gradient(90deg,#2b1605,#a86a25 50%,#2b1605);margin:0 auto}
+.shoulder{width:260px;height:54px;background:linear-gradient(90deg,#5a300c 0%,#d99a3f 18%,#f7d99a 32%,#c67d22 48%,#5a300c 78%,#2f1806 100%);margin:0 auto;border-radius:12px 12px 4px 4px;clip-path:polygon(20% 0,80% 0,100% 100%,0 100%)}
+.body{width:300px;height:400px;margin:-2px auto 0;background:linear-gradient(90deg,#3a1e06 0%,#8a4d14 12%,#e6a84e 26%,#ffe9bd 33%,#e6a84e 40%,#9a5a18 58%,#4a2408 85%,#2a1504 100%);border-radius:28px;position:relative;overflow:hidden;box-shadow:0 40px 80px rgba(43,20,3,.28), inset 0 0 0 1px rgba(0,0,0,.35)}
+.body:after{content:"";position:absolute;left:28px;top:18px;bottom:18px;width:28px;background:linear-gradient(180deg,rgba(255,255,255,.85),rgba(255,255,255,.15));border-radius:20px;filter:blur(.3px)}
+.shine{position:absolute;top:-10%;bottom:-10%;width:120px;background:linear-gradient(105deg,transparent,rgba(255,255,255,.85),transparent);left:-40%;z-index:4;transform:skewX(-12deg);animation:shineSweep 12s linear infinite}
+.label{position:absolute;left:32px;right:32px;top:108px;background:#FAF6EE;border:1px solid #111;padding:24px 18px 18px;text-align:center;z-index:3}
+.label b{display:block;font:600 42px/1 "Cormorant Garamond",serif;letter-spacing:.08em;color:#111}
+.label i{display:block;width:100%;height:1px;background:#111;margin:14px 0 12px}
+.label span{display:block;font:500 11px/1.7 Inter,sans-serif;letter-spacing:.24em;color:#111}
+.label small{display:block;margin-top:10px;font:500 11px/1 Inter,sans-serif;letter-spacing:.24em;color:#111;border-top:1px solid #111;padding-top:10px}
+.shadow{width:260px;height:26px;background:radial-gradient(ellipse at center,rgba(0,0,0,.35),transparent 70%);margin:18px auto 0;animation:shadowPulse 12s linear infinite}
+.progress{position:absolute;left:72px;bottom:42px;width:500px;height:2px;background:rgba(17,17,17,.15);z-index:6}
+.progress div{width:100%;height:100%;background:#111;transform-origin:left;animation:barGrow 12s linear infinite}
+.count{position:absolute;right:72px;bottom:30px;font:500 12px/1 Inter,sans-serif;letter-spacing:.2em;color:#221002;z-index:6;animation:countBlink 12s linear infinite}
+@keyframes showHook{0%{opacity:1;transform:translateY(0)}26%{opacity:1;transform:translateY(0)}33.33%{opacity:0;transform:translateY(-24px)}100%{opacity:0;transform:translateY(-24px)}}
+@keyframes showProduct{0%{opacity:0;transform:translateY(24px)}33.33%{opacity:0;transform:translateY(24px)}38%{opacity:1;transform:translateY(0)}59%{opacity:1;transform:translateY(0)}66.66%{opacity:0;transform:translateY(-24px)}100%{opacity:0}}
+@keyframes showOffer{0%{opacity:0;transform:translateY(24px)}66.66%{opacity:0;transform:translateY(24px)}71%{opacity:1;transform:translateY(0)}92%{opacity:1;transform:translateY(0)}97%{opacity:0;transform:translateY(0)}100%{opacity:0}}
+@keyframes bottleFloat{0%{transform:translateY(0) scale(1)}18%{transform:translateY(-6px) scale(1.01)}35%{transform:translateY(0) scale(1)}55%{transform:translateY(-10px) scale(1.01)}80%{transform:translateY(0) scale(1)}100%{transform:translateY(0) scale(1)}}
+@keyframes shineSweep{0%{left:-40%;opacity:0}4%{opacity:1}8%{left:18%;opacity:1}16%{left:105%;opacity:0}17%{left:-40%;opacity:0}42%{left:-40%;opacity:0}50%{left:105%;opacity:.9}58%{left:105%;opacity:0}82%{left:-40%;opacity:0}88%{left:105%;opacity:.9}94%{left:105%;opacity:0}100%{left:105%;opacity:0}}
+@keyframes barGrow{0%{transform:scaleX(0)}100%{transform:scaleX(1)}}
+@keyframes shadowPulse{0%{transform:scaleX(1);opacity:.9}18%{transform:scaleX(.94);opacity:.7}55%{transform:scaleX(.92);opacity:.65}100%{transform:scaleX(1);opacity:.9}}
+@keyframes badgePulse{0%,33%{transform:scale(1)}10%{transform:scale(1.06)}20%{transform:scale(1)}71%,86%{transform:scale(1.05)}78%{transform:scale(1.08)}100%{transform:scale(1)}}
+@keyframes ruleGrow{0%,33.33%{transform:scaleX(0);transform-origin:left}42%,59%{transform:scaleX(1);transform-origin:left}66.66%,100%{transform:scaleX(0)}}
+@keyframes giantDrift{0%{transform:translateX(0);opacity:.12}30%{transform:translateX(-18px);opacity:.12}65%{transform:translateX(-10px);opacity:.1}100%{transform:translateX(0);opacity:.12}}
+@keyframes eyebrowIn{0%{opacity:1;transform:translateY(0)}50%{opacity:1;transform:translateY(0)}100%{opacity:1;transform:translateY(0)}}
+@keyframes countBlink{0%{opacity:1}33%{opacity:.35}66%{opacity:.6}100%{opacity:1}}
+</style>
+</head>
+<body>
+<div class="stage">
+<div class="giant">NOON</div>
+<div class="thinline"></div>
+<div class="left">
+<div class="eyebrow">NOON &nbsp;·&nbsp; <small>VITAMIN-C + CERAMIDE SERUM</small></div>
+<div class="copy hook"><h1>Light,<br><em>kept precise.</em></h1><p>Vitamin-C and ceramide in frosted amber glass. Calm, exact, expensive — nothing else.</p></div>
+<div class="copy product"><h2>Bright C.<br><em>Steady barrier.</em></h2><div class="rule"></div><ul><span>FROSTED AMBER</span><span>30 ML</span><span>PRECISE DAILY RITUAL</span></ul><p>Vitamin-C for brightness. Ceramide for support. Sealed from light so every drop stays true.</p></div>
+<div class="copy offer"><div class="badge">20% OFF — FIRST WEEK</div><h2>Begin at <em>noon.</em></h2><p>20% off for the first week. Vitamin-C + ceramide serum, 30 ml in frosted amber glass.</p><div class="cta"><div class="btn">Shop Noon</div><div class="meta">30 ML<br>FROSTED AMBER GLASS</div></div></div>
+<div class="progress"><div></div></div>
+</div>
+<div class="right">
+<div class="bottle-stage">
+<div class="cap"></div>
+<div class="neck"></div>
+<div class="shoulder"></div>
+<div class="body"><div class="shine"></div><div class="label"><b>NOON</b><i></i><span>VITAMIN-C<br>+ CERAMIDE SERUM</span><small>30 ML — AMBER GLASS</small></div></div>
+<div class="shadow"></div>
+</div>
+</div>
+<div class="count">12 S LOOP — 01 / 02 / 03</div>
+</div>
+</body>
+</html>

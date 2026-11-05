@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%}
+body{background:#0F0D0B;display:flex;align-items:center;justify-content:center;min-height:100vh;font-family:'Inter',sans-serif}
+.stage{width:1280px;height:720px;flex:0 0 1280px;background:#F8F3E8;color:#14110D;position:relative;overflow:hidden;display:flex}
+:root{--bone:#F8F3E8;--amber:#762F00;--amber-deep:#3E1C04;--black:#14110D}
+.bg-wash{position:absolute;inset:0;background:radial-gradient(720px 520px at 22% 48%, #FFFDF6 0%, #F8F3E8 48%, #EFE4CF 100%);animation:wash 12s linear infinite}
+@keyframes wash{0%{opacity:1;transform:translateX(0) scale(1)}50%{opacity:1;transform:translateX(28px) scale(1.02)}100%{opacity:1;transform:translateX(0) scale(1)}}
+.amber-orb{position:absolute;right:-120px;top:-140px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle at 38% 38%, #E8A95C 0%, #B35E0E 28%, #762F00 58%, #3E1C04 78%);opacity:.16;filter:blur(1px);animation:orb 12s ease-in-out infinite}
+@keyframes orb{0%{opacity:.14;transform:translateY(0) scale(1)}33%{opacity:.18;transform:translateY(12px) scale(1.02)}66%{opacity:.15;transform:translateY(-8px) scale(1)}100%{opacity:.14;transform:translateY(0) scale(1)}}
+.frame{position:absolute;inset:20px;border:1px solid #14110D;pointer-events:none;z-index:20}
+.frame:before,.frame:after{content:"";position:absolute;background:#14110D}
+.frame:before{left:0;right:0;top:72px;height:1px;opacity:.9}
+.frame:after{left:0;right:0;bottom:58px;height:1px;opacity:.9}
+.topbar{position:absolute;top:20px;left:20px;right:20px;height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 28px;z-index:21;font-size:13px;letter-spacing:.22em;font-weight:600}
+.topbar .brand{font-size:22px;letter-spacing:.34em;font-weight:700}
+.topbar .meta{letter-spacing:.18em;font-weight:500;opacity:.9}
+.topbar .meta b{font-weight:700}
+.scene{position:absolute;inset:20px;padding:72px 28px 58px;display:flex;z-index:10}
+.hook{align-items:center;justify-content:center;text-align:center;animation:hookVis 12s linear infinite}
+@keyframes hookVis{0%,29%{opacity:1;visibility:visible}33%,91%{opacity:0;visibility:hidden}100%{opacity:1;visibility:visible}}
+.hook-inner{max-width:980px}
+.eyebrow{font-size:13px;letter-spacing:.32em;font-weight:600;color:var(--amber);animation:eyebrow 12s linear infinite}
+@keyframes eyebrow{0%{opacity:0;transform:translateY(14px)}2.5%{opacity:1;transform:translateY(0)}27%{opacity:1;transform:translateY(0)}31%{opacity:0;transform:translateY(-10px)}100%{opacity:0;transform:translateY(14px)}}
+.hook h1{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:122px;line-height:.95;letter-spacing:-.02em;color:#1A120B;margin:18px 0 10px;animation:hookH 12s linear infinite}
+.hook h1 em{font-style:italic;font-weight:400;color:var(--amber)}
+@keyframes hookH{0%{opacity:0;transform:translateY(46px)}3%{opacity:1;transform:translateY(0)}27%{opacity:1;transform:translateY(0)}31.5%{opacity:0;transform:translateY(-26px)}100%{opacity:0;transform:translateY(46px)}}
+.hook-rule{height:1px;background:#14110D;margin:22px auto;width:560px;transform-origin:left center;animation:hookLine 12s linear infinite}
+@keyframes hookLine{0%,1%{opacity:0;transform:scaleX(0)}5%,26%{opacity:1;transform:scaleX(1)}31%,100%{opacity:0;transform:scaleX(1)}}
+.hook-sub{font-size:18px;letter-spacing:.04em;color:#2B2219;animation:hookSub 12s linear infinite}
+.hook-sub strong{color:var(--amber-deep)}
+@keyframes hookSub{0%,4%{opacity:0;transform:translateY(12px)}7%,26%{opacity:1;transform:translateY(0)}31%,100%{opacity:0;transform:translateY(-8px)}}
+.hook-badge{display:inline-flex;align-items:center;gap:12px;margin-top:20px;border:1px solid #14110D;border-radius:999px;padding:9px 18px 9px 10px;font-size:13px;letter-spacing:.16em;font-weight:600;animation:hookSub 12s linear infinite}
+.dot{width:28px;height:28px;border-radius:50%;background:var(--amber);color:var(--bone);display:grid;place-items:center;font-size:15px}
+.product{align-items:center;justify-content:space-between;padding-left:56px;padding-right:56px;gap:20px;animation:prodVis 12s linear infinite}
+@keyframes prodVis{0%,31%{opacity:0;visibility:hidden}35%,61%{opacity:1;visibility:visible}65%,100%{opacity:0;visibility:hidden}}
+.spec{width:320px;animation:specL 12s linear infinite}
+@keyframes specL{0%,33%{opacity:0;transform:translateX(-28px)}38%,59%{opacity:1;transform:translateX(0)}64%,100%{opacity:0;transform:translateX(-16px)}}
+.specR{width:320px;text-align:left;animation:specR 12s linear infinite}
+@keyframes specR{0%,33%{opacity:0;transform:translateX(28px)}38%,59%{opacity:1;transform:translateX(0)}64%,100%{opacity:0;transform:translateX(16px)}}
+.kicker{font-size:12px;letter-spacing:.3em;font-weight:700;color:var(--amber);margin-bottom:12px}
+.spec h2{font-family:'Cormorant Garamond',serif;font-size:56px;line-height:.95;font-weight:400;color:#14110D}
+.spec h2 em{font-style:italic;color:var(--amber)}
+.ing{list-style:none;margin-top:18px;border-top:1px solid #14110D}
+.ing li{display:flex;justify-content:space-between;align-items:baseline;padding:12px 0;border-bottom:1px solid rgba(20,17,13,.25);font-size:14px}
+.ing li b{font-size:15px}
+.ing li span{font-size:12px;letter-spacing:.12em;opacity:.7}
+.benefit{border-top:1px solid #14110D;margin-top:6px}
+.benefit div{padding:13px 0;border-bottom:1px solid rgba(20,17,13,.25);display:flex;gap:12px;align-items:center;font-size:15px;font-weight:500}
+.num{font-size:11px;letter-spacing:.15em;border:1px solid #14110D;border-radius:999px;width:30px;height:30px;display:grid;place-items:center;flex:0 0 30px;font-weight:700}
+.bottle-zone{width:380px;display:flex;flex-direction:column;align-items:center;animation:bottle 12s linear infinite}
+@keyframes bottle{0%,32%{opacity:0;transform:translateY(70px) scale(.96)}38%,59%{opacity:1;transform:translateY(0) scale(1)}62%,65%{opacity:0;transform:translateY(-24px) scale(1)}100%{opacity:0;transform:translateY(70px) scale(.96)}}
+.cap{width:68px;height:82px;background:linear-gradient(90deg,#000 0%,#2A241F 28%,#0A0908 55%,#000 100%);border-radius:8px 8px 3px 3px;position:relative;box-shadow:inset 6px 0 10px rgba(255,255,255,.18)}
+.cap:after{content:"NOON";position:absolute;inset:0;display:grid;place-items:center;color:#F8F3E8;font-size:11px;letter-spacing:.28em;font-weight:600;transform:translateX(2px)}
+.neck{width:42px;height:20px;background:#111;margin-top:-2px}
+.bbody{width:182px;height:292px;margin-top:-1px;border-radius:20px 20px 34px 34px;background:linear-gradient(102deg,#4A1E02 0%,#8A430B 16%,#E9B877 30%,#C67B24 46%,#7A3605 68%,#3E1C04 100%);border:1px solid rgba(0,0,0,.5);position:relative;overflow:hidden;box-shadow:28px 34px 50px rgba(62,28,4,.28)}
+.bbody:before{content:"";position:absolute;left:14px;top:16px;bottom:16px;width:22px;border-radius:999px;background:linear-gradient(to bottom,rgba(255,255,255,.72),rgba(255,255,255,.08));filter:blur(.4px)}
+.bbody:after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(255,255,255,.22),transparent 38%,rgba(0,0,0,.22));}
+.frostline{position:absolute;left:0;right:0;top:42%;height:1px;background:rgba(255,255,255,.35)}
+.label{position:absolute;left:18px;right:18px;top:86px;background:#F8F3E8;border:1px solid #14110D;padding:14px 10px 11px;text-align:center;z-index:2}
+.label h3{font-size:22px;letter-spacing:.32em;font-weight:700;transform:translateX(3px)}
+.label p{font-size:10.5px;letter-spacing:.18em;font-weight:600;margin-top:6px;color:var(--amber-deep)}
+.label small{display:block;margin-top:8px;font-size:10px;letter-spacing:.18em;opacity:.7}
+.shadow{width:220px;height:22px;background:radial-gradient(closest-side,rgba(0,0,0,.42),transparent);margin-top:14px;filter:blur(1px)}
+.under{font-size:11px;letter-spacing:.28em;font-weight:700;margin-top:10px}
+.offer{align-items:center;justify-content:center;text-align:center;animation:offerVis 12s linear infinite}
+@keyframes offerVis{0%,63%{opacity:0;visibility:hidden}68%,94%{opacity:1;visibility:visible}97%,100%{opacity:0;visibility:hidden}}
+.offer-inner{width:860px;display:flex;align-items:center;gap:36px;text-align:left;animation:offerIn 12s linear infinite}
+@keyframes offerIn{0%,64%{opacity:0;transform:translateY(30px)}69%,92%{opacity:1;transform:translateY(0)}96%,100%{opacity:0;transform:translateY(-18px)}}
+.off-box{flex:0 0 360px;border:1px solid #14110D;background:#14110D;color:#F8F3E8;padding:28px 30px;position:relative}
+.off-box .big{font-family:'Cormorant Garamond',serif;font-size:112px;line-height:.85;font-weight:300}
+.off-box .big span{font-size:44px;vertical-align:super}
+.off-box .wk{margin-top:10px;font-size:13px;letter-spacing:.26em;font-weight:700;color:#E8B67A}
+.off-copy h2{font-family:'Cormorant Garamond',serif;font-size:62px;line-height:.95;font-weight:400}
+.off-copy h2 em{font-style:italic;color:var(--amber)}
+.price{margin:14px 0 6px;font-size:20px;letter-spacing:.04em}
+.price s{opacity:.55;margin-right:10px}
+.price b{font-size:32px;color:var(--amber-deep)}
+.cta{margin-top:16px;display:flex;gap:14px;align-items:center}
+.btn{background:#14110D;color:#F8F3E8;text-decoration:none;font-weight:700;font-size:15px;letter-spacing:.14em;padding:18px 38px;border-radius:999px;display:inline-block;border:1px solid #14110D}
+.note{font-size:12.5px;line-height:1.5;opacity:.75;max-width:300px}
+.tiny{margin-top:12px;font-size:11px;letter-spacing:.18em;opacity:.65;font-weight:600}
+.bottombar{position:absolute;left:20px;right:20px;bottom:20px;height:58px;display:flex;align-items:center;justify-content:space-between;padding:0 28px;z-index:21;font-size:11px;letter-spacing:.22em;font-weight:600}
+.progress{position:absolute;left:28px;right:28px;bottom:0;height:2px;background:rgba(20,17,13,.15);overflow:hidden}
+.progress i{display:block;height:100%;background:#762F00;transform-origin:left center;animation:prog 12s linear infinite}
+@keyframes prog{0%{transform:scaleX(0)}100%{transform:scaleX(1)}}
+.side{position:absolute;top:50%;font-size:11px;letter-spacing:.32em;font-weight:600;opacity:.7;z-index:21}
+.side.l{left:30px;transform:rotate(-90deg) translateX(50%);transform-origin:left center}
+.side.r{right:30px;transform:rotate(90deg) translateX(-50%);transform-origin:right center}
+</style>
+</head>
+<body>
+<div class="stage">
+<div class="bg-wash"></div>
+<div class="amber-orb"></div>
+<div class="frame"></div>
+<div class="topbar"><div class="brand">NOON</div><div class="meta">VITAMIN-C + CERAMIDE &nbsp;·&nbsp; <b>30 ML</b> &nbsp;·&nbsp; pH 5.5</div><div>EST. 2025 — PARIS / SEOUL</div></div>
+<div class="side l">CALM · PRECISE · EXPENSIVE</div>
+<div class="side r">15% VIT-C — 5 CERAMIDES</div>
+
+<section class="scene hook">
+<div class="hook-inner">
+<div class="eyebrow">N°01 — VITAMIN-C + CERAMIDE SERUM</div>
+<h1>Light, told <em>honestly.</em></h1>
+<div class="hook-rule"></div>
+<div class="hook-sub"><strong>Noon</strong> — 15% stabilized C with 5 ceramides. For skin that reads labels.</div>
+<div><span class="hook-badge"><span class="dot">☼</span> FROSTED AMBER GLASS &nbsp;·&nbsp; 30 ML &nbsp;·&nbsp; FRAGRANCE-FREE</span></div>
+</div>
+</section>
+
+<section class="scene product">
+<div class="spec">
+<div class="kicker">02 — FORMULA</div>
+<h2>What’s <em>inside</em> matters.</h2>
+<ul class="ing">
+<li><b>15% 3-O-Ethyl C</b><span>BRIGHTENS</span></li>
+<li><b>5 Ceramides + Chol.</b><span>BARRIER</span></li>
+<li><b>Vitamin E + Ferulic</b><span>STABILIZES</span></li>
+<li><b>pH 5.5 · No scent</b><span>SENSITIVE OK</span></li>
+</ul>
+</div>
+<div class="bottle-zone">
+<div class="cap"></div>
+<div class="neck"></div>
+<div class="bbody"><div class="frostline"></div><div class="label"><h3>NOON</h3><p>VITAMIN-C + CERAMIDE</p><small>30 ML — 1.0 FL OZ</small></div></div>
+<div class="shadow"></div>
+<div class="under">FROSTED AMBER — UV PROTECTED</div>
+</div>
+<div class="specR">
+<div class="kicker">03 — RESULT IN 14 DAYS</div>
+<h2 style="font-family:'Cormorant Garamond',serif;font-size:50px;line-height:.95;font-weight:400">Brightens.<br><em style="color:#762F00">Strengthens.</em><br>Never stings.</h2>
+<div class="benefit">
+<div><span class="num">01</span> Even tone, glass-like clarity</div>
+<div><span class="num">02</span> Barrier holds water 72 hours</div>
+<div><span class="num">03</span> Makeup glides, no pilling</div>
+</div>
+</div>
+</section>
+
+<section class="scene offer">
+<div class="offer-inner">
+<div class="off-box"><div class="big"><span>–</span>20%</div><div class="wk">LAUNCH WEEK ONLY</div><div style="margin-top:14px;font-size:12px;letter-spacing:.14em;line-height:1.6;opacity:.8">FIRST WEEK.<br>DIRECT ONLY.<br>NO CODE NEEDED.</div></div>
+<div class="off-copy">
+<div class="kicker">04 — LAUNCH OFFER ENDS IN 7 DAYS</div>
+<h2>Expensive skin, <em>honest price.</em></h2>
+<div class="price"><s>$48.00</s> <b>$38.40</b> — you save $9.60</div>
+<div class="cta"><a class="btn" href="#">SHOP NOON →</a><div class="note">Free shipping over $35.<br>60-day glow guarantee.</div></div>
+<div class="tiny">NOON.SKIN — 30 ML · DERMATOLOGIST TESTED · VEGAN</div>
+</div>
+</div>
+</section>
+
+<div class="bottombar"><div>00 — HOOK &nbsp;&nbsp; 04 — FORMULA &nbsp;&nbsp; 08 — OFFER</div><div>20% OFF FIRST WEEK — SHOP NOON</div><div>● REC ● 12S LOOP</div><div class="progress"><i></i></div></div>
+</div>
+</body>
+</html>

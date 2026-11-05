@@ -106,30 +106,34 @@ On six real sites the brain-directed loop accepted one change (Algonauts, blind 
 
 ## Making an ad: the loop taken all the way
 
-The same loop, end to end, on a brief for a skincare serum: *"Noon, a vitamin-C and ceramide serum in a frosted amber glass bottle, 30 ml, 20% off for the first week, for women 25 to 35 who read ingredient lists."* Muse writes a 12-second ad once (the baseline). Then, each round: the predicted cortex watches the clip at 1 Hz, the critique says what is weak and when (hook, hold, call to action), an art director picks a craft tool, Muse rebuilds the clip around it, the cortex watches again. Facts are gated against the brief; the final verdict is a blind pairwise judge against the one-shot.
+The same loop, end to end, on a brief for a skincare serum: *"Noon, a vitamin-C and ceramide serum in a frosted amber glass bottle, 30 ml, 20% off for the first week, for women 25 to 35 who read ingredient lists."* Muse writes a 12-second ad once (the baseline). Then, each round: the predicted cortex watches the clip at 1 Hz, the critique says what is weak and when (hook, hold, call to action), an art director picks a craft tool (model the product in Blender, re-time the beats, reset the type, re-flow the words, fetch a real photo), Muse rebuilds the clip around it, and the cortex watches again. Facts are gated against the brief; a round is kept only if it beats the best so far on brain and judge together, and the last word is a blind pairwise judge against the one-shot.
+
+<img src="docs/img/trail-ad.png" alt="Decision trail for the serum ad, narrated by the brain: the one-shot ad and three rounds (a Blender render with re-timed beats, new type and words, a real photo), each with what the brain said, what the agent did, the clip, what the brain read, and the scores; the one-shot was kept" width="100%">
 
 <table>
 <tr>
-<td width="50%"><img src="docs/img/ad-oneshot-sheet.png" alt="The one-shot ad at 1, 5 and 9 seconds: editorial typography, a drawn bottle, a price cut, a guarantee"></td>
-<td width="50%"><img src="docs/img/ad-render.png" alt="The product the brain asked for, modelled and rendered in Blender: frosted amber bottle, matte label, black cap, on a plinth"></td>
+<td width="50%"><img src="docs/video/ad-oneshot.gif" alt="The one-shot serum ad playing"></td>
+<td width="50%"><img src="docs/video/ad-brain.gif" alt="Round 1 of the serum ad playing: the Blender-rendered bottle with re-timed beats"></td>
 </tr>
 <tr>
-<td><sub><b>The one-shot ad</b> (frames at 1 / 5 / 9 s). Polished, and the designer judge likes it (0.89). It also invents a pH, a price ("$68 → $54.40"), an "EST. 2025 · Paris / Seoul", a dermatologist test and a 60-day guarantee, none of which are in the brief. The fact gate reports every one.</sub></td>
-<td><sub><b>What the brain asked for.</b> "My object sense has nothing real to hold." The art director answers with a Blender render of the product in the brand's colours (frosted amber glass, matte label, glossy cap, a plant out of focus); no photo of a bottle that does not exist. Modelled, not drawn.</sub></td>
+<td><sub><b>Muse, asked once</b> (<a href="docs/video/ad-oneshot.mp4">mp4</a>). Polished, and the designer judge likes it (0.89). It also invents a pH 5.5, a price ("$68 → $54.40, save $13.60"), a discount code, 30-day returns and 48-hour shipping, none of which are in the brief. The fact gate flags the pH, the prices and the code.</sub></td>
+<td><sub><b>Round 1, what the brain asked for</b> (<a href="docs/video/ad-brain.mp4">mp4</a>). "The opening felt sleepy and took too long to hook me", so the agent modelled the bottle in Blender (frosted amber glass, matte label, glossy cap) and re-timed the beats. Facts clean. The brain then said it "got lost sightseeing in the background": brain 0.33, judge 0.72, not kept.</sub></td>
 </tr>
 <tr>
-<td colspan="2" align="center"><img src="docs/video/ad-oneshot.gif" alt="The one-shot ad playing" width="640"></td>
+<td colspan="2"><img src="docs/img/ad-render.png" alt="The product rendered in Blender for the ad: frosted amber bottle with a matte label and glossy black cap on a plinth, a plant out of focus"></td>
 </tr>
-<tr><td colspan="2"><img src="docs/img/ad-timecourse.png" alt="Predicted dorsal attention and early visual cortex per second for the one-shot clip and the brain-loop clip" width="100%"></td></tr>
-<tr><td colspan="2" align="center"><sub>The time course is the thing a still can never show: in the first run the brain loop pulled the attention peak from the 12th second to the 8th and lifted the brain score, while the blind judge still preferred the one-shot (P = 0.12). That verdict stands in the table below.</sub></td></tr>
+<tr><td colspan="2" align="center"><sub>The render itself: modelled, not drawn, in the brand's colours (Cycles, Poly Haven props). A product that does not exist yet gets a real object to look at instead of a stock photo of somebody else's bottle.</sub></td></tr>
+<tr><td colspan="2"><img src="docs/img/ad-timecourse.png" alt="Predicted dorsal attention and early visual cortex per second, one-shot ad vs round 1" width="100%"></td></tr>
+<tr><td colspan="2" align="center"><sub>Second by second, the thing a still can never show. Round 1 pulls the attention peak from the 12th second to the 9th, but the one-shot holds more attention overall, and the brain score says so (0.37 vs 0.33).</sub></td></tr>
 </table>
 
-| run | one shot | brain loop | what moved | blind judge |
-|---|---|---|---|---|
-| serum, run 1 (`results/showcase/admaker/serum-try1`) | brain 0.34 · attention peak 12 s · invented facts | brain 0.38 · peak 8 s · facts clean | hook earlier, product beat held | P(brain better) = 0.12, one-shot kept |
-| serum, run 3 (`results/showcase/admaker/serum-try3`) | brain 0.38 · judge 0.89 · invented facts | round 1 brain 0.28: the render was dropped in as a small inset | the render is right, the layout was wrong | not kept |
+| run | one shot | best brain-loop round | verdict |
+|---|---|---|---|
+| serum, run 1 (`results/showcase/admaker/serum-try1`) | brain 0.34 · attention peak 12 s · invents facts | round 1: brain 0.38 · peak 8 s · facts clean | kept by the loop, but the blind judge preferred the one-shot (P = 0.12) |
+| serum, run 3 (`results/showcase/admaker/serum-try3`) | brain 0.38 · judge 0.89 · invents facts | round 1: the render dropped in as a small inset, brain 0.28 | one-shot kept |
+| serum, run 4 (`results/showcase/admaker/serum-try4`) | brain 0.37 · judge 0.89 · invents facts | round 1: full-frame render, re-timed beats, brain 0.33, judge 0.72; rounds 2 and 3 lower | one-shot kept |
 
-What we learned, and changed: the judge rewards invented specifics, so the baseline is now fact-checked and reported too; a good render inset at thumbnail size loses to a drawn bottle, so the art direction now demands a full-bleed crop with the product filling most of the frame; the render defaults to the macro camera. The final run with those fixes is in `results/showcase/admaker/serum-try4`; its trail and kept clip are added here when it finishes. Code: `brainsense/showcase/admaker.py`, figures by `ad_timecourse.py` and `trail.py`.
+The honest result: on this brief the brain-directed loop has not yet beaten Muse's own one-shot ad. What it does show is the whole machine working end to end: the cortex reads a clip second by second, says what is wrong in plain words, picks the craft tool (here a Blender product render), rebuilds the clip without inventing a single fact, and refuses to keep a round that does not beat the baseline. The one-shot's lead is partly bought with invented specifics a fact-checked brand could not print; making the loop win without them is the next step. Code: `brainsense/showcase/admaker.py`, figures by `ad_timecourse.py` and `trail.py`.
 
 ## Use cases
 
@@ -164,7 +168,7 @@ What we learned, and changed: the judge rewards invented specifics, so the basel
 | Brain loop, human blind vote (16 pairs, one voter, the author) | **11/16**: 6/8 against Muse's own self-critique loop, 5/8 against one shot. By Muse's judge the self-loop wins those pages; by the human it loses them |
 | Unsplash downloads per view, out-of-fold AUROC (`results/showcase/bench`) | 0.56 for every feature set, cortex or raw: popularity is not in the cortex, and the Reach head is reported with that in mind |
 | Brain-guided redesign of live sites, with fact, density and blind-judge gates | six real sites: one accepted (Algonauts, blind P 0.90, while its brain-only score fell 0.59 → 0.49: the brain is the critic, the blind judge is the verdict), five iconic utility pages kept their live page. Earlier pre-gate redesigns raised ui_score but invented facts and are not counted |
-| Ad maker, serum brief | one-shot invents 5 to 8 facts per clip; brain loop: attention peak 12 s → 8 s, facts clean, blind judge still prefers the one-shot in run 1 (0.12) |
+| Ad maker, serum brief, three runs | the one-shot invents 5 to 8 facts per clip and is kept in all three; the brain loop moves the attention peak earlier (12 s → 8 to 9 s) with clean facts but does not beat the one-shot (blind P = 0.12 in run 1) |
 | Personal head after 12 synthetic outcomes | LOO AUROC 0.56 vs crowd 0.67, i.e. no personal signal yet at n = 12 (reported as is) |
 | Text pathway, Human-likeness head by domain | finance 0.91 · medicine 0.95 · open-QA 0.89 · Reddit ELI5 0.91 · Wikipedia-CS 0.75 (n = 230, ECE 0.077) |
 
