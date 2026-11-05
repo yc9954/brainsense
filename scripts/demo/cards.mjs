@@ -223,7 +223,7 @@ for (const [name, body] of Object.entries({ ...labels, ...panels })) {
   await page.screenshot({ path: `${OUT}/${name}.png`, omitBackground: true });
 }
 // figures rendered large
-for (const [name, file, w, h] of [["layers", "docs/layers.svg", 1240, 660], ["arch", "docs/architecture.svg", 1320, 620]]) {
+for (const [name, file, w, h] of [["layers", "docs/layers-v2.svg", 1440, 860], ["arch", "docs/architecture.svg", 1320, 620]]) {
   await page.setViewportSize({ width: 1920, height: 1080 });
   await page.setContent(`<html><body style="margin:0;background:#000;display:flex;align-items:center;justify-content:center;width:1920px;height:1080px"><img src="data:image/svg+xml;base64,${fs.readFileSync(ROOT + "/" + file).toString("base64")}" style="width:${Math.round(1800)}px"></body></html>`);
   await page.waitForTimeout(300);

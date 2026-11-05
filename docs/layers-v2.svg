@@ -1,0 +1,145 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="860" viewBox="0 0 1440 860" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#07080A"/><stop offset="1" stop-color="#0B0C10"/></linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.6"><stop offset="0" stop-color="#C0504D" stop-opacity="0.22"/><stop offset="1" stop-color="#C0504D" stop-opacity="0"/></radialGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#121418"/><stop offset="1" stop-color="#0D0E11"/></linearGradient>
+    <linearGradient id="cardRed" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2A1513"/><stop offset="1" stop-color="#170C0B"/></linearGradient>
+    <linearGradient id="spine" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5f6368"/><stop offset="0.45" stop-color="#C0504D"/><stop offset="1" stop-color="#5f6368"/></linearGradient>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#ffffff" stroke-opacity="0.035" stroke-width="1"/></pattern>
+    <marker id="ar" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M1,1 L9,5 L1,9" fill="none" stroke="#9AA0A6" stroke-width="1.4"/></marker>
+    <marker id="arR" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M1,1 L9,5 L1,9" fill="none" stroke="#C0504D" stroke-width="1.4"/></marker>
+  </defs>
+  <rect width="1440" height="860" fill="url(#bg)"/>
+  <rect width="1440" height="860" fill="url(#grid)"/>
+
+  <!-- header -->
+  <text x="64" y="70" fill="#C0504D" font-size="13" letter-spacing="4" font-weight="600">NEUROMUSE · AGENT ARCHITECTURE</text>
+  <text x="64" y="108" fill="#FFFFFF" font-size="34" font-weight="700" letter-spacing="-0.8">An agent with a cortex and a hippocampus</text>
+  <text x="64" y="138" fill="#9AA0A6" font-size="15.5">Six layers, one input and one output type each. Memory is a table of predicted brain states, not a pile of notes.</text>
+
+  <!-- spine -->
+  <line x1="118" y1="196" x2="118" y2="780" stroke="url(#spine)" stroke-width="2" stroke-dasharray="2 6" stroke-linecap="round"/>
+
+  <!-- stimulus chip -->
+  <g>
+    <rect x="64" y="160" width="108" height="30" rx="15" fill="#0E0F11" stroke="#3A3D42"/>
+    <text x="118" y="180" fill="#D9D9D9" font-size="12.5" text-anchor="middle" font-weight="600">STIMULUS</text>
+  </g>
+
+  <!-- ===== L0 ===== -->
+  <g transform="translate(64,206)">
+    <rect width="836" height="86" rx="16" fill="url(#card)" stroke="#2A2D31"/>
+    <circle cx="54" cy="43" r="26" fill="#0B0C0F" stroke="#5f6368"/>
+    <text x="54" y="49" fill="#FFFFFF" font-size="15" font-weight="700" text-anchor="middle">L0</text>
+    <!-- eye icon -->
+    <g transform="translate(106,27)" stroke="#D9D9D9" fill="none" stroke-width="1.6"><path d="M0,16 Q16,0 32,16 Q16,32 0,16 Z"/><circle cx="16" cy="16" r="5"/></g>
+    <text x="158" y="38" fill="#9AA0A6" font-size="12" letter-spacing="2.5" font-weight="600">SENSES</text>
+    <text x="158" y="62" fill="#FFFFFF" font-size="17" font-weight="600">TRIBE v2 predicts the cortex: 20,484 vertices at 1 Hz → 360 area features</text>
+    <g font-size="11.5" font-weight="600">
+      <rect x="700" y="12" width="56" height="22" rx="11" fill="none" stroke="#3A3D42"/><text x="728" y="27" fill="#9AA0A6" text-anchor="middle">pure</text>
+      <rect x="762" y="12" width="62" height="22" rx="11" fill="none" stroke="#3A3D42"/><text x="793" y="27" fill="#9AA0A6" text-anchor="middle">cached</text>
+    </g>
+    <text x="158" y="78" fill="#6b7076" font-size="12">image · video · audio · text pathways on a Modal L40S</text>
+  </g>
+
+  <!-- ===== L1 ===== -->
+  <g transform="translate(64,308)">
+    <rect width="836" height="86" rx="16" fill="url(#card)" stroke="#2A2D31"/>
+    <circle cx="54" cy="43" r="26" fill="#0B0C0F" stroke="#5f6368"/>
+    <text x="54" y="49" fill="#FFFFFF" font-size="15" font-weight="700" text-anchor="middle">L1</text>
+    <g transform="translate(106,28)" fill="#D9D9D9"><rect x="0" y="16" width="6" height="14" rx="2"/><rect x="10" y="8" width="6" height="22" rx="2"/><rect x="20" y="0" width="6" height="30" rx="2" fill="#C0504D"/><rect x="30" y="11" width="6" height="19" rx="2"/></g>
+    <text x="158" y="38" fill="#9AA0A6" font-size="12" letter-spacing="2.5" font-weight="600">ORGANS</text>
+    <text x="158" y="62" fill="#FFFFFF" font-size="17" font-weight="600">Five calibrated crowd heads + your personal head, each with a confidence</text>
+    <g font-size="11.5" font-weight="600"><rect x="700" y="12" width="124" height="22" rx="11" fill="none" stroke="#3A3D42"/><text x="762" y="27" fill="#9AA0A6" text-anchor="middle">pure given weights</text></g>
+    <text x="158" y="78" fill="#6b7076" font-size="12">every score is a weighted sum of named cortical areas, so "why" is a back-projection</text>
+  </g>
+
+  <!-- ===== L2 (the only state) ===== -->
+  <g transform="translate(64,410)">
+    <ellipse cx="418" cy="50" rx="470" ry="90" fill="url(#glow)"/>
+    <rect width="836" height="100" rx="16" fill="url(#cardRed)" stroke="#C0504D" stroke-width="1.4"/>
+    <circle cx="54" cy="50" r="26" fill="#1A0D0C" stroke="#C0504D"/>
+    <text x="54" y="56" fill="#FFFFFF" font-size="15" font-weight="700" text-anchor="middle">L2</text>
+    <g transform="translate(106,30)" stroke="#E9B5B3" fill="none" stroke-width="1.6"><ellipse cx="16" cy="5" rx="16" ry="5"/><path d="M0,5 V31 Q16,41 32,31 V5"/><path d="M0,18 Q16,28 32,18"/></g>
+    <text x="158" y="40" fill="#E58C89" font-size="12" letter-spacing="2.5" font-weight="700">ENGRAM STORE · THE ONLY STATE</text>
+    <text x="158" y="65" fill="#FFFFFF" font-size="17" font-weight="600">One row per percept: cortex vector, 1 Hz time course, stimulus, outcomes, surprise</text>
+    <text x="158" y="86" fill="#B98a88" font-size="12.5">SQLite, inspectable · recall = cosine in cortex space, "what have I seen that felt like this?"</text>
+  </g>
+
+  <!-- arrows out of L2 -->
+  <path d="M330 512 C330 540 250 540 250 560" fill="none" stroke="#C0504D" stroke-width="1.4" marker-end="url(#arR)"/>
+  <path d="M640 512 C640 540 720 540 720 560" fill="none" stroke="#9AA0A6" stroke-width="1.4" marker-end="url(#ar)"/>
+  <text x="208" y="545" fill="#E58C89" font-size="11.5" font-weight="600">replay</text>
+  <text x="726" y="538" fill="#9AA0A6" font-size="11.5" font-weight="600">read</text>
+
+  <!-- ===== L3 ===== -->
+  <g transform="translate(64,566)">
+    <rect width="408" height="112" rx="16" fill="url(#cardRed)" stroke="#C0504D" stroke-width="1.2"/>
+    <circle cx="44" cy="40" r="22" fill="#1A0D0C" stroke="#C0504D"/>
+    <text x="44" y="45" fill="#FFFFFF" font-size="13.5" font-weight="700" text-anchor="middle">L3</text>
+    <path d="M90 28 a12 12 0 1 0 14 18 a9 9 0 1 1 -14 -18 z" fill="#E9B5B3"/>
+    <text x="118" y="35" fill="#E58C89" font-size="11.5" letter-spacing="2.2" font-weight="700">SLEEP · THE ONLY WRITER</text>
+    <text x="118" y="56" fill="#FFFFFF" font-size="15" font-weight="600">Replay → refit your head → mine rules</text>
+    <text x="24" y="84" fill="#B98a88" font-size="12">rules with bootstrap confidence, in plain English,</text>
+    <text x="24" y="100" fill="#B98a88" font-size="12">retired never edited · every 10 outcomes · CPU, seconds</text>
+  </g>
+
+  <!-- ===== L4 ===== -->
+  <g transform="translate(492,566)">
+    <rect width="408" height="112" rx="16" fill="url(#card)" stroke="#2A2D31"/>
+    <circle cx="44" cy="40" r="22" fill="#0B0C0F" stroke="#5f6368"/>
+    <text x="44" y="45" fill="#FFFFFF" font-size="13.5" font-weight="700" text-anchor="middle">L4</text>
+    <g transform="translate(84,26)" fill="none" stroke="#D9D9D9" stroke-width="1.6"><path d="M4,14 A10,10 0 1 1 14,24"/><path d="M14,24 l-5,-2 M14,24 l-1,-5"/></g>
+    <text x="118" y="35" fill="#9AA0A6" font-size="11.5" letter-spacing="2.2" font-weight="600">CORTEX IN THE LOOP</text>
+    <text x="118" y="56" fill="#FFFFFF" font-size="15" font-weight="600">Everything it makes is read first</text>
+    <text x="24" y="84" fill="#6b7076" font-size="12">critique → art direction → rebuild · pages, ads, rooms, text</text>
+    <text x="24" y="100" fill="#6b7076" font-size="12">gated: no invented facts · density kept · blind judge</text>
+  </g>
+
+  <!-- into L5 -->
+  <path d="M268 678 C268 700 330 700 330 712" fill="none" stroke="#9AA0A6" stroke-width="1.4" marker-end="url(#ar)"/>
+  <path d="M696 678 C696 700 640 700 640 712" fill="none" stroke="#9AA0A6" stroke-width="1.4" marker-end="url(#ar)"/>
+
+  <!-- ===== L5 ===== -->
+  <g transform="translate(64,716)">
+    <rect width="836" height="90" rx="16" fill="url(#card)" stroke="#2A2D31"/>
+    <circle cx="54" cy="45" r="26" fill="#0B0C0F" stroke="#5f6368"/>
+    <text x="54" y="51" fill="#FFFFFF" font-size="15" font-weight="700" text-anchor="middle">L5</text>
+    <g transform="translate(106,29)" fill="none" stroke="#D9D9D9" stroke-width="1.6"><path d="M2,2 H32 V22 H14 L6,30 V22 H2 Z"/></g>
+    <text x="158" y="38" fill="#9AA0A6" font-size="12" letter-spacing="2.5" font-weight="600">VOICE + ROUTER · MUSE SPARK</text>
+    <text x="158" y="62" fill="#FFFFFF" font-size="17" font-weight="600">Picks the sense and the heads, speaks as the brain, holds no memory</text>
+    <text x="158" y="80" fill="#6b7076" font-size="12">reflex: precedent ≥ 0.9 + confident personal head + a rule → one sentence, no reasoning pass</text>
+  </g>
+
+  <!-- ===== right rail ===== -->
+  <g transform="translate(944,206)">
+    <rect width="432" height="600" rx="20" fill="#0B0C0F" stroke="#2A2D31"/>
+    <text x="30" y="44" fill="#C0504D" font-size="12" letter-spacing="3" font-weight="700">THE DISCIPLINE</text>
+    <g font-size="15" fill="#E6E6E6">
+      <circle cx="38" cy="78" r="4" fill="#C0504D"/><text x="54" y="83">Only <tspan font-weight="700">L2</tspan> holds state</text>
+      <circle cx="38" cy="110" r="4" fill="#C0504D"/><text x="54" y="115">Only <tspan font-weight="700">L3</tspan> writes weights and rules</text>
+      <circle cx="38" cy="142" r="4" fill="#5f6368"/><text x="54" y="147">The voice holds <tspan font-weight="700">no</tspan> memory</text>
+      <circle cx="38" cy="174" r="4" fill="#5f6368"/><text x="54" y="179">Raw brain vectors never reach the LLM</text>
+    </g>
+    <line x1="30" y1="210" x2="402" y2="210" stroke="#2A2D31"/>
+    <text x="30" y="246" fill="#C0504D" font-size="12" letter-spacing="3" font-weight="700">MEMORY, COMPARED</text>
+    <g font-size="12.5">
+      <text x="30" y="282" fill="#6b7076" font-weight="600">AGENT</text><text x="168" y="282" fill="#6b7076" font-weight="600">MEMORY UNIT</text><text x="318" y="282" fill="#6b7076" font-weight="600">1K MEMORIES</text>
+      <line x1="30" y1="294" x2="402" y2="294" stroke="#1f2125"/>
+      <text x="30" y="322" fill="#D9D9D9">OpenClaw</text><text x="168" y="322" fill="#9AA0A6">Markdown note</text><text x="318" y="322" fill="#9AA0A6">context tokens</text>
+      <text x="30" y="352" fill="#D9D9D9">Hermes</text><text x="168" y="352" fill="#9AA0A6">note + skill file</text><text x="318" y="352" fill="#9AA0A6">context tokens</text>
+      <text x="30" y="382" fill="#D9D9D9">Instinct</text><text x="168" y="382" fill="#9AA0A6">git Markdown</text><text x="318" y="382" fill="#9AA0A6">context tokens</text>
+      <rect x="22" y="396" width="388" height="34" rx="8" fill="#2A1513" stroke="#C0504D" stroke-opacity="0.6"/>
+      <text x="30" y="418" fill="#FFFFFF" font-weight="700">NeuroMuse</text><text x="168" y="418" fill="#FFFFFF">cortex state</text><text x="318" y="418" fill="#E58C89" font-weight="700">0 tokens</text>
+    </g>
+    <line x1="30" y1="458" x2="402" y2="458" stroke="#2A2D31"/>
+    <text x="30" y="494" fill="#C0504D" font-size="12" letter-spacing="3" font-weight="700">WHAT FALLS OUT</text>
+    <g font-size="13.5" fill="#D9D9D9">
+      <text x="30" y="524"><tspan font-weight="700" fill="#fff">Perceptual recall</tspan> · "what felt like this?"</text>
+      <text x="30" y="552"><tspan font-weight="700" fill="#fff">No drift</tspan> · a like is a ms refit, not a prompt</text>
+      <text x="30" y="580"><tspan font-weight="700" fill="#fff">Reasons by construction</tspan> · named areas</text>
+    </g>
+  </g>
+
+  <text x="64" y="840" fill="#5f6368" font-size="12">Full design: docs/architecture.md · github.com/yc9954/brainsense</text>
+</svg>

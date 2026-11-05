@@ -173,7 +173,7 @@ Every agent framework people copy right now remembers in **words**. OpenClaw kee
 
 NeuroMuse remembers in **brain states**. Every photo, clip, track or paragraph it has looked at is stored as the cortex TRIBE v2 predicts for it, with what happened next (you liked it, picked it over another, it sold, the copy got replies). It learns by fitting small organs, the heads, on those states; not by retraining the language model, and not by piling up prose. Muse Spark is the voice and the router, never the memory.
 
-<img src="docs/layers.svg" alt="Six layers: L0 senses (TRIBE v2), L1 organs (calibrated heads), L2 engram store (the only state), L3 sleep (the only writer) and L4 cortex in the loop, L5 voice and router (Muse Spark, no memory, reflex path)" width="100%">
+<img src="docs/layers-v2.svg" alt="Six layers: L0 senses (TRIBE v2), L1 organs (calibrated heads), L2 engram store (the only state), L3 sleep (the only writer) and L4 cortex in the loop, L5 voice and router (Muse Spark, no memory, reflex path)" width="100%">
 
 Three things fall out of that, which a text-memory agent cannot do:
 
